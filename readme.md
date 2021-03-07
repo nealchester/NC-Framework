@@ -39,6 +39,7 @@
 * More drop-menu variations and styles
 * Incorporation of a better [scroll animation library](https://greensock.com/)
 * Better accessibility
+* Part files in the main directory will be moved to the `parts` folder
 * Custom block expansion options
 
 ***
