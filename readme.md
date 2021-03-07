@@ -5,6 +5,8 @@
 * Custom templates
 * Accessible drop-menus
 * Uses ACF Pro
+* Responsive
+* SEO Friendly
 * Full WordPress feature support for:
   * Customizer
     * Alter the mega footer column count
