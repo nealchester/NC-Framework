@@ -1,0 +1,3633 @@
+/*
+This file is not to be modified unless you know what you're doing. 
+This contains all NC Framework and WordPress blocks.
+*/
+
+
+/* Auto Number Headings 
+
+<div class="numberheadings"> 
+<h2>...</h2> <p>...</p> <h2>...</h2> <p>...</p> 
+</div> 
+
+*/
+
+.numberheadings {
+  counter-reset: section
+}
+
+.numberheadings h2, 
+.numberheadings h3, 
+.numberheadings h4 {
+  position: relative;
+}
+
+.numberheadings h2:before, 
+.numberheadings h3:before, 
+.numberheadings h4:before {
+  counter-increment: section;
+  content: counter(section, decimal) ". ";
+  color: var(--blue);
+}
+
+/* Logo 
+
+<div class="nclogo">
+<a href="#2" class="nclogo_anchor">
+<div class="nclogo_title">Heading</div>
+  <!-- 
+  <img src="nclogo.svg" alt="Site Title" class="nclogo_image"> 
+  -->
+</a>
+<div class="nclogo_tagline">Just another WordPress website</div>
+</div>
+
+*/
+
+.nclogo {
+  --logo-text-size: 1.3em;
+  --logo-text-transform: uppercase;
+  --logo-text-weight: bold;
+  --logo-text-color: inherit;
+  --logo-img-width: 250px;
+  --logo-padding: 1.5em 0;
+  --logo-margin: 0;
+}
+
+.nclogo {
+  padding:var(--logo-padding);
+  margin:var(--logo-margin);
+}
+
+.nclogo_image,
+.nclogo_anchor { display: block; }
+
+.nclogo_image { width:var(--logo-img-width); }
+
+.nclogo_title {
+  font-size: var(--logo-text-size);
+  text-transform: var(--logo-text-transform);
+  font-weight:var(--logo-text-weight);
+  color:var(--logo-text-color);
+  margin: 0;
+  line-height: normal;
+  display: block;
+}
+
+.nclogo_anchor + .nclogo_tagline { margin-top:0.3em; }
+.nclogo_tagline {
+  font-size: 0.8em;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+/*  NC Navmenu 
+
+<ul class="navmenu">
+  <li>
+    <a href="#">...</a>
+  </li>
+  <li class="menu-item-has-children">
+    <a href="#">Label
+    <ul class="sub-menu">...</ul>
+  </li> 
+</ul>
+
+*/
+
+.navmenu {
+  --menu-bg-color: #fff;
+  --menu-item-height: auto;
+  --menu-align-items: center;
+  --menu-box-shadow:none;
+
+  --item-height: auto; 
+  --item-align-items: center;
+
+  --item-bg-color: #fff;
+  --item-bg-color-hover: #fff;
+  --item-bg-color-current: #fff;
+
+  --item-text-size:1em;
+  --item-text-color: #000;
+  --item-text-color-hover: #000;
+  --item-text-color-current: #000;
+
+  --item-margin-left: 0;
+  --item-padding: 1rem;
+  --item-border-right: none;
+  --item-border-bottom:solid 1px #ccc;
+  
+  --indicator-color: inherit;
+  --transition: 0.5s;
+  
+  --drop-width:250px;
+  --drop-radius:5px;
+  --drop-text-size:1em;
+  --drop-div-color:solid 1px #444;
+  --drop-item-bg-color: #222;
+  --drop-item-text-color:#ccc;  
+  --drop-item-padding:1em;
+  --drop-item-bg-color-hover: #444;
+  --drop-item-text-color-hover:#fff;
+}
+
+
+.navmenu a { transition: var(--transition)}
+
+.navmenu {
+  display: flex;
+  align-items: var(--item-align-items);
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height:var(--menu-item-height);
+  transition:var(--transition);
+}
+
+.navmenu > li {
+  display: flex;
+  align-items: stretch;
+  justify-content:center;
+  padding: 0;
+  margin: 0;
+  position:relative;
+  height:var(--item-height);
+  font-size:var(--item-text-size);
+}
+
+.navmenu > li:not(:first-of-type) {
+  margin-left: var(--item-margin-left);
+}
+
+.navmenu > li > a {
+  display: flex;
+  align-items:center;
+  padding:var(--item-padding);
+  background:var(--item-bg-color);
+  color:var(--item-text-color);
+  flex-wrap: wrap;
+}
+
+.navmenu > li > a.navmenu-current {
+  color:var(--item-text-color-current) !important;
+  background:var(--item-bg-color-current)  !important;
+}
+
+.navmenu > li:not(:last-child) > a {
+  border-right:var(--item-border-right);
+}
+
+/* Modifier 
+
+Make the bar sticky */
+
+.navmenu-sticky {
+  position:sticky;
+  left:0;
+  top:-1px;
+  z-index:200;
+}
+
+/* Account for WordPress bar when logged in */
+
+body.logged-in .navmenu-sticky { top: 32px; }
+@media(max-width:782px) { body.logged-in .navmenu-sticky { top:46px } }
+@media(max-width:600px) { body.logged-in .navmenu-sticky { top:0 } }
+
+/* Responsive 
+
+  @media(max-height:600px){
+    .navmenu-sticky { position:static; }
+  }
+*/
+
+/* Submenu */
+
+.navmenu:not(.navmenu-vertical):not(.navmenu-list) .sub-menu {
+    position: absolute;
+    left: 0;
+    margin:0;
+    top:100%;
+    width:var(--drop-width);
+    line-height: normal;
+    z-index: 200;
+    list-style-type:none;
+    padding-left:0;
+    background:var(--drop-item-bg-color);
+    transition: var(--transition);
+    color:var(--drop-item-text-color);
+    border-radius:var(--drop-radius);
+    font-size:var(--drop-text-size);
+    transform:scale(1,0);
+    transform-origin:center top
+}
+
+.navmenu.navmenu-vertical .submenu,
+.navmenu.navmenu-list .sub-menu {
+  position: static;
+  margin:0;
+  top:100%;
+  width:var(--drop-width);
+  line-height: normal;
+  z-index: 200;
+  list-style-type:none;
+  padding-left:0;
+  background:var(--drop-item-bg-color);
+  transition: var(--transition);
+  color:var(--drop-item-text-color);
+  border-radius:var(--drop-radius);
+  font-size:var(--drop-text-size);
+  visibility: hidden;
+  overflow:hidden;
+  max-height: 0;
+  opacity:0
+}
+
+.navmenu li.menu-item-has-children:hover .sub-menu {
+  z-index:210;
+}
+
+.navmenu:not(.navmenu-vertical) .sub-menu,
+.navmenu:not(.navmenu-list) .sub-menu {
+  filter:var(--drop-shadow);
+}
+
+.navmenu .sub-menu > li:first-child a {
+  border-radius:var(--drop-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navmenu .sub-menu > li:last-child a {
+  border-radius: var(--drop-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/* Drop menu shadow for */
+
+.navmenu:not(.navmenu-vertical) .sub-menu {
+  filter:drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+}
+
+/* Centered Drop menu for horizontal only */
+
+.navmenu:not(.navmenu-vertical):not(.navmenu-list) > li > .sub-menu {
+  left: 50%;
+  margin-left:calc(-1 * var(--drop-width) / 2);
+}
+
+.navmenu:not(.navmenu-vertical) .sub-menu:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: var(--drop-item-bg-color);
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.navmenu.navmenu-vertical li:hover > .sub-menu,
+.navmenu.navmenu-list li:hover > .sub-menu{
+  visibility: visible;
+  overflow:visible;
+  max-height: 500px;
+  opacity:1;
+}
+
+
+
+.navmenu:not(.navmenu-vertical):not(.navmenu-list) li:hover > .sub-menu,
+.navmenu:not(.navmenu-vertical):not(.navmenu-list) li > .sub-menu.focused { 
+    transform:scale(1,1); }
+
+.navmenu:not(.navmenu-vertical) .sub-menu .sub-menu:before {
+  content:none;
+}
+
+.navmenu:not(.navmenu-vertical):not(.navmenu-list) .sub-menu .sub-menu { left:100%; top:0;}
+
+.navmenu .sub-menu li { 
+  display:block; 
+  list-style-type:none; 
+  position:relative;
+}
+
+.navmenu .sub-menu li a { padding:var(--drop-item-padding); display:block;}
+.navmenu .sub-menu li:not(:last-child) a { 
+  border-bottom:var(--drop-div-color); 
+}
+
+    /* Submenu indicator */
+
+    .navmenu .menu-item-has-children > a:after { 
+      content: '\e902';
+      font-family: 'ncicon'; 
+      margin-left:0.5em;
+      transition:0.5s;
+      display:inline-block;
+      transform:rotate(90deg);
+      color:var(--indicator-color);
+      font-size: 0.7em;
+    }
+
+    .navmenu .menu-item-has-children:hover > a:after {
+        transform: rotate(270deg)
+    }
+
+/* Hover styles */
+
+.navmenu > li:hover > a {
+  background:var(--item-bg-color-hover);
+  color:var(--item-text-color-hover);
+}
+
+.navmenu .sub-menu li:hover > a {
+  background:var(--drop-item-bg-color-hover);
+  color:var(--drop-item-text-color-hover);
+}
+
+/* Modifier: Menu vertical */
+
+.navmenu-vertical,
+.navmenu-vertical li,
+.navmenu-vertical .sub-menu li { 
+  display:block; 
+  line-height:1.5
+}
+
+.navmenu-vertical { 
+  max-width:25em; 
+  background:var(--item-bg-color);
+  color:var(--item-text-color);
+}
+
+.navmenu-vertical > li:not(:first-of-type) { 
+  margin-left:0;
+}
+
+.navmenu-vertical > li > a { 
+  padding:var(--item-padding);
+  border-bottom:var(--item-border-bottom);
+  display:block;
+}
+
+
+.navmenu-vertical .sub-menu { left: 100%; top: 0; }
+
+.navmenu-vertical > .menu-item-has-children > a:after { 
+  transform:none;
+  position:absolute; right:1em;
+  color:var(--indicator-color);
+}
+
+/* 
+Menu Modifier 
+Drop Menu Right Aligned
+*/
+
+.navmenu-right .menu-item-has-children > a:after {
+  display:none;
+  content:none;
+}
+
+.navmenu-right .sub-menu {
+  position: absolute;
+  left: auto;
+  right:0;
+}
+
+.navmenu-right .sub-menu .sub-menu,
+.navmenu-right.menu-vertical .sub-menu { left:auto; right:100%; }
+
+
+/* Modifier: LIST Sub menu List inline */
+
+.navmenu-list {
+  border-top:var(--item-border-bottom);
+  --drop-radius:0;
+}
+
+.navmenu-list .sub-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    box-shadow: none;
+    background: var(--drop-item-bg-color);
+    margin-bottom: 0;
+    max-height:0;
+    overflow: hidden;
+}
+
+.navmenu-list > li:hover > .sub-menu {
+  border-bottom:var(--drop-div-color);
+}
+
+.navmenu-list .menu-item-has-children > a {
+    position: relative;
+}
+
+.navmenu-list .menu-item-has-children > a:after {
+    transition: 0.5s;
+    content: '\25bc';
+    transform: scale(1,0.5);
+    font-size:0.8em;
+    position: static;
+    opacity: 1;
+    float:right;
+    color: var(--indicator-color);
+}
+
+.navmenu-list .menu-item-has-children:hover > a:after {
+    transform: rotate(180deg)scale(1,0.5);
+}
+
+
+
+ /* Search Form 
+ 
+  <form class="ncsearchform">
+    <div class="ncsearchform_contain">
+      <label for="wp-searchbox" class="hidetext">Search</label>
+      <input class="ncsearchform_input" type="search" id="wp-searchbox" name="s" placeholder="Search">
+      <button class="ncsearchform_button" type="submit">
+        <svg class="ncsearchform_icon">...</svg>
+      </button>
+    </div>  
+  </form>
+ 
+ */
+
+ .ncsearchform {
+  --align-self:center;
+  --min-height: 2.5em;
+  --text-indent: 1em;
+  --radius: 50px;
+  --min-width:150px;
+  --text-size:1em;
+  --text-color:#000;
+  --bg-color:#fff;
+  --border: solid 1px #ddd;
+  --button-width: 2.5em;
+  --button-bg-color:none;
+  --button-bg-color-hover:none;
+  --button-color:#000;
+  --button-color-hover:#000;
+  --focus-text-color:#000;
+  --focus-border:solid 1px #aaa;
+  --focus-bg-color:#fff;
+  --focus-dropshadow: 0 1px 0.3rem rgba(0,0,0,0.3);
+}
+
+.ncsearchform {
+  flex-grow: 1;
+  min-width:var(--min-width);
+  align-self:var(--align-self);
+}
+
+.ncsearchform_contain {
+  display: flex;
+  position:relative;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.ncsearchform_input {
+  background: var(--bg-color);
+  text-indent: var(--text-indent);
+  border: var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  font-size: var(--text-size);
+  min-height:var(--min-height);
+  padding-right:var(--button-width);
+  outline: none;
+  transition: 0.3s;
+  color:var(--text-color);
+}
+
+.ncsearchform_input,
+.ncsearchform_input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.ncsearchform_input:focus {
+  border:var(--focus-border);
+  background: var(--focus-bg-color);
+  box-shadow: var(--focus-dropshadow);
+  color:var(--focus-text-color);
+}
+
+.ncsearchform_button {
+  cursor: pointer;
+  background: var(--button-bg-color);
+  border: none;
+  position: absolute;
+  right: 0;
+  height:100%;
+  font-size: 1em;
+  border-radius:var(--radius);
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+  width: var(--button-width);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:0.3s;
+}
+
+.ncsearchform_icon {
+  width: 1em;
+  height: auto;
+  display: block;
+}
+.ncsearchform_icon path {
+  fill: var(--button-color);
+  transition: 0.3s;
+}
+
+.ncsearchform_button:hover {
+  background: var(--button-bg-color-hover);
+}
+
+.ncsearchform_button:hover .ncsearchform_icon path {
+  fill: var(--button-color-hover);
+}
+
+/* Modifier 
+Stretch
+*/
+
+.ncsearchform-stretch {
+  align-self:stretch;
+  position:relative;
+  display: flex;
+}
+.ncsearchform-stretch .ncsearchform_contain {
+  align-items: stretch;
+}
+
+.ncsearchform-stretch .ncsearchform_input {
+  align-items: stretch;
+}
+
+.ncsearchform-stretch .ncsearchform_input,
+.ncsearchform-stretch .ncsearchform_button {
+  border-radius:0;
+}
+
+
+/* NC Header Div */
+
+.nchline {
+    --line-width: 80px;
+    --line-bgcolor: currentColor;
+    --line-height: 3px;
+    --line-gap: 1.5em;
+    --line-radius:0;
+    --line-align:flex-start;
+}
+
+.nchline-center {
+  --line-width: 80px;
+  --line-bgcolor: currentColor;
+  --line-height: 3px;
+  --line-gap: 1.5em;
+  --line-radius:0;
+  --line-align:center;
+  text-align:center;
+}
+
+.nchline-right {
+  --line-width: 80px;
+  --line-bgcolor: currentColor;
+  --line-height: 3px;
+  --line-gap: 1.5em;
+  --line-radius:0;
+  --line-align:flex-end;
+  text-align:right;
+}
+
+.nchline,
+.nchline-center,
+.nchline-right  {
+    margin-bottom: var(--line-gap);
+    display:flex !important;
+    flex-direction: column;
+    align-items:var(--line-align);
+} 
+
+
+.nchline:after,
+.nchline-center:after,
+.nchline-right:after {
+    content:'';
+    display: block;
+    position: relative;
+    height: var(--line-height);
+    background: var(--line-bgcolor);
+    width: var(--line-width);
+    top: calc( var(--line-gap) / 2);
+    border-radius:var(--line-radius);
+}
+
+
+/* NC Columns 
+
+<div class="ncolumns ncolumns-fixed ncolumns-mason ncolumns-3 ncolumns-borders ncolumns-scroll">
+  <div>...</div>
+  <div>...</div>
+</div>
+
+*/
+
+.ncolumns {
+  --count:3; 
+  --min-col-width: 250px;
+  --column-gap: 3rem;
+  --row-gap:1.5rem; 
+  --bottom-box-padding:3em; /* Bottom padding of the box */
+  --column-border-color: currentColor;
+}
+
+.ncolumns {
+  display: grid;
+  grid-column-gap: var(--column-gap);
+  grid-row-gap: var(--row-gap);
+  grid-template-columns: repeat(var(--count), 1fr);
+  list-style-type: none;
+  padding-left:0;
+  margin-left:0;
+}
+
+.ncolumns > * :last-child { margin-bottom:0; } 
+
+/* Box Styles */
+
+.ncolumns_box { 
+--box-padding: 3rem 0;
+--box-text-color: #000;
+--bg-color: #fff;
+--contain-max-width: 1400px;
+}
+
+.ncolumns_box {
+  padding:var(--box-padding);
+  color:var(--box-text-color);
+  background:var(--bg-color);
+}
+
+.ncolumns_box .ncontain { max-width: var(--contain-max-width); }
+
+.ncolumns_after { margin-top:var(--gap); }
+
+/* Images */
+
+.ncolumns_image img { 
+  --image-width: auto;
+  --image-min-width:auto;
+
+  --image-height:auto;
+  --image-min-height: auto;
+  --image-max-height: auto;
+
+  --image-radius:0;
+  --image-border:solid 0;
+  --image-padding:0;
+
+  width:var(--image-width);
+  min-width:var(--image-min-width);
+
+  height:var(--image-height);
+  min-height:var(--image-min-height);
+  max-height:var(--image-max-height);
+
+  border-radius: var(--image-radius);
+  border: var(--image-border);
+  padding:var(--image-padding);
+  
+  display: block;
+  object-fit: cover;
+}
+
+/* Modifiers Column Count Style */
+
+.ncolumns-fixed { grid-template-columns: repeat(var(--count), 1fr) }
+.ncolumns-auto  { grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 1fr)) }
+.ncolumns-flow  { grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), auto)) }
+
+.ncolumns-1 { --count:1; }
+.ncolumns-2 { --count:2; }
+.ncolumns-3 { --count:3; }
+.ncolumns-4 { --count:4; }
+.ncolumns-5 { --count:5; }
+.ncolumns-6 { --count:6; }
+.ncolumns-7 { --count:7; }
+.ncolumns-8 { --count:8; }
+.ncolumns-9 { --count:9; }
+
+/* Modifier: Border */
+
+.ncolumns-borders > *:not(:last-child) { position:relative; }
+
+.ncolumns-borders > *:not(:last-child):after {
+  display:block;
+  content:'';
+  width:1px;
+  height:100%;
+  background:var(--column-border-color);
+  position:absolute;
+  right:calc( -1 * var(--column-gap) / 2 );
+  top:0;
+  opacity:0.5;
+}
+
+
+/* Modifier Mason
+This is unpredictable and only works well with at least 9 items or more.
+*/
+
+.ncolumns-mason {
+display:block;
+column-count:var(--count);
+column-gap:var(--column-gap);
+column-width:var(--min-col-width);
+
+}
+
+.ncolumns-mason > *,
+.ncolumns-mason > .ncgallery_item { 
+display:inline-block; 
+margin-bottom: var(--row-gap); 
+height: auto;
+width: 100%;
+}
+
+/* Scroll or stack 
+
+@media(max-width:640px){
+  
+  .ncolumns.ncolumns-stack.ncolumns-borders {
+    grid-template-columns: 1fr;
+    grid-gap: var(--row-gap);
+  }
+
+  .ncolumns.ncolumns-stack.ncolumns-borders > *:not(:last-child):after { 
+    width:100%;
+    height:1px;
+    right:auto;
+    bottom: calc( -1 * var(--column-gap) / 2 );
+    top:auto;
+   }
+
+  .ncolumns-scroll {
+    display:grid;
+    --column-gap:var(--gap);
+    grid-template-columns: repeat(30, minmax(var(--min-col-width), 1fr));
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding-left:var(--gap);
+    margin-left: calc(-1 * var(--gap));
+    margin-right: calc(-1 * var(--gap));
+    margin-bottom: calc(-1 * var(--bottom-box-padding));
+  }
+  
+  .ncolumns-scroll > * { 
+    min-width:var(--min-col-width); 
+    margin-bottom:var(--bottom-box-padding);
+  }
+  
+  .ncolumns-scroll:after {
+    content:''; width:1px; height:1px;
+  }
+  
+  
+}
+*/
+
+/* Gallery 
+
+<div class="ncolumns_box">
+<div class="ncontain">  
+<div class="ncolumns_before"><h2>Heading for content</h2></div>
+
+<div class="ncolumns ncgallery ncgallery-capslide">
+
+<figure class="ncgallery_item">
+  <a class="ncgallery_link" href="#">
+    <div class="ncgallery_size">
+      <img class="ncgallery_image" src="https://picsum.photos/600/500/" alt="">
+    </div>
+    <figcaption class="ncgallery_caption">
+      <span class="ncgallery_title">Caption for the image</span>
+      <span class="ncgallery_desc">Desc</span>
+    </figcaption>
+  </a>
+</figure>
+
+....
+
+</div>
+
+<div class="ncolumns_after"></div>
+
+</div>
+</div>
+
+*/
+
+.ncgallery {
+  --img-height:70%;
+  --min-col-width: 250px;
+  --img-border: none;
+  --img-radius:0;
+  --img-drop-shadow:none;
+  }
+  
+  .ncgallery_box {
+  --box-padding: 3rem 0;
+  --text-color: #ccc;
+  --bg-color: #222;
+  --contain-max-width:1400px;
+  }
+  
+  .ncgallery_box {  
+  background:var(--bg-color);
+  color:var(--text-color);
+  padding: var(--box-padding);
+  }
+  
+  .ncgallery_box .ncontain {
+  max-width: var(--contain-max-width);
+  }
+  
+  .ncgallery_item {
+  display:block;
+  margin:0; padding:0;
+  position:relative;
+  overflow:hidden;
+  filter:drop-shadow(var(--img-drop-shadow));
+  }
+  
+  .ncgallery_link {
+  text-decoration:none;
+  color:inherit;
+  display: block;
+  }
+  
+  .ncgallery_size {
+  width:100%;
+  padding-top:var(--img-height);
+  height:100%;
+  position: relative;
+  border-radius:var(--img-radius);
+  }
+  
+  .ncgallery_size:after {
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  display:block;
+  border:var(--img-border);
+  border-radius:var(--img-radius);
+  z-index: 10;
+  }
+  
+  
+  .ncgallery_image {
+  display:block;
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:center center;
+  transform:scale(1);
+  position:absolute;
+  left:0;
+  top:0;
+  transition:0.6s;
+  }
+  
+  .ncgallery_item:hover .ncgallery_image { transform: scale(1.2); }
+  
+  .ncolumns-mason .ncgallery_size {
+  padding-top:0;
+  }
+  
+  .ncolumns-mason .ncgallery_image {
+  position:static;
+  height:auto;
+  }
+  
+  .ncgallery_caption {
+  position:absolute;
+  width:102%;
+  left:-1%;
+  bottom:0;
+  padding:3rem 0.75rem 0.75rem;
+  color:#fff;
+  font-size:0.7em;
+  text-align:center;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
+  letter-spacing:0.08em;
+  }
+  
+  .ncgallery-capbelow .ncgallery_caption { color:inherit }
+  
+  .ncgallery_caption > *:last-child {
+  margin-bottom:0;
+  }
+  
+  /* Modifier: Caption Slide */
+  
+  .ncgallery-capslide:not(.ncgallery-capbelow) .ncgallery_caption {
+  bottom:-100%;
+  opacity:0;
+  transition:0.2s;
+  }
+  
+  .ncgallery-capslide:not(.ncgallery-capbelow) .ncgallery_item:hover .ncgallery_caption,
+  .ncgallery-capoverlay .ncgallery_item .ncgallery_caption {
+  bottom: -1px;
+  opacity:1;
+  }
+  
+  /* Modifier: Captions below */
+  
+  .ncgallery-capbelow .ncgallery_caption {
+  position:relative;
+  width:100%;
+  padding:0.5rem;
+  background:none;
+  }
+  
+  .ncgallery-capbelow .ncgallery_size {
+  position:relative;
+  height: auto;
+  overflow: hidden;
+  }
+  
+  .ncgallery_caption:empty { display: none }
+
+
+/* Accordion 
+
+<div class="nccordion_box">
+
+<div class="nccordion_before">...</div>
+
+<div class="nccordion">
+  <h2 class="nccordion_header">Header</h2>
+  <div class="nccordion_content">
+    <p>Some Text...</p>
+  </div>
+
+  <h2 class="nccordion_header">Header</h2>
+  <div class="nccordion_content">
+    <p>Some Text...</p>
+  </div>
+</div>
+
+<div class="nccordion_before">...</div>
+
+</div>
+
+*/
+
+.nccordion,
+#wrapper .schema-faq {
+  --heading-size:1em;
+  --heading-text-color:inherit;
+  --heading-border:solid 1px #ddd;
+  --heading-padding:0.75rem;
+  --heading-p-color:inherit;
+  --heading-bg-color: transparent;
+  --heading-bg-color-hover:transparent;
+  --heading-bg-color-active:transparent;
+  --transition:0.5s;
+  
+  --content-padding:1.5rem;
+  --content-bg-color:transparent;
+  --content-text-color:inherit;
+  --acc-space:0.75rem;         
+}
+
+.nccordion_box {
+  --box-bg-color:none;
+  --box-text-color:inherit;
+  --box-padding: 3em 0;
+  background:var(--box-bg-color);
+  color:var(--box-text-color);
+  padding:var(--box-padding);
+}
+
+.nccordion_header,
+#wrapper .schema-faq-question { 
+  color:var(--heading-text-color);
+  font-size:var(--heading-size); 
+  cursor:pointer; 
+  border:var(--heading-border); 
+  padding:var(--heading-padding);
+  margin-bottom:0;
+  position:relative;
+  transition:var(--transition);
+  background:var(--heading-bg-color);
+  margin-top:0;
+  display: flex;
+  align-items:flex-start;
+  justify-content:space-between
+}
+
+.nccordion_header:not(:first-of-type),
+#wrapper .schema-faq-question:not(:first-of-type) {
+  margin-top:var(--acc-space);
+}
+
+.nccordion_header:after,
+#wrapper .schema-faq-question:after {
+    transition: var(--transition);
+    content: '\e902';
+    font-family: 'ncicon';
+    transform:rotate(90deg);
+    line-height: normal;
+    color: var(--heading-p-color);
+    margin-left:0.5em;
+    position: relative;
+    font-size:0.7em;
+    top: 0.2em;
+    right: 0.2em;
+}
+
+.nccordion_header.active:after,
+#wrapper .schema-faq-question.active:after {
+  transform: rotate(270deg)
+}
+
+.nccordion_header.active,
+#wrapper .schema-faq-question.active { 
+  background:var(--heading-bg-color-active);
+}
+.nccordion_header:hover,
+#wrapper .schema-faq-question:hover { 
+  background:var(--heading-bg-color-hover); 
+}
+
+.nccordion_header + .nccordion_content,
+#wrapper .schema-faq-question + .schema-faq-answer {
+  transition: var(--transition);
+  max-height:0;
+  overflow:hidden;
+  border:var(--heading-border); 
+  border-top:0;
+  padding:var(--content-padding);
+  padding-top:0; padding-bottom:0;
+  visibility:hidden;
+  color:var(--content-text-color);
+}
+
+.nccordion_content,
+.schema-faq-answer {
+  background:var(--content-bg-color);
+}
+
+.nccordion_header.active + .nccordion_content,
+#wrapper .schema-faq-question.active + .schema-faq-answer {
+  max-height:1500px;
+  overflow:visible;
+  padding:var(--content-padding);
+  opacity:1;
+  visibility:visible;
+}
+
+.nccordion_header.active + .nccordion_content > *:last-child  {
+  margin-bottom:0;
+}
+
+.nccordion_rmore {
+  border-bottom:solid 1px #ccc;
+  font-weight: 500;
+}
+
+
+/* Call Out Module 
+
+<nav class="ncallout"> 
+<div class="ncallout_bgimage"></div>
+<div class="ncontain">
+  <div class="ncallout_content">
+    <p>Some text...</p>
+  </div> 
+  <div class="ncallout_button">
+    <a href="#" class="ncbutton">Call Now</a>
+  </div>
+</div> 
+</nav>
+
+*/
+
+.ncallout {
+--bg-color:crimson;
+--text-color:#fff;
+--box-padding:3rem 0;
+
+--text-size:1em;
+--text-align:left;
+--text-weight:400;
+
+--button-width:30%;
+--button-min-width: 200px;
+--button-radius: 50px;
+--button-text-weight: 600;
+
+--button-color:#fff;
+--button-text-color:#000;
+
+--button-color-hover:#000;
+--button-text-color-hover:#fff;
+
+--content-width: calc(100% - var(--button-width));
+--contain-max-width:1400px;
+--bg-opacity:0.3;
+}
+
+.ncallout{ 
+font-size:var(--text-size);
+font-weight:var(--text-weight);
+color:var(--text-color);
+background-color: var(--bg-color);
+padding: var(--box-padding);
+position: relative;
+}
+
+.ncallout_bgimage {
+position: absolute;
+width:100%; height:100%;
+left: 0; top:0;
+background-size:cover;
+background-position: center;
+background-repeat: no-repeat;
+z-index: 1;
+opacity:var(--bg-opacity);
+}
+
+.ncallout .ncontain {
+  display: grid;
+  grid-template-columns: minmax(125px, var(--content-width)) minmax(125px, var(--button-width));
+  grid-gap:var(--gap);
+  max-width:var(--contain-max-width);
+  position: relative;
+  z-index: 3;
+}
+
+.ncallout_content > :last-child {
+margin-bottom:0;
+}
+
+.ncallout_content {
+text-align:var(--text-align);
+}
+
+.ncallout_button .ncbutton {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  padding: var(--button-padding, 0.75em 1em);
+  border-radius: var(--button-radius, 50px);
+  min-width:var(--button-min-width, 200px);
+  font-weight: var(--button-text-weight, 600);
+
+  text-align: center;
+  white-space: nowrap;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.ncallout_button .ncbutton:hover {
+  background-color: var(--button-color-hover);
+  color: var(--button-text-color-hover);
+}
+
+/*
+@media(max-width:600px){
+.ncallout .ncontain {
+  grid-template-columns:1fr;
+  --padding:3rem 0;
+  --text-align:center;
+}
+}
+*/
+
+/* Hero Module 
+
+<section class="nchero nchero-bottom">
+  <picture class="nchero_pc">
+    <img class="nchero_image" src="https://picsum.photos/1200/1000?image=1010">
+  </picture>
+  <div class="ncontain">
+    <div class="nchero_content">
+      <h1>Hero image</h1>
+      <p>...</p>
+      <button class="button">Learn More</button>
+    </div>
+  </div>
+</section>
+
+*/
+
+.nchero { 
+--overlay-opacity:0.5;
+--overlay-color:#000;
+--overlay-blend-mode: normal;
+
+--image-focus:center center;
+--image-blend-mode: normal;
+
+--text-color: #fff;
+--text-align:center;
+--max-container-width: 1400px;
+
+--content-dropshadow: 0 2px 6px rgba(0,0,0,0.3);
+--content-max-width: 600px;
+--content-position-x:center;
+--content-position-y:center;
+--content-padding: 3rem 0;
+
+--box-min-height:100vh;
+--box-bgcolor: #000;
+
+}
+
+.nchero {  
+  overflow:hidden;
+  position:relative;
+  background: var(--box-bgcolor);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: var(--image-focus);
+}
+
+.nchero:after { 
+  content:'';
+  display:block;
+  position:absolute;
+  bottom:0;
+  left:0; 
+  right:0;
+  z-index:2;
+  width:100%; 
+  height:100%;
+  opacity:var(--overlay-opacity); 
+  background: var(--overlay-color);
+  mix-blend-mode: var(--overlay-blend-mode);
+}
+
+.nchero_image,
+.nchero_pc {
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.nchero_image {
+  object-fit:cover;
+  object-position:var(--image-focus);
+  mix-blend-mode: var(--image-blend-mode);
+}
+
+.nchero .ncontain { 
+  display: flex;
+  flex-direction: column;
+  min-height:var(--box-min-height);
+  max-width: var(--max-container-width);
+  justify-content:var(--content-position-y);
+  align-items:var(--content-position-x);
+}
+
+.nchero_content { 
+  color:var(--text-color);
+  max-width:var(--content-max-width); 
+  padding: var(--content-padding);
+  filter: drop-shadow(var(--content-dropshadow));
+  text-align:var(--text-align);
+  position:relative;
+  z-index:10;
+}
+
+.nchero_content > :last-child {
+  margin-bottom:0
+}
+
+
+/* NC Left Heading 
+
+<section class="ncleft">
+<div class="ncontain">
+  <header class="ncleft_heading">
+    <h3>Lightness strikes again.</h3>
+  </header>
+  <div class="ncleft_content">
+    <p>...</p>
+  </div>
+</div>
+</section>
+
+*/
+
+.ncleft img,
+.nctext img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ncleft figure, 
+.nctext figure { 
+  width: auto !important;
+  margin:0;
+  margin-bottom:var(--gap);
+}
+
+.ncleft {
+--box-padding: 3em 0;
+--box-text-color:#000;
+--box-bg-color:#fff;
+--content-max-width:1400px;
+
+--hd-size:3em;
+--hd-weight:normal;
+--hd-line-height:normal;
+--hd-color:#000;
+--hd-text-case:uppercase;
+--hd-gap:3em;
+--widths: 1fr 4fr;
+}
+
+.ncleft {
+padding:var(--box-padding);
+color:var(--box-text-color);
+background:var(--box-bg-color);
+}
+
+
+.ncleft .ncontain {
+display:grid;
+grid-gap:var(--hd-gap);
+grid-template-columns:var(--widths);
+max-width:var(--content-max-width);
+}
+
+
+.ncleft_heading > * {
+font-size:var(--hd-size);
+line-height:var(--hd-line-height);
+color:var(--hd-color) !important;
+font-weight:var(--hd-weight);
+text-transform:var(--hd-text-case);
+margin-bottom:0;
+}
+
+/* Responsive
+
+@media(max-width:640px){
+.ncleft {
+  --widths:1fr;
+  --hd-gap:1.5rem;
+}
+}
+
+*/
+
+/* NC List 
+
+<div class="nclist">
+<div class="ncontain">
+  <div class="nclist_before"></div>
+
+  <ul class="nclist_group">
+
+    <li class="nclist_item">
+      <a class="nclist_link" href="#">
+        <div class="nclist_box">
+          <img src="background-image.jpg" alt="" class="nclist_bgimg" />
+          <div class="nclist_imgcontain">
+            <img src="https://picsum.photos/200/300/" class="nclist_image" />
+          </div>
+          <div class="nclist_label">Label of Item</div>
+        </div>
+      </a>
+    </li>
+
+    <li>...</li>
+    
+  </ul>
+
+  <div class="nclist_after"></div>
+</div>
+</div>
+
+*/
+
+.nclist {
+--box-padding:3rem 0;
+--bg-color:#eee;
+--box-text-color:#333;
+--contain-max-width:1400px;
+
+--item-padding:0;
+--item-radius:0;
+
+--flex-direction:row;
+--justify-content:flex-start;
+--align-items:center;
+
+--label-padding:0 0 0 1em;
+--min-item-width: 200px; /* No bigger than 300px */
+
+--label-color: currentColor;
+--label-bg-color: transparent;
+
+--icon-width: 50px;
+--icon-min-width: 50px; /* Must be here of flexbox will not respect the width you set*/
+
+--icon-height: auto;
+--icon-min-height:50px;
+--icon-max-height: 50px;
+
+--icon-padding: 0;
+--icon-bg-color: none;
+--icon-border: solid 0 none;
+--icon-box-shadow: none;
+--icon-border-radius:0;
+--icon-object-fit: contain;
+--icon-color: #000;
+
+--bgimg-opacity: 1;
+--bgimg-blend-mode: normal;
+}
+
+.nclist {
+padding:var(--box-padding);
+background:var(--bg-color);
+color:var(--box-text-color);
+}
+
+.nclist .ncontain {
+max-width:var(--contain-max-width);
+}
+
+.nclist_group {
+list-style-type:none;
+padding:0; 
+margin:0;
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(var(--min-item-width), 1fr));
+grid-gap: 1.5em;
+}
+
+.nclist_link {
+display:block;
+text-decoration:none;
+}
+
+.nclist_box {
+display:flex;
+flex-direction:var(--flex-direction);
+align-items:var(--align-items);
+justify-content:var(--justify-content);
+background:var(--label-bg-color);
+padding:var(--item-padding);
+border-radius:var(--item-radius);
+position: relative;
+overflow: hidden;
+}
+
+.nclist_bgimg {
+  position: absolute;
+  left: 0; right:0; top:0; bottom:0;
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: var(--bgimg-opacity);
+  mix-blend-mode: var(--bgimg-blend-mode);
+}
+
+.nclist_imgcontain {
+  background:var(--icon-bg-color);
+  border:var(--icon-border);
+  box-shadow:var(--icon-box-shadow);
+  border-radius:var(--icon-border-radius);
+  overflow: hidden;
+  position:relative;
+  z-index: 5;
+}
+
+
+
+.nclist_image {
+  width:100%;
+  max-width:100%;
+  max-height: var(--icon-max-height);
+  min-height:var(--icon-min-height);
+  min-width: var(--icon-min-width);
+  width: var(--icon-width);
+  height: var(--icon-height);
+  padding: var(--icon-padding);
+  object-fit:var(--icon-object-fit);
+  display:block;
+  fill:var(--icon-color);
+}
+
+img.nclist_image {
+  border-radius:var(--icon-border-radius);
+}
+
+svg.nclist_image,
+svg.nclist_image > * {
+  fill:var(--icon-color);
+}
+
+.nclist_label {
+padding:var(--label-padding);
+color:var(--label-color);
+flex-grow:1;
+position:relative;
+z-index: 5;
+}
+
+.nclist_after {
+margin-top:var(--gap);
+}
+
+/* NC Media 
+
+<div class="ncmedia">
+<div class="ncontain">
+  <div class="ncmedia_media">
+    <!--
+    <a class="ncmedia_link" href="#" target="_blank">
+      <img class="ncmedia_image" src="https://picsum.photos/1000/700?random" alt="A picture" />
+    </a> 
+    -->
+    <div class="ncmedia_video">
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+    </div>
+  </div>
+  <div class="ncmedia_text">
+    <h2>Heading 2</h2><p>...</p>
+  </div>
+</div>
+</div>
+
+*/
+
+.ncmedia {
+--bg-color:#eee;
+--text-color:#333;
+--box-padding: 0;
+
+--content-width:1000px;
+
+--text-align:left;
+--align-items:center;
+
+--media-width: 40%;
+--media-gap: 3rem;
+
+--image-height: auto;
+--image-focus: center center;  
+}
+
+.ncmedia {
+padding: var(--box-padding);
+color:var(--text-color);
+background:var(--bg-color);
+}
+
+.ncmedia .ncontain {
+display:grid;
+grid-template-columns:var(--media-width) auto;
+grid-gap:var(--media-gap);
+align-items:var(--align-items);
+max-width:var(--content-width);
+}
+
+.ncmedia_image {
+max-width:100%;
+display:block;
+Width:100%;
+object-fit:cover;
+object-position:var(--image-focus);
+height:var(--image-height);
+}
+
+.ncmedia_video { 
+  position: relative; 
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.ncmedia_video iframe,
+.ncmedia_video object,
+.ncmedia_video embed,
+.ncmedia_video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border:none;
+  margin:0;
+}
+
+.ncmedia_text {
+  text-align:var(--text-align);
+}
+
+.ncmedia_text > :last-child {
+  margin-bottom:0;
+}
+
+/* Modifier: Right */
+
+.ncmedia-right .ncontain {
+grid-template-columns: auto var(--media-width);
+}
+
+.ncmedia-right .ncmedia_media { order:2 }
+
+
+/* Responsive 
+@media(max-width:640px){
+
+.ncmedia .ncontain {
+  grid-template-columns:auto;
+  grid-gap: 1.5rem;
+}
+
+.ncmedia-right .ncmedia_media { order:0 }
+.ncmedia_image { height:auto }
+.ncmedia_text { padding-bottom: 3rem; }
+
+}
+
+*/
+
+
+
+/* NC Rule Heading */
+
+.ncrule { 
+--rule-height: 0.08rem;
+--rule-color: #ddd;
+--rule-spacing: 0.5rem;
+display:flex;
+align-items:center;
+text-align:center;
+}
+
+p + .ncrule,
+ul + .ncrule,
+ol + .ncrule { margin-top:calc(2 * var(--gap)); }
+
+.ncrule:before,
+.ncrule:after {
+content:'';
+display:block;
+height:var(--rule-height);
+background:var(--rule-color);
+flex-grow: 0.5;
+position:relative;
+}
+
+.ncrule:before { margin-right:var(--rule-spacing) }
+.ncrule:after  {  margin-left:var(--rule-spacing) }
+
+/* Modifier: Left Align */
+
+.ncrule-left { text-align:left; }
+.ncrule-left:before { display:none; }
+.ncrule-left:after { flex-grow:1 }
+
+/* Modifier: Small Uppercase */
+
+.ncrule-small { 
+text-transform:uppercase;
+font-size:0.9em;
+}
+
+
+/* NC Split 
+
+<section class="ncsplit">
+<figure class="ncsplit_image">
+  <img class="ncsplit_pic" src="https://images.unsplash.com/" alt="">
+
+  <!-- Optional overlay content -->
+
+  <div class="ncsplit_overlay"></div>
+  <div class="ncsplit_imgcontent"><p>...</p></div>
+
+  <!-- End optional overlay content -->
+
+  <figcaption class="ncsplit_caption">A picture of a woman with brown red hair</figcaption>
+</figure>
+<div class="ncsplit_content">
+  <div class="ncsplit_contentcontain">
+    <h1>...</h1>
+    <p>...</p>
+  </div>
+</div>
+</section>
+
+*/
+
+.ncsplit {
+--image-position: center center;
+--text-color:#333;
+--bg-color:#f2f2f2;
+--text-space:3em;
+--box-min-height:550px;
+--content-max-width:450px;
+--display-caption:block;
+--caption-align: center;
+--img-width: 50%;
+
+--image-content-padding: var(--gap);
+--overlay-color:#000;
+--opacity:0.3;
+--text-horizontal: center;
+--text-vertical: center;
+--image-content-color:#fff;
+
+/* Global Variable */
+--width-max: 1400px;
+}
+
+.ncsplit { 
+width:100%;
+display:flex; 
+min-height:var(--box-min-height);
+background:var(--bg-color);
+}
+
+.ncsplit_image,
+.ncsplit_content { 
+display:flex;
+flex-grow:1;
+flex-direction:column;
+}
+
+.ncsplit_image { 
+background-size:cover;
+justify-content:flex-end;
+overflow:hidden;
+position:relative;
+margin:0; padding:0; border:none;
+flex-basis:var(--img-width);
+}
+
+.ncsplit_pic {
+width:100%;
+height:100%;
+position:absolute;
+left:0; right:0; bottom:0; top:0;
+max-width:100%;
+object-fit:cover;
+object-position:var(--image-position);
+display:block;
+}
+
+.ncsplit_caption {
+position:absolute;
+display:var(--display-caption);
+width:100%;
+color:#fff;
+padding:var(--gap, 1.5rem);
+padding-top:calc(var(--gap,1.5rem) * 3);
+font-size:0.8em;
+text-align:var(--caption-align);
+background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+}
+
+.ncsplit_content {
+ color:var(--text-color);
+ justify-content:center;
+ align-items:flex-start;
+ padding-right:var(--gap);
+ flex-basis: calc( 100% - var(--img-width) );
+}
+
+.ncsplit_contentcontain { 
+width:100%;
+max-width: var(--content-max-width);
+padding-left:var(--text-space);
+padding-right:0;
+}
+
+.ncsplit_contentcontain > :last-child {
+margin-bottom: 0;
+}
+
+/* Optional Image Overlay Content */
+
+.ncsplit_overlay,
+.ncsplit_imgcontent {
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+position: absolute;
+display: block;
+}
+
+.ncsplit_overlay {
+background-color:var(--overlay-color);
+opacity:var(--opacity);
+}
+
+.ncsplit_imgcontent {
+display: flex;
+flex-direction: column;
+padding:var(--image-content-padding); 
+align-items: var(--text-horizontal);
+justify-content: var(--text-vertical);
+color:var(--image-content-color);
+}
+
+/* Modifier Flip 
+ Change the position of the image
+*/
+
+.ncsplit-flip .ncsplit_content {
+order:-1;
+padding-left:var(--gap);
+padding-right:0;
+align-items:flex-end;
+}
+
+.ncsplit-flip .ncsplit_contentcontain {
+padding-right:var(--text-space);
+padding-left:0;
+}
+
+
+/* Modifier: Center */
+
+.ncsplit-center .ncsplit_content{
+align-items:center;
+padding-left:0 !important;
+padding-right:0 !important;  
+}
+
+.ncsplit-center .ncsplit_contentcontain{
+padding-left:0 !important;
+padding-right:0 !important;
+align-items:center;
+text-align:center;
+max-width: var(--content-max-width);
+width:calc(100% - 2 * var(--gap));
+}
+
+/* breakpoint stack 
+
+@media(max-width:640px){
+  .ncsplit {
+  flex-direction:column;
+  min-height:0;
+  }
+
+  .ncsplit_image {
+  min-height:none;
+  width:100%;
+  }
+
+  .ncsplit_pic {
+  position:static;
+  }
+
+  .ncsplit_content {
+  padding:var(--gap) 0 !important;
+  display:block;
+  }
+
+  .ncsplit_image, 
+  .ncsplit_content {
+  flex-basis: auto;
+  }
+
+  .ncsplit_contentcontain {
+  max-width:var(--content-max-width);
+  width:calc(100% - 2 * var(--gap));
+  margin:0 auto;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  }
+
+
+
+/* Modifier: Make the image always stack on top 
+.ncsplit-imagetop .ncsplit_image { order:1 }
+.ncsplit-imagetop .ncsplit_content { order:2 }
+
+}
+*/
+
+
+
+/* NC Text 
+
+<div class="nctext nctext-dropcap">
+<div class="ncontain">
+
+  <div class="nctext_before">
+    <h2>A Heading</h2>
+  </div>
+  
+  <div class="nctext_paragraphs">
+    <p>...</p>
+  </div>
+  
+  <div class="nctext_after">
+    <p>Something else to follow</p>
+  </div>
+  
+</div>
+</div>
+
+
+*/
+
+.nctext {
+--box-padding: 3em 0;
+--box-text-color:inherit;
+--box-bg-color:#fff;
+
+--column-gap: 3rem;
+--column-width: 220px;
+--column-count: auto;
+--column-rule:1px solid;
+
+--text-align: left;
+--text-indent: var(--gap, 1.5rem);
+--text-width: 1000px;
+
+--cap-size:5em;
+--cap-color:inherit;
+--cap-font: var(--serif, 'Domine');
+}
+
+
+.nctext {
+background:var(--box-bg-color);
+padding:var(--box-padding);
+color:var(--box-text-color);
+}
+
+.nctext .ncontain {
+max-width: var(--text-width);
+}
+
+.nctext_paragraphs p { margin-top:0; }
+
+.nctext .ncontain > *:last-child {
+margin-bottom:0;
+}
+
+.nctext_after {
+margin-top:var(--gap, 1.5rem);
+}
+
+/* Modifier for columns 
+
+If columns, must have class ".nctext-cols" added to parent to work
+*/
+
+.nctext-cols .nctext_paragraphs {
+column-gap: var(--column-gap);
+column-width: var(--column-width);
+column-count:var(--column-count);
+column-rule:var(--column-rule);
+text-align:var(--text-align);
+}
+
+@media(min-width:535px){
+  .nctext-cols .nctext_paragraphs p {
+      margin-bottom:0;
+  }
+  .nctext-cols .nctext_paragraphs > p:not(:first-of-type) {
+    text-indent:var(--text-indent);
+  }
+}
+/* Modifier: Adds a dropcap to the first paragraph */
+
+.nctext-dropcap .nctext_paragraphs > p:first-of-type:not(:focus)::first-letter,
+p.has-drop-cap:not(:focus)::first-letter,
+.dropcap {
+    float: left;
+    position: relative;
+    top: 0;
+    margin: 0 !important;
+    font-size: var(--capsize, 5em);
+    line-height: var(--cap-l-height, 0.9);
+    padding-right: var(--cap-padding, 1.5rem);
+    font-family: var(--cap-font, var(--serif));
+    font-weight: var(--cap-weight, bold);
+    height: var(--cap-height, 1em);
+    font-family: var(--cap-font);
+    color: var(--cap-color);
+}
+
+
+/* NC Divider 
+
+<div class="ncdivider ncdivider-overlaypreceding ncdivider-topleft">
+<div class="ncdivider_container">
+  <svg class="ncdivider_svg" xmlns="http://www.w3.org/2000/svg" width="1534" height="104" viewBox="0 0 1534 103">
+    <path d="M623,987.772l1534,104H623Z" transform="translate(-623 -987.772)" fill="#fff" class="ncdivider_color"/>
+  </svg>
+</div>
+</div>
+
+*/
+
+.ncdivider {
+position:relative;
+width:100%;
+z-index: 3;
+}
+
+.ncdivider_container {
+width:100%;
+left:0;
+}
+
+.ncdivider_svg {
+display:block;
+width:100%;
+height:auto;
+transform-origin:center
+}
+
+.ncdivider_color {
+fill:#000
+}
+
+/* 
+Modifiers
+Position options */
+
+.ncdivider-overlaynone .ncdivider_container {
+position:static;
+}
+
+.ncdivider-overlaypreceding .ncdivider_container {
+position:absolute;
+bottom:100%;
+}
+
+.ncdivider-overlaysucceeding .ncdivider_container {
+position:absolute;
+top:100%;
+z-index: 5;
+}
+
+
+/* 
+Modifiers 
+Rotating options */
+
+.ncdivider-topleft .ncdivider_svg {
+/* point top left */
+transform:scale(1, 1);
+}
+
+.ncdivider-topright .ncdivider_svg {
+/* point top right */
+transform:scale(-1, 1);
+}
+
+.ncdivider-bottomright .ncdivider_svg {
+/* point bottom right */
+transform:rotate(180deg);
+}
+
+.ncdivider-bottomleft .ncdivider_svg {
+/* point bottom left */
+transform:rotate(180deg)scale(-1, 1);
+}
+
+
+/* NC Search Reveal 
+
+<header>
+
+<!-- form sits as first thing in the header -->
+<form class="ncsearchreveal">
+  <input class="ncsearchreveal_input" id="ncsearchinput" name="s" type="search" placeholder="Search 300+ resources...">
+  <button class="ncsearchreveal_close" tablindex="0" type="button" title="close search">
+    <svg class="ncsearchreveal_x"></svg>
+  </button>
+</form>
+
+<div class="ncontain">
+
+  <b class="logo">Logo</b>
+  <nav>...</nav>
+
+  <!-- Reveal search box trigger label element -->
+  <label class="ncsearchtrigger" for="ncsearchinput" title="reveal search box">
+    <span hidden="">Search</span> 
+    <svg class="ncsearchtrigger_icon"></svg>
+  </label>
+
+</div>
+</header>
+
+*/
+
+.ncsearchtrigger {
+cursor:pointer;
+padding:3px; /* for Firefox and Edge */
+align-self: center;
+}
+
+.ncsearchtrigger_icon {
+display:block;
+height:1.5em;
+width:auto;
+fill:#000;
+transition:0.3s;
+transition-delay: 0.5s;
+}
+
+.ncsearchtrigger:hover .ncsearchtrigger_icon {
+fill:#000;
+}
+
+
+/* Search form, field, and close button */
+
+.ncsearchreveal {
+  --bg-color-start: #333;
+  --bg-color-end: #333;
+  --text-color: #fff;
+  --text-size: 1.2em;
+  --text-align: left;
+  --field-padding: 0.5rem 1.5rem;
+  --field-border: solid 1px #000;
+  --x-button-height: 1.5em;
+  --x-button-color: #fff;
+  --x-button-color-hover: #fff;
+}
+
+.ncsearchreveal {
+position:absolute;
+top:0;left:0;
+width:100%;
+height:100%;
+margin:0;
+
+/* for the positioning of the close button */
+display:flex;
+align-items:center;
+justify-content:flex-end;
+padding-left:1.5rem;
+padding-right:1.5rem;
+
+/* Must be hidden for header elements to interactive */
+visibility:hidden;
+}
+
+.ncsearchreveal_input {
+position:absolute;
+left:0;
+bottom:100%;
+height:100%;
+width:100%;
+padding:var(--field-padding);
+border:var(--field-border);
+outline:none;
+font-size:var(--text-size);
+background-color:var(--bg-color-start);
+color:var(--text-color);
+z-index:4;
+text-align:var(--text-align);
+transition:0.3s;
+transition-delay: 0.5s;
+visibility:visible; /* Must be visible to be interactive */
+}
+
+/* Currently this is hidden in place of a close field button */
+
+.ncsearchreveal_input::-webkit-search-cancel-button {
+ -webkit-appearance: none;
+height:1.5rem;
+width: 1.5rem;
+cursor:pointer;
+background-image:url('data:image/svg+xml;utf8,<svg alt="x icon" class="togglesearch active" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 131.395 131.396" enable-background="new 0 0 131.395 131.396" xml:space="preserve"><g fill="red"><rect x="-18.213" y="56.698" transform="matrix(0.7071 0.7071 -0.7071 0.7071 65.698 -27.2126)" width="167.821" height="17.999"></rect><rect x="56.697" y="-18.212" transform="matrix(0.7071 0.7071 -0.7071 0.7071 65.701 -27.2126)" width="18" height="167.819"></rect></g></svg>');
+  background-repeat:no-repeat;
+background-position:center;
+background-size:contain;
+display:none;
+}
+
+.ncsearchreveal_input:focus {
+bottom:0;
+top:auto;
+box-shadow:0 0 1em rgba(0,0,0,0.3);
+background-color:var(--bg-color-end);
+}
+
+.ncsearchreveal_close {
+  padding: 0 1em;
+  background: none;
+  border: none;
+  display: block;
+  cursor: pointer;
+  transition: 0.1s;
+  transition-delay: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+.ncsearchreveal_input:focus + .ncsearchreveal_close{
+visibility:visible;
+z-index:6;
+opacity:1;
+}
+
+.ncsearchreveal_x {
+height:var(--x-button-height); width:auto; display:block;
+}
+
+.ncsearchreveal_xcolor { fill:var(--x-button-color); transition:0.3s; transition-delay: 0.5s; }
+
+.ncsearchreveal_close:hover .ncsearchreveal_xcolor {
+fill:var(--x-button-color-hover);
+}
+
+/* NC Card 
+
+<div class="ncard">
+<a class="ncard_link" href="#">
+  <div class="ncard_container">
+    <div class="ncard_image">
+      <div class="ncard_imgcon">
+        <img class="ncard_img" src="" alt="" />
+      </div>
+    </div>
+    <div class="ncard_text">
+      <!-- Everything in here is up to the creator -->
+      <b class="ncard_pretext">Read Next &rarr;</b>
+      <div class="ncard_title">Is God mad at you for not going to church?</div>
+      <!-- end creative HTML -->
+    </div>
+  </div>
+</a>
+</div>
+
+
+*/
+
+.ncard {
+--card-padding:0;
+--card-margin-bottom: 0;
+--card-bg-color:#fff;
+--card-bg-color-hover:#fff;
+--card-flex-direction:row;
+--card-border: solid 1px #ddd;
+--card-border-hover: solid 1px #aaa;
+--card-bshadow: none;
+
+--image-width:30%;
+--image-height:70%;
+--text-padding:1em;
+
+--border-radius: 5px;
+--pretext-color:currentColor;
+
+--text-size:1em;
+--text-color: #000;
+--text-color-hover: #000;
+
+--trans-speed:0.3s ease-in-out;
+
+}
+
+.ncard { 
+  width:100%; 
+  max-width:100%; 
+  position:relative; 
+  margin-bottom:var(--card-margin-bottom);
+ }
+
+.ncard_link {
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+.ncard_container {
+display:flex;
+position:relative;
+background:var(--card-bg-color);
+padding:var(--card-padding);
+flex-direction:var(--card-flex-direction);
+border:var(--card-border);
+box-shadow:var(--card-bshadow);
+transition:var(--trans-speed);
+border-radius: var(--border-radius);
+overflow: hidden;
+}
+
+.ncard:hover .ncard_container {
+background:var(--card-bg-color-hover);
+border:var(--card-border-hover);
+}
+
+.ncard_image {
+flex-basis:var(--image-width);
+min-width:var(--image-width);
+overflow:hidden;
+background-color: #eee;
+}
+
+.ncard_imgcon {
+  padding-top:var(--image-height);
+  width:100%;
+  height:var(--image-height);
+  min-height:100%;
+  display:block;
+  position:relative;
+}
+
+.ncard_img {
+  position:absolute;
+  object-fit:cover;
+  top:0; left:0;
+  display:block;
+  width:100%;
+  height:100%;
+  transition:var(--trans-speed);
+}
+
+.ncard:hover .ncard_img {
+  transform:scale(1.4);
+}
+
+.ncard_text {
+display:flex;
+flex-grow:1;
+flex-direction:column;
+justify-content:center;
+font-size:var(--text-size);
+color:var(--text-color);
+padding:var(--text-padding);
+transition:var(--trans-speed);
+min-width: 0; /* This is needed if you use truncated content within a flexbox */
+}
+
+.ncard:hover .ncard_text {
+color:var(--text-color-hover);
+}
+
+/* NC Card box */
+
+.ncard_box {
+--box-padding: 3em 0;
+--box-text-color: #000;
+--bg-color: #fff;
+--contain-max-width: 1400px;
+}
+
+.ncard_box {
+padding: var(--box-padding);
+color: var(--box-text-color);
+background: var(--bg-color);
+}
+
+.ncard_box .ncontain {
+max-width: var(--contain-max-width);
+}
+
+.ncard_after {
+margin-top:var(--gap);
+}
+
+/* ----------------- Single Link --------------- */
+
+
+.ncard-singlelink { margin-bottom:var(--gap); }
+.ncard-singlelink .ncard_posttext { margin-top: 0.5rem; }
+
+.ncard-singlelink .ncard_title { white-space: normal; line-height: 1.3; }
+.ncard-singlelink .ncard_title strong { font-weight:600; color:var(--pretext-color); }
+.ncard-singlelink .ncard_url { 
+  font-size: 0.5em; display:block; overflow:hidden; white-space: nowrap;  text-overflow: ellipsis; 
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%
+}
+
+.ncard-singlelink .ncard_url svg {
+  height: 1em;
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+.ncard-singlelink .ncard-noimage {
+  background-color: #eee;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23fff" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg>');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: 30% auto;
+}
+
+/* ------- Responsive ------- 
+
+@media(max-width:430px){
+
+.ncard {
+  --card-flex-direction:column;
+  --image-width:30%;
+  --image-height:40%;
+  --text-size:0.8em;
+  --text-padding:1em;
+}
+
+}
+
+*/
+
+
+/* ----------------------- WordPress Blocks ------------------------ */
+
+/* Group Block Width */
+
+.wp-block-group.wide,
+.wp-block-group.standard,
+.wp-block-group.max  {
+    max-width: 100% !important;
+    width: 100%  !important;
+}
+
+    .wp-block-group.wide > .wp-block-group__inner-container,
+    .wp-block-group.standard > .wp-block-group__inner-container,
+    .wp-block-group.max > .wp-block-group__inner-container {
+        width:calc( 100% - (2 * var(--gap) ) );
+        margin-left:auto; margin-right:auto;
+    }
+
+    .wp-block-group.wide > .wp-block-group__inner-container {
+        max-width:var(--width-wide);
+    }
+
+    .wp-block-group.standard > .wp-block-group__inner-container {
+        max-width:var(--width-standard);
+    }
+
+    .wp-block-group.max > .wp-block-group__inner-container {
+      max-width:var(--width-max);
+  }    
+
+/* video */
+
+.wp-block-video.alignwide video,
+.wp-block-video.alignfull video {
+    width:100%;
+    display:block;
+}
+
+.wp-block-video {
+    margin-bottom:var(--gap);
+}
+
+/* Seperator */
+
+.wp-block-separator {
+    margin:var(--margin, 1.5rem auto);
+    border-top: var(--border-top, solid 1px #eee);
+    border-bottom: none !important;
+}
+
+.wp-block-separator.is-style-wide {
+    width: 100%;
+    max-width: 100%;
+}
+
+.wp-block-separator.is-style-dots:before {
+    content: "\00b7 \00b7 \00b7";
+    color: inherit;
+    font-size: 3em;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    font-family: serif;
+    font-weight: bold;
+    border:none;
+}
+
+/* Gallery */
+
+.wp-block-gallery .blocks-gallery-item figcaption {
+    color:#fff !important;
+}
+
+/* Audio Block */
+
+.wp-block-audio {
+    margin-bottom: var(--gap);
+}
+
+/* Image */
+
+.wp-block-image { margin-bottom: var(--gap); }
+
+.wp-block-image img {  display: block; }
+
+.wp-block-image .alignfull img,
+.wp-block-image .alignwide img {  width:100%; }
+
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-video.alignleft video,
+.wp-block-video.alignright video {
+    max-width: calc(50% - var(--gap));
+}
+
+.wp-block-image .alignleft,
+.wp-block-video.alignleft video {
+    float: left;
+    margin-right: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+.wp-block-image .alignright,
+.wp-block-video.alignright video {
+    float: right;
+    margin-left: var(--gap);
+    margin-bottom:var(--gap);
+}
+
+
+
+@media(max-width:640px){
+    .wp-block-image .alignleft,
+    .wp-block-image .alignright,
+    .wp-block-video.alignleft video,
+    .wp-block-video.alignright video {
+        max-width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        float:none;
+    }
+}
+
+.wp-block-image figcaption {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.75rem var(--gap) 0;
+}
+
+.wp-block-image figcaption {
+    text-align:left;
+    color:#000;
+    font-size:0.8em;
+}
+
+/* Paragraph */
+
+p.has-background {
+	padding:var(--gap);
+}
+
+
+/* Captions */
+
+.wp-caption {
+    max-width: 100% !important;
+}
+
+.wp-caption.alignnone {
+    margin-bottom: 1em;
+}
+
+.wp-caption img {
+    width: 100%;
+    display: block;
+}
+
+.wp-caption-text {
+    padding: 0.5em 1.5rem 0;
+    font-size: 0.8rem;
+}
+
+.wp-gallery-item-title {
+    display: block;
+}
+
+.wp-caption-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Pullquotes */
+
+.wp-block-pullquote {
+    border:none;
+    margin-bottom: var(--gap);
+    padding:0;
+    font-weight: normal;
+    font-family: var(--serif);
+}
+
+.wp-block-pullquote.alignleft, 
+.wp-block-pullquote.alignright {
+    max-width: var(--width-standard);
+}
+
+.wp-block-pullquote.alignfull {
+    padding: 0 var(--gap);
+}
+
+.wp-block-pullquote.alignfull,
+.wp-block-pullquote.alignwide,
+.wp-block-pullquote.aligncenter {
+	margin:3rem auto;
+}
+
+.wp-block-pullquote blockquote {
+    border-bottom: solid 3px;
+    border-top: solid 3px;
+    padding: var(--gap);
+    margin: 0;
+    font-weight: normal;
+}
+
+.wp-block-pullquote blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+.wp-block-pullquote.alignleft blockquote,
+.wp-block-pullquote.alignright blockquote {
+    max-width: 33%;
+    margin-top: 0.5rem;
+    margin-bottom: var(--gap);
+}
+
+.wp-block-pullquote.alignleft blockquote {
+    float:left;
+    margin-right:3rem;
+}
+
+.wp-block-pullquote.alignright blockquote {
+    float:right;
+    margin-left:3rem;
+}
+
+
+
+@media(max-width:640px){
+    .wp-block-pullquote.alignleft blockquote,
+    .wp-block-pullquote.alignright blockquote {
+        max-width:100%;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        float:none;
+    }
+}
+
+.wp-block-pullquote blockquote { margin-bottom:0 }
+.wp-block-pullquote p {
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+.wp-block-pullquote cite { opacity:0.7; font-size:0.8em; display:block; margin-top:-0.75rem  }
+
+/* Embeds (Videos) */
+
+.wp-block-embed { margin-bottom:var(--gap); }
+
+/* Block Quote */
+
+.wp-block-quote,
+.wp-block-quote.is-large, 
+.wp-block-quote.is-style-large {
+	position:relative;
+	padding:0.75rem var(--gap);
+	padding-left: 2rem;
+    font-weight: normal;
+    border:none;
+}
+
+.wp-block-quote sup {
+	font-size: .7em;
+    vertical-align: baseline;
+}
+
+.wp-block-quote strong,
+.wp-block-quote b {
+  box-shadow: inset 0 -0.6em 0 0 lightgoldenrodyellow;
+  font-weight: normal;
+}
+
+.wp-block-quote:before {
+	content:'';
+	display:block;
+	width:1em;
+	height:1.5em;
+    background-position: center;
+    background-repeat:no-repeat;
+    /* Change the color of the item here: fill="%23000" fill="#000" */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="71.868" height="58.271" viewBox="0 0 71.868 58.271"><g transform="translate(-176.251 -397.897)"><path fill="%23000" d="M42.193-143.089a27.243,27.243,0,0,1-3.129,13,44.288,44.288,0,0,1-7.338,10.2,61.03,61.03,0,0,1-9.5,7.931,88.089,88.089,0,0,1-8.309,5.126L10.251-113.2q4.424-2.59,8.471-5.342a32.381,32.381,0,0,0,6.2-5.234,29.751,29.751,0,0,0,4.64-6.744,25.418,25.418,0,0,0,2.158-9.226h-5.18q-6.8,0-10.575-3.453t-3.777-9.6a12.517,12.517,0,0,1,3.453-8.363,11.845,11.845,0,0,1,9.388-3.939q9.172,0,13.165,6.1T42.193-143.089Zm39.927,0a27.243,27.243,0,0,1-3.129,13,44.288,44.288,0,0,1-7.338,10.2,61.03,61.03,0,0,1-9.5,7.931,88.09,88.09,0,0,1-8.309,5.126L50.178-113.2q4.424-2.59,8.471-5.342a32.381,32.381,0,0,0,6.2-5.234,29.751,29.751,0,0,0,4.64-6.744,25.418,25.418,0,0,0,2.158-9.226h-5.18q-6.8,0-10.575-3.453t-3.777-9.6a12.517,12.517,0,0,1,3.453-8.363,11.845,11.845,0,0,1,9.388-3.939q9.172,0,13.165,6.1T82.12-143.089Z" transform="translate(258.371 291.066) rotate(180)"/></g></svg>');
+    background-size:contain;
+	position:absolute;
+	left:0;
+}
+
+.wp-block-quote.alt-blockquote {
+	padding: 0 var(--gap);
+	margin-top:2rem;
+	margin-bottom:2rem;
+	border-left:3px solid #eee;
+	position:relative;
+	left:6px;
+	font-style:italic;
+}
+
+.wp-block-quote.alt-blockquote:before { display:none; }
+
+.wp-block-quote p:last-of-type { margin-bottom:calc( var(--gap) / 2); }
+
+.wp-block-quote cite { opacity:0.7; font-size:0.8em}
+
+cite:before { content:'\2014'; padding-right:0.3em }
+
+.wp-block-quote.is-large, 
+.wp-block-quote.is-style-large {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.wp-block-quote.is-large p, 
+.wp-block-quote.is-style-large p {
+	font-size:1.5em;
+	font-style: normal;
+}
+
+/* Cover Block */
+
+.wp-block-cover-container > .wp-block-cover.alignleft,
+.wp-block-cover-container > .wp-block-cover.alignright {
+    max-width: 50%;
+    margin-bottom: var(--gap);
+}
+
+.wp-block-cover-container > .wp-block-cover.alignleft { float:left; margin-right:var(--gap); }
+.wp-block-cover-container > .wp-block-cover.alignright { float:right; margin-left:var(--gap); }
+
+@media(max-width:640px){
+    .wp-block-cover-container > .wp-block-cover.alignleft,
+    .wp-block-cover-container > .wp-block-cover.alignright {
+        max-width: 100%;
+        width:100%;
+        float:none;
+        margin-left:0;
+        margin-right:0;
+    }
+}
+
+/* Tables */
+
+.wp-block-table { margin-bottom:var(--gap);}
+.wp-block-table table { min-width: 768px; margin-bottom:0 }
+
+.wp-block-table table,
+.wp-block-table thead,
+.wp-block-table td,
+.wp-block-table tr,
+.wp-block-table tbody { border: var(--border); padding:0.5em; border-collapse:collapse; }
+
+/* Media Text Blocks */
+
+.wp-block-media-text .wp-block-media-text__content { padding:var(--gap); }
+
+.wp-block-media-text { margin-bottom: var(--gap); }
+
+
+/* Code Blocks */
+
+.wp-block-code {
+	padding:var(--gap);
+	background-color:#222;
+    color:#eee;
+    overflow-x:auto;
+}
+
+/* Widget Styles */
+
+.widget_rss ul li, 
+.widget_recent_entries ul li, 
+.widget_recent_comments .recentcomments {
+    margin-bottom: 1em;
+}
+
+.widget {
+    margin-bottom:var(--gap);
+}
+
+.widget ul {
+    list-style-type: none;
+}
+
+.widget ul, .widget_nav.navmenu div > ul {
+    padding-left: 0;
+}
+
+.widget ul ul {
+    margin-bottom: 0;
+    padding-left: 1em;
+}
+
+.widget_rss .rss-date, 
+.widget_recent_entries .post-date, 
+.widget_recent_comments .comment-author-link + a {
+    font-size: 0.8em;
+    display: block;
+}
+
+.widget_header {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:0.8em;
+}
+
+.widget_rss .rss-date, 
+.widget_recent_entries .post-date,
+.nctrpsw_date.post-date {
+    opacity: 0.7;
+    font-size: 0.7em;
+}
+
+.widget_rss li a.rsswidget {
+    font-weight: bold;
+}
+
+.widget_calendar #calendar_wrap {
+    font-size: 0.7em;
+}
+
+.widget form input[type="text"], 
+.widget form input[type="password"], 
+.widget select {
+    width: 100%;
+}
+
+.widget form label {
+    font-size: 0.8em;
+    width: auto;
+}
+
+/* Site Pagination */
+
+.pagination {
+  --pgbgcolor:var(--gray);
+  --pgtextcolor:#222;
+
+  --pgbgcolor-hover:var(--link-color);
+  --pgtextcolor-hover:#fff;
+
+  --pgbgcolor-current:#222;
+  --pgtextcolor-current:#fff;
+
+  --pgradius:5px;
+  --pgbordercolor:#eee;
+}
+
+.pagination {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin-top:var(--gap);
+  margin-bottom:3rem;
+}
+
+.pagination .page-numbers {
+  padding: 0.5em;
+  border-radius: var(--pgradius);
+  text-align: center;
+  background-color: var(--pgbgcolor);
+  margin: 0.25em;
+  font-weight: bold;
+  width: 3em;
+  border:solid 1px var(--pgbordercolor);
+  transition: .3s;
+}
+
+.pagination .page-numbers:first-child {
+  margin-left: 0;
+}
+
+.pagination .page-numbers:last-child {
+  margin-right: 0;
+}
+
+.pagination .page-numbers.dots {
+  cursor: default;
+}
+
+.pagination .page-numbers:hover:not(.dots):not(.current) {
+  background-color: var(--pgbgcolor-hover);
+  color: var(--pgtextcolor-hover);
+  border:solid 1px var(--pgbgcolor-hover);
+}
+
+.pagination a.page-numbers {
+  color: var(--pgtextcolor);
+}
+
+.pagination_prev:before {
+  content: '\2039';
+}
+
+.pagination_next:before {
+  content: '\203A';
+}
+
+.pagination .page-numbers.current {
+  background-color: var(--pgbgcolor-current);
+  color: var(--pgtextcolor-current);
+  border:solid 1px var(--pgbgcolor-current);
+  cursor: default;
+}
+
+
+/* Next Previous Links */
+
+.nplinks {
+  --carrat-color: #000;
+  --carrat-width: 4rem;
+  --divider-color: #ddd;
+  --divider-width: 0;
+  --top-border: solid 1px #ddd;
+  --nptextcolor: #000;
+  --nptextcolor-hover: #000;
+  --npbgcolor: #fff;
+  --npbgcolor-hover: lightyellow;
+}
+
+.nplinks {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: var(--divider-width);
+  background: var(--divider-color);
+  border-top:var(--top-border);
+  margin: 0;
+}
+
+.nplinks a {
+  display: flex;
+  padding:3rem 0;
+  font-weight: normal;
+  background:var(--npbgcolor);
+  transition: 0.5s;
+  align-items:center;
+  position:relative;
+  color: var(--nptextcolor)
+}
+
+.nplinks_prev {
+  justify-content: flex-end;
+}
+
+.nplinks_next {
+  justify-content: flex-start;
+}
+
+.nplinks_next .nplinks_text { 
+  text-align:right; 
+}
+
+.nplinks a:hover {
+  color: var(--nptextcolor-hover);
+  box-shadow:inset 0 -10em 0 var(--npbgcolor-hover);
+}
+
+.nplinks_text {
+  display: block;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nplinks_prevwrapper .nplinks_text {
+  padding-right:var(--gap);
+}
+
+.nplinks_nextwrapper .nplinks_text {
+  padding-left:var(--gap);
+}
+
+.nplinks_prevwrapper,
+.nplinks_nextwrapper{
+  position:relative;
+  width: calc(100% - var(--gap));
+  max-width: calc( var(--width-max) / 2);
+}
+
+.nplinks_prevwrapper {
+  padding-left:var(--carrat-width);
+}
+
+.nplinks_nextwrapper {
+  padding-right:var(--carrat-width);
+}
+
+.nplinks a:only-child .nplinks_prevwrapper,
+.nplinks a:only-child .nplinks_nextwrapper {
+  max-width:var(--width-max);
+  width:calc(100% - (var(--gap) * 2));
+  margin: 0 auto;
+}
+
+.nplinks_prevwrapper:before,
+.nplinks_nextwrapper:after {
+  font-size: 2.7em;
+  line-height: 0;
+  position: absolute;
+  top: 0.5em;
+  color: var(--carrat-color);
+  width: var(--carrat-width);
+  display: block;
+  font-weight: normal;
+  transition: 0.3s;
+  font-family: 'ncicon';
+}
+
+.nplinks_prevwrapper:before {
+  content:'\e901';
+  left:0;
+}
+
+.nplinks_nextwrapper:after {
+  content:'\e902';
+  text-align: right;
+  right: 0;
+}
+
+
+.nplinks_prev:hover .nplinks_prevwrapper:before {
+  color:currentColor
+}
+
+.nplinks_next:hover .nplinks_nextwrapper:after {
+  color:currentColor
+}
+
+.nplinks b {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+@media(max-width:640px){
+  .nplinks { grid-template-columns:1fr; }
+
+  .nplinks_prevwrapper:before,
+  .nplinks_nextwrapper:after {
+      display: none;
+      content:none;
+  }
+
+  .nplinks_text,
+  .nplinks_prevwrapper,
+  .nplinks_nextwrapper {
+      padding-left:0 !important;
+      padding-right:0 !important;
+  }
+
+  .nplinks_prev { justify-content:flex-start; }
+  .nplinks_next .nplinks_text { text-align:left; }
+
+  .nplinks_text {
+      display: block;
+      overflow: visible;
+      white-space: normal;
+  }
+
+  .nplinks_hr + .ncontain { width:100%; max-width:100% }
+  .nplinks a { padding:var(--gap) }
+  .nplinks a:only-child { padding: var(--gap) 0; }
+  .nplinks_prev { order:2 }
+}
+
+
+/* Taxonomy (Tags and Categories) */
+
+.taxonomy {
+  position: relative;
+  margin-top:3rem;
+  margin-bottom:var(--gap);
+}
+
+.taxonomy + .taxonomy {
+  margin-top:var(--gap);
+  margin-bottom:3rem;
+}
+
+.taxonomy_label {
+  font-weight: normal;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  margin-bottom:0.5rem;
+}
+
+.taxonomy-tags .taxonomy_anchors,
+.taxonomy-categories .taxonomy_anchors ul {
+  display: grid;
+  grid-gap:0.5rem;
+  grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
+  width: 100%;
+}
+
+.ncontent_main .taxonomy_anchors a {
+  font-size: 0.7em;
+  color: currentColor !important;
+  text-decoration: none !important;
+  padding: 0.75em;
+  background-color: var(--gray);
+  border-radius: 0;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  text-transform:lowercase;
+  transition:0.3s;
+}
+
+.taxonomy_anchors a:hover {
+  background-color: lightyellow;
+}
+
+
+/* for WordPress Categories: they print things out in lists */
+
+.taxonomy_anchors ul,
+.taxonomy_anchors li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 !important;
+}
+
+.taxonomy_anchors li a {
+  display: block;
+
+}
+
+
+/* Social Buttons */
+/* The HTML <nav class="socialbuttons"> <a href="#1" class="socialbuttons_link socialbuttons_facebook"> <svg alt="name of icon"> <path fill="#000"></path> </svg> </a> </nav> */
+
+.socialbuttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socialbuttons_link svg {
+  width: 1.25em;
+}
+
+.socialbuttons_link {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  align-self: flex-start;
+  background-color: #ccc;
+  /* margin-bottom: 0.5em; */
+  margin-right: 0.5em;
+}
+
+.socialbuttons_link path {
+  fill: #fff;
+}
+
+.socialbuttons_facebook {
+  background-color: #3b579d;
+}
+
+.socialbuttons_twitter {
+  background-color: #1da1f2;
+}
+
+.socialbuttons_linkedin {
+  background-color: #0077b5;
+}
+
+.socialbuttons_pinterest {
+  background-color: #bd081c;
+}
+
+.socialbuttons_youtube {
+  background-color: #ff0000;
+}
+
+.socialbuttons_googleplus {
+  background-color: #db4437;
+}
+
+.socialbuttons_instagram {
+  background-color: #fb3958;
+}
+
+.socialbuttons_personal {
+  background-color: #9b6954;
+}
+
+.socialbuttons_email {
+  background-color: #999;
+}
+
+.socialbuttons_vimeo {
+  background-color: #1ab7ea;
+}
+
+.socialbuttons_tumblr {
+  background-color: #36465d;
+}
+
+
+
+/* Date Module */
+
+.ddate {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  line-height: 1;
+  width: fit-content;
+  font-family: var(--mono);
+}
+
+.ddate_month {
+  letter-spacing: 0.2em;
+  position: relative;
+  left: 0.1em;
+}
+
+.ddate_day {
+  font-family: var(--sans);
+}
+
+.ddate_month, .ddate_year {
+  font-size: 0.5em;
+}
+
+.ddate_link {
+  display: flex;
+  margin: 1em 0
+}
+
+.ddate_link:last-of-type {
+  margin-bottom: 0;
+}
+
+.ddate_link .ddate {
+  margin-right: 1rem;
+}
+
+.ddate_year {
+  font-family: var(--mono)
+}
+
+
+/*-------------------- NC Classes -----------------------*/
+
+/* List to columns */
+
+.nclist2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px,1fr));
+  grid-column-gap: var(--gap,1.5rem);
+  grid-row-gap:0.5rem;
+}
+
+/* Image wrap */
+
+.imagewrap {
+  shape-margin: var(--gap,1.5rem);
+  shape-image-threshold: 0.5;
+  /* This class is used to trigger JS that will add the shape-outside property to wrap text around images */
+}
+
+.imagewrap-left {
+  float:left;
+  margin-right:1em;
+}
+
+.imagewrap-right {
+  float:right;
+  margin-left:1em;
+}
+
+.imagewrap-left,
+.imagewrap-right {
+  max-width:50%;
+  margin-bottom:1em;
+}
+
+/* Clearfix */
+
+.clear:after, .clear:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clear, .clear {
+  clear: both;
+}
+
+/* Text Formatting */
+
+
+.txt-xxxlarge { font-size:var(--txt-xxxlarge) }
+
+.txt-xxlarge,
+.has-huge-font-size { font-size:var(--txt-xxlarge) }
+
+.txt-xlarge,
+.has-larger-font-size { font-size:var(--txt-xlarge) }
+
+.txt-large,
+.has-large-font-size { font-size:var(--txt-large) }
+
+.txt-medium,
+.has-medium-font-size { font-size:var(--txt-medium) }
+
+.txt-base,
+.has-normal-font-size,
+.has-regular-font-size { font-size:var(--txt-base) }
+
+.txt-small,
+.has-small-font-size { font-size: var(--txt-small) }
+
+.txt-xsmall { font-size:var(--txt-xsmall) }
+
+.txt-bold {
+  font-weight: bold !important
+}
+
+.txt-normal {
+  font-weight: normal !important
+}
+
+.txt-italic {
+  font-style: italic !important
+}
+
+.txt-upper, 
+.txt-uppercase {
+  text-transform: uppercase;
+}
+
+/* Turn paragraph into a column */
+
+p.paracolumns2,
+p.paracolumns3 {
+  column-gap: var(--gap);
+  column-width: 220px;
+}
+
+p.paracolumns2 { column-count: 2; }
+p.paracolumns3 { column-count: 3; }
+
+
+.nowrap {
+  white-space: nowrap;
+  word-break: normal !important;
+}
+
+.prewrap {
+  white-space: pre-wrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Ellipsis */
+
+.textcut, 
+.textcut-child > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.textcut,
+.textcut-child > * {
+  white-space: nowrap
+}
+
+/* Left Icons 
+
+Targeting fontawesome icons that sit within headings (h3) of a list element (li)
+
+*/
+
+.lefticons h2,
+.lefticons h3,
+.lefticons h4 {
+  position:static;
+}
+
+.lefticons {
+  --icon-color:currentColor;
+  --icon-size: 1.5rem;
+  --icon-space: calc( var(--icon-size) + 0.75rem );
+}
+
+.lefticons li {
+padding-left:var(--icon-space);
+position:relative
+}
+  
+.lefticons h2 i,
+.lefticons h3 i,
+.lefticons h4 i {
+color:var(--icon-color);
+font-size:var(--icon-size);
+display:block;
+margin-bottom:0.5em;
+position:absolute;
+left:0; top:0
+}
+
+
+/* Custom Bullets 
+Must be applied to UL and OL elements */
+
+.custommarker {
+  --marker-color:inherit;
+  --marker-space: 1.5em;
+  --marker-icon: '\2022';
+  --marker-decimal: ".";
+  --marker-font:inherit;
+  --marker-weight:normal;
+  }
+  
+  .custommarker {
+  list-style-type:none;
+  margin-left:0; padding:0;
+  }
+  
+  .custommarker li {
+  position:relative;
+  }
+  
+  .custommarker li:before {
+  content: var(--marker-icon);
+  color: var(--marker-color);
+  font-size:1em;
+  font-weight:var(--marker-weight);
+  font-family: var(--marker-font);
+  position:absolute;
+  top:0;
+  left:0;
+  }
+
+
+  ul.custommarker li {
+      padding-left:var(--marker-space);
+  }
+
+  ul.custommarker li:before {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:var(--marker-space);
+  }
+  
+/* Ordered Lists*/
+
+  ol.custommarker {
+    counter-reset: section;
+  }
+  
+  ol.custommarker li:before {
+    counter-increment: section;
+    content: counter(section, decimal) var(--marker-decimal);
+    color: var(--marker-color);
+    font-weight:var(--marker-weight);
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: calc( var(--marker-space) + 0.25em);
+    font-feature-settings: "tnum";
+  }
+  
+  ol.custommarker li {
+    padding-left:calc(var(--marker-space) + 0.5em);
+  }
+
+/* SVG Icon */
+
+  .ncsvgicon {
+    --icon-bg-color:#ccc;
+    --icon-color:#000;
+    --icon-padding:0.7em;
+    --icon-border-radius:50%;
+    --icon-width:45px;
+    --icon-margin:0 0 0.5em 0;
+  }
+
+  .ncsvgicon {
+    background:var(--icon-bg-color);
+    padding:var(--icon-padding);
+    border-radius:var(--icon-border-radius);
+    width:var(--icon-width);
+    height: var(--icon-width);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:var(--icon-margin);
+  }
+
+  .ncsvgicon svg {
+    display:block;
+    width:100%;
+    height: auto;
+  }
+
+  .ncsvgicon svg path {
+    fill:var(--icon-color);
+  }
+
+  /* Light and Dark Blocks */
+
+  .ncblock-light p,
+  .ncblock-light li,
+  .ncblock-light dd,
+  .ncblock-light td {
+    color: var(--txt-dark);
+  }
+
+  .ncblock-dark p,
+  .ncblock-dark li,
+  .ncblock-dark dd,
+  .ncblock-dark td {
+    color: var(--txt-light);
+  }
+
+/* Read More */
+
+  .ncreadmore {
+    display:inline-flex;
+    align-items: center;
+  }
+
+  .ncreadmore:after { 
+    content: '\e902';
+    font-family: 'ncicon';
+    padding-left:0.5em;
+    font-size:var(--txt-small);
+    line-height: 0;
+    transition:0.3s;
+    position: relative;
+    left:0;
+  }
+
+  .ncreadmore:hover:after { 
+    left:0.5em;
+  }

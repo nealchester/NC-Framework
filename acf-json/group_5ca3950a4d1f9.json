@@ -1,0 +1,218 @@
+{
+    "key": "group_5ca3950a4d1f9",
+    "title": "Block: NC Divider",
+    "fields": [
+        {
+            "key": "field_5ca3950a52fd3",
+            "label": "Options",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f2d922d470c1",
+            "label": "Divider Style",
+            "name": "divider_style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tilt": "tilt",
+                "sand hill": "sand hill",
+                "curve": "curve",
+                "curve invert": "curve invert",
+                "curve asem": "curve asem",
+                "curve asem invert": "curve asem invert",
+                "triangle": "triangle",
+                "triangle invert": "triangle invert",
+                "pyramids": "pyramids",
+                "pyramids invert": "pyramids invert"
+            },
+            "default_value": "tilt",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ca3950a5315c",
+            "label": "Position",
+            "name": "position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncdivider-overlaynone": "Overlay none",
+                "ncdivider-overlaypreceding": "Overlay preceding section",
+                "ncdivider-overlaysucceeding": "Overlay succeeding section"
+            },
+            "default_value": [
+                "ncdivider-overlaynone"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ca395b76045c",
+            "label": "Rotate",
+            "name": "rotate",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncdivider-topleft": "Top left",
+                "ncdivider-topright": "Top right",
+                "ncdivider-bottomleft": "Bottom left",
+                "ncdivider-bottomright": "Bottom right"
+            },
+            "default_value": [
+                "ncdivider-topleft"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ca3950a5313c",
+            "label": "Divider Color",
+            "name": "divider_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ccc"
+        },
+        {
+            "key": "field_5ca396076045d",
+            "label": "Background Color",
+            "name": "bgcolor",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5ca4cbc171867",
+            "label": "Custom SVG",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ca3950a5301a",
+            "label": "SVG code",
+            "name": "custom_svg",
+            "type": "textarea",
+            "instructions": "SVG images are best used for easy scaling and color change with CSS. Paste the entire SVG code here. This block will attempt to style the graphic's color, but correct display isn't guaranteed. You may have to alter your code to make the graphic display correctly. Best results are found with a united shape.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "<svg>...<\/svg> or <img src=\"image.png\" width=\"100%\" alt=\"divider\" \/>",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5e232e7197699",
+            "label": "Custom Code",
+            "name": "custom_code",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5e221e7d71f1d"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nc-divider"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1604003220
+}

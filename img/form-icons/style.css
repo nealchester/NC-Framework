@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'ncicon';
+  src:
+    url('fonts/ncicon.ttf?7dw6w1') format('truetype'),
+    url('fonts/ncicon.woff?7dw6w1') format('woff'),
+    url('fonts/ncicon.svg?7dw6w1#ncicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ncicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ncicon-arrow-back:before {
+  content: "\e901";
+}
+.ncicon-arrow-forward:before {
+  content: "\e902";
+}
+.ncicon-check-square:before {
+  content: "\e900";
+}
+.ncicon-checkbox-checked:before {
+  content: "\ea52";
+}
+.ncicon-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.ncicon-radio-checked:before {
+  content: "\ea55";
+}
+.ncicon-radio-unchecked:before {
+  content: "\ea56";
+}
+.ncicon-reply:before {
+  content: "\e96a";
+}

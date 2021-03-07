@@ -1,0 +1,1 @@
+<?php edit_post_link('<i>&#9998;</i> Edit','<div class="edit-link">', ' </div>' ); ?>

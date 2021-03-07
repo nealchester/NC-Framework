@@ -1,0 +1,509 @@
+{
+    "key": "group_5c97974b948aa",
+    "title": "Block: NC Gallery",
+    "fields": [
+        {
+            "key": "field_5c97974b9dc44",
+            "label": "Images",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c97974b9dc8f",
+            "label": "",
+            "name": "the_gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "insert": "prepend",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpeg, jpg, png"
+        },
+        {
+            "key": "field_5c97974b9dd6c",
+            "label": "Layout",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c97974b9dd99",
+            "label": "Column Style",
+            "name": "column_style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncolumns-standard": "Standard",
+                "ncolumns-mason": "Mason (experimental)"
+            },
+            "default_value": [
+                "ncolumns-standard"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c97974b9dde5",
+            "label": "Fixed or Auto Grid",
+            "name": "column_layout",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncolumns-fixed": "Fixed",
+                "ncolumns-auto": "Auto"
+            },
+            "default_value": [
+                "ncolumns-fixed"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c97974b9de31",
+            "label": "Column Count",
+            "name": "column_count",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c97974b9dde5",
+                        "operator": "==",
+                        "value": "ncolumns-fixed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "min": 1,
+            "max": 9,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5c97974b9de7d",
+            "label": "Column Gap",
+            "name": "column_gap",
+            "type": "text",
+            "instructions": "Column gap spacing",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1.5rem",
+            "placeholder": "1.5rem",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c97974b9dec9",
+            "label": "Row Gap",
+            "name": "row_gap",
+            "type": "text",
+            "instructions": "Row gap spacing",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1.5rem",
+            "placeholder": "1.5rem",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c980c5f94211",
+            "label": "Thumb Shape",
+            "name": "thumb_shape",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "70%": "Standard",
+                "50%": "Wide",
+                "100%": "Square",
+                "150%": "Tall"
+            },
+            "default_value": [
+                "70%"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f6a0d9999b09",
+            "label": "Thumb Image Size",
+            "name": "thumb_image_size",
+            "type": "text",
+            "instructions": "thumbnail, medium, large, full, custom",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "medium",
+            "placeholder": "medium",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cf6f9124ea2a",
+            "label": "Thumb Min Width",
+            "name": "thumb_min_width",
+            "type": "number",
+            "instructions": "Set the thumbnail's minimum width",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 150,
+            "placeholder": 150,
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5c97a9db7ed73",
+            "label": "Meta Display",
+            "name": "meta_display",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "titles": "Titles",
+                "captions": "Captions"
+            },
+            "allow_custom": 0,
+            "default_value": [
+                "titles",
+                "captions"
+            ],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5c979cd6b2116",
+            "label": "Meta Position",
+            "name": "meta_position",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncgallery-capslide": "Reveal captions on hover",
+                "ncgallery-capbelow": "Always show captions below",
+                "ncgallery-capoverlay": "Overlay captions"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "ncgallery-capslide",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c97a0927cdde",
+            "label": "When you click an image...",
+            "name": "link_to_image",
+            "type": "select",
+            "instructions": "<b>Note:<\/b> If you use the Yoast SEO plugin, there's an option to redirect attachment pages to the image URL. It's usually on by default. You can toggle those options by going to: Yoast SEO > Search Appearance > Media",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image_page": "Show large image on its attachment page",
+                "image_lightbox": "Show image in a light box",
+                "image_nothing": "Do nothing"
+            },
+            "default_value": [
+                "image_lightbox"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cf99ef2ca81a",
+            "label": "Break Point",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c97974b9dd47",
+            "label": "Break Point Width",
+            "name": "breakpoint",
+            "type": "number",
+            "instructions": "Enter \"0\" if you will handle the responsive side yourself.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 640,
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5c97974b9dd22",
+            "label": "Break Point Layout",
+            "name": "breakpoint_layout",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncolumns-stack": "Stack",
+                "ncolumns-scroll": "Scroll horizontally",
+                "ncolumns-grid": "Grid"
+            },
+            "default_value": [
+                "ncolumns-grid"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cf9963794898",
+            "label": "How many columns?",
+            "name": "break_columns",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c97974b9dd22",
+                        "operator": "==",
+                        "value": "ncolumns-grid"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 2,
+            "min": 1,
+            "max": 9,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5c97974b9df15",
+            "label": "Box Settings",
+            "name": "box_settings",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5f0a295e1071c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5c97974b9e093",
+            "label": "Bottom Padding",
+            "name": "bottom_padding",
+            "type": "text",
+            "instructions": "If you want the gallery to scroll, the bottom padding must match the bottom padding set above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "3rem",
+            "placeholder": "3rem",
+            "prepend": "padding-bottom:",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e233096a8200",
+            "label": "Custom Code",
+            "name": "custom_code",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5e221e7d71f1d"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nc-gallery"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1600785991
+}

@@ -1,0 +1,39 @@
+/* Set editor font size and font and the main global variables */
+
+body {
+    font-size:var(--txt-base);
+    line-height:var(--lh);
+    font-family: var(--sans);
+}
+
+p, h1, h2, h3, h4, h5, h6, ol, ul {
+    margin-bottom:var(--gap);
+    margin-top:0;
+}
+
+.ncontain {
+    max-width: var(--width-max);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - (var(--gap) * 2));
+}
+
+/* Main column width */
+.wp-block {
+    max-width: var(--width-standard);
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+    max-width: var(--width-wide);
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
+.editor-post-title__block .editor-post-title__input {
+    font-size:var(--txt-xxlarge);
+    font-family: var(--sans);
+}

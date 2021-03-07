@@ -1,0 +1,22 @@
+/*! 
+Theme Name: NC Framework
+Version: 5.4 
+Author: Neal Chester 
+Author URI: https://nealchester.com
+Theme URI: https://nealchester.com/nc-framework/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Description: Custom WordPress starter theme framework
+Text Domain: nc-framework
+Tags: custom-logo, block-styles, wide-blocks, featured-images, left-sidebar, threaded-comments, custom-colors, editor-style, custom-menu, full-width-template, theme-options, custom-header, featured-image-header, footer-widgets
+*/
+
+
+/*
+Copy the following files from the parent theme to your child theme to begin.
+
+variables.css
+theme.css
+content.css
+
+*/

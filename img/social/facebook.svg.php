@@ -1,0 +1,2 @@
+<svg alt="facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+<path fill="#000" d="M354 116h70v-84h-70c-54.037 0-98 43.963-98 98v42h-56v84h56v224h84v-224h70l14-84h-84v-42c0-7.589 6.411-14 14-14z"></path></svg>

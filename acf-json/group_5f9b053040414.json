@@ -1,0 +1,43 @@
+{
+    "key": "group_5f9b053040414",
+    "title": "Block: NC CSS Box",
+    "fields": [
+        {
+            "key": "field_5f9b06717680f",
+            "label": "",
+            "name": "custom_css_box",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Enter your CSS here",
+            "maxlength": "",
+            "rows": 16,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nc-cssbox"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1603997445
+}

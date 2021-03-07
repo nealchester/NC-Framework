@@ -1,0 +1,64 @@
+:root {
+    /* Universal Spacing */
+
+    --gap: 1.5rem; 
+    --gapn: -1.5rem; 
+
+    /* Universal Content widths */
+
+    --width-standard:800px;
+    --width-wide:1000px;
+    --width-max:1400px;
+
+    /* Universal Colors */
+
+    --txt-dark:rgba(0,0,0,0.6);
+    --txt-light: rgba(255,255,255,0.6);
+
+    --gray: #fbfbfb; 
+    --dark: #222;
+
+    --link-color: #0093ff;
+
+    --selection-bgcolor: #000;
+    --selection-textcolor: #fff;
+
+    /* Typography */
+
+    --sans: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif; 
+    --serif: var(--sans); 
+    --mono: 'Courier New', Courier, monospace;
+
+    --lh: 1.7; /* Line height */
+
+    --txt-small: 0.8em; 
+    --txt-xsmall: 0.6em; 
+    --txt-base: 18px; /* normal size */
+    --txt-medium: 1.2em; /* h4 */
+    --txt-large: 1.7em; /* h3 */
+    --txt-xlarge: 2.2em; /* h2 */
+    --txt-xxlarge: 2.7em; /* h1*/
+    --txt-xxxlarge: 3.2em; /* jumbo */    
+
+    /* Form Fields */
+    
+    --field-radius: 3px;
+    --field-padding: 0 0.75em !important;
+    --field-border: solid 1px #ddd;
+    --field-bgcolor: var(--gray);
+
+    --field-border-focus: solid 1px #000;
+    --field-bgcolor-focus: lightyellow;
+    --field-shadow-focus: 0 3px 0.3rem rgba(0,0,0,0.3);
+
+
+    /* Inputs and button height */
+
+    --input-height: 2.5rem;
+
+    /* Border Radius */
+
+    --radius: 5px;
+    --border: solid 1px #ddd;
+
+}
