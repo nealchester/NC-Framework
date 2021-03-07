@@ -1,43 +1,44 @@
-NC Framework is a WordPress starter/parent theme.
+*Documentation under development.*
 
-Documentation currently under development.
+**Current theme features:**
 
-## Current parent theme features:
-
-* Scroll animations
-* Alter the mega footer column count
-* Sidebar display toggle
-* Banner image
 * Custom templates
-* Accessible drop menus
+* Accessible drop-menus
 * Uses ACF Pro
 * Full WordPress feature support for:
-  * Blocks
   * Customizer
-  * Menus
-  * Widgets
-  * Custom logo
+    * Alter the mega footer column count
+    * Sidebar display toggle
+    * Menus
+    * Widgets
+    * Custom logo
+    * Banner image
   * Featured images
-* 10+ Custom Gutenberg blocks
-  * hero
-  * split hero
-  * accordions
-  * columns
-  * gallery w/ lightbox pop-up
-  * image slider w/ lightbox pop-up
-  * text slider
-  * media + content
-  * list posts
-  * one page navigation
-  * text
-  * divider
+  * Gutenberg blocks
+  * 10+ Custom Gutenberg blocks
+    * hero
+    * split hero
+    * accordions
+    * columns
+    * gallery w/ lightbox pop-up
+    * image slider w/ lightbox pop-up
+    * text slider
+    * media + content
+    * list posts
+    * one page navigation
+    * text (columned and drop-cap)
+    * divider
 
 
-## Changes coming soon:
+**Changes coming soon:**
 
 * CSS will be better organized with SCSS
 * Components will become functions
 * More drop-menu variations and styles
-* Incorporation of a better scroll animation library
+* Incorporation of a better [scroll animation library](https://greensock.com/)
 * Better accessibility
 * Custom block expansion options
+
+***
+
+For more information contact neal@nealchester.com
