@@ -6,6 +6,7 @@
 * Custom templates
 * Responsive
 * SEO Friendly
+* Modern CSS + Semantic HTML
 * Full WordPress feature support for:
   * Customizer
     * Alter the mega footer column count
