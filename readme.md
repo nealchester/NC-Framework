@@ -2,9 +2,8 @@
 
 **Current theme features:**
 
+* Accessible
 * Custom templates
-* Accessible drop-menus
-* Uses ACF Pro
 * Responsive
 * SEO Friendly
 * Full WordPress feature support for:
