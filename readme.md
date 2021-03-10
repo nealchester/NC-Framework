@@ -1,5 +1,7 @@
 *Documentation under development.*
 
+**Note:** This theme requires Advanced Custom Fields Pro if you want to use the custom blocks.
+
 **Current theme features:**
 
 * Accessible
