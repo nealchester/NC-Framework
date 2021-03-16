@@ -60,23 +60,14 @@ This section explains the theme's file structure and the general content within 
 ### Main directory folders
 
 * **acf-json** - Stores custom fields data (don't delete).
-
 * **blocks** - Stores all custom Gutenberg blocks.
-
 * **components** - This folder's contents are under construction.
-
 * **customizer** - Stores all the new Customizer features function files.
-
 * **fonts** - Stores all font files including icon font files.
-
 * **functions** - Stores all functions files connected to the `functions.php` file.
-
 * **img** - Stores all raster and vector images. 
-
 * **js** - Stores all JavaScript files.
-
 * **parts** - Stores all reusable template parts.
-
 * **templates** - Stores optional custom templates.
 
 ### Template files
