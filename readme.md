@@ -57,29 +57,29 @@ If your concept requires more customization, you will need to copy and edit the 
 
 This section explains the theme's file structure and the general content within the folders and main files directory. Refer to the `readme.md` file within each folder for more information.
 
-### Main Directory Folders
+### Main directory folders
 
 * **acf-json** - Stores custom fields data (don't delete).
 
-* **blocks** - Stores all custom Gutenberg blocks created with PHP with the help of Advanced Custom Fields Pro.
+* **blocks** - Stores all custom Gutenberg blocks.
 
-* **components** - Stores blocks that can be used throughout the theme instead of confined to the block editor. *This folder's contents are under construction*.
+* **components** - This folder's contents are under construction.
 
 * **customizer** - Stores all the new Customizer features function files.
 
 * **fonts** - Stores all font files including icon font files.
 
-* **functions** - Stores all functions in separate files that are linked to the `functions.php` file.
+* **functions** - Stores all functions files connected to the `functions.php` file.
 
-* **img** - Stores all raster and vector images. Some SVG files have an extension of `.php` which makes them inline SVG when included as a template part. 
+* **img** - Stores all raster and vector images. 
 
-* **js** - stores all JavaScript files
+* **js** - Stores all JavaScript files.
 
-* **parts** - stores all reusable template parts
+* **parts** - Stores all reusable template parts.
 
-* **templates** - stores all optional custom templates 
+* **templates** - Stores optional custom templates.
 
-### Template Files
+### Template files
 The following explains the purpose of the files in the main directory of the theme:
 
 * **404.php** - displays a message if a page isn't found
