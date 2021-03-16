@@ -12,7 +12,7 @@
 
 	<?php if (dynamic_sidebar('mobilepanel')) :?>
 	<?php else :?>
-	<?php get_search_form();?>
+	<?php get_template_part('parts/search_form');?>
 	
 	<?php wp_nav_menu (array( 
 	'container' => false, 

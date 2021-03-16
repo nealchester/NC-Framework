@@ -43,7 +43,7 @@ if( function_exists('nc_related_posts') ) { nc_related_posts(); };?>
 
 
 <?php // Comments
-comments_template()?>
+get_template_part('parts/comments')?>
 
 <?php endwhile;?>
 <?php else : ?>

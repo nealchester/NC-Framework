@@ -3,7 +3,7 @@
 Template Name: One Column 
 Template Post Type: post, page
 */ 
-get_header();?>
+get_template_part('parts/header');?>
 
 <section class="ncontent ncontent-alone">
 	<main class="ncontent_main" itemprop="mainContentOfPage">
@@ -19,4 +19,4 @@ get_header();?>
 		<?php endif; ?>
 	</main>
 </section>
-<?php get_footer();?>
+<?php get_template_part('parts/footer');?>

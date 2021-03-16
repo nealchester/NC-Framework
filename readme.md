@@ -1,48 +1,114 @@
-*Documentation under development.*
+# Documentation
 
-**Note:** This theme requires Advanced Custom Fields Pro if you want to use the custom blocks.
+***Note:** This theme requires the [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) plugin IF you want to utilize the included custom Gutenberg blocks.*
 
-**Current theme features:**
+As a front-end developer converting design concepts to live websites, I created the NC Framework to serve as a starting point from which to build custom websites for WordPress. It can be used as a parent theme or extended with a child theme. 
 
-* Accessible
-* Custom templates
-* Responsive
-* SEO Friendly
-* Modern CSS + Semantic HTML
-* Full WordPress feature support for:
-  * Customizer
-    * Alter the mega footer column count
-    * Sidebar display toggle
-    * Menus
-    * Widgets
-    * Custom logo
-    * Banner image
+The theme is coded in:
+
+* **Modern CSS** - uses flexbox, grid, and custom properties
+* **Semantic HTML** - modern HTML5 with support for technical SEO
+* **Accessible** - supports screen readers and keyboard navigation
+* **Responsive** - mobile-friendly with support for responsive images
+
+The theme supports all of WordPress' native features, provides all the standard templates to display content, and does a whole lot more. The theme comes with basic CSS for layout and responsive purposes, but it's up to you to make the theme match your design concept.
+
+## How to get started
+
+1. Install this parent theme.
+2. Create a child-theme and activate it. 
+3. Copy `content.css`, `theme.css`, and `variables.css` from the parent CSS folder into your child-theme.
+4. Begin editing and writing new CSS to match your design concept. 
+
+If your concept requires more customization, you will need to copy and edit the necessary files from the parent theme. Refer to the WordPress Codex for more information about [child-themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/).
+
+***
+
+## Full WordPress feature support including:
+
+  * The Customizer
+  * Custom menus
+  * Widgets (8 areas)
+  * Custom logo
+  * Banner image
+  * Child themes
   * Featured images
   * Gutenberg blocks
-  * 10+ Custom Gutenberg blocks
-    * hero
-    * split hero
-    * accordions
-    * columns
-    * gallery w/ lightbox pop-up
-    * image slider w/ lightbox pop-up
-    * text slider
-    * media + content
-    * list posts
-    * one page navigation
-    * text (columned and drop-cap)
-    * divider
+  * Threaded comments
+  * Post meta
+  * Pagination
+  * Next and previous posts
 
+## 10+ Custom Gutenberg blocks
+
+  * hero
+  * split hero
+  * accordion content
+  * columns
+  * gallery w/ lightbox pop-up
+  * image slider w/ lightbox pop-up
+  * text slider
+  * media + content
+  * list posts
+  * one page navigation
+  * text content (columned)
+  * dividers
+
+
+## Folder Structure
+
+This section explains the theme's file structure and the general content within the folders and main files directory. Refer to the `readme.md` file within each folder for more information.
+
+### Main Directory Folders
+
+* **acf-json** - Stores the `.json` data files for the custom fields. These files are auto-updated. Don't delete.
+
+* **blocks** - Stores all the custom Gutenberg blocks. These were created with PHP with the help of Advanced Custom Fields Pro.
+
+* **components** - Stores blocks that can be used throughout the theme instead of confined to the block editor. *This folder's contents are under construction*.
+
+* **customizer** - Stores all the new Customizer features function files.
+
+* **fonts** - Stores all font files including icon font files.
+
+* **functions** - Stores all functions in separate files that are linked to the `functions.php` file.
+
+* **img** - Stores all raster and vector images. Some SVG files have an extension of `.php` which makes them inline SVG when included as a template part. 
+
+* **js** - stores all JavaScript files
+
+* **parts** - stores all reusable template parts
+
+* **templates** - stores all optional custom templates 
+
+### Template Files
+The following explains the purpose of the files in the main directory of the theme:
+
+* **404.php** - displays a message if a page isn't found
+* **archive.php** - displays selected taxonomy entries
+* **author.php** - displays single author meta and all their blog entries
+* **functions.php** - list and includes all functions housed in the `functions` folder 
+* **home.php** - displays the latest blog entries 
+* **image.php** - displays a single attachment image with meta data
+* **index.php** - displays a default page if no other templates are available
+* **page.php** - displays a standard non-blog entry page
+* **readme.md** - provides documentation on the files
+* **screenshot.png** - an image to represent the installed theme
+* **search.php** - displays a list of results from a search query
+* **single.php** - displays a single blog entry
+* **style.css** - stores theme information for WordPress' admin areas, no CSS is included in this file but comments
+
+***
 
 **Changes coming soon:**
 
-* CSS will be better organized with SCSS
+* CSS `blocks.css` will be separated into files and united with SCSS
 * Components will become functions
 * More drop-menu variations and styles
 * Incorporation of a better [scroll animation library](https://greensock.com/)
 * Better accessibility
-* Part files in the main directory will be moved to the `parts` folder
 * Custom block expansion options
+* Remove 1 of 3 responsive header features
 
 ***
 

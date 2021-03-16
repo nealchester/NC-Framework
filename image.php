@@ -64,4 +64,4 @@ echo wp_get_attachment_image( get_the_ID(), 'large', null, array('class'=> 'atta
 <?php else: ?>
 <?php get_template_part('parts/not-found');?>
 <?php endif; ?>
-<?php get_footer();?>
+<?php get_template_part('parts/footer');?>

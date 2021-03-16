@@ -3,7 +3,7 @@
 Template Name: Blank Page 
 Template Post Type: post, page
 */ 
-get_header();?>
+get_template_part('parts/header');?>
 
 <section id="body" class="ncontent ncontent-full">
 	<main class="ncontent_main" itemprop="mainContentOfPage">
@@ -19,4 +19,4 @@ get_header();?>
 	</main>
 </section>
 
-<?php get_footer();?>
+<?php get_template_part('parts/footer');?>

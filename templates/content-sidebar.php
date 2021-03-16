@@ -3,7 +3,7 @@
 Template Name: Content w/ Sidebar
 Template Post Type: post, page
 */ 
-get_header();?>
+get_template_part('parts/header');?>
 
 <section id="body" class="ncontent ncontent-left ncontent-full">
 	<div class="ncontain">
@@ -25,4 +25,4 @@ get_header();?>
 	</div>
 </section>
 
-<?php get_footer();?>
+<?php get_template_part('parts/footer');?>

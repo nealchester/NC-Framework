@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_template_part('parts/header');?>
 <?php 
 if (get_theme_mod('body_contained') == 'no-body-contain'){ $pagefull = 'ncontent-full'; } 
 if (get_theme_mod('body_contained') == 'body-contain'){ $pagefull = ''; }

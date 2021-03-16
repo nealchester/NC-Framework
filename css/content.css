@@ -133,9 +133,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: 600; }
 @font-face {
   font-family: 'ncicon';
   src:
-    url('../img/form-icons/fonts/ncicon.ttf?7dw6w1') format('truetype'),
-    url('../img/form-icons/fonts/ncicon.woff?7dw6w1') format('woff'),
-    url('../img/form-icons/fonts/ncicon.svg?7dw6w1#ncicon') format('svg');
+    url('../fonts/ncicon.ttf?7dw6w1') format('truetype'),
+    url('../fonts/ncicon.woff?7dw6w1') format('woff'),
+    url('../fonts/ncicon.svg?7dw6w1#ncicon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

@@ -22,7 +22,7 @@ get_template_part('parts/link-pages-footer');?>
 get_template_part('parts/related-pages');?>
 
 <?php // Comments
-// comments_template(); ?>
+// get_template_part('parts/comments'); ?>
 
 
 <?php endwhile;?>

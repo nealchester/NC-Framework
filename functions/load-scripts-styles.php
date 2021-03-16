@@ -15,6 +15,7 @@ function nc_register_assets(){
   // CSS
 
   wp_register_style('animate-css', get_theme_file_uri('/js/aniview/animate.css'), null, '3.7.2', 'screen');
+
   wp_register_style('nc-editor', get_theme_file_uri('/css/editor.css'), array('nc-vars'), null, 'screen');
   wp_register_style('nc-vars', get_theme_file_uri('/css/variables.css'), null, null, 'screen');
   wp_register_style('nc-root', get_theme_file_uri('/css/root.css'), array('nc-vars'), null, 'screen');
@@ -55,10 +56,10 @@ add_action('wp_enqueue_scripts', 'nc_load_assets');
 
 add_theme_support('editor-styles');
 
-  add_editor_style( array( 
-    '/css/editor.css',
-    '/css/variables.css',
-    '/css/blocks.css',
-    '/css/content.css',
-    get_theme_mod('google_fonts_url_load'),
-  ) );
+add_editor_style( array( 
+  '/css/editor.css',
+  '/css/variables.css',
+  '/css/blocks.css',
+  '/css/content.css',
+  get_theme_mod('google_fonts_url_load'),
+) );
