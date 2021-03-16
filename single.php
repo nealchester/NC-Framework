@@ -30,20 +30,20 @@ get_template_part('parts/link-pages-footer');?>
 // get_template_part('parts/meta-date'); ?>
 
 <?php // Categories
-get_template_part('/parts/meta-categories');?>
+get_template_part('parts/meta-categories');?>
 
 <?php // Tags
-get_template_part('/parts/meta-tags');?>
+get_template_part('parts/meta-tags');?>
 
 <?php // Author box
-get_template_part('/parts/meta-box');?>
+get_template_part('parts/meta-box');?>
 
 <?php // Related Posts Plugin
 if( function_exists('nc_related_posts') ) { nc_related_posts(); };?>
 
 
 <?php // Comments
-get_template_part('parts/comments')?>
+comments_template() ?>
 
 <?php endwhile;?>
 <?php else : ?>

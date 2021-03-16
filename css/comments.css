@@ -10,7 +10,7 @@
 }
 
 #comments-header {
-font-size: var(--large);
+font-size: var(--txt-large);
 }
 
 .comment-list, .comment-list li {

@@ -59,9 +59,9 @@ This section explains the theme's file structure and the general content within 
 
 ### Main Directory Folders
 
-* **acf-json** - Stores the `.json` data files for the custom fields. These files are auto-updated. Don't delete.
+* **acf-json** - Stores custom fields data (don't delete).
 
-* **blocks** - Stores all the custom Gutenberg blocks. These were created with PHP with the help of Advanced Custom Fields Pro.
+* **blocks** - Stores all custom Gutenberg blocks created with PHP with the help of Advanced Custom Fields Pro.
 
 * **components** - Stores blocks that can be used throughout the theme instead of confined to the block editor. *This folder's contents are under construction*.
 
@@ -85,6 +85,7 @@ The following explains the purpose of the files in the main directory of the the
 * **404.php** - displays a message if a page isn't found
 * **archive.php** - displays selected taxonomy entries
 * **author.php** - displays single author meta and all their blog entries
+* **comments.php** - displays the comments template
 * **functions.php** - list and includes all functions housed in the `functions` folder 
 * **home.php** - displays the latest blog entries 
 * **image.php** - displays a single attachment image with meta data

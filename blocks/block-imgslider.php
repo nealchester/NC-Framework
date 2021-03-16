@@ -68,8 +68,8 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 
 						<div class="splide__slide">
 
-						<?php if($link2img == 'image_page'):?><a class="splide__plink" href="<?php echo get_attachment_link($image['ID']); ?>">
-						<?php elseif($link2img == 'image_lightbox'):?><a data-title="<?php echo $image['title']; ?>" class="splide__plink <?php echo'ncsimg_'.$id; ?>" href="<?php echo wp_get_attachment_image_url($image['ID'], 'large'); ?>"><?php endif;?>
+						<?php if($link2img == 'image_page'):?><a class="splide__plink" aria-label="View larger" href="<?php echo get_attachment_link($image['ID']); ?>">
+						<?php elseif($link2img == 'image_lightbox'):?><a aria-label="View larger" data-title="<?php echo $image['title']; ?>" class="splide__plink <?php echo'ncsimg_'.$id; ?>" href="<?php echo wp_get_attachment_image_url($image['ID'], 'large'); ?>"><?php endif;?>
 
 						<div class="splide__padding"></div>
 

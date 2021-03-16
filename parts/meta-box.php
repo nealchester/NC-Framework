@@ -11,7 +11,7 @@
         <header class="authorbox_header">By <?php echo '<a class="authorbox_link" href="'.$authorlink2.'">'.get_the_author_meta('display_name').'</a>';?></header>
         <?php if(get_the_author_meta('phonenumber')):?> <p class="authorbox_phone">Phone: <?php echo get_the_author_meta('phonenumber'); ?></p><?php endif;?>
         <?php if(get_the_author_meta('description')):?> <p class="authorbox_desc"><?php echo wp_trim_words( get_the_author_meta('description'), 20, ' &hellip; <a href="'.$authorlink2.'">Read&nbsp;more&nbsp;&rsaquo;</a>');?></p> <?php endif; ?>
-		<?php get_template_part('/parts/meta-social');?>
+		<?php get_template_part('parts/meta-social');?>
 </section>
 
 <?php endif;?>
