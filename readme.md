@@ -22,8 +22,6 @@ The theme supports all of WordPress' native features, provides all the standard 
 
 If your concept requires more customization, you will need to copy and edit the necessary files from the parent theme. Refer to the WordPress Codex for more information about [child-themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/).
 
-***
-
 ## Full WordPress feature support including:
 
   * The Customizer
