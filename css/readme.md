@@ -1,6 +1,6 @@
 # CSS Documentation
 
-**Note:** This theme uses modern CSS including custom properties (CSS variables), flexbox, and grid. This theme only supports modern browsers (Internet Explorer 11 and below are not supported).
+**Note:** This theme doesn't support legacy browsers like Internet Explorer version 11 and below. The NC Framework makes heavy use of custom properties (variables), flexbox, and grid. The [BEM](http://getbem.com/introduction/) coding methodology is used with one underscore and dash instead of two.
 
 ## About the CSS
 
@@ -10,14 +10,14 @@ With the introduction of the block editor in WordPress, what displays on the fro
 
 The following files are **only** used in the block editor:
 
-* `editor.css` formats spacing between blocks in the editor (no need to edit)
+* `editor.css` formats spacing between blocks in the editor
 
 The following files are **only** used on the front-end:
 
 * `comments.css` styles the optional comments section 
 * `root.css` resets and normalizes styles across browsers
 * `menus.css` styles the complex drop-menus throughout the theme
-* `theme.css` styles everything that doesn't display in the block editor (header, footer, etc.). 
+* `theme.css` styles everything that doesn't display in the block editor (header, footer, etc.)
 
 The following files are used on **both** the front-end and in the block editor:
 
@@ -28,32 +28,65 @@ The following files are used on **both** the front-end and in the block editor:
 
 ***
 
-## The only files you'll need to work with:
+## The best files to edit
 
-This is not to say you won't want to copy other CSS files to make tweaks but these are the main ones to copy and edit within your child theme:
+This is not to say you won't want to copy other CSS files to make tweaks, but these are the main ones to copy and edit in your child theme:
 
-* `variables.css` 
-* `theme.css` 
+* `variables.css`
+* `theme.css`
 * `content.css` 
 
 ### 1. Variables.css
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+This is the first file to update. This controls all the global custom properties throughout the theme. **Don't** delete any property but you can edit values and create new custom properties and values. Use your browser's inspector to preview changes live.
 
 ### 2. Theme.css
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+This is the second file to update. This file controls the theme's general design excluding any content that appear in the block editor. This file will include default styles responsible for layout. You can update the values or remove whole properties and write new ones. Use your browser's inspector to preview changes live.
 
 ### 3. Content.css
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+This is the last file to update. This file controls content that displays in the block editor and the front-end. You'll find typography and button styles here. **Don't** delete any property just edit and add new styles. Use your browser's inspector to preview changes live.
 
 ***
 
-## SASS (SCSS)
+## Files you shouldn't need to edit
 
-For organization purposes, the `blocks` folder includes styles for blocks (or modules) that later compile to make the `blocks.css`.
+The following files are capable of being copied and edited to the child theme but shouldn't for lost of updates.
+
+* `blocks.css`
+* `comments.css`
+* `menus.css`
+* `root.css`
+* `uclasses.css`
+* `editor.css`
+
+## Editing block modules
+
+Just update the custom properties. When you use the browser's inspector you'll find many block modules that list all custom properties with default values like below:
+
+```css
+.nclogo {
+  --logo-text-size: 1.3em;
+  --logo-text-transform: uppercase;
+  --logo-text-weight: bold;
+  --logo-text-color: inherit;
+  --logo-img-width: 250px;
+  --logo-padding: 1.5em 0;
+  --logo-margin: 0;
+}
+```
+
+
+Say for instance,  you're using another `.nclogo` block in the `#megafooter` element, you would write new CSS like so and only update properties that matter:
+
+```css
+#megafooter .nclogo {
+  --logo-text-size: 1.5em;
+  --logo-padding: 1.75em 0;
+}
+```
 
 ## Performance
 
-All these CSS files equal additional `https` requests. To solve this issue, use a plugin like [Autoptimze](https://wordpress.org/plugins/autoptimize/) to combine all your theme and plugin CSS into one file.
+All these CSS files mean multiple `https` requests that could mean slowing down your site. To solve this issue, use a plugin like [Autoptimze](https://wordpress.org/plugins/autoptimize/) to combine and cache all your theme and plugin CSS into one file.

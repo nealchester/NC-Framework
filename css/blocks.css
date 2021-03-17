@@ -2020,6 +2020,28 @@ margin-top:var(--gap);
 
 /* ----------------------- WordPress Blocks ------------------------ */
 
+/* Buttons */
+
+.wp-block-button,
+.wp-block-button.alignleft{
+  text-align:left;
+}
+
+.wp-block-button.alignright {
+  text-align:right;
+}
+
+.wp-block-button.aligncenter {
+  text-align:center;
+}
+
+.wp-block-button__link {
+  padding:0 2em;
+  min-width:150px;
+  transition: 0.5s;
+  min-height:var(--input-height);
+}
+
 /* Group Block Width */
 
 .wp-block-group.wide,
@@ -2914,3 +2936,102 @@ Use function "nc_formatted_date()"
   color:var(--link-color, royalblue);
   font-size:1.2em
 }
+
+
+/* Custom Radio and Checkbox input fields */
+
+/* --------- Form Controls using Fonts --------- */
+
+@font-face {
+  font-family: 'ncicon';
+  src:
+    url('../fonts/ncicon.ttf?7dw6w1') format('truetype'),
+    url('../fonts/ncicon.woff?7dw6w1') format('woff'),
+    url('../fonts/ncicon.svg?7dw6w1#ncicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ncicon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ncicon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ncicon-arrow-back:before {
+  content: "\e901";
+}
+.ncicon-arrow-forward:before {
+  content: "\e902";
+}
+.ncicon-check-square:before {
+  content: "\e900";
+}
+.ncicon-checkbox-checked:before {
+  content: "\ea52";
+}
+.ncicon-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.ncicon-radio-checked:before {
+  content: "\ea55";
+}
+.ncicon-radio-unchecked:before {
+  content: "\ea56";
+}
+.ncicon-reply:before {
+  content: "\e96a";
+}
+
+
+
+.formstyles input[type="radio"], 
+.formstyles input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
+.formstyles input[type="radio"] + label, 
+.formstyles input[type="checkbox"] + label {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  font-weight: normal !important
+}
+
+.formstyles input[type="radio"] + label:before, 
+.formstyles input[type="checkbox"] + label:before {
+  position:relative;
+  margin-right: 1rem;
+  left: 3px;
+  font-size: 1em;
+  line-height: normal;
+  font-family: 'ncicon';
+}
+
+.formstyles input[type="checkbox"] + label:before { content: '\ea53'; }
+
+.formstyles input[type="checkbox"]:checked + label:before { content: '\ea52'; }
+
+.formstyles input[type="radio"] + label:before { content: '\ea56'; }
+
+.formstyles input[type="radio"]:checked + label:before { content:'\ea55'; }
+
+/* For Gravity Forms */
+
+.gform_wrapper .gfield_checkbox li label, 
+.gform_wrapper .gfield_radio li label {
+  max-width: 100%
+}
+
+body .gform_wrapper span.gform_description {
+  width: 100%;
+}  

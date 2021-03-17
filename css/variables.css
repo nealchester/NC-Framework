@@ -1,19 +1,19 @@
+/*Universal custom properties (variables) */
+
 :root {
-    /* Universal Spacing */
+
+    /* Spacing */
 
     --gap: 1.5rem; 
     --gapn: -1.5rem; 
 
-    /* Universal Content widths */
+    /* Block content widths */
 
     --width-standard:800px;
     --width-wide:1000px;
     --width-max:1400px;
 
-    /* Universal Colors */
-
-    --txt-dark:rgba(0,0,0,0.6);
-    --txt-light: rgba(255,255,255,0.6);
+    /* Colors */
 
     --gray: #fbfbfb; 
     --dark: #222;
@@ -22,6 +22,9 @@
 
     --selection-bgcolor: #000;
     --selection-textcolor: #fff;
+
+    --txt-dark:rgba(0,0,0,0.6);
+    --txt-light: rgba(255,255,255,0.6);
 
     /* Typography */
 
@@ -40,7 +43,7 @@
     --txt-xxlarge: 2.7em; /* h1*/
     --txt-xxxlarge: 3.2em; /* jumbo */    
 
-    /* Form Fields */
+    /* Form fields */
     
     --field-radius: 3px;
     --field-padding: 0 0.75em !important;
@@ -52,11 +55,11 @@
     --field-shadow-focus: 0 3px 0.3rem rgba(0,0,0,0.3);
 
 
-    /* Inputs and button height */
+    /* Form inputs and button height */
 
     --input-height: 2.5rem;
 
-    /* Border Radius */
+    /* Border radius */
 
     --radius: 5px;
     --border: solid 1px #ddd;

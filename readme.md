@@ -7,6 +7,7 @@ As a front-end developer converting design concepts to live websites, I created 
 The theme is coded in:
 
 * **Modern CSS** - uses flexbox, grid, and custom properties
+* **BEM CSS** - uses Block Element Modifier coding methodology
 * **Semantic HTML** - modern HTML5 with support for technical SEO
 * **Accessible** - supports screen readers and keyboard navigation
 * **Responsive** - mobile-friendly with support for responsive images
@@ -93,13 +94,10 @@ The following explains the purpose of the files in the main directory of the the
 
 **Changes coming soon:**
 
-* CSS `blocks.css` will be separated into files and united with SCSS
 * Components will become functions
-* More drop-menu variations and styles
+* More drop-menu style variations 
 * Incorporation of a better [scroll animation library](https://greensock.com/)
-* Better accessibility
 * Custom block expansion options
-* Remove 1 of 3 responsive header features
 
 ***
 
