@@ -14,6 +14,10 @@ The theme is coded in:
 
 The theme supports all of WordPress' native features, provides all the standard templates to display content, and does a whole lot more. The theme comes with basic CSS for layout and responsive purposes, but it's up to you to make the theme match your design concept.
 
+## Demo site
+
+**[Visit this link to see a real estate site built with the NC Framework](https://www.nealchester.com/demos/realestate/)**.
+
 ## How to get started
 
 1. Install this parent theme.
@@ -21,9 +25,7 @@ The theme supports all of WordPress' native features, provides all the standard 
 3. Copy `content.css`, `theme.css`, and `variables.css` from the parent CSS folder into your child-theme.
 4. Begin editing and writing new CSS to match your design concept. 
 
-If your concept requires more customization, you will need to copy and edit template files from the parent theme. Refer to the WordPress Codex for more information about [child-themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/).
-
-To learn more about the above mentioned CSS files, visit this themes's [CSS documentation](https://github.com/nealchester/NC-Framework/tree/main/css#css-documentation) here.
+If your concept requires more customization, you will need to copy and edit template files from the parent theme. Refer to the WordPress Codex for more information about [child-themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/). To learn more about the above mentioned CSS files, visit this themes's [CSS documentation](https://github.com/nealchester/NC-Framework/tree/main/css#css-documentation) here.
 
 ## Full WordPress feature support including:
 
