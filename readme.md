@@ -21,7 +21,9 @@ The theme supports all of WordPress' native features, provides all the standard 
 3. Copy `content.css`, `theme.css`, and `variables.css` from the parent CSS folder into your child-theme.
 4. Begin editing and writing new CSS to match your design concept. 
 
-If your concept requires more customization, you will need to copy and edit the necessary files from the parent theme. Refer to the WordPress Codex for more information about [child-themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/).
+If your concept requires more customization, you will need to copy and edit template files from the parent theme. Refer to the WordPress Codex for more information about [child-themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/).
+
+To learn more about the above mentioned CSS files, visit this themes's [CSS documentation](https://github.com/nealchester/NC-Framework/tree/main/css#css-documentation) here.
 
 ## Full WordPress feature support including:
 

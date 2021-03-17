@@ -26,8 +26,6 @@ The following files are used on **both** the front-end and in the block editor:
 * `variables.css` sets the global custom properties for all CSS
 * `content.css` styles any content that will display in the block editor and the front-end
 
-***
-
 ## Styling your child theme
 
 The following list of files should be copied and edited to your child theme. **Note:** If you copy and edit any other CSS files, you will not be able to take advantage of future updates to those files.
@@ -47,8 +45,6 @@ This is the second file to update. This file controls the theme's general design
 ### 3. Content.css
 
 This is the last file to update. This file controls the main content area that displays in the block editor and the front-end. You'll find typography and button styles here. **Don't** delete any property just edit and add new styles. Use your browser's inspector to preview changes live.
-
-***
 
 ## Editing block modules
 
