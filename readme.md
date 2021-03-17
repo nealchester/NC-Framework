@@ -55,9 +55,10 @@ If your concept requires more customization, you will need to copy and edit the 
 
 ## Folder Structure
 
-This section explains the theme's file structure and the general content within the folders and main files directory. Refer to the `readme.md` file within each folder for more information.
+This section explains the theme's file structure and the general content within the folders and main files directory.
 
 ### Main directory folders
+Refer to the `readme.md` file within each folder for more information.
 
 * **acf-json** - stores custom fields data (don't delete)
 * **blocks** - stores all custom Gutenberg blocks

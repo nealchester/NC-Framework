@@ -21,7 +21,7 @@ get_template_part('functions/image-focus');
 get_template_part('functions/favicon-check');
 
 // Load Scripts and Styles
-get_template_part('functions/load-scripts-styles');
+get_template_part('functions/register-css-js');
 
 
 // There are no search results found
@@ -37,7 +37,7 @@ get_template_part('functions/theme-acf-fields');
 
 
 // Register Widget Areas
-get_template_part('functions/widgets');
+get_template_part('functions/register-widgets');
 
 
 // New User fields
@@ -75,7 +75,7 @@ get_template_part('functions/taxonomy-name');
 
 
 // Register Nav Menus
-get_template_part('functions/register-nav-menus');
+get_template_part('functions/register-menus');
 
 
 // Modify author archive post number to all

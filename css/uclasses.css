@@ -1,0 +1,490 @@
+/* Universal Utility Classes */
+
+/* Global Contain */
+
+.ncontain {
+  max-width: var(--width-max);
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - (var(--gap) * 2));
+}
+
+/* Hide labels in gravity forms */
+
+.hidelabels .gfield_label {
+  clip: rect(0,0,0,0);
+  position: absolute;
+  height: 0;
+  width: 0;
+  display: block;
+  overflow: hidden;
+}
+
+
+/* Hide */
+
+.hide {
+  display: none !important;
+}
+
+.hidetext, 
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.fullscreen {
+  max-width: none;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+
+/* Breakout */
+
+@media (max-width: 640px){ 
+  /*
+  .breakout img{
+      position: relative;
+      max-width: none!important;
+      margin-left: var(--gapn)!important;
+      width: calc((var(--gap) * 2) + 100%);
+  }
+  */
+  .breakout {
+      max-width:100% !important;
+      width:100%  !important;
+  }
+}
+
+
+/* Responsive videos loaded in iframe, object, and embed */
+
+.videocontain {
+  position: relative;
+  padding-bottom: 48.7%;
+  padding-top: 2em;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.videocontain iframe, 
+.videocontain object, 
+.videocontain embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* NC Header Div */
+
+.nchline {
+  --line-width: 80px;
+  --line-bgcolor: currentColor;
+  --line-height: 3px;
+  --line-gap: 1.5em;
+  --line-radius:0;
+  --line-align:flex-start;
+}
+
+.nchline-center {
+--line-width: 80px;
+--line-bgcolor: currentColor;
+--line-height: 3px;
+--line-gap: 1.5em;
+--line-radius:0;
+--line-align:center;
+text-align:center;
+}
+
+.nchline-right {
+--line-width: 80px;
+--line-bgcolor: currentColor;
+--line-height: 3px;
+--line-gap: 1.5em;
+--line-radius:0;
+--line-align:flex-end;
+text-align:right;
+}
+
+.nchline,
+.nchline-center,
+.nchline-right  {
+  margin-bottom: var(--line-gap);
+  display:flex !important;
+  flex-direction: column;
+  align-items:var(--line-align);
+} 
+
+
+.nchline:after,
+.nchline-center:after,
+.nchline-right:after {
+  content:'';
+  display: block;
+  position: relative;
+  height: var(--line-height);
+  background: var(--line-bgcolor);
+  width: var(--line-width);
+  top: calc( var(--line-gap) / 2);
+  border-radius:var(--line-radius);
+}
+
+
+/* NC Rule Heading */
+
+.ncrule { 
+  --rule-height: 0.08rem;
+  --rule-color: #ddd;
+  --rule-spacing: 0.5rem;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  }
+  
+  p + .ncrule,
+  ul + .ncrule,
+  ol + .ncrule { margin-top:calc(2 * var(--gap)); }
+  
+  .ncrule:before,
+  .ncrule:after {
+  content:'';
+  display:block;
+  height:var(--rule-height);
+  background:var(--rule-color);
+  flex-grow: 0.5;
+  position:relative;
+  }
+  
+  .ncrule:before { margin-right:var(--rule-spacing) }
+  .ncrule:after  {  margin-left:var(--rule-spacing) }
+  
+  /* Modifier: Left Align */
+  
+  .ncrule-left { text-align:left; }
+  .ncrule-left:before { display:none; }
+  .ncrule-left:after { flex-grow:1 }
+  
+  /* Modifier: Small Uppercase */
+  
+  .ncrule-small { 
+  text-transform:uppercase;
+  font-size:0.9em;
+  }
+
+  /* List to columns */
+
+.nclist2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px,1fr));
+  grid-column-gap: var(--gap,1.5rem);
+  grid-row-gap:0.5rem;
+}
+
+/* Image wrap */
+
+.imagewrap {
+  shape-margin: var(--gap,1.5rem);
+  shape-image-threshold: 0.5;
+  /* This class is used to trigger JS that will add the shape-outside property to wrap text around images */
+}
+
+.imagewrap-left {
+  float:left;
+  margin-right:1em;
+}
+
+.imagewrap-right {
+  float:right;
+  margin-left:1em;
+}
+
+.imagewrap-left,
+.imagewrap-right {
+  max-width:50%;
+  margin-bottom:1em;
+}
+
+/* Clearfix */
+
+.clear:after, .clear:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+/* Text Formatting */
+
+
+.txt-xxxlarge { font-size:var(--txt-xxxlarge) }
+
+.txt-xxlarge,
+.has-huge-font-size { font-size:var(--txt-xxlarge) }
+
+.txt-xlarge,
+.has-larger-font-size { font-size:var(--txt-xlarge) }
+
+.txt-large,
+.has-large-font-size { font-size:var(--txt-large) }
+
+.txt-medium,
+.has-medium-font-size { font-size:var(--txt-medium) }
+
+.txt-base,
+.has-normal-font-size,
+.has-regular-font-size { font-size:var(--txt-base) }
+
+.txt-small,
+.has-small-font-size { font-size: var(--txt-small) }
+
+.txt-xsmall { font-size:var(--txt-xsmall) }
+
+.txt-bold {
+  font-weight: bold !important
+}
+
+.txt-normal {
+  font-weight: normal !important
+}
+
+.txt-italic {
+  font-style: italic !important
+}
+
+.txt-upper, 
+.txt-uppercase {
+  text-transform: uppercase;
+}
+
+/* Turn paragraph into a column */
+
+p.paracolumns2,
+p.paracolumns3 {
+  column-gap: var(--gap);
+  column-width: 220px;
+}
+
+p.paracolumns2 { column-count: 2; }
+p.paracolumns3 { column-count: 3; }
+
+
+.nowrap {
+  white-space: nowrap;
+  word-break: normal !important;
+}
+
+.prewrap {
+  white-space: pre-wrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Ellipsis */
+
+.textcut, 
+.textcut-child > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.textcut,
+.textcut-child > * {
+  white-space: nowrap
+}
+
+/* Left Icons 
+
+Targeting fontawesome icons that sit within headings (h3) of a list element (li)
+
+*/
+
+.lefticons h2,
+.lefticons h3,
+.lefticons h4 {
+  position:static;
+}
+
+.lefticons {
+  --icon-color:currentColor;
+  --icon-size: 1.5rem;
+  --icon-space: calc( var(--icon-size) + 0.75rem );
+}
+
+.lefticons li {
+padding-left:var(--icon-space);
+position:relative
+}
+  
+.lefticons h2 i,
+.lefticons h3 i,
+.lefticons h4 i {
+color:var(--icon-color);
+font-size:var(--icon-size);
+display:block;
+margin-bottom:0.5em;
+position:absolute;
+left:0; top:0
+}
+
+
+/* Custom Bullets 
+Must be applied to UL and OL elements */
+
+.custommarker {
+  --marker-color:inherit;
+  --marker-space: 1.5em;
+  --marker-icon: '\2022';
+  --marker-decimal: ".";
+  --marker-font:inherit;
+  --marker-weight:normal;
+  }
+  
+  .custommarker {
+  list-style-type:none;
+  margin-left:0; padding:0;
+  }
+  
+  .custommarker li {
+  position:relative;
+  }
+  
+  .custommarker li:before {
+  content: var(--marker-icon);
+  color: var(--marker-color);
+  font-size:1em;
+  font-weight:var(--marker-weight);
+  font-family: var(--marker-font);
+  position:absolute;
+  top:0;
+  left:0;
+  }
+
+
+  ul.custommarker li {
+      padding-left:var(--marker-space);
+  }
+
+  ul.custommarker li:before {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:var(--marker-space);
+  }
+  
+/* Ordered Lists*/
+
+  ol.custommarker {
+    counter-reset: section;
+  }
+  
+  ol.custommarker li:before {
+    counter-increment: section;
+    content: counter(section, decimal) var(--marker-decimal);
+    color: var(--marker-color);
+    font-weight:var(--marker-weight);
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: calc( var(--marker-space) + 0.25em);
+    font-feature-settings: "tnum";
+  }
+  
+  ol.custommarker li {
+    padding-left:calc(var(--marker-space) + 0.5em);
+  }
+
+/* SVG Icon */
+
+  .ncsvgicon {
+    --icon-bg-color:#ccc;
+    --icon-color:#000;
+    --icon-padding:0.7em;
+    --icon-border-radius:50%;
+    --icon-width:45px;
+    --icon-margin:0 0 0.5em 0;
+  }
+
+  .ncsvgicon {
+    background:var(--icon-bg-color);
+    padding:var(--icon-padding);
+    border-radius:var(--icon-border-radius);
+    width:var(--icon-width);
+    height: var(--icon-width);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:var(--icon-margin);
+  }
+
+  .ncsvgicon svg {
+    display:block;
+    width:100%;
+    height: auto;
+  }
+
+  .ncsvgicon svg path {
+    fill:var(--icon-color);
+  }
+
+  /* Light and Dark Blocks */
+
+  .ncblock-light p,
+  .ncblock-light li,
+  .ncblock-light dd,
+  .ncblock-light td {
+    color: var(--txt-dark);
+  }
+
+  .ncblock-dark p,
+  .ncblock-dark li,
+  .ncblock-dark dd,
+  .ncblock-dark td {
+    color: var(--txt-light);
+  }
+
+/* Read More */
+
+  .ncreadmore {
+    display:inline-flex;
+    align-items: center;
+  }
+
+  .ncreadmore:after { 
+    content: '\e902';
+    font-family: 'ncicon';
+    padding-left:0.5em;
+    font-size:var(--txt-small);
+    line-height: 0;
+    transition:0.3s;
+    position: relative;
+    left:0;
+  }
+
+  .ncreadmore:hover:after { 
+    left:0.5em;
+  }

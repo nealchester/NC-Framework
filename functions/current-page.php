@@ -21,5 +21,5 @@ function nc_current_page( $var = '' ) {
     if( $pages < 1 )
         return;
     $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-    echo '<p class="ncurrentpage txt-small">You\'re on page '. $page . ' of ' . $pages. ' '.get_previous_posts_link('&lsaquo;').' '.get_next_posts_link('&rsaquo;').'</p>';
+    echo '<p class="ncurrentpage txt-small">You\'re on page '. $page . ' of ' . $pages.'</p>';
 }

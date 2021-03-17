@@ -1,4 +1,4 @@
-/* My Theme's Additional Blocks */
+/* Font and Typography */
 
 body {
     color:#000;
@@ -23,7 +23,7 @@ body, input, select, textarea, button {
     }
 }
 
-/* Font and Typography */
+
 
 @font-face {
     font-family: 'Inter';

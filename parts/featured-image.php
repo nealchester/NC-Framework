@@ -12,9 +12,9 @@ global $page; if($page == 1):?>
 	
 	?>
 
-	<div class="featuredimage alignwide breakout">
+	<div class="featuredimage alignwide">
 		<figure class="wp-caption">
-		  <?php the_post_thumbnail( 'large', array( "class" => "no-breakout") ); ?>
+		  <?php the_post_thumbnail( 'large' ); ?>
 			<?php if($caption){ echo'<figcaption class="wp-caption-text">'.$caption.'</figcaption>';}?>
 		</figure>	
 	</div>
