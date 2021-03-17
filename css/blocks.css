@@ -655,6 +655,7 @@ width: 100%;
 .nccordion_header.active,
 #wrapper .schema-faq-question.active { 
   background:var(--heading-bg-color-active);
+  border-bottom: solid 1px transparent
 }
 .nccordion_header:hover,
 #wrapper .schema-faq-question:hover { 
