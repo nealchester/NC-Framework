@@ -60,7 +60,7 @@ If your concept requires more customization, you will need to copy and edit temp
 
 ## Folder Structure
 
-This section explains the theme's file structure and the general content within the folders and main files directory.
+This section explains the general content within the folders and main files.
 
 ### Main directory folders
 Refer to the `readme.md` file within each folder for more information.
