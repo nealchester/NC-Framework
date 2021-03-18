@@ -20,13 +20,46 @@
             "endpoint": 0
         },
         {
+            "key": "field_6053a7ed3c9ed",
+            "label": "Choose",
+            "name": "choose",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Find content to display",
+                "write": "Write my own content"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5f14d80b1b710",
-            "label": "Select questions",
+            "label": "Select posts",
             "name": "select_links",
             "type": "relationship",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6053a7ed3c9ed",
+                        "operator": "==",
+                        "value": "post"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -45,13 +78,88 @@
             "return_format": "object"
         },
         {
+            "key": "field_6053ae103c9ee",
+            "label": "Custom content",
+            "name": "custom_content",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6053a7ed3c9ed",
+                        "operator": "==",
+                        "value": "write"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_6053ae3b3c9ef",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6053ae3b3c9ef",
+                    "label": "",
+                    "name": "heading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Heading",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6053ae493c9f0",
+                    "label": "",
+                    "name": "content",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Enter content here",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "wpautop"
+                }
+            ]
+        },
+        {
             "key": "field_5f14d80b1baf4",
             "label": "Display full answer",
             "name": "display_content",
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6053a7ed3c9ed",
+                        "operator": "==",
+                        "value": "post"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -82,6 +190,11 @@
                         "field": "field_5f14d80b1baf4",
                         "operator": "==",
                         "value": "truncate"
+                    },
+                    {
+                        "field": "field_6053a7ed3c9ed",
+                        "operator": "==",
+                        "value": "post"
                     }
                 ]
             ],
@@ -129,7 +242,7 @@
         },
         {
             "key": "field_5f14d80b1c6bc",
-            "label": "Fill screen on mobile",
+            "label": "Span screen edge on mobile",
             "name": "mobile",
             "type": "number",
             "instructions": "",
@@ -206,7 +319,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1595203087
+    "modified": 1616097449
 }

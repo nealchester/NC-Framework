@@ -49,9 +49,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: 600; }
 /* Buttons */
 
   .btn {
-    background: #444;
+    background: #222;
     color:#fff;
-    border:solid 0.08em #444;
+    border:solid 0.08em #222;
     padding:0 2em;
     border-radius:20px;
     min-width:150px;

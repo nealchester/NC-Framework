@@ -488,3 +488,30 @@ Must be applied to UL and OL elements */
   .ncreadmore:hover:after { 
     left:0.5em;
   }
+
+
+/* Auto Number Headings 
+
+<div class="numberheadings"> 
+<h2>...</h2> <p>...</p> <h2>...</h2> <p>...</p> 
+</div> 
+
+*/
+
+.numberheadings {
+  counter-reset: section
+}
+
+.numberheadings h2, 
+.numberheadings h3, 
+.numberheadings h4 {
+  position: relative;
+}
+
+.numberheadings h2:before, 
+.numberheadings h3:before, 
+.numberheadings h4:before {
+  counter-increment: section;
+  content: counter(section, decimal) ". ";
+  color: var(--blue);
+}

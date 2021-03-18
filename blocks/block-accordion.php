@@ -47,6 +47,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	$content = get_field('display_content');
 	$hd = get_field('heading') ?: 'h3';
 	$mobile = get_field('mobile') ?: '600';
+	$choose = get_field('choose') /* write or post */;
 
 ?>
 
@@ -55,6 +56,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 		
 		<?php nc_before_content(); ?>
 			
+			<?php if( $choose == 'post' ):?>
+
 			<?php $args = array(
 				'post_type' => 'any',
 				'posts_per_page' => -1,
@@ -86,10 +89,28 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			 <?php wp_reset_postdata();?>
 			 <?php else : ?>
 				<div class="nccordion">
-					<div class="nccordion_header">No FAQs have been selected yet.</div>
-					<div class="nccordion_content">Select some posts to add here.</div>
+					<div class="nccordion_header">No posts have been selected yet.</div>
+					<div class="nccordion_content">Select some posts to add here or write your own content.</div>
 			 </div>
 			<?php endif; // end loop ?>
+
+			<?php elseif( $choose == 'write' && have_rows('custom_content') ):?>
+
+				<div class="nccordion nc_content_block_main">
+				<?php while( have_rows('custom_content') ): the_row(); 
+					$acc_heading = get_sub_field('heading');
+					$acc_content = get_sub_field('content');
+				?>
+
+      <<?php echo $hd; ?> class="nccordion_header"><?php echo $acc_heading; ?></<?php echo $hd; ?>>  
+      <div class="nccordion_content">
+				<?php echo $acc_content; ?>
+      </div>
+      
+			<?php endwhile; ?>
+			</div>
+
+			<?php endif;?>
 
 			<?php nc_after_content(); ?>
 		</div>
