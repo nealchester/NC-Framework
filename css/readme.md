@@ -2,8 +2,6 @@
 
 **Note:** The NC Framework supports modern browsers. Browsers like Internet Explorer 11 and earlier are not supported. With modern browsers comes modern CSS. This theme makes heavy use of custom properties (variables), flexbox, and grid. The [BEM](http://getbem.com/introduction/) coding methodology is used with one underscore and dash instead of two.
 
-***
-
 ## The CSS files
 
 Some CSS files are for the front-end or the block editor, and some files are used for both. With the introduction of the block editor in WordPress, what displays on the front-end should match what displays in the block editor (moderately). Therefore, the reason for multiple files.
