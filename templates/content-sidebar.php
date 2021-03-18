@@ -20,7 +20,7 @@ get_template_part('parts/header');?>
 			<?php endif; ?>
 		</main>
 		<aside class="ncontent_sidebar">
-			<?php get_sidebar(); ?>
+			<?php get_template_part('parts/sidebar'); ?>
 		</aside>
 	</div>
 </section>

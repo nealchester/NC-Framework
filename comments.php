@@ -63,7 +63,7 @@
 	'comment_field' => '<label for="commentarea" class="hidetext">Comment<br></label>
 	<textarea id="commentarea" name="comment" aria-required="true" 
 	placeholder="Write your comment here. Be clear, be kind, stay on-topic, and respect everyone."></textarea><br>',
-	'cancel_reply_link' => '<span class="nc-x-close"><svg alt="x icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 131.395 131.396" enable-background="new 0 0 131.395 131.396" xml:space="preserve"><g fill="#990000"><rect x="-18.213" y="56.698" transform="matrix(0.7071 0.7071 -0.7071 0.7071 65.698 -27.2126)" width="167.821" height="17.999"></rect><rect x="56.697" y="-18.212" transform="matrix(0.7071 0.7071 -0.7071 0.7071 65.701 -27.2126)" width="18" height="167.819"></rect></g></svg></span> <span class="hidetext cancel-comment-reply-label">Cancel</span>',
+	'cancel_reply_link' => '<span class="nc-x-close ncicon ncicon-close"></span> <span class="hidetext cancel-comment-reply-label">Cancel</span>',
 	'label_submit'      => 'Post Comment',
 	'comment_notes_before' => '',
 	'comment_notes_after' => '',

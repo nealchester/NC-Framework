@@ -20,6 +20,7 @@ get_template_part('functions/image-focus');
 // Check if site has an favicon uploaded
 get_template_part('functions/favicon-check');
 
+
 // Load Scripts and Styles
 get_template_part('functions/register-css-js');
 
@@ -45,14 +46,12 @@ get_template_part('functions/new-user-fields');
 
 
 // Default Link for empty Nav Menu
-function link_to_menu_editor(){
-	get_template_part( 'functions/link-to-editor' );
-}
+get_template_part('functions/link-to-editor');
+
 
 // Display the Date as Time ago
-function nc_time_ago() {
-	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' ago';
-}
+get_template_part('functions/time-ago-function');
+
 
 // Current Page
 get_template_part('functions/current-page');

@@ -65,34 +65,34 @@ This section explains the theme's file structure and the general content within 
 ### Main directory folders
 Refer to the `readme.md` file within each folder for more information.
 
-* **acf-json** - stores custom fields data (don't delete)
-* **blocks** - stores all custom Gutenberg blocks
-* **components** - this folder's contents are under construction
-* **customizer** - stores all the new Customizer features function files
-* **fonts** - stores all font files including icon font files
-* **functions** - stores all functions files connected to the `functions.php` file
-* **img** - stores all raster and vector images.
-* **js** - stores all JavaScript files
-* **parts** - stores all reusable template parts
-* **templates** - stores optional custom templates
+* **`acf-json`** - stores custom fields data (don't delete)
+* **`blocks`** - stores all custom Gutenberg blocks
+* **`components`** - this folder's contents are under construction
+* **`customizer`** - stores all the new Customizer features function files
+* **`fonts`** - stores all font files including icon font files
+* **`functions`** - stores all functions files connected to the `functions.php` file
+* **`img`** - stores all raster and vector images.
+* **`js`** - stores all JavaScript files
+* **`parts`** - stores all reusable template parts
+* **`templates`** - stores optional custom templates
 
 ### Template files
 The following explains the purpose of the files in the main directory of the theme:
 
-* **404.php** - displays a message if a page isn't found
-* **archive.php** - displays selected taxonomy entries
-* **author.php** - displays single author meta and all their blog entries
-* **comments.php** - displays the comments template
-* **functions.php** - list and includes all functions housed in the `functions` folder 
-* **home.php** - displays the latest blog entries 
-* **image.php** - displays a single attachment image with meta data
-* **index.php** - displays a default page if no other templates are available
-* **page.php** - displays a standard non-blog entry page
-* **readme.md** - provides documentation on the files
-* **screenshot.png** - an image to represent the installed theme
-* **search.php** - displays a list of results from a search query
-* **single.php** - displays a single blog entry
-* **style.css** - stores theme information for WordPress' admin areas, no CSS is included in this file but comments
+* **`404.php`** - displays a message if a page isn't found
+* **`archive.php`** - displays selected taxonomy entries
+* **`author.php`** - displays single author meta and all their blog entries
+* **`comments.php`** - displays the comments template
+* **`functions.php`** - list and includes all functions housed in the `functions` folder 
+* **`home.php`** - displays the latest blog entries 
+* **`image.php`** - displays a single attachment image with meta data
+* **`index.php`** - displays a default page if no other templates are available
+* **`page.php`** - displays a standard non-blog entry page
+* **`readme.md`** - provides documentation on the files
+* **`screenshot.png`** - an image to represent the installed theme
+* **`search.php`** - displays a list of results from a search query
+* **`single.php`** - displays a single blog entry
+* **`style.css`** - stores theme information for WordPress' admin areas, no CSS is included in this file but comments
 
 ***
 

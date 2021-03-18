@@ -10,29 +10,29 @@ Some CSS files are for the front-end or the block editor, and some files are use
 
 The following files are **only** used in the block editor:
 
-* `editor.css` formats spacing between blocks in the editor
+* **`editor.css`** formats spacing between blocks in the editor
 
 The following files are **only** used on the front-end:
 
-* `comments.css` styles the optional comments section 
-* `root.css` resets and normalizes styles across browsers
-* `menus.css` styles the complex drop-menus throughout the theme
-* `theme.css` styles everything that doesn't display in the block editor (header, footer, etc.)
+* **`comments.css`** styles the optional comments section 
+* **`root.css`** resets and normalizes styles across browsers
+* **`menus.css`** styles the complex drop-menus throughout the theme
+* **`theme.css`** styles everything that doesn't display in the block editor (header, footer, etc.)
 
 The following files are used on **both** the front-end and in the block editor:
 
-* `uclasses.css` universal utility classes
-* `blocks.css` styles for custom block modules like hero, gallery, and more
-* `variables.css` sets the global custom properties for all CSS
-* `content.css` styles any content that will display in the block editor and the front-end
+* **`uclasses.css`** universal utility classes
+* **`blocks.css`** styles for custom block modules like hero, gallery, and more
+* **`variables.css`** sets the global custom properties for all CSS
+* **`content.css`** styles any content that will display in the block editor and the front-end
 
 ## Styling your child theme
 
 The following list of files should be copied and edited to your child theme. **Note:** If you copy and edit any other CSS files, you will not be able to take advantage of future updates to those files.
 
-* `variables.css`
-* `theme.css`
-* `content.css` 
+* **`variables.css`**
+* **`theme.css`**
+* **`content.css`** 
 
 ### 1. Variables.css
 

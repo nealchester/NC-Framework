@@ -10,7 +10,7 @@
 		'menu_id' => 'top-menu',
 		'fallback_cb' => 'link_to_menu_editor'
 		)); ?>
-		<?php get_template_part('parts/search_form'); ?>
+		<?php get_template_part('parts/searchform'); ?>
 		</div>
 	</div>
 </nav> 
@@ -78,7 +78,7 @@
 		'menu_id' => 'third-menu',
 		'fallback_cb' => 'link_to_menu_editor'
 		)); ?>
-		<?php get_template_part('parts/search_form'); ?>
+		<?php get_template_part('parts/searchform'); ?>
 		</div>
 	</div>
 </nav> 

@@ -185,35 +185,22 @@ a.comment-reply-link:after {
 }
 
 
-#respond h3 {
+#reply-title {
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:space-between;
     position: relative;
+    font-size: var(--txt-medium);
 }
 
 #cancel-comment-reply-link {
-    color: #990000;
-    text-transform: uppercase;
-    font-size: 0.6em;
-    display:inline-flex;
-    text-decoration:none;
-    align-items:center;
-    flex-direction:row-reverse;
-    font-weight: bold;
+    color: #000;
+    margin-top: 0.3em;
+    display: inline-block;
 }
 
-
-#cancel-comment-reply-link .nc-x-close {
-    margin-left:5px;
-}
-
-#cancel-comment-reply-link .nc-x-close svg {
-    width:20px; height: 20px;
-}
-
-#cancel-comment-reply-link .nc-x-close g {
-    fill:currentColor;
+#cancel-comment-reply-link:after {
+    display:none;
 }
 
 

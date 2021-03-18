@@ -2942,13 +2942,12 @@ Use function "nc_formatted_date()"
 /* Custom Radio and Checkbox input fields */
 
 /* --------- Form Controls using Fonts --------- */
-
 @font-face {
   font-family: 'ncicon';
   src:
-    url('../fonts/ncicon.ttf?7dw6w1') format('truetype'),
-    url('../fonts/ncicon.woff?7dw6w1') format('woff'),
-    url('../fonts/ncicon.svg?7dw6w1#ncicon') format('svg');
+    url('../fonts/ncicon.ttf?phdj9n') format('truetype'),
+    url('../fonts/ncicon.woff?phdj9n') format('woff'),
+    url('../fonts/ncicon.svg?phdj9n#ncicon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -2957,6 +2956,7 @@ Use function "nc_formatted_date()"
 .ncicon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ncicon' !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -2968,6 +2968,9 @@ Use function "nc_formatted_date()"
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ncicon-close:before {
+  content: "\e903";
+}
 .ncicon-arrow-back:before {
   content: "\e901";
 }
@@ -2992,6 +2995,7 @@ Use function "nc_formatted_date()"
 .ncicon-reply:before {
   content: "\e96a";
 }
+
 
 
 
