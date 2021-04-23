@@ -11,12 +11,12 @@ body.page-template-coming-soon {
     background-color:#fff;
     max-width: 1700px;
     margin:0 auto;
-    color:var(--blue);
+    color:#3D3AEB;
 }
 
 .comingsoon_side1,
 .comingsoon_side2 {
-    padding: var(--gap);
+    padding: 1.5rem;
     display:flex;
     align-items: center;
 }
@@ -26,12 +26,13 @@ body.page-template-coming-soon {
     justify-content: center;
     width:70%;
     padding-top:5em;
+    padding-bottom: 3.5em;
 }
 
 .comingsoon_side2 {
     display: flex;
     justify-content: center;
-    background-color: var(--blue);
+    background-color: #3D3AEB;
     width:30%;
     position:relative;
     color:#fff;
@@ -46,7 +47,7 @@ body.page-template-coming-soon {
     margin-top:-17px;
     left:-17px;
     transform: rotate(45deg);
-    background:var(--blue);
+    background:#3D3AEB;
     width: 34px;
     height: 34px;
 }
@@ -58,19 +59,19 @@ body.page-template-coming-soon {
     top:0;
     height:100%;
     left:100%;
-    background-color: var(--blue);
+    background-color: #3D3AEB;
 }
 
 .comingsoon_content {
     max-width:800px;
-    border-top:solid 11px var(--blue);
+    border-top:solid 11px #3D3AEB;
     padding-top:5em;
 }
 
 .comingsoon_content h1 {
-    max-width:740px;
     font-size: 2.5em;
     font-weight: bold;
+    max-width:750px
 }
 
 .comingsoon_content img {
@@ -85,6 +86,7 @@ body.page-template-coming-soon {
 
 .comingsoon_newsletter {
     max-width:300px;
+    width: 100%;
 }
 
 .comingsoon_newsletter h2 {
@@ -103,6 +105,7 @@ body.page-template-coming-soon {
     background-color:transparent;
     border:solid 1px;
     color: #fff;
+    font-weight: 600;
 }
 
 .comingsoon_newsletter input[type="email"]:focus{
@@ -113,7 +116,7 @@ body.page-template-coming-soon {
 .comingsoon_newsletter input[type="submit"]{
     background:#fff;
     border:none;
-    color:var(--blue);
+    color:#3D3AEB;
     font-weight: bold;
     margin-top:1rem;
     cursor:pointer;
@@ -143,6 +146,7 @@ body.page-template-coming-soon {
 
     .comingsoon_side1 {
         padding-top: 2.5em;
+        padding-bottom:1.5rem;
     }
 
     .comingsoon_side2 {
@@ -160,6 +164,15 @@ body.page-template-coming-soon {
         left: 50%;
         width:30px;
         height: 30px;
+    }
+
+    .comingsoon_content h1,
+    .comingsoon_newsletter h2 {
+        font-size: 1.5em;
+    }
+
+    .comingsoon_content p {
+        font-size: 1em;
     }
 }
 
