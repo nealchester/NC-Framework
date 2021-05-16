@@ -29,7 +29,7 @@ jQuery(".mpanel .menu-item:not(.menu-item-has-children) a").click(function(){
 	jQuery("#mpanel").prop("checked", false);
 });
 
-// Stick Menu
+// Sticky header
 
 jQuery(window).scroll(function() {
 	if (jQuery(this).scrollTop() > 1){

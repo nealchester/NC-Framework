@@ -7,7 +7,6 @@ function nc_register_assets(){
   // JS
 
   wp_register_script('standard-scripts', get_theme_file_uri('/js/standard-scripts.js'), array('jquery'), '1', true);
-  wp_register_script( 'smooth-scroll', get_theme_file_uri('/js/smooth-scroll.js'), array( 'jquery' ), '1', true );
 
   wp_register_script('sal-aniview', get_theme_file_uri('/js/aniview/aniview.js'), array( 'jquery' ), null, true);
   wp_register_script('sal-aniview-init', get_theme_file_uri('/js/aniview/aniview-init.js'), array( 'sal-aniview' ), null, true);
@@ -50,9 +49,6 @@ function nc_load_assets(){
     // JS
     wp_enqueue_script('sal-aniview');
     wp_enqueue_script('sal-aniview-init');
-
-    wp_enqueue_script( 'standard-scripts' ); 
-    if(get_theme_mod('smooth_scroll', true) == true){	wp_enqueue_script( 'smooth-scroll' ); }
   }
 }
 add_action('wp_enqueue_scripts', 'nc_load_assets');

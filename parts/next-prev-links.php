@@ -1,6 +1,6 @@
 <?php 
 $linktitle = 'Article'; 
-if( !is_attachment() && get_theme_mod( 'show_nav_links', true ) == true && is_single() ): ?>
+if( !is_attachment() && get_theme_mod( 'show_nav_links', false ) == true && is_single() ): ?>
 
 <nav class="nplinks">
 	<?php $a_prev_post = get_previous_post(); if (!empty( $a_prev_post )): ?>

@@ -22,6 +22,7 @@ if(function_exists('get_field')) {
     get_template_part('blocks/block-hero');
     get_template_part('blocks/block-list');
     get_template_part('blocks/block-links');
+    get_template_part('blocks/block-popup');
     get_template_part('blocks/block-singlelink');
     get_template_part('blocks/block-gallery');
     get_template_part('blocks/block-columns');
