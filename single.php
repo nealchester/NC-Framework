@@ -6,6 +6,8 @@
 <?php // The title
 get_template_part('parts/the-title');?>
 
+<?php // get_template_part('parts/social-share-links'); ?>
+
 <?php // Page Info
 if(get_theme_mod('main_title_format', 'plain-text') == 'plain-text'):?>
 <?php get_template_part('parts/meta-avatar');?>

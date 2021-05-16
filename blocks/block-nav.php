@@ -53,8 +53,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 	$max_width = get_field('max_width') ?: '1000';
 
 ?>
-	<div class="sticky-trigger"></div>
-	<div id="<?php echo $id; ?>" class="alignfull <?php if($sticky){ echo'navmenu-sticky is-sticky'; } echo nc_block_attr(); ?>">
+	<div id="<?php echo $id; ?>" class="alignfull <?php if($sticky){ echo'navmenu-sticky ncsticky'; } echo nc_block_attr(); ?>">
 	<div class="ncontain">
 		<?php nc_before_content();?>
 	<ul class="navmenu navmenu-bar">
@@ -147,9 +146,6 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php endif;?>
 
 	</style>
-	<?php if($sticky) {
-		wp_enqueue_script( 'stuck', get_theme_file_uri('/js/stuck.js'), array('jquery'), '1', true );
-	} ?>
 
 <?php
 }

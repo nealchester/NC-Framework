@@ -1281,25 +1281,30 @@ body.woocommerce .ncontent_main > * {
 /* Social Share Links */
 
 
-.socialsharelinks {
+.sharelinks {
     color:currentColor;
     display:flex;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 3rem;
 }
 
-.socialsharelinks a {
+.sharelinks_anchor {
     padding:0.5em;
     position: relative;
     transition: 0.5s;
     transform:scale(1);
+    background:var(--gray);
 }
 
-.socialsharelinks a:hover {
+.sharelinks_anchor:not(:last-of-type) {
+    margin-right:0.75rem
+}
+
+.sharelinks_anchor:hover {
     transform:scale(1.3);
 }
 
-.socialsharelinks svg {
+.sharelinks svg {
     display:block;
     max-width:20px;
     max-height:20px;
@@ -1307,6 +1312,6 @@ body.woocommerce .ncontent_main > * {
     height:auto;
 }
 
-.socialsharelinks svg path {
+.sharelinks svg path {
     fill: currentColor;
 }

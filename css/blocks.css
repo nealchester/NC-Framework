@@ -2884,6 +2884,7 @@ Use function "nc_formatted_date()"
 
 .pagebreak_header {
   color: var(--ptext-color);
+  margin-bottom:var(--gap);
 }
 
 .pagebreak_header > a, 

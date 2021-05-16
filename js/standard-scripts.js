@@ -23,11 +23,23 @@ jQuery(function() {
 	});
 
 
-		//  Close menu upon clicking item
+//  Close menu upon clicking item
 
-		jQuery(".mpanel .menu-item:not(.menu-item-has-children) a").click(function(){
-			jQuery("#mpanel").prop("checked", false);
-		});
+jQuery(".mpanel .menu-item:not(.menu-item-has-children) a").click(function(){
+	jQuery("#mpanel").prop("checked", false);
+});
+
+// Stick Menu
+
+jQuery(window).scroll(function() {
+	if (jQuery(this).scrollTop() > 1){
+	 jQuery('.ncsticky').addClass("ncsticky-enabled");
+	}
+	else{
+	 jQuery('.ncsticky').removeClass("ncsticky-enabled");
+	}
+ });
+
 
 		// Double Click 
 
