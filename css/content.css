@@ -9,6 +9,56 @@
   /* https://rsms.me/inter/ */
 }
 
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Gotham-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Gotham-Book-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Gotham-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Gotham-Medium-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/Gotham-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/Gotham-Bold-Italic.otf') format('opentype');
+}
+
+
+/*---------------------------------------------------------*/
 
 body {
     color:#000;
