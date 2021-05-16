@@ -8,7 +8,7 @@ function nc_popup_block() {
         acf_register_block_type(array(
             'name'              => 'nc_popup',
             'title'             => __('NC PopUp Box', 'nc-framework'),
-            'description'       => __('Create a popup box that will appear once per session.', 'nc-framework'),
+            'description'       => __('Create a popup box that will appear once per session. To see the popup close the page and open it again.', 'nc-framework'),
             'render_callback'   => 'nc_popup_block_markup',
             'category'          => 'layout',
             //'icon'              => 'format-image',
