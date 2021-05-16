@@ -1097,3 +1097,36 @@ body.woocommerce .ncontent_main > * {
     height: 100%;
     z-index: -1;
 }
+
+/* Social Share Links */
+
+
+.socialsharelinks {
+    color:currentColor;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialsharelinks a {
+    padding:0.5em;
+    position: relative;
+    transition: 0.5s;
+    transform:scale(1);
+}
+
+.socialsharelinks a:hover {
+    transform:scale(1.3);
+}
+
+.socialsharelinks svg {
+    display:block;
+    max-width:20px;
+    max-height:20px;
+    width:100%;
+    height:auto;
+}
+
+.socialsharelinks svg path {
+    fill: currentColor;
+}

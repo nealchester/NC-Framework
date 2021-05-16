@@ -1,19 +1,25 @@
-// From: https://usefulangle.com/demos/108/sticky.html
+//http://talkerscode.com/webtricks/create-sticky-header-using-jquery.php
 
-var observer = new IntersectionObserver(function(entries) {
-	if(entries[0].intersectionRatio === 0)
-		document.querySelector(".is-sticky").classList.add('sticky-enabled');
-	else if(entries[0].intersectionRatio === 1)
-		document.querySelector(".is-sticky").classList.remove("sticky-enabled");
-}, { threshold: [0,1] });
-
-observer.observe(document.querySelector(".sticky-trigger"));
-
-/*
-// The HTML
-
-<div class="sticky-trigger"></div> // this must be placed before the sticky element
-<div class="is-sticky">...</div> // the class must be included on the element that will be sticky
-When the element is stuck the attribute "data-sticky='stuck'"
-
-*/
+jQuery(window).scroll(function() {
+	if (jQuery(this).scrollTop() > 1)
+	{
+	 jQuery('#header').addClass("sticky-enabled");
+	}
+	else
+	{
+	 jQuery('#header').removeClass("sticky-enabled");
+	}
+ });
+ 
+ /*
+ 
+ Suggested CSS
+ 
+ #header.sticky-enabled {
+		 position: fixed (supports older browsers or you can use "sticky");
+		 width:100%;
+		 left:0;
+		 top: -1px (necessary property and value);
+ }
+ 
+ */
