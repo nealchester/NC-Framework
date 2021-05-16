@@ -13,7 +13,7 @@ function nc_popup_block() {
             'category'          => 'layout',
             //'icon'              => 'format-image',
             'mode'              => 'preview',
-            'keywords'          => array('modal', 'popup box' ),
+            'keywords'          => array('modal', 'popup box', 'popup' ),
 			'post_types'        => array('post', 'page'),
 			'align'             => 'full',
 			'supports'          => array( 
@@ -36,9 +36,11 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
     if( !empty($block['className']) ) {
         $className .= ' ' . $block['className'];
     }
-    if( !empty($block['align']) ) {
+    /*
+		if( !empty($block['align']) ) {
         $className .= ' align' . $block['align'];
     }
+		*/
 
 	//ACF Block
     $content = get_field('content') ?: '<h2>Hello</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>';
@@ -51,7 +53,7 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
     $height = get_field('min_height') ?: '400';
 ?>
 
-<div id="<?php echo $id; ?>" class="ncpopup_overlay">
+<div id="<?php echo $id; ?>" class="ncpopup_overlay<?php echo esc_attr($className); ?>">
   <div class="ncpopup">
     <div class="ncpopup_container">
       <div class="ncpopup_content">
@@ -72,7 +74,7 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
 <?php echo '#'.$id; ?> .ncpopup { 
   background: <?php echo $bgcolor.' '.$bgimg; ?> no-repeat center;
   background-size: cover;
-  padding:3rem 10%; 
+  padding:3rem 7%; 
   display:flex; 
   align-items:center; 
   justify-content:center; 
@@ -88,18 +90,6 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
 
 /* for frontend */
 #wrapper <?php echo '#'.$id; ?> .ncpopup {
-  background: <?php echo $bgcolor.' '.$bgimg; ?> no-repeat center;
-  background-size: cover;
-  padding:3rem 7%; 
-  display:flex; 
-  align-items:center; 
-  justify-content:center;  
-  color:<?php echo $color; ?>;
-  width:100%;
-  max-width: <?php echo $width.'px'; ?>;
-  min-height: <?php echo $height.'px'; ?>;
-  box-shadow: 0 3px 1em rgba(0,0,0,0.5);
-  position: relative;
   transition: 0.5s;
   transition-delay: 0.5s;
   opacity: 0;
@@ -115,13 +105,14 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
   cursor: pointer;
   border:none;
 }
+
 <?php echo '#'.$id; ?> .ncpopup_close svg {
       display:block;
   }
 
-  <?php echo '#'.$id; ?> .ncpopup_close g {
-      fill: <?php echo $color; ?>;
-  }
+<?php echo '#'.$id; ?> .ncpopup_close g {
+    fill: <?php echo $color; ?>;
+}
 
 
 #wrapper <?php echo '#'.$id; ?>.ncpopup_overlay {
