@@ -201,23 +201,35 @@ select {
     padding-right: 2em !important;
 }
 
-input:not(.btn):not([type="submit"]):not([type="search"]), select, textarea {
+input:not(.btn):not([type="submit"]):not([type="search"]), 
+select, 
+textarea {
     max-width: 100%;
     margin: 0;
     vertical-align: baseline;
     transition: 0.3s;
-    min-height: 2.5rem;
-    padding: 0 0.75em;
-    border-radius: 0;
-    background-color: transparent;
-    border: solid 1px #ddd;
+    min-height: var(--input-height);
+    padding: var(--field-padding);
+    border-radius: var(--field-radius);
+    background-color: var(--field-bgcolor);
+    border: var(--field-border);
+}
+
+input:not(.btn):not([type="submit"]):not([type="search"]):focus, 
+select:focus, 
+textarea:focus {
+    box-shadow:var(--field-shadow-focus);
+    background-color: var(--field-bgcolor-focus);
+    border: var(--field-border-focus);
 }
 
 input[type="file"], input[type="submit"] {
     white-space: pre-wrap;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus, 
+select:focus, 
+textarea:focus {
     outline: none;
 }
 
