@@ -1315,3 +1315,8 @@ body.woocommerce .ncontent_main > * {
 .sharelinks svg path {
     fill: currentColor;
 }
+
+
+.featuredimage  {
+    margin-bottom:1.5rem;
+}
