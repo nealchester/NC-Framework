@@ -54,12 +54,7 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 
 	<?php if($type == 'internal' && $inlink ):?>
 
-		<?php 
-		if (get_field("featured_image_focus", $inlink->ID)){
-			$featured_image_focus = 'object-position:'.get_field("featured_image_focus",$inlink->ID).'; transform-origin:'.get_field("featured_image_focus",$inlink->ID).';'; }
-		else { $featured_image_focus = 'object-position:center; transform-origin:center;'; }
-
-		setup_postdata( $inlink );?>
+		<?php setup_postdata( $inlink );?>
 
 		<a class="ncard_link" href="<?php echo get_permalink($inlink->ID); ?>">
 			<div class="ncard_container">
@@ -70,7 +65,7 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 					</div>
 					<?php elseif(get_the_post_thumbnail_url($inlink->ID)):?>
 					<div class="ncard_imgcon">
-						<?php echo get_the_post_thumbnail( $inlink->ID, 'medium', array( "class" => "ncard_img", "style" => $featured_image_focus ) ); ?>
+						<?php echo get_the_post_thumbnail( $inlink->ID, 'medium', array( "class" => "ncard_img", "style" => nc_image_focus($inlink->ID) )); ?>
 					</div>
 					<?php else:?>
 					<div class="ncard_imgcon ncard-noimage">

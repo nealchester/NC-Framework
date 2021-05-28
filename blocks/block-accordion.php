@@ -52,7 +52,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 ?>
 
 	<div id="<?php echo $id; ?>" class="nccordion_box<?php echo esc_attr($className); ?>">
-		<div class="ncontain">
+		<div class="ncontain<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
 		
 		<?php nc_before_content(); ?>
 			

@@ -1,5 +1,4 @@
 <?php
-
 if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array(
@@ -7106,6 +7105,42 @@ if( function_exists('acf_add_local_field_group') ):
         'placeholder' => '',
         'maxlength' => '',
         'rows' => '',
+        'new_lines' => '',
+      ),
+      array(
+        'key' => 'field_60b101c0ac70d',
+        'label' => 'Container Classes',
+        'name' => '',
+        'type' => 'accordion',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'open' => 0,
+        'multi_expand' => 0,
+        'endpoint' => 0,
+      ),
+      array(
+        'key' => 'field_60b1011bac70c',
+        'label' => 'Add classes the block\'s container',
+        'name' => 'add_contain_classes',
+        'type' => 'textarea',
+        'instructions' => 'Separate multiple classes with spaces. <b>Note:</b> To add custom classes to the block, use the "Advanced" section for this block.',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'maxlength' => '',
+        'rows' => 4,
         'new_lines' => '',
       ),
     ),

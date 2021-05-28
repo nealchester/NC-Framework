@@ -31,10 +31,17 @@ function nc_block_attr(){
     }
 }
 
-// Block Attributes
+// Container Attributes
 function nc_contain_attr(){
     if(get_field('add_to_container')) {
         return ' '.get_field('add_to_container');
+    }
+}
+
+// Container Classes
+function nc_contain_classes(){
+    if(get_field('add_contain_classes')) {
+        return ' '.get_field('add_contain_classes');
     }
 }
 

@@ -64,7 +64,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 ?>
 
 	<div id="<?php echo $id; ?>" class="ncgallery_box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo sal_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
 		
 		  <?php nc_before_content(); ?>
 

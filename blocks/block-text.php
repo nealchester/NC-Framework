@@ -54,7 +54,7 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 	<section id="<?php echo $id; ?>" class="nctext<?php if($dropcap) { echo ' nctext-dropcap'; }; if($cc == '2' || $cc == '3') { echo' nctext-cols'; }; echo esc_attr($className); ?>">
-		<div class="ncontain<?php echo sal_classes(); ?>" <?php echo sal_animate(); ?>>
+		<div class="ncontain<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate(); ?>>
 		<?php nc_before_content(); ?>
 
 			<div class="nctext_paragraphs nc_content_block_main">
