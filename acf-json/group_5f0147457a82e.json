@@ -1,6 +1,6 @@
 {
     "key": "group_5f0147457a82e",
-    "title": "Block: NC FAQs",
+    "title": "Plugin Block: NC FAQs",
     "fields": [
         {
             "key": "field_5f014745ae299",
@@ -273,7 +273,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1593962618
+    "modified": 1622174408
 }

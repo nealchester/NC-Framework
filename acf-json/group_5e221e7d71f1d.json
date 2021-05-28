@@ -192,11 +192,11 @@
                 "id": ""
             },
             "choices": {
-                "delay-1": "1 Second",
-                "delay-2": "2 Seconds",
-                "delay-3": "3 Seconds",
-                "delay-4": "4 Seconds",
-                "delay-5": "5 Seconds"
+                "delay-1s": "1 Second",
+                "delay-2s": "2 Seconds",
+                "delay-3s": "3 Seconds",
+                "delay-4s": "4 Seconds",
+                "delay-5s": "5 Seconds"
             },
             "default_value": false,
             "allow_null": 1,
@@ -334,5 +334,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1600786934
+    "modified": 1622174344
 }
