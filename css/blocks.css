@@ -510,26 +510,37 @@ width: 100%;
   
   .ncgallery-capslide:not(.ncgallery-capbelow) .ncgallery_item:hover .ncgallery_caption,
   .ncgallery-capoverlay .ncgallery_item .ncgallery_caption {
-  bottom: -1px;
-  opacity:1;
+    bottom: -1px;
+    opacity:1;
   }
   
   /* Modifier: Captions below */
   
   .ncgallery-capbelow .ncgallery_caption {
-  position:relative;
-  width:100%;
-  padding:0.5rem;
-  background:none;
+    position:relative;
+    width:100%;
+    padding:0.5rem;
+    background:none;
   }
   
   .ncgallery-capbelow .ncgallery_size {
-  position:relative;
-  height: auto;
-  overflow: hidden;
+    position:relative;
+    height: auto;
+    overflow: hidden;
   }
   
   .ncgallery_caption:empty { display: none }
+
+  
+  .ncgallery_caption .ncgallery_title a,
+  .ncgallery_caption .ncgallery_desc a {
+    position: relative;
+    z-index: 10;
+    color:inherit;
+    border-bottom:solid 1px;
+  }
+
+
 
 
 /* Accordion 
