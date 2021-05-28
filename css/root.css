@@ -13,10 +13,6 @@ html, body, div, figure, form, canvas, summary, button, form>ul {
     padding: 0;
 }
 
-html {
-    background: #fff;
-}
-
 body {
     overflow-x: hidden;
 }
