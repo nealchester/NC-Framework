@@ -11,8 +11,6 @@ function nc_register_assets(){
   wp_register_script('sal-aniview', get_theme_file_uri('/js/aniview/aniview.js'), array( 'jquery' ), null, true);
   wp_register_script('sal-aniview-init', get_theme_file_uri('/js/aniview/aniview-init.js'), array( 'sal-aniview' ), null, true);
 
-  wp_register_script('fadein-hero-img', get_theme_file_uri('/js/fadein-hero-img.js'), array( 'jquery' ), null, false );
-
   // CSS
 
   wp_register_style('animate-css', get_theme_file_uri('/js/aniview/animate.css'), null, '3.7.2', 'screen');
@@ -34,7 +32,8 @@ add_action('wp_enqueue_scripts', 'nc_register_assets');
 function nc_load_assets(){
   if( !is_admin() ){
     
-    // CSS    
+    // CSS
+
     wp_enqueue_style('animate-css'); 
     wp_enqueue_style('nc-vars');
     wp_enqueue_style('nc-root');
@@ -49,10 +48,11 @@ function nc_load_assets(){
 
 
     // JS
-    wp_enqueue_script('fadein-hero-img');
+
     wp_enqueue_script('standard-scripts');
     wp_enqueue_script('sal-aniview');
     wp_enqueue_script('sal-aniview-init');
+    
   }
 }
 add_action('wp_enqueue_scripts', 'nc_load_assets');
