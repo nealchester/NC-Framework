@@ -1,8 +1,10 @@
+html {
+    background-color: #fff;
+}
+
 /* Fade in Page */
 /*
-html {
-    background-color: #ccc;
-}
+
 body {
     background-color:#fff;
     animation: fadeInAnimation ease 1s;
@@ -22,8 +24,8 @@ body {
 
 /* Link colors */
 
-.ncontent_main p a:not([class]),
-.ncontent_main li a:not([class]) { 
+.ncontent_main > p a:not([class]),
+.ncontent_main > li a:not([class]) { 
     color:currentColor; 
     text-decoration:none; 
     transition:0.3s; 
@@ -31,8 +33,8 @@ body {
     font-weight: 500;
 }
 
-.ncontent_main p a:not([class]):after,
-.ncontent_main li a:not([class]):after { 
+.ncontent_main > p a:not([class]):after,
+.ncontent_main > li a:not([class]):after { 
     content:''; 
     height:1px; 
     background:var(--link-color); 
@@ -44,14 +46,14 @@ body {
     left:0;
 }
 
-.ncontent_main p a:not([class]):hover:after,
-.ncontent_main li a:not([class]):hover:after { 
+.ncontent_main > p a:not([class]):hover:after,
+.ncontent_main > li a:not([class]):hover:after { 
     color:var(--link-color-hover); 
     width:0;
 }
 
-.ncontent_main p a:not([class]):hover,
-.ncontent_main li a:not([class]):hover {
+.ncontent_main > p a:not([class]):hover,
+.ncontent_main > li a:not([class]):hover {
     color:var(--link-color)
 }
 
@@ -63,6 +65,9 @@ body {
     background-color:#fff;
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
     position: relative;
+    width:100%;
+    left:0;
+    top:0;
     z-index:300;
 }
 

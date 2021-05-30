@@ -18,8 +18,6 @@
     --gray: #fbfbfb; 
     --dark: #222;
 
-    --blue: #3D3AEB;
-
     --link-color: #0093ff;
 
     --selection-bgcolor: #000;
@@ -30,7 +28,7 @@
 
     /* Typography */
 
-    --sans: 'Gotham', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif; 
+    --sans: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif; 
     --serif: var(--sans); 
     --mono: 'Courier New', Courier, monospace;
 
