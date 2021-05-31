@@ -1099,30 +1099,6 @@ overflow: hidden;
 }
 
 
-
-.nclist_image {
-  width:100%;
-  max-width:100%;
-  max-height: var(--icon-max-height);
-  min-height:var(--icon-min-height);
-  min-width: var(--icon-min-width);
-  width: var(--icon-width);
-  height: var(--icon-height);
-  padding: var(--icon-padding);
-  object-fit:var(--icon-object-fit);
-  display:block;
-  fill:var(--icon-color);
-}
-
-img.nclist_image {
-  border-radius:var(--icon-border-radius);
-}
-
-svg.nclist_image,
-svg.nclist_image > * {
-  fill:var(--icon-color);
-}
-
 .nclist_label {
 padding:var(--label-padding);
 color:var(--label-color);
@@ -1976,6 +1952,10 @@ margin-top:var(--gap);
   height: 1em;
   display: inline-block;
   margin-right: 0.3em;
+}
+
+.ncard-singlelink .ncard_url svg path{
+  fill: currentColor
 }
 
 .ncard-singlelink .ncard-noimage {

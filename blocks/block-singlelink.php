@@ -46,7 +46,10 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 	$exlink = get_field('external_link');
 	$after_text = get_field('after_text');
 	$image_url = get_field('image');
-	$expand = get_field('full_width_on_mobile');
+	$position = get_field('position');
+	$style = get_field('style');
+	$breakpoint = get_field('mobile_breakpoint');
+	$style_mobile = get_field('style_mobile');
 	if(get_field("before_title")) {	$before_text = '<strong>'.get_field("before_title").'</strong> '; }
 ?>
 
@@ -124,20 +127,59 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 
 	</div>
 
-	<?php if( !empty($expand)):?>
+
+
 	<style id="<?php echo $id; ?>-block-css">
-		@media(max-width:<?php echo $expand.'px'; ?>){
-			<?php echo '#'.$id; ?>.ncard-singlelink { width: 100% !important; }
-			<?php echo '#'.$id; ?>.ncard-singlelink .ncard_container { border-radius: 0; border-left: none 0 !important; border-right: none 0 !important; }
+
+		<?php if($position == 'float-left' || $position == 'float-right'):?>
+		<?php echo '#'.$id; ?> .ncard_link {
+			width: calc( 50% - var(--gap) );
+			max-width:350px;
+		}
+		<?php endif;?>
+
+		<?php if($position == 'float-left'):?>	
+		<?php echo '#'.$id; ?> .ncard_link {
+			float:left;
+			margin-right:var(--gap);
+		}
+		<?php endif;?>
+
+		<?php if($position == 'float-right'):?>	
+		<?php echo '#'.$id; ?> .ncard_link {
+			float:right;
+			margin-left: var(--gap);
+		}
+		<?php endif;?>
+
+		<?php echo '#'.$id; ?>.ncard-singlelink {
+			--card-flex-direction: <?php echo $style; ?>;
 		}
 
-		<?php if(get_field('custom_styles')):?> 
-		/* Custom CSS */
-		<?php the_field('custom_styles');?>
+
+		<?php if($position == 'float-left' || $position == 'float-right'):?>
+		@media(max-width:480px){
+			<?php echo '#'.$id; ?> .ncard_link {
+				float:none;	
+				width: 100%;
+				margin-left:0;
+				margin-right:0;
+			}
+		}
 		<?php endif;?>
-		
+
+		<?php if( !empty($breakpoint)):?>
+		@media(max-width:<?php echo $breakpoint.'px'; ?>){
+			<?php echo '#'.$id; ?>.ncard-singlelink {
+			--card-flex-direction: <?php echo $style_mobile; ?>;
+			}
+		}
+		<?php endif;?>
+
+		<?php nc_block_custom_css(); ?>
+
 	</style>
-	<?php endif;?>
+
 
     <?php
 }

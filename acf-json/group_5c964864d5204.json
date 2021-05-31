@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5d9f578dffdf8",
-            "label": "Main",
+            "label": "The Link",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -21,7 +21,7 @@
         },
         {
             "key": "field_5c964d1c42472",
-            "label": "Link Type",
+            "label": "Link Origin",
             "name": "link_type",
             "type": "radio",
             "instructions": "",
@@ -64,7 +64,10 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
+            "post_type": [
+                "post",
+                "page"
+            ],
             "taxonomy": "",
             "allow_null": 0,
             "multiple": 0,
@@ -96,7 +99,7 @@
         },
         {
             "key": "field_5d9e09ac267d6",
-            "label": "Before title",
+            "label": "Before Link's Title",
             "name": "before_title",
             "type": "text",
             "instructions": "",
@@ -115,7 +118,7 @@
         },
         {
             "key": "field_5c964990716ad",
-            "label": "Link description",
+            "label": "Description",
             "name": "after_text",
             "type": "text",
             "instructions": "",
@@ -157,11 +160,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_5c967a23c3e9f",
-            "label": "Full Width on Mobile",
-            "name": "full_width_on_mobile",
-            "type": "number",
-            "instructions": "Leave blank if you don't want the link to expand 100% on mobile",
+            "key": "field_60b5198cd7dfb",
+            "label": "Layout",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -169,13 +172,106 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_60b519a2d7dfc",
+            "label": "Position",
+            "name": "position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "float-left": "Float Left",
+                "float-right": "Float Right",
+                "float-none": "Standard"
+            },
+            "default_value": "float-none",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60b51a52d7dfd",
+            "label": "Style",
+            "name": "style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "column": "Vertical",
+                "row": "Horizontal"
+            },
+            "default_value": "row",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c967a23c3e9f",
+            "label": "Mobile Breakpoint",
+            "name": "mobile_breakpoint",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 480,
             "placeholder": 480,
             "prepend": "",
             "append": "px",
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_60b52489e668d",
+            "label": "Style on Mobile",
+            "name": "style_mobile",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "column": "Vertical",
+                "row": "Horizontal"
+            },
+            "default_value": "row",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5e233db8394ab",
@@ -216,5 +312,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426833
+    "modified": 1622503992
 }

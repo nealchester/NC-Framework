@@ -55,48 +55,46 @@ function nc_list_block_markup( $block, $content = '', $is_preview = false ) {
 
 		<ul class="nclist_group nc_content_block_main">
 
-		<?php while( have_rows('list_content') ): the_row(); 
-			$image_url = get_sub_field('image');
-			$image = $image_url['sizes'][ $size ];
-
+		<?php while( have_rows('list_content') ): the_row();
 			$label = get_sub_field('label');
+			$icon = get_sub_field('icon');
+			$text = get_sub_field('text');
 			$link = get_sub_field('link');
-			$svg = get_sub_field('svg');
 			$bgimg = get_sub_field('bg_image');
 		?>
 
 		<li class="nclist_item">
+
 		<?php if($link):?>	
 		<a class="nclist_link"<?php if($link['url']) { echo' href="'.esc_url($link['url']).'"'; } if($link['target']){ echo' target="'.esc_attr($link['target']).'"';} ?>>
 		<div class="nclist_box">
-		<?php
-		if( $bgimg ) {
-				echo wp_get_attachment_image( $bgimg, 'medium', '', array("class" => "nclist_bgimg") );
-		}?>
 
-		<?php if($image):?>
-			<div class="nclist_imgcontain">
-				<img src="<?php echo $image; ?>" alt="<?php echo $image_url['alt']; ?>" class="nclist_image<?php if($svg){echo ' '.$svg_class;}?>"/>
-			</div><?php else:?>
-			<div class="nclist_imgcontain">
-				<img src="<?php nc_fallbackimage(); ?>" alt="" class="nclist_image" />
-			</div>
-		<?php endif;?>
-		<div class="nclist_label"><?php echo $label; ?></div>
+			<?php
+			if( $bgimg ) {
+					echo wp_get_attachment_image( $bgimg, 'medium', '', array("class" => "nclist_bgimg") );
+			}?>
+
+			<?php if($icon):?>
+				<div class="nclist_icon"><?php echo $icon; ?></div>
+			<?php endif;?>
+			<div class="nclist_label"><?php echo $label; ?></div>
+
 		</div>
 		</a>
+
 		<?php else:?>
+
 		<div class="nclist_box">
-		<?php if($image):?>
-		<div class="nclist_imgcontain">
-			<img src="<?php echo $image; ?>" alt="<?php echo $image_url['alt']; ?>" class="nclist_image<?php if($svg && $svg_class){echo ' '.$svg_class;}?>"/>
-		</div>
-		<?php else:?>
-		<div class="nclist_imgcontain">
-			<img src="<?php nc_fallbackimage(); ?>" alt="" class="nclist_image" />
-		</div>
-		<?php endif;?>
-		<div class="nclist_label"><?php echo $label; ?></div>
+			
+			<?php
+			if( $bgimg ) {
+					echo wp_get_attachment_image( $bgimg, 'medium', '', array("class" => "nclist_bgimg") );
+			}?>
+			<?php if($icon):?>
+				<div class="nclist_icon"><?php echo $icon; ?></div>
+			<?php endif;?>
+			<div class="nclist_label"><?php echo $label; ?></div>
+
 		</div>
 		<?php endif;?>
 		</li>

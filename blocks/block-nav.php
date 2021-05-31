@@ -147,6 +147,10 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 	</style>
 
+	<?php if($sticky){ 
+		wp_enqueue_script('sticky-script', get_theme_file_uri('/js/sticky.js'), '', '1', true);
+	}?>
+
 <?php
 }
 ?>
