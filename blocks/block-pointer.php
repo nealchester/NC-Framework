@@ -13,7 +13,7 @@ function nc_pointer_block() {
         'category'          => 'layout',
         //'icon'            => 'format-image',
         'mode'              => 'preview',
-        'keywords'          => array('pointer', 'arrow' ),
+        'keywords'          => array('pointer', 'arrow', 'spacer', 'separater' ),
         'post_types'        => array('post', 'page'),
         'align'             => 'full',
         'supports'          => array( 

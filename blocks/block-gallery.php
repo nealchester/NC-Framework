@@ -184,27 +184,29 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 <?php if( get_field('link_to_image') == 'image_lightbox') :?>
 
-<?php wp_enqueue_script( 'magnific-js', get_theme_file_uri('/js/magnific/jquery.magnific-popup.min.js'), array('jquery'), '1', true );
-wp_enqueue_style( 'magnific-css', get_theme_file_uri('/js/magnific/magnific-popup.css'), null, null, null ); ?>
+	<?php 
+		wp_enqueue_script( 'magnific', false);
+		wp_enqueue_style( 'magnific-styles', false); 
+	?>
 
-<script id="<?php echo 'gallery_'.$id.'_script'; ?>">
-jQuery(document).ready(function() {
-  jQuery('<?php echo'.ncgimg_'.$id; ?>').magnificPopup({
-		type:'image',
-		image: { titleSrc: 'data-title' },
-		gallery:{ enabled:true },
-		mainClass:'mfp-with-zoom',
-		zoom: {
-			enabled: true,
-			duration: 300,
-			easing: 'ease-in-out',
-			opener: function(openerElement) {
-				return openerElement.is('img') ? openerElement : openerElement.find('img');
-			}
-      },
-  });
-});
-</script>
+	<script id="<?php echo 'gallery_'.$id.'_script'; ?>">
+	jQuery(document).ready(function() {
+		jQuery('<?php echo'.ncgimg_'.$id; ?>').magnificPopup({
+			type:'image',
+			image: { titleSrc: 'data-title' },
+			gallery:{ enabled:true },
+			mainClass:'mfp-with-zoom',
+			zoom: {
+				enabled: true,
+				duration: 300,
+				easing: 'ease-in-out',
+				opener: function(openerElement) {
+					return openerElement.is('img') ? openerElement : openerElement.find('img');
+				}
+				},
+		});
+	});
+	</script>
 
 <?php endif;?>
 

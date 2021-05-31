@@ -113,13 +113,14 @@ Make the bar sticky */
   left:0;
   top:-1px;
   z-index:200;
+  transition:0.3s
 }
 
 /* Account for WordPress bar when logged in */
 
-body.logged-in .navmenu-sticky { top: 32px; }
-@media(max-width:782px) { body.logged-in .navmenu-sticky { top:46px } }
-@media(max-width:600px) { body.logged-in .navmenu-sticky { top:0 } }
+body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top: 32px; }
+@media(max-width:782px) { body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top:46px } }
+@media(max-width:600px) { body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top:0 } }
 
 /* Responsive 
 

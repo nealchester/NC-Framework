@@ -199,9 +199,7 @@
                 "right center": "Right Middle",
                 "right bottom": "Right Bottom"
             },
-            "default_value": [
-                "center center"
-            ],
+            "default_value": "center center",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -494,5 +492,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604013765
+    "modified": 1622426818
 }

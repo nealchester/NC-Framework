@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array(
@@ -107,44 +108,6 @@ if( function_exists('acf_add_local_field_group') ):
         'layout' => 'block',
         'button_label' => '',
         'sub_fields' => array(
-          array(
-            'key' => 'field_6053ae3b3c9ef',
-            'label' => '',
-            'name' => 'heading',
-            'type' => 'text',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-              'width' => '',
-              'class' => '',
-              'id' => '',
-            ),
-            'default_value' => '',
-            'placeholder' => 'Heading',
-            'prepend' => '',
-            'append' => '',
-            'maxlength' => '',
-          ),
-          array(
-            'key' => 'field_6053ae493c9f0',
-            'label' => '',
-            'name' => 'content',
-            'type' => 'textarea',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-              'width' => '',
-              'class' => '',
-              'id' => '',
-            ),
-            'default_value' => '',
-            'placeholder' => 'Enter content here',
-            'maxlength' => '',
-            'rows' => 4,
-            'new_lines' => 'wpautop',
-          ),
         ),
       ),
       array(
@@ -433,23 +396,6 @@ if( function_exists('acf_add_local_field_group') ):
     'title' => 'Block: NC Columns',
     'fields' => array(
       array(
-        'key' => 'field_5c9905513cc1d',
-        'label' => 'Content',
-        'name' => '',
-        'type' => 'accordion',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'open' => 0,
-        'multi_expand' => 0,
-        'endpoint' => 0,
-      ),
-      array(
         'key' => 'field_5c9905513cc73',
         'label' => 'Columns Content',
         'name' => 'columns',
@@ -510,25 +456,6 @@ if( function_exists('acf_add_local_field_group') ):
             'max_height' => '',
             'max_size' => '',
             'mime_types' => '',
-          ),
-          array(
-            'key' => 'field_5c9905eafa28c',
-            'label' => 'Content',
-            'name' => 'column_content',
-            'type' => 'wysiwyg',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-              'width' => '',
-              'class' => '',
-              'id' => '',
-            ),
-            'default_value' => '',
-            'tabs' => 'all',
-            'toolbar' => 'full',
-            'media_upload' => 1,
-            'delay' => 0,
           ),
         ),
       ),
@@ -933,6 +860,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1603997445,
   ));
   
   acf_add_local_field_group(array(
@@ -1173,33 +1101,6 @@ if( function_exists('acf_add_local_field_group') ):
         'open' => 0,
         'multi_expand' => 0,
         'endpoint' => 0,
-      ),
-      array(
-        'key' => 'field_5c97974b9dc8f',
-        'label' => '',
-        'name' => 'the_gallery',
-        'type' => 'gallery',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'array',
-        'preview_size' => 'medium',
-        'insert' => 'prepend',
-        'library' => 'all',
-        'min' => '',
-        'max' => '',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => 'jpeg, jpg, png',
       ),
       array(
         'key' => 'field_5c97974b9dd6c',
@@ -1826,25 +1727,6 @@ if( function_exists('acf_add_local_field_group') ):
         'open' => 0,
         'multi_expand' => 0,
         'endpoint' => 0,
-      ),
-      array(
-        'key' => 'field_60318a89adf23',
-        'label' => 'Content',
-        'name' => 'content',
-        'type' => 'wysiwyg',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '<h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p><a class="btn" href="#">Button</a></p>',
-        'tabs' => 'all',
-        'toolbar' => 'full',
-        'media_upload' => 1,
-        'delay' => 0,
       ),
       array(
         'key' => 'field_6031898cadf21',
@@ -2929,23 +2811,6 @@ if( function_exists('acf_add_local_field_group') ):
         'endpoint' => 0,
       ),
       array(
-        'key' => 'field_5f0b42f0d0031',
-        'label' => '',
-        'name' => '',
-        'type' => 'message',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'message' => 'At some point, your slider\'s content gets too narrow to display 3 or more slides at a time. You can set a width at which to want to show less slides at a time. You can also choose to hide the pagination and arrows.',
-        'new_lines' => 'wpautop',
-        'esc_html' => 0,
-      ),
-      array(
         'key' => 'field_5f0b42f0d4c9d',
         'label' => 'Break Point Width',
         'name' => 'break_width',
@@ -2965,65 +2830,6 @@ if( function_exists('acf_add_local_field_group') ):
         'min' => '',
         'max' => '',
         'step' => '',
-      ),
-      array(
-        'key' => 'field_5f0b42f0d95e7',
-        'label' => 'Slides Per Page',
-        'name' => 'break_per_page',
-        'type' => 'number',
-        'instructions' => 'On break point',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => 1,
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'min' => '',
-        'max' => '',
-        'step' => '',
-      ),
-      array(
-        'key' => 'field_5f0b42f0de1f2',
-        'label' => 'Show Pagination',
-        'name' => 'show_pagination',
-        'type' => 'true_false',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'message' => '',
-        'default_value' => 0,
-        'ui' => 0,
-        'ui_on_text' => '',
-        'ui_off_text' => '',
-      ),
-      array(
-        'key' => 'field_5f0b42f0e3796',
-        'label' => 'Show Arrows',
-        'name' => 'show_arrows',
-        'type' => 'true_false',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'message' => '',
-        'default_value' => 0,
-        'ui' => 0,
-        'ui_on_text' => '',
-        'ui_off_text' => '',
       ),
       array(
         'key' => 'field_5f0b7e324ed28',
@@ -3153,25 +2959,6 @@ if( function_exists('acf_add_local_field_group') ):
         'layout' => 'horizontal',
         'return_format' => 'value',
         'save_other_choice' => 0,
-      ),
-      array(
-        'key' => 'field_5c7978ba4f00f',
-        'label' => '',
-        'name' => 'content',
-        'type' => 'wysiwyg',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'tabs' => 'all',
-        'toolbar' => 'full',
-        'media_upload' => 1,
-        'delay' => 1,
       ),
       array(
         'key' => 'field_5f9b447c460c8',
@@ -3870,6 +3657,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1592281208,
   ));
   
   acf_add_local_field_group(array(
@@ -3949,6 +3737,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1616086474,
   ));
   
   acf_add_local_field_group(array(
@@ -4229,6 +4018,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1621198406,
   ));
   
   acf_add_local_field_group(array(
@@ -4491,9 +4281,7 @@ if( function_exists('acf_add_local_field_group') ):
           'ncolumns-standard' => 'Standard',
           'ncolumns-mason' => 'Mason (experimental)',
         ),
-        'default_value' => array(
-          0 => 'ncolumns-standard',
-        ),
+        'default_value' => 'ncolumns-standard',
         'allow_null' => 0,
         'multiple' => 0,
         'ui' => 0,
@@ -4518,9 +4306,7 @@ if( function_exists('acf_add_local_field_group') ):
           'ncolumns-fixed' => 'Fixed',
           'ncolumns-auto' => 'Auto',
         ),
-        'default_value' => array(
-          0 => 'ncolumns-fixed',
-        ),
+        'default_value' => 'ncolumns-fixed',
         'allow_null' => 0,
         'multiple' => 0,
         'ui' => 0,
@@ -4667,9 +4453,7 @@ if( function_exists('acf_add_local_field_group') ):
           '100%' => 'Square',
           '150%' => 'Tall',
         ),
-        'default_value' => array(
-          0 => '70%',
-        ),
+        'default_value' => '70%',
         'allow_null' => 0,
         'multiple' => 0,
         'ui' => 0,
@@ -4716,9 +4500,7 @@ if( function_exists('acf_add_local_field_group') ):
           'large' => 'large',
           'full' => 'full',
         ),
-        'default_value' => array(
-          0 => 'medium',
-        ),
+        'default_value' => 'medium',
         'allow_null' => 0,
         'multiple' => 0,
         'ui' => 0,
@@ -4782,9 +4564,7 @@ if( function_exists('acf_add_local_field_group') ):
           'ncolumns-scroll' => 'Scroll horizontally',
           'ncolumns-grid' => 'Grid',
         ),
-        'default_value' => array(
-          0 => 'ncolumns-grid',
-        ),
+        'default_value' => 'ncolumns-grid',
         'allow_null' => 0,
         'multiple' => 0,
         'ui' => 0,
@@ -4893,9 +4673,7 @@ if( function_exists('acf_add_local_field_group') ):
           '100%' => 'Square',
           '150%' => 'Tall',
         ),
-        'default_value' => array(
-          0 => '70%',
-        ),
+        'default_value' => '70%',
         'allow_null' => 0,
         'multiple' => 0,
         'ui' => 0,
@@ -5002,6 +4780,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1594525675,
   ));
   
   acf_add_local_field_group(array(
@@ -5782,6 +5561,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1594526584,
   ));
   
   acf_add_local_field_group(array(
@@ -5804,25 +5584,6 @@ if( function_exists('acf_add_local_field_group') ):
         'open' => 0,
         'multi_expand' => 0,
         'endpoint' => 0,
-      ),
-      array(
-        'key' => 'field_5c770c29c793c',
-        'label' => 'Content',
-        'name' => 'split_content',
-        'type' => 'wysiwyg',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'tabs' => 'all',
-        'toolbar' => 'full',
-        'media_upload' => 0,
-        'delay' => 0,
       ),
       array(
         'key' => 'field_5c7ac45b08ee0',
@@ -5885,30 +5646,6 @@ if( function_exists('acf_add_local_field_group') ):
         'open' => 0,
         'multi_expand' => 0,
         'endpoint' => 0,
-      ),
-      array(
-        'key' => 'field_5c770bf8c793b',
-        'label' => 'Image',
-        'name' => 'image',
-        'type' => 'image',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'id',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
       ),
       array(
         'key' => 'field_5c770738ef4d8',
@@ -6534,6 +6271,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'modified' => 1594528138,
   ));
   
   acf_add_local_field_group(array(
@@ -6787,6 +6525,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => false,
     'description' => '',
+    'modified' => 1594520874,
   ));
   
   acf_add_local_field_group(array(
@@ -7161,6 +6900,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => false,
     'description' => '',
+    'modified' => 1622213092,
   ));
   
   endif;

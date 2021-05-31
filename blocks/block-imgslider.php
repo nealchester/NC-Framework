@@ -56,7 +56,7 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 
 			<?php if( $slides ): ?>
 			<div class="splide__wrap nc_content_block_main">
-				<div class="splide" <?php echo 'id="'.$slider_id.'"'; ?>>
+				<div class="splide" <?php echo 'id="'.$slider_id.'"'; ?> style="visibility:hidden">
 					<div class="splide__track">
 						<div class="splide__list">
 						<?php foreach( $slides as $image ):?>
@@ -162,7 +162,7 @@ body.wp-admin .splide__padding  {
 <?php nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> {
-	overflow-x:hidden;
+	overflow:hidden;
 }
 
 @media(max-width:<?php echo $breakpoint.'px'; ?>){
@@ -180,14 +180,17 @@ body.wp-admin .splide__padding  {
 // If in the loop load styles and javascript
 if( in_the_loop() ):?>
 
-<?php
-	wp_enqueue_script( 'splide', get_theme_file_uri('/js/splide/splide.js'), null, '2.3.9', true );
-	wp_enqueue_style( 'splide-css', get_theme_file_uri('/js/splide/splide.css'), null, null, null );?>
+	<?php
+			wp_enqueue_script('splide');
+			wp_enqueue_style( 'splide-styles');
+	?>
 
-<?php if( get_field('link_to_image') == 'image_lightbox') :?>
+	<?php if( get_field('link_to_image') == 'image_lightbox') :?>
 
-<?php wp_enqueue_script( 'magnific-js', get_theme_file_uri('/js/magnific/jquery.magnific-popup.min.js'), array('jquery'), '1', true );
-wp_enqueue_style( 'magnific-css', get_theme_file_uri('/js/magnific/magnific-popup.css'), null, null, null ); ?>
+	<?php 
+		wp_enqueue_script( 'magnific', false);
+		wp_enqueue_style( 'magnific-styles', false); 
+	?>
 
 <script id="<?php echo 'gallery_'.$id.'_script'; ?>">
 jQuery(document).ready(function() {

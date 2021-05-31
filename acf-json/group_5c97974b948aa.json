@@ -80,9 +80,7 @@
                 "ncolumns-standard": "Standard",
                 "ncolumns-mason": "Mason (experimental)"
             },
-            "default_value": [
-                "ncolumns-standard"
-            ],
+            "default_value": "ncolumns-standard",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -107,9 +105,7 @@
                 "ncolumns-fixed": "Fixed",
                 "ncolumns-auto": "Auto"
             },
-            "default_value": [
-                "ncolumns-fixed"
-            ],
+            "default_value": "ncolumns-fixed",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -202,9 +198,7 @@
                 "100%": "Square",
                 "150%": "Tall"
             },
-            "default_value": [
-                "70%"
-            ],
+            "default_value": "70%",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -322,9 +316,7 @@
                 "image_lightbox": "Show image in a light box",
                 "image_nothing": "Do nothing"
             },
-            "default_value": [
-                "image_lightbox"
-            ],
+            "default_value": "image_lightbox",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -388,9 +380,7 @@
                 "ncolumns-scroll": "Scroll horizontally",
                 "ncolumns-grid": "Grid"
             },
-            "default_value": [
-                "ncolumns-grid"
-            ],
+            "default_value": "ncolumns-grid",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -505,5 +495,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600785991
+    "modified": 1622425582
 }

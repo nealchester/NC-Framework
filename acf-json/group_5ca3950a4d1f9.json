@@ -70,9 +70,7 @@
                 "ncdivider-overlaypreceding": "Overlay preceding section",
                 "ncdivider-overlaysucceeding": "Overlay succeeding section"
             },
-            "default_value": [
-                "ncdivider-overlaynone"
-            ],
+            "default_value": "ncdivider-overlaynone",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -99,9 +97,7 @@
                 "ncdivider-bottomleft": "Bottom left",
                 "ncdivider-bottomright": "Bottom right"
             },
-            "default_value": [
-                "ncdivider-topleft"
-            ],
+            "default_value": "ncdivider-topleft",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -174,27 +170,6 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_5e232e7197699",
-            "label": "Custom Code",
-            "name": "custom_code",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5e221e7d71f1d"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
         }
     ],
     "location": [
@@ -214,5 +189,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604003220
+    "modified": 1622410410
 }

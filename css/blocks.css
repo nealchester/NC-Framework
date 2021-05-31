@@ -1567,7 +1567,7 @@ p.has-drop-cap:not(:focus)::first-letter,
     line-height: var(--cap-l-height, 0.9);
     padding-right: var(--cap-padding, 1.5rem);
     font-family: var(--cap-font, var(--serif));
-    font-weight: var(--cap-weight, bold);
+    font-weight: var(--cap-weight, normal);
     height: var(--cap-height, 1em);
     font-family: var(--cap-font);
     color: var(--cap-color);
