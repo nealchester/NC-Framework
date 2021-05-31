@@ -25,7 +25,7 @@
   wp_register_style('nc-theme', get_theme_file_uri('/css/theme.css'), array('nc-content'), '', 'screen');
 
 
-// Load Assets on frontend and backend
+// Load Assets on frontend
 
 function nc_load_assets(){
   if( !is_admin() ){
