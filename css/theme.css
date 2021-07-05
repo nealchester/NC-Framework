@@ -395,8 +395,8 @@ body.error404 #shortbanner.nchero {
     overflow-y: auto;
     color: #000;
     font-size: 1em;
-    position: fixed;
-    left: -85%;
+    position: absolute;
+    transform: translateX(-100%);
     top: 0;
     max-width: 350px;
     min-width: 200px;
@@ -500,7 +500,7 @@ body.error404 #shortbanner.nchero {
 /* When the label is clicked, it reveals the mobile panel */
 
     .mpanel_input:checked + .mpanel {
-        left: -1px;
+        transform: translateX(-1px);
         box-shadow: 5px 0 1em rgba(0, 0, 0, 0.3);
         visibility: visible;
     }
