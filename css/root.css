@@ -183,6 +183,10 @@ input[type="image"] {
     padding: 0;
 }
 
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
 input[type="file"] {
     -webkit-appearance: none;
     margin: 0 0 0.5em 0;
