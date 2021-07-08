@@ -123,13 +123,13 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		
 
 		<?php echo '#'.$id; ?> .ncsplit_content {
-		padding:var(--gap) 0 !important;
+		padding: calc(var(--gap) * 1.5) 0 !important;
 		display:block;
+		flex-basis: auto;
 		}
 
-		<?php echo '#'.$id; ?> .ncsplit_image, 
-		<?php echo '#'.$id; ?> .ncsplit_content {
-		flex-basis: auto;
+		<?php echo '#'.$id; ?> .ncsplit_image {
+		flex-basis: 50vh;
 		}
 
 		<?php echo '#'.$id; ?> .ncsplit_contentcontain {
