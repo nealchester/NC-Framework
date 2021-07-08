@@ -6,10 +6,7 @@
   --page-color:currentColor;
   --page-color-current:blue;
   --page-align:center;
-  
-  --arrow-color:currentColor;
-  --arrow-color-hover:currentColor;
-  
+
   --slide-padding: 0;
   --slide-border-radius: 0;
   --slide-text-align:left;
@@ -27,32 +24,39 @@
     position: absolute;
     height: 100%;
     width: 100%;
+
   }
   
   .splide__arrow {
     padding:0;
-    background:transparent;
+    background: rgba(0,0,0,0.3);
     border:none;
     cursor:pointer;
     display:flex;
     align-items: center;
-    width:1.5rem;
+    justify-content:center;
+    width:2.5rem;
+    padding:0.1em;
     top:0;
     position:absolute;
-    height: 100%;
+    height: calc(100% - 2.75em);
     color:var(--arrow-color);
+    z-index:10;
+    opacity:0;
+    transition:0.5s
   }
   
-  .splide__arrow:hover {
-    color:var(--arrow-color-hover)
+  .splide:hover .splide__arrow {
+    opacity:1;
   }
   
   
   .splide__arrow svg {
     display:block;
-    width: 100%;
+    width: 60%;
     height:auto;
     border:none;
+    filter:drop-shadow(1px 1px 5px rgba(0,0,0,1))
   }
   
   .splide__arrow:disabled {
@@ -63,16 +67,16 @@
   }
   
   .splide__arrow svg path {
-    fill:currentColor;
+    fill:#fff;
   }
   
   .splide__arrow--prev {
     transform:scale(-1);
-    left:-5%;
+    left:0;
   }
   
   .splide__arrow--next {
-    right:-5%;
+    right:0;
   }
   
   .splide__pagination{
