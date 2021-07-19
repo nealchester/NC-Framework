@@ -402,6 +402,7 @@ body.error404 #shortbanner.nchero {
     min-width: 200px;
     transition: all 0.3s ease-in-out;
     visibility: hidden;
+    box-shadow: 0 0 0 #000;
 }
 
 
