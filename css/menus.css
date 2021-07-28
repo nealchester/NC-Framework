@@ -365,7 +365,7 @@ Drop Menu Right Aligned
 .navmenu-list .menu-item-has-children > a:after {
     transition: 0.5s;
     content: '\25bc';
-    transform: scale(1,0.5);
+    transform: rotate(0deg)scale(1,0.5);
     font-size:0.8em;
     position: static;
     opacity: 1;
