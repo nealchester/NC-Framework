@@ -19,7 +19,7 @@ body {
 body, input, select, textarea, button {
     font-family: var(--sans);
     font-size: var(--txt-base);
-    line-height: var(--lh);
+    line-height: calc(0.5rem + 1em);
     font-weight: 400;
 }
 
