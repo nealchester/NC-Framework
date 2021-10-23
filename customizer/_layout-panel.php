@@ -1,7 +1,7 @@
 <?php
 function nc_customizer_layoutpanel($wp_customize){
 	$wp_customize->add_panel('layout_panel', array(
-	  'title' => 'Theme Options',
+	  'title' => __('Theme Options','nc-framework'),
 		'priority' => 10,
 		'description' => '',
 	));

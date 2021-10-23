@@ -118,7 +118,7 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 				</div>
 				<div class="ncard_text">
 					<div class="ncard_url"><?php get_template_part('img/icon-link.svg');?> <?php echo esc_url( get_home_url() ); ?></div>
-					<div class="ncard_title">A Sample Link that Goes Nowhere</div>
+					<div class="ncard_title"><?php _e('A Sample Link that Goes Nowhere','nc-framework');?></div>
 				</div>
 			</div>
 		</a>

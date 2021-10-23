@@ -1,5 +1,5 @@
 <?php 
-$linktitle = 'Article'; 
+$linktitle = __('Article','nc-framework'); 
 if( !is_attachment() && get_theme_mod( 'show_nav_links', false ) == true && is_single() ): ?>
 
 <nav class="nplinks">

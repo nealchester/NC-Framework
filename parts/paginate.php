@@ -2,7 +2,7 @@
 /* 
 1. Copy this code in place of the get_template_part for custom queries using WP_Query.
 2. Remove the first line "global $wp_query."
-3. Change the last line from "$wp_query->max_num_pages" to $custom_query_name->max_num_pages.
+3. Change the last line from "$wp_query->max_num_pages" to $your_custom_query_name->max_num_pages.
 */
 
 global $wp_query;

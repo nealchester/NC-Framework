@@ -79,7 +79,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img animated fadeIn", "style" => "animation-delay: 0.5s") ); ?>	
 
 		<?php else: ?>
-		<img class="nchero_image" src="<?php nc_fallbackimage(); ?>" alt="A default picture" title="A default picture" />
+		<img class="nchero_image" src="<?php nc_fallbackimage(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
 		<?php endif;?>
 
 	<?php endif;?>

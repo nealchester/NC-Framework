@@ -10,7 +10,7 @@
 			'depth' => 1,
 			)); ?>
 			<li class="toplink">
-				<a class="ncanchorscroll toplink_anchor" href="#pagetop">
+				<a class="toplink_anchor" href="#pagetop">
 					<span class="toplink_label">Top</span>
 					<span class="toplink_icon"><!-- use a psuedo element --></span>
 				</a>

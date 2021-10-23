@@ -7,12 +7,12 @@ function nc_customizer_logo_width($wp_customize){
         'sanitize_callback' => 'nc_sanitize_text'
     ));
     $wp_customize->add_control('nc_logo_width', array(
-        'label' => 'Logo Width',
+        'label' => __('Logo Width','nc-framework'),
         'section' => 'title_tagline',
         'type' => 'number',
         'input_attrs' => array( 'min' => 0, 'max' => 500, 'step'  => 5, 'placeholder' => '250' ),
         'priority'   => 8,
-        'description' => 'The number will be expressed in pixels.'
+        'description' => __('The number will be expressed in pixels.','nc-framework')
     ));
     
 }

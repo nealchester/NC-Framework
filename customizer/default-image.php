@@ -2,8 +2,8 @@
 function nc_customizer_default_image($wp_customize){
 
  $wp_customize->add_section('default_image', array(
-  'title' => 'Fallback Image',
-  'description' => 'Set a default image for featured thumbnails',
+  'title' => __('Fallback image','nc-framework'),
+  'description' => __('Set a default image for featured thumbnails','nc-framework'),
   'panel' => 'layout_panel'
  ));
 
@@ -18,7 +18,7 @@ function nc_customizer_default_image($wp_customize){
     $wp_customize,
     'logo',
     array(
-    'label'      => 'Upload a default image',
+    'label'      => __('Upload a default image','nc-framework'),
     'section'    => 'default_image',
     'settings'   => 'fallback_image',
 )));

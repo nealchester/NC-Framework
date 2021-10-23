@@ -14,10 +14,10 @@ function nc_customizer_custom_blog_title($wp_customize){
     ));
 
     $wp_customize->add_control('nc_custom_blog_title', array(
-    'label' => 'Custom Blog Title',
+    'label' => __('Custom Blog Title','nc-framework'),
     'section' => 'static_front_page',
     'type' => 'text',
-    'description' => 'This will modify the blog page title if it is set to display on the front page.'
+    'description' => __('This will modify the blog page title if it is set to display on the front page.','nc-framework'),
     ));
 
 }

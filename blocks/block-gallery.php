@@ -80,8 +80,8 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 			?>
 
 				<figure class="ncgallery_item">
-					<?php if($link2img == 'image_page'):?><a class="ncgallery_link" aria-label="View larger" href="<?php echo get_attachment_link($image['ID']); ?>">
-					<?php elseif($link2img == 'image_lightbox'):?><a data-title="<?php echo $image['title']; ?>" aria-label="View larger" class="ncgallery_link <?php echo'ncgimg_'.$id; ?>" href="<?php echo wp_get_attachment_image_url($image['ID'], 'large'); ?>"><?php endif;?>
+					<?php if($link2img == 'image_page'):?><a class="ncgallery_link" aria-label="<?php _e('View larger','nc-framework');?>" href="<?php echo get_attachment_link($image['ID']); ?>">
+					<?php elseif($link2img == 'image_lightbox'):?><a data-title="<?php echo $image['title']; ?>" aria-label="<?php _e('View larger','nc-framework');?>" class="ncgallery_link <?php echo'ncgimg_'.$id; ?>" href="<?php echo wp_get_attachment_image_url($image['ID'], 'large'); ?>"><?php endif;?>
 						<div class="ncgallery_size">
 							<?php echo wp_get_attachment_image( $image['ID'], $thumb_size, '', array( 
 								"class" => "ncgallery_image", 

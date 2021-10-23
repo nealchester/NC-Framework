@@ -4,45 +4,45 @@ function nc_widget_areas()
   //Footer Widgets 
 
   register_sidebar(array(
-    'name' => 'Footer1',
+    'name' => __('Footer 1','nc-framework'),
     'id' => 'footer1',
-    'description' => 'This is the widgetized footer column 1.',
+    'description' => __('This is the widgetized footer column 1.','nc-framework'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<header class="widget_header">',
     'after_title' => '</header>'
   ));
   register_sidebar(array(
-    'name' => 'Footer2',
+    'name' => __('Footer 2','nc-framework'),
     'id' => 'footer2',
-    'description' => 'This is the widgetized footer column 2.',
+    'description' => __('This is the widgetized footer column 2.','nc-framework'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<header class="widget_header">',
     'after_title' => '</header>'
   ));
   register_sidebar(array(
-    'name' => 'Footer3',
+    'name' => __('Footer 3','nc-framework'),
     'id' => 'footer3',
-    'description' => 'This is the widgetized footer column 3.',
+    'description' => __('This is the widgetized footer column 3.','nc-framework'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<header class="widget_header">',
     'after_title' => '</header>'
   ));
   register_sidebar(array(
-    'name' => 'Footer4',
+    'name' => __('Footer 4','nc-framework'),
     'id' => 'footer4',
-    'description' => 'This is the widgetized footer column 4.',
+    'description' => __('This is the widgetized footer column 4.','nc-framework'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<header class="widget_header">',
     'after_title' => '</header>'
   ));
   register_sidebar(array(
-    'name' => 'Footer5',
+    'name' => __('Footer 5','nc-framework'),
     'id' => 'footer5',
-    'description' => 'This is the widgetized footer column5.',
+    'description' => __('This is the widgetized footer column5.','nc-framework'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<header class="widget_header">',
@@ -52,9 +52,9 @@ function nc_widget_areas()
 //Sidebar Widget
 
 register_sidebar(array(
-  'name' => 'Sidebar',
+  'name' => __('Sidebar','nc-framework'),
   'id' => 'sidebar',
-  'description' => 'This is the widgetized right sidebar.',
+  'description' => __('This is the widgetized right sidebar.','nc-framework'),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => '</div>',
   'before_title' => '<header class="widget_header">',
@@ -65,9 +65,9 @@ register_sidebar(array(
 // Mobile Menu widget
 
 register_sidebar(array(
-  'name' => 'Mobile Panel',
+  'name' => __('Mobile Panel','nc-framework'),
   'id' => 'mobilepanel',
-  'description' => 'This is the widgetized area for the Mobile Menu. Adding widgets here will replace the default mobile menu items.',
+  'description' => __('This is the widgetized area for the Mobile Menu. Adding widgets here will replace the default mobile menu items.','nc-framework'),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => '</div>',
   'before_title' => '<header class="widget_header">',

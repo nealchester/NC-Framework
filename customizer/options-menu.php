@@ -1,8 +1,8 @@
 <?php
 function nc_customizer_menu_options($wp_customize) {
 	$wp_customize->add_section('menu_op_section', array(
-		'title' => 'Main Menu Options',
-		'description' => 'Select what happens to the main menu when the screen gets narrower.',
+		'title' => __('Main Menu Options','nc-framework'),
+		'description' => __('Select what happens to the main menu when the screen gets narrower.','nc-framework'),
 		'panel' => 'layout_panel'
 	));
 
@@ -16,9 +16,10 @@ function nc_customizer_menu_options($wp_customize) {
 		'section' => 'menu_op_section',
 		'type' => 'radio',
 		'choices' => array(
-		'0' => 'Do nothing',
-		'1' => 'Scroll horizontal',
-		'2' => 'Show a toggle button')
+		'0' => __('Do nothing','nc-framework'),
+		'1' => __('Scroll horizontal','nc-framework'),
+		'2' => __('Show a toggle button','nc-framework'),
+		)
 	));
 
 	// Menu breakpoint
@@ -27,7 +28,7 @@ function nc_customizer_menu_options($wp_customize) {
 		'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('menu_breakpoint', array(
-		'label' => 'Menu breakpoint',
+		'label' => __('Menu breakpoint','nc-framework'),
 		'section' => 'menu_op_section',
 		'type' => 'text'
 	));

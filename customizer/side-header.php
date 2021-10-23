@@ -1,7 +1,7 @@
 <?php
 function nc_customizer_side_header($wp_customize) {
 	$wp_customize->add_section('side_header_options', array(
-		 'title' => 'Sidebar Heading',
+		 'title' => __('Sidebar Heading','nc-framework'),
 		 'description' => '',
 		 'panel' => 'layout_panel'
 	));
@@ -13,13 +13,13 @@ function nc_customizer_side_header($wp_customize) {
 	));
 
 	$wp_customize->add_control('side_header_controls', array(
-		 'label' => 'Sidebar Header',
+		 'label' => __('Sidebar Header','nc-framework'),
 		 'section' => 'side_header_options',
 		 'type' => 'radio',
 		 'choices' => array(
-			  'no-side-header' => 'No Side Header',
-			  'header-left' => 'Left Header',
-			  'header-right' => 'Right Header'
+			  'no-side-header' => __('No Side Header','nc-framework'),
+			  'header-left' => __('Left Header','nc-framework'),
+			  'header-right' => __('Right Header','nc-framework'),
 		 )
 	));
 
@@ -29,8 +29,8 @@ function nc_customizer_side_header($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('side_header_width', array(
-		 'label' => 'Sidebar Width',
-		 'description' => 'Enter the width of the sidebar. It can be in pixels, ems, viewports, or percentages.',
+		 'label' => __('Sidebar Width','nc-framework'),
+		 'description' => __('Enter the width of the sidebar. It can be in pixels, ems, viewports, or percentages.','nc-framework'),
 		 'section' => 'side_header_options',
 		 'type' => 'text'
 	));
@@ -41,8 +41,8 @@ function nc_customizer_side_header($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('side_header_break', array(
-		 'label' => 'Sidebar breakpoint (pixels)',
-		 'description' => 'Choose when the side header becomes a top header for mobile.',
+		 'label' => __('Sidebar breakpoint (pixels)','nc-framework'),
+		 'description' => __('Choose when the side header becomes a top header for mobile.','nc-framework'),
 		 'section' => 'side_header_options',
 		 'type' => 'text'
 	));

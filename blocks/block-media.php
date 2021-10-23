@@ -88,7 +88,7 @@ function nc_media_block_markup( $block, $content = '', $is_preview = false ) {
 				</div>
 
 				<?php else: ?>
-				<img class="ncpic_image" src="<?php nc_fallbackimage(); ?>" alt="A default picture" title="A default picture" />
+				<img class="ncpic_image" src="<?php nc_fallbackimage(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
 				<?php endif;?>
 			</div>
 

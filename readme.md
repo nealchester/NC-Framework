@@ -102,6 +102,7 @@ The following explains the purpose of the files in the main directory of the the
 * More drop-menu style variations 
 * Incorporation of a better [scroll animation library](https://greensock.com/)
 * Custom block expansion options
+* Fully translated
 
 ***
 

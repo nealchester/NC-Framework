@@ -17,7 +17,7 @@
 		</header>
 
 		<div class="authorpage_content">					
-			<h2 class="authorpage_listheading ncrule ncrule-left base normal">Articles by <?php echo esc_html($curauth->display_name); ?></h2>
+			<h2 class="authorpage_listheading ncrule ncrule-left base normal"><?php _e('Articles by', 'nc-framework');?> <?php echo esc_html($curauth->display_name); ?></h2>
 			<?php if (have_posts()) : ?>
 			<ol class="authorpage_articlelist">
 				<?php while (have_posts()) : the_post();?>

@@ -1,7 +1,7 @@
 <?php 
 
 /* Set the Heading Text */
-$heading = 'Related Pages';
+$heading = __('Related Pages','nc-framework');
 
 /* If the page has siblings show them, if not, show the parent's siblings */
 if ($post->post_parent) {

@@ -2,6 +2,7 @@
 
 // Register Theme Scripts and CSS
 
+function nc_register_assets(){
   // JS
   wp_register_script('splide', get_theme_file_uri('/js/splide/splide.js'), '', '2.3.9', false );
   wp_register_script('standard-scripts', get_theme_file_uri('/js/standard-scripts.js'), array('jquery'), '6', true);
@@ -23,7 +24,9 @@
   wp_register_style('nc-content', get_theme_file_uri('/css/content.css'), array('nc-blocks'), '', 'screen');
   wp_register_style('nc-comments', get_theme_file_uri('/css/comments.css'), array( 'nc-root' ), '1', 'screen' );
   wp_register_style('nc-theme', get_theme_file_uri('/css/theme.css'), array('nc-content'), '', 'screen');
+}
 
+add_action('wp_enqueue_scripts', 'nc_register_assets');
 
 // Load Assets on frontend
 

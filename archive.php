@@ -16,7 +16,7 @@
 
 <?php else : ?>
 	<?php if(is_search()):?>
-	<p>Sorry, nothing was found. Do another search below.</p>
+	<p><?php _e('Sorry, nothing was found. Do another search below.', 'nc-framework');?></p>
 	<?php get_template_part('parts/searchform'); ?><div style="height:3rem"></div>
 	<?php else:?>
 	<?php get_template_part('parts/not-found');?>

@@ -1,7 +1,7 @@
 <?php
 
 function nc_new_contactmethods($contactmethods){
-    $contactmethods['phonenumber'] = 'Phone Number';
+    $contactmethods['phonenumber'] = __('Phone Number','nc-framework');
     $contactmethods['facebook']     = 'Facebook';
     $contactmethods['twitter']      = 'Twitter';
     $contactmethods['linkedin']     = 'LinkedIn';

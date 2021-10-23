@@ -59,7 +59,7 @@ function nc_cssbox_block_markup( $block, $content = '', $is_preview = false ) {
     }
 
     #wpwrap div.nc-cssbox:before {
-        content:"NC CSS Block";
+        content:"<?php _e('NC CSS Block','nc-framework');?>";
     }
     </style>
     <?php endif;?>

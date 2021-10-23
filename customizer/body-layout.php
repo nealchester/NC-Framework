@@ -2,8 +2,8 @@
 function nc_customizer_body_layout($wp_customize)
 {
  $wp_customize->add_section('body_section', array(
-  'title' => 'Body Layout',
-  'description' => 'Here you can control how the body content of the default template is displayed.',
+  'title' => __('Body Layout','nc-framework'),
+  'description' => __('Here you can control how the body content of the default template is displayed.','nc-framework'),
   'panel' => 'layout_panel'
  ));
  // Body layouts
@@ -12,13 +12,13 @@ function nc_customizer_body_layout($wp_customize)
   'sanitize_callback' => 'nc_sanitize_radio'
  ));
  $wp_customize->add_control('body_layout', array(
-  'label' => 'Body layout',
+  'label' => __('Body layout','nc-framework'),
   'section' => 'body_section',
   'type' => 'radio',
   'choices' => array(
-   'content-single' => 'Content, no sidebars',
-   'content-left' => 'Content left, right sidebar',
-   'content-right' => 'Content right, left sidebar'
+   'content-single' => __('Content, no sidebars','nc-framework'),
+   'content-left' => __('Content left, right sidebar','nc-framework'),
+   'content-right' => __('Content right, left sidebar','nc-framework')
   )
  ));
 
@@ -28,12 +28,12 @@ function nc_customizer_body_layout($wp_customize)
     'sanitize_callback' => 'nc_sanitize_radio'
    ));
    $wp_customize->add_control('body_contained', array(
-    'label' => 'Contain content and sidebar',
+    'label' => __('Contain content and sidebar','nc-framework'),
     'section' => 'body_section',
     'type' => 'radio',
     'choices' => array(
-     'no-body-contain' => 'No containing',
-     'body-contain' => 'Contain content and sidebar'
+     'no-body-contain' => __('No containing','nc-framework'),
+     'body-contain' => __('Contain content and sidebar','nc-framework')
     )
    ));
 

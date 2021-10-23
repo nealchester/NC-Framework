@@ -10,7 +10,7 @@ function nc_color_control( $wp_customize ) {
     
 
     $wp_customize->add_section('nc_color_section', array(
-        'title' => 'Color Controls',
+        'title' => __('Color Controls','nc-framework'),
         'panel' => 'layout_panel',
         'description' => '',
         'priority' => 50,
@@ -55,7 +55,7 @@ function nc_color_control( $wp_customize ) {
 	$txtcolors[] = array(
 		 'slug'=>'address_bar_color', 
 		 'default' => '',
-		 'label' => 'Mobile address bar color'
+		 'label' => __('Mobile address bar color','nc-framework')
 	);	
  
  

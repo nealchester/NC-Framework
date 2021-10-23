@@ -1,8 +1,8 @@
 <?php
 function nc_customizer_footer($wp_customize) {
 	$wp_customize->add_section('footer_section', array(
-		 'title' => 'Footer Layout',
-		 'description' => 'Here, you can control how many footer columns you want displayed.',
+		 'title' => __('Footer Layout','nc-framework'),
+		 'description' => __('Here, you can control how many footer columns you want displayed.', 'nc-framework'),
 		 'panel' => 'layout_panel'
 	));
 	// Footer Count
@@ -11,16 +11,16 @@ function nc_customizer_footer($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_radio'
 	));
 	$wp_customize->add_control('footer_count', array(
-		 'label' => 'Mega footer count',
-		 'section' => 'footer_section',
+		 'label' => __('Mega footer count','nc-framework'),
+		 'section' => __('footer_section','nc-framework'),
 		 'type' => 'radio',
 		 'choices' => array(
-			  '0' => 'No Mega footer',
-			  '1' => 'Single column',
-			  '2' => 'Two columns',
-			  '3' => 'Three columns',
-			  '4' => 'Four columns',
-			  '5' => 'Five columns'
+			  '0' => __('No Mega footer','nc-framework'),
+			  '1' => __('Single column','nc-framework'),
+			  '2' => __('Two columns','nc-framework'),
+			  '3' => __('Three columns','nc-framework'),
+			  '4' => __('Four columns','nc-framework'),
+			  '5' => __('Five columns','nc-framework')
 		 )
 	));
 
@@ -31,13 +31,13 @@ function nc_customizer_footer($wp_customize) {
 		'description' => ''
    ));
    $wp_customize->add_control('footer_lay', array(
-		'label' => 'Mega footer Layout',
+		'label' => __('Mega footer Layout','nc-framework'),
 		'section' => 'footer_section',
 		'type' => 'radio',
 		'choices' => array(
-			 'ncolumns-fixed' => 'Fixed',
-			 'ncolumns-auto' => 'Auto',
-			 'ncolumns-flow' => 'Flow'
+			 'ncolumns-fixed' => __('Fixed','nc-framework'),
+			 'ncolumns-auto' => __('Auto','nc-framework'),
+			 'ncolumns-flow' => __('Flow','nc-framework')
 		)
    ));
    	
@@ -47,12 +47,12 @@ function nc_customizer_footer($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_radio'
 	));
 	$wp_customize->add_control('footer_style', array(
-		 'label' => 'Mega footer style',
+		 'label' => __('Mega footer style','nc-framework'),
 		 'section' => 'footer_section',
 		 'type' => 'radio',
 		 'choices' => array(
-			  'footer-gaps' => 'Gaps',
-			  'footer-borders' => 'Borders'
+			  'footer-gaps' => __('Gaps','nc-framework'),
+			  'footer-borders' => __('Borders','nc-framework')
 		 )
 	));
 
@@ -62,7 +62,7 @@ function nc_customizer_footer($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('column_spacing', array(
-		 'label' => 'Mega footer column spacing',
+		 'label' => __('Mega footer column spacing','nc-framework'),
 		 'section' => 'footer_section',
 		 'type' => 'text'
 	));
@@ -73,7 +73,7 @@ function nc_customizer_footer($wp_customize) {
 		'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('column_minwidth', array(
-		'label' => 'Mega footer min width',
+		'label' => __('Mega footer min width','nc-framework'),
 		'section' => 'footer_section',
 		'type' => 'text'
 	));
@@ -84,7 +84,7 @@ function nc_customizer_footer($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('footer_break', array(
-		 'label' => 'Mega footer breakpoint',
+		 'label' => __('Mega footer breakpoint','nc-framework'),
 		 'section' => 'footer_section',
 		 'type' => 'text'
 	));
@@ -94,10 +94,10 @@ function nc_customizer_footer($wp_customize) {
 		 'sanitize_callback' => 'nc_sanitize_text'
 	));
 	$wp_customize->add_control('add_html_copyright', array(
-		 'label' => 'Bottom footer copyright',
+		 'label' => __('Bottom footer copyright','nc-framework'),
 		 'section' => 'footer_section',
 		 'type' => 'text',
-		 'description' => 'You can overwrite the automated copyright here.'
+		 'description' => __('You can overwrite the automated copyright here.','nc-framework')
 	));
 }
 add_action('customize_register', 'nc_customizer_footer');

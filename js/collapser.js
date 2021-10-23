@@ -1,7 +1,6 @@
 /* jQuery - Collapser - Plugin v2.0 www.aakashweb.com (c) 2014 Aakash Chakravarthy MIT License. 
 
-https://web.archive.org/web/20151016064214/http://www.aakashweb.com/demos/jquery-collapser
-https://github.com/vaakash/jquery-collapser
+https://www.aakashweb.com/jquery-plugins/collapser/
 
 */
 (function(e,m,p,q){function l(b,f){this.o=e.extend({},n,f);this.e=e(b);this.init()}var n={target:"next",mode:"words",speed:"slow",truncate:10,ellipsis:"...",effect:"fade",controlBtn:"",showText:"Show more",hideText:"Hide text",showClass:"show-class",hideClass:"hide-class",atStart:"hide",lockHide:!1,dynamic:!1,changeText:!1,beforeShow:null,afterShow:null,beforeHide:null,afterHide:null};l.prototype={init:function(){var b=this;b.mode=b.o.mode;b.remaining={};b.ctrlHtml=' <a href="#" data-ctrl class="'+

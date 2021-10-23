@@ -17,8 +17,12 @@
       <div class="ncard_text">
         <!-- Everything in here is up to the creator -->
         <div class="ncard_title"><?php the_title();?></div>
-        <div class="ncard_meta"><?php the_time(get_option('date_format')); ?> | <?php comments_number( 'No Comments', '1 Response', '% Responses' ); ?></div>
-        <div class="ncard_desc"><?php $ismore = @strpos( $post->post_content, '<!--more-->'); if($ismore):?><?php echo strip_tags(get_the_content(''));?><span class="ncard_ell">&hellip;</span> <span class="nowrap ncard_readmore">Continue reading</span><?php elseif (has_excerpt()):?><?php echo get_the_excerpt(); ?><?php else :?><?php echo substr(get_the_excerpt(), 0,150); ?><span class="ncard_ell">&hellip;</span> <span class="nowrap ncard_readmore">Read more</span><?php endif;?></div>
+        <div class="ncard_meta"><?php the_time(get_option('date_format')); ?> | <?php comments_number( 
+          __('No Comments','nc-framework'), 
+          __('1 Response','nc-framework'), 
+          __('% Responses','nc-framework'), 
+          ); ?></div>
+        <div class="ncard_desc"><?php $ismore = @strpos( $post->post_content, '<!--more-->'); if($ismore):?><?php echo strip_tags(get_the_content(''));?><span class="ncard_ell">&hellip;</span> <span class="nowrap ncard_readmore"><?php _e('Continue reading','nc-framework');?></span><?php elseif (has_excerpt()):?><?php echo get_the_excerpt(); ?><?php else :?><?php echo substr(get_the_excerpt(), 0,150); ?><span class="ncard_ell">&hellip;</span> <span class="nowrap ncard_readmore"><?php _e('Read More','nc-framework');?></span><?php endif;?></div>
         <!-- end creative HTML -->
       </div>
     </div>

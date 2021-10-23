@@ -2,7 +2,7 @@
 function nc_customizer_section_banner($wp_customize){
 
     $wp_customize->add_section('header_image', array(
-    'title' => 'Banner Heading',
+    'title' => __('Banner Heading','nc-framework'),
     'description' => '',
     'panel' => 'layout_panel'
     ));
@@ -13,7 +13,7 @@ function nc_customizer_section_banner($wp_customize){
     'sanitize_callback' => 'nc_sanitize_checkbox'
     ));
     $wp_customize->add_control('banner_featured', array(
-    'label' => 'Use featured image as background',
+    'label' => __('Use featured image as background','nc-framework'),
     'section' => 'header_image',
     'type' => 'checkbox'
     ));
@@ -24,13 +24,14 @@ function nc_customizer_section_banner($wp_customize){
     'sanitize_callback' => 'nc_sanitize_radio'
     ));
     $wp_customize->add_control('main_title_format', array(
-    'label' => 'Main Heading Layout',
+    'label' => __('Main Heading Layout','nc-framework'),
     'section' => 'header_image',
     'type' => 'radio',
         'choices' => array(
-        'plain-text' => 'Plain Text',
-        'hero-text' => 'Hero',
-        'split-text' => 'Split Screen')
+        'plain-text' => __('Plain Text','nc-framework'),
+        'hero-text' => __('Hero','nc-framework'),
+        'split-text' => __('Split Screen','nc-framework')
+        )
     ));
 }
 add_action('customize_register', 'nc_customizer_section_banner');

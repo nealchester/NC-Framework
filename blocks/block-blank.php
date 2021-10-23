@@ -50,7 +50,7 @@ function nc_blank_block_markup( $block, $content = '', $is_preview = false ) {
         <?php nc_before_content(); ?>
 
         <?php if($tcontent):?><?php echo '<div class="nc_content_block_main">'.$tcontent.'</div>';?><?php else:?> 
-        <div class="nc_content_block_main"><p>Add some content...</p></div>
+        <div class="nc_content_block_main"><p><?php _e('Add some content...','nc-framework');?></p></div>
         <?php endif; ?>
 
         <?php nc_after_content(); ?>

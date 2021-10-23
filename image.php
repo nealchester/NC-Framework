@@ -24,10 +24,11 @@ echo wp_get_attachment_image( get_the_ID(), 'large', null, array('class'=> 'atta
 	$metadata = wp_get_attachment_metadata();
 	$image_size = esc_html( $metadata['width'] ).' &times; '.esc_html( $metadata['height'] );
 	$image_url = esc_url(wp_get_attachment_url());
-
-	echo '<p class="attachment_link"><a href="'.$image_url.'">View full image ('.$image_size.')</a></p>';
-
 	?>
+
+	<p class="attachment_link">
+		<a href="<?php echo $image_url; ?>"><?php _e('View full image', 'nc-framework'); echo '('.$image_size.')'; ?></a>
+	</p>
 
 	<?php // The Excerpt
 	if(has_excerpt()) :?><div class="attachment_excerpt"><?php the_excerpt();?></div><?php endif; ?>
@@ -38,7 +39,7 @@ echo wp_get_attachment_image( get_the_ID(), 'large', null, array('class'=> 'atta
 
 
 	<p class="attachment_back">
-		<button class="btn" onclick="nc_goBack()">Back</button>
+		<button class="btn" onclick="nc_goBack()"><?php _e('Back', 'nc-framework'); ?></button>
 	</p>
 	<script>function nc_goBack() { window.history.back();}</script>
 

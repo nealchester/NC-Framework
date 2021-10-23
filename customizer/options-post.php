@@ -1,8 +1,8 @@
 <?php
 function nc_customizer_options_post($wp_customize) {
 $wp_customize->add_section('blog_section_one', array(
- 'title' => 'Single Post',
- 'description' => 'Here you can hide and show elements on the single blog post template.',
+ 'title' => __('Single Post','nc-framework'),
+ 'description' => __('Here you can hide and show elements on the single blog post template.','nc-framework'),
  'panel' => 'layout_panel'
 ));
 
@@ -12,7 +12,7 @@ $wp_customize->add_setting('show_featured_image', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_featured_image', array(
- 'label' => 'Show featured image',
+ 'label' => __('Show featured image','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -23,7 +23,7 @@ $wp_customize->add_setting('show_author_avatar', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_author_avatar', array(
- 'label' => 'Show author meta (top)',
+ 'label' => __('Show author meta (top)','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -34,7 +34,7 @@ $wp_customize->add_setting('show_author_box', array(
     'sanitize_callback' => 'nc_sanitize_checkbox'
    ));
    $wp_customize->add_control('show_author_box', array(
-    'label' => 'Show author box (bottom)',
+    'label' => __('Show author box (bottom)','nc-framework'),
     'section' => 'blog_section_one',
     'type' => 'checkbox'
    ));
@@ -45,7 +45,7 @@ $wp_customize->add_setting('show_excerpt', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_excerpt', array(
- 'label' => 'Show Excerpt',
+ 'label' => __('Show Excerpt','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -56,7 +56,7 @@ $wp_customize->add_setting('show_categories', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_categories', array(
- 'label' => 'Show post categories',
+ 'label' => __('Show post categories','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -67,7 +67,7 @@ $wp_customize->add_setting('show_tags', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_tags', array(
- 'label' => 'Show post tags',
+ 'label' => __('Show post tags','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -78,7 +78,7 @@ $wp_customize->add_setting('show_nav_links', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_nav_links', array(
- 'label' => 'Show < prev/next > links',
+ 'label' => __('Show < prev/next > links','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -89,7 +89,7 @@ $wp_customize->add_setting('show_comments_posts', array(
  'sanitize_callback' => 'nc_sanitize_checkbox'
 ));
 $wp_customize->add_control('show_comments_posts', array(
- 'label' => 'Show comments on posts',
+ 'label' => __('Show comments on posts','nc-framework'),
  'section' => 'blog_section_one',
  'type' => 'checkbox'
 ));
@@ -100,7 +100,7 @@ $wp_customize->add_setting('show_related_pages', array(
     'sanitize_callback' => 'nc_sanitize_checkbox'
    ));
    $wp_customize->add_control('show_related_pages', array(
-    'label' => 'Show related sibling pages',
+    'label' => __('Show related sibling pages','nc-framework'),
     'section' => 'blog_section_one',
     'type' => 'checkbox'
    ));

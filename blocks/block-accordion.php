@@ -77,7 +77,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
       <<?php echo $hd; ?> class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?></<?php echo $hd; ?>>  
       <div class="nccordion_content">
         <?php if($content == 'truncate') :?>
-        <?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore">Read more</a>
+        <?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore"><?php _e('Read more','nc-framework');?></a>
         <?php else :?>
         <?php the_content(get_the_ID());?>  
         <?php endif;?>
@@ -89,8 +89,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			 <?php wp_reset_postdata();?>
 			 <?php else : ?>
 				<div class="nccordion">
-					<div class="nccordion_header">No posts have been selected yet.</div>
-					<div class="nccordion_content">Select some posts to add here or write your own content.</div>
+					<div class="nccordion_header"><?php _e('No posts have been selected yet.','nc-framework');?></div>
+					<div class="nccordion_content"><?php _e('Select some posts to add here or write your own content.','nc-framework');?></div>
 			 </div>
 			<?php endif; // end loop ?>
 

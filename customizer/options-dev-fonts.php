@@ -16,11 +16,11 @@ function nc_customizer_options_dev_fonts($wp_customize){
         'sanitize_callback' => 'nc_sanitize_text'
     ));
     $wp_customize->add_control('google_fonts_url_load', array(
-        'label' => 'Load Google fonts',
+        'label' => __('Load Google fonts','nc-framework'),
         'section' => 'dev_options_section',
         'type' => 'textarea',
-        'description' => 'Add a call to your Google fonts here (visit: fonts.google.com). 
-        Add just the URL they provide, nothing more.'
+        'description' => __('Add a call to your Google fonts here (visit: fonts.google.com). 
+        Add just the URL they provide, nothing more.','nc-framework')
     ));
 }
 add_action('customize_register', 'nc_customizer_options_dev_fonts');
@@ -43,6 +43,7 @@ add_action('wp_enqueue_scripts', 'nc_load_google_font_files');
 // Load Preconnect
 
 function nc_add_preconnect_link() {
-  echo '<link rel="preconnect" href="https://fonts.gstatic.com">';
+  echo '<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
 }
 add_action('wp_head', 'nc_add_preconnect_link', 9);
