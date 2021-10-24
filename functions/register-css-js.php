@@ -7,8 +7,9 @@ function nc_register_assets(){
   wp_register_script('splide', get_theme_file_uri('/js/splide/splide.js'), '', '2.3.9', false );
   wp_register_script('standard-scripts', get_theme_file_uri('/js/standard-scripts.js'), array('jquery'), '6', true);
   wp_register_script('magnific', get_theme_file_uri('/js/magnific/jquery.magnific-popup.min.js'), array('jquery'), '1', true );
-  wp_register_script('sal-aniview', get_theme_file_uri('/js/aniview/aniview.js'), array( 'jquery' ), '', true);
-  wp_register_script('sal-aniview-init', get_theme_file_uri('/js/aniview/aniview-init.js'), array( 'jquery', 'sal-aniview' ), '', true);
+
+  wp_register_script('sal-aniview', get_theme_file_uri('/js/aniview/aniview.js'), array( 'jquery' ), null, true);
+  wp_register_script('sal-aniview-init', get_theme_file_uri('/js/aniview/aniview-init.js'), array( 'jquery', 'sal-aniview' ), null, true);
 
   // CSS
 

@@ -488,10 +488,11 @@ width: 100%;
   bottom:0;
   padding:3rem 0.75rem 0.75rem;
   color:#fff;
-  font-size:0.7em;
+  font-size:0.65em;
   text-align:center;
   background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
   letter-spacing:0.08em;
+  line-height: 1.5;
   }
   
   .ncgallery-capbelow .ncgallery_caption { color:inherit }
@@ -1314,9 +1315,8 @@ position:absolute;
 display:var(--display-caption);
 width:100%;
 color:#fff;
-padding:var(--gap, 1.5rem);
-padding-top:calc(var(--gap,1.5rem) * 3);
-font-size:0.8em;
+padding: calc(var(--gap,1.5rem) * 3) var(--gap, 1.5rem) calc( var(--gap) / 2 );
+font-size:0.65em;
 text-align:var(--caption-align);
 background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
 }

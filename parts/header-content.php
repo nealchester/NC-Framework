@@ -18,7 +18,7 @@
 
 <header id="header">
 
-	<div class="ncontain animated fadeInDown">
+	<div class="ncontain">
 
 		<?php get_template_part('parts/site-title');?>
 

@@ -14,9 +14,9 @@ function nc_hero_block() {
             //'icon'              => 'format-image',
             'mode'              => 'preview',
             'keywords'          => array('hero', 'splash' ),
-			'post_types'        => array('post', 'page'),
-			'align'             => 'full',
-			'supports'          => array( 
+						'post_types'        => array('post', 'page'),
+						'align'             => 'full',
+						'supports'          => array( 
 									'align' => array( 'wide', 'full' ), 
 									'mode' => true,
 									'multiple' => true,

@@ -223,30 +223,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_5c7708bfef4da",
-            "label": "Image Stack Position",
-            "name": "image_break_point",
-            "type": "radio",
-            "instructions": "Make the image stack on top on break point",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "ncsplit-imagetop": "Yes",
-                "ncsplit-imagevar": "No"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_5f244c996038e",
             "label": "Parallax Image",
             "name": "parallax",
@@ -264,27 +240,6 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
-        },
-        {
-            "key": "field_5c770977ef4db",
-            "label": "Break Point",
-            "name": "break_point",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 640,
-            "placeholder": 640,
-            "prepend": "",
-            "append": "px",
-            "min": "",
-            "max": "",
-            "step": ""
         },
         {
             "key": "field_5c7ac49b08ee1",
@@ -344,6 +299,95 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_6175ce03ccacd",
+            "label": "Break Point",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c7708bfef4da",
+            "label": "Image Stack Position",
+            "name": "image_break_point",
+            "type": "radio",
+            "instructions": "Make the image stack on top on break point",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncsplit-imagetop": "Yes",
+                "ncsplit-imagevar": "No"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6175cd89ccacc",
+            "label": "Image Ratio on Breakpoint",
+            "name": "image_height",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "150": "2:4 tall",
+                "100": "4:4 square",
+                "70": "4:3 standard",
+                "56": "16:9 wide"
+            },
+            "default_value": 70,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c770977ef4db",
+            "label": "Break Point",
+            "name": "break_point",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 640,
+            "placeholder": 640,
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_5f2446ce82ea5",
             "label": "Box Options",
             "name": "",
@@ -373,7 +417,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5c7ac33508edc",
@@ -388,7 +434,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5c7ac34108edd",
@@ -503,5 +551,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426840
+    "modified": 1635111392
 }

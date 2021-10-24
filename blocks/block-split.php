@@ -62,6 +62,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 
 	$image_content = get_field('image_content');
 	$image_width = get_field('image_width') ?: '50%';
+	$image_height = get_field('image_height') ?: '70%';
 
 ?>
 
@@ -93,6 +94,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
     --display-caption: <?php echo $caption; ?>;
 	  --caption-align: <?php echo $cap_align; ?>;
   	--img-width: <?php echo $image_width.'%'; ?>;
+		--img-height: <?php echo $image_height.'%'; ?>;
 }
 
 <?php if($parallax):?>
@@ -105,7 +107,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 
 @media(max-width:<?php if ($breakpoint) { echo $breakpoint.'px'; } else { echo'640px';} ?>){
 
-	<?php echo'#'.$id; ?>.ncsplit {
+		<?php echo'#'.$id; ?>.ncsplit {
 		flex-direction:column;
 		min-height:0;
 		}
@@ -113,24 +115,24 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php echo '#'.$id; ?> .ncsplit_image {
 		min-height:0;
 		width:100%;
+		flex-basis:0;
+		padding-top: var(--img-height);
 		}
 
-		<?php echo '#'.$id; ?> .ncsplit_pic,
-		<?php echo '#'.$id; ?> .ncsplit_image > div  {
-		position:static !important;
+		<?php echo '#'.$id; ?> .ncsplit_caption {
+		position: absolute;
+		display: var(--display-caption);
+		width: 100%;
+		color: #fff;
 		}
 
-		
 
 		<?php echo '#'.$id; ?> .ncsplit_content {
 		padding: calc(var(--gap) * 1.5) 0 !important;
 		display:block;
 		flex-basis: auto;
 		}
-
-		<?php echo '#'.$id; ?> .ncsplit_image {
-		flex-basis: 50vh;
-		}
+		
 
 		<?php echo '#'.$id; ?> .ncsplit_contentcontain {
 		max-width:var(--content-max-width);
@@ -140,7 +142,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		padding-right:0 !important;
 		}
 
-/* Modifier: Make the image always stack on top  */
+		/* Modifier: Make the image always stack on top  */
 
 		<?php echo '#'.$id; ?>.ncsplit-imagetop .ncsplit_image { order:1 }
 		<?php echo '#'.$id; ?>.ncsplit-imagetop .ncsplit_content { order:2 }

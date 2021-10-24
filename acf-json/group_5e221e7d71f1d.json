@@ -88,6 +88,10 @@
                 "id": ""
             },
             "choices": {
+                "sfadeUp": "sfadeUp",
+                "sfadeDown": "sfadeDown",
+                "sfadeLeft": "sfadeLeft",
+                "sfadeRight": "sfadeRight",
                 "fadeIn": "fadeIn",
                 "fadeInDown": "fadeInDown",
                 "fadeInDownBig": "fadeInDownBig",
@@ -205,6 +209,25 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_6175df44b7de8",
+            "label": "Animate instantly",
+            "name": "sal_instant",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5e231aa6b0c51",
@@ -370,5 +393,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1622426890
+    "modified": 1635115447
 }
