@@ -106,7 +106,7 @@ function nc_box_styles( $block_id =''){
 
     // box
     echo "#".$block_id." {
-    background: ".$bg_color.";
+    background-color: ".$bg_color.";
     padding: ".$padding.";
     color: ".$text_color.";
     }

@@ -102,7 +102,7 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 
 <style id="<?php echo $id; ?>-block-css">
 
-.splide__slide {
+<?php echo '#'.$id; ?> .splide__slide {
     background:var(--slide-bg-color);
     border-radius:var(--slide-border-radius);
 		text-align: var(--slide-text-align);
@@ -110,17 +110,12 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		overflow:hidden;
 	}
 
-body.wp-admin .splide__img,
-body.wp-admin .splide__padding  {
-	display:none
-}
+	<?php echo '#'.$id; ?> .splide__padding {
+		width:100%;
+		padding-top:var(--slide-height);
+	} 
 
-.splide__padding {
-	width:100%;
-	padding-top:var(--slide-height);
-} 
-
- .splide__img {
+	<?php echo '#'.$id; ?> .splide__img {
 		position:absolute;
 		z-index: 5;
 		left:0; top:0; bottom:0; right:0;
@@ -130,32 +125,36 @@ body.wp-admin .splide__padding  {
     mix-blend-mode: var(--image-blend-mode);
 	}	
 
-	.splide__slide > .splide__img ~ * {
+	<?php echo '#'.$id; ?> .splide__slide > .splide__img ~ * {
 		z-index:10;
 		position:relative;
   }
 
-<?php echo '#'.$id; ?> .splide__padding {
-	padding-top: <?php echo $img_height.'%'; ?>;
-}	
+	<?php echo '#'.$id; ?> .splide__padding {
+		padding-top: <?php echo $img_height.'%'; ?>;
+	}	
 
-	.splide .ncgallery_caption {
+	<?php echo '#'.$id; ?> .splide .ncgallery_caption {
 		position:absolute !important;
 		z-index:15 !important;
+	}
+
+	body.wp-admin .splide__img  {
+		height: 100% !important
 	}
 
 	body.wp-admin .splide__slide {
 		margin-bottom:1em;
 		outline:solid 1px #eee;
+		position: relative;
 	}
+
+	body.wp-admin .splide {
+		visibility: visible !important;	
+	}	
 
 	body.wp-admin .splide__slide > :last-child {
 		margin-bottom:0;
-	}
-
-
-	body.wp-admin .splide .ncgallery_caption {
-		display:none !important;
 	}
 
 
@@ -185,33 +184,33 @@ if( in_the_loop() ):?>
 			wp_enqueue_style( 'splide-styles');
 	?>
 
-	<?php if( get_field('link_to_image') == 'image_lightbox') :?>
+		<?php if( get_field('link_to_image') == 'image_lightbox') :?>
 
-	<?php 
-		wp_enqueue_script( 'magnific', false);
-		wp_enqueue_style( 'magnific-styles', false); 
-	?>
+		<?php 
+			wp_enqueue_script( 'magnific', false);
+			wp_enqueue_style( 'magnific-styles', false); 
+		?>
 
-<script id="<?php echo 'gallery_'.$id.'_script'; ?>">
-jQuery(document).ready(function() {
-  jQuery('<?php echo'.ncsimg_'.$id; ?>').magnificPopup({
-		type:'image',
-		image: { titleSrc: 'data-title' },
-		gallery:{ enabled:true },
-      mainClass:'mfp-with-zoom',
-      zoom: {
-        enabled: true,
-        duration: 300,
-        easing: 'ease-in-out',
-        opener: function(openerElement) {
-          return openerElement.is('img') ? openerElement : openerElement.find('img');
-        }
-      },
-  });
-});
-</script>
+		<script id="<?php echo 'gallery_'.$id.'_script'; ?>">
+		jQuery(document).ready(function() {
+		jQuery('<?php echo'.ncsimg_'.$id; ?>').magnificPopup({
+			type:'image',
+			image: { titleSrc: 'data-title' },
+			gallery:{ enabled:true },
+				mainClass:'mfp-with-zoom',
+				zoom: {
+					enabled: true,
+					duration: 300,
+					easing: 'ease-in-out',
+					opener: function(openerElement) {
+						return openerElement.is('img') ? openerElement : openerElement.find('img');
+					}
+				},
+		});
+		});
+		</script>
 
-<?php endif;?>
+		<?php endif;?>
 
 <script>
 	document.addEventListener( 'DOMContentLoaded', function () {
