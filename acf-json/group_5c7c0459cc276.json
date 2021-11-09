@@ -20,6 +20,31 @@
             "endpoint": 0
         },
         {
+            "key": "field_618aed6974b95",
+            "label": "Font or SVG",
+            "name": "font_svg",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "svg": "SVG",
+                "font": "Font Icon"
+            },
+            "default_value": "svg",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5c7c0459d5186",
             "label": "List",
             "name": "list_content",
@@ -33,72 +58,83 @@
                 "id": ""
             },
             "collapsed": "field_5c7c0543ddf55",
-            "min": 2,
+            "min": 0,
             "max": 0,
             "layout": "block",
             "button_label": "Add Item",
             "sub_fields": [
                 {
                     "key": "field_5eebe73320996",
-                    "label": "BG Image",
-                    "name": "bg_image",
-                    "type": "image",
+                    "label": "SVG code",
+                    "name": "svg_code",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_618aed6974b95",
+                                "operator": "==",
+                                "value": "svg"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "10",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_60b572d15e5ea",
-                    "label": "Icon",
-                    "name": "icon",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "rows": 1,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_60b572d15e5ea",
+                    "label": "Font icon classes",
+                    "name": "icon",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_618aed6974b95",
+                                "operator": "==",
+                                "value": "font"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 1,
+                    "new_lines": ""
                 },
                 {
                     "key": "field_5c7c0543ddf55",
                     "label": "Label",
                     "name": "label",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "rows": 1,
+                    "new_lines": "br"
                 },
                 {
                     "key": "field_60b44d0118d3d",
@@ -109,15 +145,15 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "placeholder": "",
                     "maxlength": "",
-                    "rows": 2,
-                    "new_lines": ""
+                    "rows": 1,
+                    "new_lines": "br"
                 },
                 {
                     "key": "field_5c7c055bddf56",
@@ -128,7 +164,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -196,5 +232,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622504237
+    "modified": 1636495975
 }

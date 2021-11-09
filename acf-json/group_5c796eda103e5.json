@@ -61,7 +61,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_5f9b447c460c8",
@@ -417,7 +417,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5c7aa91190c61",
@@ -432,7 +434,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5c7aa92890c62",
@@ -492,5 +496,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426818
+    "modified": 1636490486
 }

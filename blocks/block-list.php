@@ -8,7 +8,7 @@ function nc_list_block() {
         acf_register_block_type(array(
             'name'              => 'nc_list',
             'title'             => __('NC Icon List', 'nc-framework'),
-            'description'       => __('A text list with select images and icons', 'nc-framework'),
+            'description'       => __('A text list with font or SVG icons.', 'nc-framework'),
             'render_callback'   => 'nc_list_block_markup',
             'category'          => 'layout',
             //'icon'              => 'format-image',
@@ -60,7 +60,7 @@ function nc_list_block_markup( $block, $content = '', $is_preview = false ) {
 			$icon = get_sub_field('icon');
 			$text = get_sub_field('text');
 			$link = get_sub_field('link');
-			$bgimg = get_sub_field('bg_image');
+			$svg = get_sub_field('svg_code');
 		?>
 
 		<li class="nclist_item">
@@ -69,15 +69,20 @@ function nc_list_block_markup( $block, $content = '', $is_preview = false ) {
 		<a class="nclist_link"<?php if($link['url']) { echo' href="'.esc_url($link['url']).'"'; } if($link['target']){ echo' target="'.esc_attr($link['target']).'"';} ?>>
 		<div class="nclist_box">
 
-			<?php
-			if( $bgimg ) {
-					echo wp_get_attachment_image( $bgimg, 'medium', '', array("class" => "nclist_bgimg") );
-			}?>
-
-			<?php if($icon):?>
-				<div class="nclist_icon"><?php echo $icon; ?></div>
+			<?php if($svg):?>
+			<div class="nclist_svg">
+				<?php echo $svg; ?>
+			</div>
+			<?php elseif($icon):?>
+				<div class="nclist_icon">
+					<?php echo '<span class="'.$icon.'"></span>'; ?>
+				</div>
+			<?php else :?>
 			<?php endif;?>
-			<div class="nclist_label"><?php echo $label; ?></div>
+			<div class="nclist_content">
+				<div class="nclist_label"><?php echo $label; ?></div>
+				<div class="nclist_text"><?php echo $text; ?></div>
+			</div>
 
 		</div>
 		</a>
@@ -86,14 +91,20 @@ function nc_list_block_markup( $block, $content = '', $is_preview = false ) {
 
 		<div class="nclist_box">
 			
-			<?php
-			if( $bgimg ) {
-					echo wp_get_attachment_image( $bgimg, 'medium', '', array("class" => "nclist_bgimg") );
-			}?>
-			<?php if($icon):?>
-				<div class="nclist_icon"><?php echo $icon; ?></div>
+			<?php if($svg):?>
+			<div class="nclist_svg">
+				<?php echo $svg; ?>
+			</div>
+			<?php elseif($icon):?>
+				<div class="nclist_icon">
+					<?php echo '<span class="'.$icon.'"></span>'; ?>
+				</div>
+			<?php else :?>
 			<?php endif;?>
-			<div class="nclist_label"><?php echo $label; ?></div>
+			<div class="nclist_content">
+				<div class="nclist_label"><?php echo $label; ?></div>
+				<div class="nclist_text"><?php echo $text; ?></div>
+			</div>
 
 		</div>
 		<?php endif;?>

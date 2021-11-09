@@ -137,7 +137,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Enter content here",
+                    "placeholder": "",
                     "maxlength": "",
                     "rows": 4,
                     "new_lines": "wpautop"
@@ -321,5 +321,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622425538
+    "modified": 1636126224
 }

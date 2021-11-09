@@ -68,7 +68,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_60a1783acfb2c",
@@ -83,7 +85,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_60a177edcfb2b",
@@ -181,7 +185,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#000"
+            "default_value": "#000",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_60a17753cfb2a",
@@ -276,5 +282,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426830
+    "modified": 1636490734
 }

@@ -1132,6 +1132,7 @@ body.woocommerce .ncontent_main > * {
 .sharelinks {
     color:currentColor;
     display:flex;
+    gap: 0.75rem;
     align-items: center;
     margin-bottom: 3rem;
 }
@@ -1142,10 +1143,6 @@ body.woocommerce .ncontent_main > * {
     transition: 0.5s;
     transform:scale(1);
     background:var(--gray);
-}
-
-.sharelinks_anchor:not(:last-of-type) {
-    margin-right:0.75rem
 }
 
 .sharelinks_anchor:hover {

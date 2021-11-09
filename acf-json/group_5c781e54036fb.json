@@ -51,7 +51,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5c781e540be0b",
@@ -68,7 +70,7 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 1,
             "delay": 0
         },
@@ -239,5 +241,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426843
+    "modified": 1636491273
 }

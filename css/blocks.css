@@ -1005,111 +1005,36 @@ margin-bottom:0;
 */
 
 .nclist {
---box-padding:3rem 0;
---bg-color:#eee;
---box-text-color:#333;
---contain-max-width:1400px;
-
---item-padding:0;
---item-radius:0;
-
---flex-direction:row;
---justify-content:flex-start;
---align-items:center;
-
---label-padding:0 0 0 1em;
---min-item-width: 200px; /* No bigger than 300px */
-
---label-color: currentColor;
---label-bg-color: transparent;
-
---icon-width: 50px;
---icon-min-width: 50px; /* Must be here of flexbox will not respect the width you set*/
-
---icon-height: auto;
---icon-min-height:50px;
---icon-max-height: 50px;
-
---icon-padding: 0;
---icon-bg-color: none;
---icon-border: solid 0 none;
---icon-box-shadow: none;
---icon-border-radius:0;
---icon-object-fit: contain;
---icon-color: #000;
-
---bgimg-opacity: 1;
---bgimg-blend-mode: normal;
-}
-
-.nclist {
-padding:var(--box-padding);
-background:var(--bg-color);
-color:var(--box-text-color);
+  --box-padding:3rem 0;
+  --bg-color:#eee;
+  --box-text-color:#333;
+  --contain-max-width:1400px;
+  padding:var(--box-padding);
+  background:var(--bg-color);
+  color:var(--box-text-color);
 }
 
 .nclist .ncontain {
-max-width:var(--contain-max-width);
+  max-width:var(--contain-max-width);
 }
 
 .nclist_group {
-list-style-type:none;
-padding:0; 
-margin:0;
-display:grid;
-grid-template-columns: repeat(auto-fit, minmax(var(--min-item-width), 1fr));
-grid-gap: 1.5em;
+  list-style-type:none;
+  padding:0; 
+  margin:0;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 1.5em;
 }
 
 .nclist_link {
-display:block;
-text-decoration:none;
+  display:block;
+  text-decoration:none;
 }
 
-.nclist_box {
-display:flex;
-flex-direction:var(--flex-direction);
-align-items:var(--align-items);
-justify-content:var(--justify-content);
-background:var(--label-bg-color);
-padding:var(--item-padding);
-border-radius:var(--item-radius);
-position: relative;
-overflow: hidden;
-}
-
-.nclist_bgimg {
-  position: absolute;
-  left: 0; right:0; top:0; bottom:0;
-  height: 100%;
-  width:100%;
-  object-fit: cover;
-  z-index: 1;
-  opacity: var(--bgimg-opacity);
-  mix-blend-mode: var(--bgimg-blend-mode);
-}
-
-.nclist_imgcontain {
-  background:var(--icon-bg-color);
-  border:var(--icon-border);
-  box-shadow:var(--icon-box-shadow);
-  border-radius:var(--icon-border-radius);
-  overflow: hidden;
-  position:relative;
-  z-index: 5;
-}
-
-
-.nclist_label {
-padding:var(--label-padding);
-color:var(--label-color);
-flex-grow:1;
-position:relative;
-z-index: 5;
-}
 
 .nclist_after {
-margin-top:var(--gap);
+  margin-top:var(--gap);
 }
 
 /* NC Media 
