@@ -325,6 +325,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -427,6 +428,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -877,6 +879,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -920,6 +923,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -1117,6 +1121,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -1616,6 +1621,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -2199,6 +2205,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -2435,6 +2442,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -3049,6 +3057,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -3549,6 +3558,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -3817,6 +3827,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -3898,6 +3909,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -4184,6 +4196,770 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
+  ));
+  
+  acf_add_local_field_group(array(
+    'key' => 'group_5c9a36947d5bd',
+    'title' => 'Block: NC Posts',
+    'fields' => array(
+      array(
+        'key' => 'field_5c9a3694869bf',
+        'label' => 'Main',
+        'name' => '',
+        'type' => 'accordion',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'open' => 0,
+        'multi_expand' => 0,
+        'endpoint' => 0,
+      ),
+      array(
+        'key' => 'field_5cfd627c9e3bd',
+        'label' => 'The Posts',
+        'name' => 'link_type',
+        'type' => 'select',
+        'instructions' => 'Do you want to display the latest posts or select your own?',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'latest' => 'Show the latest posts',
+          'selected' => 'Select my own',
+        ),
+        'default_value' => 'latest',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfd583dbc2dd',
+        'label' => 'Select Links',
+        'name' => 'select_links',
+        'type' => 'relationship',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfd627c9e3bd',
+              'operator' => '==',
+              'value' => 'selected',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'post_type' => '',
+        'taxonomy' => '',
+        'filters' => array(
+          0 => 'search',
+          1 => 'post_type',
+          2 => 'taxonomy',
+        ),
+        'elements' => '',
+        'min' => '',
+        'max' => '',
+        'return_format' => 'object',
+      ),
+      array(
+        'key' => 'field_5c9a369486a0a',
+        'label' => 'Display Count',
+        'name' => 'amount',
+        'type' => 'number',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfd627c9e3bd',
+              'operator' => '==',
+              'value' => 'latest',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '50',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 7,
+        'placeholder' => 7,
+        'prepend' => '',
+        'append' => '',
+        'min' => 3,
+        'max' => 20,
+        'step' => '',
+      ),
+      array(
+        'key' => 'field_5c9a3830bdf1d',
+        'label' => 'Offset Posts',
+        'name' => 'offset',
+        'type' => 'number',
+        'instructions' => 'Number of post to displace or pass over.',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfd627c9e3bd',
+              'operator' => '==',
+              'value' => 'latest',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '50',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 0,
+        'placeholder' => 0,
+        'prepend' => '',
+        'append' => '',
+        'min' => 0,
+        'max' => '',
+        'step' => '',
+      ),
+      array(
+        'key' => 'field_5cfd63499e3be',
+        'label' => 'Post Type',
+        'name' => 'post_type',
+        'type' => 'text',
+        'instructions' => 'Enter the post type name here.',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfd627c9e3bd',
+              'operator' => '==',
+              'value' => 'latest',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 'post',
+        'placeholder' => 'post',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+      ),
+      array(
+        'key' => 'field_5c9f8c75945e4',
+        'label' => 'Display Post Meta',
+        'name' => 'block_post_meta',
+        'type' => 'checkbox',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'title' => 'Title',
+          'thumb' => 'Thumbnail',
+          'date' => 'Post Date',
+          'author' => 'Author Name',
+          'avatar' => 'Author Avatar',
+          'comments' => 'Total Comments',
+          'category' => 'Main Category',
+          'excerpt' => 'Excerpt',
+        ),
+        'allow_custom' => 0,
+        'default_value' => array(
+          0 => 'title',
+          1 => 'thumb',
+        ),
+        'layout' => 'vertical',
+        'toggle' => 0,
+        'return_format' => 'value',
+        'save_custom' => 0,
+      ),
+      array(
+        'key' => 'field_5f010d8804ba6',
+        'label' => 'Truncate Character Limit',
+        'name' => 'tuncate_char_limit',
+        'type' => 'number',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5c9f8c75945e4',
+              'operator' => '==',
+              'value' => 'excerpt',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 100,
+        'placeholder' => 100,
+        'prepend' => '',
+        'append' => '',
+        'min' => 50,
+        'max' => 300,
+        'step' => 50,
+      ),
+      array(
+        'key' => 'field_5c9a369486ae7',
+        'label' => 'Layout',
+        'name' => '',
+        'type' => 'accordion',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'open' => 0,
+        'multi_expand' => 0,
+        'endpoint' => 0,
+      ),
+      array(
+        'key' => 'field_5cfbf11cd1f6e',
+        'label' => 'Column Style',
+        'name' => 'column_style',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'ncolumns-standard' => 'Standard',
+          'ncolumns-mason' => 'Mason (experimental)',
+        ),
+        'default_value' => 'ncolumns-standard',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf129d1f6f',
+        'label' => 'Fixed or Auto Grid',
+        'name' => 'column_layout',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'ncolumns-fixed' => 'Fixed',
+          'ncolumns-auto' => 'Auto',
+        ),
+        'default_value' => 'ncolumns-fixed',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf14ed1f78',
+        'label' => 'Column Min Width (for auto)',
+        'name' => 'col_min_width',
+        'type' => 'number',
+        'instructions' => 'Set the column\'s minimum width (works for auto columns)',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfbf129d1f6f',
+              'operator' => '==',
+              'value' => 'ncolumns-auto',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 150,
+        'placeholder' => 150,
+        'prepend' => '',
+        'append' => 'px',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf12dd1f70',
+        'label' => 'Column Count',
+        'name' => 'column_count',
+        'type' => 'range',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfbf129d1f6f',
+              'operator' => '==',
+              'value' => 'ncolumns-fixed',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 1,
+        'min' => 1,
+        'max' => 9,
+        'step' => '',
+        'prepend' => '',
+        'append' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf144d1f75',
+        'label' => 'Column Gap',
+        'name' => 'column_gap',
+        'type' => 'text',
+        'instructions' => 'Column gap spacing',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '1.5rem',
+        'placeholder' => '1.5rem',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf148d1f76',
+        'label' => 'Row Gap',
+        'name' => 'row_gap',
+        'type' => 'text',
+        'instructions' => 'Row gap spacing',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '1.5rem',
+        'placeholder' => '1.5rem',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+      ),
+      array(
+        'key' => 'field_5c9a369486a52',
+        'label' => 'Thumb Position',
+        'name' => 'position',
+        'type' => 'radio',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'row' => 'Left',
+          'row-reverse' => 'Right',
+          'column' => 'Above',
+        ),
+        'allow_null' => 0,
+        'other_choice' => 0,
+        'default_value' => 'row',
+        'layout' => 'horizontal',
+        'return_format' => 'value',
+        'save_other_choice' => 0,
+      ),
+      array(
+        'key' => 'field_5cfbf14bd1f77',
+        'label' => 'Thumb Shape',
+        'name' => 'thumb_shape',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          '70%' => 'Standard',
+          '50%' => 'Wide',
+          '100%' => 'Square',
+          '150%' => 'Tall',
+        ),
+        'default_value' => '70%',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfbfc958acf6',
+        'label' => 'Thumb Width',
+        'name' => 'thumb_width',
+        'type' => 'range',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 25,
+        'min' => 10,
+        'max' => 100,
+        'step' => 5,
+        'prepend' => '',
+        'append' => '%',
+      ),
+      array(
+        'key' => 'field_5c9a369486a77',
+        'label' => 'Image File Size',
+        'name' => 'image_size',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'thumbnail' => 'thumbnail',
+          'medium' => 'medium',
+          'large' => 'large',
+          'full' => 'full',
+        ),
+        'default_value' => 'medium',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf130d1f71',
+        'label' => 'Break Point',
+        'name' => '',
+        'type' => 'accordion',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'open' => 0,
+        'multi_expand' => 0,
+        'endpoint' => 0,
+      ),
+      array(
+        'key' => 'field_5cfbf136d1f72',
+        'label' => 'Break Point Width',
+        'name' => 'breakpoint',
+        'type' => 'number',
+        'instructions' => 'Enter "0" if you will handle the responsive side yourself.',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 640,
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => 'px',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf13bd1f73',
+        'label' => 'Break Point Layout',
+        'name' => 'breakpoint_layout',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'ncolumns-stack' => 'Stack',
+          'ncolumns-scroll' => 'Scroll horizontally',
+          'ncolumns-grid' => 'Grid',
+        ),
+        'default_value' => 'ncolumns-grid',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfbf140d1f74',
+        'label' => 'How many columns?',
+        'name' => 'break_columns',
+        'type' => 'range',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfbf13bd1f73',
+              'operator' => '==',
+              'value' => 'ncolumns-grid',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 1,
+        'min' => 1,
+        'max' => 9,
+        'step' => '',
+        'prepend' => '',
+        'append' => '',
+      ),
+      array(
+        'key' => 'field_5cfd6134230b6',
+        'label' => 'Column Min Width',
+        'name' => 'col_min_width_break',
+        'type' => 'number',
+        'instructions' => 'Set the item\'s minimum width',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_5cfbf13bd1f73',
+              'operator' => '==',
+              'value' => 'ncolumns-scroll',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 250,
+        'placeholder' => 250,
+        'prepend' => '',
+        'append' => 'px',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array(
+        'key' => 'field_5cfd5d06adc67',
+        'label' => 'Break Point Thumb Position',
+        'name' => 'position_break',
+        'type' => 'radio',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          'row' => 'Left',
+          'row-reverse' => 'Right',
+          'column' => 'Above',
+        ),
+        'allow_null' => 0,
+        'other_choice' => 0,
+        'default_value' => 'row',
+        'layout' => 'horizontal',
+        'return_format' => 'value',
+        'save_other_choice' => 0,
+      ),
+      array(
+        'key' => 'field_5cfd5d0aadc68',
+        'label' => 'Break Point Thumb Shape',
+        'name' => 'thumb_shape_break',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'choices' => array(
+          '70%' => 'Standard',
+          '50%' => 'Wide',
+          '100%' => 'Square',
+          '150%' => 'Tall',
+        ),
+        'default_value' => '70%',
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_5cfd5d14adc69',
+        'label' => 'Break Point Thumb Width',
+        'name' => 'thumb_width_break',
+        'type' => 'range',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 30,
+        'min' => 10,
+        'max' => 100,
+        'step' => 5,
+        'prepend' => '',
+        'append' => '%',
+      ),
+      array(
+        'key' => 'field_5c9a369486c9b',
+        'label' => 'Box Settings',
+        'name' => '',
+        'type' => 'clone',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'clone' => array(
+          0 => 'group_5f0a295e1071c',
+        ),
+        'display' => 'seamless',
+        'layout' => 'block',
+        'prefix_label' => 0,
+        'prefix_name' => 0,
+      ),
+      array(
+        'key' => 'field_5c9a369486e1d',
+        'label' => 'Bottom Padding',
+        'name' => 'bottom_padding',
+        'type' => 'text',
+        'instructions' => 'Must match the bottom padding of box.',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '3rem',
+        'placeholder' => '3rem',
+        'prepend' => 'padding-bottom:',
+        'append' => '',
+        'maxlength' => '',
+      ),
+      array(
+        'key' => 'field_5e233c78b6399',
+        'label' => 'Custom Code',
+        'name' => 'custom_code',
+        'type' => 'clone',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'clone' => array(
+          0 => 'group_5e221e7d71f1d',
+        ),
+        'display' => 'seamless',
+        'layout' => 'block',
+        'prefix_label' => 0,
+        'prefix_name' => 0,
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'block',
+          'operator' => '==',
+          'value' => 'acf/nc-posts',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+    'show_in_rest' => false,
+    'modified' => 1594525675,
   ));
   
   acf_add_local_field_group(array(
@@ -4500,6 +5276,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -5060,6 +5837,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -5615,6 +6393,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -5860,6 +6639,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -6117,6 +6897,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => false,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   acf_add_local_field_group(array(
@@ -6514,6 +7295,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => false,
     'description' => '',
+    'show_in_rest' => false,
   ));
   
   endif;		
