@@ -119,7 +119,15 @@ h1, h2, h3, h4, h5, h6 {
     line-height: normal;
 }
 
-p+h2, p+h3, p+h4, ul+h2, ul+h3, ul+h4, ol+h2, ol+h3, ol+h4 {
+.ncontent_main > p+h2, 
+.ncontent_main > p+h3, 
+.ncontent_main > p+h4, 
+.ncontent_main > ul+h2, 
+.ncontent_main > ul+h3, 
+.ncontent_main > ul+h4, 
+.ncontent_main > ol+h2, 
+.ncontent_main > ol+h3, 
+.ncontent_main > ol+h4 {
     margin-top: calc(var(--gap) * 2);
 }
 
