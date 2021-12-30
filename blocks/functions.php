@@ -78,8 +78,10 @@ function nc_after_content(){
 // Box Settings
 function nc_box_styles( $block_id =''){
     $padding = get_field('padding') ?: '3rem 0';
-    $bg_color = get_field('bg_color') ?: 'transparent';
-    $text_color = get_field('text_color') ?: 'inherit';
+
+    if( get_field('bg_color') ) { $bg_color = 'background-color:'.get_field('bg_color').';'; } else { $bg_color = null; }
+    if( get_field('bg_image') ) { $bg_img = 'background-image:url('.get_field('bg_image').'); background-repeat: no-repeat; background-size: cover;'; } else { $bg_img = null; }
+    if( get_field('text_color') ) { $text_color = 'color:'.get_field('text_color').';'; } else { $text_color = null; }
 
     if( get_field('max_contain_width') ) {
         $c_width = get_field('max_contain_width').'px';     
@@ -105,15 +107,16 @@ function nc_box_styles( $block_id =''){
     $breakpoint = get_field('minimum_width') ?: '960';
 
     // box
-    echo "#".$block_id." {
-    background-color: ".$bg_color.";
-    padding: ".$padding.";
-    color: ".$text_color.";
-    }
+    echo "#".$block_id." {";
+    echo $bg_color;
+    echo $bg_img;
+    echo "padding: ".$padding.";";
+    echo $text_color;
+    echo "}";
 
-    #".$block_id." .ncontain {
-    max-width: ".$c_width.";
-    }";
+    echo "#".$block_id." .ncontain {";
+    echo "max-width: ".$c_width.";";
+    echo "}";
 
     if ( get_field('box_direction') == 'column' ) {
 

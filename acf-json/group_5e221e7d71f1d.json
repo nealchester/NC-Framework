@@ -1,6 +1,6 @@
 {
     "key": "group_5e221e7d71f1d",
-    "title": "Part: Custom Code",
+    "title": "Block Part: Custom Code",
     "fields": [
         {
             "key": "field_5ee815484a3cd",
@@ -393,5 +393,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1636490828
+    "show_in_rest": 0,
+    "modified": 1640892869
 }

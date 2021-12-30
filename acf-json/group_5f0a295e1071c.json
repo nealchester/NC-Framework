@@ -1,6 +1,6 @@
 {
     "key": "group_5f0a295e1071c",
-    "title": "Part: Box Properties",
+    "title": "Block Part: Box Properties",
     "fields": [
         {
             "key": "field_5f0a2a14959cf",
@@ -40,7 +40,7 @@
         },
         {
             "key": "field_5f0a2a62959d0",
-            "label": "Background color",
+            "label": "Background Color",
             "name": "bg_color",
             "type": "color_picker",
             "instructions": "",
@@ -51,7 +51,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string"
         },
         {
             "key": "field_5f0a2aab959d1",
@@ -66,7 +68,33 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_61cdfecdfb29c",
+            "label": "Background Image",
+            "name": "bg_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5f0a2bc7959d4",
@@ -249,5 +277,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1622426904
+    "show_in_rest": 0,
+    "modified": 1640893462
 }

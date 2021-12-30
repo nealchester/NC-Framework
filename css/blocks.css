@@ -1976,9 +1976,9 @@ margin-top:var(--gap);
 /* Seperator */
 
 .wp-block-separator {
-    margin:var(--margin, 1.5rem auto);
-    border-top: var(--border-top, solid 1px #eee);
-    border-bottom: none !important;
+  margin: var(--margin, 3rem auto);
+  border-bottom: none !important;
+  border-top-width: 3px;
 }
 
 .wp-block-separator.is-style-wide {

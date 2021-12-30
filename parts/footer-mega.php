@@ -1,5 +1,5 @@
 <footer id="footer">
-
+	<?php /* Mega footer
 	<div class="ncontain footer_columns">
 		<div class="footer_column1"><?php if (dynamic_sidebar('footer1')) { } else { }?></div>
 		<div class="footer_column2"><?php if (dynamic_sidebar('footer2')) { } else { }?></div>			
@@ -7,6 +7,7 @@
 		<div class="footer_column4"><?php if (dynamic_sidebar('footer4')) { } else { }?></div>			
 		<!-- <div class="footer_column5"><?php if (dynamic_sidebar('footer5')) { } else { }?></div> -->
 	</div>
+	*/ ?>
 
 	<hr class="footer_divider">
 

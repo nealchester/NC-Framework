@@ -138,8 +138,10 @@ a.comment-reply-link:after {
 }
 
 #wpsubmit {
-    width:100%;
-    text-transform:uppercase;
+    width: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: var(--field-radius);
 }
 
 /* Pingbacks */

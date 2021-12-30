@@ -28,7 +28,7 @@
 
     /* Typography */
 
-    --sans: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif; 
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif; 
     --serif: var(--sans); 
     --mono: 'Courier New', Courier, monospace;
 

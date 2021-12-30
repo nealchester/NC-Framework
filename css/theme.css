@@ -434,7 +434,7 @@ body.blog #banner {
 
 .yoast-breadcrumbs {
     font-size: 0.8em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.75rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -778,10 +778,19 @@ body.attachment {
     font-size:var(--txt-small);
 }
 
+#footer a {
+    transition:0.3s;
+}
+
+#footer a:hover {
+    color:#fff;
+}
+
 .footer_columns {
     display:flex;
     gap:3em;
     flex-wrap: wrap;
+    margin-bottom:4em;
 }
 
 .footer_columns > div {
@@ -808,7 +817,6 @@ body.attachment {
 }
 
 .footer_base {
-    padding-top:4em;
     display: flex;
     gap:var(--gap);
     flex-direction: row-reverse;
