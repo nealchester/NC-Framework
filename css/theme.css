@@ -78,59 +78,6 @@ body {
     align-items: center;
 }
 
-#header_menu {
-    --menu-bg-color: none;
-    --menu-item-height: auto;
-    --menu-align-items: center;
-    --menu-box-shadow: none;
-    --item-height: auto;
-    --item-align-items: center;
-    --item-bg-color: transparent;
-    --item-bg-color-hover: transparent;
-    --item-bg-color-current: transparent;
-    --item-text-size: var(--txt-small);
-    --item-text-color: #000;
-    --item-text-color-hover: #000;
-    --item-text-color-current: #000;
-    --item-margin-left: 0;
-    --item-padding: 0.75rem 1rem;
-    --item-border-right: none;
-    --item-border-bottom: solid 1px #ccc;
-    --indicator-color: inherit;
-    --transition: 0.5s;
-    --drop-width: 250px;
-    --drop-radius: 5px;
-    --drop-text-size: 1em;
-    --drop-div-color: solid 1px #444;
-    --drop-item-bg-color: #222;
-    --drop-item-text-color: #ccc;
-    --drop-item-padding: 1em;
-    --drop-item-bg-color-hover: #444;
-    --drop-item-text-color-hover: #fff;
-    --drop-shadow: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
-}
-
-#header_menu > li > a {
-    font-weight: 400;
-}
-
-/* Animated underline hover */
-
-#header .navmenu > li:not(.menu-item-has-children) > a:after {
-    content:''; 
-    height:1px; 
-    background:#000; 
-    width:0;
-    transition: 0.7s; 
-    display:block; 
-    position:absolute;
-    bottom:1em;
-}
-
-#header .navmenu > li:not(.menu-item-has-children):hover > a:after {
-    width:calc(100% - 2rem); /* minus the padding on both sides of links */
-}
-
 
 /* Make home links blank */
 
@@ -279,36 +226,6 @@ body.blog #banner {
 #banner.ncsplit-imagetop .ncsplit_image { order:1 }
 #banner.ncsplit-imagetop .ncsplit_content { order:2 }
 
-}
-
-
-#shortbanner.nchero {
-    --overlay-opacity: 0;
-    --text-color: #fff;
-    --text-align: left;
-    --max-container-width: var(--width-wide);
-    --content-dropshadow: 0 2px 6px rgba(0,0,0,0.3);
-    --content-max-width: 600px;
-    --content-position-x: flex-start;
-    --content-position-y: center;
-    --content-padding: 3rem 0;
-    --box-min-height: 200px;
-    --box-bgcolor: #222;
-    margin-bottom:3rem;
-}
-
-body.error404 #shortbanner.nchero {
-    --max-container-width:var(--width-standard);
-}
-
-/* Nav Menu Item Description */
-
-.menu-item-description {
-	display:block;
-	font-size:0.6em;
-	opacity:0.5;
-    width:100%;
-    line-height: 1.5
 }
 
 /* Post meta */
@@ -1006,101 +923,32 @@ body.woocommerce .ncontent_main > * {
 
 /* Main Body Content Layout */
 
-.ncontent-left,
-.ncontent-right {
-    --sidebar-width: 300px;
-    --division-padding:3rem;
-    --width-max: 1200px; /* container max-width for sidebar and content (global variable) */
+.ncontent_main > * {
+    width:calc(100% - 2 * var(--gap));
+    max-width:var(--width-standard);
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.ncontent_main > .alignwide {
+    max-width:var(--width-wide);
+}
+
+.ncontent_main > .alignmax {
+    max-width: var(--width-max);
+}
+
+.ncontent_main > .alignfull {
+    max-width:100%;
+    width:100%;
+}
+
+.ncontent_main > :last-child {
+    margin-bottom: 3rem;
 }
 
 
-
-.ncontent > .ncontain { display:flex; }
-
-    .ncontent-full > .ncontain {
-        width:100%;
-        max-width:100%;
-    }
-
-    .ncontent-right > .ncontain {
-        flex-direction: row-reverse;
-    }
-
-    .ncontent_main {
-        flex-grow:1
-    }
-
-    .ncontent_main > :last-child {
-        margin-bottom: 3rem;
-    }
-
-    .ncontent-full .ncontent_main > *,
-    .ncontent-alone .ncontent_main > * {
-        width:calc(100% - 2 * var(--gap));
-        max-width:var(--width-standard);
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-
-    .ncontent-right:not(.ncontent-full) .ncontent_main {
-        padding-left: var(--division-padding);
-    }
-
-    .ncontent-left:not(.ncontent-full) .ncontent_main {
-        padding-right: var(--division-padding);
-    }
-
-    .ncontent-left .ncontent_main > *,
-    .ncontent-right .ncontent_main > * {
-        max-width:var(--width-standard);
-    }
-
-    .ncontent_main > .alignwide {
-        max-width:var(--width-wide);
-    }
-
-    .ncontent_main > .alignfull {
-        max-width:100%;
-        width:100%;
-    }
-
-    .ncontent-left:not(.ncontent-full) #comments .ncontain,
-    .ncontent-right:not(.ncontent-full) #comments .ncontain {
-        width:100%;
-        margin: 0;
-    }
-   
-
-    .ncontent_sidebar {
-        flex-basis:var(--sidebar-width);
-        min-width:var(--sidebar-width);
-        margin-left:auto;
-        padding: 3rem 0 0 0
-    }
-
-    /* Responsive */
-
-    @media(max-width:960px){
-        .ncontent > .ncontain {
-            flex-direction:column;
-        }
-        
-        .ncontent_sidebar {
-            margin:0;
-            min-width: 0;
-            flex-basis:100%;
-        }
-        .ncontent-right:not(.ncontent-full) .ncontent_main{
-            padding-left: 0;
-        }
-
-        .ncontent-left:not(.ncontent-full) .ncontent_main{
-            padding-right: 0;
-        }
-
-    }
-
+/* Misc Needed to pass test */
 
 .sticky,
 .gallery-caption,
@@ -1108,7 +956,7 @@ body.woocommerce .ncontent_main > * {
     cursor:inherit;
  }
 
- /* For  Jarallax JS */
+/* For  Jarallax JS */
 
 .jarallax {
     position: relative;
@@ -1126,41 +974,6 @@ body.woocommerce .ncontent_main > * {
     z-index: -1;
 }
 
-/* Social Share Links */
-
-
-.sharelinks {
-    color:currentColor;
-    display:flex;
-    gap: 0.75rem;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.sharelinks_anchor {
-    padding:0.5em;
-    position: relative;
-    transition: 0.5s;
-    transform:scale(1);
-    background:var(--gray);
-}
-
-.sharelinks_anchor:hover {
-    transform:scale(1.3);
-}
-
-.sharelinks svg {
-    display:block;
-    max-width:20px;
-    max-height:20px;
-    width:100%;
-    height:auto;
-}
-
-.sharelinks svg path {
-    fill: currentColor;
-}
-
 
 .featuredimage  {
     margin-bottom:1.5rem;
@@ -1169,7 +982,7 @@ body.woocommerce .ncontent_main > * {
 
 /* Scroll Bar Styles */
 
-body::-webkit-scrollbar { width: 14px; }
+body::-webkit-scrollbar { width: 16px; }
 /* Track & scroll thickness */
 
 body::-webkit-scrollbar-thumb { background-color: #333;}

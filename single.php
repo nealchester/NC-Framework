@@ -1,4 +1,4 @@
-<?php get_template_part('parts/layout_begin');?>
+<?php get_template_part('parts/header');?>
 
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post();?>
@@ -9,9 +9,7 @@ get_template_part('parts/the-title');?>
 <?php // get_template_part('parts/social-share-links'); ?>
 
 <?php // Page Info
-if(get_theme_mod('main_title_format', 'plain-text') == 'plain-text'):?>
-<?php get_template_part('parts/meta-avatar');?>
-<?php endif;?>
+// get_template_part('parts/meta-avatar');?>
 
 <?php // Featured image
 get_template_part('parts/featured-image'); ?>
@@ -32,13 +30,13 @@ get_template_part('parts/link-pages-footer');?>
 // get_template_part('parts/meta-date'); ?>
 
 <?php // Categories
-get_template_part('parts/meta-categories');?>
+// get_template_part('parts/meta-categories');?>
 
 <?php // Tags
-get_template_part('parts/meta-tags');?>
+// get_template_part('parts/meta-tags');?>
 
 <?php // Author box
-get_template_part('parts/meta-box');?>
+// get_template_part('parts/meta-box');?>
 
 <?php // Related Posts Plugin
 if( function_exists('nc_related_posts') ) { nc_related_posts(); };?>
@@ -51,4 +49,5 @@ comments_template() ?>
 <?php else : ?>
 <?php get_template_part('parts/not-found');?>
 <?php endif; ?>
-<?php get_template_part('parts/layout_end');?>
+
+<?php get_template_part('parts/footer');?>

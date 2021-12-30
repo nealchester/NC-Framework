@@ -1,7 +1,8 @@
-<?php 
-	get_template_part('parts/layout_begin');
- 	get_template_part('parts/the-title'); 
- 	if (have_posts()) : ?>
+<?php get_template_part('parts/header');?>
+
+<?php get_template_part('parts/the-title'); ?>
+
+<?php if (have_posts()) : ?>
 
 	<div class="listings">
 	<?php while (have_posts()) : the_post(); ?>
@@ -23,4 +24,4 @@
 	<?php endif; ?>
 <?php endif; ?>
 
-<?php get_template_part('parts/layout_end');?>
+<?php get_template_part('parts/footer');?>

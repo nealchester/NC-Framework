@@ -1,5 +1,3 @@
-<?php if( get_theme_mod( 'show_author_avatar', true ) == true ): ?>
-
 <?php 
 	global $post;
 	$a_id = $post->post_author;
@@ -28,5 +26,3 @@
 		</div>	
 	</div>
 </div>
-
-<?php endif;?>

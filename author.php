@@ -1,4 +1,4 @@
-<?php get_template_part('parts/layout_begin')?>
+<?php get_template_part('parts/header')?>
 <?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
 
 	<div class="authorpage">
@@ -31,4 +31,4 @@
 		</div>
 	</div>
 
-<?php get_template_part('parts/layout_end')?>
+<?php get_template_part('parts/footer')?>

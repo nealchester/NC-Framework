@@ -12,8 +12,34 @@
 
 <div id="wrapper">
 
+	<header id="header">
+		<div class="ncontain">
 
-<?php get_template_part('parts/header-content');?>
+			<?php get_template_part('parts/site-title');?>
+			<p class="hidetext">
+				<a href="#body"><i><?php _e('Jump to Main Content','nc-framework'); ?></i></a>
+			</p>
+
+			<?php 
+				wp_nav_menu (array( 
+				'container' => '', 
+				'theme_location' => 'header-menu',
+				'menu_class'     => 'header_menu', 
+				'menu_id' => 'header_menu',
+				'fallback_cb' => 'link_to_menu_editor'
+				)); 
+			?>
+
+			<?php // get_template_part('parts/header-search-button');?>
+
+		</div>
+
+		<?php // get_template_part('parts/header-search-box');?>
+
+	</header>
 
 	
-<?php if(!is_attachment()) { get_template_part('parts/banner'); }?>
+	<?php // if(!is_attachment()) { get_template_part('parts/banner'); }?>
+
+	<section id="body" class="ncontent"> 
+	<main class="ncontent_main" itemprop="articleBody mainContentOfPage">

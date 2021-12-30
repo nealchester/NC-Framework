@@ -19,7 +19,7 @@ body {
 body, input, select, textarea, button {
     font-family: var(--sans);
     font-size: var(--txt-base);
-    line-height: calc(0.5rem + 1em);
+    line-height: 1.5;
     font-weight: 400;
 }
 
@@ -43,10 +43,6 @@ h4 { font-size: var(--txt-medium); }
 h5, h6 { font-size: var(--txt-base); }
 
 h1,h2,h3,h4,h5,h6 { font-weight: 600; }
-
-@media(max-width:768px){
-    h1 { font-size:var(--txt-xlarge);}
-}
 
 /* Buttons */
 

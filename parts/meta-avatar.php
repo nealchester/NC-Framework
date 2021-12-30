@@ -1,5 +1,3 @@
-<?php if( get_theme_mod( 'show_author_avatar', true ) == true ): ?>
-
 <?php 
 	$authorlink = get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta('user_nicename') );
  ?>
@@ -26,5 +24,3 @@
 		</div>	
 	</div>
 </div>
-
-<?php endif;?>

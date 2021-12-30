@@ -1,11 +1,3 @@
-/* 
-
-move menu blocks here here
-
-separate the navigation block CSS and leave it in the blocks folder
-
-*/
-
 /*  NC Navmenu 
 
 <ul class="navmenu">
@@ -20,47 +12,64 @@ separate the navigation block CSS and leave it in the blocks folder
 
 */
 
-.navmenu {
-  --menu-bg-color: #fff;
+
+.header_menu {
+  --menu-bg-color: none;
   --menu-item-height: auto;
   --menu-align-items: center;
-  --menu-box-shadow:none;
-
-  --item-height: auto; 
+  --menu-box-shadow: none;
+  --item-height: auto;
   --item-align-items: center;
-
-  --item-bg-color: #fff;
-  --item-bg-color-hover: #fff;
-  --item-bg-color-current: #fff;
-
-  --item-text-size:1em;
+  --item-bg-color: transparent;
+  --item-bg-color-hover: transparent;
+  --item-bg-color-current: transparent;
+  --item-text-size: var(--txt-small);
   --item-text-color: #000;
   --item-text-color-hover: #000;
   --item-text-color-current: #000;
-
   --item-margin-left: 0;
-  --item-padding: 1rem;
+  --item-padding: 0.75rem 1rem;
   --item-border-right: none;
-  --item-border-bottom:solid 1px #ccc;
-  
+  --item-border-bottom: solid 1px #ccc;
   --indicator-color: inherit;
   --transition: 0.5s;
-  
-  --drop-width:250px;
-  --drop-radius:5px;
-  --drop-text-size:1em;
-  --drop-div-color:solid 1px #444;
+  --drop-width: 250px;
+  --drop-radius: 5px;
+  --drop-text-size: 1em;
+  --drop-div-color: solid 1px #444;
   --drop-item-bg-color: #222;
-  --drop-item-text-color:#ccc;  
-  --drop-item-padding:1em;
+  --drop-item-text-color: #ccc;
+  --drop-item-padding: 1em;
   --drop-item-bg-color-hover: #444;
-  --drop-item-text-color-hover:#fff;
+  --drop-item-text-color-hover: #fff;
+  --drop-shadow: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+}
+
+.header_menu > li > a {
+  font-weight: 400;
+}
+
+/* Animated underline hover */
+
+.header_menu > li:not(.menu-item-has-children) > a:after {
+  content:''; 
+  height:1px; 
+  background:#000; 
+  width:0;
+  transition: 0.7s; 
+  display:block; 
+  position:absolute;
+  bottom:1em;
+}
+
+.header_menu > li:not(.menu-item-has-children):hover > a:after {
+  width:calc(100% - 2rem); /* minus the padding on both sides of links */
 }
 
 
-.navmenu a { transition: var(--transition)}
+.header_menu a { transition: var(--transition)}
 
-.navmenu {
+.header_menu {
   display: flex;
   align-items: var(--item-align-items);
   flex-wrap: wrap;
@@ -71,7 +80,7 @@ separate the navigation block CSS and leave it in the blocks folder
   transition:var(--transition);
 }
 
-.navmenu > li {
+.header_menu > li {
   display: flex;
   align-items: stretch;
   justify-content:center;
@@ -82,11 +91,11 @@ separate the navigation block CSS and leave it in the blocks folder
   font-size:var(--item-text-size);
 }
 
-.navmenu > li:not(:first-of-type) {
+.header_menu > li:not(:first-of-type) {
   margin-left: var(--item-margin-left);
 }
 
-.navmenu > li > a {
+.header_menu > li > a {
   display: flex;
   align-items:center;
   padding:var(--item-padding);
@@ -95,12 +104,12 @@ separate the navigation block CSS and leave it in the blocks folder
   flex-wrap: wrap;
 }
 
-.navmenu > li > a.navmenu-current {
+.header_menu > li > a.navmenu-current {
   color:var(--item-text-color-current) !important;
   background:var(--item-bg-color-current)  !important;
 }
 
-.navmenu > li:not(:last-child) > a {
+.header_menu > li:not(:last-child) > a {
   border-right:var(--item-border-right);
 }
 
@@ -108,7 +117,7 @@ separate the navigation block CSS and leave it in the blocks folder
 
 Make the bar sticky */
 
-.navmenu-sticky {
+.header_menu-sticky {
   position:sticky;
   left:0;
   top:-1px;
@@ -118,20 +127,20 @@ Make the bar sticky */
 
 /* Account for WordPress bar when logged in */
 
-body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top: 32px; }
-@media(max-width:782px) { body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top:46px } }
-@media(max-width:600px) { body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top:0 } }
+body.logged-in .header_menu-sticky.ncsticky-enabled { padding-top: 32px; }
+@media(max-width:782px) { body.logged-in .header_menu-sticky.ncsticky-enabled { padding-top:46px } }
+@media(max-width:600px) { body.logged-in .header_menu-sticky.ncsticky-enabled { padding-top:0 } }
 
 /* Responsive 
 
   @media(max-height:600px){
-    .navmenu-sticky { position:static; }
+    .header_menu-sticky { position:static; }
   }
 */
 
 /* Submenu */
 
-.navmenu:not(.navmenu-vertical):not(.navmenu-list) .sub-menu {
+.header_menu .sub-menu {
     position: absolute;
     left: 0;
     margin:0;
@@ -150,43 +159,22 @@ body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top: 32px; }
     transform-origin:center top
 }
 
-.navmenu.navmenu-vertical .submenu,
-.navmenu.navmenu-list .sub-menu {
-  position: static;
-  margin:0;
-  top:100%;
-  width:var(--drop-width);
-  line-height: normal;
-  z-index: 200;
-  list-style-type:none;
-  padding-left:0;
-  background:var(--drop-item-bg-color);
-  transition: var(--transition);
-  color:var(--drop-item-text-color);
-  border-radius:var(--drop-radius);
-  font-size:var(--drop-text-size);
-  visibility: hidden;
-  overflow:hidden;
-  max-height: 0;
-  opacity:0
-}
 
-.navmenu li.menu-item-has-children:hover .sub-menu {
+.header_menu li.menu-item-has-children:hover .sub-menu {
   z-index:210;
 }
 
-.navmenu:not(.navmenu-vertical) .sub-menu,
-.navmenu:not(.navmenu-list) .sub-menu {
+.header_menu .sub-menu {
   filter:var(--drop-shadow);
 }
 
-.navmenu .sub-menu > li:first-child a {
+.header_menu .sub-menu > li:first-child a {
   border-radius:var(--drop-radius);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.navmenu .sub-menu > li:last-child a {
+.header_menu .sub-menu > li:last-child a {
   border-radius: var(--drop-radius);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -195,18 +183,18 @@ body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top: 32px; }
 
 /* Drop menu shadow for */
 
-.navmenu:not(.navmenu-vertical) .sub-menu {
+.header_menu .sub-menu {
   filter:drop-shadow(0 5px 5px rgba(0,0,0,0.3));
 }
 
 /* Centered Drop menu for horizontal only */
 
-.navmenu:not(.navmenu-vertical):not(.navmenu-list) > li > .sub-menu {
+.header_menu > li > .sub-menu {
   left: 50%;
   margin-left:calc(-1 * var(--drop-width) / 2);
 }
 
-.navmenu:not(.navmenu-vertical) .sub-menu:before {
+.header_menu .sub-menu:before {
     bottom: 100%;
     left: 50%;
     border: solid transparent;
@@ -221,40 +209,31 @@ body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top: 32px; }
     margin-left: -10px;
 }
 
-.navmenu.navmenu-vertical li:hover > .sub-menu,
-.navmenu.navmenu-list li:hover > .sub-menu{
-  visibility: visible;
-  overflow:visible;
-  max-height: 500px;
-  opacity:1;
-}
 
-
-
-.navmenu:not(.navmenu-vertical):not(.navmenu-list) li:hover > .sub-menu,
-.navmenu:not(.navmenu-vertical):not(.navmenu-list) li > .sub-menu.focused { 
+.header_menu li:hover > .sub-menu,
+.header_menu li > .sub-menu.focused { 
     transform:scale(1,1); }
 
-.navmenu:not(.navmenu-vertical) .sub-menu .sub-menu:before {
+.header_menu .sub-menu .sub-menu:before {
   content:none;
 }
 
-.navmenu:not(.navmenu-vertical):not(.navmenu-list) .sub-menu .sub-menu { left:100%; top:0;}
+.header_menu .sub-menu .sub-menu { left:100%; top:0;}
 
-.navmenu .sub-menu li { 
+.header_menu .sub-menu li { 
   display:block; 
   list-style-type:none; 
   position:relative;
 }
 
-.navmenu .sub-menu li a { padding:var(--drop-item-padding); display:block;}
-.navmenu .sub-menu li:not(:last-child) a { 
+.header_menu .sub-menu li a { padding:var(--drop-item-padding); display:block;}
+.header_menu .sub-menu li:not(:last-child) a { 
   border-bottom:var(--drop-div-color); 
 }
 
     /* Submenu indicator */
 
-    .navmenu .menu-item-has-children > a:after { 
+    .header_menu .menu-item-has-children > a:after { 
       content: '\e902';
       font-family: 'ncicon'; 
       margin-left:0.5em;
@@ -265,114 +244,30 @@ body.logged-in .navmenu-sticky.ncsticky-enabled { padding-top: 32px; }
       font-size: 0.7em;
     }
 
-    .navmenu .menu-item-has-children:hover > a:after {
+    .header_menu .menu-item-has-children:hover > a:after {
         transform: rotate(270deg)
     }
 
 /* Hover styles */
 
-.navmenu > li:hover > a {
+.header_menu > li:hover > a {
   background:var(--item-bg-color-hover);
   color:var(--item-text-color-hover);
 }
 
-.navmenu .sub-menu li:hover > a {
+.header_menu .sub-menu li:hover > a {
   background:var(--drop-item-bg-color-hover);
   color:var(--drop-item-text-color-hover);
 }
 
-/* Modifier: Menu vertical */
 
-.navmenu-vertical,
-.navmenu-vertical li,
-.navmenu-vertical .sub-menu li { 
-  display:block; 
-  line-height:1.5
-}
 
-.navmenu-vertical { 
-  max-width:25em; 
-  background:var(--item-bg-color);
-  color:var(--item-text-color);
-}
+/* Nav Menu Item Description */
 
-.navmenu-vertical > li:not(:first-of-type) { 
-  margin-left:0;
-}
-
-.navmenu-vertical > li > a { 
-  padding:var(--item-padding);
-  border-bottom:var(--item-border-bottom);
+.header_menu .menu-item-description {
   display:block;
-}
-
-
-.navmenu-vertical .sub-menu { left: 100%; top: 0; }
-
-.navmenu-vertical > .menu-item-has-children > a:after { 
-  transform:none;
-  position:absolute; right:1em;
-  color:var(--indicator-color);
-}
-
-/* 
-Menu Modifier 
-Drop Menu Right Aligned
-*/
-
-.navmenu-right .menu-item-has-children > a:after {
-  display:none;
-  content:none;
-}
-
-.navmenu-right .sub-menu {
-  position: absolute;
-  left: auto;
-  right:0;
-}
-
-.navmenu-right .sub-menu .sub-menu,
-.navmenu-right.menu-vertical .sub-menu { left:auto; right:100%; }
-
-
-/* Modifier: LIST Sub menu List inline */
-
-.navmenu-list {
-  border-top:var(--item-border-bottom);
-  --drop-radius:0;
-}
-
-.navmenu-list .sub-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    width: auto;
-    box-shadow: none;
-    background: var(--drop-item-bg-color);
-    margin-bottom: 0;
-    max-height:0;
-    overflow: hidden;
-}
-
-.navmenu-list > li:hover > .sub-menu {
-  border-bottom:var(--drop-div-color);
-}
-
-.navmenu-list .menu-item-has-children > a {
-    position: relative;
-}
-
-.navmenu-list .menu-item-has-children > a:after {
-    transition: 0.5s;
-    content: '\25bc';
-    transform: rotate(0deg)scale(1,0.5);
-    font-size:0.8em;
-    position: static;
-    opacity: 1;
-    float:right;
-    color: var(--indicator-color);
-}
-
-.navmenu-list .menu-item-has-children:hover > a:after {
-    transform: rotate(180deg)scale(1,0.5);
+  font-size:0.6em;
+  opacity:0.5;
+  width:100%;
+  line-height: 1.5
 }

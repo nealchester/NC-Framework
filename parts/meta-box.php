@@ -1,5 +1,3 @@
-<?php if( get_theme_mod( 'show_author_box', false ) == true ): ?>
-
 <?php $authorlink2 = get_author_posts_url( get_the_author_meta( 'ID' ),get_the_author_meta('user_nicename'));?>
 
 <section class="authorbox">
@@ -11,7 +9,5 @@
         <header class="authorbox_header">By <?php echo '<a class="authorbox_link" href="'.$authorlink2.'">'.get_the_author_meta('display_name').'</a>';?></header>
         <?php if(get_the_author_meta('phonenumber')):?> <p class="authorbox_phone"><?php _e('Phone:','nc-framework');?> <?php echo get_the_author_meta('phonenumber'); ?></p><?php endif;?>
         <?php if(get_the_author_meta('description')):?> <p class="authorbox_desc"><?php echo wp_trim_words( get_the_author_meta('description'), 20, ' &hellip; <a href="'.$authorlink2.'">'.__('Read&nbsp;more&nbsp;&rsaquo;','nc-framework').'</a>');?></p> <?php endif; ?>
-		<?php get_template_part('parts/meta-social');?>
+		<?php get_template_part('parts/meta-box-social');?>
 </section>
-
-<?php endif;?>

@@ -1,4 +1,4 @@
-<?php if(get_theme_mod( 'show_featured_image', true ) == true && get_the_post_thumbnail() ):?>
+<?php if( get_the_post_thumbnail() ):?>
 
 <?php 
 // only display featured image and post meta on the first page of a paginated post

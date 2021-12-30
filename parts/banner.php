@@ -1,15 +1,23 @@
-<?php 
-	if( is_page_template('templates/blank.php') or is_author() ){}
+<?php if( is_page_template('templates/blank.php') or is_author() ) :?>
 
-	elseif( is_singular() ) {
-		if( get_theme_mod('main_title_format', 'plain-text') == 'hero-text' ) { get_template_part('components/hero'); }
-		elseif(get_theme_mod('main_title_format', 'plain-text') == 'split-text') { get_template_part('components/split'); }
-	}
+<?php	elseif( is_singular() ) :?>
 
-	elseif( is_home() or is_archive() or is_404() or is_post_type_archive() or is_search() ) {
-		if( get_theme_mod('main_title_format', 'plain-text') == 'hero-text' 
-			or get_theme_mod('main_title_format', 'plain-text') == 'split-text') {
-			get_template_part('components/banner');
-		}
-	}
-?>
+	<section id="banner">
+		<div class="ncontain">
+			<div class="banner_content">
+				<?php get_template_part('parts/headings');?>
+			</div>
+		</div>
+	</section>
+
+<?php	elseif( is_home() or is_archive() or is_404() or is_post_type_archive() or is_search() ) :?>
+
+	<section id="banner">
+		<div class="ncontain">
+			<div class="banner_content">
+				<?php get_template_part('parts/headings');?>
+			</div>
+		</div>
+	</section>
+	
+<?php endif; ?>

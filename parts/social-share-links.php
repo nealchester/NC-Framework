@@ -43,3 +43,40 @@ $share_on = __('Share on', 'nc-framework');
   alert("URL Copied.");
   }
 </script>
+
+<style>
+/* Social Share Links */
+
+.sharelinks {
+    color:currentColor;
+    display:flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.sharelinks_anchor {
+    padding:0.5em;
+    position: relative;
+    transition: 0.5s;
+    transform:scale(1);
+    background:var(--gray);
+}
+
+.sharelinks_anchor:hover {
+    transform:scale(1.3);
+}
+
+.sharelinks svg {
+    display:block;
+    max-width:20px;
+    max-height:20px;
+    width:100%;
+    height:auto;
+}
+
+.sharelinks svg path {
+    fill: currentColor;
+}
+
+</style>

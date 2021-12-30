@@ -1,4 +1,4 @@
-<?php if(has_excerpt() && get_theme_mod('show_excerpt', false) == true):?>
+<?php if(has_excerpt()):?>
 <div class="excerpt-summary">
     <?php the_excerpt();?>
 </div>
