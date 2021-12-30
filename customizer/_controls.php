@@ -9,7 +9,7 @@ get_template_part('customizer/_layout-panel');
 get_template_part('customizer/_sanitize');
 
 //  Side header section    
-get_template_part('customizer/side-header');
+// get_template_part('customizer/side-header');
 
 // Remove some of WordPress Customizer controls
 get_template_part('customizer/colors');
@@ -18,13 +18,10 @@ get_template_part('customizer/colors');
 get_template_part('customizer/default-image');
 
 //  Footer section    
-get_template_part('customizer/footer');
+get_template_part('customizer/copyright');
 
 // Custom title for front page blog listing
 get_template_part('customizer/blog-home-title');
-
-//  Dev options Google Fonts section
-get_template_part('customizer/options-dev-fonts');
 
 //  Dev options section
 get_template_part('customizer/options-dev');

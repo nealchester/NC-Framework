@@ -21,6 +21,10 @@ get_template_part('functions/image-focus');
 get_template_part('functions/favicon-check');
 
 
+// Load External Fonts
+get_template_part('functions/register-fonts');
+
+
 // Load Scripts and Styles
 get_template_part('functions/register-css-js');
 

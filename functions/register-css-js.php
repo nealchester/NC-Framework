@@ -3,7 +3,9 @@
 // Register Theme Scripts and CSS
 
 function nc_register_assets(){
-  // JS
+
+  // Javascript
+
   wp_register_script('splide', get_theme_file_uri('/js/splide/splide.js'), '', '2.3.9', false );
   wp_register_script('standard-scripts', get_theme_file_uri('/js/standard-scripts.js'), array('jquery'), '6', true);
   wp_register_script('magnific', get_theme_file_uri('/js/magnific/jquery.magnific-popup.min.js'), array('jquery'), '1', true );
@@ -12,6 +14,8 @@ function nc_register_assets(){
   wp_register_script('sal-aniview-init', get_theme_file_uri('/js/aniview/aniview-init.js'), array( 'jquery', 'sal-aniview' ), null, true);
 
   // CSS
+
+  /* NOTES: Fonts are registered in this file: 'functions/register-fonts.php' */
 
   wp_register_style('magnific-styles', get_theme_file_uri('/js/magnific/magnific-popup.css'), '', '', 'screen');
   wp_register_style('splide-styles', get_theme_file_uri('/js/splide/splide.css'), '', '', 'screen' );
@@ -71,5 +75,4 @@ add_editor_style( array(
   '/css/menus.css',
   '/css/blocks.css',
   '/css/content.css',
-  get_theme_mod('google_fonts_url_load'),
 ) );

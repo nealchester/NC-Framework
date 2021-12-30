@@ -57,7 +57,7 @@ function nc_customizer_side_header_css() {?>
 	<style id="side-header-css" media="screen">	
 
 	#wrapper { padding-left:<?php echo get_theme_mod('side_header_width','240px');?>; }
-	#header { width:<?php echo get_theme_mod('side_header_width','240px') ?>; position:absolute; left:0; top:0; height:100%; } 
+	#header { width:<?php echo get_theme_mod('side_header_width','240px') ?>; position:absolute; left:0; right: auto; top:0; height:100%; } 
 
 	@media screen and (max-width: <?php echo get_theme_mod('side_header_break', '860px');?>) { 
 		#wrapper { padding-left:0; } 
@@ -72,7 +72,7 @@ function nc_customizer_side_header_css() {?>
 	<style id="side-header-css" media="screen">	
 	
 	#wrapper { padding-right:<?php echo get_theme_mod('side_header_width','240px');?>; } 
-	#header { width:<?php echo get_theme_mod('side_header_width','240px')?>; position:absolute; right:0; top:0; height:100%; } 
+	#header { width:<?php echo get_theme_mod('side_header_width','240px')?>; position:absolute; right:0; left: auto; top:0; height:100%; } 
 
 	@media screen and (max-width: <?php echo get_theme_mod('side_header_break', '860px');?>) { 
 		#wrapper { padding-right:0; } 
