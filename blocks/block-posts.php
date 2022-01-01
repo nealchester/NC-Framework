@@ -103,11 +103,14 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<?php $querylatest = new WP_Query($args); if ( $querylatest->have_posts() ) : ?>
 
-			<?php $size = get_field('image_size');?>
+			<?php $total_items = $querylatest->found_posts; 
+			$size = get_field('image_size');
+			$i = 1;
+			?>
 
-			<div class="ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout;?>">
+			<div class="ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' total_ncards-'.$total_items;?>">
 			<?php while ( $querylatest->have_posts() ) : $querylatest->the_post();?>
-				<div <?php post_class('ncard'); ?> id="<?php echo 'post-'.get_the_ID();?>">
+				<div <?php post_class('ncard ncard-'.$i++); ?> id="<?php echo 'post-'.get_the_ID();?>">
 					<a class="ncard_link" href="<?php echo get_permalink(); ?>">
 						<div class="ncard_container">
 							<?php if($showthumb):?>

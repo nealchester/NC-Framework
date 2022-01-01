@@ -38,11 +38,12 @@ body, input, select, textarea, button {
 
 h1 { font-size: var(--txt-xxlarge);}
 h2 { font-size: var(--txt-xlarge); }
-h3 { font-size: var(--txt-large); }
+h3 { font-size: var(--txt-large);  }
 h4 { font-size: var(--txt-medium); }
-h5, h6 { font-size: var(--txt-base); }
+h5 { font-size: var(--txt-base);   }
+h6 { font-size: var(--txt-small);  }
 
-h1,h2,h3,h4,h5,h6 { font-weight: 600; }
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
 /* Buttons */
 

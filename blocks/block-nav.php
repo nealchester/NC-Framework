@@ -7,7 +7,7 @@ function nc_nav_block() {
         // register a items block
         acf_register_block_type(array(
             'name'              => 'nc_nav',
-            'title'             => __('NC Navmenu', 'nc-framework'),
+            'title'             => __('NC ncmenu', 'nc-framework'),
             'description'       => __('A navigation menu bar.', 'nc-framework'),
             'render_callback'   => 'nc_nav_block_markup',
             'category'          => 'layout',
@@ -53,10 +53,10 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 	$max_width = get_field('max_width') ?: '1000';
 
 ?>
-	<div id="<?php echo $id; ?>" class="alignfull <?php if($sticky){ echo'navmenu-sticky ncsticky'; } echo nc_block_attr(); ?>">
+	<div id="<?php echo $id; ?>" class="alignfull <?php if($sticky){ echo'ncmenu-sticky'; } echo nc_block_attr(); ?>">
 	<div class="ncontain">
 		<?php nc_before_content();?>
-	<ul class="navmenu navmenu-bar">
+	<ul class="ncmenu">
 	<?php if( have_rows('menu') ): ?>
 
 		<?php while( have_rows('menu') ): the_row(); 
@@ -65,17 +65,17 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 			$link_title = $link['title'];
 			$link_target = $link['target'] ? $link['target'] : '_self';
 		?>
-		<li class="navmenu_li">
-			<a class="navmenu_link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target);?>"><?php echo esc_html($link_title); ?></a>
+		<li class="ncmenu_li">
+			<a class="ncmenu_link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target);?>"><?php echo esc_html($link_title); ?></a>
 		</li>
 		<?php endwhile; ?>
 	<?php else: ?>
 
-		<li class="navmenu_li"><a class="navmenu_link navmenu-current" href="#100">Current</a></li>
-		<li class="navmenu_li"><a class="navmenu_link" href="#100">Services</a></li>
-		<li class="navmenu_li"><a class="navmenu_link" href="#100">Testimonials</a></li>
-		<li class="navmenu_li"><a class="navmenu_link" href="#100">About</a></li>
-		<li class="navmenu_li"><a class="navmenu_link" href="#100">Contact</a></li>
+		<li class="ncmenu_li"><a class="ncmenu_link ncmenu_link-current" href="#100">Current</a></li>
+		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">Services</a></li>
+		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">Testimonials</a></li>
+		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">About</a></li>
+		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">Contact</a></li>
 
 	<?php endif; ?>
 	</ul>
@@ -91,52 +91,58 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 			background: <?php echo get_field('nav_bar_color') ?: "#fff"; ?>;
 		}
 
-		<?php echo '#'.$id; ?> .navmenu {
-			--menu-align-items:<?php echo $position; ?>;
+		<?php echo '#'.$id; ?> .ncmenu {
+			display:flex;
+			list-style-type: none;
+			padding-left:0;
+			margin:0;
+			<?php echo 'justify-content: '.$position.';'; ?>
+			flex-wrap:nowrap;
+			overflow-x:auto;
+			max-width:100%; 
+			width:100%; 
+		}
+
+		<?php echo '#'.$id; ?>.ncmenu-sticky {
+			position: sticky;
+			top:-1px;
+			z-index: 200;
 		}
 
 		<?php echo '#'.$id; ?> .ncontain {
-			--width-max: <?php echo $max_width.'px'; ?>
+			max-width: <?php echo $max_width.'px'; ?>
 		}
 
-		<?php echo '#'.$id; ?> .navmenu-bar { 
-		max-width:100%; 
-		width:100%; 
-		background:var(--menu-bg-color); 
-		justify-content:var(--menu-align-items);
-		flex-wrap:nowrap;
-		overflow-x:auto;
-		}
-
-		<?php echo '#'.$id; ?> .navmenu-bar > li > a { white-space: nowrap; }
-
-		<?php echo '#'.$id; ?> .navmenu_link {
+		<?php echo '#'.$id; ?> .ncmenu_link {
 			height:<?php echo $height.'px'; ?>;
 			text-decoration:none;
+			white-space: nowrap; padding: 1em; 
+			display: flex;
+			align-items: center;
 		}
 
 		<?php if($sticky && $breakpoint):?>
 		@media(max-height:<?php echo $breakpoint.'px'; ?>){
-			<?php echo '#'.$id; ?>.navmenu-sticky { position:static; }
+			<?php echo '#'.$id; ?>.ncmenu-sticky { position:static; }
 		}
 		<?php endif;?>
 
 		<?php if($scrollpoint):?>
 		@media(max-width:<?php echo $scrollpoint.'px'; ?>) {
-			<?php echo '#'.$id; ?> .navmenu-bar { 
-				--menu-align-items: flex-start;
+			<?php echo '#'.$id; ?> .ncmenu { 
+				justify-content: flex-start;
 			}
-			<?php echo '#'.$id; ?> .navmenu-bar > li:first-child .navmenu_link { padding-left:var(--gap); }
-			<?php echo '#'.$id; ?> .navmenu-bar > li:last-child .navmenu_link { padding-right:var(--gap); }
+			<?php echo '#'.$id; ?> .ncmenu > li:first-child .ncmenu_link { padding-left:var(--gap); }
+			<?php echo '#'.$id; ?> .ncmenu > li:last-child .ncmenu_link { padding-right:var(--gap); }
 			<?php echo '#'.$id; ?> .ncontain { width:100%; max-width:100%; }
 		}
 		<?php else:?>
 		@media(max-width:768px) {
-			<?php echo '#'.$id; ?> .navmenu-bar { 
-				--menu-align-items: flex-start;
+			<?php echo '#'.$id; ?> .ncmenu { 
+				justify-content: flex-start;
 			}
-			<?php echo '#'.$id; ?> .navmenu-bar > li:first-child .navmenu_link { padding-left:var(--gap); }
-			<?php echo '#'.$id; ?> .navmenu-bar > li:last-child .navmenu_link { padding-right:var(--gap); }
+			<?php echo '#'.$id; ?> .ncmenu > li:first-child .ncmenu_link { padding-left:var(--gap); }
+			<?php echo '#'.$id; ?> .ncmenu > li:last-child .ncmenu_link { padding-right:var(--gap); }
 		}
 		<?php endif; ?>
 
@@ -147,9 +153,14 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 	</style>
 
-	<?php if($sticky){ 
-		wp_enqueue_script('sticky-script', get_theme_file_uri('/js/sticky.js'), '', '1', true);
-	}?>
+	<?php if($sticky):?> 
+		<script id="ncmenu-scroll-script">
+			jQuery(window).scroll(function() {
+				if (jQuery(this).scrollTop() > 1)	{ jQuery('<?php echo "#".$id; ?>').addClass("ncmenu-sticky");	}
+				else { jQuery('<?php echo "#".$id; ?>').removeClass("ncmenu-sticky");	}
+			});
+		</script>
+	<?php endif; ?>
 
 <?php
 }

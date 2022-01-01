@@ -81,7 +81,7 @@ function nc_box_styles( $block_id =''){
 
     if( get_field('bg_color') ) { $bg_color = 'background-color:'.get_field('bg_color').';'; } else { $bg_color = null; }
     if( get_field('bg_image') ) { $bg_img = 'background-image:url('.get_field('bg_image').'); background-repeat: no-repeat; background-size: cover;'; } else { $bg_img = null; }
-    if( get_field('text_color') ) { $text_color = 'color:'.get_field('text_color').';'; } else { $text_color = null; }
+    if( get_field('text_color') ) { $text_color = 'color:'.get_field('text_color').';'; } else { $text_color = 'color: inherit;'; }
 
     if( get_field('max_contain_width') ) {
         $c_width = get_field('max_contain_width').'px';     
