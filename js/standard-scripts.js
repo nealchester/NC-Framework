@@ -69,6 +69,30 @@ jQuery(".mpanel .menu-item:not(.menu-item-has-children) a").click(function(){
 		
 
 		/*
+		Sticky class added on sticky
+		*/
+
+		//http://talkerscode.com/webtricks/create-sticky-header-using-jquery.php
+
+		jQuery(window).scroll(function() {
+			if (jQuery(this).scrollTop() > 1){ jQuery('#header').addClass("sticky-enabled"); }
+			else { jQuery('#header').removeClass("sticky-enabled"); }
+		});
+
+		
+		/*
+		Add a class of "active" to an item when it's clicked in a menu.
+		*/
+
+		jQuery(function () {
+			jQuery("#header_menu > li > a").click(function () {
+				jQuery("#header_menu > li > a").addClass("active").not(this).removeClass("active");
+			});
+		});	
+
+
+
+		/*
 		// PullQuotes
 
 			jQuery('span.pull-right').each(function(index) { 
