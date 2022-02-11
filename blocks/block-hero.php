@@ -124,7 +124,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php echo '#'.$id; ?>.jarallax { z-index: 0;	}
 		<?php echo '#'.$id; ?>.jarallax .jarallax-img { z-index: -1; }
 
-		<?php wp_enqueue_script( 'jarallax', get_theme_file_uri('/js/jarallax.js'), array( 'jquery' ), '1', true );	?>	
+		<?php wp_enqueue_script( 'jarallax', get_theme_file_uri('/js/jarallax.min.js'), array( 'jquery' ), '1', true );	?>	
 
 	<?php endif;?>
 
