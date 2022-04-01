@@ -110,8 +110,11 @@ table th {
 /* Typography */
 
 h1, h2, h3, h4, h5, h6, p, li, a, div {
-    -ms-word-wrap: break-word;
     word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+    hyphens: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -119,25 +122,32 @@ h1, h2, h3, h4, h5, h6 {
     line-height: normal;
 }
 
-.ncontent_main > p+h2, 
-.ncontent_main > p+h3, 
-.ncontent_main > p+h4, 
-.ncontent_main > ul+h2, 
-.ncontent_main > ul+h3, 
-.ncontent_main > ul+h4, 
-.ncontent_main > ol+h2, 
-.ncontent_main > ol+h3, 
-.ncontent_main > ol+h4 {
-    margin-top: calc(var(--gap) * 2);
-}
-
 hr {
     border: none;
-    border-top: solid 1px;
+    border-top: solid 3px;
     clear: both;
     display: block;
     width: 100%;
     height: 0;
+}
+
+s::before,
+s::after {
+    clip-path:inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow:hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+s::before {
+    content:" [start of stricken text] ";
+}
+
+s::after {
+    content:" [end of stricken text] ";
 }
 
 q:before {
@@ -295,11 +305,11 @@ fieldset legend {
 /* Selection */
 
 ::selection {
-    background-color: var(--selection-bgcolor);
-    color: var(--selection-textcolor);
+    background-color: var(--selection-bgcolor, #222);
+    color: var(--selection-textcolor, #fff);
 }
 
 ::-moz-selection {
-    background-color: var(--selection-bgcolor);
-    color: var(--selection-textcolor);
+    background-color: var(--selection-bgcolor, #222);
+    color: var(--selection-textcolor, #fff);
 }
