@@ -59,7 +59,7 @@
   transition: 0.7s; 
   display:block; 
   position:absolute;
-  bottom:1rem;
+  bottom: 0.8em;
 }
 
 .header_menu > li:not(.menu-item-has-children):hover > a:after {
