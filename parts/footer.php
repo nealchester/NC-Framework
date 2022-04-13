@@ -1,5 +1,5 @@
 </main>
-</section>
+</div>
 
 <?php // Next Previous links 
 get_template_part('parts/next-prev-links');?>

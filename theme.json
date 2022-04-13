@@ -20,6 +20,51 @@
         }
       ]
     },
+    "typography": {
+      "fontSize": "var(--txt-base)",
+			"fontSizes": [
+				{
+					"slug": "tiny",
+					"size": "var(--txt-xsmall)",
+					"name": "X-Small"
+				},
+				{
+					"slug": "small",
+					"size": "var(--txt-small)",
+					"name": "Small / H6"
+				},
+        {
+					"slug": "normal",
+					"size": "var(--txt-base)",
+					"name": "Normal / H5"
+				},
+        {
+					"slug": "medium",
+					"size": "var(--txt-medium)",
+					"name": "Medium / H4"
+				},
+        {
+					"slug": "large",
+					"size": "var(--txt-large)",
+					"name": "Large / H3"
+				},
+        {
+					"slug": "xlarge",
+					"size": "var(--txt-xlarge)",
+					"name": "X-Large / H2"
+				},
+        {
+					"slug": "xxlarge",
+					"size": "var(--txt-xxlarge)",
+					"name": "XX-Large / H1"
+				},
+        {
+					"slug": "jumbo",
+					"size": "var(--txt-xxxlarge)",
+					"name": "Jumbo"
+				}
+			]
+		},
     "spacing": {
       "customPadding": true,
       "customMargin": true,

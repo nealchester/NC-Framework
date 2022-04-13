@@ -41,5 +41,5 @@
 	
 	<?php // if(!is_attachment()) { get_template_part('parts/banner'); }?>
 
-	<section id="body" class="ncontent"> 
-	<main class="ncontent_main" itemprop="articleBody mainContentOfPage">
+	<div id="body" class="ncontent"> 
+	<main class="ncontent_main">

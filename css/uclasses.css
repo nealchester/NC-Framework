@@ -4,8 +4,7 @@
 
 .ncontain {
   max-width: var(--width-max);
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   width: calc(100% - (var(--gap) * 2));
 }
 
@@ -82,7 +81,7 @@
   padding-top: 2em;
   height: 0;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 .videocontain iframe, 
@@ -153,9 +152,9 @@ text-align:right;
 /* NC Rule Heading */
 
 .ncrule { 
-  --rule-height: 0.08rem;
+  --rule-height: 0.08em;
   --rule-color: #ddd;
-  --rule-spacing: 0.5rem;
+  --rule-spacing: 0.5em;
   display:flex;
   align-items:center;
   text-align:center;
@@ -196,14 +195,14 @@ text-align:right;
 .nclist2col {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(175px,1fr));
-  grid-column-gap: var(--gap,1.5rem);
-  grid-row-gap:0.5rem;
+  grid-column-gap: var(--gap,1.5em);
+  grid-row-gap:0.5em;
 }
 
 /* Image wrap */
 
 .imagewrap {
-  shape-margin: var(--gap,1.5rem);
+  shape-margin: var(--gap,1.5em);
   shape-image-threshold: 0.5;
   /* This class is used to trigger JS that will add the shape-outside property to wrap text around images */
 }
@@ -237,7 +236,6 @@ text-align:right;
 }
 
 /* Text Formatting */
-
 
 .txt-xxxlarge { font-size:var(--txt-xxxlarge) }
 
@@ -331,8 +329,8 @@ Targeting fontawesome icons that sit within headings (h3) of a list element (li)
 
 .lefticons {
   --icon-color:currentColor;
-  --icon-size: 1.5rem;
-  --icon-space: calc( var(--icon-size) + 0.75rem );
+  --icon-size: 1.5em;
+  --icon-space: calc( var(--icon-size) + 0.75em );
 }
 
 .lefticons li {

@@ -2,64 +2,68 @@
 
 :root {
 
-    /* Spacing */
+/* Spacing */
 
-    --gap: 1.5rem; 
-    --gapn: -1.5rem; 
+--gap: 1.5rem; 
+--gapn: -1.5rem; 
 
-    /* Block content widths */
+/* Block content widths */
 
-    --width-standard:800px;
-    --width-wide:1000px;
-    --width-max:1400px;
+--width-standard:800px;
+--width-wide:1000px;
+--width-max:1400px;
 
-    /* Colors */
+/* Colors */
 
-    --gray: #fbfbfb; 
-    --dark: #222;
+--gray: #fbfbfb; 
+--dark: #222;
 
-    --link-color: #0093ff;
+--link-color: #0093ff;
 
-    --selection-bgcolor: #222;
-    --selection-textcolor: #fff;
+--selection-bgcolor: #222;
+--selection-textcolor: #fff;
 
-    --txt-dark:rgba(0,0,0,0.6);
-    --txt-light: rgba(255,255,255,0.6);
+--txt-dark:rgba(0,0,0,0.6);
+--txt-light: rgba(255,255,255,0.6);
 
-    /* Typography */
+/* Typography */
 
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif; 
-    --serif: var(--sans); 
-    --mono: 'Courier New', Courier, monospace;
+--fallback: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
 
-    --txt-xsmall: 0.6em;   /* tiny */
-    --txt-small: 0.8em;    /* h6 */
-    --txt-base: 18px;      /* normal size and h5 */
-    --txt-medium: 1.2em;   /* h4 */
-    --txt-large: 1.7em;    /* h3 */
-    --txt-xlarge: 2.2em;   /* h2 */
-    --txt-xxlarge: 2.7em;  /* h1*/
-    --txt-xxxlarge: 3.2em; /* jumbo */    
+--sans: 'Inter', var(--fallback); 
+--serif: var(--sans); 
+--mono: 'Courier New', Courier, monospace;
 
-    /* Form fields */
-    
-    --field-radius: 3px;
-    --field-padding: 0 0.75em !important;
-    --field-border: solid 1px #ddd;
-    --field-bgcolor: var(--gray);
+--txt-xsmall: clamp(10px, 1vw, 12px);   /* tiny */
 
-    --field-border-focus: solid 1px #000;
-    --field-bgcolor-focus: lightyellow;
-    --field-shadow-focus: 0 3px 0.3rem rgba(0,0,0,0.3);
+--txt-small: clamp(12px, 2vw, 14px);    /* h6 */
+--txt-base: clamp(15px, 3vw, 18px);     /* h5 & paragraph text */
+--txt-medium: clamp(18px, 4vw, 24px);   /* h4 */
+--txt-large: clamp(24px, 5vw, 30px);     /* h3 */
+--txt-xlarge: clamp(30px, 6vw, 36px);    /* h2 */
+--txt-xxlarge: clamp(36px, 7vw, 48px);   /* h1*/
+
+--txt-xxxlarge: clamp(48px, 8vw, 60px);  /* jumbo */    
+
+/* Form fields */
+
+--field-radius: 3px;
+--field-padding: 0 0.75em !important;
+--field-border: solid 1px #ddd;
+--field-bgcolor: var(--gray);
+
+--field-border-focus: solid 1px #000;
+--field-bgcolor-focus: lightyellow;
+--field-shadow-focus: 0 3px 0.3em rgba(0,0,0,0.3);
 
 
-    /* Form inputs and button height */
+/* Form inputs and button height */
 
-    --input-height: 2.5rem;
+--input-height: 2.5em;
 
-    /* Border radius */
+/* Border radius */
 
-    --radius: 5px;
-    --border: solid 1px #ddd;
+--radius: 5px;
+--border: solid 1px #ddd;
 
 }

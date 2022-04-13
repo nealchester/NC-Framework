@@ -4,20 +4,8 @@ This is the very first loaded CSS file. The root reset / normalized CSS.
 
 /* --------- Reset and Normalize --------- */
 
-#wrapper {
-    position: relative;
-}
-
-html, body, div, figure, form, canvas, summary, button, form>ul {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    overflow-x: hidden;
-}
-
 html {
+    background-color: #fff;
     scroll-behavior: smooth;
 }
 
@@ -26,6 +14,27 @@ html {
         scroll-behavior: auto
     }
 }
+
+html, body, div, figure, form, canvas, summary, button, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body, input, select, textarea, button {
+    font-family: var(--sans);
+    font-size: var(--txt-base);
+    line-height: 1.5;
+}
+
+
+#wrapper {
+    position: relative;
+}
+
 
 article, aside, details, figcaption, figure, footer, header, nav, main {
     display: block;
@@ -46,6 +55,10 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+
+svg {
+    height: 48px;
 }
 
 address {
@@ -98,7 +111,7 @@ table {
 
 table td, table th {
     border: var(--border);
-    padding: 0.75rem;
+    padding: 0.75em;
 }
 
 table th {
@@ -121,6 +134,13 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     line-height: normal;
 }
+
+h1 { font-size: var(--txt-xxlarge);}
+h2 { font-size: var(--txt-xlarge); }
+h3 { font-size: var(--txt-large);  }
+h4 { font-size: var(--txt-medium); }
+h5 { font-size: var(--txt-base);   }
+h6 { font-size: var(--txt-small);  }
 
 hr {
     border: none;
@@ -163,11 +183,11 @@ ul, ol {
 }
 
 main li:not([class]) {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
 }
 
 main li ul, main li ol {
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
     margin-bottom: 0
 }
 
@@ -212,11 +232,17 @@ input[type="file"] {
 
 select {
     -webkit-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23999%22%2F%3E%3C%2Fsvg%3E');
-    background-size: 1em;
+    background-image: url('../img/icon-select.svg');
+    background-size: 0.8em;
     background-repeat: no-repeat;
     background-position: right 0.5em center;
     padding-right: 2em !important;
+    line-height: var(--input-height);
+    cursor: pointer;
+}
+
+select:focus {
+    background-image: url('../img/icon-select-open.svg');
 }
 
 input:not(.btn):not([type="submit"]):not([type="search"]), 
@@ -269,7 +295,7 @@ textarea {
 
 fieldset {
     border: var(--border);
-    padding: 0.75rem;
+    padding: 0.75em;
 }
 
 fieldset legend {

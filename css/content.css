@@ -11,37 +11,14 @@
 
 
 /*---------------------------------------------------------*/
-
 body {
     color:#000;
 }
 
 body, input, select, textarea, button {
-    font-family: var(--sans);
-    font-size: var(--txt-base);
-    line-height: 1.5;
     font-weight: 400;
 }
 
-@media (max-width: 960px) {
-    body, input, select, textarea, button {
-        --txt-base: 16px;
-    }
-}
-
-@media (max-width: 320px) {
-    body, input, select, textarea, button {
-        --txt-base: 14px;
-    }
-}
-
-
-h1 { font-size: var(--txt-xxlarge);}
-h2 { font-size: var(--txt-xlarge); }
-h3 { font-size: var(--txt-large);  }
-h4 { font-size: var(--txt-medium); }
-h5 { font-size: var(--txt-base);   }
-h6 { font-size: var(--txt-small);  }
 
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 

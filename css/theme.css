@@ -1,7 +1,3 @@
-html {
-    background-color: #fff;
-}
-
 /* Fade in Page */
 /*
 
@@ -138,7 +134,7 @@ body.home .nclogo a {
     --content-max-width: 600px;
     --content-position-x: flex-start;
     --content-position-y: flex-end;
-    --content-padding: 3rem 0;
+    --content-padding: 3em 0;
     --box-min-height: 85vh;
     --box-bgcolor: #222;
 }
@@ -149,7 +145,7 @@ body.blog #banner {
     --width-max: var(--width-wide);
 }
 
-#banner + .ncontent { padding-top:3rem; background:#fff; position: relative; }
+#banner + .ncontent { padding-top:3em; background:#fff; position: relative; }
 
 /* Responsive 
 @media(max-width:640px){
@@ -205,7 +201,7 @@ body.blog #banner {
     }
 
     #banner .ncsplit_content {
-    padding:3rem 0 !important;
+    padding:3em 0 !important;
     display:block;
     }
 
@@ -233,14 +229,14 @@ body.blog #banner {
 .postmeta { position: relative; margin-bottom:var(--gap) }
 .postmeta_container { display:flex; font-size:var(--txt-small); align-items:center; }
 .postmeta_avatar img { border-radius:50%; width:100%; display: block; }
-.postmeta_avatar {max-width: 50px; margin-right:1rem; }
+.postmeta_avatar {max-width: 50px; margin-right:1em; }
 .postmeta_content { flex-grow:1;}
 
 
 /* WooCommerece */
 
 #woocommerce-wrapper {
-    margin-top:3rem;
+    margin-top:3em;
 }
 
 /* Excerpt */
@@ -265,7 +261,7 @@ body.blog #banner {
 /* Menu button bar */
 
 .mbuttonbar {
-    padding: 0.5rem 0;
+    padding: 0.5em 0;
     font-size: 0.8em;
     cursor: pointer;
     z-index: 5;
@@ -282,13 +278,13 @@ body.blog #banner {
 
 .mbuttonbar_label {
     text-transform: uppercase;
-    margin-left: 0.5rem;
+    margin-left: 0.5em;
 	font-weight: normal;
 }
 
 .mbuttonbar svg {
     font-weight: normal;
-    width: 1rem;
+    width: 1em;
     height: auto;
 }
 
@@ -339,7 +335,7 @@ body.blog #banner {
 }
 
 .mpanel > .ncsearchform {
-    margin: 0 1.5rem 1.5rem
+    margin: 0 1.5em 1.5em
 }
 
 .mpanel .navmenu {
@@ -356,7 +352,7 @@ body.blog #banner {
     --item-text-color-hover: #000;
     --item-text-color-current: #000;
     --item-margin-left: 0;
-    --item-padding: 1rem var(--gap);
+    --item-padding: 1em var(--gap);
     --item-border-right: none;
     --item-border-bottom: solid 1px #ccc;
     --indicator-color: inherit;
@@ -366,7 +362,7 @@ body.blog #banner {
     --drop-div-color: solid 1px #ccc;
     --drop-item-bg-color: #f4f4f4;
     --drop-item-text-color: #000;
-    --drop-item-padding: 1em 2rem;
+    --drop-item-padding: 1em 2em;
     --drop-item-bg-color-hover: #eee;
     --drop-item-text-color-hover: #000;
     --drop-shadow: none;
@@ -433,8 +429,8 @@ body.blog #banner {
 /* Yoast breadcrumbs */
 
 .yoast-breadcrumbs {
-    font-size: 0.8em;
-    margin-bottom: 0.75rem;
+    font-size: var(--txt-small);
+    margin-bottom: 0.75em;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -522,13 +518,13 @@ body.attachment {
 .attachment_back .btn:before {
     content:'\e901';
     font-family: 'ncicon';
-    padding-right:0.5rem;
+    padding-right:0.5em;
     font-weight: normal;
     font-size:0.9em;
 }
 
 .attachment_back {
-    margin-bottom:3rem;
+    margin-bottom:3em;
 }
 
 .attachment_link {
@@ -610,8 +606,8 @@ body.attachment {
     display: grid;
     grid-template-columns:var(--box-avatar-size) 1fr;
     grid-gap:var(--box-avatar-gap);
-    margin-top:3rem;
-    margin-bottom:3rem;
+    margin-top:3em;
+    margin-bottom:3em;
     position: relative;
     background: var(--box-color);
     border:var(--box-border);
@@ -735,7 +731,7 @@ body.attachment {
 }
 
 .authorpage_listheading {
-    padding:4rem 0 3rem;
+    padding:4em 0 3em;
     margin-bottom:0;
     text-transform: none;
     color: #000;
@@ -855,7 +851,7 @@ body.woocommerce .ncontent_main > * {
 
 .listings .ncard { 
     --card-padding: 0;
-    --card-margin-bottom:3rem;
+    --card-margin-bottom:3em;
     --card-bg-color: #fff;
     --card-bg-color-hover: #fff;
     --card-flex-direction: row;
@@ -864,7 +860,7 @@ body.woocommerce .ncontent_main > * {
     --card-bshadow: none;
     --image-width: 30%;
     --image-height: 70%;
-    --text-padding: 1.5rem;
+    --text-padding: 1.5em;
     --text-size: 1em;
     --text-color: #000;
     --text-color-hover: #000;
@@ -898,7 +894,7 @@ body.woocommerce .ncontent_main > * {
 
 .nplinks {
     --carrat-color: #000;
-    --carrat-width: 4rem;
+    --carrat-width: 4em;
     --divider-color: #ddd;
     --divider-width: 0;
     --top-border: solid 1px #ddd;
@@ -946,7 +942,7 @@ body.woocommerce .ncontent_main > * {
 }
 
 .ncontent_main > :last-child {
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
 }
 
 
@@ -978,7 +974,7 @@ body.woocommerce .ncontent_main > * {
 
 
 .featuredimage  {
-    margin-bottom:1.5rem;
+    margin-bottom:1.5em;
 }
 
 

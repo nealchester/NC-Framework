@@ -28,7 +28,7 @@
   --item-text-color-hover: #000;
   --item-text-color-current: #000;
   --item-margin-left: 0;
-  --item-padding: 0.75rem 1rem;
+  --item-padding: 0.75em 1em;
   --item-border-right: none;
   --item-border-bottom: solid 1px #ccc;
   --indicator-color: inherit;
@@ -59,11 +59,11 @@
   transition: 0.7s; 
   display:block; 
   position:absolute;
-  bottom:1em;
+  bottom:1rem;
 }
 
 .header_menu > li:not(.menu-item-has-children):hover > a:after {
-  width:calc(100% - 2rem); /* minus the padding on both sides of links */
+  width:calc(100% - 2em); /* minus the padding on both sides of links */
 }
 
 

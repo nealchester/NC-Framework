@@ -573,17 +573,17 @@ width: 100%;
   --heading-size:1em;
   --heading-text-color:inherit;
   --heading-border:solid 1px #ddd;
-  --heading-padding:0.75rem;
+  --heading-padding:0.75em;
   --heading-p-color:inherit;
   --heading-bg-color: transparent;
   --heading-bg-color-hover:transparent;
   --heading-bg-color-active:transparent;
   --transition:0.5s;
   
-  --content-padding:1.5rem;
+  --content-padding:1.5em;
   --content-bg-color:transparent;
   --content-text-color:inherit;
-  --acc-space:0.75rem;         
+  --acc-space:0.75em;         
 }
 
 .nccordion_box {
@@ -2173,7 +2173,7 @@ p.has-background {
     line-height: 1.6;
 }
 
-.wp-block-pullquote cite { opacity:0.7; font-size:0.8em; display:block; margin-top:-0.75rem  }
+.wp-block-pullquote cite { opacity:0.7; font-size:0.8em; display:block; margin-top:-0.75em  }
 
 /* Embeds (Videos) */
 
@@ -2185,8 +2185,7 @@ p.has-background {
 .wp-block-quote.is-large, 
 .wp-block-quote.is-style-large {
 	position:relative;
-	padding:0.75rem var(--gap);
-	padding-left: 2rem;
+	padding-left: 2em;
     font-weight: normal;
     border:none;
 }
@@ -2203,16 +2202,13 @@ p.has-background {
 }
 
 .wp-block-quote:before {
-	content:'';
+	content:'\201c';
+  font-family: 'Times New Roman', Times, serif;
 	display:block;
-	width:1em;
-	height:1.5em;
-    background-position: center;
-    background-repeat:no-repeat;
-    /* Change the color of the item here: fill="%23000" fill="#000" */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="71.868" height="58.271" viewBox="0 0 71.868 58.271"><g transform="translate(-176.251 -397.897)"><path fill="%23000" d="M42.193-143.089a27.243,27.243,0,0,1-3.129,13,44.288,44.288,0,0,1-7.338,10.2,61.03,61.03,0,0,1-9.5,7.931,88.089,88.089,0,0,1-8.309,5.126L10.251-113.2q4.424-2.59,8.471-5.342a32.381,32.381,0,0,0,6.2-5.234,29.751,29.751,0,0,0,4.64-6.744,25.418,25.418,0,0,0,2.158-9.226h-5.18q-6.8,0-10.575-3.453t-3.777-9.6a12.517,12.517,0,0,1,3.453-8.363,11.845,11.845,0,0,1,9.388-3.939q9.172,0,13.165,6.1T42.193-143.089Zm39.927,0a27.243,27.243,0,0,1-3.129,13,44.288,44.288,0,0,1-7.338,10.2,61.03,61.03,0,0,1-9.5,7.931,88.09,88.09,0,0,1-8.309,5.126L50.178-113.2q4.424-2.59,8.471-5.342a32.381,32.381,0,0,0,6.2-5.234,29.751,29.751,0,0,0,4.64-6.744,25.418,25.418,0,0,0,2.158-9.226h-5.18q-6.8,0-10.575-3.453t-3.777-9.6a12.517,12.517,0,0,1,3.453-8.363,11.845,11.845,0,0,1,9.388-3.939q9.172,0,13.165,6.1T82.12-143.089Z" transform="translate(258.371 291.066) rotate(180)"/></g></svg>');
-    background-size:contain;
+  font-size: 3em;
+  font-weight: bold;
 	position:absolute;
+  top:-0.3em;
 	left:0;
 }
 
@@ -2459,7 +2455,7 @@ cite:before { content:'\2014'; padding-right:0.3em }
 
 .nplinks a {
   display: flex;
-  padding:3rem 0;
+  padding:3em 0;
   font-weight: normal;
   background:var(--npbgcolor);
   transition: 0.5s;

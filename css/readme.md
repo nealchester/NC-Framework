@@ -13,7 +13,7 @@ The following files are **only** used in the block editor:
 The following files are **only** used on the front-end:
 
 * **`comments.css`** styles the optional comments section 
-* **`root.css`** resets and normalizes styles across browsers
+* **`reset.css`** resets and normalizes styles across browsers
 * **`menus.css`** styles the complex drop-menus throughout the theme
 * **`theme.css`** styles everything that doesn't display in the block editor (header, footer, etc.)
 

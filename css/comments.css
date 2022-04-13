@@ -6,7 +6,7 @@
 #comments > .ncontain { --width-max:var(--width-standard); }
 
 #comments {
-    margin-top: 3rem;
+    margin-top: 3em;
 }
 
 #comments-header {
@@ -39,7 +39,7 @@ font-size: var(--txt-large);
 
 .comment-list .comment .comment-body {
     position: relative;
-    padding-left: 3.61em /*65px*/ ;
+    padding-left: 6.5rem /*65px*/ ;
 }
 
 .comment-meta {
@@ -61,12 +61,12 @@ font-size: var(--txt-large);
     }
 
     .comment-meta {
-        padding-left: 3.056em/*55px*/ ;
+        padding-left: 5.5rem /*55px*/ ;
         position: relative;
     }
 
     .comment-author .avatar {
-        width: 2.4em/*44px*/;
+        width: 4.4rem /*44px*/;
     }
 }
 
@@ -74,7 +74,6 @@ font-size: var(--txt-large);
     font-style: normal;
     font-weight: bold;
     color: #000;
-    font-size: 1rem;
 }
 
 .comment-author cite a {
@@ -119,7 +118,7 @@ a.comment-reply-link {
 a.comment-reply-link:after {
     content: '\e96a';
     font-family: 'ncicon';
-    padding-left: 0.25rem;
+    padding-left: 0.25em;
     line-height: 0;
     position: relative;
     font-size: 1.5em;
@@ -134,7 +133,7 @@ a.comment-reply-link:after {
 }
 
 .comment-body {
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 
 #wpsubmit {
@@ -156,7 +155,7 @@ a.comment-reply-link:after {
 }
 
 .comment-list .pingback {
-    padding-left: 1rem;
+    padding-left: 1em;
     position: relative;
 }
 
