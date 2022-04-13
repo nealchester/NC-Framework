@@ -51,7 +51,7 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 ?>
 
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
 			<?php nc_before_content(); ?>
 
 			<?php if( $slides ): ?>

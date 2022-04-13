@@ -1,16 +1,6 @@
 <?php
 if(function_exists('get_field')) { 
 
-    // If theme is child or parent do this:
-    $currentTheme = wp_get_theme();
-    if ($currentTheme->parent() == false) {
-        // Load editable JSON fields for parent theme
-        get_template_part('functions/acf_json');
-    } else {
-        // Just load background fields for child theme
-        get_template_part('blocks/fields');
-    }
-
     // Block Includes
     get_template_part('blocks/block-split');
     get_template_part('blocks/block-accordion');

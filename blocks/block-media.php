@@ -62,7 +62,7 @@ function nc_media_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 	<div id="<?php echo $id; ?>" class="ncmedia<?php if($position) { echo' '.$position; }; echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
 
 			<div class="ncmedia_media">
 				<?php if($link ==!'' && $image):?>

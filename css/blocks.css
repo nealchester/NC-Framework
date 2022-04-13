@@ -872,6 +872,17 @@ text-align:var(--text-align);
   mix-blend-mode: var(--image-blend-mode);
 }
 
+@keyframes heroImagefadeInAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+.nchero_image-fadein {
+  animation: heroImagefadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
 .nchero .ncontain { 
   display: flex;
   flex-direction: column;

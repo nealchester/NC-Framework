@@ -10,16 +10,17 @@ function nc_register_assets(){
   wp_register_script('standard-scripts', get_theme_file_uri('/js/standard-scripts.js'), array('jquery'), '6', true);
   wp_register_script('magnific', get_theme_file_uri('/js/magnific/jquery.magnific-popup.min.js'), array('jquery'), '1', true );
 
-  wp_register_script('sal-aniview', get_theme_file_uri('/js/aniview/aniview.js'), array( 'jquery' ), null, true);
-  wp_register_script('sal-aniview-init', get_theme_file_uri('/js/aniview/aniview-init.js'), array( 'jquery', 'sal-aniview' ), null, true);
+  wp_register_script('aos', get_theme_file_uri('/js/aos/aos.js'), null, '2.3.1', true);
+  wp_register_script('aos-init', get_theme_file_uri('/js/aos/aos-init.js'), array( 'aos' ), null, true);
 
   // CSS
 
-  /* NOTES: Fonts are registered in this file: 'functions/register-fonts.php' */
+  /* NOTE: Fonts are registered in this file: 'functions/register-fonts.php' */
 
   wp_register_style('magnific-styles', get_theme_file_uri('/js/magnific/magnific-popup.css'), '', '', 'screen');
   wp_register_style('splide-styles', get_theme_file_uri('/js/splide/splide.css'), '', '', 'screen' );
-  wp_register_style('animate', get_theme_file_uri('/js/aniview/animate.css'), '', '3.7.2', 'screen');
+  wp_register_style('aos', get_theme_file_uri('/js/aos/aos.css'), null, '2.3.1', 'screen');
+
   wp_register_style('nc-editor', get_theme_file_uri('/css/editor.css'), array('nc-vars'), '', 'screen');
   wp_register_style('nc-vars', get_theme_file_uri('/css/variables.css'), '', '', 'screen');
   wp_register_style('nc-uclasses', get_theme_file_uri('/css/uclasses.css'), array('nc-vars'), '', 'screen');
@@ -40,7 +41,7 @@ function nc_load_assets(){
     
     // CSS
 
-    wp_enqueue_style('animate'); 
+    wp_enqueue_style('aos'); 
     wp_enqueue_style('nc-vars');
     wp_enqueue_style('nc-reset');
     wp_enqueue_style('nc-uclasses');
@@ -56,8 +57,8 @@ function nc_load_assets(){
     // JS
 
     wp_enqueue_script('standard-scripts');
-    wp_enqueue_script('sal-aniview');
-    wp_enqueue_script('sal-aniview-init');
+    wp_enqueue_script('aos');
+    wp_enqueue_script('aos-init');
     
   }
 }

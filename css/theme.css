@@ -1,4 +1,4 @@
-/* Fade in Page */
+/* Fade in Page 
 
 
 @keyframes fadeInAnimation {
@@ -7,7 +7,7 @@
     }
     100% {
         opacity: 1;
-     }
+    }
 }
 
 body {
@@ -16,6 +16,7 @@ body {
     animation-iteration-count: 1;
     animation-fill-mode: backwards;
 }
+*/
 
 /* Header */
 

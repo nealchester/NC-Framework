@@ -7,37 +7,26 @@ function nc_block_custom_css(){
     }
 }
 
+
 // Scroll Animation Function
 function sal_animate(){
     
     $sal_effect = get_field('sal_effect');
-    $sal_instant = get_field('sal_instant');
-
-    if( $sal_effect && $sal_instant ) { 
-        return '';
-    } 
-    elseif( $sal_effect ) { 
-        return 'data-av-animation="'.$sal_effect.'"';
-    }
-    else { 
-        return ''; 
-    }
-}
-
-// Scroll Animation CSS
-function sal_classes(){
-
     $sal_duration = get_field('sal_duration');
     $sal_delay = get_field('sal_delay');
-    $sal_effect = get_field('sal_effect');
-    $sal_instant = get_field('sal_instant');
 
-    if( $sal_effect && $sal_instant ) { 
-        return ' animated '.$sal_effect.' '.$sal_duration.' '.$sal_delay;
-    } 
-    elseif( $sal_effect ) { 
-        return ' aniview '.$sal_duration.' '.$sal_delay;
-    } 
+    if( $sal_duration ) { 
+        $durat = ' data-aos-duration="'.$sal_duration.'"';
+    }else { $durat = null; }
+
+    if( $sal_delay ) { 
+        $delay = ' data-aos-delay="'.$sal_delay.'"';
+    }else { $delay = null; }
+
+    if( $sal_effect ) { 
+        return 'data-aos="'.$sal_effect.'"'.$durat.''.$delay.'';
+    }
+
 }
 
 // Block Attributes

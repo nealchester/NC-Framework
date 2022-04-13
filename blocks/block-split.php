@@ -76,7 +76,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 			<?php if(wp_get_attachment_caption($image)):?><figcaption class="ncsplit_caption"><?php echo wp_get_attachment_caption($image); ?></figcaption><?php endif;?>
 		</figure>
 		<div class="ncsplit_content">
-			<div class="ncsplit_contentcontain<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate();?>>
+			<div class="ncsplit_contentcontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate();?>>
 				<?php if ($split_content) { echo $split_content; } else { echo'<h2>Heading 2</h2><p>Paragraph Text...</p>'; };?>
 			</div>
 		</div>

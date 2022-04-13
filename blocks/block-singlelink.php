@@ -53,7 +53,7 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 	if(get_field("before_title")) {	$before_text = '<strong>'.get_field("before_title").'</strong> '; }
 ?>
 
-	<div id="<?php echo $id; ?>" class="ncard ncard-singlelink<?php echo esc_attr($className); ?><?php echo sal_classes(); ?>" <?php echo sal_animate().nc_block_attr();?>>
+	<div id="<?php echo $id; ?>" class="ncard ncard-singlelink<?php echo esc_attr($className); ?>" <?php echo sal_animate().nc_block_attr();?>>
 
 	<?php if($type == 'internal' && $inlink ):?>
 

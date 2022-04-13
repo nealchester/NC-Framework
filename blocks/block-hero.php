@@ -72,11 +72,11 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php if( $image && $image_mobile ):?>
 		<picture class="nchero_pc jarallax-img">	
 				<source srcset="<?php echo wp_get_attachment_image_srcset( $image_mobile, 'full'); ?>" media="(max-width: <?php echo $media_query.'px'; ?>)" class="nchero_image">
-			<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img animated fadeIn", "style" => "animation-delay: 0.5s") ); ?>
+			<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img nchero_image-fadein", "style" => "animation-delay: 0.5s") ); ?>
 		</picture>
 
 		<?php elseif($image ):?>
-		<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img animated fadeIn", "style" => "animation-delay: 0.5s") ); ?>	
+		<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img nchero_image-fadein", "style" => "animation-delay: 0.5s") ); ?>	
 
 		<?php else: ?>
 		<img class="nchero_image" src="<?php nc_fallbackimage(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
@@ -85,7 +85,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	<?php endif;?>
 
 		<div class="ncontain">
-			<div class="nchero_content<?php echo sal_classes().nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>			
+			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>			
 				<?php if($content) { echo $content; } else { echo'<h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetuer 
 				adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et 
 				magnis dis parturient montes, nascetur ridiculus mus.</p><p><a class="btn btn-outline" style="color:'.$t_color.';" href="#null">Button</a></p>'; } ?>
