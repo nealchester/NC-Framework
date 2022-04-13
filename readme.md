@@ -37,6 +37,7 @@ If your concept requires more customization, you will need to copy and edit temp
   * Child themes
   * Featured images
   * Gutenberg blocks
+  * Translation ready
   * Threaded comments
   * Post meta
   * Pagination
@@ -67,7 +68,6 @@ Refer to the `readme.md` file within each folder for more information.
 
 * **`acf-json`** - stores custom fields data (don't delete)
 * **`blocks`** - stores all custom Gutenberg blocks
-* **`components`** - this folder's contents are under construction
 * **`customizer`** - stores all the new Customizer features function files
 * **`fonts`** - stores all font files including icon font files
 * **`functions`** - stores all functions files connected to the `functions.php` file
@@ -98,11 +98,8 @@ The following explains the purpose of the files in the main directory of the the
 
 **Changes coming soon:**
 
-* Components will become functions
-* More drop-menu style variations 
 * Incorporation of a better [scroll animation library](https://greensock.com/)
-* Custom block expansion options
-* Fully translated
+* Custom block will be moved to a plugin
 
 ***
 
