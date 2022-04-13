@@ -50,9 +50,9 @@ $share_on = __('Share on', 'nc-framework');
 .sharelinks {
     color:currentColor;
     display:flex;
-    gap: 0.75rem;
+    gap: 0.75em;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
 }
 
 .sharelinks_anchor {

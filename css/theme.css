@@ -1,13 +1,6 @@
 /* Fade in Page */
-/*
 
-body {
-    background-color:#fff;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-  
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -16,43 +9,13 @@ body {
         opacity: 1;
      }
 }
-*/
 
-/* Link colors */
-
-.ncontent_main > p a:not([class]),
-.ncontent_main > li a:not([class]) { 
-    color:currentColor; 
-    text-decoration:none; 
-    transition:0.3s; 
-    position:relative; 
-    font-weight: 500;
+body {
+    background-color:#fff;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
 }
-
-.ncontent_main > p a:not([class]):after,
-.ncontent_main > li a:not([class]):after { 
-    content:''; 
-    height:1px; 
-    background:var(--link-color); 
-    width:100%;
-    transition:0.5s; 
-    display:block; 
-    position:absolute;
-    bottom:0;
-    left:0;
-}
-
-.ncontent_main > p a:not([class]):hover:after,
-.ncontent_main > li a:not([class]):hover:after { 
-    color:var(--link-color-hover); 
-    width:0;
-}
-
-.ncontent_main > p a:not([class]):hover,
-.ncontent_main > li a:not([class]):hover {
-    color:var(--link-color)
-}
-
 
 /* Header */
 
@@ -119,182 +82,11 @@ body.home .nclogo a {
 
 #header .ncsearchtrigger_icon { height: auto; width: 1.3em; }
 
-/* Banner Hero Image */
-
-#banner.nchero {
-    --overlay-opacity: 0.5;
-    --overlay-color: #222;
-    --overlay-blend-mode: normal;
-    --image-focus: center center;
-    --image-blend-mode: normal;
-    --text-color: #fff;
-    --text-align: left;
-    --max-container-width: 1400px;
-    --content-dropshadow: 0 2px 6px rgba(0,0,0,0.3);
-    --content-max-width: 600px;
-    --content-position-x: flex-start;
-    --content-position-y: flex-end;
-    --content-padding: 3em 0;
-    --box-min-height: 85vh;
-    --box-bgcolor: #222;
-}
-
-body.archive #banner,
-body.search #banner,
-body.blog #banner {
-    --width-max: var(--width-wide);
-}
-
-#banner + .ncontent { padding-top:3em; background:#fff; position: relative; }
-
-/* Responsive 
-@media(max-width:640px){
-    #banner {
-        --box-min-height: auto; 
-        --text-align: center;
-        --content-position-x: center;        
-        --content-padding: 1em 0 2em;
-        --box-bgcolor: #222;
-        --overlay-color: linear-gradient(rgba(0, 0, 0, 0) 10%, #000 100%);
-    }
-    
-    #banner .nchero_image { 
-        position:static; 
-        height:40vh; 
-        top:0; 
-    }
-
-    #banner .nchero:after {
-        height: 40.1vh;
-        top:0 !important;
-    }
-}
-*/
-
-/* Banner Split Image */
-
-#banner.ncsplit {
-    --image-position: center center;
-    --text-color: #ccc;
-    --bg-color: var(--dark);
-    --text-padding: 3em;
-    --box-min-height: 400px;
-    --content-max-width: 600px;
-    --display-caption: block;
-    --caption-align: left;
-    --width-max: 1300px;
-}
-
-@media(max-width:640px){
-    #banner.ncsplit {
-    flex-direction:column;
-    min-height:0;
-    }
-
-    #banner .ncsplit_image {
-    min-height:0;
-    width:100%;
-    }
-
-    #banner .ncsplit_pic {
-    position:static;
-    }
-
-    #banner .ncsplit_content {
-    padding:3em 0 !important;
-    display:block;
-    }
-
-    #banner .ncsplit_image, 
-    #banner .ncsplit_content {
-    flex-basis: auto;
-    }
-
-    #banner .ncsplit_contentcontain {
-    max-width:var(--content-max-width);
-    width:calc(100% - 2 * var(--gap));
-    margin:0 auto;
-    padding-left:0 !important;
-    padding-right:0 !important;
-    }
-
-/* Modifier: Make the image always stack on top */
-#banner.ncsplit-imagetop .ncsplit_image { order:1 }
-#banner.ncsplit-imagetop .ncsplit_content { order:2 }
-
-}
-
-/* Post meta */
-
-.postmeta { position: relative; margin-bottom:var(--gap) }
-.postmeta_container { display:flex; font-size:var(--txt-small); align-items:center; }
-.postmeta_avatar img { border-radius:50%; width:100%; display: block; }
-.postmeta_avatar {max-width: 50px; margin-right:1em; }
-.postmeta_content { flex-grow:1;}
-
-
 /* WooCommerece */
 
 #woocommerce-wrapper {
     margin-top:3em;
 }
-
-/* Excerpt */
-
-.excerpt-summary {
-    font-size:var(--txt-large);
-    line-height: 1.3
-}
-
-
-/* Main Title */
-
-#maintitle { margin-top: 3em; margin-bottom:3em; }
-
-/* Header Social links */
-
-.header_sociallinks {
-    align-self: center;
-    width: 12%;
-}
-
-/* Menu button bar */
-
-.mbuttonbar {
-    padding: 0.5em 0;
-    font-size: 0.8em;
-    cursor: pointer;
-    z-index: 5;
-    position: relative;
-    border-top:solid 1px #ddd;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-
-.mbuttonbar > .ncontain {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mbuttonbar_label {
-    text-transform: uppercase;
-    margin-left: 0.5em;
-	font-weight: normal;
-}
-
-.mbuttonbar svg {
-    font-weight: normal;
-    width: 1em;
-    height: auto;
-}
-
-.mbuttonbar svg g {
-    fill: currentColor;
-    height: 1em;
-}
-
-
-
 
 /* Mobile Panel */
 
@@ -426,63 +218,8 @@ body.blog #banner {
 
 
 
-/* Yoast breadcrumbs */
-
-.yoast-breadcrumbs {
-    font-size: var(--txt-small);
-    margin-bottom: 0.75em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.yoast-breadcrumbs a {
-    color: inherit;
-}
-
-.yoast-breadcrumbs .breadcrumb_last { 
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
-
-
-/* Publish Date */
-
-.published {
-    margin-bottom: var(--gap);
-    display: flex;
-    padding-top: var(--gap);
-    align-items: flex-start;
-}
-
-.published_label {
-    font-weight: bold;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    margin-right: 0.5em;
-}
-
-.published_label svg {
-    height: 1.5em;
-}
-
-.published_label b {
-    margin-left: 0.5em;
-}
-
-.published_label svg path {
-    fill: #ddd;
-}
-
-
 /* Attachment Page */
+
 body.attachment {
     background: #222; color:rgba(255,255,255,0.7);
 }
@@ -537,9 +274,6 @@ body.attachment {
     border-bottom:solid 1px rgba(255,255,255,0.5);
 }
 
-
-
-
 .attachment_nav {
     display: flex;
     justify-content: center;
@@ -573,168 +307,6 @@ body.attachment {
 
 .attachment_next a:after {
     content: 'Next Image';
-}
-
-/* Search Results Page */
-
-.results {
-    padding:3em 0;
-    border-top:solid 1px #ddd;
-}
-
-.results_title {
-    font-size: 1.1em;
-    margin-bottom: 0.5em;
-}
-
-.results_date {
-    color: #999;
-}
-
-
-/* Author Box */
-
-.authorbox {
-	--box-avatar-size: 150px;
-	--box-color: var(--gray);
-	--box-border: none;
-	--box-padding: var(--gap);
-	--box-avatar-gap:var(--gap);
-}
-
-.authorbox {
-    display: grid;
-    grid-template-columns:var(--box-avatar-size) 1fr;
-    grid-gap:var(--box-avatar-gap);
-    margin-top:3em;
-    margin-bottom:3em;
-    position: relative;
-    background: var(--box-color);
-    border:var(--box-border);
-    padding:var(--box-padding)
-}
-
-.authorbox_avatar img {
-    border-radius: 50%;
-    display: block;
-}
-
-.authorbox_header {
-    text-transform:uppercase;
-    font-weight: bold;
-    color:#000;
-}
-.authorbox_header a {
-    color:inherit; text-decoration: none;
-}
-
-.authorbox_phone {
-    margin:0;
-}
-
-.authorbox .socialbuttons {
-    font-size: 0.8em;
-}
-
-.authorbox .socialbuttons_link {
-    margin-right: 0.5em;
-}
-
-.authorbox .socialbuttons_link:hover {
-    background-color: #222;
-}
-
-.authorbox .socialbuttons_link svg {
-    width: 1.5em;
-}
-
-@media(max-width:500px){
-    .authorbox {
-        grid-template-columns:1fr;
-    }
-    .authorbox_avatar img {
-    	width:var(--box-avatar-size);
-    }
-}
-
-.authorpage_header {
-    display:grid;
-    grid-template-columns:1fr 3fr;
-    grid-gap:1.5em;
-    margin-top:3em;
-    align-items: start;
-}
-
-.authorpage_avatar img {
-    border-radius:50%;
-    display:block;
-    width:100%;
-}
-
-/*
-.authorpage .socialbuttons_link {
-    background-color:var(--green)
-}
-
-.authorpage .socialbuttons_link:hover {
-    background-color:var(--dark)
-}
-*/
-
-@media(max-width:460px){
-    .authorpage_header {
-        grid-template-columns:1fr;
-    }
-    .authorpage_avatar img {
-        width:50%;
-        min-width:150px;
-        border-radius:50%;
-        margin:0 auto;
-        display:block;
-    }
-    .authorpage_headercontain {
-        text-align:center;
-    }
-
-    .authorpage_headercontain .socialbuttons {
-        justify-content:center;
-    }
-}
-
-.authorpage_name { margin-bottom:calc(var(--gap) / 2); color: #000;}
-
-.authorpage_content {
-    padding:0; margin:0; border:none;
-}
-
-.authorpage_articlelist {
-    margin-bottom:3em;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 1em 3em;
-    list-style-type: decimal-leading-zero;
-    list-style-position: inside;
-    padding-left: 0;
-}
-
-.authorpage_articlelist li {
-    font-weight: bold;
-}
-
-.authorpage_link {
-    display:block;
-}
-
-.authorpage_date {
- font-weight: normal; color:#999;
- font-size:var(--txt-small);
-}
-
-.authorpage_listheading {
-    padding:4em 0 3em;
-    margin-bottom:0;
-    text-transform: none;
-    color: #000;
 }
 
 
@@ -838,16 +410,7 @@ body.attachment {
 
 
 
-/* Listings
-
-Blog, Search, and Archive pages */
-
-body.blog .ncontent_main > *,
-body.archive .ncontent_main > *,
-body.search .ncontent_main > *,
-body.woocommerce .ncontent_main > * {
-    max-width: var(--width-wide);
-}
+/* Listings */
 
 .listings .ncard { 
     --card-padding: 0;
@@ -921,6 +484,13 @@ body.woocommerce .ncontent_main > * {
 
 /* Main Body Content Layout */
 
+body.blog .ncontent_main > *,
+body.archive .ncontent_main > *,
+body.search .ncontent_main > *,
+body.woocommerce .ncontent_main > * {
+    max-width: var(--width-wide);
+}
+
 .ncontent_main > * {
     width:calc(100% - 2 * var(--gap));
     max-width:var(--width-standard);
@@ -943,6 +513,41 @@ body.woocommerce .ncontent_main > * {
 
 .ncontent_main > :last-child {
     margin-bottom: 3em;
+}
+
+/* Link colors */
+
+.ncontent_main > p a:not([class]),
+.ncontent_main > li a:not([class]) { 
+    color:currentColor; 
+    text-decoration:none; 
+    transition:0.3s; 
+    position:relative; 
+    font-weight: 500;
+}
+
+.ncontent_main > p a:not([class]):after,
+.ncontent_main > li a:not([class]):after { 
+    content:''; 
+    height:1px; 
+    background:var(--link-color); 
+    width:100%;
+    transition:0.5s; 
+    display:block; 
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+.ncontent_main > p a:not([class]):hover:after,
+.ncontent_main > li a:not([class]):hover:after { 
+    color:var(--link-color-hover); 
+    width:0;
+}
+
+.ncontent_main > p a:not([class]):hover,
+.ncontent_main > li a:not([class]):hover {
+    color:var(--link-color)
 }
 
 

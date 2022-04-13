@@ -8,3 +8,36 @@
 	<?php the_modified_date(); ?>
 	</span>. </span> 
 </div>
+
+<style>
+
+/* Publish Date */
+
+.published {
+    margin-bottom: var(--gap);
+    display: flex;
+    padding-top: var(--gap);
+    align-items: flex-start;
+}
+
+.published_label {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5em;
+}
+
+.published_label svg {
+    height: 1.5em;
+}
+
+.published_label b {
+    margin-left: 0.5em;
+}
+
+.published_label svg path {
+    fill: #ddd;
+}
+
+</style>

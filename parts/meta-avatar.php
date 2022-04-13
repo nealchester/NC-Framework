@@ -24,3 +24,15 @@
 		</div>	
 	</div>
 </div>
+
+<style>
+
+/* Post meta */
+
+.postmeta { position: relative; margin-bottom:var(--gap) }
+.postmeta_container { display:flex; font-size:var(--txt-small); align-items:center; }
+.postmeta_avatar img { border-radius:50%; width:100%; display: block; }
+.postmeta_avatar {max-width: 50px; margin-right:1em; }
+.postmeta_content { flex-grow:1;}
+
+</style>

@@ -4,4 +4,11 @@
 	<?php get_template_part('parts/headings');?>
 </div>
 
+<style>
+	
+/* Main Title */
+#maintitle { margin-top: 3em; margin-bottom:3em; }
+
+</style>
+
 <?php endif;?>

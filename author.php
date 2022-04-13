@@ -32,3 +32,88 @@
 	</div>
 
 <?php get_template_part('parts/footer')?>
+
+<style>
+
+.authorpage_header {
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    grid-gap:1.5em;
+    margin-top:3em;
+    align-items: start;
+}
+
+.authorpage_avatar img {
+    border-radius:50%;
+    display:block;
+    width:100%;
+}
+
+/*
+.authorpage .socialbuttons_link {
+    background-color:var(--green)
+}
+
+.authorpage .socialbuttons_link:hover {
+    background-color:var(--dark)
+}
+*/
+
+@media(max-width:460px){
+    .authorpage_header {
+        grid-template-columns:1fr;
+    }
+    .authorpage_avatar img {
+        width:50%;
+        min-width:150px;
+        border-radius:50%;
+        margin:0 auto;
+        display:block;
+    }
+    .authorpage_headercontain {
+        text-align:center;
+    }
+
+    .authorpage_headercontain .socialbuttons {
+        justify-content:center;
+    }
+}
+
+.authorpage_name { margin-bottom:calc(var(--gap) / 2); color: #000;}
+
+.authorpage_content {
+    padding:0; margin:0; border:none;
+}
+
+.authorpage_articlelist {
+    margin-bottom:3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1em 3em;
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.authorpage_articlelist li {
+    font-weight: bold;
+}
+
+.authorpage_link {
+    display:block;
+}
+
+.authorpage_date {
+ font-weight: normal; color:#999;
+ font-size:var(--txt-small);
+}
+
+.authorpage_listheading {
+    padding:4em 0 3em;
+    margin-bottom:0;
+    text-transform: none;
+    color: #000;
+}
+
+
+</style>

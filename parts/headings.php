@@ -1,8 +1,6 @@
-<?php if ( function_exists('yoast_breadcrumb') && is_singular() && !is_attachment() ):?>
-<p class="yoast-breadcrumbs"><?php yoast_breadcrumb();?></p>
-<?php elseif( is_archive() || is_post_type_archive() || is_home() || is_search() ):?>
+
+<?php get_template_part('parts/breadcrumbs');?>
 <?php nc_current_page();?>
-<?php endif; ?>
 
 <?php // H1
 echo '<h1 itemprop="name headline" class="maintitle_heading">'; 

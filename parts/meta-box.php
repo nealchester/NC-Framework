@@ -11,3 +11,74 @@
         <?php if(get_the_author_meta('description')):?> <p class="authorbox_desc"><?php echo wp_trim_words( get_the_author_meta('description'), 20, ' &hellip; <a href="'.$authorlink2.'">'.__('Read&nbsp;more&nbsp;&rsaquo;','nc-framework').'</a>');?></p> <?php endif; ?>
 		<?php get_template_part('parts/meta-box-social');?>
 </section>
+
+<style>
+
+/* Author Box */
+
+.authorbox {
+	--box-avatar-size: 150px;
+	--box-color: var(--gray);
+	--box-border: none;
+	--box-padding: var(--gap);
+	--box-avatar-gap:var(--gap);
+}
+
+.authorbox {
+    display: grid;
+    grid-template-columns:var(--box-avatar-size) 1fr;
+    grid-gap:var(--box-avatar-gap);
+    margin-top:3em;
+    margin-bottom:3em;
+    position: relative;
+    background: var(--box-color);
+    border:var(--box-border);
+    padding:var(--box-padding)
+}
+
+.authorbox_avatar img {
+    border-radius: 50%;
+    display: block;
+}
+
+.authorbox_header {
+    text-transform:uppercase;
+    font-weight: bold;
+    color:#000;
+}
+.authorbox_header a {
+    color:inherit; text-decoration: none;
+}
+
+.authorbox_phone {
+    margin:0;
+}
+
+.authorbox .socialbuttons {
+    font-size: 0.8em;
+}
+
+.authorbox .socialbuttons_link {
+    margin-right: 0.5em;
+}
+
+.authorbox .socialbuttons_link:hover {
+    background-color: #222;
+}
+
+.authorbox .socialbuttons_link svg {
+    width: 1.5em;
+}
+
+@media(max-width:500px){
+    .authorbox {
+        grid-template-columns:1fr;
+    }
+    .authorbox_avatar img {
+    	width:var(--box-avatar-size);
+    }
+}
+
+
+
+</style>
