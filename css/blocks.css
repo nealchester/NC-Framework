@@ -343,24 +343,23 @@ width: 100%;
   .ncolumns-scroll {
     display:grid;
     --column-gap:var(--gap);
-    grid-template-columns: repeat(30, minmax(var(--min-col-width), 1fr));
+    grid-template-columns: auto;
+    grid-auto-flow: column;
     overflow-x:auto;
     overflow-y:hidden;
-    padding-left:var(--gap);
-    margin-left: calc(-1 * var(--gap));
-    margin-right: calc(-1 * var(--gap));
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--gap);
+    padding-inline:var(--gap);
+    margin-inline: calc(-1 * var(--gap));
     margin-bottom: calc(-1 * var(--bottom-box-padding));
   }
   
   .ncolumns-scroll > * { 
     min-width:var(--min-col-width); 
     margin-bottom:var(--bottom-box-padding);
-  }
-  
-  .ncolumns-scroll:after {
-    content:''; width:1px; height:1px;
-  }
-  
+    scroll-snap-align: start
+  }  
   
 }
 */

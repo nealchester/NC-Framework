@@ -1,7 +1,18 @@
 {
-  "version": 1,
+  "version": 2,
   "settings": {
+		"appearanceTools": true,
+		"border": {
+			"color": true,
+			"customColor": true,
+			"customRadius": true,
+			"customStyle": true,
+			"customWidth": true
+		},
     "color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"link": true,
       "palette": [
         {
           "name": "Black",
@@ -16,7 +27,7 @@
         {
           "name": "Smoke",
           "slug": "smoke",
-          "color": "#fbfbfb"
+          "color": "#eeeeee"
         }
       ]
     },
@@ -26,7 +37,7 @@
 				{
 					"slug": "tiny",
 					"size": "var(--txt-xsmall)",
-					"name": "X-Small"
+					"name": "Tiny"
 				},
 				{
 					"slug": "small",
@@ -49,23 +60,26 @@
 					"name": "Large / H3"
 				},
         {
-					"slug": "xlarge",
+					"slug": "x-large",
 					"size": "var(--txt-xlarge)",
 					"name": "X-Large / H2"
 				},
         {
-					"slug": "xxlarge",
+					"slug": "xx-large",
 					"size": "var(--txt-xxlarge)",
 					"name": "XX-Large / H1"
 				},
         {
-					"slug": "jumbo",
+					"slug": "huge",
 					"size": "var(--txt-xxxlarge)",
-					"name": "Jumbo"
+					"name": "Huge"
 				}
 			]
 		},
     "spacing": {
+			"blockGap": true,
+			"padding": true,
+			"margin": true,
       "customPadding": true,
       "customMargin": true,
       "units": [ "px", "em", "rem", "vh", "vw" ]
@@ -73,7 +87,34 @@
     "layout": {
 			"contentSize": "800px",
 			"wideSize": "1000px",
+			"maxSize" : "1500px",
 			"units": [ "px", "em", "rem", "%", "vw" ]
 		}
-  }
+  },
+	"styles": {
+		"color":{
+			"background":"inherit",
+			"text":"currentColor"
+		},
+		"typography":{
+			"fontSize":"var(--txt-base)",
+			"fontFamily":"var(--sans)",
+			"lineHeight":"1.5"
+		},
+		"spacing":{
+			"blockGap": "var(--gap)",
+			"margin":{
+				"top":"0px",
+				"right":"0px",
+				"bottom":"var(--gap)",
+				"left":"0px"
+			},
+			"padding":{
+				"top":"var(--gap)",
+				"right":"var(--gap)",
+				"bottom":"var(--gap)",
+				"left":"var(--gap)"
+			}
+		}
+	}
 }

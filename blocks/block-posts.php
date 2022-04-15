@@ -108,7 +108,7 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 			$i = 1;
 			?>
 
-			<div class="ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' total_ncards-'.$total_items;?>">
+			<div class="ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' ncolumns_total-'.$total_items;?>">
 			<?php while ( $querylatest->have_posts() ) : $querylatest->the_post();?>
 				<div <?php post_class('ncard ncard-'.$i++); ?> id="<?php echo 'post-'.get_the_ID();?>">
 					<a class="ncard_link" href="<?php echo get_permalink(); ?>">
@@ -172,22 +172,22 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 		display:grid;
 		--column-gap:var(--gap);
 		--min-col-width: <?php if($column_min_width_break){ echo $column_min_width_break.'px'; } else { echo'250px'; } ?>;
-		grid-template-columns: repeat(100, minmax(var(--min-col-width), 1fr));
+		grid-template-columns: auto;
+    grid-auto-flow: column;
 		overflow-x:auto;
 		overflow-y:hidden;
-		padding-left:var(--gap);
-		margin-left: calc(-1 * var(--gap));
-		margin-right: calc(-1 * var(--gap));
+		overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--gap);
+		padding-inline:var(--gap);
+		margin-inline: calc(-1 * var(--gap));
 		margin-bottom: calc(-1 * <?php echo $bpadding; ?>);
 	}
 
-	<?php echo '#'.$id; ?> .ncolumns-scroll > * { 
+	<?php echo '#'.$id; ?> .ncolumns-scroll > .ncard { 
 		min-width:var(--min-col-width);
 		margin-bottom:<?php echo $bpadding; ?>;
-	}
-
-	<?php echo '#'.$id; ?> .ncolumns-scroll:after {
-		content:''; width:1px; height:1px;
+		scroll-snap-align: start;
 	}
 
 	<?php echo '#'.$id; ?> .ncolumns-scroll .ncard_imgcon {

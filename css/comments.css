@@ -39,7 +39,7 @@ font-size: var(--txt-large);
 
 .comment-list .comment .comment-body {
     position: relative;
-    padding-left: 6.5rem /*65px*/ ;
+    padding-left: 4em /*65px*/ ;
 }
 
 .comment-meta {

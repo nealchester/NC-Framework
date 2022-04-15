@@ -7,9 +7,10 @@ https://github.com/michalsnik/aos#animations
 
 */
 
+// Initiate the script
 AOS.init({
   duration: 1000,
   offset:150,
   mirror: false,
-  once: true
+  once: false
 });

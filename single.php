@@ -9,7 +9,7 @@ get_template_part('parts/the-title');?>
 <?php // get_template_part('parts/social-share-links'); ?>
 
 <?php // Page Info
-// get_template_part('parts/meta-avatar');?>
+get_template_part('parts/meta-avatar');?>
 
 <?php // Featured image
 get_template_part('parts/featured-image'); ?>

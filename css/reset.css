@@ -20,17 +20,6 @@ html, body, div, figure, form, canvas, summary, button, form {
     padding: 0;
 }
 
-body {
-    overflow-x: hidden;
-}
-
-body, input, select, textarea, button {
-    font-family: var(--sans);
-    font-size: var(--txt-base);
-    line-height: 1.5;
-}
-
-
 #wrapper {
     position: relative;
 }
@@ -237,7 +226,7 @@ select {
     background-repeat: no-repeat;
     background-position: right 0.5em center;
     padding-right: 2em !important;
-    line-height: var(--input-height);
+    line-height: var(--input-height) !important;
     cursor: pointer;
 }
 

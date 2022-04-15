@@ -89,9 +89,9 @@
 
 	<?php else: ?>
 
-	<?php if(!is_page()):?>
+	<?php /* if(!is_page()):?>
 	<p id="comments_closed"><?php _e('Comments are closed.','nc-framework');?></p>
-	<?php endif;?>
+	<?php  endif; */ ?>
 
 	</div><!-- / end .ncontain -->
 	</section><!-- / end section id="comments" -->

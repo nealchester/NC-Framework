@@ -53,6 +53,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<?php if( have_rows('slides') ): // start slides ?>
 			<div class="splide__wrap nc_content_block_main">
+				<noscript>Your browser does not support JavaScript!</noscript>
 				<div class="splide" <?php echo 'id="'.$slider_id.'"'; ?>>
 					<div class="splide__track">
 						<div class="splide__list">

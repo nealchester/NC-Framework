@@ -73,15 +73,16 @@ function nc_columns_block_markup( $block, $content = '', $is_preview = false ) {
 			<?php if( have_rows('columns') ): ?>
 			<div class="ncolumns nc_content_block_main<?php if($columns && $clayout == 'ncolumns-fixed') { echo ' '.$columns; } echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>">
 			
-			<?php $i = 1; while( have_rows('columns') ): the_row(); $image = get_sub_field('image');?>
+			<?php while( have_rows('columns') ): the_row(); 
+			$image = get_sub_field('image');?>
 
-			<div class="ncolumns_c<?php echo $i; ?>">
+			<div class="ncolumns_col ncolumns_col-<?php echo get_row_index(); ?>">
 				<?php if($image && $imgp == 'before') { echo '<div class="ncolumns_image">'.wp_get_attachment_image( $image, 'medium').'</div>'; }; ?>
 				<div class="ncolumns_content"><?php the_sub_field('column_content');?></div>
 				<?php if($image && $imgp == 'after') { echo '<div class="ncolumns_image">'.wp_get_attachment_image( $image, 'medium').'</div>'; }; ?>
 			</div>
 
-			<?php $i++; endwhile; ?>
+			<?php endwhile; ?>
 
 			</div>
 			<?php endif;?>
@@ -122,12 +123,15 @@ function nc_columns_block_markup( $block, $content = '', $is_preview = false ) {
 	<?php echo '#'.$id; ?> .ncolumns-scroll {
 		display:grid;
 		--column-gap:var(--gap);
-		grid-template-columns: repeat(30, minmax(var(--min-col-width), 1fr));
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+		overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--gap);
 		overflow-x:auto;
 		overflow-y:hidden;
-		padding-left:var(--gap);
-		margin-left: calc(-1 * var(--gap));
-		margin-right: calc(-1 * var(--gap));
+		padding-inline:var(--gap);
+		margin-inline: calc(-1 * var(--gap));
 		margin-bottom: calc(-1 * <?php echo $bpadding; ?>);
 	}
 
@@ -145,14 +149,16 @@ function nc_columns_block_markup( $block, $content = '', $is_preview = false ) {
 		--column-gap:<?php if($cgap){ echo $cgap; } else { echo'1.5rem'; } ?>;
 	}
 
-	<?php echo '#'.$id; ?> .ncolumns-scroll > * { 
+	<?php echo '#'.$id; ?> .ncolumns-scroll > .ncolumns_col { 
 		min-width:var(--min-col-width);
 		margin-bottom: <?php echo $bpadding; ?>;
+		scroll-snap-align: start;
 	}
-
+  /*
 	<?php echo '#'.$id; ?> .ncolumns-scroll:after {
 		content:''; width:1px; height:1px;
 	}
+	*/
 
 }
 <?php elseif($breakpoint && $breaklayout == 'ncolumns-stack'):?>

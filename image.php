@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php nc_schema_org_markup(); ?> <?php language_attributes(); ?> id="pagetop">
+<html <?php language_attributes(); ?> id="pagetop">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

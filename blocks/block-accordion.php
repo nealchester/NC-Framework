@@ -74,7 +74,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			<div class="nccordion nc_content_block_main">
       <?php while ( $queryfaqs->have_posts() ) : $queryfaqs->the_post(); ?>
 
-      <<?php echo $hd; ?> class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?></<?php echo $hd; ?>>  
+      <?php echo '<'.$hd; ?> class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?><?php echo '</'.$hd.'>'; ?>  
       <div class="nccordion_content">
         <?php if($content == 'truncate') :?>
         <?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore"><?php _e('Read more','nc-framework');?></a>

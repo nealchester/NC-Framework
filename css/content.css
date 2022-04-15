@@ -11,25 +11,33 @@
 
 
 /*---------------------------------------------------------*/
+
 body {
     color:#000;
 }
 
 body, input, select, textarea, button {
-    font-weight: 400;
+  font-family: var(--sans);
+  font-size: var(--txt-base);
+  line-height: 1.5;
+  font-weight: 320;
 }
 
+b,strong {
+  font-weight: 500;
+}
 
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
 /* Buttons */
 
-  .btn {
+  .btn,
+  .wp-block-button__link {
     background: #222;
     color:#fff;
     border:solid 0.08em #222;
     padding:0 2em;
-    border-radius:20px;
+    border-radius:100px;
     min-width:150px;
     transition: 0.5s;
     min-height:var(--input-height);
@@ -45,7 +53,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
   }
   
   .btn:hover,
-  .btn:focus {
+  .btn:focus,
+  .wp-block-button__link:hover,
+  .wp-block-button__link:focus {
     background: var(--link-color);
     color:#fff;
   }
@@ -73,9 +83,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
     pointer-events:none;
   }
   
-  .btn + .btn { margin-left:0.75rem; }
+  .btn + .btn { margin-left:0.75em; }
 
   @media(max-width:640px){
     .btn { width:100%; }
-    .btn + .btn { margin-left:0; margin-top:0.75rem; }
+    .btn + .btn { margin-left:0; margin-top:0.75em; }
   }

@@ -12,6 +12,7 @@ function nc_register_assets(){
 
   wp_register_script('aos', get_theme_file_uri('/js/aos/aos.js'), null, '2.3.1', true);
   wp_register_script('aos-init', get_theme_file_uri('/js/aos/aos-init.js'), array( 'aos' ), null, true);
+  wp_register_script('aos-remove', get_theme_file_uri('/js/aos/aos-remove.js'), null, null, false);
 
   // CSS
 
@@ -33,6 +34,9 @@ function nc_register_assets(){
 }
 
 add_action('wp_enqueue_scripts', 'nc_register_assets');
+
+
+
 
 // Load Assets on frontend
 
@@ -57,12 +61,26 @@ function nc_load_assets(){
     // JS
 
     wp_enqueue_script('standard-scripts');
+    wp_enqueue_script('aos-remove');
     wp_enqueue_script('aos');
     wp_enqueue_script('aos-init');
     
   }
 }
 add_action('wp_enqueue_scripts', 'nc_load_assets');
+
+
+
+
+// Add a "disable" attribute to the "aos" <link> stylesheet. If javascript is enabled, the disabled attribute will be removed.
+
+function nc_add_style_attributes( $html, $handle ) {
+  if ( 'aos' === $handle ) {
+       return str_replace( "media='screen'", "media='screen' disabled", $html );
+   }
+   return $html; 
+ }
+ add_filter( 'style_loader_tag', 'nc_add_style_attributes', 1, 2 ); 
 
 
 // Load Editor Styles

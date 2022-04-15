@@ -52,7 +52,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	$rgap = get_field('row_gap');
 	$ratio = get_field('thumb_shape');
 
-	$thumb_width = get_field('thumb_min_width');
+	$thumb_width = get_field('thumb_min_width') ?: "250";
 	$thumb_size = get_field('thumb_image_size') ?: 'medium';
 
 	$bpadding = get_field('bottom_padding') ?: '3rem';
@@ -72,14 +72,14 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<div class="ncgallery ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>">
 			
-			<?php foreach( $gallery as $image ):?>
+			<?php $i = 1; foreach( $gallery as $image ):?>
 			
 			<?php 
 				$mdisplay = get_field('meta_display');
 				$link2img = get_field('link_to_image');
 			?>
 
-				<figure class="ncgallery_item">
+				<figure class="ncgallery_item ncgallery_item-<?php echo $i++;?>">
 					<?php if($link2img == 'image_page'):?><a class="ncgallery_link" aria-label="<?php _e('View larger','nc-framework');?>" href="<?php echo get_attachment_link($image['ID']); ?>">
 					<?php elseif($link2img == 'image_lightbox'):?><a data-title="<?php echo $image['title']; ?>" aria-label="<?php _e('View larger','nc-framework');?>" class="ncgallery_link <?php echo'ncgimg_'.$id; ?>" href="<?php echo wp_get_attachment_image_url($image['ID'], 'large'); ?>"><?php endif;?>
 						<div class="ncgallery_size">
@@ -115,7 +115,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
     --row-gap: <?php if($rgap){ echo $rgap; } else { echo'1.5rem'; } ?>;
 	--bottom-box-padding:<?php echo $bpadding; ?>; /* Bottom padding of the box */
 	--img-height:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
-	--min-col-width: <?php if($thumb_width){ echo $thumb_width.'px'; } else { echo'150px'; } ?>;
+	--min-col-width: <?php echo $thumb_width.'px'; ?>;
 }
 
 /* Responsive */
@@ -125,26 +125,26 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	<?php echo '#'.$id; ?> .ncolumns-scroll {
 		display:grid;
 		--column-gap:var(--gap);
-		grid-template-columns: repeat(100, minmax(var(--min-col-width), 1fr));
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+		overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--gap);
 		overflow-x:auto;
 		overflow-y:hidden;
-		padding-left:var(--gap);
-		margin-left: calc(-1 * var(--gap));
-		margin-right: calc(-1 * var(--gap));
+		padding-inline:var(--gap);
+		margin-inline: calc(-1 * var(--gap));
 		margin-bottom: calc(-1 * <?php echo $bpadding; ?>);
 	}
 
-	<?php echo '#'.$id; ?> .ncolumns-scroll > * { 
+	<?php echo '#'.$id; ?> .ncolumns-scroll > .ncgallery_item { 
 		min-width:var(--min-col-width);
 		margin-bottom:<?php echo $bpadding; ?>;
+		scroll-snap-align: start;
 	}
 
 	<?php echo '#'.$id; ?> .ncolumns-scroll.ncgallery-capbelow .ncgallery_size {
 		height: auto;
-	}
-
-	<?php echo '#'.$id; ?> .ncolumns-scroll:after {
-		content:''; width:1px; height:1px;
 	}
 
 	/* If mason was selected */
