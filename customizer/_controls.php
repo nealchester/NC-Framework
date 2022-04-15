@@ -11,9 +11,6 @@ get_template_part('customizer/_sanitize');
 // Comments
 get_template_part('customizer/comments');
 
-//  Side header section    
-get_template_part('customizer/side-header');
-
 // Remove some of WordPress Customizer controls
 get_template_part('customizer/colors');
 

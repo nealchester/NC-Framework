@@ -3,8 +3,8 @@ function nc_customizer_options_post($wp_customize) {
 
 $wp_customize->add_section('comment_control', array(
   'title' => __('Disable Comments','nc-framework'),
-  'description' => __('Enable or disable the comments feature.','nc-framework'),
-  // 'panel' => 'layout_panel'
+  'description' => __('Uncheck the box to disable comments','nc-framework'),
+  'panel' => 'layout_panel'
 ));
 
 // Display Comments on posts   

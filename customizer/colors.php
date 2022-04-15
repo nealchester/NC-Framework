@@ -3,12 +3,6 @@
 // Colors for customiizer
 
 function nc_color_control( $wp_customize ) {
-    
-    // Remove the background color option
-
-    $wp_customize->remove_control('background_color');
-    
-
     $wp_customize->add_section('nc_color_section', array(
         'title' => __('Color Controls','nc-framework'),
         'panel' => 'layout_panel',
