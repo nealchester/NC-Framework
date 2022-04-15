@@ -39,6 +39,58 @@ body {
 }
 
 
+/* Logo 
+
+<div class="nclogo">
+<a href="#2" class="nclogo_anchor">
+<div class="nclogo_title">Heading</div>
+  <!-- 
+  <img src="nclogo.svg" alt="Site Title" class="nclogo_image"> 
+  -->
+</a>
+<div class="nclogo_tagline">Just another WordPress website</div>
+</div>
+
+*/
+
+.nclogo {
+    --logo-text-size: 1.3em;
+    --logo-text-transform: uppercase;
+    --logo-text-weight: bold;
+    --logo-text-color: inherit;
+    --logo-img-width: 250px;
+    --logo-padding: 1.5em 0;
+    --logo-margin: 0;
+  }
+  
+  .nclogo {
+    padding:var(--logo-padding);
+    margin:var(--logo-margin);
+  }
+  
+  .nclogo_image,
+  .nclogo_anchor { display: block; }
+  
+  .nclogo_image { width:var(--logo-img-width); }
+  
+  .nclogo_title {
+    font-size: var(--logo-text-size);
+    text-transform: var(--logo-text-transform);
+    font-weight:var(--logo-text-weight);
+    color:var(--logo-text-color);
+    margin: 0;
+    line-height: normal;
+    display: block;
+  }
+  
+  .nclogo_anchor + .nclogo_tagline { margin-top:0.3em; }
+  .nclogo_tagline {
+    font-size: 0.8em;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+
 /* Make home links blank */
 
 body.home .nclogo a {
@@ -227,22 +279,6 @@ body.home .nclogo a {
     height: 200px;
 }
 
-/* Pagination */
-
-.pagination {
-    --pgbgcolor:var(--gray);
-    --pgtextcolor:#222;
-
-    --pgbgcolor-hover:var(--link-color);
-    --pgtextcolor-hover:#fff;
-
-    --pgbgcolor-current:#222;
-    --pgtextcolor-current:#fff;
-
-    --pgradius:5px;
-    --pgbordercolor:#eee;
-}
-
 
 
 /* Mega Footer */
@@ -318,22 +354,6 @@ body.home .nclogo a {
 
 
 
-
-
-
-/* Next Previous Links */
-
-.nplinks {
-    --carrat-color: #000;
-    --carrat-width: 4em;
-    --divider-color: #ddd;
-    --divider-width: 0;
-    --top-border: solid 1px #ddd;
-    --nptextcolor: #000;
-    --nptextcolor-hover: #000;
-    --npbgcolor: #fff;
-    --npbgcolor-hover: lightyellow;
-  }
 
 
 /* Audio / Video Player */

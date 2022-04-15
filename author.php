@@ -30,7 +30,7 @@ get_template_part('parts/header')?>
 				</li>
 				<?php endwhile;?>
 			</ol>
-			<?php endif; get_template_part('parts/paginate');?>
+			<?php endif; // get_template_part('parts/paginate');?>
 		</div>
 	</div>
 

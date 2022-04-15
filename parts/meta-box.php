@@ -79,6 +79,79 @@
     }
 }
 
+/* Social Buttons */
+/* The HTML <nav class="socialbuttons"> <a href="#1" class="socialbuttons_link socialbuttons_facebook"> <svg alt="name of icon"> <path fill="#000"></path> </svg> </a> </nav> */
+
+.socialbuttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socialbuttons_link svg {
+  width: 1.25em;
+}
+
+.socialbuttons_link {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  align-self: flex-start;
+  background-color: #ccc;
+  /* margin-bottom: 0.5em; */
+  margin-right: 0.5em;
+}
+
+.socialbuttons_link path {
+  fill: #fff;
+}
+
+.socialbuttons_facebook {
+  background-color: #3b579d;
+}
+
+.socialbuttons_twitter {
+  background-color: #1da1f2;
+}
+
+.socialbuttons_linkedin {
+  background-color: #0077b5;
+}
+
+.socialbuttons_pinterest {
+  background-color: #bd081c;
+}
+
+.socialbuttons_youtube {
+  background-color: #ff0000;
+}
+
+.socialbuttons_googleplus {
+  background-color: #db4437;
+}
+
+.socialbuttons_instagram {
+  background-color: #fb3958;
+}
+
+.socialbuttons_personal {
+  background-color: #9b6954;
+}
+
+.socialbuttons_email {
+  background-color: #999;
+}
+
+.socialbuttons_vimeo {
+  background-color: #1ab7ea;
+}
+
+.socialbuttons_tumblr {
+  background-color: #36465d;
+}
 
 
 </style>
