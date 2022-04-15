@@ -494,116 +494,6 @@ width: 100%;
 }
 
 
-/* Call Out Module 
-
-<nav class="ncallout"> 
-<div class="ncallout_bgimage"></div>
-<div class="ncontain">
-  <div class="ncallout_content">
-    <p>Some text...</p>
-  </div> 
-  <div class="ncallout_button">
-    <a href="#" class="ncbutton">Call Now</a>
-  </div>
-</div> 
-</nav>
-
-*/
-
-.ncallout {
---bg-color:crimson;
---text-color:#fff;
---box-padding:3rem 0;
-
---text-size:1em;
---text-align:left;
---text-weight:400;
-
---button-width:30%;
---button-min-width: 200px;
---button-radius: 50px;
---button-text-weight: 600;
-
---button-color:#fff;
---button-text-color:#000;
-
---button-color-hover:#000;
---button-text-color-hover:#fff;
-
---content-width: calc(100% - var(--button-width));
---contain-max-width:1400px;
---bg-opacity:0.3;
-}
-
-.ncallout{ 
-font-size:var(--text-size);
-font-weight:var(--text-weight);
-color:var(--text-color);
-background-color: var(--bg-color);
-padding: var(--box-padding);
-position: relative;
-}
-
-.ncallout_bgimage {
-position: absolute;
-width:100%; height:100%;
-left: 0; top:0;
-background-size:cover;
-background-position: center;
-background-repeat: no-repeat;
-z-index: 1;
-opacity:var(--bg-opacity);
-}
-
-.ncallout .ncontain {
-  display: grid;
-  grid-template-columns: minmax(125px, var(--content-width)) minmax(125px, var(--button-width));
-  grid-gap:var(--gap);
-  max-width:var(--contain-max-width);
-  position: relative;
-  z-index: 3;
-}
-
-.ncallout_content > :last-child {
-margin-bottom:0;
-}
-
-.ncallout_content {
-text-align:var(--text-align);
-}
-
-.ncallout_button .ncbutton {
-  background-color: var(--button-color);
-  color: var(--button-text-color);
-  padding: var(--button-padding, 0.75em 1em);
-  border-radius: var(--button-radius, 50px);
-  min-width:var(--button-min-width, 200px);
-  font-weight: var(--button-text-weight, 600);
-
-  text-align: center;
-  white-space: nowrap;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.ncallout_button .ncbutton:hover {
-  background-color: var(--button-color-hover);
-  color: var(--button-text-color-hover);
-}
-
-/*
-@media(max-width:600px){
-.ncallout .ncontain {
-  grid-template-columns:1fr;
-  --padding:3rem 0;
-  --text-align:center;
-}
-}
-*/
-
 /* Hero Module 
 
 <section class="nchero nchero-bottom">
@@ -717,84 +607,6 @@ text-align:var(--text-align);
 }
 
 
-/* NC Left Heading 
-
-<section class="ncleft">
-<div class="ncontain">
-  <header class="ncleft_heading">
-    <h3>Lightness strikes again.</h3>
-  </header>
-  <div class="ncleft_content">
-    <p>...</p>
-  </div>
-</div>
-</section>
-
-*/
-
-.ncleft img,
-.nctext img {
-  max-width: 100%;
-  height: auto;
-}
-
-.ncleft figure, 
-.nctext figure { 
-  width: auto !important;
-  margin:0;
-  margin-bottom:var(--gap);
-}
-
-.ncleft {
---box-padding: 3em 0;
---box-text-color:#000;
---box-bg-color:#fff;
---content-max-width:1400px;
-
---hd-size:3em;
---hd-weight:normal;
---hd-line-height:normal;
---hd-color:#000;
---hd-text-case:uppercase;
---hd-gap:3em;
---widths: 1fr 4fr;
-}
-
-.ncleft {
-padding:var(--box-padding);
-color:var(--box-text-color);
-background:var(--box-bg-color);
-}
-
-
-.ncleft .ncontain {
-display:grid;
-grid-gap:var(--hd-gap);
-grid-template-columns:var(--widths);
-max-width:var(--content-max-width);
-}
-
-
-.ncleft_heading > * {
-font-size:var(--hd-size);
-line-height:var(--hd-line-height);
-color:var(--hd-color) !important;
-font-weight:var(--hd-weight);
-text-transform:var(--hd-text-case);
-margin-bottom:0;
-}
-
-/* Responsive
-
-@media(max-width:640px){
-.ncleft {
-  --widths:1fr;
-  --hd-gap:1.5rem;
-}
-}
-
-*/
-
 /* NC List 
 
 <div class="nclist">
@@ -857,6 +669,7 @@ margin-bottom:0;
 .nclist_after {
   margin-top:var(--gap);
 }
+
 
 /* NC Media 
 
@@ -2088,21 +1901,21 @@ cite:before { content:'\2014'; padding-right:0.3em }
 
 
 
-.formstyles input[type="radio"], 
-.formstyles input[type="checkbox"] {
+body.formstyles input[type="radio"], 
+body.formstyles input[type="checkbox"] {
   position: absolute;
   clip: rect(0,0,0,0);
 }
 
-.formstyles input[type="radio"] + label, 
-.formstyles input[type="checkbox"] + label {
+body.formstyles input[type="radio"] + label, 
+body.formstyles input[type="checkbox"] + label {
   padding-left: 0 !important;
   margin-left: 0 !important;
   font-weight: normal !important
 }
 
-.formstyles input[type="radio"] + label:before, 
-.formstyles input[type="checkbox"] + label:before {
+body.formstyles input[type="radio"] + label:before, 
+body.formstyles input[type="checkbox"] + label:before {
   position:relative;
   margin-right: 1rem;
   left: 3px;
@@ -2111,13 +1924,13 @@ cite:before { content:'\2014'; padding-right:0.3em }
   font-family: 'ncicon';
 }
 
-.formstyles input[type="checkbox"] + label:before { content: '\ea53'; }
+body.formstyles input[type="checkbox"] + label:before { content: '\ea53'; }
 
-.formstyles input[type="checkbox"]:checked + label:before { content: '\ea52'; }
+body.formstyles input[type="checkbox"]:checked + label:before { content: '\ea52'; }
 
-.formstyles input[type="radio"] + label:before { content: '\ea56'; }
+body.formstyles input[type="radio"] + label:before { content: '\ea56'; }
 
-.formstyles input[type="radio"]:checked + label:before { content:'\ea55'; }
+body.formstyles input[type="radio"]:checked + label:before { content:'\ea55'; }
 
 /* For Gravity Forms */
 
