@@ -89,6 +89,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 		<?php echo '#'.$id; ?> {
 			background: <?php echo get_field('nav_bar_color') ?: "#fff"; ?>;
+			transition:0.5s;
 		}
 
 		<?php echo '#'.$id; ?> .ncmenu {
@@ -105,7 +106,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 		<?php echo '#'.$id; ?>.ncmenu-sticky {
 			position: sticky;
-			top:-1px;
+			top:0;
 			z-index: 200;
 		}
 
@@ -155,10 +156,23 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php if($sticky):?> 
 		<script id="ncmenu-scroll-script">
-			jQuery(window).scroll(function() {
-				if (jQuery(this).scrollTop() > 1)	{ jQuery('<?php echo "#".$id; ?>').addClass("ncmenu-sticky");	}
-				else { jQuery('<?php echo "#".$id; ?>').removeClass("ncmenu-sticky");	}
-			});
+			// When the user scrolls the page, execute myFunction
+			window.onscroll = function() {myFunction()};
+
+			// Get the navbar
+			var navbar = document.getElementById("<?php echo $id; ?>");
+
+			// Get the offset position of the navbar
+			var sticky = navbar.offsetTop;
+
+			// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+			function myFunction() {
+				if (window.pageYOffset >= sticky) {
+					navbar.classList.add("ncmenu-stuck")
+				} else {
+					navbar.classList.remove("ncmenu-stuck");
+				}
+			} 
 		</script>
 	<?php endif; ?>
 

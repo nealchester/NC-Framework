@@ -169,6 +169,20 @@ function nc_block_posts_meta(){
 
 }
 
+// Inner Content Block
+function nc_inner_blocks(int $hlevel = 1) {
+    $template = array(
+        array('core/heading', array(
+            'level' => $hlevel,
+            'content' => 'Click to edit title',
+        )),
+        array( 'core/paragraph', array(
+                'content' => 'Insert some text here... Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+        ))
+    );
+    
+    return'<InnerBlocks template="'.esc_attr( wp_json_encode( $template ) ).'" />';
+}
 
 
 ?>

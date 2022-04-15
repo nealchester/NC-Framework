@@ -52,7 +52,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
+                    "placeholder": "Info added here will not display",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -94,7 +94,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "<h3>Optional title<\/h3><p>Add some text...<\/p>",
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1,
@@ -187,7 +187,7 @@
                 "ncolumns-standard": "Standard",
                 "ncolumns-borders": "Borders"
             },
-            "default_value": "ncolumns-standard",
+            "default_value": "ncolumns-borders",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -213,7 +213,7 @@
                 "ncolumns-auto": "Auto",
                 "ncolumns-flow": "Flow"
             },
-            "default_value": "ncolumns-auto",
+            "default_value": "ncolumns-fixed",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -241,7 +241,7 @@
                 "ncolumns-4": "4",
                 "ncolumns-5": "5"
             },
-            "default_value": "ncolumns-3",
+            "default_value": "ncolumns-2",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -446,5 +446,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636491109
+    "show_in_rest": 0,
+    "modified": 1650051706
 }

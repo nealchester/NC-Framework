@@ -85,10 +85,13 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	<?php endif;?>
 
 		<div class="ncontain">
-			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>			
-				<?php if($content) { echo $content; } else { echo'<h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetuer 
+			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+
+				<?php echo nc_inner_blocks(); ?>
+
+				<?php /* if($content) { echo $content; } else { echo'<h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetuer 
 				adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et 
-				magnis dis parturient montes, nascetur ridiculus mus.</p><p><a class="btn btn-outline" style="color:'.$t_color.';" href="#null">Button</a></p>'; } ?>
+				magnis dis parturient montes, nascetur ridiculus mus.</p><p><a class="btn btn-outline" style="color:'.$t_color.';" href="#null">Button</a></p>'; } */ ?>
 			</div>
 		</div>
 

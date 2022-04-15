@@ -116,7 +116,7 @@
                 "zoom-out-left": "zoom-out-left",
                 "zoom-out-right": "zoom-out-right"
             },
-            "default_value": "fade-up",
+            "default_value": false,
             "allow_null": 1,
             "multiple": 0,
             "ui": 1,
@@ -345,5 +345,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649891092
+    "modified": 1650051869
 }

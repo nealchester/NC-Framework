@@ -12,7 +12,7 @@ function nc_columns_block() {
             'render_callback'   => 'nc_columns_block_markup',
             'category'          => 'layout',
             //'icon'              => 'format-image',
-            'mode'              => 'edit',
+            'mode'              => 'preview',
             'keywords'          => array('columns', 'column' ),
 			'post_types'        => array('post', 'page'),
 			'align'             => 'full',
@@ -74,12 +74,15 @@ function nc_columns_block_markup( $block, $content = '', $is_preview = false ) {
 			<div class="ncolumns nc_content_block_main<?php if($columns && $clayout == 'ncolumns-fixed') { echo ' '.$columns; } echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>">
 			
 			<?php while( have_rows('columns') ): the_row(); 
-			$image = get_sub_field('image');?>
+			$image = get_sub_field('image');
+			$ccontent = get_sub_field('column_content') ?: '<h3>Optional title</h3><p>Add some text...</p>';
+			?>
 
 			<div class="ncolumns_col ncolumns_col-<?php echo get_row_index(); ?>">
+			
 				<?php if($image && $imgp == 'before') { echo '<div class="ncolumns_image">'.wp_get_attachment_image( $image, 'medium').'</div>'; }; ?>
-				<div class="ncolumns_content"><?php the_sub_field('column_content');?></div>
-				<?php if($image && $imgp == 'after') { echo '<div class="ncolumns_image">'.wp_get_attachment_image( $image, 'medium').'</div>'; }; ?>
+				<div class="ncolumns_content"><?php echo $ccontent; ?></div>
+				<?php if($image && $imgp == 'after') { echo '<div class="ncolumns_image">'.wp_get_attachment_image( $image, 'medium').'</div>'; };  ?>
 			</div>
 
 			<?php endwhile; ?>

@@ -20,6 +20,7 @@ function nc_split_block() {
 									'align' => array( 'wide', 'full' ), 
 									'mode' => true,
 									'multiple' => true,
+									'jsx' => true,
 									),
         ));
 }
@@ -77,7 +78,8 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		</figure>
 		<div class="ncsplit_content">
 			<div class="ncsplit_contentcontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate();?>>
-				<?php if ($split_content) { echo $split_content; } else { echo'<h2>Heading 2</h2><p>Paragraph Text...</p>'; };?>
+				<?php /* if ($split_content) { echo $split_content; } else { echo'<h2>Heading 2</h2><p>Paragraph Text...</p>'; }; */?>
+				<?php echo nc_inner_blocks(2); ?>
 			</div>
 		</div>
 	</section>
