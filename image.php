@@ -1,3 +1,5 @@
+<?php wp_enqueue_style( 'nc-image' ); ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> id="pagetop">
 <head>

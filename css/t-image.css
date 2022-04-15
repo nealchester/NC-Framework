@@ -1,0 +1,90 @@
+/* Attachment Page */
+
+body.attachment {
+  background: #222; color:rgba(255,255,255,0.7);
+}
+
+.attachment_image {
+  display:block;
+  margin:0 auto var(--gap);
+}
+
+.attachment_content {
+  --width-max:600px;
+}
+
+.attachment_title {
+  color:#fff;
+  font-size:var(--txt-medium);
+  font-weight: bold;
+}
+
+.attachment_excerpt {
+  color:#fff;
+}
+
+.attachment_back .btn {
+  background-color:#444;
+  padding:0.5em 0;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachment_back .btn:before {
+  content:'\e901';
+  font-family: 'ncicon';
+  padding-right:0.5em;
+  font-weight: normal;
+  font-size:0.9em;
+}
+
+.attachment_back {
+  margin-bottom:3em;
+}
+
+.attachment_link {
+  font-size: var(--txt-small);
+  margin-top: -1.5em;
+}
+
+.attachment_link a {
+  color:#fff;
+  border-bottom:solid 1px rgba(255,255,255,0.5);
+}
+
+.attachment_nav {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--gap);
+  border-top: solid 1px #ddd;
+  padding-bottom:var(--gap);
+}
+
+.attachment_nav img {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  display: block;
+}
+
+.attachment_nav a {
+  display: block;
+  padding: 0 0.5em;
+}
+
+.attachment_nav a:after {
+  display: block;
+  padding-top: 0.5em;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.attachment_prev a:after {
+  content: 'Prev Image';
+}
+
+.attachment_next a:after {
+  content: 'Next Image';
+}

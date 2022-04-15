@@ -218,99 +218,6 @@ body.home .nclogo a {
     }
 
 
-
-/* Attachment Page */
-
-body.attachment {
-    background: #222; color:rgba(255,255,255,0.7);
-}
-
-.attachment_image {
-    display:block;
-    margin:0 auto var(--gap);
-}
-
-.attachment_content {
-    --width-max:600px;
-}
-
-.attachment_title {
-    color:#fff;
-    font-size:var(--txt-medium);
-    font-weight: bold;
-}
-
-.attachment_excerpt {
-    color:#fff;
-}
-
-.attachment_back .btn {
-    background-color:#444;
-    padding:0.5em 0;
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.attachment_back .btn:before {
-    content:'\e901';
-    font-family: 'ncicon';
-    padding-right:0.5em;
-    font-weight: normal;
-    font-size:0.9em;
-}
-
-.attachment_back {
-    margin-bottom:3em;
-}
-
-.attachment_link {
-    font-size: var(--txt-small);
-    margin-top: -1.5em;
-}
-
-.attachment_link a {
-    color:#fff;
-    border-bottom:solid 1px rgba(255,255,255,0.5);
-}
-
-.attachment_nav {
-    display: flex;
-    justify-content: center;
-    padding-top: var(--gap);
-    border-top: solid 1px #ddd;
-    padding-bottom:var(--gap);
-}
-
-.attachment_nav img {
-    width: 100px;
-    height: 75px;
-    object-fit: cover;
-    display: block;
-}
-
-.attachment_nav a {
-    display: block;
-    padding: 0 0.5em;
-}
-
-.attachment_nav a:after {
-    display: block;
-    padding-top: 0.5em;
-    font-size: 0.7em;
-    text-align: center;
-}
-
-.attachment_prev a:after {
-    content: 'Prev Image';
-}
-
-.attachment_next a:after {
-    content: 'Next Image';
-}
-
-
 /* WP Header Image */
 
 .wp-bannerimage {
@@ -411,47 +318,7 @@ body.attachment {
 
 
 
-/* Listings */
 
-.listings .ncard { 
-    --card-padding: 0;
-    --card-margin-bottom:3em;
-    --card-bg-color: #fff;
-    --card-bg-color-hover: #fff;
-    --card-flex-direction: row;
-    --card-border: none;
-    --card-border-hover: none;
-    --card-bshadow: none;
-    --image-width: 30%;
-    --image-height: 70%;
-    --text-padding: 1.5em;
-    --text-size: 1em;
-    --text-color: #000;
-    --text-color-hover: #000;
-    --trans-speed: 0.3s;
-}
-
-.listings .ncard_title { font-weight:bold; text-transform:uppercase; }
-.listings .ncard_meta { color:#999;}
-
-.listings .ncard_readmore { 
-    display:inline-flex; 
-    align-items: center; 
-    border-bottom:solid 1px var(--link-color);
-    text-transform: uppercase;
-    font-size:var(--txt-small);
-    font-weight: 500;
-}
-
-@media(max-width:768px){
-	.listings .ncard {
-		--card-flex-direction:column;
-		--image-width:100%;
-		--image-height:50%;
-		--text-size:0.8em;
-        --text-padding:1em;
-    }
-}
 
 
 /* Next Previous Links */

@@ -1,4 +1,5 @@
-<?php get_template_part('parts/header');?>
+<?php wp_enqueue_style( 'nc-archives' );
+get_template_part('parts/header');?>
 
 <?php get_template_part('parts/the-title'); ?>
 

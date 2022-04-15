@@ -1,0 +1,190 @@
+/* NC Card 
+
+<div class="ncard">
+<a class="ncard_link" href="#">
+  <div class="ncard_container">
+    <div class="ncard_image">
+      <div class="ncard_imgcon">
+        <img class="ncard_img" src="" alt="" />
+      </div>
+    </div>
+    <div class="ncard_text">
+      <!-- Everything in here is up to the creator -->
+      <b class="ncard_pretext">Read Next &rarr;</b>
+      <div class="ncard_title">Is God mad at you for not going to church?</div>
+      <!-- end creative HTML -->
+    </div>
+  </div>
+</a>
+</div>
+
+
+*/
+
+.ncard {
+  --card-padding:0;
+  --card-margin-bottom: 0;
+  --card-bg-color:#fff;
+  --card-bg-color-hover:#fff;
+  --card-flex-direction:row;
+  --card-border: solid 1px #ddd;
+  --card-border-hover: solid 1px #aaa;
+  --card-bshadow: none;
+  
+  --image-width:30%;
+  --image-height:70%;
+  --text-padding:1em;
+  
+  --border-radius: 5px;
+  --pretext-color:currentColor;
+  
+  --text-size:1em;
+  --text-color: #000;
+  --text-color-hover: #000;
+  
+  --trans-speed:0.3s ease-in-out;
+  
+  }
+  
+  .ncard { 
+    width:100%; 
+    max-width:100%; 
+    position:relative; 
+    margin-bottom:var(--card-margin-bottom);
+   }
+  
+  .ncard_link {
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  }
+  
+  .ncard_container {
+  display:flex;
+  position:relative;
+  background:var(--card-bg-color);
+  padding:var(--card-padding);
+  flex-direction:var(--card-flex-direction);
+  border:var(--card-border);
+  box-shadow:var(--card-bshadow);
+  transition:var(--trans-speed);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  }
+  
+  .ncard:hover .ncard_container {
+  background:var(--card-bg-color-hover);
+  border:var(--card-border-hover);
+  }
+  
+  .ncard_image {
+  flex-basis:var(--image-width);
+  min-width:var(--image-width);
+  overflow:hidden;
+  background-color: #eee;
+  }
+  
+  .ncard_imgcon {
+    padding-top:var(--image-height);
+    width:100%;
+    height:var(--image-height);
+    min-height:100%;
+    display:block;
+    position:relative;
+  }
+  
+  .ncard_img {
+    position:absolute;
+    object-fit:cover;
+    top:0; left:0;
+    display:block;
+    width:100%;
+    height:100%;
+    transform:scale(1);
+    transition:var(--trans-speed);
+  }
+  
+  .ncard:hover .ncard_img {
+    transform:scale(1.4);
+  }
+  
+  .ncard_text {
+  display:flex;
+  flex-grow:1;
+  flex-direction:column;
+  justify-content:center;
+  font-size:var(--text-size);
+  color:var(--text-color);
+  padding:var(--text-padding);
+  transition:var(--trans-speed);
+  min-width: 0; /* This is needed if you use truncated content within a flexbox */
+  }
+  
+  .ncard:hover .ncard_text {
+  color:var(--text-color-hover);
+  }
+  
+  /* NC Card box */
+  
+  .ncard_box {
+  --box-padding: 3em 0;
+  --box-text-color: #000;
+  --bg-color: #fff;
+  --contain-max-width: 1400px;
+  }
+  
+  .ncard_box {
+  padding: var(--box-padding);
+  color: var(--box-text-color);
+  background: var(--bg-color);
+  }
+  
+  .ncard_box .ncontain {
+  max-width: var(--contain-max-width);
+  }
+  
+  .ncard_after {
+  margin-top:var(--gap);
+  }
+
+/* Listings */
+
+.listings .ncard { 
+  --card-padding: 0;
+  --card-margin-bottom:3em;
+  --card-bg-color: #fff;
+  --card-bg-color-hover: #fff;
+  --card-flex-direction: row;
+  --card-border: none;
+  --card-border-hover: none;
+  --card-bshadow: none;
+  --image-width: 30%;
+  --image-height: 70%;
+  --text-padding: 1.5em;
+  --text-size: 1em;
+  --text-color: #000;
+  --text-color-hover: #000;
+  --trans-speed: 0.3s;
+}
+
+.listings .ncard_title { font-weight:bold; text-transform:uppercase; }
+.listings .ncard_meta { color:#999;}
+
+.listings .ncard_readmore { 
+  display:inline-flex; 
+  align-items: center; 
+  border-bottom:solid 1px var(--link-color);
+  text-transform: uppercase;
+  font-size:var(--txt-small);
+  font-weight: 500;
+}
+
+@media(max-width:768px){
+.listings .ncard {
+  --card-flex-direction:column;
+  --image-width:100%;
+  --image-height:50%;
+  --text-size:0.8em;
+      --text-padding:1em;
+  }
+}
