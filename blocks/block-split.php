@@ -50,7 +50,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 	$split_content = get_field('split_content');
 	$parallax = get_field('parallax');
 
-	$bg_color = get_field('bg_color') ?: 'transparent';
+	$bg_color = get_field('bg_color') ?: "#333";
 	$text_color = get_field('text_color') ?: 'inherit';
 	$padding = get_field('padding') ?: '3rem';
 

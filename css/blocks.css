@@ -357,135 +357,87 @@ width: 100%;
 /* Accordion 
 
 <div class="nccordion_box">
+  <div class="ncontain">
+    <div class="nccordion_before">...</div>
 
-<div class="nccordion_before">...</div>
+    <div class="nccordion">
 
-<div class="nccordion">
-  <h2 class="nccordion_header">Header</h2>
-  <div class="nccordion_content">
-    <p>Some Text...</p>
+      <details>
+        <summary class="nccordion_header">Header</summary>
+        <div class="nccordion_content">
+          <p>Some Text...</p>
+        </div>
+      </details>
+
+      <details>
+        <summary class="nccordion_header">Header</summary>
+        <div class="nccordion_content">
+        <p>Some Text...</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="nccordion_before">...</div>
   </div>
-
-  <h2 class="nccordion_header">Header</h2>
-  <div class="nccordion_content">
-    <p>Some Text...</p>
-  </div>
-</div>
-
-<div class="nccordion_before">...</div>
-
 </div>
 
 */
-
-.nccordion,
-#wrapper .schema-faq {
-  --heading-size:1em;
-  --heading-text-color:inherit;
-  --heading-border:solid 1px #ddd;
-  --heading-padding:0.75em;
-  --heading-p-color:inherit;
-  --heading-bg-color: transparent;
-  --heading-bg-color-hover:transparent;
-  --heading-bg-color-active:transparent;
-  --transition:0.5s;
-  
-  --content-padding:1.5em;
-  --content-bg-color:transparent;
-  --content-text-color:inherit;
-  --acc-space:0.75em;         
-}
 
 .nccordion_box {
   --box-bg-color:none;
   --box-text-color:inherit;
   --box-padding: 3em 0;
-  background:var(--box-bg-color);
+  background-color:var(--box-bg-color);
   color:var(--box-text-color);
   padding:var(--box-padding);
 }
 
-.nccordion_header,
-#wrapper .schema-faq-question { 
-  color:var(--heading-text-color);
-  font-size:var(--heading-size); 
+.nccordion_details {
+  border:solid 1px #ddd;
+  background-color: #fff;
+}
+
+.nccordion_details:not(:last-child) {
+  margin-bottom: calc( var(--gap) / 2);
+}
+
+.nccordion_header { 
   cursor:pointer; 
-  border:var(--heading-border); 
-  padding:var(--heading-padding);
+  padding:0.75em 2em;
   margin-bottom:0;
   position:relative;
-  transition:var(--transition);
-  background:var(--heading-bg-color);
-  margin-top:0;
   display: flex;
   align-items:flex-start;
-  justify-content:space-between
+  font-weight:bold;
 }
 
-.nccordion_header:not(:first-of-type),
-#wrapper .schema-faq-question:not(:first-of-type) {
-  margin-top:var(--acc-space);
+.nccordion_header::-webkit-details-marker {
+  display:none;
 }
 
-.nccordion_header:after,
-#wrapper .schema-faq-question:after {
-    transition: var(--transition);
+.nccordion_header:before {
     content: '\e902';
     font-family: 'ncicon';
-    transform:rotate(90deg);
+    transform:rotate(0deg);
+    transition:0.3s;
     line-height: normal;
-    color: var(--heading-p-color);
-    margin-left:0.5em;
-    position: relative;
+    margin:0.5em;
+    position: absolute;
+    left:0.75rem;
     font-size:0.7em;
-    top: 0.2em;
-    right: 0.2em;
 }
 
-.nccordion_header.active:after,
-#wrapper .schema-faq-question.active:after {
-  transform: rotate(270deg)
+.nccordion_details[open] .nccordion_header:before {
+  transform: rotate(90deg)
 }
 
-.nccordion_header.active,
-#wrapper .schema-faq-question.active { 
-  background:var(--heading-bg-color-active);
-  border-bottom: solid 1px transparent
-}
-.nccordion_header:hover,
-#wrapper .schema-faq-question:hover { 
-  background:var(--heading-bg-color-hover); 
+.nccordion_content {
+  padding: 0 2em var(--gap);
 }
 
-.nccordion_header + .nccordion_content,
-#wrapper .schema-faq-question + .schema-faq-answer {
-  transition: var(--transition);
-  max-height:0;
-  overflow:hidden;
-  border:var(--heading-border); 
-  border-top:0;
-  padding:var(--content-padding);
-  padding-top:0; padding-bottom:0;
-  visibility:hidden;
-  color:var(--content-text-color);
-}
-
-.nccordion_content,
-.schema-faq-answer {
-  background:var(--content-bg-color);
-}
-
-.nccordion_header.active + .nccordion_content,
-#wrapper .schema-faq-question.active + .schema-faq-answer {
-  max-height:1500px;
-  overflow:visible;
-  padding:var(--content-padding);
-  opacity:1;
-  visibility:visible;
-}
-
-.nccordion_header.active + .nccordion_content > *:last-child  {
-  margin-bottom:0;
+.nccordion_content :last-child {
+  margin-bottom: 0;
 }
 
 .nccordion_rmore {
@@ -639,11 +591,13 @@ width: 100%;
 
 .nclist {
   --box-padding:3rem 0;
-  --bg-color:#eee;
+  --bg-color:inherit;
   --box-text-color:#333;
   --contain-max-width:1400px;
+  --min-width-cols:180px;
+  --col-gap:2em;
   padding:var(--box-padding);
-  background:var(--bg-color);
+  background-color:var(--bg-color);
   color:var(--box-text-color);
 }
 
@@ -656,8 +610,8 @@ width: 100%;
   padding:0; 
   margin:0;
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width-cols), 1fr));
+  grid-gap: var(--col-gap);
 }
 
 .nclist_link {
@@ -839,7 +793,7 @@ grid-template-columns: auto var(--media-width);
 width:100%;
 display:flex; 
 min-height:var(--box-min-height);
-background:var(--bg-color);
+background-color:var(--bg-color);
 }
 
 .ncsplit_image,

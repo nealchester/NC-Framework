@@ -127,7 +127,7 @@
                     "key": "field_6053ae493c9f0",
                     "label": "",
                     "name": "content",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -137,10 +137,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 4,
-                    "new_lines": "wpautop"
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         },
@@ -212,56 +212,6 @@
             "step": 50
         },
         {
-            "key": "field_5f14d80b1c2c8",
-            "label": "Heading type",
-            "name": "heading",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "h1": "h1",
-                "h2": "h2",
-                "h3": "h3",
-                "h4": "h4",
-                "h5": "h5",
-                "h6": "h6"
-            },
-            "default_value": "h3",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5f14d80b1c6bc",
-            "label": "Span screen edge on mobile",
-            "name": "mobile",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 600,
-            "placeholder": 600,
-            "prepend": "",
-            "append": "px",
-            "min": "",
-            "max": "",
-            "step": ""
-        },
-        {
             "key": "field_5f14dce338a44",
             "label": "Box Settings",
             "name": "box_settings",
@@ -321,5 +271,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636126224
+    "show_in_rest": 0,
+    "modified": 1650149160
 }

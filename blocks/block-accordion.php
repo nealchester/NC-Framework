@@ -21,6 +21,7 @@ function nc_accordion_block() {
                   'mode' => true,
                   'multiple' => true,
 									),
+						'enqueue_script' => get_template_directory_uri() . '/js/accordion.js',			
         ));
 }
 
@@ -73,15 +74,16 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 
 			<div class="nccordion nc_content_block_main">
       <?php while ( $queryfaqs->have_posts() ) : $queryfaqs->the_post(); ?>
-
-      <?php echo '<'.$hd; ?> class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?><?php echo '</'.$hd.'>'; ?>  
-      <div class="nccordion_content">
-        <?php if($content == 'truncate') :?>
-        <?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore"><?php _e('Read more','nc-framework');?></a>
-        <?php else :?>
-        <?php the_content(get_the_ID());?>  
-        <?php endif;?>
-      </div>
+			<details class="nccordion_details">
+				<summary class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?></summary>  
+				<div class="nccordion_content">
+					<?php if($content == 'truncate') :?>
+					<?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore"><?php _e('Read more','nc-framework');?></a>
+					<?php else :?>
+					<?php the_content(get_the_ID());?>  
+					<?php endif;?>
+				</div>
+			</details>
       
 			<?php endwhile; ?>
 			</div>
@@ -101,12 +103,13 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 					$acc_heading = get_sub_field('heading');
 					$acc_content = get_sub_field('content');
 				?>
+					<details class="nccordion_details">
+						<summary class="nccordion_header"><?php echo $acc_heading; ?></summary>  
+						<div class="nccordion_content">
+							<?php echo $acc_content; ?>
+						</div>
+					</details>
 
-      <<?php echo $hd; ?> class="nccordion_header"><?php echo $acc_heading; ?></<?php echo $hd; ?>>  
-      <div class="nccordion_content">
-				<?php echo $acc_content; ?>
-      </div>
-      
 			<?php endwhile; ?>
 			</div>
 
@@ -119,37 +122,6 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 <style id="<?php echo $id; ?>-block-css">
 
 <?php nc_box_styles($id); ?>
-
-
-#wpwrap <?php echo '#'.$id; ?> .nccordion_header + .nccordion_content {
-  max-height:1500px;
-  overflow:visible;
-  padding:var(--content-padding);
-  opacity:1;
-  visibility:visible;
-}
-
-@media(max-width:<?php echo $mobile.'px'; ?>){
-
-	<?php echo '#'.$id; ?> .nccordion {
-		margin-left: var(--gapn);
-    margin-right: var(--gapn);
-	}
-
-	<?php echo '#'.$id; ?> .nccordion_header,
-	<?php echo '#'.$id; ?> .nccordion_content {
-		border-left:0;
-		border-right:0;
-		padding-left:var(--gap);
-		padding-right:var(--gap);
-	}
-
-	<?php echo '#'.$id; ?> .nccordion_header:not(:first-of-type) {
-		border-top:none;
-		margin-top:0;
-	}
-
-}
 
 <?php nc_block_custom_css(); ?>
 

@@ -147,85 +147,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_60318980adf20",
-            "label": "Content",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_60318a89adf23",
-            "label": "Content",
-            "name": "content",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "<h2>Heading<\/h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<\/p><p><a class=\"btn\" href=\"#\">Button<\/a><\/p>",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_6031898cadf21",
-            "label": "Text Align",
-            "name": "text_align",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "Left",
-                "right": "Right",
-                "center": "Center"
-            },
-            "default_value": "center",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_60318a58adf22",
-            "label": "Text Color",
-            "name": "text_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#ffffff",
-            "enable_opacity": false,
-            "return_format": "string"
-        },
-        {
             "key": "field_5ed7f0e793384",
             "label": "Image Options",
             "name": "",
@@ -579,5 +500,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636490164
+    "show_in_rest": 0,
+    "modified": 1650149829
 }

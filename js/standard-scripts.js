@@ -124,16 +124,7 @@ jQuery(".mpanel .menu-item:not(.menu-item-has-children) a").click(function(){
 			jQuery(this).addClass('current');
 			jQuery("#"+tab_id).addClass('current');
 
-		})		
-
-
-		// Accordion
-
-		jQuery( ".nccordion_header, .schema-faq-question" ).on('click',function() {
-		  'use strict';			
-		  jQuery( this ).toggleClass( "active" );
-		});	
-		
+		})
 		
 
 		// Responsive Videos

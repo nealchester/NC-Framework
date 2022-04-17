@@ -22,6 +22,6 @@ wp_footer(); ?>
 </html>
 
 <!-- 
-Designed and built on the "NC Framework" (www.nealchester.com)
+Developed on the "NC Framework" (www.nealchester.com)
 Powered by WordPress (www.wordpress.org)
 -->

@@ -405,8 +405,8 @@ body.woocommerce .ncontent_main > * {
 
 /* Link colors */
 
-.ncontent_main > p a:not([class]),
-.ncontent_main > li a:not([class]) { 
+.ncontent_main p a:not([class]),
+.ncontent_main li a:not([class]) { 
     color:currentColor; 
     text-decoration:none; 
     transition:0.3s; 
@@ -414,11 +414,11 @@ body.woocommerce .ncontent_main > * {
     font-weight: 500;
 }
 
-.ncontent_main > p a:not([class]):after,
-.ncontent_main > li a:not([class]):after { 
+.ncontent_main p a:not([class]):after,
+.ncontent_main li a:not([class]):after { 
     content:''; 
     height:1px; 
-    background:var(--link-color); 
+    background: currentColor; 
     width:100%;
     transition:0.5s; 
     display:block; 
@@ -427,15 +427,14 @@ body.woocommerce .ncontent_main > * {
     left:0;
 }
 
-.ncontent_main > p a:not([class]):hover:after,
-.ncontent_main > li a:not([class]):hover:after { 
-    color:var(--link-color-hover); 
+.ncontent_main p a:not([class]):hover:after,
+.ncontent_main li a:not([class]):hover:after { 
     width:0;
 }
 
-.ncontent_main > p a:not([class]):hover,
-.ncontent_main > li a:not([class]):hover {
-    color:var(--link-color)
+.ncontent_main p a:not([class]):hover,
+.ncontent_main li a:not([class]):hover {
+    color:currentColor
 }
 
 

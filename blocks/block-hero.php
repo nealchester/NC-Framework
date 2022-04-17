@@ -53,7 +53,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	$o_blend = get_field('overlay_blend_mode') ?: 'normal';
 	$img_blend = get_field('image_blend_mode') ?: 'normal';
 	$t_color = get_field('text_color') ?: '#fff';
-	$t_align = get_field('text_align') ?: 'center';
+	$t_align = get_field('text_align') ?: 'left';
 	$shadow = get_field('drop_shadow') ?: '0 2px 6px rgba(0,0,0,0.3)';
 	$content_width = get_field('max_content_width') ?: '700px';
 	$contain_width = get_field('max_container_width') ?: '1400px';
