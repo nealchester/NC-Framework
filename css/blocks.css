@@ -1621,7 +1621,7 @@ p.has-background {
 .wp-block-quote.is-large, 
 .wp-block-quote.is-style-large {
 	position:relative;
-	padding-left: 2em;
+	padding-left: 2rem;
     font-weight: normal;
     border:none;
 }
@@ -1641,7 +1641,7 @@ p.has-background {
 	content:'\201c';
   font-family: 'Times New Roman', Times, serif;
 	display:block;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: bold;
 	position:absolute;
   top:-0.3em;
