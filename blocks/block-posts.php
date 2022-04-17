@@ -110,7 +110,7 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<div class="ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' ncolumns_total-'.$total_items;?>">
 			<?php while ( $querylatest->have_posts() ) : $querylatest->the_post();?>
-				<div <?php post_class('ncard ncard-'.$i++); ?> id="<?php echo 'post-'.get_the_ID();?>">
+				<div <?php post_class('ncard ncard-'.$i++); ?>>
 					<a class="ncard_link" href="<?php echo get_permalink(); ?>">
 						<div class="ncard_container">
 							<?php if($showthumb):?>
