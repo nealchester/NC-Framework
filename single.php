@@ -6,7 +6,7 @@
 <?php // The title
 get_template_part('parts/the-title');?>
 
-<?php // get_template_part('parts/social-share-links'); ?>
+<?php // get_template_part('parts/meta-social-share-links'); ?>
 
 <?php // Page Info
 get_template_part('parts/meta-avatar');?>
