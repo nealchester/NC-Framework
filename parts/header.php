@@ -22,7 +22,9 @@
 
 			<?php 
 				wp_nav_menu (array( 
-				'container' => '', 
+				'container' => 'nav', 
+				'container_class' => 'header_nav',
+				'container_aria_label' => 'primary navigation',
 				'theme_location' => 'header-menu',
 				'menu_class'     => 'header_menu', 
 				'menu_id' => 'header_menu',

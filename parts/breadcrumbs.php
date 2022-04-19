@@ -1,6 +1,6 @@
 <?php if ( function_exists('yoast_breadcrumb') && is_singular() && !is_attachment() ):?>
   
-<p class="yoast-breadcrumbs"><?php yoast_breadcrumb();?></p>
+<nav class="yoast-breadcrumbs"><?php yoast_breadcrumb();?></nav>
 
 <style>
 
@@ -16,6 +16,7 @@
 
 .yoast-breadcrumbs a {
     color: inherit;
+    font-weight: inherit;
 }
 
 .yoast-breadcrumbs .breadcrumb_last { 
