@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if( function_exists('acf_add_local_field_group') ):
 
@@ -4358,42 +4358,6 @@ if( function_exists('acf_add_local_field_group') ):
     'title' => 'Block: NC Popup',
     'fields' => array(
       array(
-        'key' => 'field_60a17695cfb25',
-        'label' => 'Content',
-        'name' => '',
-        'type' => 'accordion',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'open' => 0,
-        'multi_expand' => 0,
-        'endpoint' => 0,
-      ),
-      array(
-        'key' => 'field_60a176a4cfb26',
-        'label' => 'Content',
-        'name' => 'content',
-        'type' => 'wysiwyg',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '<h2>Hello</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>',
-        'tabs' => 'all',
-        'toolbar' => 'full',
-        'media_upload' => 1,
-        'delay' => 0,
-      ),
-      array(
         'key' => 'field_60a1770fcfb28',
         'label' => 'Box Styles',
         'name' => '',
@@ -4637,7 +4601,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
-    'show_in_rest' => false,
+    'show_in_rest' => 0,
   ));
   
   acf_add_local_field_group(array(

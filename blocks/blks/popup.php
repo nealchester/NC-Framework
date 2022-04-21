@@ -20,6 +20,7 @@ function nc_popup_block() {
               'align' => array( 'wide', 'full' ), 
               'mode' => true,
               'multiple' => false,
+              'jsx' => true,
               ),
         ));
 }
@@ -52,15 +53,14 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
     $width = get_field('max_width') ?: '700';
     $height = get_field('min_height') ?: '400';
 ?>
-	<?php 
-	wp_enqueue_style('nc-blocks-popup');
-	?>
+	<?php wp_enqueue_script('nc-blocks-popup');	?>
   
 <div id="<?php echo $id; ?>" class="ncpopup_overlay<?php echo esc_attr($className); ?>">
   <div class="ncpopup">
     <div class="ncpopup_container">
       <div class="ncpopup_content">
-        <?php echo $content; ?>
+        <?php // echo $content; ?>
+        <?php echo nc_inner_blocks(2); ?>
       </div>
     </div>
     <button class="ncpopup_close">

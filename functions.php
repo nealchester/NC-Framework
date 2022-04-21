@@ -4,7 +4,7 @@
 get_template_part('customizer/_controls');
 
 // Load Gutenberg (Folder)
-get_template_part('blocks/setup');
+get_template_part('blocks/block-setup');
 
 
 // ----------------------------------------------------------- //

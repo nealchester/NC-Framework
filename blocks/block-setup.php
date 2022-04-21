@@ -13,13 +13,13 @@
 if(function_exists('get_field')){ 
 
     // ACF Fields
-    get_template_part('blocks/fields');
+    get_template_part('blocks/block-fields');
 
     // Helper Functions
-    get_template_part('blocks/functions');
+    get_template_part('blocks/block-functions');
 
     // Register / enqueue CSS and JS
-    get_template_part('blocks/register');
+    get_template_part('blocks/block-assets');
 
     // ACF Blocks
     get_template_part('blocks/blks/accordion');
