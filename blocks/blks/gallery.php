@@ -63,8 +63,13 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
+	<?php 
+	wp_enqueue_style('nc-blocks-gallery');
+	wp_enqueue_style('nc-blocks-columns'); 
+	?>
+
 	<div id="<?php echo $id; ?>" class="ncgallery_box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 		
 		  <?php nc_before_content(); ?>
 
@@ -85,7 +90,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 						<div class="ncgallery_size">
 							<?php echo wp_get_attachment_image( $image['ID'], $thumb_size, '', array( 
 								"class" => "ncgallery_image", 
-								"style" => nc_image_focus($image['ID'])
+								"style" => nc_block_image_focus($image['ID'])
 								) ); ?>
 						</div>
 					<?php if($link2img == 'image_page'):?></a>
@@ -117,6 +122,10 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	--img-height:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
 	--min-col-width: <?php echo $thumb_width.'px'; ?>;
 }
+
+<?php echo '#wpbody #'.$id; ?> .ncgallery_image {
+		height:100%;
+	}
 
 /* Responsive */
 <?php if($breakpoint && $breaklayout == 'ncolumns-scroll'):?>
@@ -185,8 +194,8 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 <?php if( get_field('link_to_image') == 'image_lightbox') :?>
 
 	<?php 
-		wp_enqueue_script( 'magnific', false);
-		wp_enqueue_style( 'magnific-styles', false); 
+		wp_enqueue_script('nc-blocks-magnify'); 
+		wp_enqueue_style('nc-blocks-magnify');
 	?>
 
 	<script id="<?php echo 'gallery_'.$id.'_script'; ?>">

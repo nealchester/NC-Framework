@@ -6,9 +6,6 @@ get_template_part('customizer/_controls');
 // Load Gutenberg (Folder)
 get_template_part('blocks/setup');
 
-// Components
-get_template_part('components/nc_hero_component');
-
 
 // ----------------------------------------------------------- //
 

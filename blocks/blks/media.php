@@ -14,15 +14,15 @@ function nc_media_block() {
             //'icon'              => 'format-image',
             'mode'              => 'preview',
             'keywords'          => array('video', 'image' ),
-			'post_types'        => array('post', 'page'),
-			'align'             => 'full',
-			'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									'jsx' => true,
-									),
-        ));
+						'post_types'        => array('post', 'page'),
+						'align'             => 'full',
+						'supports'          => array( 
+							'align' => array( 'wide', 'full' ), 
+							'mode' => true,
+							'multiple' => true,
+							'jsx' => true,
+							),
+						));
 }
 
 /* This displays the block */
@@ -62,8 +62,13 @@ function nc_media_block_markup( $block, $content = '', $is_preview = false ) {
 	$padding = get_field('padding');
 
 ?>
+
+	<?php 
+	wp_enqueue_style('nc-blocks-media');
+	?>
+
 	<div id="<?php echo $id; ?>" class="ncmedia<?php if($position) { echo' '.$position; }; echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 
 			<div class="ncmedia_media">
 				<?php if($link ==!'' && $image):?>
@@ -89,7 +94,7 @@ function nc_media_block_markup( $block, $content = '', $is_preview = false ) {
 				</div>
 
 				<?php else: ?>
-				<img class="ncpic_image" src="<?php nc_fallbackimage(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
+				<img class="ncpic_image" src="<?php nc_block_fallback_image(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
 				<?php endif;?>
 			</div>
 

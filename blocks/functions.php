@@ -9,7 +9,7 @@ function nc_block_custom_css(){
 
 
 // Scroll Animation Function
-function sal_animate(){
+function nc_animate(){
     
     $sal_effect = get_field('sal_effect');
     $sal_duration = get_field('sal_duration');
@@ -134,6 +134,19 @@ function nc_box_styles( $block_id =''){
 
 }
 
+
+// For Gallery Images
+function nc_block_image_focus($image) {
+    if( function_exists('get_field') && get_field("featured_image_focus", $image) ){ 
+        
+        $img_focus = get_field("featured_image_focus", $image);
+        return 'object-position:'.$img_focus.'; transform-origin:'.$img_focus.';'; 
+    }
+    else {
+        return 'object-position:center; transform-origin:center;';	
+    }
+}
+
 // Block Posts Meta
 function nc_block_posts_meta(){
 
@@ -184,5 +197,11 @@ function nc_inner_blocks(int $hlevel = 1) {
     return'<InnerBlocks template="'.esc_attr( wp_json_encode( $template ) ).'" />';
 }
 
-
-?>
+// Fallback Image
+function nc_block_fallback_image() {
+    if( get_theme_mod('fallback_image')) {
+        echo get_theme_mod('fallback_image');
+    } else {
+        echo get_theme_file_uri('/blocks/img/default-image.png');
+    }
+}

@@ -1,0 +1,176 @@
+/* Gallery 
+
+<div class="ncolumns_box">
+<div class="ncontain">  
+<div class="ncolumns_before"><h2>Heading for content</h2></div>
+
+<div class="ncolumns ncgallery ncgallery-capslide">
+
+<figure class="ncgallery_item">
+  <a class="ncgallery_link" href="#">
+    <div class="ncgallery_size">
+      <img class="ncgallery_image" src="https://picsum.photos/600/500/" alt="">
+    </div>
+    <figcaption class="ncgallery_caption">
+      <span class="ncgallery_title">Caption for the image</span>
+      <span class="ncgallery_desc">Desc</span>
+    </figcaption>
+  </a>
+</figure>
+
+....
+
+</div>
+
+<div class="ncolumns_after"></div>
+
+</div>
+</div>
+
+*/
+
+.ncgallery {
+  --img-height:70%;
+  --min-col-width: 250px;
+  --img-border: none;
+  --img-radius:0;
+  --img-drop-shadow:none;
+  }
+  
+  .ncgallery_box {
+  --box-padding: 3rem 0;
+  --text-color: #ccc;
+  --bg-color: #222;
+  --contain-max-width:1400px;
+  }
+  
+  .ncgallery_box {  
+  background:var(--bg-color);
+  color:var(--text-color);
+  padding: var(--box-padding);
+  }
+  
+  .ncgallery_box .ncontain {
+  max-width: var(--contain-max-width);
+  }
+  
+  .ncgallery_item {
+  display:block;
+  margin:0; padding:0;
+  position:relative;
+  overflow:hidden;
+  filter:drop-shadow(var(--img-drop-shadow));
+  }
+  
+  .ncgallery_link {
+  text-decoration:none;
+  color:inherit;
+  display: block;
+  height: 100%;
+  }
+  
+  .ncgallery_size {
+  width:100%;
+  padding-top:var(--img-height);
+  height:100%;
+  position: relative;
+  border-radius:var(--img-radius);
+  }
+  
+  .ncgallery_size:after {
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  display:block;
+  border:var(--img-border);
+  border-radius:var(--img-radius);
+  z-index: 10;
+  }
+  
+  
+  .ncgallery_image {
+  display:block;
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:center center;
+  transform:scale(1);
+  position:absolute;
+  left:0;
+  top:0;
+  transition:0.6s;
+  }
+  
+  .ncgallery_item:hover .ncgallery_image { transform: scale(1.2); }
+  
+  .ncolumns-mason .ncgallery_size {
+  padding-top:0;
+  }
+  
+  .ncolumns-mason .ncgallery_image {
+  position:static;
+  height:auto;
+  }
+  
+  .ncgallery_caption {
+  position:absolute;
+  width:102%;
+  left:-1%;
+  bottom:0;
+  padding:3rem 0.75rem 0.75rem;
+  color:#fff;
+  font-size:0.65em;
+  text-align:center;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
+  letter-spacing:0.08em;
+  line-height: 1.5;
+  }
+  
+  .ncgallery-capbelow .ncgallery_caption { color:inherit }
+  
+  .ncgallery_caption > *:last-child {
+  margin-bottom:0;
+  }
+  
+  /* Modifier: Caption Slide */
+  
+  .ncgallery-capslide:not(.ncgallery-capbelow) .ncgallery_caption {
+  bottom:-100%;
+  opacity:0;
+  transition:0.2s;
+  }
+  
+  .ncgallery-capslide:not(.ncgallery-capbelow) .ncgallery_item:hover .ncgallery_caption,
+  .ncgallery-capoverlay .ncgallery_item .ncgallery_caption {
+    bottom: -1px;
+    opacity:1;
+  }
+  
+  /* Modifier: Captions below */
+  
+  .ncgallery-capbelow .ncgallery_caption {
+    position:relative;
+    width:100%;
+    padding:0.5rem;
+    background:none;
+  }
+  
+  .ncgallery-capbelow .ncgallery_size {
+    position:relative;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .ncgallery_caption:empty { display: none }
+
+  
+  .ncgallery_caption .ncgallery_title a,
+  .ncgallery_caption .ncgallery_desc a {
+    position: relative;
+    z-index: 10;
+    color:inherit;
+    border-bottom:solid 1px;
+  }

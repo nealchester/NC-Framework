@@ -20,8 +20,7 @@ function nc_accordion_block() {
                   'align' => array( 'full' ), 
                   'mode' => true,
                   'multiple' => true,
-									),
-						'enqueue_script' => get_template_directory_uri() . '/js/accordion.js',			
+									),			
         ));
 }
 
@@ -52,8 +51,13 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 
 ?>
 
+	<?php 
+	wp_enqueue_style('nc-blocks-accordion');
+	wp_enqueue_script('nc-blocks-accordion'); 
+	?>
+	
 	<div id="<?php echo $id; ?>" class="nccordion_box<?php echo esc_attr($className); ?>">
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 		
 		<?php nc_before_content(); ?>
 			
@@ -126,6 +130,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 <?php nc_block_custom_css(); ?>
 
 </style>
-    <?php
+
+
+<?php
 }
 ?>

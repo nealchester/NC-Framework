@@ -53,35 +53,36 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 	$max_width = get_field('max_width') ?: '1000';
 
 ?>
-	<div id="<?php echo $id; ?>" class="alignfull <?php if($sticky){ echo'ncmenu-sticky'; } echo nc_block_attr(); ?>">
-	<div class="ncontain">
-		<?php nc_before_content();?>
-	<ul class="ncmenu">
-	<?php if( have_rows('menu') ): ?>
 
-		<?php while( have_rows('menu') ): the_row(); 
-			$link = get_sub_field('link');
-			$link_url = $link['url'];
-			$link_title = $link['title'];
-			$link_target = $link['target'] ? $link['target'] : '_self';
-		?>
-		<li class="ncmenu_li">
-			<a class="ncmenu_link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target);?>"><?php echo esc_html($link_title); ?></a>
-		</li>
-		<?php endwhile; ?>
-	<?php else: ?>
+	<nav id="<?php echo $id; ?>" class="ncmenu_nav alignfull <?php if($sticky){ echo'ncmenu-sticky'; } echo nc_block_attr(); ?>" aria-label="On page navigation">
+		<div class="ncontain">
+			<?php nc_before_content();?>
+		<ul class="ncmenu">
+		<?php if( have_rows('menu') ): ?>
 
-		<li class="ncmenu_li"><a class="ncmenu_link ncmenu_link-current" href="#100">Current</a></li>
-		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">Services</a></li>
-		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">Testimonials</a></li>
-		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">About</a></li>
-		<li class="ncmenu_li"><a class="ncmenu_link" href="#100">Contact</a></li>
+			<?php while( have_rows('menu') ): the_row(); 
+				$link = get_sub_field('link');
+				$link_url = $link['url'];
+				$link_title = $link['title'];
+				$link_target = $link['target'] ? $link['target'] : '_self';
+			?>
+			<li class="ncmenu_item">
+				<a class="ncmenu_link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target);?>"><?php echo esc_html($link_title); ?></a>
+			</li>
+			<?php endwhile; ?>
+		<?php else: ?>
 
-	<?php endif; ?>
-	</ul>
-	<?php nc_after_content();?>
-	</div>
-	</div>
+			<li class="ncmenu_item ncmenu_active"><a class="ncmenu_link" href="#100">Current</a></li>
+			<li class="ncmenu_item"><a class="ncmenu_link" href="#100">Services</a></li>
+			<li class="ncmenu_item"><a class="ncmenu_link" href="#100">Testimonials</a></li>
+			<li class="ncmenu_item"><a class="ncmenu_link" href="#100">About</a></li>
+			<li class="ncmenu_item"><a class="ncmenu_link" href="#100">Contact</a></li>
+
+		<?php endif; ?>
+		</ul>
+		<?php nc_after_content();?>
+		</div>
+	</nav>
 
 	<style id="<?php echo $id; ?>-block-css">
 
@@ -173,6 +174,17 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 					navbar.classList.remove("ncmenu-stuck");
 				}
 			} 
+
+			/*
+			Add a class of "active" to an item when it's clicked in a menu.
+			*/
+
+			jQuery(function () {
+				jQuery(".ncmenu_item").click(function () {
+					jQuery(".ncmenu_item").addClass("ncmenu_active").not(this).removeClass("ncmenu_active");
+				});
+			});	
+
 		</script>
 	<?php endif; ?>
 

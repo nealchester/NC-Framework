@@ -1,0 +1,111 @@
+/* Hero Module 
+
+<section class="nchero nchero-bottom">
+  <picture class="nchero_pc">
+    <img class="nchero_image" src="https://picsum.photos/1200/1000?image=1010">
+  </picture>
+  <div class="ncontain">
+    <div class="nchero_content">
+      <h1>Hero image</h1>
+      <p>...</p>
+      <button class="button">Learn More</button>
+    </div>
+  </div>
+</section>
+
+*/
+
+.nchero { 
+  --overlay-opacity:0.5;
+  --overlay-color:#000;
+  --overlay-blend-mode: normal;
+  
+  --image-focus:center center;
+  --image-blend-mode: normal;
+  
+  --text-color: #fff;
+  --text-align:center;
+  --max-container-width: 1400px;
+  
+  --content-dropshadow: 0 2px 6px rgba(0,0,0,0.3);
+  --content-max-width: 600px;
+  --content-position-x:center;
+  --content-position-y:center;
+  --content-padding: 3rem 0;
+  
+  --box-min-height:100vh;
+  --box-bgcolor: #000;
+  
+  }
+  
+  .nchero {  
+    overflow:hidden;
+    position:relative;
+    background: var(--box-bgcolor);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: var(--image-focus);
+  }
+  
+  .nchero:after { 
+    content:'';
+    display:block;
+    position:absolute;
+    bottom:0;
+    left:0; 
+    right:0;
+    z-index:2;
+    width:100%; 
+    height:100%;
+    opacity:var(--overlay-opacity); 
+    background: var(--overlay-color);
+    mix-blend-mode: var(--overlay-blend-mode);
+  }
+  
+  .nchero_image,
+  .nchero_pc {
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:block;
+  }
+  
+  .nchero_image {
+    object-fit:cover;
+    object-position:var(--image-focus);
+    mix-blend-mode: var(--image-blend-mode);
+  }
+  
+  @keyframes heroImagefadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 1;}
+  }
+  
+  .nchero_image-fadein {
+    animation: heroImagefadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+  }
+  
+  .nchero .ncontain { 
+    display: flex;
+    flex-direction: column;
+    min-height:var(--box-min-height);
+    max-width: var(--max-container-width);
+    justify-content:var(--content-position-y);
+    align-items:var(--content-position-x);
+  }
+  
+  .nchero_content { 
+    color:var(--text-color);
+    max-width:var(--content-max-width); 
+    padding: var(--content-padding);
+    filter: drop-shadow(var(--content-dropshadow));
+    text-align:var(--text-align);
+    position:relative;
+    z-index:10;
+  }
+  
+  .nchero_content > :last-child {
+    margin-bottom:0
+  }

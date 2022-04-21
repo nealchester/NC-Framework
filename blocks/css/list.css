@@ -1,0 +1,64 @@
+/* NC List 
+
+<div class="nclist">
+<div class="ncontain">
+  <div class="nclist_before"></div>
+
+  <ul class="nclist_group">
+
+    <li class="nclist_item">
+      <a class="nclist_link" href="#">
+        <div class="nclist_box">
+          <img src="background-image.jpg" alt="" class="nclist_bgimg" />
+          <div class="nclist_imgcontain">
+            <img src="https://picsum.photos/200/300/" class="nclist_image" />
+          </div>
+          <div class="nclist_label">Label of Item</div>
+        </div>
+      </a>
+    </li>
+
+    <li>...</li>
+    
+  </ul>
+
+  <div class="nclist_after"></div>
+</div>
+</div>
+
+*/
+
+.nclist {
+  --box-padding:3rem 0;
+  --bg-color:inherit;
+  --box-text-color:#333;
+  --contain-max-width:1400px;
+  --min-width-cols:180px;
+  --col-gap:2em;
+  padding:var(--box-padding);
+  background-color:var(--bg-color);
+  color:var(--box-text-color);
+}
+
+.nclist .ncontain {
+  max-width:var(--contain-max-width);
+}
+
+.nclist_group {
+  list-style-type:none;
+  padding:0; 
+  margin:0;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width-cols), 1fr));
+  grid-gap: var(--col-gap);
+}
+
+.nclist_link {
+  display:block;
+  text-decoration:none;
+}
+
+
+.nclist_after {
+  margin-top:var(--gap);
+}

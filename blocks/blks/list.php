@@ -14,14 +14,14 @@ function nc_list_block() {
             //'icon'              => 'format-image',
             'mode'              => 'edit',
             'keywords'          => array('image list', 'icon list', 'list' ),
-			'post_types'        => array('post', 'page'),
-			'align'             => 'full',
-			'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									),
-        ));
+						'post_types'        => array('post', 'page'),
+						'align'             => 'full',
+						'supports'          => array( 
+								'align' => array( 'wide', 'full' ), 
+								'mode' => true,
+								'multiple' => true,
+								),
+						));
 }
 
 /* This displays the block */
@@ -46,8 +46,12 @@ function nc_list_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
+	<?php 
+	wp_enqueue_style('nc-blocks-list');
+	?>
+
 	<div id="<?php echo $id; ?>" class="nclist<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 		
 		<?php nc_before_content(); ?>
 

@@ -1,0 +1,115 @@
+/* NC Media 
+
+<div class="ncmedia">
+<div class="ncontain">
+  <div class="ncmedia_media">
+    <!--
+    <a class="ncmedia_link" href="#" target="_blank">
+      <img class="ncmedia_image" src="https://picsum.photos/1000/700?random" alt="A picture" />
+    </a> 
+    -->
+    <div class="ncmedia_video">
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+    </div>
+  </div>
+  <div class="ncmedia_text">
+    <h2>Heading 2</h2><p>...</p>
+  </div>
+</div>
+</div>
+
+*/
+
+.ncmedia {
+  --bg-color:#eee;
+  --text-color:#333;
+  --box-padding: 0;
+  
+  --content-width:1000px;
+  
+  --text-align:left;
+  --align-items:center;
+  
+  --media-width: 40%;
+  --media-gap: 3rem;
+  
+  --image-height: auto;
+  --image-focus: center center;  
+  }
+  
+  .ncmedia {
+  padding: var(--box-padding);
+  color:var(--text-color);
+  background:var(--bg-color);
+  }
+  
+  .ncmedia .ncontain {
+  display:grid;
+  grid-template-columns:var(--media-width) auto;
+  grid-gap:var(--media-gap);
+  align-items:var(--align-items);
+  max-width:var(--content-width);
+  }
+  
+  .ncmedia_image {
+  max-width:100%;
+  display:block;
+  Width:100%;
+  object-fit:cover;
+  object-position:var(--image-focus);
+  height:var(--image-height);
+  }
+  
+  .ncmedia_video { 
+    position: relative; 
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .ncmedia_video iframe,
+  .ncmedia_video object,
+  .ncmedia_video embed,
+  .ncmedia_video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:none;
+    margin:0;
+  }
+  
+  .ncmedia_text {
+    text-align:var(--text-align);
+  }
+  
+  .ncmedia_text > :last-child {
+    margin-bottom:0;
+  }
+  
+  /* Modifier: Right */
+  
+  .ncmedia-right .ncontain {
+  grid-template-columns: auto var(--media-width);
+  }
+  
+  .ncmedia-right .ncmedia_media { order:2 }
+  
+  
+  /* Responsive 
+  @media(max-width:640px){
+  
+  .ncmedia .ncontain {
+    grid-template-columns:auto;
+    grid-gap: 1.5rem;
+  }
+  
+  .ncmedia-right .ncmedia_media { order:0 }
+  .ncmedia_image { height:auto }
+  .ncmedia_text { padding-bottom: 3rem; }
+  
+  }
+  
+  */

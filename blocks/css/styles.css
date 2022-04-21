@@ -1,0 +1,13 @@
+:root {
+  --gap: 1.5rem; 
+  --gapn: -1.5rem; 
+  --width-standard:800px;
+  --width-wide:1000px;
+  --width-max:1400px;
+}
+
+.ncontain {
+  max-width: var(--width-max);
+  margin-inline: auto;
+  width: calc(100% - (var(--gap) * 2));
+}

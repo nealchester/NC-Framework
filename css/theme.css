@@ -407,7 +407,6 @@ body.woocommerce .ncontent_main > * {
 
 .ncontent_main p a:not([class]),
 .ncontent_main li a:not([class]) { 
-    color:currentColor; 
     text-decoration:none; 
     transition:0.3s; 
     position:relative; 

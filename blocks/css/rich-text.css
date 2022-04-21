@@ -1,0 +1,103 @@
+/* NC Text 
+
+<div class="nctext nctext-dropcap">
+<div class="ncontain">
+
+  <div class="nctext_before">
+    <h2>A Heading</h2>
+  </div>
+  
+  <div class="nctext_paragraphs">
+    <p>...</p>
+  </div>
+  
+  <div class="nctext_after">
+    <p>Something else to follow</p>
+  </div>
+  
+</div>
+</div>
+
+
+*/
+
+.nctext {
+  --box-padding: 3em 0;
+  --box-text-color:inherit;
+  --box-bg-color:#fff;
+  
+  --column-gap: 3rem;
+  --column-width: 220px;
+  --column-count: auto;
+  --column-rule:1px solid;
+  
+  --text-align: left;
+  --text-indent: var(--gap, 1.5rem);
+  --text-width: 1000px;
+  
+  --cap-size:5em;
+  --cap-color:inherit;
+  --cap-font: var(--serif, 'Domine');
+  }
+  
+  
+  .nctext {
+  background:var(--box-bg-color);
+  padding:var(--box-padding);
+  color:var(--box-text-color);
+  }
+  
+  .nctext .ncontain {
+  max-width: var(--text-width);
+  }
+  
+  .nctext_paragraphs p { margin-top:0; }
+  
+  .nctext .ncontain > *:last-child {
+  margin-bottom:0;
+  }
+  
+  .nctext_after {
+  margin-top:var(--gap, 1.5rem);
+  }
+  
+  /* Modifier for columns 
+  
+  If columns, must have class ".nctext-cols" added to parent to work
+  */
+  
+  .nctext-cols .nctext_paragraphs {
+  column-gap: var(--column-gap);
+  column-width: var(--column-width);
+  column-count:var(--column-count);
+  column-rule:var(--column-rule);
+  text-align:var(--text-align);
+  }
+  
+  @media(min-width:535px){
+    .nctext-cols .nctext_paragraphs p {
+        margin-bottom:0;
+    }
+    .nctext-cols .nctext_paragraphs > p:not(:first-of-type) {
+      text-indent:var(--text-indent);
+    }
+  }
+  /* Modifier: Adds a dropcap to the first paragraph */
+  
+  .nctext-dropcap .nctext_paragraphs > p:first-of-type:not(:focus)::first-letter,
+  p.has-drop-cap:not(:focus)::first-letter,
+  .dropcap {
+      float: left;
+      position: relative;
+      top: 0;
+      margin: 0 !important;
+      font-size: var(--capsize, 5em);
+      line-height: var(--cap-l-height, 0.9);
+      padding-right: var(--cap-padding, 1.5rem);
+      font-family: var(--cap-font, var(--serif));
+      font-weight: var(--cap-weight, normal);
+      height: var(--cap-height, 1em);
+      font-family: var(--cap-font);
+      color: var(--cap-color);
+  }
+  

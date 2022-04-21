@@ -17,11 +17,11 @@ function nc_posts_block() {
 			'post_types'        => array('post', 'page'),
 			'align'             => 'full',
 			'supports'          => array( 
-									'align' => array( 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									),
-        ));
+				'align' => array( 'full' ), 
+				'mode' => true,
+				'multiple' => true,
+				),
+			));
 }
 
 /* This displays the block */
@@ -74,8 +74,13 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
+	<?php 
+	wp_enqueue_style('nc-blocks-posts'); 
+	wp_enqueue_style('nc-blocks-columns'); 
+	?>
+
 	<div id="<?php echo $id; ?>" class="ncard_box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 		
 		<?php nc_before_content(); ?>
 			
@@ -117,11 +122,11 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 							<div class="ncard_image">
 								<?php if(get_the_post_thumbnail(get_the_ID())):?>
 								<div class="ncard_imgcon">
-								<?php echo get_the_post_thumbnail( get_the_ID(), $size, array( "class" => "ncard_img", "style" => nc_image_focus(get_the_ID()) ) ); ?>
+								<?php echo get_the_post_thumbnail( get_the_ID(), $size, array( "class" => "ncard_img", "style" => nc_block_image_focus(get_the_ID()) ) ); ?>
 								</div>
 								<?php else:?>
 								<div class="ncard_imgcon">
-								<img class="ncard_img" src="<?php nc_fallbackimage(); ?>" alt="default image" />
+								<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
 								</div>	
 								<?php endif; ?>
 							</div>
@@ -163,6 +168,10 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 	--bottom-box-padding:<?php echo $bpadding; ?>; /* Bottom padding of the box */
 	--min-col-width: <?php if($column_min_width){ echo $column_min_width.'px'; } else { echo'150px'; } ?>;
 }
+
+<?php echo '#wpbody #'.$id; ?> .ncard_img {
+		height:100%;
+	}
 
 /* Responsive */
 <?php if($breakpoint && $breaklayout == 'ncolumns-scroll'):?>

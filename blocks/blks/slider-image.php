@@ -4,24 +4,24 @@
 add_action('acf/init', 'nc_imgslider_block');
 function nc_imgslider_block() {
 
-        // register a items block
-        acf_register_block_type(array(
-            'name'              => 'nc_imgslider',
-            'title'             => __('NC Image Slider', 'nc-framework'),
-            'description'       => __('Image Slider', 'nc-framework'),
-            'render_callback'   => 'nc_imgslider_block_markup',
-						'category'          => 'layout',
-            //'icon'            => 'format-image',
-            'mode'              => 'edit',
-            'keywords'          => array('slider', 'images', 'gallery', 'sliders', 'slide' ),
-						'post_types'        => array('post', 'page'),
-						'align'             => 'full',
-						'supports'          => array( 
-								'align' => array( 'wide', 'full' ), 
-								'mode' => true,
-								'multiple' => true,
-						),
-        ));
+	// register a items block
+	acf_register_block_type(array(
+		'name'              => 'nc_imgslider',
+		'title'             => __('NC Image Slider', 'nc-framework'),
+		'description'       => __('Image Slider', 'nc-framework'),
+		'render_callback'   => 'nc_imgslider_block_markup',
+		'category'          => 'layout',
+		//'icon'            => 'format-image',
+		'mode'              => 'edit',
+		'keywords'          => array('slider', 'images', 'gallery', 'sliders', 'slide' ),
+		'post_types'        => array('post', 'page'),
+		'align'             => 'full',
+		'supports'          => array( 
+				'align' => array( 'wide', 'full' ), 
+				'mode' => true,
+				'multiple' => true,
+		),
+	));
 }
 
 /* This displays the block */
@@ -51,7 +51,7 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 ?>
 
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 			<?php nc_before_content(); ?>
 
 			<?php if( $slides ): ?>
@@ -75,7 +75,7 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 						<div class="splide__padding"></div>
 
 						<?php echo wp_get_attachment_image( $image['ID'], 'large', '', 
-						array('class' => 'splide__img', 'style' => nc_image_focus($image['ID'])
+						array('class' => 'splide__img', 'style' => nc_block_image_focus($image['ID'])
 						)); ?>
 
 						<?php if( $mdisplay && in_array('titles', $mdisplay) || $mdisplay && in_array('captions', $mdisplay) ):?>
@@ -181,15 +181,15 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 if( in_the_loop() ):?>
 
 	<?php
-			wp_enqueue_script('splide');
-			wp_enqueue_style( 'splide-styles');
+			wp_enqueue_style('nc-blocks-slider');
+			wp_enqueue_script('nc-blocks-slider');
 	?>
 
 		<?php if( get_field('link_to_image') == 'image_lightbox') :?>
 
 		<?php 
-			wp_enqueue_script( 'magnific', false);
-			wp_enqueue_style( 'magnific-styles', false); 
+			wp_enqueue_script('nc-blocks-magnify'); 
+			wp_enqueue_style('nc-blocks-magnify');
 		?>
 
 		<script id="<?php echo 'gallery_'.$id.'_script'; ?>">

@@ -4,24 +4,24 @@
 add_action('acf/init', 'nc_text_block');
 function nc_text_block() {
 
-        // register a items block
-        acf_register_block_type(array(
-            'name'              => 'nc_text',
-            'title'             => __('NC Text Box', 'nc-framework'),
-            'description'       => __('A text box', 'nc-framework'),
-            'render_callback'   => 'nc_text_block_markup',
-            'category'          => 'layout',
-            //'icon'              => 'format-image',
-            'mode'              => 'preview',
-            'keywords'          => array('text', 'paragraphs', 'text box' ),
-						'post_types'        => array('post', 'page', 'books'),
-						'align'             => 'full',
-						'supports'          => array( 
-								'align' => array( 'wide', 'full' ), 
-								'mode' => true,
-								'multiple' => true,
-								),
-        ));
+	// register a items block
+	acf_register_block_type(array(
+		'name'              => 'nc_text',
+		'title'             => __('NC Text Box', 'nc-framework'),
+		'description'       => __('A text box', 'nc-framework'),
+		'render_callback'   => 'nc_text_block_markup',
+		'category'          => 'layout',
+		//'icon'              => 'format-image',
+		'mode'              => 'preview',
+		'keywords'          => array('text', 'paragraphs', 'text box' ),
+		'post_types'        => array('post', 'page', 'books'),
+		'align'             => 'full',
+		'supports'          => array( 
+			'align' => array( 'wide', 'full' ), 
+			'mode' => true,
+			'multiple' => true,
+		),
+	));
 }
 
 /* This displays the block */
@@ -53,8 +53,13 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 	$cap_color = get_field('cap_color') ?: '#000';
 
 ?>
+
+<?php 
+	wp_enqueue_style('nc-blocks-rich-text');
+	?>
+
 	<section id="<?php echo $id; ?>" class="nctext<?php if($dropcap) { echo ' nctext-dropcap'; }; if($cc == '2' || $cc == '3') { echo' nctext-cols'; }; echo esc_attr($className); ?>">
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate(); ?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate(); ?>>
 		<?php nc_before_content(); ?>
 
 			<div class="nctext_paragraphs nc_content_block_main">

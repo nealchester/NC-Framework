@@ -324,3 +324,107 @@ fieldset legend {
     background-color: var(--selection-bgcolor, #222);
     color: var(--selection-textcolor, #fff);
 }
+
+
+
+/* Custom Radio and Checkbox input fields */
+
+/* --------- Form Controls using Fonts --------- */
+@font-face {
+    font-family: 'ncicon';
+    src:
+      url('../fonts/ncicon.ttf?phdj9n') format('truetype'),
+      url('../fonts/ncicon.woff?phdj9n') format('woff'),
+      url('../fonts/ncicon.svg?phdj9n#ncicon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  .ncicon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'ncicon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .ncicon-close:before {
+    content: "\e903";
+  }
+  .ncicon-arrow-back:before {
+    content: "\e901";
+  }
+  .ncicon-arrow-forward:before {
+    content: "\e902";
+  }
+  .ncicon-check-square:before {
+    content: "\e900";
+  }
+  .ncicon-checkbox-checked:before {
+    content: "\ea52";
+  }
+  .ncicon-checkbox-unchecked:before {
+    content: "\ea53";
+  }
+  .ncicon-radio-checked:before {
+    content: "\ea55";
+  }
+  .ncicon-radio-unchecked:before {
+    content: "\ea56";
+  }
+  .ncicon-reply:before {
+    content: "\e96a";
+  }
+  
+  
+  
+  
+  body.formstyles input[type="radio"], 
+  body.formstyles input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+  }
+  
+  body.formstyles input[type="radio"] + label, 
+  body.formstyles input[type="checkbox"] + label {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    font-weight: normal !important
+  }
+  
+  body.formstyles input[type="radio"] + label:before, 
+  body.formstyles input[type="checkbox"] + label:before {
+    position:relative;
+    margin-right: 1rem;
+    left: 3px;
+    font-size: 1em;
+    line-height: normal;
+    font-family: 'ncicon';
+  }
+  
+  body.formstyles input[type="checkbox"] + label:before { content: '\ea53'; }
+  
+  body.formstyles input[type="checkbox"]:checked + label:before { content: '\ea52'; }
+  
+  body.formstyles input[type="radio"] + label:before { content: '\ea56'; }
+  
+  body.formstyles input[type="radio"]:checked + label:before { content:'\ea55'; }
+  
+  /* For Gravity Forms */
+  
+  .gform_wrapper .gfield_checkbox li label, 
+  .gform_wrapper .gfield_radio li label {
+    max-width: 100%
+  }
+  
+  body .gform_wrapper span.gform_description {
+    width: 100%;
+  }  

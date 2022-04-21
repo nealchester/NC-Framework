@@ -48,7 +48,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 ?>
 
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 			<?php nc_before_content(); ?>
 
 			<?php if( have_rows('slides') ): // start slides ?>
@@ -145,8 +145,8 @@ body.wp-admin .splide__padding  {
 if( in_the_loop() ):?>
 
 <?php
-	wp_enqueue_script( 'splide', get_theme_file_uri('/js/splide/splide.js'), null, '2.3.9', true );
-	wp_enqueue_style( 'splide-css', get_theme_file_uri('/js/splide/splide.css'), null, null, null );
+	wp_enqueue_style('nc-blocks-slider');
+	wp_enqueue_script('nc-blocks-slider');
 ?>
 
 <script>

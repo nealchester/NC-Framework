@@ -50,8 +50,11 @@ function nc_divider_block_markup( $block, $content = '', $is_preview = false ) {
     $divstyle = get_field('divider_style');
 
 ?>
+	<?php 
+	wp_enqueue_style('nc-blocks-divider'); 
+	?>
 
-    <div id="<?php echo $id; ?>" class="ncdivider <?php echo ' '.$rotate.' '.$position; echo esc_attr($className);?>" <?php if($bgcolor):?>style="background:<?php echo $bgcolor; ?>"<?php endif?> <?php echo sal_animate().nc_block_attr();?>>
+    <div id="<?php echo $id; ?>" class="ncdivider <?php echo ' '.$rotate.' '.$position; echo esc_attr($className);?>" <?php if($bgcolor):?>style="background:<?php echo $bgcolor; ?>"<?php endif?> <?php echo nc_animate().nc_block_attr();?>>
 		<div class="ncdivider_container">
             <?php 
             if($customsvg) { echo $customsvg; }

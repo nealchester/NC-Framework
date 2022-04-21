@@ -14,13 +14,13 @@ function nc_singlelink_block() {
             //'icon'              => 'format-image',
             'mode'              => 'preview',
             'keywords'          => array('link', 'inline link' ),
-			'post_types'        => array('post', 'page'),
-			'align'             => '',
-			'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									),
+						'post_types'        => array('post', 'page'),
+						'align'             => '',
+						'supports'          => array( 
+							'align' => array( 'wide', 'full' ), 
+							'mode' => true,
+							'multiple' => true,
+							),
         ));
 }
 
@@ -53,7 +53,11 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 	if(get_field("before_title")) {	$before_text = '<strong>'.get_field("before_title").'</strong> '; }
 ?>
 
-	<div id="<?php echo $id; ?>" class="ncard ncard-singlelink<?php echo esc_attr($className); ?>" <?php echo sal_animate().nc_block_attr();?>>
+<?php 
+	wp_enqueue_style('nc-blocks-posts');
+	?>
+
+	<div id="<?php echo $id; ?>" class="ncard ncard-singlelink<?php echo esc_attr($className); ?>" <?php echo nc_animate().nc_block_attr();?>>
 
 	<?php if($type == 'internal' && $inlink ):?>
 
@@ -68,11 +72,11 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 					</div>
 					<?php elseif(get_the_post_thumbnail_url($inlink->ID)):?>
 					<div class="ncard_imgcon">
-						<?php echo get_the_post_thumbnail( $inlink->ID, 'medium', array( "class" => "ncard_img", "style" => nc_image_focus($inlink->ID) )); ?>
+						<?php echo get_the_post_thumbnail( $inlink->ID, 'medium', array( "class" => "ncard_img", "style" => nc_block_image_focus($inlink->ID) )); ?>
 					</div>
 					<?php else:?>
 					<div class="ncard_imgcon ncard-noimage">
-						<img class="ncard_img" src="<?php nc_fallbackimage(); ?>" alt="default image" />
+						<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
 					</div>
 					<?php endif; ?>
 				</div>
@@ -97,7 +101,7 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 					</div>
 					<?php else:?>
 					<div class="ncard_imgcon ncard-noimage">
-						<img class="ncard_img" src="<?php nc_fallbackimage(); ?>" alt="default image" />
+						<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
 					</div>
 					<?php endif; ?>
 				</div>

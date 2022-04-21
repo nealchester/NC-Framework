@@ -1,0 +1,90 @@
+/* Accordion 
+
+<div class="nccordion_box">
+  <div class="ncontain">
+    <div class="nccordion_before">...</div>
+
+    <div class="nccordion">
+
+      <details>
+        <summary class="nccordion_header">Header</summary>
+        <div class="nccordion_content">
+          <p>Some Text...</p>
+        </div>
+      </details>
+
+      <details>
+        <summary class="nccordion_header">Header</summary>
+        <div class="nccordion_content">
+        <p>Some Text...</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="nccordion_before">...</div>
+  </div>
+</div>
+
+*/
+
+.nccordion_box {
+  --box-bg-color:none;
+  --box-text-color:inherit;
+  --box-padding: 3em 0;
+  background-color:var(--box-bg-color);
+  color:var(--box-text-color);
+  padding:var(--box-padding);
+}
+
+.nccordion_details {
+  border:solid 1px #ddd;
+  background-color: #fff;
+}
+
+.nccordion_details:not(:last-child) {
+  margin-bottom: calc( var(--gap) / 2);
+}
+
+.nccordion_header { 
+  cursor:pointer; 
+  padding:0.75em 2em;
+  margin-bottom:0;
+  position:relative;
+  display: flex;
+  align-items:flex-start;
+  font-weight:bold;
+}
+
+.nccordion_header::-webkit-details-marker {
+  display:none;
+}
+
+.nccordion_header:before {
+    content: '\e902';
+    font-family: 'ncicon';
+    transform:rotate(0deg);
+    transition:0.3s;
+    line-height: normal;
+    margin:0.5em;
+    position: absolute;
+    left:0.75rem;
+    font-size:0.7em;
+}
+
+.nccordion_details[open] .nccordion_header:before {
+  transform: rotate(90deg)
+}
+
+.nccordion_content {
+  padding: 0 2em var(--gap);
+}
+
+.nccordion_content :last-child {
+  margin-bottom: 0;
+}
+
+.nccordion_rmore {
+  border-bottom:solid 1px #ccc;
+  font-weight: 500;
+}

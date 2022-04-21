@@ -1,0 +1,214 @@
+/* NC Split 
+
+<section class="ncsplit">
+<figure class="ncsplit_image">
+  <img class="ncsplit_pic" src="https://images.unsplash.com/" alt="">
+
+  <!-- Optional overlay content -->
+
+  <div class="ncsplit_overlay"></div>
+  <div class="ncsplit_imgcontent"><p>...</p></div>
+
+  <!-- End optional overlay content -->
+
+  <figcaption class="ncsplit_caption">A picture of a woman with brown red hair</figcaption>
+</figure>
+<div class="ncsplit_content">
+  <div class="ncsplit_contentcontain">
+    <h1>...</h1>
+    <p>...</p>
+  </div>
+</div>
+</section>
+
+*/
+
+.ncsplit {
+  --image-position: center center;
+  --text-color:#333;
+  --bg-color:#f2f2f2;
+  --text-space:3em;
+  --box-min-height:550px;
+  --content-max-width:450px;
+  --display-caption:block;
+  --caption-align: center;
+  --img-width: 50%;
+  
+  --image-content-padding: var(--gap);
+  --overlay-color:#000;
+  --opacity:0.3;
+  --text-horizontal: center;
+  --text-vertical: center;
+  --image-content-color:#fff;
+  
+  /* Global Variable */
+  --width-max: 1400px;
+  }
+  
+  .ncsplit { 
+  width:100%;
+  display:flex; 
+  min-height:var(--box-min-height);
+  background-color:var(--bg-color);
+  }
+  
+  .ncsplit_image,
+  .ncsplit_content { 
+  display:flex;
+  flex-grow:1;
+  flex-direction:column;
+  }
+  
+  .ncsplit_image { 
+  background-size:cover;
+  justify-content:flex-end;
+  overflow:hidden;
+  position:relative;
+  margin:0; padding:0; border:none;
+  flex-basis:var(--img-width);
+  }
+  
+  .ncsplit_pic {
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0; right:0; bottom:0; top:0;
+  max-width:100%;
+  object-fit:cover;
+  object-position:var(--image-position);
+  display:block;
+  }
+  
+  .ncsplit_caption {
+    position:absolute;
+    display:var(--display-caption);
+    width:100%;
+    color:#fff;
+    padding: calc(var(--gap,1.5rem) * 3) var(--gap, 1.5rem) calc( var(--gap) / 2 );
+    font-size:0.65em;
+    text-align:var(--caption-align);
+    background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+  }
+  
+  .ncsplit_content {
+   color:var(--text-color);
+   justify-content:center;
+   align-items:flex-start;
+   padding-right:var(--gap);
+   flex-basis: calc( 100% - var(--img-width) );
+  }
+  
+  .ncsplit_contentcontain { 
+  width:100%;
+  max-width: var(--content-max-width);
+  padding-left:var(--text-space);
+  padding-right:0;
+  }
+  
+  .ncsplit_contentcontain > :last-child {
+  margin-bottom: 0;
+  }
+  
+  /* Optional Image Overlay Content */
+  
+  .ncsplit_overlay,
+  .ncsplit_imgcontent {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  }
+  
+  .ncsplit_overlay {
+  background-color:var(--overlay-color);
+  opacity:var(--opacity);
+  }
+  
+  .ncsplit_imgcontent {
+  display: flex;
+  flex-direction: column;
+  padding:var(--image-content-padding); 
+  align-items: var(--text-horizontal);
+  justify-content: var(--text-vertical);
+  color:var(--image-content-color);
+  }
+  
+  /* Modifier Flip 
+   Change the position of the image
+  */
+  
+  .ncsplit-flip .ncsplit_content {
+  order:-1;
+  padding-left:var(--gap);
+  padding-right:0;
+  align-items:flex-end;
+  }
+  
+  .ncsplit-flip .ncsplit_contentcontain {
+  padding-right:var(--text-space);
+  padding-left:0;
+  }
+  
+  
+  /* Modifier: Center */
+  
+  .ncsplit-center .ncsplit_content{
+  align-items:center;
+  padding-left:0 !important;
+  padding-right:0 !important;  
+  }
+  
+  .ncsplit-center .ncsplit_contentcontain{
+  padding-left:0 !important;
+  padding-right:0 !important;
+  align-items:center;
+  text-align:center;
+  max-width: var(--content-max-width);
+  width:calc(100% - 2 * var(--gap));
+  }
+  
+  /* breakpoint stack 
+  
+  @media(max-width:640px){
+    .ncsplit {
+    flex-direction:column;
+    min-height:0;
+    }
+  
+    .ncsplit_image {
+    min-height:none;
+    width:100%;
+    }
+  
+    .ncsplit_pic {
+    position:static;
+    }
+  
+    .ncsplit_content {
+    padding:var(--gap) 0 !important;
+    display:block;
+    }
+  
+    .ncsplit_image, 
+    .ncsplit_content {
+    flex-basis: auto;
+    }
+  
+    .ncsplit_contentcontain {
+    max-width:var(--content-max-width);
+    width:calc(100% - 2 * var(--gap));
+    margin:0 auto;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    }
+  
+  
+  
+  /* Modifier: Make the image always stack on top 
+  .ncsplit-imagetop .ncsplit_image { order:1 }
+  .ncsplit-imagetop .ncsplit_content { order:2 }
+  
+  }
+  */

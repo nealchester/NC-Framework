@@ -1,0 +1,77 @@
+/* NC Divider 
+
+<div class="ncdivider ncdivider-overlaypreceding ncdivider-topleft">
+<div class="ncdivider_container">
+  <svg class="ncdivider_svg" xmlns="http://www.w3.org/2000/svg" width="1534" height="104" viewBox="0 0 1534 103">
+    <path d="M623,987.772l1534,104H623Z" transform="translate(-623 -987.772)" fill="#fff" class="ncdivider_color"/>
+  </svg>
+</div>
+</div>
+
+*/
+
+.ncdivider {
+  position:relative;
+  width:100%;
+  z-index: 3;
+  }
+  
+  .ncdivider_container {
+  width:100%;
+  left:0;
+  }
+  
+  .ncdivider_svg {
+  display:block;
+  width:100%;
+  height:auto;
+  transform-origin:center
+  }
+  
+  .ncdivider_color {
+  fill:#000
+  }
+  
+  /* 
+  Modifiers
+  Position options */
+  
+  .ncdivider-overlaynone .ncdivider_container {
+  position:static;
+  }
+  
+  .ncdivider-overlaypreceding .ncdivider_container {
+  position:absolute;
+  bottom:100%;
+  }
+  
+  .ncdivider-overlaysucceeding .ncdivider_container {
+  position:absolute;
+  top:100%;
+  z-index: 5;
+  }
+  
+  
+  /* 
+  Modifiers 
+  Rotating options */
+  
+  .ncdivider-topleft .ncdivider_svg {
+  /* point top left */
+  transform:scale(1, 1);
+  }
+  
+  .ncdivider-topright .ncdivider_svg {
+  /* point top right */
+  transform:scale(-1, 1);
+  }
+  
+  .ncdivider-bottomright .ncdivider_svg {
+  /* point bottom right */
+  transform:rotate(180deg);
+  }
+  
+  .ncdivider-bottomleft .ncdivider_svg {
+  /* point bottom left */
+  transform:rotate(180deg)scale(-1, 1);
+  }

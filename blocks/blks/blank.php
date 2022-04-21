@@ -45,7 +45,7 @@ function nc_blank_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 	<section id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-        <div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+        <div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
        
         <?php nc_before_content(); ?>
 

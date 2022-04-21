@@ -1,0 +1,176 @@
+/*
+This file is not to be modified unless you know what you're doing. 
+This contains all NC Framework and WordPress blocks.
+*/
+
+/* NC Columns 
+
+<div class="ncolumns ncolumns-fixed ncolumns-mason ncolumns-3 ncolumns-borders ncolumns-scroll">
+  <div>...</div>
+  <div>...</div>
+</div>
+
+*/
+
+.ncolumns {
+  --count:3; 
+  --min-col-width: 250px;
+  --column-gap: 3rem;
+  --row-gap:1.5rem; 
+  --bottom-box-padding:3em; /* Bottom padding of the box */
+  --column-border-color: currentColor;
+}
+
+.ncolumns {
+  display: grid;
+  grid-column-gap: var(--column-gap);
+  grid-row-gap: var(--row-gap);
+  grid-template-columns: repeat(var(--count), 1fr);
+  list-style-type: none;
+  padding-left:0;
+  margin-left:0;
+}
+
+.ncolumns > * :last-child { margin-bottom:0; } 
+
+/* Box Styles */
+
+.ncolumns_box { 
+--box-padding: 3rem 0;
+--box-text-color: #000;
+--bg-color: #fff;
+--contain-max-width: 1400px;
+}
+
+.ncolumns_box {
+  padding:var(--box-padding);
+  color:var(--box-text-color);
+  background:var(--bg-color);
+}
+
+.ncolumns_box .ncontain { max-width: var(--contain-max-width); }
+
+.ncolumns_after { margin-top:var(--gap); }
+
+/* Images */
+
+.ncolumns_image img { 
+  --image-width: auto;
+  --image-min-width:auto;
+
+  --image-height:auto;
+  --image-min-height: auto;
+  --image-max-height: auto;
+
+  --image-radius:0;
+  --image-border:solid 0;
+  --image-padding:0;
+
+  width:var(--image-width);
+  min-width:var(--image-min-width);
+
+  height:var(--image-height);
+  min-height:var(--image-min-height);
+  max-height:var(--image-max-height);
+
+  border-radius: var(--image-radius);
+  border: var(--image-border);
+  padding:var(--image-padding);
+  
+  display: block;
+  object-fit: cover;
+}
+
+/* Modifiers Column Count Style */
+
+.ncolumns-fixed { grid-template-columns: repeat(var(--count), 1fr) }
+.ncolumns-auto  { grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 1fr)) }
+.ncolumns-flow  { grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), auto)) }
+
+.ncolumns-1 { --count:1; }
+.ncolumns-2 { --count:2; }
+.ncolumns-3 { --count:3; }
+.ncolumns-4 { --count:4; }
+.ncolumns-5 { --count:5; }
+.ncolumns-6 { --count:6; }
+.ncolumns-7 { --count:7; }
+.ncolumns-8 { --count:8; }
+.ncolumns-9 { --count:9; }
+
+/* Modifier: Border */
+
+.ncolumns-borders > *:not(:last-child) { position:relative; }
+
+.ncolumns-borders > *:not(:last-child):after {
+  display:block;
+  content:'';
+  width:1px;
+  height:100%;
+  background:var(--column-border-color);
+  position:absolute;
+  right:calc( -1 * var(--column-gap) / 2 );
+  top:0;
+  opacity:0.5;
+}
+
+
+/* Modifier Mason
+This is unpredictable and only works well with at least 9 items or more.
+*/
+
+.ncolumns-mason {
+display:block;
+column-count:var(--count);
+column-gap:var(--column-gap);
+column-width:var(--min-col-width);
+
+}
+
+.ncolumns-mason > *,
+.ncolumns-mason > .ncgallery_item { 
+display:inline-block; 
+margin-bottom: var(--row-gap); 
+height: auto;
+width: 100%;
+}
+
+/* Scroll or stack 
+
+@media(max-width:640px){
+  
+  .ncolumns.ncolumns-stack.ncolumns-borders {
+    grid-template-columns: 1fr;
+    grid-gap: var(--row-gap);
+  }
+
+  .ncolumns.ncolumns-stack.ncolumns-borders > *:not(:last-child):after { 
+    width:100%;
+    height:1px;
+    right:auto;
+    bottom: calc( -1 * var(--column-gap) / 2 );
+    top:auto;
+   }
+
+  .ncolumns-scroll {
+    display:grid;
+    --column-gap:var(--gap);
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    overflow-x:auto;
+    overflow-y:hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--gap);
+    padding-inline:var(--gap);
+    margin-inline: calc(-1 * var(--gap));
+    margin-bottom: calc(-1 * var(--bottom-box-padding));
+  }
+  
+  .ncolumns-scroll > * { 
+    min-width:var(--min-col-width); 
+    margin-bottom:var(--bottom-box-padding);
+    scroll-snap-align: start
+  }  
+  
+}
+*/

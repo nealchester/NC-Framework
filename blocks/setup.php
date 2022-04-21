@@ -1,31 +1,44 @@
 <?php
-if(function_exists('get_field')) { 
+/*
+* Plugin Name: NC Custom Blocks
+* Plugin URI: http://nealchester.com
+* Description: A collection of 15+ custom blocks for the gutenberg editor. <strong>NOTE:</strong> This plugin requires <em>Advanced Custom Fields Pro</em> to work.
+* Version: 5.0
+* Author: Neal Chester
+* Author URI: http://nealchester.com
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
 
-    // Block Includes
-    get_template_part('blocks/block-split');
-    get_template_part('blocks/block-accordion');
-    get_template_part('blocks/block-slider');
-    get_template_part('blocks/block-imgslider');
-    get_template_part('blocks/block-text');
-    get_template_part('blocks/block-blank');
-    get_template_part('blocks/block-media');
-    get_template_part('blocks/block-hero');
-    get_template_part('blocks/block-list');
-    get_template_part('blocks/block-links');
-    get_template_part('blocks/block-popup');
-    get_template_part('blocks/block-singlelink');
-    get_template_part('blocks/block-gallery');
-    get_template_part('blocks/block-columns');
-    get_template_part('blocks/block-posts');
-    get_template_part('blocks/block-left');
-    get_template_part('blocks/block-divider');
-    get_template_part('blocks/block-callout');
-    get_template_part('blocks/block-nav');
-    get_template_part('blocks/block-cssbox');
-    get_template_part('blocks/block-pointer');
-    
-    // Block Helper Functions
+if(function_exists('get_field')){ 
+
+    // ACF Fields
+    get_template_part('blocks/fields');
+
+    // Helper Functions
     get_template_part('blocks/functions');
 
+    // Register / enqueue CSS and JS
+    get_template_part('blocks/register');
+
+    // ACF Blocks
+    get_template_part('blocks/blks/accordion');
+    get_template_part('blocks/blks/blank');
+    get_template_part('blocks/blks/columns');
+    get_template_part('blocks/blks/css-box');
+    get_template_part('blocks/blks/divider');
+    get_template_part('blocks/blks/gallery');
+    get_template_part('blocks/blks/hero-split');
+    get_template_part('blocks/blks/hero');
+    get_template_part('blocks/blks/link');
+    get_template_part('blocks/blks/list');
+    get_template_part('blocks/blks/media');
+    get_template_part('blocks/blks/nav');
+    get_template_part('blocks/blks/pointer');
+    get_template_part('blocks/blks/popup');
+    get_template_part('blocks/blks/posts');
+    get_template_part('blocks/blks/rich-text');
+    get_template_part('blocks/blks/slider-image');
+    get_template_part('blocks/blks/slider');
+
 }
-?>

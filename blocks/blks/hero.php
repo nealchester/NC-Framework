@@ -17,13 +17,14 @@ function nc_hero_block() {
 						'post_types'        => array('post', 'page'),
 						'align'             => 'full',
 						'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									'jsx' => true,
-									),
+							'align' => array( 'wide', 'full' ), 
+							'mode' => true,
+							'multiple' => true,
+							'jsx' => true,
+							),
         ));
 }
+
 
 /* This displays the block */
 
@@ -64,6 +65,10 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	$bgcolor = get_field('background_color') ?: '#000';
 ?>
 
+<?php 
+	wp_enqueue_style('nc-blocks-hero');
+	?>
+
 	<div id="<?php echo $id; ?>" class="nchero jarallax<?php echo esc_attr($className); ?>"<?php if($parallax == 'js') { echo ' data-jarallax data-img-position'; }?><?php echo nc_block_attr();?>>
 
 	<?php nc_before_content(); ?>
@@ -79,13 +84,13 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img nchero_image-fadein", "style" => "animation-delay: 0.5s") ); ?>	
 
 		<?php else: ?>
-		<img class="nchero_image" src="<?php nc_fallbackimage(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
+		<img class="nchero_image" src="<?php nc_block_fallback_image(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
 		<?php endif;?>
 
 	<?php endif;?>
 
 		<div class="ncontain">
-			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo sal_animate().nc_contain_attr();?>>
+			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 
 				<?php echo nc_inner_blocks(); ?>
 
@@ -123,12 +128,15 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		--box-bgcolor: <?php echo $bgcolor.";\n"; ?>
 	}
 
+	<?php echo '#wpbody #'.$id; ?> .nchero_image {
+		height:100%;
+	}
+
 	<?php if($parallax == 'js'):?>
-		<?php echo '#'.$id; ?>.jarallax { z-index: 0;	}
-		<?php echo '#'.$id; ?>.jarallax .jarallax-img { z-index: -1; }
-
-		<?php wp_enqueue_script( 'jarallax', get_theme_file_uri('/js/jarallax.min.js'), array( 'jquery' ), '1', true );	?>	
-
+		<?php 
+			wp_enqueue_script('nc-blocks-parallax');
+			wp_enqueue_style('nc-blocks-parallax');
+		?>
 	<?php endif;?>
 
 	<?php if($image_mobile && $media_query) :?>

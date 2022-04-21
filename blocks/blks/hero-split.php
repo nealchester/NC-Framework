@@ -14,14 +14,14 @@ function nc_split_block() {
             //'icon'              => 'format-image',
             'mode'              => 'preview',
             'keywords'          => array('split', 'splash', 'split screen', 'splitscreen' ),
-			'post_types'        => array('post', 'page'),
-			'align'             => 'full',
-			'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									'jsx' => true,
-									),
+						'post_types'        => array('post', 'page'),
+						'align'             => 'full',
+						'supports'          => array( 
+							'align' => array( 'wide', 'full' ), 
+							'mode' => true,
+							'multiple' => true,
+							'jsx' => true,
+							),
         ));
 }
 
@@ -67,6 +67,8 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
+	<?php wp_enqueue_style('nc-blocks-hero-split');?>
+
 	<section id="<?php echo $id; ?>" class="ncsplit<?php echo' '.$position.' '.$acontent.' '.$imgbreak.' '.esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 		<figure class="ncsplit_image jarallax"<?php if($parallax) { echo ' data-jarallax data-img-position'; }?><?php echo nc_contain_attr();?>>
 
@@ -77,7 +79,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 			<?php if(wp_get_attachment_caption($image)):?><figcaption class="ncsplit_caption"><?php echo wp_get_attachment_caption($image); ?></figcaption><?php endif;?>
 		</figure>
 		<div class="ncsplit_content">
-			<div class="ncsplit_contentcontain<?php echo nc_contain_classes(); ?>" <?php echo sal_animate();?>>
+			<div class="ncsplit_contentcontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate();?>>
 				<?php /* if ($split_content) { echo $split_content; } else { echo'<h2>Heading 2</h2><p>Paragraph Text...</p>'; }; */?>
 				<?php echo nc_inner_blocks(2); ?>
 			</div>
@@ -99,12 +101,15 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		--img-height: <?php echo $image_height.'%'; ?>;
 }
 
+<?php echo '#wpbody #'.$id; ?> .ncsplit_pic {
+		height:100%;
+	}
+
 <?php if($parallax):?>
-	<?php echo '#'.$id; ?> .jarallax { z-index: 0;	}
-	<?php echo '#'.$id; ?> .jarallax .jarallax-img { z-index: -1; }
-
-	<?php wp_enqueue_script( 'jarallax', get_theme_file_uri('/js/jarallax.min.js'), array( 'jquery' ), '1', true );?>	
-
+	<?php 
+  wp_enqueue_script('nc-blocks-parallax', plugin_dir_url( __FILE__ ).'../js/parallax/jarallax.js', array('jquery'), '', true );
+  wp_enqueue_style('nc-blocks-parallax', plugin_dir_url( __FILE__ ).'../js/parallax/jarallax.css', '', '', 'screen');
+	?>
 <?php endif;?>
 
 @media(max-width:<?php if ($breakpoint) { echo $breakpoint.'px'; } else { echo'640px';} ?>){
