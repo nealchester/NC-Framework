@@ -19,7 +19,7 @@ c);"show"==f?(b.removeClass(this.o.showClass).addClass(this.o.hideClass),this.o.
 
 Example 
 
-	$('.bio').collapser({
+	jQuery('.bio').collapser({
 		mode: 'chars',
 		truncate: 260,
 		speed: null,

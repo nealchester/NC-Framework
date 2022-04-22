@@ -2,7 +2,7 @@
 
 ***Note:** This theme requires the [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) plugin IF you want to utilize the included custom Gutenberg blocks.*
 
-As a front-end developer converting design concepts to live websites, I created the NC Framework to serve as a starting point from which to build custom websites for WordPress. It can be used as a ***parent theme*** or extended with a child theme. 
+As a front-end developer converting design concepts to live websites, I created the NC Framework to serve as a starting point from which to build custom websites for WordPress. It can be used as a parent theme or extended with a child theme. 
 
 The theme is coded in:
 
@@ -12,7 +12,7 @@ The theme is coded in:
 * **Accessible** - supports screen readers and keyboard navigation
 * **Responsive** - mobile-friendly with support for responsive images
 
-The theme supports all of WordPress' native features, provides all the standard templates to display content, and does a whole lot more. The theme comes with basic CSS for layout and responsive purposes, but it's up to you to make the theme match your design concept.
+The theme supports all of WordPress' native features and standard templates. The theme comes with basic CSS for layout and responsive purposes, but it's up to you to make the theme match your design concept.
 
 ## Demo site (Real Estate)
 
@@ -47,7 +47,7 @@ If your concept requires more customization, you will need to copy and edit temp
 
   * hero
   * split hero
-  * accordion content
+  * accordion
   * columns
   * gallery w/ lightbox pop-up
   * image slider w/ lightbox pop-up
@@ -55,7 +55,7 @@ If your concept requires more customization, you will need to copy and edit temp
   * media + content
   * list posts
   * one page navigation
-  * text content (columned)
+  * rich text content
   * dividers
 
 
@@ -67,7 +67,7 @@ This section explains the general content within the folders and main files.
 Refer to the `readme.md` file within each folder for more information.
 
 * **`acf-json`** - stores custom fields data (don't delete)
-* **`blocks`** - stores all custom Gutenberg blocks
+* **`blocks`** - stores all custom Gutenberg blocks and supported assets
 * **`customizer`** - stores all the new Customizer features function files
 * **`fonts`** - stores all font files including icon font files
 * **`functions`** - stores all functions files connected to the `functions.php` file
@@ -88,18 +88,12 @@ The following explains the purpose of the files in the main directory of the the
 * **`image.php`** - displays a single attachment image with meta data
 * **`index.php`** - displays a default page if no other templates are available
 * **`page.php`** - displays a standard non-blog entry page
-* **`readme.md`** - provides documentation on the files
+* **`readme.md`** - provides documentation
 * **`screenshot.png`** - an image to represent the installed theme
 * **`search.php`** - displays a list of results from a search query
 * **`single.php`** - displays a single blog entry
 * **`style.css`** - stores theme information for WordPress' admin areas, no CSS is included in this file but comments
-
-***
-
-**Changes coming soon:**
-
-* Incorporation of a better [scroll animation library](https://greensock.com/)
-* Custom block will be moved to a plugin
+* **`theme.json`** - controls the block editor colors, fonts, etc.
 
 ***
 
