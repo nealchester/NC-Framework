@@ -152,7 +152,12 @@
   /* ----------------- Single Link --------------- */
   
   
-  .ncard-singlelink { margin-bottom:var(--gap); }
+  .ncard-singlelink { 
+    margin-bottom:var(--gap); 
+    max-width: var(--width-standard);
+    width: calc(100% - 2 * var(--gap));
+  }
+  
   .ncard-singlelink .ncard_posttext { margin-top: 0.5rem; }
   
   .ncard-singlelink .ncard_title { white-space: normal; line-height: 1.3; }
