@@ -25,6 +25,7 @@ if(function_exists('get_field')){
     get_template_part('blocks/blks/accordion');
     get_template_part('blocks/blks/blank');
     get_template_part('blocks/blks/columns');
+    get_template_part('blocks/blks/canvas');
     get_template_part('blocks/blks/css-box');
     get_template_part('blocks/blks/divider');
     get_template_part('blocks/blks/gallery');

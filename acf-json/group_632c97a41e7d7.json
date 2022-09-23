@@ -1,0 +1,254 @@
+{
+    "key": "group_632c97a41e7d7",
+    "title": "Block: NC Canvas",
+    "fields": [
+        {
+            "key": "field_632c97a430cc4",
+            "label": "Column Options",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_632c97a446be1",
+            "label": "Column Gap Space",
+            "name": "column_gap",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1.5rem",
+            "maxlength": "",
+            "placeholder": "1.5rem",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_632c97a44a6cb",
+            "label": "Row Gap Space",
+            "name": "row_gap",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1.5rem",
+            "maxlength": "",
+            "placeholder": "1.5rem",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_632ce6cf753a3",
+            "label": "Minimum Column Width",
+            "name": "min_col_width",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 250,
+            "min": "",
+            "max": "",
+            "placeholder": 250,
+            "step": "",
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_632c97a43bc0d",
+            "label": "Add column borders",
+            "name": "column_borders",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_632cdf4b60214",
+            "label": "Column Border Color",
+            "name": "column_border_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_632c97a43bc0d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "currentColor",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_632c97a451e28",
+            "label": "Break Point",
+            "name": "breakpoint",
+            "type": "number",
+            "instructions": "Leave empty if you will write your on responsive code.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 768,
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_632c97a44e10c",
+            "label": "Scroll on break point",
+            "name": "breakpoint_scroll",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_632c97a4595a7",
+            "label": "Box Settings",
+            "name": "box_settings",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5f0a295e1071c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_632c97a45d0b7",
+            "label": "Bottom Padding",
+            "name": "bottom_padding",
+            "type": "text",
+            "instructions": "Must match the bottom padding of box.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c9905513ccfc",
+                        "operator": "==",
+                        "value": "ncolumns-scroll"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "3rem",
+            "placeholder": "3rem",
+            "prepend": "padding-bottom:",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_632c97a460b4c",
+            "label": "Custom code",
+            "name": "custom_code",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5e221e7d71f1d"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nc-canvas"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1663894086
+}

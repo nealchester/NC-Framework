@@ -197,6 +197,42 @@ function nc_inner_blocks(int $hlevel = 1) {
     return'<InnerBlocks template="'.esc_attr( wp_json_encode( $template ) ).'" />';
 }
 
+// Inner Column Block
+function nc_inner_col_blocks(int $hlevel = 2) {
+    $template = array(
+
+        array('core/heading', array(
+            'level' => $hlevel,
+            'content' => 'Click to edit title',
+        )),
+        array( 'core/paragraph', array(
+                'content' => 'Insert some text here... Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+        )),
+
+        array( 'core/columns', array(), array(
+            array( 'core/column', array(), array(
+                array( 'core/paragraph', array(
+                'content' => 'Column 1',
+                )),
+            )),
+            array( 'core/column', array(), array(
+                array( 'core/paragraph', array(
+                'content' => 'Column 2',
+                )),
+            )),
+            array( 'core/column', array(), array(
+                array( 'core/paragraph', array(
+                'content' => 'Column 3',
+                )),
+            )),
+        ))     
+
+
+    );
+    
+    return'<InnerBlocks template="'.esc_attr( wp_json_encode( $template ) ).'" />';
+}
+
 // Fallback Image
 function nc_block_fallback_image() {
     if( get_theme_mod('fallback_image')) {
