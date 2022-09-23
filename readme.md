@@ -14,10 +14,6 @@ The theme is coded in:
 
 The theme supports all of WordPress' native features and standard templates. The theme comes with basic CSS for layout and responsive purposes, but it's up to you to make the theme match your design concept.
 
-## Demo site (Real Estate)
-
-**[Visit this link to see a site built with the NC Framework](https://www.nealchester.com/demos/realestate/)**.
-
 ## How to get started
 
 1. Install this parent theme.
