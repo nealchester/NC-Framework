@@ -111,13 +111,13 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		overflow:hidden;
 	}
 
-	<?php echo '#'.$id; ?> .splide__slide .ncgallery_caption{
+	#wrapper <?php echo '#'.$id; ?> .splide__slide .ncgallery_caption{
 		opacity:0;
 		transition:0.6s;
 		transition-delay: <?php echo get_field('speed').'ms'; ?>;
 	}
 
-	<?php echo '#'.$id; ?> .splide__slide.is-active .ncgallery_caption{
+	#wrapper <?php echo '#'.$id; ?> .splide__slide.is-active .ncgallery_caption{
 		opacity:1;
 	}
 
@@ -150,21 +150,21 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		z-index:15 !important;
 	}
 
-	body.wp-admin .splide__img  {
+	body.wp-admin <?php echo '#'.$id; ?> .splide__img  {
 		height: 100% !important
 	}
 
-	body.wp-admin .splide__slide {
+	body.wp-admin <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
 		outline:solid 1px #eee;
 		position: relative;
 	}
 
-	body.wp-admin .splide {
+	body.wp-admin <?php echo '#'.$id; ?> .splide {
 		visibility: visible !important;	
 	}	
 
-	body.wp-admin .splide__slide > :last-child {
+	body.wp-admin <?php echo '#'.$id; ?> .splide__slide > :last-child {
 		margin-bottom:0;
 	}
 

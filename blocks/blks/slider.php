@@ -82,7 +82,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 
 <style id="<?php echo $id; ?>-block-css">
 
-.splide__slide {
+<?php echo '#'.$id; ?> .splide__slide {
     padding:var(--slide-padding);
     background:var(--slide-bg-color);
     border-radius:var(--slide-border-radius);
@@ -95,17 +95,17 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		justify-content:var(--slide-justify-content);
 	}
 
-body.wp-admin .splide__img,
-body.wp-admin .splide__padding  {
+body.wp-admin <?php echo '#'.$id; ?> .splide__img,
+body.wp-admin <?php echo '#'.$id; ?> .splide__padding  {
 	display:none
 }
 
-.splide__padding {
+<?php echo '#'.$id; ?> .splide__padding {
 	width:100%;
 	padding-top:var(--slide-height);
 } 
 
- .splide__img {
+<?php echo '#'.$id; ?> .splide__img {
 		position:absolute;
 		z-index: 5;
 		left:0; top:0; bottom:0; right:0;
@@ -115,17 +115,17 @@ body.wp-admin .splide__padding  {
     mix-blend-mode: var(--image-blend-mode);
 	}	
 
-	.splide__slide > .splide__img ~ * {
+	<?php echo '#'.$id; ?> .splide__slide > .splide__img ~ * {
 		z-index:10;
 		position:relative;
   }
 	
-	body.wp-admin .splide__slide {
+	body.wp-admin <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
 		outline:solid 1px #eee;
 	}
 
-	body.wp-admin .splide__slide > :last-child {
+	body.wp-admin <?php echo '#'.$id; ?> .splide__slide > :last-child {
 		margin-bottom:0;
 	}
 

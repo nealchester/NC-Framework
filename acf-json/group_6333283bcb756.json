@@ -1,9 +1,115 @@
 {
-    "key": "group_5f0b42f063eef",
-    "title": "Block: NC Image Slider",
+    "key": "group_6333283bcb756",
+    "title": "Block: NC Hero Slider",
     "fields": [
         {
-            "key": "field_5f0b42f06d170",
+            "key": "field_63332cf096f62",
+            "label": "Hero Content",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_63334f0279558",
+            "label": "Content",
+            "name": "hero_slider_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "delay": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_63332d7c96f63",
+            "label": "Content position",
+            "name": "hero_content_position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tl": "Top left",
+                "tc": "Top center",
+                "tr": "Top right",
+                "ml": "Middle left",
+                "mc": "Middle center",
+                "mr": "Middle right",
+                "bl": "Bottom left",
+                "bc": "Bottom center",
+                "br": "Bottom right"
+            },
+            "default_value": "mc",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_63332eb56e21f",
+            "label": "Max content width",
+            "name": "max_content_width",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 600,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_6333458e55326",
+            "label": "Overlay color",
+            "name": "overlay_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgba(0,0,0,0.5)",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_6333283bdbac2",
             "label": "Slides",
             "name": "",
             "type": "accordion",
@@ -20,7 +126,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f0b42f06d55b",
+            "key": "field_6333283bdf560",
             "label": "Images",
             "name": "slides",
             "type": "gallery",
@@ -29,7 +135,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5f0b42f08d81a",
+                        "field": "field_6333283c015bd",
                         "operator": "!=empty"
                     }
                 ]
@@ -54,7 +160,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5f0b716168ea4",
+            "key": "field_6333283be31a0",
             "label": "Image Options",
             "name": "",
             "type": "accordion",
@@ -71,7 +177,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f0b42f0c61c4",
+            "key": "field_6333283be6c6e",
             "label": "Image Height",
             "name": "slide_height",
             "type": "number",
@@ -92,7 +198,7 @@
             "step": 25
         },
         {
-            "key": "field_5f0b717e68ea5",
+            "key": "field_6333283bea920",
             "label": "Image Meta Display",
             "name": "meta_display",
             "type": "checkbox",
@@ -118,7 +224,7 @@
             "save_custom": 0
         },
         {
-            "key": "field_5f0b773f6ad37",
+            "key": "field_6333283bee347",
             "label": "When you click an image...",
             "name": "link_to_image",
             "type": "select",
@@ -132,19 +238,18 @@
             },
             "choices": {
                 "image_page": "Show large image on its attachment page",
-                "image_lightbox": "Show image in a light box",
                 "image_nothing": "Do nothing"
             },
             "default_value": "image_nothing",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
-            "key": "field_5f0b42f089069",
+            "key": "field_6333283bf1eb4",
             "label": "Slider Options",
             "name": "",
             "type": "accordion",
@@ -161,53 +266,8 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f0b42f08d81a",
-            "label": "Slider Type",
-            "name": "type",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "slide": "Slide",
-                "loop": "Loop",
-                "fade": "Fade"
-            },
-            "default_value": "loop",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5f0b42f09fc82",
-            "label": "Show Pagination",
-            "name": "pagination",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5f0b42f0a519e",
-            "label": "Show Arrows",
+            "key": "field_6333283c0c440",
+            "label": "Show Navigation",
             "name": "arrows",
             "type": "true_false",
             "instructions": "",
@@ -220,12 +280,12 @@
             },
             "message": "",
             "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         },
         {
-            "key": "field_5f0b42f0a9a9a",
+            "key": "field_6333283c0fe00",
             "label": "Auto Play",
             "name": "auto_play",
             "type": "true_false",
@@ -244,7 +304,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5f0b42f0adecf",
+            "key": "field_6333283c13a16",
             "label": "Rewind",
             "name": "rewind",
             "type": "true_false",
@@ -257,13 +317,13 @@
                 "id": ""
             },
             "message": "yes",
-            "default_value": 0,
+            "default_value": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
         },
         {
-            "key": "field_5f0b42f0b43a7",
+            "key": "field_6333283c173ef",
             "label": "Transition Speed",
             "name": "speed",
             "type": "number",
@@ -275,16 +335,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 400,
-            "placeholder": "",
-            "prepend": "",
-            "append": "msec",
+            "default_value": 500,
             "min": "",
             "max": "",
-            "step": 100
+            "placeholder": "",
+            "step": 100,
+            "prepend": "",
+            "append": "msec"
         },
         {
-            "key": "field_5f0b42f0b8a26",
+            "key": "field_6333283c1ae80",
             "label": "Interval",
             "name": "pause",
             "type": "number",
@@ -305,32 +365,7 @@
             "step": 100
         },
         {
-            "key": "field_5f0b42f0c1713",
-            "label": "Direction",
-            "name": "direction",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "ltr": "Left to right",
-                "rtl": "Right to left"
-            },
-            "default_value": "ltr",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5f0b42f0cb097",
+            "key": "field_6333283c22735",
             "label": "Break Point",
             "name": "",
             "type": "accordion",
@@ -347,7 +382,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f0b42f0d0031",
+            "key": "field_6333283c2611e",
             "label": "",
             "name": "",
             "type": "message",
@@ -364,7 +399,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_5f0b42f0d4c9d",
+            "key": "field_6333283c29c29",
             "label": "Break Point Width",
             "name": "break_width",
             "type": "number",
@@ -385,27 +420,8 @@
             "step": ""
         },
         {
-            "key": "field_5f0b42f0de1f2",
-            "label": "Show Pagination",
-            "name": "show_pagination",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5f0b42f0e3796",
-            "label": "Show Arrows",
+            "key": "field_6333283c313f6",
+            "label": "Show Navigation",
             "name": "show_arrows",
             "type": "true_false",
             "instructions": "",
@@ -417,13 +433,13 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         },
         {
-            "key": "field_5f0b7e324ed28",
+            "key": "field_6333283c34ebc",
             "label": "Image Height",
             "name": "slide_height_mobile",
             "type": "number",
@@ -444,7 +460,7 @@
             "step": 25
         },
         {
-            "key": "field_5f0b42f0e7baa",
+            "key": "field_6333283c3898d",
             "label": "Box Settings",
             "name": "box_settings",
             "type": "clone",
@@ -465,7 +481,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_5f0b42f0ebec2",
+            "key": "field_6333283c3c4a7",
             "label": "Custom code",
             "name": "custom_code",
             "type": "clone",
@@ -491,7 +507,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/nc-imgslider"
+                "value": "acf\/nc-heroslider"
             }
         ]
     ],
@@ -504,5 +520,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664302285
+    "modified": 1664315596
 }
