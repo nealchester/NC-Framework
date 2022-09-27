@@ -111,6 +111,16 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		overflow:hidden;
 	}
 
+	<?php echo '#'.$id; ?> .splide__slide .ncgallery_caption{
+		opacity:0;
+		transition:0.6s;
+		transition-delay: <?php echo get_field('speed').'ms'; ?>;
+	}
+
+	<?php echo '#'.$id; ?> .splide__slide.is-active .ncgallery_caption{
+		opacity:1;
+	}
+
 	<?php echo '#'.$id; ?> .splide__padding {
 		width:100%;
 		padding-top:var(--slide-height);
@@ -216,28 +226,22 @@ if( in_the_loop() ):?>
 <script>
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide( '<?php echo '#'.$slider_id; ?>', {
-		type   : '<?php echo get_field('type') ?: slide; ?>',
-		perPage: <?php the_field('per_page') ?: 3; ?>,
-		perMove: <?php the_field('per_move') ?: 3; ?>,
+		type   : '<?php the_field('type') ?: 'slide'; ?>',
+		perPage: 1,
+		perMove: 1,
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
 
 		speed: <?php the_field('speed') ?: 400; ?>,
 		interval: <?php the_field('pause') ?: 3000; ?>,
 
-		gap: <?php if( get_field('gap') ) { echo "'".get_field('gap')."'"; } else { echo "'1em'"; } ?>,
-
-		fixedWidth: <?php if( get_field('slide_width') ) { echo "'".get_field('slide_width')."'"; } else { echo '0'; } ?>,
-		fixedHeight: <?php if( get_field('slide_height') ) { echo "'".get_field('slide_height')."'"; } else { echo '0'; } ?>,
-
-		direction: <?php if( get_field('direction') ) { echo "'".get_field('direction')."'"; } else { echo "'ltr'"; } ?>,
+		direction: '<?php if( get_field('direction') ) { echo get_field('direction'); } else { echo 'ltr'; } ?>',
 
 		pagination: <?php if( get_field('pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
 		arrows: <?php if ( get_field('arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
 
 		breakpoints: {
 			<?php the_field('break_width') ?: 0; ?>: {
-				perPage: <?php the_field('break_per_page') ?: 1; ?>,
 				pagination: <?php if( get_field('show_pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
 				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>
 			}

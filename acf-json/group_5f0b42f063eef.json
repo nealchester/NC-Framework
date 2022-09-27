@@ -212,48 +212,6 @@
             "esc_html": 0
         },
         {
-            "key": "field_5f0b42f096d0b",
-            "label": "Slides Per Page",
-            "name": "per_page",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 3,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 1,
-            "max": "",
-            "step": ""
-        },
-        {
-            "key": "field_5f0b42f09b419",
-            "label": "Slides Per Move",
-            "name": "per_move",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 1,
-            "max": "",
-            "step": ""
-        },
-        {
             "key": "field_5f0b42f09fc82",
             "label": "Show Pagination",
             "name": "pagination",
@@ -372,25 +330,6 @@
             "step": 100
         },
         {
-            "key": "field_5f0b42f0bd0c4",
-            "label": "Gap Size",
-            "name": "gap",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "1.5em",
-            "placeholder": "1.5em",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5f0b42f0c1713",
             "label": "Direction",
             "name": "direction",
@@ -408,10 +347,10 @@
                 "rtl": "Right to left"
             },
             "default_value": "ltr",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -466,27 +405,6 @@
             "placeholder": "",
             "prepend": "",
             "append": "px",
-            "min": "",
-            "max": "",
-            "step": ""
-        },
-        {
-            "key": "field_5f0b42f0d95e7",
-            "label": "Slides Per Page",
-            "name": "break_per_page",
-            "type": "number",
-            "instructions": "On break point",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": "",
             "max": "",
             "step": ""
@@ -610,5 +528,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636490428
+    "show_in_rest": 0,
+    "modified": 1664296019
 }
