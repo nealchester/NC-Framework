@@ -45,7 +45,12 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 	$position = get_field('image_position');
 	$acontent = get_field('align_content');
 	$breakpoint = get_field('break_point');
+
 	$imgbreak = get_field('image_break_point');
+	if( $imgbreak ) { 
+		$imgpos = 'ncsplit-imagetop'; 
+	};	
+
 	$image = get_field('image');
 	$split_content = get_field('split_content');
 	$parallax = get_field('parallax');
@@ -62,19 +67,23 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 	$focus = get_field('image_focus') ?: 'center center';
 
 	$image_content = get_field('image_content');
-	$image_width = get_field('image_width') ?: '50%';
-	$image_height = get_field('image_height') ?: '70%';
+	$image_width = get_field('image_width') ?: '50';
+	$image_height = get_field('image_height') ?: '70';
 
 ?>
 
 	<?php wp_enqueue_style('nc-blocks-hero-split');?>
 
-	<section id="<?php echo $id; ?>" class="ncsplit<?php echo' '.$position.' '.$acontent.' '.$imgbreak.' '.esc_attr($className); ?>" <?php echo nc_block_attr();?>>
+	<section id="<?php echo $id; ?>" class="ncsplit<?php echo' '.$position.' '.$acontent.' '.$imgpos.' '.esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 		<figure class="ncsplit_image jarallax"<?php if($parallax) { echo ' data-jarallax data-img-position'; }?><?php echo nc_contain_attr();?>>
 
 			<?php if($image) { echo wp_get_attachment_image( $image, 'large', '', array( "class" => "ncsplit_pic jarallax-img" ) ); }	?>
 
-			<?php if($image_content) { echo '<div class="ncsplit_overlay"></div><div class="ncsplit_imgcontent">'.$image_content.'</div>'; }?>
+			<div 
+			class="ncsplit_overlay" 
+			data-aos="fadeout" data-aos-delay="500" data-aos-duration="1000"
+			style="background-color: <?php echo $bg_color; ?>">
+		  </div>
 		
 			<?php if(wp_get_attachment_caption($image)):?><figcaption class="ncsplit_caption"><?php echo wp_get_attachment_caption($image); ?></figcaption><?php endif;?>
 		</figure>
@@ -101,16 +110,29 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		--img-height: <?php echo $image_height.'%'; ?>;
 }
 
+	body.wp-admin .ncsplit_overlay {
+		display:none;
+	}
+
+	[data-aos="fadeout"] {
+		opacity: 1 !important;
+		transition-property: opacity;
+	}
+
+	[data-aos="fadeout"].aos-animate {
+		opacity: 0 !important;
+	}
+
 <?php echo '#wpbody #'.$id; ?> .ncsplit_pic {
 		height:100%;
 	}
 
-<?php if($parallax):?>
-	<?php 
-  wp_enqueue_script('nc-blocks-parallax', plugin_dir_url( __FILE__ ).'../js/parallax/jarallax.js', array('jquery'), '', true );
-  wp_enqueue_style('nc-blocks-parallax', plugin_dir_url( __FILE__ ).'../js/parallax/jarallax.css', '', '', 'screen');
-	?>
-<?php endif;?>
+	<?php if($parallax):?>
+		<?php 
+			wp_enqueue_script('nc-blocks-parallax');
+			wp_enqueue_style('nc-blocks-parallax');
+		?>
+	<?php endif;?>
 
 @media(max-width:<?php if ($breakpoint) { echo $breakpoint.'px'; } else { echo'640px';} ?>){
 

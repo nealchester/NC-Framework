@@ -12,7 +12,7 @@ function nc_heroslider_block() {
 		'render_callback'   => 'nc_heroslider_block_markup',
 		'category'          => 'layout',
 		//'icon'            => 'format-image',
-		'mode'              => 'edit',
+		'mode'              => 'preview',
 		'keywords'          => array('slider', 'images', 'gallery', 'sliders', 'slide' ),
 		'post_types'        => array('post', 'page'),
 		'align'             => 'full',
@@ -51,6 +51,8 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 
 ?>
 
+<?php wp_enqueue_style('nc-blocks-gallery');?>
+
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
   
     <?php if( $slides ): ?>
@@ -68,8 +70,6 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 
 						<div class="splide__slide">
 
-						<?php if($link2img == 'image_page'):?><a class="splide__plink" aria-label="View larger" href="<?php echo get_attachment_link($image['ID']); ?>"><?php endif;?>
-
 						<div class="splide__padding"></div>
 
 						<?php echo wp_get_attachment_image( $image['ID'], 'large', '', 
@@ -82,8 +82,6 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 							<?php if($mdisplay && in_array('captions', $mdisplay) && $image['caption']) { echo'<span class="ncgallery_desc">'.$image['caption'].'</span>';}?>
 						</div>
 						<?php endif;?>
-
-						<?php if($link2img == 'image_page'):?></a><?php endif;?>
 
 						</div>
 
@@ -113,18 +111,13 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
       </div>
 			<?php endif; // end slides ?>
 
-      <?php 
-      $hero_content = get_field('hero_slider_content');
-      if( $hero_content ):?>
       <div class="splide__content">
         <div class="ncontain">
           <div class="splide__container<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
-            <?php // echo $hero_content; ?>
             <?php echo nc_inner_blocks(1); ?>
           </div>
         </div>
       </div>
-      <?php endif;?>
 
 	</div><?php // slider box end  ?>
 
@@ -182,12 +175,16 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
   display:flex;
 }
 
-<?php if($hero_content):?>
+	body.wp-admin <?php echo '#'.$id; ?> .block-editor-inner-blocks {
+		position: relative;
+		z-index: 100;
+	}
 
   <?php echo '#'.$id; ?> .splide__slide:before {
     display: block;
     content:'';
     background-color: <?php echo get_field('overlay_color') ?: 'rgba(0,0,0,0.5)'; ?>;
+		mix-blend-mode: <?php echo get_field('overlay_blend') ?: 'normal'; ?>;
     z-index: 7;
   }
 
@@ -198,7 +195,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
   }
 
   <?php echo '#'.$id; ?> .splide__container {
-    max-width: <?php echo get_field('max_content_width') ?: '600'; echo 'px'; ?>;
+    max-width: <?php echo get_field('max_content_width') ?: '600'; ?>px;
     position: relative;
     z-index: 21;
   }
@@ -217,8 +214,6 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
     text-align:right;
     padding-inline: var(--gap);
   }
-
-<?php endif;?>
 
 <?php echo '#'.$id; ?> .splide__arrow {
   height:100%;

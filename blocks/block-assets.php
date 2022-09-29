@@ -22,6 +22,7 @@ function nc_blocks_register_assets(){
   wp_register_style('nc-blocks-columns', get_theme_file_uri('/blocks/css/columns.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-divider', get_theme_file_uri('/blocks/css/divider.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-gallery', get_theme_file_uri('/blocks/css/gallery.css'), array('nc-uclasses'));
+  wp_register_style('nc-blocks-gradient', get_theme_file_uri('/blocks/css/gradient.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-hero-split', get_theme_file_uri('/blocks/css/hero-split.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-hero', get_theme_file_uri('/blocks/css/hero.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-list', get_theme_file_uri('/blocks/css/list.css'), array('nc-uclasses'));
@@ -66,6 +67,7 @@ function nc_load_blocks_css_for_editor(){
       '/blocks/css/columns.css',
       '/blocks/css/divider.css',
       '/blocks/css/gallery.css',
+      '/blocks/css/gradient.css',
       '/blocks/css/hero-split.css',
       '/blocks/css/hero.css',
       '/blocks/css/list.css',

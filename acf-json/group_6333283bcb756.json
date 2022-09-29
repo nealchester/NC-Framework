@@ -3,8 +3,8 @@
     "title": "Block: NC Hero Slider",
     "fields": [
         {
-            "key": "field_63332cf096f62",
-            "label": "Hero Content",
+            "key": "field_6335f87b10fbb",
+            "label": "Content Options",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -18,25 +18,6 @@
             "open": 0,
             "multi_expand": 0,
             "endpoint": 0
-        },
-        {
-            "key": "field_63334f0279558",
-            "label": "Content",
-            "name": "hero_slider_content",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "delay": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1
         },
         {
             "key": "field_63332d7c96f63",
@@ -109,6 +90,43 @@
             "return_format": "string"
         },
         {
+            "key": "field_6335fd529f962",
+            "label": "Overlay blend mode",
+            "name": "overlay_blend",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "normal": "normal",
+                "multiply": "multiply",
+                "screen": "screen",
+                "overlay": "overlay",
+                "darken": "darken",
+                "lighten": "lighten",
+                "color": "color",
+                "color-dodge": "color-dodge",
+                "color-burn": "color-burn",
+                "difference": "difference",
+                "exclusion": "exclusion",
+                "hue": "hue",
+                "saturation": "saturation",
+                "luminosity": "luminosity"
+            },
+            "default_value": "normal",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_6333283bdbac2",
             "label": "Slides",
             "name": "",
@@ -178,10 +196,10 @@
         },
         {
             "key": "field_6333283be6c6e",
-            "label": "Image Height",
+            "label": "Image Ratio",
             "name": "slide_height",
-            "type": "number",
-            "instructions": "This percentage maintains a ratio. 50% would be 4:2, 100% would be a 2:2 or a square and 60% would be 3:4 or landscape laptop.",
+            "type": "range",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -190,12 +208,11 @@
                 "id": ""
             },
             "default_value": 50,
-            "placeholder": 50,
+            "min": 20,
+            "max": 200,
+            "step": 10,
             "prepend": "",
-            "append": "%",
-            "min": "",
-            "max": "",
-            "step": 25
+            "append": ""
         },
         {
             "key": "field_6333283bea920",
@@ -222,31 +239,6 @@
             "toggle": 0,
             "return_format": "value",
             "save_custom": 0
-        },
-        {
-            "key": "field_6333283bee347",
-            "label": "When you click an image...",
-            "name": "link_to_image",
-            "type": "select",
-            "instructions": "<b>Note:<\/b> If you use the Yoast SEO plugin, there's an option to redirect attachment pages to the image URL. It's usually on by default. You can toggle those options by going to: Yoast SEO > Search Appearance > Media",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "image_page": "Show large image on its attachment page",
-                "image_nothing": "Do nothing"
-            },
-            "default_value": "image_nothing",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
         },
         {
             "key": "field_6333283bf1eb4",
@@ -297,11 +289,11 @@
                 "class": "",
                 "id": ""
             },
-            "message": "yes",
+            "message": "",
             "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         },
         {
             "key": "field_6333283c13a16",
@@ -316,11 +308,11 @@
                 "class": "",
                 "id": ""
             },
-            "message": "yes",
+            "message": "",
             "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         },
         {
             "key": "field_6333283c173ef",
@@ -382,23 +374,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_6333283c2611e",
-            "label": "",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "At some point, your slider's content gets too narrow to display 3 or more slides at a time. You can set a width at which to want to show less slides at a time. You can also choose to hide the pagination and arrows.",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
             "key": "field_6333283c29c29",
             "label": "Break Point Width",
             "name": "break_width",
@@ -440,9 +415,9 @@
         },
         {
             "key": "field_6333283c34ebc",
-            "label": "Image Height",
+            "label": "Image Ratio",
             "name": "slide_height_mobile",
-            "type": "number",
+            "type": "range",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -452,12 +427,11 @@
                 "id": ""
             },
             "default_value": 75,
-            "placeholder": 75,
+            "min": 20,
+            "max": 200,
+            "step": 10,
             "prepend": "",
-            "append": "%",
-            "min": "",
-            "max": "",
-            "step": 25
+            "append": ""
         },
         {
             "key": "field_6333283c3898d",
@@ -520,5 +494,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664315596
+    "modified": 1664483814
 }

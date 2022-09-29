@@ -7,7 +7,7 @@ function nc_nav_block() {
         // register a items block
         acf_register_block_type(array(
             'name'              => 'nc_nav',
-            'title'             => __('NC ncmenu', 'nc-framework'),
+            'title'             => __('NC Page Menu', 'nc-framework'),
             'description'       => __('A navigation menu bar.', 'nc-framework'),
             'render_callback'   => 'nc_nav_block_markup',
             'category'          => 'layout',

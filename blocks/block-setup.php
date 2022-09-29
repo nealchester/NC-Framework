@@ -29,6 +29,7 @@ if(function_exists('get_field')){
     get_template_part('blocks/blks/css-box');
     get_template_part('blocks/blks/divider');
     get_template_part('blocks/blks/gallery');
+    get_template_part('blocks/blks/gradient');
     get_template_part('blocks/blks/hero-slider');
     get_template_part('blocks/blks/hero-split');
     get_template_part('blocks/blks/hero');

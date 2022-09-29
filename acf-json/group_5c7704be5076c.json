@@ -109,7 +109,7 @@
             "key": "field_5f24461a82ea3",
             "label": "Image Width",
             "name": "image_width",
-            "type": "number",
+            "type": "range",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -119,12 +119,11 @@
                 "id": ""
             },
             "default_value": 50,
-            "placeholder": 50,
+            "min": 20,
+            "max": 80,
+            "step": 10,
             "prepend": "",
-            "append": "%",
-            "min": 99,
-            "max": 0,
-            "step": ""
+            "append": ""
         },
         {
             "key": "field_5ce2b6b263a41",
@@ -192,11 +191,11 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Yes",
+            "message": "",
             "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         },
         {
             "key": "field_5c7ac49b08ee1",
@@ -276,7 +275,7 @@
             "key": "field_5c7708bfef4da",
             "label": "Image Stack Position",
             "name": "image_break_point",
-            "type": "radio",
+            "type": "true_false",
             "instructions": "Make the image stack on top on break point",
             "required": 0,
             "conditional_logic": 0,
@@ -285,16 +284,11 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "ncsplit-imagetop": "Yes",
-                "ncsplit-imagevar": "No"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "Top",
+            "ui_off_text": "Default",
+            "ui": 1
         },
         {
             "key": "field_6175cd89ccacc",
@@ -434,42 +428,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_5c7ac31108eda",
-            "label": "Add Content over Image",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_5c9b9b2c64065",
-            "label": "Image Overlay Content",
-            "name": "image_content",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_5e233e922cad4",
             "label": "Custom Code",
             "name": "custom_code",
@@ -509,5 +467,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650149822
+    "modified": 1664476082
 }
