@@ -1,14 +1,4 @@
 <?php
-/*
-* Plugin Name: NC Custom Blocks
-* Plugin URI: http://nealchester.com
-* Description: A collection of 15+ custom blocks for the gutenberg editor. <strong>NOTE:</strong> This plugin requires <em>Advanced Custom Fields Pro</em> to work.
-* Version: 5.0
-* Author: Neal Chester
-* Author URI: http://nealchester.com
-* License: GNU General Public License v2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
 
 if(function_exists('get_field')){ 
 
