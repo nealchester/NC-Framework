@@ -41,7 +41,7 @@
 	</header>
 
 	
-	<?php // if(!is_attachment()) { get_template_part('parts/banner'); }?>
+	<?php // if(!is_attachment()) { get_template_part('parts/the-title-banner'); }?>
 
 	<div id="body" class="ncontent"> 
 	<main class="ncontent_main">

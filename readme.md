@@ -29,7 +29,6 @@ If your concept requires more customization, you will need to copy and edit temp
   * Custom menus
   * Widgets (8 areas)
   * Custom logo
-  * Banner image
   * Child themes
   * Featured images
   * Gutenberg blocks
@@ -70,7 +69,7 @@ Refer to the `readme.md` file within each folder for more information.
 * **`img`** - stores all raster and vector images.
 * **`js`** - stores all JavaScript files
 * **`parts`** - stores all reusable template parts
-* **`templates`** - stores optional custom templates
+* **`templates`** - stores custom templates
 
 ### Template files
 The following explains the purpose of the files in the main directory of the theme:
