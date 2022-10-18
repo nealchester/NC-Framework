@@ -6,7 +6,7 @@ function nc_register_assets(){
 
   /* Javascript */
 
-  wp_register_script('wp-menu-support', get_theme_file_uri('/js/menus.js'), array('jquery'));
+  wp_register_script('wp-menu-support', get_theme_file_uri('/js/menus.js'), array('jquery'), null, true);
   wp_enqueue_script('wp-menu-support');
 
   /* CSS */
