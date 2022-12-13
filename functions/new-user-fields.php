@@ -15,6 +15,7 @@ function nc_new_contactmethods($contactmethods){
     unset($contactmethods['aim']);
     unset($contactmethods['yim']);
     unset($contactmethods['jabber']);
+    unset($contactmethods['myspace']);
     return $contactmethods;
 }
 

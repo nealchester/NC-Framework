@@ -1,6 +1,6 @@
 <div class="published"> 
 	<b class="published_label">
-	<?php get_template_part('img/calendar-icon.svg');?>
+	<span class="ncicon nc-clock"></span>
 	<span class="hidetext"><?php _e('Published','nc-framework');?></span></b> 
 	<span class="published_dates"> <span itemprop="datePublished">
 	<?php the_time(get_option('date_format')); ?>
@@ -28,16 +28,14 @@
     margin-right: 0.5em;
 }
 
-.published_label svg {
-    height: 1.5em;
+.published_label .nc-clock {
+    font-size: 1.5em;
+    display:inline-block;
+    color:#ddd;
 }
 
 .published_label b {
     margin-left: 0.5em;
-}
-
-.published_label svg path {
-    fill: #ddd;
 }
 
 </style>

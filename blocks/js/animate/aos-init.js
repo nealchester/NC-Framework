@@ -12,5 +12,5 @@ AOS.init({
   duration: 1000,
   offset:150,
   mirror: false,
-  once: false
+  once: true
 });

@@ -235,7 +235,7 @@ body.logged-in .header_menu-sticky.ncsticky-enabled { padding-top: 32px; }
 
     .header_menu .menu-item-has-children > a:after { 
       content: '\e902';
-      font-family: 'ncicon'; 
+      font-family: 'ncicons'; 
       margin-left:0.5em;
       transition:0.5s;
       display:inline-block;

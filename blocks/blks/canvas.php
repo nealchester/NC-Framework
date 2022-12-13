@@ -134,6 +134,22 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 		margin-bottom: <?php echo $bpadding; ?>;
 		scroll-snap-align: start;
 	}
+}
+<?php elseif($breakpoint && !$breakscroll):?>
+@media(max-width:<?php echo $breakpoint; ?>px){
+
+	<?php echo '#'.$id; ?> .wp-block-columns.is-not-stacked-on-mobile {
+		flex-direction: column;
+	}
+	
+	<?php echo '#'.$id; ?> .wp-block-columns.is-not-stacked-on-mobile ~ * {
+		display:none;
+
+	}
+
+	<?php echo '#'.$id; ?> .wp-block-column:after {
+		display: none !important;
+	}
 
 }
 <?php endif; ?>

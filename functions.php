@@ -18,6 +18,10 @@ get_template_part('functions/image-focus');
 get_template_part('functions/favicon-check');
 
 
+// Category Link
+get_template_part('functions/category-link');
+
+
 // Load External Fonts
 get_template_part('functions/register-fonts');
 
@@ -30,12 +34,12 @@ get_template_part('functions/register-css-js');
 get_template_part('functions/no-results');
 
 
-// Initialize Scroll Animation Sal
-get_template_part('functions/init-sal');
-
-
 // ACF Theme fields
 get_template_part('functions/theme-acf-fields');
+
+
+// ACF JSON Link
+get_template_part('functions/acf-json');
 
 
 // Register Widget Areas
@@ -66,10 +70,6 @@ get_template_part('functions/body-classes');
 get_template_part('functions/add-theme-support');
 
 
-// Add theme custom colors and font sizes
-get_template_part('functions/editor-styles');
-
-
 // Taxonomy Name
 get_template_part('functions/taxonomy-name');
 
@@ -84,14 +84,6 @@ get_template_part('functions/author-article-amount');
 
 // Formatted Date
 get_template_part('functions/formatted-date');
-
-
-// Post Meta Featured
-get_template_part('functions/post_meta_featured');
-
-
-// Post Meta Latest
-get_template_part('functions/post_meta_latest');
 
 
 /* Add the following:

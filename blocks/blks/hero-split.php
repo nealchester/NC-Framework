@@ -52,7 +52,6 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 	};	
 
 	$image = get_field('image');
-	$split_content = get_field('split_content');
 	$parallax = get_field('parallax');
 
 	$bg_color = get_field('bg_color') ?: "#333";
@@ -89,7 +88,6 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		</figure>
 		<div class="ncsplit_content">
 			<div class="ncsplit_contentcontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate();?>>
-				<?php /* if ($split_content) { echo $split_content; } else { echo'<h2>Heading 2</h2><p>Paragraph Text...</p>'; }; */?>
 				<?php echo nc_inner_blocks(2); ?>
 			</div>
 		</div>

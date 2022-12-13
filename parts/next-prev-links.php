@@ -129,7 +129,7 @@ if( !is_attachment() && get_theme_mod( 'show_nav_links', false ) == true && is_s
   display: block;
   font-weight: normal;
   transition: 0.3s;
-  font-family: 'ncicon';
+  font-family: 'ncicons';
 }
 
 .nplinks_prevwrapper:before {

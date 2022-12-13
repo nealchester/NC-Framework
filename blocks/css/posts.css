@@ -87,10 +87,8 @@
   .ncard_imgcon {
     padding-top:var(--image-height);
     width:100%;
-    /*
     height:var(--image-height);
     min-height:100%;
-    */
     display:block;
     position:relative;
   }
@@ -107,7 +105,7 @@
   }
   
   .ncard:hover .ncard_img {
-    transform:scale(1.4);
+    transform:scale(1.2);
   }
   
   .ncard_text {

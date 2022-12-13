@@ -62,7 +62,7 @@
 
 .nccordion_header:before {
     content: '\e902';
-    font-family: 'ncicon';
+    font-family: 'ncicons';
     transform:rotate(0deg);
     transition:0.3s;
     line-height: normal;

@@ -64,7 +64,7 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
       </div>
     </div>
     <button class="ncpopup_close">
-      <?php get_template_part('img/icon-x.svg'); ?>
+      <span class="ncicon nc-close"></span>
     </button>
   </div>
 </div>
@@ -106,14 +106,8 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
   top:0;
   cursor: pointer;
   border:none;
-}
-
-<?php echo '#'.$id; ?> .ncpopup_close svg {
-      display:block;
-  }
-
-<?php echo '#'.$id; ?> .ncpopup_close g {
-    fill: <?php echo $color; ?>;
+  display:block;
+  color: <?php echo $color; ?>;
 }
 
 

@@ -16,6 +16,7 @@
 		<div class="ncontain">
 
 			<?php get_template_part('parts/site-title');?>
+			
 			<p class="hidetext">
 				<a href="#body"><i><?php _e('Jump to Main Content','nc-framework'); ?></i></a>
 			</p>

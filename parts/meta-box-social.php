@@ -8,57 +8,74 @@ $pinterest  = get_the_author_meta('pinterest');
 $instagram  = get_the_author_meta('instagram');
 $youtube    = get_the_author_meta('youtube');
 $vimeo      = get_the_author_meta('vimeo');
+$wikipedia  = get_the_author_meta('wikipedia');
 $tumblr     = get_the_author_meta('tumblr');
 
-if ($website || $facebook || $twitter || $linkedin || $pinterest || $instagram || $youtube || $vimeo || $tumblr):
+if ($website || $facebook || $twitter || $linkedin || $pinterest || $instagram || $youtube || $vimeo || $tumblr || $wikipedia):
 ?>
 
 <nav class="socialbuttons">
 
 	<?php if($website):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($website) ?>" class="socialbuttons_link socialbuttons_personal">
-	<?php get_template_part('img/social/personal.svg');?>
+		<span class="ncicon nc-user"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($facebook):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($facebook) ?>" class="socialbuttons_link socialbuttons_facebook">
-	<?php get_template_part('img/social/facebook.svg');?>
+	<span class="ncicon nc-facebook"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($twitter):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($twitter) ?>" class="socialbuttons_link socialbuttons_twitter">
-	<?php get_template_part('img/social/twitter.svg');?>
+	<span class="ncicon nc-twitter"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($linkedin):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($linkedin) ?>" class="socialbuttons_link socialbuttons_linkedin">
-	<?php get_template_part('img/social/linkedin.svg');?>
+	<span class="ncicon nc-linkedin"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($pinterest):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($pinterest) ?>" class="socialbuttons_link socialbuttons_pinterest">
-	<?php get_template_part('img/social/pinterest.svg');?>
+	<span class="ncicon nc-pinterest"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($instagram):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($instagram)?>" class="socialbuttons_link socialbuttons_instagram">
-	<?php get_template_part('img/social/instagram.svg');?>
+	<span class="ncicon nc-instagram"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($youtube):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($youtube) ?>" class="socialbuttons_link socialbuttons_youtube">
-	<?php get_template_part('img/social/youtube.svg');?>
+	<span class="ncicon nc-youtube"></span>
 	</a>
 	<?php endif;?>
+
 	<?php if($vimeo):?>
-	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($youtube) ?>" class="socialbuttons_link socialbuttons_vimeo">
-	<?php get_template_part('img/social/vimeo.svg');?>
+	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($vimeo) ?>" class="socialbuttons_link socialbuttons_vimeo">
+	<span class="ncicon nc-vimeo"></span>
 	</a>
 	<?php endif;?>
+
+	<?php if($wikipedia):?>
+	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($wikipedia) ?>" class="socialbuttons_link socialbuttons_wikipedia">
+	<span class="ncicon nc-wikipedia"></span>
+	</a>
+	<?php endif;?>
+
 	<?php if($tumblr):?>
 	<a target="_blank" rel="noreferrer" href="<?php echo esc_url($tumblr) ?>" class="socialbuttons_link socialbuttons_tumblr">
-	<?php get_template_part('img/social/tumblr.svg');?>
+	<span class="ncicon nc-tumblr"></span>
 	</a>
 	<?php endif;?>
+
 </nav>
+
 <?php endif;?>

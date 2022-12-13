@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'ncicons';
+  src:
+    url('fonts/ncicons.ttf?h81zo') format('truetype'),
+    url('fonts/ncicons.woff?h81zo') format('woff'),
+    url('fonts/ncicons.svg?h81zo#ncicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ncicon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ncicons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nc-email:before {
+  content: "\e900";
+}
+.nc-user:before {
+  content: "\e908";
+}
+.nc-clock:before {
+  content: "\e94e";
+}
+.nc-link:before {
+  content: "\e9cb";
+}
+.nc-new-tab:before {
+  content: "\ea7e";
+}
+.nc-dots:before {
+  content: "\e909";
+}
+.nc-menu:before {
+  content: "\e907";
+}
+.nc-close:before {
+  content: "\e903";
+}
+.nc-play-circle:before {
+  content: "\e90a";
+}
+.nc-search:before {
+  content: "\e90c";
+}
+.nc-download:before {
+  content: "\e708";
+}
+.nc-reply:before {
+  content: "\e96a";
+}
+.nc-arrow-back:before {
+  content: "\e901";
+}
+.nc-arrow-forward:before {
+  content: "\e902";
+}
+.nc-checkbox-checked:before {
+  content: "\ea52";
+}
+.nc-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.nc-radio-checked:before {
+  content: "\ea55";
+}
+.nc-radio-unchecked:before {
+  content: "\ea56";
+}
+.nc-facebook:before {
+  content: "\ea90";
+}
+.nc-twitter:before {
+  content: "\ea96";
+}
+.nc-instagram:before {
+  content: "\ea92";
+}
+.nc-linkedin:before {
+  content: "\eaca";
+}
+.nc-pinterest:before {
+  content: "\e90d";
+}
+.nc-google:before {
+  content: "\ea88";
+}
+.nc-youtube:before {
+  content: "\ea9d";
+}
+.nc-vimeo:before {
+  content: "\eaa0";
+}
+.nc-get-pocket:before {
+  content: "\e90e";
+}
+.nc-tumblr:before {
+  content: "\eab9";
+}
+.nc-reddit:before {
+  content: "\eac6";
+}
+.nc-wikipedia:before {
+  content: "\eac8";
+}
+.nc-quotes:before {
+  content: "\e90f";
+}
+.nc-cart:before {
+  content: "\e924";
+}
+.nc-secured-lock:before {
+  content: "\e925";
+}

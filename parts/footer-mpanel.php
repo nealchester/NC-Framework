@@ -5,7 +5,7 @@
 <div class="mpanel">
 
 	<label class="mpanel_close" for="mpanel" aria-hidden="true">
-		<?php get_template_part('img/icon-x.svg');?>	
+		<span class="ncicon nc-close"></span>
 	</label>
 
 	<?php get_template_part('parts/site-title'); ?>
@@ -17,7 +17,7 @@
 	<?php wp_nav_menu (array( 
 	'container' => false, 
 	'theme_location' => 'mobile-menu',
-	'menu_class' => 'navmenu navmenu-vertical navmenu-list', 
+	'menu_class' => 'mpanel_menu', 
 	'menu_id' => '',
 	'fallback_cb' => 'nc_link_to_menu_editor'
 	)); ?>

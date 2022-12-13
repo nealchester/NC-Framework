@@ -85,56 +85,48 @@
 .socialbuttons {
   display: flex;
   flex-wrap: wrap;
-}
-
-.socialbuttons_link svg {
-  width: 1.25em;
+  gap: 0.25rem;
 }
 
 .socialbuttons_link {
   width: 2em;
   height: 2em;
+  font-size: 1.2em;
   display: flex;
-  border-radius: 50%;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   transition: .3s;
   align-self: flex-start;
   background-color: #ccc;
-  /* margin-bottom: 0.5em; */
-  margin-right: 0.5em;
 }
 
-.socialbuttons_link path {
-  fill: #fff;
+.socialbuttons_link .ncicon {
+  color: #fff;
 }
 
 .socialbuttons_facebook {
-  background-color: #3b579d;
+  background-color: var(--facebook);
 }
 
 .socialbuttons_twitter {
-  background-color: #1da1f2;
+  background-color:  var(--twitter);
 }
 
 .socialbuttons_linkedin {
-  background-color: #0077b5;
+  background-color:  var(--linkedin);
 }
 
 .socialbuttons_pinterest {
-  background-color: #bd081c;
+  background-color:  var(--pinterest);
 }
 
 .socialbuttons_youtube {
-  background-color: #ff0000;
-}
-
-.socialbuttons_googleplus {
-  background-color: #db4437;
+  background-color:  var(--youtube);
 }
 
 .socialbuttons_instagram {
-  background-color: #fb3958;
+  background-color:  var(--instagram);
 }
 
 .socialbuttons_personal {
@@ -145,12 +137,16 @@
   background-color: #999;
 }
 
+.socialbuttons_wikipedia {
+  background-color: #333;
+}
+
 .socialbuttons_vimeo {
-  background-color: #1ab7ea;
+  background-color:  var(--vimeo);
 }
 
 .socialbuttons_tumblr {
-  background-color: #36465d;
+  background-color:  var(--tumblr);
 }
 
 

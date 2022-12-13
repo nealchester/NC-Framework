@@ -80,6 +80,57 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 		'modified' => 1565621426,
 	));
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5951c79598e52',
+		'title' => 'Related Content',
+		'fields' => array(
+				array(
+						'key' => 'field_5951c7a4df31f',
+						'label' => 'Related Content',
+						'name' => 'chose_related_content',
+						'type' => 'relationship',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+						),
+						'post_type' => array(
+								0 => 'all',
+						),
+						'taxonomy' => '',
+						'filters' => array(
+								0 => 'search',
+								1 => 'post_type',
+								2 => 'taxonomy',
+						),
+						'elements' => '',
+						'min' => '',
+						'max' => '',
+						'return_format' => 'object',
+				),
+		),
+		'location' => array(
+				array(
+						array(
+								'param' => 'post_type',
+								'operator' => '==',
+								'value' => 'post',
+						),
+				),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+));
 	
 	
 	endif;

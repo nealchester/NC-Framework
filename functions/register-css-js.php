@@ -13,6 +13,9 @@ function nc_register_assets(){
 
   wp_register_style('nc-vars', get_theme_file_uri('/css/variables.css'));
   wp_enqueue_style('nc-vars');
+
+  wp_register_style('nc-icons', get_theme_file_uri('/icons/style.css'));
+  wp_enqueue_style('nc-icons');
   
   wp_register_style('nc-uclasses', get_theme_file_uri('/css/uclasses.css'), array('nc-vars'));
   wp_enqueue_style('nc-uclasses');
@@ -59,5 +62,6 @@ add_editor_style(
     '/css/uclasses.css',
     '/css/blocks.css',
     '/css/content.css',
+    '/icons/style.css'
   ) 
 );
