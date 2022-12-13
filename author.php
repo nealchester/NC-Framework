@@ -15,21 +15,19 @@ get_template_part('parts/header')?>
 				<?php if($curauth->description == !''):?>
 				<p class="authorpage_bio"><?php echo esc_html($curauth->description); ?></p>
 				<?php endif;?>
-				<?php get_template_part('parts/meta-social');?>
+				
+				<?php get_template_part('parts/meta-box-social');?>
 			</div>
 		</header>
 
 		<div class="authorpage_content">					
-			<h2 class="authorpage_listheading ncrule ncrule-left base normal"><?php _e('Articles by', 'nc-framework');?> <?php echo esc_html($curauth->display_name); ?></h2>
+			<h2 class="authorpage_listheading ncrule ncrule-left"><?php _e('Articles by', 'nc-framework');?> <?php echo esc_html($curauth->display_name); ?></h2>
 			<?php if (have_posts()) : ?>
-			<ol class="authorpage_articlelist">
+			<div class="authorpage_articlelist">
 				<?php while (have_posts()) : the_post();?>
-				<li>
-					<span class="authorpage_link"><a href="<?php the_permalink()?>"><?php the_title(); ?></a></span>
-					<span class="authorpage_date"><?php the_time(get_option('date_format')); ?></span>
-				</li>
+				<?php get_template_part('parts/card');?>
 				<?php endwhile;?>
-			</ol>
+			</div>
 			<?php endif; // get_template_part('parts/paginate');?>
 		</div>
 	</div>

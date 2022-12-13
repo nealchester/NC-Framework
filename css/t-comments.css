@@ -117,7 +117,7 @@ a.comment-reply-link {
 
 a.comment-reply-link:after {
     content: '\e96a';
-    font-family: 'ncicon';
+    font-family: 'ncicons';
     padding-left: 0.25em;
     line-height: 0;
     position: relative;

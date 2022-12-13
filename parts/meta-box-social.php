@@ -79,3 +79,81 @@ if ($website || $facebook || $twitter || $linkedin || $pinterest || $instagram |
 </nav>
 
 <?php endif;?>
+
+
+<style>
+
+/* Social Buttons */
+
+.socialbuttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.socialbuttons_link {
+  width: 2em;
+  height: 2em;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: .3s;
+  align-self: flex-start;
+  background-color: #ccc;
+}
+
+.socialbuttons_link .ncicon {
+  color: #fff;
+}
+
+.socialbuttons_facebook {
+  background-color: var(--facebook);
+}
+
+.socialbuttons_twitter {
+  background-color:  var(--twitter);
+}
+
+.socialbuttons_linkedin {
+  background-color:  var(--linkedin);
+}
+
+.socialbuttons_pinterest {
+  background-color:  var(--pinterest);
+}
+
+.socialbuttons_youtube {
+  background-color:  var(--youtube);
+}
+
+.socialbuttons_instagram {
+  background-color:  var(--instagram);
+}
+
+.socialbuttons_personal {
+  background-color: #444;
+}
+
+.socialbuttons_email {
+  background-color: #999;
+}
+
+.socialbuttons_wikipedia {
+  background-color: #333;
+}
+
+.socialbuttons_vimeo {
+  background-color:  var(--vimeo);
+}
+
+.socialbuttons_tumblr {
+  background-color:  var(--tumblr);
+}
+
+.socialbuttons_link:hover {
+	opacity: 0.5;
+}
+
+</style>

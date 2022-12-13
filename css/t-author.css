@@ -13,16 +13,6 @@
   width:100%;
 }
 
-/*
-.authorpage .socialbuttons_link {
-  background-color:var(--green)
-}
-
-.authorpage .socialbuttons_link:hover {
-  background-color:var(--dark)
-}
-*/
-
 @media(max-width:460px){
   .authorpage_header {
       grid-template-columns:1fr;
@@ -47,29 +37,6 @@
 
 .authorpage_content {
   padding:0; margin:0; border:none;
-}
-
-.authorpage_articlelist {
-  margin-bottom:3em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 1em 3em;
-  list-style-type: decimal-leading-zero;
-  list-style-position: inside;
-  padding-left: 0;
-}
-
-.authorpage_articlelist li {
-  font-weight: bold;
-}
-
-.authorpage_link {
-  display:block;
-}
-
-.authorpage_date {
-font-weight: normal; color:#999;
-font-size:var(--txt-small);
 }
 
 .authorpage_listheading {

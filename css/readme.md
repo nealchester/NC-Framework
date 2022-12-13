@@ -14,7 +14,6 @@ The following files are **only** used on the front-end:
 
 The following files are **only** used on the front-end and **only** loaded if the template is displayed:
 
-* **`t-archives.css`** styles the archive and search results pages. 
 * **`t-author.css`** styles the author page. 
 * **`t-comments.css`** styles the optional comments section. 
 * **`t-image.css`** styles the image attachment page. 

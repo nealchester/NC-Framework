@@ -1,11 +1,10 @@
-<?php wp_enqueue_style( 'nc-archives' );
-get_template_part('parts/header');?>
+<?php get_template_part('parts/header');?>
 
 <?php get_template_part('parts/the-title'); ?>
 
 <?php if (have_posts()) : ?>
 
-	<div class="listings">
+
 	<?php while (have_posts()) : the_post(); ?>
 
 		<?php // The card 
@@ -14,7 +13,7 @@ get_template_part('parts/header');?>
 	<?php endwhile;?>
 	<?php get_template_part('parts/paginate');?>
 	<?php if(is_search()) { get_template_part('parts/searchform'); echo'<div style="height:3rem"></div>';} ?>
-	</div>
+
 
 <?php else : ?>
 	<?php if(is_search()):?>

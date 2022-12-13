@@ -41,9 +41,11 @@ function nc_register_assets(){
   */
 
   wp_register_style('nc-editor', get_theme_file_uri('/css/editor.css'), array('nc-vars'));
-  wp_register_style('nc-archives', get_theme_file_uri('/css/t-archives.css'), array('nc-content'));
+
   wp_register_style('nc-author', get_theme_file_uri('/css/t-author.css'), array('nc-content'));
+
   wp_register_style('nc-image', get_theme_file_uri('/css/t-image.css'), array('nc-content'));
+  
   wp_register_style('nc-comments', get_theme_file_uri('/css/t-comments.css'), array('nc-reset'));
 }
 

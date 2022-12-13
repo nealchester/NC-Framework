@@ -10,6 +10,8 @@
         <?php if(get_the_author_meta('phonenumber')):?> <p class="authorbox_phone"><?php _e('Phone:','nc-framework');?> <?php echo get_the_author_meta('phonenumber'); ?></p><?php endif;?>
         <?php if(get_the_author_meta('description')):?> <p class="authorbox_desc"><?php echo wp_trim_words( get_the_author_meta('description'), 20, ' &hellip; <a href="'.$authorlink2.'">'.__('Read&nbsp;more&nbsp;&rsaquo;','nc-framework').'</a>');?></p> <?php endif; ?>
 		<?php get_template_part('parts/meta-box-social');?>
+   </div>
+
 </section>
 
 <style>
@@ -54,22 +56,6 @@
     margin:0;
 }
 
-.authorbox .socialbuttons {
-    font-size: 0.8em;
-}
-
-.authorbox .socialbuttons_link {
-    margin-right: 0.5em;
-}
-
-.authorbox .socialbuttons_link:hover {
-    background-color: #222;
-}
-
-.authorbox .socialbuttons_link svg {
-    width: 1.5em;
-}
-
 @media(max-width:500px){
     .authorbox {
         grid-template-columns:1fr;
@@ -78,76 +64,5 @@
     	width:var(--box-avatar-size);
     }
 }
-
-/* Social Buttons */
-/* The HTML <nav class="socialbuttons"> <a href="#1" class="socialbuttons_link socialbuttons_facebook"> <svg alt="name of icon"> <path fill="#000"></path> </svg> </a> </nav> */
-
-.socialbuttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-}
-
-.socialbuttons_link {
-  width: 2em;
-  height: 2em;
-  font-size: 1.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: .3s;
-  align-self: flex-start;
-  background-color: #ccc;
-}
-
-.socialbuttons_link .ncicon {
-  color: #fff;
-}
-
-.socialbuttons_facebook {
-  background-color: var(--facebook);
-}
-
-.socialbuttons_twitter {
-  background-color:  var(--twitter);
-}
-
-.socialbuttons_linkedin {
-  background-color:  var(--linkedin);
-}
-
-.socialbuttons_pinterest {
-  background-color:  var(--pinterest);
-}
-
-.socialbuttons_youtube {
-  background-color:  var(--youtube);
-}
-
-.socialbuttons_instagram {
-  background-color:  var(--instagram);
-}
-
-.socialbuttons_personal {
-  background-color: #9b6954;
-}
-
-.socialbuttons_email {
-  background-color: #999;
-}
-
-.socialbuttons_wikipedia {
-  background-color: #333;
-}
-
-.socialbuttons_vimeo {
-  background-color:  var(--vimeo);
-}
-
-.socialbuttons_tumblr {
-  background-color:  var(--tumblr);
-}
-
 
 </style>

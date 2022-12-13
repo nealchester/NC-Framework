@@ -36,7 +36,7 @@ get_template_part('parts/link-pages-footer');?>
 // get_template_part('parts/meta-tags');?>
 
 <?php // Author box
-// get_template_part('parts/meta-box');?>
+get_template_part('parts/meta-box');?>
 
 <?php // Related Posts Plugin
 if( function_exists('nc_related_posts') ) { nc_related_posts(); };?>

@@ -466,3 +466,212 @@ body::-webkit-scrollbar-thumb:active { background-color: #000 }
 
 body::-webkit-scrollbar-track { background-color:#ddd; }
 /* Track color */
+
+
+/* Card Listings */
+
+.lcard {
+    --card-padding: 0;
+    --card-margin-bottom:3em;
+    --card-bg-color: #fff;
+    --card-bg-color-hover: #fff;
+    --card-flex-direction: row;
+    --card-border: none;
+    --card-border-hover: none;
+    --card-bshadow: none;
+      
+    --border-radius: 5px;
+    --pretext-color:currentColor;
+  
+    --image-width: 30%;
+    --image-height: 70%;
+  
+    --text-padding: 1.5em;
+    --text-size: 1em;
+    --text-color: #000;
+    --text-color-hover: #000;
+  
+    --trans-speed: 0.3s;
+    
+    }
+    
+    .lcard { 
+      width:100%; 
+      max-width:100%; 
+      position:relative; 
+      margin-bottom:var(--card-margin-bottom);
+     }
+    
+    .lcard_link {
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    }
+    
+    .lcard_container {
+    display:flex;
+    position:relative;
+    background:var(--card-bg-color);
+    padding:var(--card-padding);
+    flex-direction:var(--card-flex-direction);
+    border:var(--card-border);
+    box-shadow:var(--card-bshadow);
+    transition:var(--trans-speed);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    }
+    
+    .lcard:hover .lcard_container {
+    background:var(--card-bg-color-hover);
+    border:var(--card-border-hover);
+    }
+    
+    .lcard_image {
+    flex-basis:var(--image-width);
+    min-width:var(--image-width);
+    overflow:hidden;
+    background-color: #eee;
+    }
+    
+    .lcard_imgcon {
+      padding-top:var(--image-height);
+      width:100%;
+      height:var(--image-height);
+      min-height:100%;
+      display:block;
+      position:relative;
+    }
+    
+    .lcard_img {
+      position:absolute;
+      object-fit:cover;
+      top:0; left:0;
+      display:block;
+      width:100%;
+      height:100%;
+      transform:scale(1);
+      transition:var(--trans-speed);
+    }
+    
+    .lcard:hover .lcard_img {
+      transform:scale(1.4);
+    }
+    
+    .lcard_text {
+    display:flex;
+    flex-grow:1;
+    flex-direction:column;
+    justify-content:center;
+    font-size:var(--text-size);
+    color:var(--text-color);
+    padding:var(--text-padding);
+    transition:var(--trans-speed);
+    min-width: 0; /* This is needed if you use truncated content within a flexbox */
+    }
+    
+    .lcard:hover .lcard_text {
+    color:var(--text-color-hover);
+    }
+    
+  
+  /* Listings */
+  
+  .lcard_title { 
+    font-weight:bold; 
+    text-transform:uppercase;
+   }
+  
+  .lcard_meta { color:#999;}
+  
+  .lcard_readmore { 
+    display:inline-flex; 
+    align-items: center; 
+    border-bottom:solid 1px var(--link-color);
+    text-transform: uppercase;
+    font-size:var(--txt-small);
+    font-weight: 500;
+  }
+  
+  @media(max-width:768px){
+  .lcard {
+    --card-flex-direction:column;
+    --image-width:100%;
+    --image-height:50%;
+    --text-size:0.8em;
+        --text-padding:1em;
+    }
+  }
+  
+  
+  /* Site Pagination */
+  
+  .pagination {
+    --pgbgcolor:var(--gray);
+    --pgtextcolor:#222;
+  
+    --pgbgcolor-hover:var(--link-color);
+    --pgtextcolor-hover:#fff;
+  
+    --pgbgcolor-current:#222;
+    --pgtextcolor-current:#fff;
+  
+    --pgradius:5px;
+    --pgbordercolor:#eee;
+  }
+  
+  .pagination {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    margin-top:var(--gap);
+    margin-bottom:3rem;
+  }
+  
+  .pagination .page-numbers {
+    padding: 0.5em;
+    border-radius: var(--pgradius);
+    text-align: center;
+    background-color: var(--pgbgcolor);
+    margin: 0.25em;
+    font-weight: bold;
+    width: 3em;
+    border:solid 1px var(--pgbordercolor);
+    transition: .3s;
+  }
+  
+  .pagination .page-numbers:first-child {
+    margin-left: 0;
+  }
+  
+  .pagination .page-numbers:last-child {
+    margin-right: 0;
+  }
+  
+  .pagination .page-numbers.dots {
+    cursor: default;
+  }
+  
+  .pagination .page-numbers:hover:not(.dots):not(.current) {
+    background-color: var(--pgbgcolor-hover);
+    color: var(--pgtextcolor-hover);
+    border:solid 1px var(--pgbgcolor-hover);
+  }
+  
+  .pagination a.page-numbers {
+    color: var(--pgtextcolor);
+  }
+  
+  .pagination_prev:before {
+    content: '\2039';
+  }
+  
+  .pagination_next:before {
+    content: '\203A';
+  }
+  
+  .pagination .page-numbers.current {
+    background-color: var(--pgbgcolor-current);
+    color: var(--pgtextcolor-current);
+    border:solid 1px var(--pgbgcolor-current);
+    cursor: default;
+  }
