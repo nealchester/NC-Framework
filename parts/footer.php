@@ -9,9 +9,6 @@ get_template_part('parts/footer-mega');?>
 
 </div><!-- end of #wrapper -->
 
-
-
-
 <?php // mobile menu 
 get_template_part('parts/footer-mpanel');?>
 

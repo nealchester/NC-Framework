@@ -24,11 +24,6 @@ function nc_span_cat_count($links)
     return $links;
 }
 
-// Custom editor styles
-add_editor_style(); 
-if (!isset($content_width))
-    $content_width = 900;
-
 // Next Page icon <!--Next Page-->
 
 add_filter('mce_buttons', 'nc_wysiwyg_editor');
