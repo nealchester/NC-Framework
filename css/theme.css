@@ -554,7 +554,7 @@ body::-webkit-scrollbar-track { background-color:#ddd; }
     }
     
     .lcard:hover .lcard_img {
-      transform:scale(1.4);
+      transform:scale(1.2);
     }
     
     .lcard_text {
