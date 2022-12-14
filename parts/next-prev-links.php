@@ -114,7 +114,7 @@ if( !is_attachment() && get_theme_mod( 'show_nav_links', false ) == true && is_s
 .nplinks a:only-child .nplinks_prevwrapper,
 .nplinks a:only-child .nplinks_nextwrapper {
   max-width:var(--width-max);
-  width:calc(100% - (var(--gap) * 2));
+  width:var(--width-limit);
   margin: 0 auto;
 }
 

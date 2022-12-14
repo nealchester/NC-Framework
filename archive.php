@@ -4,13 +4,14 @@
 
 <?php if (have_posts()) : ?>
 
-
+<div class="lcard_box">
 	<?php while (have_posts()) : the_post(); ?>
 
 		<?php // The card 
 		get_template_part('parts/card');?>
 
 	<?php endwhile;?>
+</div>
 	<?php get_template_part('parts/paginate');?>
 	<?php if(is_search()) { get_template_part('parts/searchform'); echo'<div style="height:3rem"></div>';} ?>
 

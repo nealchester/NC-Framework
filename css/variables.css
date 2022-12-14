@@ -13,6 +13,8 @@
 --width-wide:1000px;
 --width-max:1400px;
 
+--width-limit: calc(100% - 3rem);
+
 /* Colors */
 
 --gray: #fbfbfb; 

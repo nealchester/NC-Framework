@@ -5,7 +5,7 @@
 .ncontain {
   max-width: var(--width-max);
   margin-inline: auto;
-  width: calc(100% - (var(--gap) * 2));
+  width: var(--width-limit);
 }
 
 /* Hide labels in gravity forms */

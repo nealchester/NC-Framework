@@ -18,12 +18,13 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
 .ncontain {
     max-width: var(--width-max);
     margin-inline: auto;
-    width: calc(100% - (var(--gap) * 2));
+    width: var(--width-limit);
 }
 
 /* Main column width */
 .wp-block {
     max-width: var(--width-standard);
+    margin-inline: auto;
 }
 
 /* Width of "wide" blocks */
@@ -41,7 +42,7 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
     max-width: var(--width-max);
 }
 
-.editor-post-title__block .editor-post-title__input {
+.editor-post-title {
     font-size:var(--txt-xxlarge);
     font-family: var(--sans);
 }

@@ -365,7 +365,7 @@ body.home .nclogo a {
 .ncontent_main > .mejs-container,
 .wp-video {
     max-width: var(--width-standard) !important;
-    width: calc(100% - 2 * var(--gap)) !important;
+    width: var(--width-limit) !important;
     margin-bottom: var(--gap);
 }
 
@@ -380,10 +380,9 @@ body.woocommerce .ncontent_main > * {
 }
 
 .ncontent_main > * {
-    width:calc(100% - 2 * var(--gap));
+    width: var(--width-limit);
     max-width:var(--width-standard);
-    margin-left:auto;
-    margin-right:auto;
+    margin-inline:auto;
 }
 
 .ncontent_main > .alignwide {

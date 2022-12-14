@@ -1,7 +1,7 @@
 <?php
 /*
 
-// If you'd like to remove any customizer features add them below
+// If you'd like to remove any customizer features add them below. To remove Logo upload, comment out this feature in "add-theme-support.php" in the "functions" folder
 
 function nc_customizer_remove($wp_customize){
 

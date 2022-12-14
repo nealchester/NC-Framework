@@ -38,8 +38,8 @@ get_template_part('parts/link-pages-footer');?>
 <?php // Author box
 get_template_part('parts/meta-box');?>
 
-<?php // Related Posts Plugin
-if( function_exists('nc_related_posts') ) { nc_related_posts(); };?>
+<?php // Related Posts
+get_template_part('parts/related-posts');?>
 
 
 <?php // Comments
