@@ -63,7 +63,7 @@ Refer to the `readme.md` file within each folder for more information.
 
 
 * **`_functions`** - this folder stores extra WP functions. If not used should be deleted.
-* **`_parts_`** - this folder stores extra WP features. If not used should be deleted.
+* **`_parts`** - this folder stores extra WP features. If not used should be deleted.
 * **`acf-json`** - stores custom fields data (don't delete)
 * **`blocks`** - stores all custom Gutenberg blocks and supported assets
 * **`customizer`** - stores all the new Customizer features function files
