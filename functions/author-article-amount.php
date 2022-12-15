@@ -6,5 +6,3 @@ function nc_modify_num_posts($query)
         $query->set('posts_per_page', -1);
 }
 add_action('pre_get_posts', 'nc_modify_num_posts');
-
-?>

@@ -12,5 +12,3 @@ function nc_add_body_classes($classes){
     return $classes;
 }
 add_filter('body_class', 'nc_add_body_classes');
-
-?>

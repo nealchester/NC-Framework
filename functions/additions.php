@@ -37,7 +37,3 @@ function nc_wysiwyg_editor($mce_buttons)
     }
     return $mce_buttons;
 }
-
-
-
-?>
