@@ -33,16 +33,9 @@
 				)); 
 			?>
 
-			<?php // get_template_part('parts/header-search-button');?>
-
 		</div>
 
-		<?php // get_template_part('parts/header-search-box');?>
-
 	</header>
-
-	
-	<?php // if(!is_attachment()) { get_template_part('parts/the-title-banner'); }?>
 
 	<div id="body" class="ncontent"> 
 	<main class="ncontent_main">

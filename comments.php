@@ -67,7 +67,7 @@
 	'comment_field' => '<label for="commentarea" class="hidetext">'.__('Comment', 'nc-framework').'<br></label>
 	<textarea id="commentarea" name="comment" aria-required="true" 
 	placeholder="'.__('Write your comment here. Be clear, be kind, stay on-topic, and respect everyone.','nc-framework').'"></textarea><br>',
-	'cancel_reply_link' => '<span class="nc-x-close ncicon ncicon-close"></span> <span class="hidetext cancel-comment-reply-label">'.__('Cancel','nc-framework').'</span>',
+	'cancel_reply_link' => '<span class="ncicon nc-close"></span> <span class="hidetext cancel-comment-reply-label">'.__('Cancel','nc-framework').'</span>',
 	'label_submit'      => __('Post Comment','nc-framework'),
 	'comment_notes_before' => '',
 	'comment_notes_after' => '',

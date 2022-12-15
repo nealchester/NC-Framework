@@ -3,34 +3,6 @@
   <span class="ncicon nc-search"></span>
 </label>
 
-
-
-/* NC Search Reveal 
-
-<header>
-
-<!-- form sits as first thing in the header -->
-<form class="ncsearchreveal">
-  <input class="ncsearchreveal_input" id="ncsearchinput" name="s" type="search" placeholder="Search 300+ resources...">
-  <button class="ncsearchreveal_close" tablindex="0" type="button" title="close search">
-    <svg class="ncsearchreveal_x"></svg>
-  </button>
-</form>
-
-<div class="ncontain">
-
-  <b class="logo">Logo</b>
-  <nav>...</nav>
-
-  <!-- Reveal search box trigger label element -->
-  <label class="ncsearchtrigger" for="ncsearchinput" title="reveal search box">
-    <span hidden="">Search</span> 
-    <svg class="ncsearchtrigger_icon"></svg>
-  </label>
-
-</div>
-</header>
-
 <style>
 
     .ncsearchtrigger {

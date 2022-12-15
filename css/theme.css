@@ -374,9 +374,18 @@ body.home .nclogo a {
 
 body.blog .ncontent_main > *,
 body.archive .ncontent_main > *,
+body.error404 .ncontent_main > *,
 body.search .ncontent_main > *,
 body.woocommerce .ncontent_main > * {
     max-width: var(--width-wide);
+}
+
+.ncontent {
+    min-height: 70vh;
+}
+
+body:not(.page-template-blank) .ncontent {
+    margin-bottom: clamp(2em, 6vmin, 6rem);
 }
 
 .ncontent_main > * {
@@ -396,10 +405,6 @@ body.woocommerce .ncontent_main > * {
 .ncontent_main > .alignfull {
     max-width:100%;
     width:100%;
-}
-
-.ncontent_main > :last-child {
-    margin-bottom: 3em;
 }
 
 /* Link colors */
@@ -623,7 +628,6 @@ body::-webkit-scrollbar-track { background-color:#ddd; }
     display: flex;
     justify-content: flex-start;
     margin-top:var(--gap);
-    margin-bottom:3rem;
   }
   
   .pagination .page-numbers {

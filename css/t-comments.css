@@ -30,20 +30,19 @@ font-size: var(--txt-large);
 }
 
 .comment-author .avatar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2.78em /*50px*/;
+    width: 50px;
     border-radius:50%;
+    float: left;
+    margin-right: 0.75em;
 }
 
 .comment-list .comment .comment-body {
     position: relative;
-    padding-left: 4em /*65px*/ ;
 }
 
 .comment-meta {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    clear: both;
 }
 
 .fn {
@@ -61,12 +60,10 @@ font-size: var(--txt-large);
     }
 
     .comment-meta {
-        padding-left: 5.5rem /*55px*/ ;
-        position: relative;
     }
 
     .comment-author .avatar {
-        width: 4.4rem /*44px*/;
+    width: 40px;
     }
 }
 
@@ -97,8 +94,20 @@ font-size: var(--txt-large);
     display:inline-flex;
 }
 
-.edit-link {color: #666;font-size:0.6em;text-transform:uppercase;padding: 0.5em 1em; background-color:#f2f2f2;margin-left: 0.75em; border-radius:3px; line-height:normal}
-.edit-link:hover { background-color:var(--link-color); color:#fff; }
+.edit-link {
+    color: #666;
+    font-size:0.7em;
+    text-transform:uppercase;
+    padding: 0.5em 1em; 
+    background-color:#f2f2f2;
+    margin-left: 0.75em; 
+    border-radius:3px; 
+    line-height:normal
+}
+.edit-link:hover { 
+    background-color:var(--link-color); 
+    color:#fff; 
+}
 
 
 
@@ -179,34 +188,27 @@ a.comment-reply-link:after {
     margin-bottom: 2em;
 }
 
-.comment-body + #respond {
-    padding:var(--gap);
-    border-radius:5px;
-    border:solid 1px #ddd;
-}
-
-
 #reply-title {
     display:flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:space-between;
     position: relative;
     font-size: var(--txt-medium);
 }
 
 #cancel-comment-reply-link {
-    color: #000;
-    margin-top: 0.3em;
-    display: inline-block;
+    color: currentColor;
+    letter-spacing: 0;
 }
 
 #cancel-comment-reply-link:after {
     display:none;
 }
 
-
-
-#commentform input[type="text"], #commentform input[type="url"], #commentform input[type="email"], #commentform textarea {
+#commentform input[type="text"], 
+#commentform input[type="url"], 
+#commentform input[type="email"], 
+#commentform textarea {
     width: 100%;
     margin-bottom: 0.75em;
     display: block;
@@ -220,7 +222,8 @@ a.comment-reply-link:after {
     margin-bottom: 1.25em;
 }
 
-#commentform input + br, #commentform textarea + br {
+#commentform input + br, 
+#commentform textarea + br {
     display: none;
 }
 

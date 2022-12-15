@@ -6,41 +6,14 @@
 <?php // The title
 get_template_part('parts/the-title');?>
 
-<?php // get_template_part('parts/meta-social-share-links'); ?>
-
 <?php // Page Info
 get_template_part('parts/meta-avatar');?>
 
 <?php // Featured image
 get_template_part('parts/featured-image'); ?>
 
-<?php // Excerpt-Summary
-get_template_part('parts/meta-excerpt'); ?>
-
-<?php // Pagination Links header
-get_template_part('parts/link-pages-header');?>
-
 <?php // The Content
 the_content(); ?>
-
-<?php // Pagination Links footer 
-get_template_part('parts/link-pages-footer');?>
-
-<?php // Published & Modified Date
-// get_template_part('parts/meta-date'); ?>
-
-<?php // Categories
-// get_template_part('parts/meta-categories');?>
-
-<?php // Tags
-// get_template_part('parts/meta-tags');?>
-
-<?php // Author box
-get_template_part('parts/meta-box');?>
-
-<?php // Related Posts
-get_template_part('parts/related-posts');?>
-
 
 <?php // Comments
 comments_template() ?>

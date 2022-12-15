@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'ncicons';
   src:
-    url('fonts/ncicons.ttf?h81zo') format('truetype'),
-    url('fonts/ncicons.woff?h81zo') format('woff'),
-    url('fonts/ncicons.svg?h81zo#ncicons') format('svg');
+    url('fonts/ncicons.ttf?w3mlun') format('truetype'),
+    url('fonts/ncicons.woff?w3mlun') format('woff'),
+    url('fonts/ncicons.svg?w3mlun#ncicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -92,6 +92,9 @@
 }
 .nc-pinterest:before {
   content: "\e90d";
+}
+.nc-tiktok:before {
+  content: "\e904";
 }
 .nc-google:before {
   content: "\ea88";
