@@ -68,6 +68,7 @@ Refer to the `readme.md` file within each folder for more information.
 * **`blocks`** - stores all custom Gutenberg blocks and supported assets
 * **`customizer`** - stores all the new Customizer features function files
 * **`fonts`** - stores all font files including icon font files
+* **`icons`** - stores icon font files by IcoMoon w/ the `json` selection file
 * **`functions`** - stores all functions files connected to the `functions.php` file
 * **`img`** - stores all raster and vector images.
 * **`js`** - stores all JavaScript files
