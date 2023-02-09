@@ -3,7 +3,8 @@
 /* 
 Fields Groups:
  - Featured Image Focus
- - Add the next one here
+ - Related Content
+ - Gallery Image Link
 */
 
 if( function_exists('acf_add_local_field_group') ):
@@ -132,6 +133,48 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 ));
 	
+acf_add_local_field_group(array(
+	'key' => 'group_63e43972e9ddb',
+	'title' => 'Gallery Image Link',
+	'fields' => array(
+		array(
+			'key' => 'field_63e439744b211',
+			'label' => 'Custom Link',
+			'name' => 'custom_link',
+			'aria-label' => '',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'attachment',
+				'operator' => '==',
+				'value' => 'image',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+));
+
 	
 	endif;
 ?>
