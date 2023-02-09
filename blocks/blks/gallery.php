@@ -85,7 +85,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 			?>
 
 				<figure class="ncgallery_item ncgallery_item-<?php echo $i++;?>">
-					<?php if(get_field('custom_link', $image['ID'])):?><a class="ncgallery_link" href="<?php echo get_field('custom_link', $image['ID']); ?>">
+					<?php if(get_field('custom_link', $image['ID'])):?><a class="ncgallery_link" href="<?php echo esc_url( get_field('custom_link', $image['ID']) ); ?>">
 					<?php elseif($link2img == 'image_page'):?><a class="ncgallery_link" aria-label="<?php _e('View larger','nc-framework');?>" href="<?php echo get_attachment_link($image['ID']); ?>">
 					<?php elseif($link2img == 'image_lightbox'):?><a data-title="<?php echo $image['title']; ?>" aria-label="<?php _e('View larger','nc-framework');?>" class="ncgallery_link <?php echo'ncgimg_'.$id; ?>" href="<?php echo wp_get_attachment_image_url($image['ID'], 'large'); ?>"><?php endif;?>
 						<div class="ncgallery_size">
