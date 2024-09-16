@@ -21,5 +21,5 @@ function nc_current_page( $var = '' ) {
     if( $pages < 1 )
         return;
     $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-    echo '<p class="ncurrentpage txt-small">'.__('You\'re on page', 'nc-framework').' '. $page . ' '.__('of','nc-framework').' ' . $pages.'</p>';
+    echo '<p class="ncurrentpage">'.__('<span class="ncurrentpage_label">You\'re on page</span>', 'ul-countries').' <span class="ncurrentpage_number">'.$page. '</span> <span class="ncurrentpage_of">'.__('of','ul-countries').'</span> <span class="ncurrentpage_total">'.$pages.'</span></p>';
 }
