@@ -14,7 +14,7 @@ function nc_posts_block() {
             //'icon'              => 'format-image',
             'mode'              => 'edit',
             'keywords'          => array('posts', 'latest', 'recent', 'featured' ),
-			'post_types'        => array('post', 'page'),
+			'post_types'        => get_post_types() /*array('post', 'page')*/,
 			'align'             => 'full',
 			'supports'          => array( 
 				'align' => array( 'full' ), 
