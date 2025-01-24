@@ -513,3 +513,29 @@ Must be applied to UL and OL elements */
   content: counter(section, decimal) ". ";
   color: var(--blue);
 }
+
+/* Hyphenation Control */
+
+.hypens-off {
+  hyphens: none; 
+}
+
+.hypens-on {
+  hyphens: auto;
+}
+
+/* Truncate */
+
+.truncate-lines-3{
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+
+/* Headline Control */
+
+.line-balance { 
+  text-wrap: balance; 
+}

@@ -51,13 +51,18 @@
 
 --field-radius: 3px;
 --field-padding: 0 0.75em !important;
---field-border: solid 1px #ddd;
+--field-border: solid 1px #aaa;
 --field-bgcolor: var(--gray);
 
 --field-border-focus: solid 1px #000;
---field-bgcolor-focus: lightyellow;
+--field-bgcolor-focus: #fff;
 --field-shadow-focus: 0 3px 0.3em rgba(0,0,0,0.3);
 
+/* Placeholders */
+
+--placeholder-color: inherit;
+--placeholder-font-style: normal;
+--placeholder-opacity: 0.5;
 
 /* Form inputs and button height */
 
@@ -69,7 +74,7 @@
 --border: solid 1px #ddd;
 
 
-/* Social Colors */
+/* Social Brand Colors */
 
 --facebook: #1977f3;
 --linkedin: #0274b3;

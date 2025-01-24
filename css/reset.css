@@ -83,10 +83,6 @@ del, strike {
     text-decoration: line-through;
 }
 
-abbr {
-    border-bottom: dotted 1px;
-}
-
 p, table, ol, ul, pre code, blockquote, pre, dl, h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--gap);
     margin-top: 0;
@@ -108,6 +104,69 @@ table th {
     vertical-align: top;
 }
 
+/* Abbreviation */
+
+
+abbr {
+    --bgcolor: #000;
+    --textcolor: #fff;
+    --width: 150px;
+    --trans: 0.3s;
+    position:relative;
+    font-family: var(--sans, sans-serif);
+    display:inline-block;
+    cursor: help;
+    text-decoration: underline dashed 1px;
+  }
+  
+    
+  abbr:before {
+    --width: 150px;
+    border-radius:5px;
+    content: attr(title);
+    position:absolute;
+    width: var(--width);
+    font-size: min(12px, 0.7em);
+    line-height:1.5;
+    text-align:center;
+    background: var(--bgcolor);
+    padding: 1em 0.5em;
+    color:var(--textcolor);
+    left:50%;
+    margin-left: calc(var(--width) / 2 * -1);
+    display:block;
+    bottom:calc(100% + 5px);
+    box-sizing: border-box;
+  }
+  
+  abbr:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--bgcolor, #000);
+    position:absolute;
+    bottom: calc(100% + -4.5px);
+    left:50%;
+    margin-left: -10px;
+  }
+  
+  abbr:before,
+  abbr:after {
+    opacity:0;
+    visibility:hidden;
+    transition: var(--trans);
+    transform: translate(0, -10px);
+  }
+  
+  abbr:hover:before, 
+  abbr:hover:after {
+    opacity:1;
+    visibility:visible;
+    transform: translate(0, 0);
+  }
+
 /* Typography */
 
 h1, h2, h3, h4, h5, h6, p, li, a, div {
@@ -121,7 +180,6 @@ h1, h2, h3, h4, h5, h6, p, li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    position: relative;
     line-height: normal;
 }
 
@@ -296,26 +354,30 @@ fieldset legend {
 
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: inherit;
-    opacity: 0.5;
+    color: var(--placeholder-color, inherit);
+    font-style: var(--placeholder-font-style, normal);
+    opacity: var(--placeholder-opacity, 0.5);
 }
 
 ::-moz-placeholder {
     /* Firefox 19+ */
-    color: inherit;
-    opacity: 0.5;
+    color: var(--placeholder-color, inherit);
+    font-style: var(--placeholder-font-style, normal);
+    opacity: var(--placeholder-opacity, 0.5);
 }
 
 :-ms-input-placeholder {
     /* IE 10+ */
-    color: inherit;
-    opacity: 0.5;
+    color: var(--placeholder-color, inherit);
+    font-style: var(--placeholder-font-style, normal);
+    opacity: var(--placeholder-opacity, 0.5);
 }
 
 :-moz-placeholder {
     /* Firefox 18- */
-    color: inherit;
-    opacity: 0.5;
+    color: var(--placeholder-color, inherit);
+    font-style: var(--placeholder-font-style, normal);
+    opacity: var(--placeholder-opacity, 0.5);
 }
 
 /* Selection */
@@ -333,6 +395,10 @@ fieldset legend {
 
 
 /* Custom Radio and Checkbox input fields */
+
+  body.formstyles .gform_wrapper .gform_body .gform_fields .gfield .gchoice {
+    position: relative;
+  }
   
   body.formstyles input[type="radio"], 
   body.formstyles input[type="checkbox"] {
@@ -344,7 +410,7 @@ fieldset legend {
   body.formstyles input[type="checkbox"] + label {
     padding-left: 0 !important;
     margin-left: 0 !important;
-    font-weight: inherit !important
+    font-weight: inherit !important;
   }
   
   body.formstyles input[type="radio"] + label:before, 

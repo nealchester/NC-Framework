@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'ncicons';
   src:
-    url('fonts/ncicons.ttf?w3mlun') format('truetype'),
-    url('fonts/ncicons.woff?w3mlun') format('woff'),
-    url('fonts/ncicons.svg?w3mlun#ncicons') format('svg');
+    url('fonts/ncicons.ttf?ip8pbe') format('truetype'),
+    url('fonts/ncicons.woff?ip8pbe') format('woff'),
+    url('fonts/ncicons.svg?ip8pbe#ncicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,8 +24,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.nc-bookmark:before {
+  content: "\e9d2";
+}
+.nc-mobile:before {
+  content: "\e958";
+}
+.nc-location:before {
+  content: "\e947";
+}
+.nc-envelope:before {
+  content: "\e906";
+}
+.nc-mail:before {
+  content: "\e906";
+}
 .nc-email:before {
-  content: "\e900";
+  content: "\e906";
+}
+.nc-contact:before {
+  content: "\e906";
 }
 .nc-user:before {
   content: "\e908";
@@ -35,9 +53,6 @@
 }
 .nc-link:before {
   content: "\e9cb";
-}
-.nc-new-tab:before {
-  content: "\ea7e";
 }
 .nc-dots:before {
   content: "\e909";
@@ -56,6 +71,18 @@
 }
 .nc-download:before {
   content: "\e708";
+}
+.nc-chat:before {
+  content: "\e90b";
+}
+.nc-bubble:before {
+  content: "\e90b";
+}
+.nc-comment:before {
+  content: "\e90b";
+}
+.nc-talk:before {
+  content: "\e90b";
 }
 .nc-reply:before {
   content: "\e96a";
@@ -96,26 +123,11 @@
 .nc-tiktok:before {
   content: "\e904";
 }
-.nc-google:before {
-  content: "\ea88";
-}
 .nc-youtube:before {
   content: "\ea9d";
 }
-.nc-vimeo:before {
-  content: "\eaa0";
-}
 .nc-get-pocket:before {
   content: "\e90e";
-}
-.nc-tumblr:before {
-  content: "\eab9";
-}
-.nc-reddit:before {
-  content: "\eac6";
-}
-.nc-wikipedia:before {
-  content: "\eac8";
 }
 .nc-quotes:before {
   content: "\e90f";
@@ -125,4 +137,19 @@
 }
 .nc-secured-lock:before {
   content: "\e925";
+}
+.nc-arrow2-right:before {
+  content: "\e905";
+}
+.nc-new-tab:before {
+  content: "\ea7e";
+}
+.nc-phone:before {
+  content: "\e942";
+}
+.nc-star-full:before {
+  content: "\e9d9";
+}
+.nc-heart:before {
+  content: "\e9da";
 }
