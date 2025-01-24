@@ -8,8 +8,6 @@ function nc_new_contactmethods($contactmethods){
     $contactmethods['pinterest']    = 'Pinterest';
     $contactmethods['instagram']    = 'Instagram';
     $contactmethods['youtube']      = 'Youtube';
-    $contactmethods['vimeo']        = 'Vimeo';
-    $contactmethods['tumblr']       = 'Tumblr';
 
     // Remove useless
     unset($contactmethods['aim']);
