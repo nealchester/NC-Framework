@@ -65,44 +65,33 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	$bgcolor = get_field('background_color') ?: '#000';
 ?>
 
+
+
 <?php 
 	wp_enqueue_style('nc-blocks-hero');
 	?>
 
-	<div id="<?php echo $id; ?>" class="nchero jarallax<?php echo esc_attr($className); ?>"<?php if($parallax == 'js') { echo ' data-jarallax data-img-position'; }?><?php echo nc_block_attr();?>>
+	<section id="<?php echo $id; ?>" class="nchero jarallax<?php echo esc_attr($className); ?>"<?php if($parallax == 'js') { echo ' data-jarallax data-img-position'; }?><?php echo nc_block_attr();?>>
 
-	<?php nc_before_content(); ?>
-	
-	<?php if($parallax == 'css'):?> <?php else:?>
-		<?php if( $image && $image_mobile ):?>
-		<picture class="nchero_pc jarallax-img">	
-				<source srcset="<?php echo wp_get_attachment_image_srcset( $image_mobile, 'full'); ?>" media="(max-width: <?php echo $media_query.'px'; ?>)" class="nchero_image">
-			<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img nchero_image-fadein", "style" => "animation-delay: 0.5s") ); ?>
-		</picture>
+	<?php // nc_before_content(); ?>
 
-		<?php elseif($image ):?>
-		<?php echo wp_get_attachment_image( $image, 'full', '', array( "class" => "nchero_image jarallax-img nchero_image-fadein", "style" => "animation-delay: 0.5s") ); ?>	
+		<?php if($image):?>
+		<div class="nchero_image jarallax-img nchero_image-fadein" style="animation-delay: 0.5s"></div>
 
 		<?php else: ?>
-		<img class="nchero_image" src="<?php nc_block_fallback_image(); ?>" alt="<?php _e('A default picture','nc-framework');?>" title="<?php _e('A default picture','nc-framework');?>" />
-		<?php endif;?>
+		<div class="nchero_image" style="background-image:<?php nc_block_fallback_image(); ?>"></div>
 
-	<?php endif;?>
+		<?php endif;?>
 
 		<div class="ncontain">
 			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
-
 				<?php echo nc_inner_blocks(); ?>
-
-				<?php /* if($content) { echo $content; } else { echo'<h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetuer 
-				adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et 
-				magnis dis parturient montes, nascetur ridiculus mus.</p><p><a class="btn btn-outline" style="color:'.$t_color.';" href="#null">Button</a></p>'; } */ ?>
 			</div>
 		</div>
 
-		<?php nc_after_content(); ?>
+		<?php // nc_after_content(); ?>
 
-	</div>
+		</section>
 
 <style id="<?php echo $id; ?>-block-css">
 	<?php echo '#'.$id; ?>.nchero {
@@ -126,6 +115,21 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 
 		--box-min-height: <?php echo $min_height.";\n"; ?>
 		--box-bgcolor: <?php echo $bgcolor.";\n"; ?>
+
+		/* Main Image */
+
+		.nchero_image {
+			background-image: url('<?php echo wp_get_attachment_image_url( $image, 'full'); ?>');
+		}
+
+		<?php if($image_mobile && $media_query):?>
+		@media(max-width:<?php echo $media_query.'px';?>) {	
+			.nchero_image {
+				background-image:url(<?php echo wp_get_attachment_image_url( $image_mobile, 'full'); ?>);
+			}
+		}
+		<?php endif;?>
+
 	}
 
 	<?php echo '#wpbody #'.$id; ?> .nchero_image {
@@ -139,27 +143,12 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		?>
 	<?php endif;?>
 
-	<?php if($image_mobile && $media_query) :?>
-	@media(max-width:<?php echo $media_query.'px';?>) {	
-		<?php echo '#'.$id; ?> .nchero_image {
-			object-position: center center;
-		}
-	}
-	<?php endif;?>
-
 	<?php if($parallax == 'css' && $image ):?>
-		<?php echo '#'.$id; ?>.nchero {
-			background-image:url(<?php echo wp_get_attachment_image_url( $image, 'full'); ?>);
+		<?php echo '#'.$id; ?>.nchero .nchero_image {
+			background-attachment: fixed;
 		}
 	<?php endif;?>	
-	
-	<?php if($parallax == 'css' && $image_mobile && $media_query):?>
-	@media(max-width:<?php echo $media_query.'px';?>) {	
-		<?php echo '#'.$id; ?>.nchero {
-			background-image:url(<?php echo wp_get_attachment_image_url( $image_mobile, 'large'); ?>);
-		}
-	}
-	<?php endif;?>
+
 
 	<?php if(get_field('custom_styles')):?> 
 	/* Custom CSS */
@@ -168,6 +157,13 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 
 </style>
 
-<?php
-}
+<?php add_action( 'wp_head', 'hero_preload_image' ); ?>
+<?php function hero_preload_image() {
+			echo '
+			<link rel="preload" href="'.wp_get_attachment_image_url( $image, 'full').'" as="image" />
+			<link rel="preload" href="'.wp_get_attachment_image_url( $image_mobile, 'full').'" as="image" />
+			';
+	}
 ?>
+
+<?php }?>

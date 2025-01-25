@@ -11,6 +11,9 @@ get_template_part('customizer/_sanitize');
 // Comments
 get_template_part('customizer/comments');
 
+// Preload
+get_template_part('customizer/preload');
+
 // Remove some of WordPress Customizer controls
 get_template_part('customizer/colors');
 
