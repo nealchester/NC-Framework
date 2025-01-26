@@ -157,13 +157,4 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 
 </style>
 
-<?php add_action( 'wp_head', 'hero_preload_image' ); ?>
-<?php function hero_preload_image() {
-			echo '
-			<link rel="preload" href="'.wp_get_attachment_image_url( $image, 'full').'" as="image" />
-			<link rel="preload" href="'.wp_get_attachment_image_url( $image_mobile, 'full').'" as="image" />
-			';
-	}
-?>
-
 <?php }?>
