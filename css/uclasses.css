@@ -160,10 +160,6 @@ text-align:right;
   text-align:center;
   }
   
-  p + .ncrule,
-  ul + .ncrule,
-  ol + .ncrule { margin-top:calc(2 * var(--gap)); }
-  
   .ncrule:before,
   .ncrule:after {
   content:'';

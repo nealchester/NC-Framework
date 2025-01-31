@@ -106,8 +106,9 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 				<?php while( have_rows('custom_content') ): the_row(); 
 					$acc_heading = get_sub_field('heading');
 					$acc_content = get_sub_field('content');
+					$acc_open = get_sub_field('open');
 				?>
-					<details class="nccordion_details">
+					<details class="nccordion_details"<?php if ($acc_open){ echo' open'; };?>>
 						<summary class="nccordion_header"><?php echo $acc_heading; ?></summary>  
 						<div class="nccordion_content">
 							<?php echo $acc_content; ?>
