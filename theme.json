@@ -2,18 +2,26 @@
 	"$schema": "https://schemas.wp.org/wp/6.5/theme.json",
 	"version": 2,
 	"settings": {
+
 		"appearanceTools": true,
+
 		"border": {
 			"color": true,
-			"customColor": true,
-			"customRadius": true,
-			"customStyle": true,
-			"customWidth": true
+			"radius": true,
+			"style": true,
+			"width": true
 		},
+
 		"color": {
-			"defaultPalette": false,
-			"defaultGradients": false,
+			"defaultPalette": true,
+			"defaultGradients": true,
+			"defaultDuotone": true,
+			"background": true,
+			"custom": true,
+			"customDuotone": true,
+			"customGradient": true,
 			"link": true,
+			"text": true,
 			"palette": [
 				{
 					"name": "Black",
@@ -28,12 +36,67 @@
 				{
 					"name": "Smoke",
 					"slug": "smoke",
-					"color": "#eeeeee"
+					"color": "var(--gray)"
 				}
 			]
 		},
+
+		"layout": {
+			"contentSize": "var(--width-standard)",
+			"wideSize": "var(--width-wide)"
+		},
+
+		"blocks": {
+			"core/image": {
+				"lightbox": {
+					"enabled": true,
+					"allowEditing": true
+				}
+			}
+		},
+
+		"position": {
+			"sticky": true
+		},
+
+		"shadow": {
+			"defaultPresets": true,
+			"presets": [
+				{
+					"name": "Theme",
+					"slug": "theme",
+					"shadow": "var(--shadows)"
+				}
+			]
+		},
+
+		"spacing": {
+			"blockGap": true,
+			"customSpacingSize": true,
+			"margin": true,
+			"padding": true,
+			"spacingScale": {
+				"operator": "*",
+				"increment": 1.5,
+				"steps": 7,
+				"mediumStep": 1.5,
+				"unit": "rem"
+			},
+			"spacingSizes": [],
+			"units": ["px", "em", "rem", "vh", "vw", "vmin", "vmax", "%"]
+		},
+
 		"typography": {
-			"fontSize": "var(--txt-base)",
+			"customFontSize": true,
+			"dropCap": true,
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": false,
+			"textColumns": true,
+			"textDecoration": false,
+			"textTransform": true,
+			"writingMode": false,
 			"fontSizes": [
 				{
 					"slug": "tiny",
@@ -78,14 +141,14 @@
 			],
 			"fontFamilies": [
 				{
-					"fontFamily": "var(--serif)",
-					"slug": "serif",
-					"name": "Serif"
+					"fontFamily": "var(--sans)",
+					"slug": "primary",
+					"name": "Primary"
 				},
 				{
-					"fontFamily": "var(--sans)",
-					"slug": "sans",
-					"name": "Sans"
+					"fontFamily": "var(--serif)",
+					"slug": "secondary",
+					"name": "Secondary"
 				},
 				{
 					"fontFamily": "var(--mono)",
@@ -93,39 +156,11 @@
 					"name": "Mono"
 				}
 			]
-		},
-		"spacing": {
-			"blockGap": true,
-			"padding": true,
-			"margin": true,
-			"customPadding": true,
-			"customMargin": true,
-			"units": [
-				"px",
-				"em",
-				"rem",
-				"vh",
-				"vw"
-			]
-		},
-		"layout": {
-			"contentSize": "800px",
-			"wideSize": "1000px",
-			"maxSize": "1500px",
-			"units": [
-				"px",
-				"em",
-				"rem",
-				"%",
-				"vw"
-			]
 		}
+
 	},
+
 	"styles": {
-		"color": {
-			"background": "inherit",
-			"text": "currentColor"
-		},
 		"typography": {
 			"fontSize": "var(--txt-base)",
 			"fontFamily": "var(--sans)",
@@ -138,12 +173,6 @@
 				"right": "0px",
 				"bottom": "var(--gap)",
 				"left": "0px"
-			},
-			"padding": {
-				"top": "var(--gap)",
-				"right": "var(--gap)",
-				"bottom": "var(--gap)",
-				"left": "var(--gap)"
 			}
 		}
 	}

@@ -68,10 +68,12 @@
 
 --input-height: 2.5em;
 
-/* Border radius */
+/* Border and shadows */
 
 --radius: 5px;
 --border: solid 1px #ddd;
+--shadows: var(--field-shadow-focus);
+
 
 
 /* Social Brand Colors */
