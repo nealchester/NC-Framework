@@ -30,9 +30,9 @@ add_action('customize_register', 'nc_customizer_default_image');
 
 function nc_fallbackimage() {
     if( get_theme_mod('fallback_image')) {
-        echo get_theme_mod('fallback_image');
+        return get_theme_mod('fallback_image');
     } else {
-        echo get_theme_file_uri('/img/default-image.png');
+        return get_theme_file_uri('/img/default-image.png');
     }
 }
 

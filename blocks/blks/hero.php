@@ -48,7 +48,8 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	$image_mobile = get_field('image_mobile');
 	$media_query = get_field('media_query');
 	$parallax = get_field('parallax');
-	$focus = get_field('image_focus') ?: 'center center';
+	$focus = get_field('image_focus') ?: '50% 50%';
+	$focus_mobile = get_field('image_focus_mobile') ?: '50% 50%';
 	$o_opacity = get_field('overlay_opacity') ?: '0.5';
 	$o_color = get_field('overlay_color') ?: '#000';
 	$o_blend = get_field('overlay_blend_mode') ?: 'normal';
@@ -127,6 +128,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 			.nchero_image {
 				background-image:url(<?php echo wp_get_attachment_image_url( $image_mobile, 'full'); ?>);
 			}
+			--image-focus: <?php echo $focus_mobile;?>;
 		}
 		<?php endif;?>
 

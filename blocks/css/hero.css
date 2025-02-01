@@ -16,7 +16,7 @@
   --overlay-color:#000;
   --overlay-blend-mode: normal;
   
-  --image-focus:center center;
+  --image-focus:50% 50%;
   --image-blend-mode: normal;
   
   --text-color: #fff;

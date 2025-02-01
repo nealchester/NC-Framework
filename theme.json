@@ -100,43 +100,75 @@
 			"fontSizes": [
 				{
 					"slug": "tiny",
-					"size": "var(--txt-xsmall)",
-					"name": "Tiny"
+					"size": "0.75rem",
+					"name": "Tiny",
+						"fluid": {
+							"min": "0.625rem",
+							"max": "0.75rem"
+						}
 				},
 				{
 					"slug": "small",
-					"size": "var(--txt-small)",
-					"name": "Small / H6"
+					"size": "0.875rem",
+					"name": "Small / h6",
+						"fluid": {
+							"min": "0.75rem",
+							"max": "0.875rem"
+						}
 				},
 				{
 					"slug": "normal",
-					"size": "var(--txt-base)",
-					"name": "Normal / H5"
+					"size": "1.125rem",
+					"name": "Normal / h5",
+						"fluid": {
+							"min": "1rem",
+							"max": "1.125rem"
+						}
 				},
 				{
 					"slug": "medium",
-					"size": "var(--txt-medium)",
-					"name": "Medium / H4"
+					"size": "1.5rem",
+					"name": "Medium / h4",
+						"fluid": {
+							"min": "1.125rem",
+							"max": "1.5rem"
+						}
 				},
 				{
 					"slug": "large",
-					"size": "var(--txt-large)",
-					"name": "Large / H3"
+					"size": "1.875rem",
+					"name": "Large / h3",
+						"fluid": {
+							"min": "1.5rem",
+							"max": "1.875rem"
+						}
 				},
 				{
 					"slug": "x-large",
-					"size": "var(--txt-xlarge)",
-					"name": "X-Large / H2"
+					"size": "2.5rem",
+					"name": "X-Large / h2",
+						"fluid": {
+							"min": "1.875rem",
+							"max": "2.5rem"
+						}
 				},
 				{
 					"slug": "xx-large",
-					"size": "var(--txt-xxlarge)",
-					"name": "XX-Large / H1"
+					"size": "3rem",
+					"name": "XX-Large / h1",
+						"fluid": {
+							"min": "2.5rem",
+							"max": "3rem"
+						}
 				},
 				{
 					"slug": "huge",
-					"size": "var(--txt-xxxlarge)",
-					"name": "Huge"
+					"size": "3.75rem",
+					"name": "Huge",
+						"fluid": {
+							"min": "3rem",
+							"max": "3.75rem"
+						}
 				}
 			],
 			"fontFamilies": [

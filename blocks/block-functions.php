@@ -134,18 +134,20 @@ function nc_box_styles( $block_id =''){
 
 }
 
-
-// For Gallery Images
+// For NC Block Image Focus
 function nc_block_image_focus($image) {
-    if( function_exists('get_field') && get_field("featured_image_focus", $image) ){ 
-        
-        $img_focus = get_field("featured_image_focus", $image);
-        return 'object-position:'.$img_focus.'; transform-origin:'.$img_focus.';'; 
+
+    if( function_exists('get_field') && get_field("horizontal", $image) && get_field("vertical", $image) ){ 
+      
+      $img_focus = get_field("horizontal", $image).'% '.get_field("vertical", $image).'%';
+  
+      return 'object-position:'.$img_focus.'; transform-origin:'.$img_focus.';'; 
     }
     else {
-        return 'object-position:center; transform-origin:center;';	
+      return 'object-position:50% 50%; transform-origin:50% 50%;';	
     }
-}
+  
+  }
 
 // Block Posts Meta
 function nc_block_posts_meta(){

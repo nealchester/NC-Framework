@@ -50,7 +50,7 @@
             "label": "Image Focus",
             "name": "image_focus",
             "aria-label": "",
-            "type": "select",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -59,24 +59,12 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "left top": "Left Top",
-                "left center": "Left Middle",
-                "left bottom": "Left Bottom",
-                "center top": "Center Top",
-                "center center": "Center Middle",
-                "center bottom": "Center Bottom",
-                "right top": "Right Top",
-                "right center": "Right Middle",
-                "right bottom": "Right Bottom"
-            },
-            "default_value": "center center",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": "50% 50%",
+            "maxlength": 9,
+            "allow_in_bindings": 1,
+            "placeholder": "50% 50%",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5e0ce73a21bca",
@@ -151,6 +139,27 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_679e592084818",
+            "label": "Image Focus (mobile)",
+            "name": "image_focus_mobile",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "50% 50%",
+            "maxlength": 9,
+            "allow_in_bindings": 1,
+            "placeholder": "50% 50%",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ed7f0e793384",
@@ -522,5 +531,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737812360
+    "modified": 1738431397
 }

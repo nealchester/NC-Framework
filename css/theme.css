@@ -270,13 +270,35 @@ body.home .nclogo a {
     }
 
 
-/* WP Header Image */
+/* Banner Image */
 
-.wp-bannerimage {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-    height: 200px;
+.banner {
+   position: relative; 
+   background: #000;
+
+    .banner_content {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        min-height: 350px;
+        padding-block: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .banner_content > :last-child {
+        margin-bottom: 0;
+    }
+
+    .banner_image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        position:absolute;
+        z-index:1;
+        left:0; right:0; top:0; bottom:0;
+        opacity: 0.6
+    }
 }
 
 

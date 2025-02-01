@@ -3,7 +3,7 @@ function nc_customizer_preload_images($wp_customize){
   
   $wp_customize->add_section('preload_section', array(
     'title' => __('Preload Image(s)','nc-framework'),
-    'description' => __('Add up to 3 images that you want to preload.','nc-framework'),
+    'description' => __('Add up to 3 images that you want to preload. This works for the front page only.','nc-framework'),
     'panel' => 'layout_panel'
   ));
 
@@ -62,15 +62,15 @@ $preload_image1 = get_theme_mod( 'preload_image1' );
 $preload_image2 = get_theme_mod( 'preload_image2' );
 $preload_image3 = get_theme_mod( 'preload_image3' );
 
-if ( ! empty( $preload_image1 ) ) {
+if ( ! empty( $preload_image1 && is_front_page() ) ) {
 echo '
 <link rel="preload" href="' . esc_url( $preload_image1 ) . '" as="image" />'; 
 }
-if ( ! empty( $preload_image2 ) ) {
+if ( ! empty( $preload_image2 && is_front_page() ) ) {
 echo '
 <link rel="preload" href="' . esc_url( $preload_image2 ) . '" as="image" />'; 
 }
-if ( ! empty( $preload_image3 ) ) {
+if ( ! empty( $preload_image3 && is_front_page() ) ) {
 echo '
 <link rel="preload" href="' . esc_url( $preload_image3 ) . '" as="image" />
 '; 
