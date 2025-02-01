@@ -63,7 +63,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 
 	$width = get_field('width') ?: '450px';
 	$height = get_field('height') ?: '550px';
-	$focus = get_field('image_focus') ?: 'center center';
+	$focus = get_field('image_focus') ?: '50% 50%';
 
 	$image_content = get_field('image_content');
 	$image_width = get_field('image_width') ?: '50';

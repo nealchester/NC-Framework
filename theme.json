@@ -199,11 +199,11 @@
 			"lineHeight": "1.5"
 		},
 		"spacing": {
-			"blockGap": "var(--gap)",
+			"blockGap": "1rem",
 			"margin": {
 				"top": "0px",
 				"right": "0px",
-				"bottom": "var(--gap)",
+				"bottom": "1rem",
 				"left": "0px"
 			}
 		}
