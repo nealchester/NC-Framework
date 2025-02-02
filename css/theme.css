@@ -275,30 +275,42 @@ body.home .nclogo a {
 .banner {
    position: relative; 
    background: #000;
+   --banner-opacity: 0.6;
+}
 
-    .banner_content {
-        position: relative;
-        z-index: 2;
-        color: #fff;
-        min-height: 350px;
-        padding-block: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+.banner_content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    min-height: 350px;
+    padding-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-    .banner_content > :last-child {
-        margin-bottom: 0;
-    }
+.banner_content > :last-child {
+    margin-bottom: 0;
+}
 
-    .banner_image {
-        background-size: cover;
-        background-repeat: no-repeat;
-        position:absolute;
-        z-index:1;
-        left:0; right:0; top:0; bottom:0;
-        opacity: 0.6
-    }
+.banner_image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    z-index:1;
+    left:0; right:0; top:0; bottom:0;
+    opacity: var(--banner-opacity);
+
+    /* Animated Fade In*/
+    animation: BannerImagefadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes BannerImagefadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: var(--banner-opacity);}
 }
 
 
@@ -310,6 +322,7 @@ body.home .nclogo a {
     background-color: var(--dark);
     color: var(--txt-light);
     font-size:var(--txt-small);
+    clear:both;
 }
 
 #footer a {

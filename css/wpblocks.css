@@ -52,6 +52,7 @@
       max-width:var(--width-max);
   }    
 
+
 /* video */
 
 .wp-block-video.alignwide video,
@@ -102,39 +103,38 @@
 
 /* Image */
 
-.wp-block-image { margin-bottom: var(--gap); }
+.wp-block-image { 
+    float:none !important;
+    display: block !important;
+}
 
-.wp-block-image img {  display: block; }
+.wp-block-image.alignfull img,
+.wp-block-image.alignwide img {  width:100%; }
 
-.wp-block-image .alignfull img,
-.wp-block-image .alignwide img {  width:100%; }
-
-.wp-block-image .alignleft,
-.wp-block-image .alignright,
+.wp-block-image.alignleft img,
+.wp-block-image.alignright img,
 .wp-block-video.alignleft video,
 .wp-block-video.alignright video {
     max-width: calc(50% - var(--gap));
 }
 
-.wp-block-image .alignleft,
+.wp-block-image.alignleft img,
 .wp-block-video.alignleft video {
     float: left;
     margin-right: var(--gap);
     margin-bottom: var(--gap);
 }
 
-.wp-block-image .alignright,
+.wp-block-image.alignright img,
 .wp-block-video.alignright video {
     float: right;
     margin-left: var(--gap);
     margin-bottom:var(--gap);
 }
 
-
-
 @media(max-width:640px){
-    .wp-block-image .alignleft,
-    .wp-block-image .alignright,
+    .wp-block-image.alignleft img,
+    .wp-block-image.alignright img,
     .wp-block-video.alignleft video,
     .wp-block-video.alignright video {
         max-width: 100%;
@@ -144,52 +144,37 @@
     }
 }
 
-.wp-block-image figcaption {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0.75rem var(--gap) 0;
+.wp-block-image.alignleft,
+.wp-block-image.alignright {
+    figcaption {
+        display:none !important;
+    }
 }
 
-.wp-block-image figcaption {
-    text-align:left;
-    color:#000;
-    font-size:0.8em;
+.wp-block-image.aligncenter {
+    figcaption {
+        display:block !important;
+    }
+}
+.wp-block-image:not(.alignleft, .alignright),
+.wp-block-image.aligncenter,
+.wp-block-image.alignwide,
+.wp-block-image.alignfull {
+    margin-bottom: 1rem;
 }
 
-/* Paragraph */
-
-p.has-background {
-	padding:var(--gap);
-}
 
 
 /* Captions */
 
-.wp-caption {
-    max-width: 100% !important;
-}
-
-.wp-caption.alignnone {
-    margin-bottom: 1em;
-}
-
-.wp-caption img {
-    width: 100%;
-    display: block;
-}
-
-.wp-caption-text {
-    padding: 0.75em 0 0 0;
+.wp-element-caption {
     font-size: var(--txt-small);
-    font-style: italic;
+    text-align: center;
+    margin-bottom: 0 !important;
 }
 
 .wp-gallery-item-title {
     display: block;
-}
-
-.wp-caption-text p:last-of-type {
-    margin-bottom: 0;
 }
 
 /* Pullquotes */

@@ -50,6 +50,8 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 
 ?>
 
+	<?php wp_enqueue_style('nc-blocks-gallery');?>
+
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
 		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
 			<?php nc_before_content(); ?>
@@ -158,6 +160,29 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		margin-bottom:1em;
 		outline:solid 1px #eee;
 		position: relative;
+		margin-inline:auto;
+		max-width:600px;
+	}
+
+	body.wp-admin <?php echo '#'.$id; ?> .splide {
+		position: relative;
+	}
+
+	body.wp-admin <?php echo '#'.$id; ?> .splide:before {
+		content: 'Here\'s an example of how each slide will look. For an actual visual, Preview this page.';
+		display: block;
+		text-align: center;
+		padding: 0.5em;
+		font-size: var(--txt-xsmall);
+		color: #000;
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+		width: 100%;
+	}
+
+	body.wp-admin <?php echo '#'.$id; ?> .splide__slide ~ .splide__slide {
+		display:none;
 	}
 
 	body.wp-admin <?php echo '#'.$id; ?> .splide {
@@ -166,6 +191,11 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 
 	body.wp-admin <?php echo '#'.$id; ?> .splide__slide > :last-child {
 		margin-bottom:0;
+	}
+
+	body.wp-admin <?php echo '#'.$id; ?> .splide__plink {
+		pointer-events: none;
+		pointer: default;
 	}
 
 
@@ -226,9 +256,13 @@ if( in_the_loop() ):?>
 <script>
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide( '<?php echo '#'.$slider_id; ?>', {
-		type   : '<?php the_field('type') ?: 'slide'; ?>',
-		perPage: 1,
-		perMove: 1,
+		type   : '<?php the_field('type') ?: 'loop'; ?>',
+		perPage: <?php the_field('per_page') ?: '2'; ?>,
+		perMove: <?php the_field('per_move') ?: '1'; ?>,
+		gap: '<?php the_field('gap_space') ?: '1.5rem'; ?>',
+		focus  : <?php if(get_field('center_slide')) { echo "'center'"; } else { echo '1';}; ?>,
+		trimSpace: false,
+		clones: 1,
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
 
@@ -243,7 +277,10 @@ if( in_the_loop() ):?>
 		breakpoints: {
 			<?php the_field('break_width') ?: 0; ?>: {
 				pagination: <?php if( get_field('show_pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
-				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>
+				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
+				perPage: <?php the_field('per_page_mobile') ?: '2'; ?>,
+				perMove: <?php the_field('per_move_mobile') ?: '1'; ?>,
+				focus: <?php if(get_field('center_slide_mobile')) { echo "'center'"; } else { echo '1';}; ?>,
 			}
 		},
 

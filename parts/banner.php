@@ -5,8 +5,8 @@ if ( function_exists('get_field') && has_post_thumbnail() && is_home() ) {
 
   if ( get_field("horizontal", $thumbnail) && get_field("vertical", $thumbnail) ) {
     $positions = 'background-position:'.get_field("horizontal", $thumbnail).'% '.get_field("vertical", $thumbnail).'%';
-  }
-  else {
+    }
+    else {
     $positions = 'background-position:50% 50%';
   };
 
@@ -15,9 +15,15 @@ if ( function_exists('get_field') && has_post_thumbnail() && is_home() ) {
   $image_bg = 'style="background-image:url('.$image_url.'); '.$positions.'"';
 }
 
-elseif ( has_post_thumbnail() && !is_home() ) {
+elseif ( has_post_thumbnail() && !is_home() && is_singular() ) {
   $thumbnail = get_post( get_post_thumbnail_id() );
-  $img_desc  = 'role="img" aria-label="'.get_post_meta($thumbnail->ID, '_wp_attachment_image_alt', true ).'"';	
+  
+  if( get_post_meta($thumbnail->ID, '_wp_attachment_image_alt', true ) ){ 
+    $img_desc  = 'role="img" aria-label="'.get_post_meta($thumbnail->ID, '_wp_attachment_image_alt', true ).'"';
+    }	else {
+    $img_desc  = '';
+  };
+
   $image_url = get_the_post_thumbnail_url();
   $image_bg = 'style="background-image:url('.$image_url.'); '.nc_featured_image_focus().'"';
 }
@@ -25,7 +31,7 @@ elseif ( has_post_thumbnail() && !is_home() ) {
 else {
   $thumbnail = '';
   $img_desc = '';
-  $image_url = nc_fallbackimage();
+  $image_url = nc_fallback_banner_image();
   $image_bg = 'style="background-image:url('.$image_url.'); '.nc_featured_image_focus().'"';
 }
 
