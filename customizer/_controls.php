@@ -20,9 +20,6 @@ get_template_part('customizer/colors');
 //  Default Image
 get_template_part('customizer/default-image');
 
-//  Footer section    
-get_template_part('customizer/copyright');
-
 // Custom title for front page blog listing
 get_template_part('customizer/blog-home-title');
 
