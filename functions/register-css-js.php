@@ -26,9 +26,6 @@ function nc_register_assets(){
   wp_register_style('nc-blocks', get_theme_file_uri('/css/wpblocks.css'), array('nc-reset'));
   wp_enqueue_style('nc-blocks');
 
-  wp_register_style('nc-menus', get_theme_file_uri('/css/menus.css'), array('nc-reset'));
-  wp_enqueue_style('nc-menus');
-
   wp_register_style('nc-content', get_theme_file_uri('/css/content.css'), array('nc-blocks'));
   wp_enqueue_style('nc-content');
 

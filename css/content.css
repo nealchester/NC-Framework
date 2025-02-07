@@ -31,6 +31,10 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: bold; 
 }
 
+:is(p, ul, ol, details, dl) + :is(h2, h3, h4, h5, h6) {
+  margin-top: 2rem;
+}
+
 /* Buttons */
 
   .btn,
@@ -91,3 +95,82 @@ h1,h2,h3,h4,h5,h6 {
     .btn { width:100%; }
     .btn + .btn { margin-left:0; margin-top:0.75em; }
   }
+
+
+ /* Social Icons and Contact */
+ 
+ .ncsocial,
+ .sharelinks,
+ .socialbuttons {
+  --icon-size: 1rem;
+  --icon-gap: 0.5rem;
+  --icon-radius: 50%;
+  --icon-scale:scale(1);
+  --icon-color: #fff;
+  --icon-color-hover: #fff;
+  --icon-bg-color: #000;
+  --icon-bg-color-hover: #000;
+  --icon-border:solid 0.08em transparent;
+  --icon-border-hover:solid 0.08em transparent;
+}
+
+.ncsocial,
+.sharelinks,
+.socialbuttons { 
+  display:flex;
+  flex-wrap:wrap;
+  column-gap: var(--icon-gap);
+  row-gap: 0.3em;
+}
+
+.ncsocial_link,
+.sharelinks_anchor,
+.socialbuttons_link {
+  display:flex;
+  width: calc( var(--icon-size) * 2.3 );
+  aspect-ratio:1 / 1;
+  border-radius:var(--icon-radius);
+  justify-content:center;
+  align-items:center;
+  transition: .3s;
+  background-color: var(--icon-bg-color);
+  border: var(--icon-border);
+  position:relative;
+}
+
+.ncsocial_link .ncicon,
+.sharelinks_anchor .ncicon,
+.socialbuttons_link .ncicon {
+  font-size: var(--icon-size);
+  color: var(--icon-color); 
+}
+
+.ncsocial_link:hover,
+.sharelinks_anchor:hover,
+.socialbuttons_link:hover { 
+  transform:var(--icon-scale); 
+  background-color:var(--icon-bg-color-hover);
+  border:var(--icon-border-hover);
+}
+
+.ncsocial_link:hover .ncicon,
+.sharelinks_anchor:hover .ncicon,
+.socialbuttons_link:hover .ncicon {
+  color: var(--icon-color-hover);
+}
+
+/* Brand Colors (support for the following styles) */
+
+.brand-facebook { background-color: var(--facebook); }
+.brand-linkedin { background-color: var(--linkedin); }
+.brand-twitter { background-color: var(--twitter); }
+.brand-reddit { background-color: var(--reddit); }
+.brand-pocket { background-color: var(--pocket); }
+.brand-youtube { background-color: var(--youtube); }
+.brand-rss { background-color: var(--rss); }
+.brand-pinterest { background-color: var(--pinterest); }
+.brand-instagram { background-color: var(--instagram); }
+.brand-tiktok { background-color: var(--tiktok); }
+
+.brand-email,
+.brand-link { background-color: #aaa; }

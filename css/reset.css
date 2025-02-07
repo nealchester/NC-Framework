@@ -107,7 +107,8 @@ table th {
 /* Abbreviation */
 
 
-abbr {
+abbr, 
+.nctooltip {
     --bgcolor: #000;
     --textcolor: #fff;
     --width: 150px;
@@ -120,7 +121,8 @@ abbr {
   }
   
     
-  abbr:before {
+  abbr:before, 
+  .nctooltip:before {
     --width: 150px;
     border-radius:5px;
     content: attr(title);
@@ -139,7 +141,8 @@ abbr {
     box-sizing: border-box;
   }
   
-  abbr:after {
+  abbr:after,
+  .nctooltip:after {
     content: '';
     width: 0;
     height: 0;
@@ -153,7 +156,9 @@ abbr {
   }
   
   abbr:before,
-  abbr:after {
+  abbr:after,
+  .nctooltip:before,
+  .nctooltip:after {
     opacity:0;
     visibility:hidden;
     transition: var(--trans);
@@ -161,7 +166,9 @@ abbr {
   }
   
   abbr:hover:before, 
-  abbr:hover:after {
+  abbr:hover:after,
+  .nctooltip:hover:before,
+  .nctooltip:hover:after {
     opacity:1;
     visibility:visible;
     transform: translate(0, 0);

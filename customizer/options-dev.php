@@ -7,6 +7,18 @@ function nc_customizer_options_dev($wp_customize) {
     'priority' => 1000,
     ));
 
+    // Load Dashicons on frontend
+    $wp_customize->add_setting('nc_load_dashicons', array(
+    'default' => false,
+    'sanitize_callback' => 'nc_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('nc_load_dashicons', array(
+    'label' => __('Load WordPress\' Dashicons on frontend','nc-framework'),
+    'section' => 'dev_options_section',
+    'type' => 'checkbox',
+    'description' => ''
+    ));    
+
     // Disable Full Screen Editor Gutenberg
     $wp_customize->add_setting('nc_disable_fullscreen_editor', array(
     'default' => true,
@@ -50,18 +62,6 @@ function nc_customizer_options_dev($wp_customize) {
     ));
     $wp_customize->add_control('nc_disable_emojis', array(
     'label' => __('Disable Emojis in WordPress','nc-framework'),
-    'section' => 'dev_options_section',
-    'type' => 'checkbox',
-    'description' => ''
-    ));
-
-    // Load Dashicons on frontend
-    $wp_customize->add_setting('nc_load_dashicons', array(
-    'default' => false,
-    'sanitize_callback' => 'nc_sanitize_checkbox'
-    ));
-    $wp_customize->add_control('nc_load_dashicons', array(
-    'label' => __('Load WordPress\' Dashicons on frontend','nc-framework'),
     'section' => 'dev_options_section',
     'type' => 'checkbox',
     'description' => ''

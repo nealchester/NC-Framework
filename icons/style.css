@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'ncicons';
   src:
-    url('fonts/ncicons.ttf?ip8pbe') format('truetype'),
-    url('fonts/ncicons.woff?ip8pbe') format('woff'),
-    url('fonts/ncicons.svg?ip8pbe#ncicons') format('svg');
+    url('fonts/ncicons.ttf?e50jgu') format('truetype'),
+    url('fonts/ncicons.woff?e50jgu') format('woff'),
+    url('fonts/ncicons.svg?e50jgu#ncicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.nc-rss:before {
+  content: "\ea9b";
+}
+.nc-phone:before {
+  content: "\e942";
+}
+.nc-star-full:before {
+  content: "\e9d9";
+}
+.nc-heart:before {
+  content: "\e9da";
+}
 .nc-bookmark:before {
   content: "\e9d2";
 }
@@ -123,6 +135,9 @@
 .nc-tiktok:before {
   content: "\e904";
 }
+.nc-reddit:before {
+  content: "\eac6";
+}
 .nc-youtube:before {
   content: "\ea9d";
 }
@@ -143,13 +158,4 @@
 }
 .nc-new-tab:before {
   content: "\ea7e";
-}
-.nc-phone:before {
-  content: "\e942";
-}
-.nc-star-full:before {
-  content: "\e9d9";
-}
-.nc-heart:before {
-  content: "\e9da";
 }

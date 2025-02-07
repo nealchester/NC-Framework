@@ -22,7 +22,7 @@
 
 --link-color: #0093ff;
 
---selection-bgcolor: #222;
+--selection-bgcolor: #0093ff;
 --selection-textcolor: #fff;
 
 --txt-dark:rgba(0,0,0,0.6);
@@ -80,7 +80,7 @@
 
 --facebook: #1977f3;
 --linkedin: #0274b3;
---twitter: #1da1f2;
+--twitter: #000 /* #1da1f2 */;
 --reddit: #ff5600;
 --tumblr: #314358;
 --pocket: #ef4056;
@@ -89,5 +89,6 @@
 --pinterest: #bd081c;
 --vimeo: #1ab7ea;
 --instagram: #c13584;
+--tiktok: #000 /* #ff0050 */;
 
 }

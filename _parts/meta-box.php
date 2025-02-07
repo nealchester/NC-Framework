@@ -6,10 +6,15 @@
 	</div>
 
 	<div class="authorbox_content">
-        <header class="authorbox_header">By <?php echo '<a class="authorbox_link" href="'.$authorlink2.'">'.get_the_author_meta('display_name').'</a>';?></header>
+        
+        <header class="authorbox_header"><span class="authorbox_by">By</span> <?php echo '<a class="authorbox_link" href="'.$authorlink2.'">'.get_the_author_meta('display_name').'</a>';?></header>
         <?php if(get_the_author_meta('phonenumber')):?> <p class="authorbox_phone"><?php _e('Phone:','nc-framework');?> <?php echo get_the_author_meta('phonenumber'); ?></p><?php endif;?>
         <?php if(get_the_author_meta('description')):?> <p class="authorbox_desc"><?php echo wp_trim_words( get_the_author_meta('description'), 20, ' &hellip; <a href="'.$authorlink2.'">'.__('Read&nbsp;more&nbsp;&rsaquo;','nc-framework').'</a>');?></p> <?php endif; ?>
-		<?php get_template_part('parts/meta-box-social');?>
+		
+        <?php // Update "_parts" folder with "parts"
+            get_template_part('_parts/meta-box-social');
+        ?>
+
    </div>
 
 </section>
@@ -19,8 +24,8 @@
 /* Author Box */
 
 .authorbox {
-	--box-avatar-size: 150px;
-	--box-color: var(--gray);
+	--box-avatar-size: 120px;
+	--box-color: #eee;
 	--box-border: none;
 	--box-padding: var(--gap);
 	--box-avatar-gap:var(--gap);
@@ -49,7 +54,8 @@
     color:#000;
 }
 .authorbox_header a {
-    color:inherit; text-decoration: none;
+    color:inherit; 
+    text-decoration: none;
 }
 
 .authorbox_phone {
