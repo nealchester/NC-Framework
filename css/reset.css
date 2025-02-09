@@ -6,11 +6,17 @@ This is the very first loaded CSS file. The root reset / normalized CSS.
 
 html {
     background-color: #fff;
-    scroll-behavior: smooth;
+    hanging-punctuation: first last;
+}
+
+:has(:target), 
+ html {
+   scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html {
+    :has(:target), 
+     html {
         scroll-behavior: auto
     }
     * {
@@ -39,7 +45,7 @@ article, aside, details, figcaption, figure, footer, header, nav, main {
     -webkit-font-smoothing: antialiased;
 }
 
-html a {
+a {
     text-decoration: none;
     color: inherit;
 }
@@ -81,6 +87,10 @@ ins {
 
 del, strike {
     text-decoration: line-through;
+}
+
+p {
+    text-wrap: pretty;
 }
 
 p, table, ol, ul, pre code, blockquote, pre, dl, h1, h2, h3, h4, h5, h6 {
@@ -176,7 +186,7 @@ abbr,
 
 /* Typography */
 
-h1, h2, h3, h4, h5, h6, p, li, a, div {
+h1, h2, h3, h4, h5, h6, p, li, a, div, details, summary, dl {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
@@ -403,40 +413,44 @@ fieldset legend {
 
 /* Custom Radio and Checkbox input fields */
 
-  body.formstyles .gform_wrapper .gform_body .gform_fields .gfield .gchoice {
-    position: relative;
-  }
-  
-  body.formstyles input[type="radio"], 
-  body.formstyles input[type="checkbox"] {
-    position: absolute;
-    clip: rect(0,0,0,0);
-  }
-  
-  body.formstyles input[type="radio"] + label, 
-  body.formstyles input[type="checkbox"] + label {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-    font-weight: inherit !important;
-  }
-  
-  body.formstyles input[type="radio"] + label:before, 
-  body.formstyles input[type="checkbox"] + label:before {
-    position:relative;
-    margin-right: 0.5rem;
-    left: 0;
-    font-size: var(--txt-small);
-    line-height: normal;
-    font-family: 'ncicons';
-  }
-  
-  body.formstyles input[type="checkbox"] + label:before { content: '\ea53'; }
-  
-  body.formstyles input[type="checkbox"]:checked + label:before { content: '\ea52'; }
-  
-  body.formstyles input[type="radio"] + label:before { content: '\ea56'; }
-  
-  body.formstyles input[type="radio"]:checked + label:before { content:'\ea55'; }
+body.formstyles {  
+
+    .gform_wrapper .gform_body .gform_fields .gfield .gchoice {
+        position: relative;
+    }
+
+    input[type="radio"], 
+    input[type="checkbox"] {
+        position: absolute;
+        clip: rect(0,0,0,0);
+    }
+
+    input[type="radio"] + label, 
+    input[type="checkbox"] + label {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        font-weight: inherit !important;
+    }
+
+    input[type="radio"] + label:before, 
+    input[type="checkbox"] + label:before {
+        position:relative;
+        margin-right: 0.5rem;
+        left: 0;
+        font-size: 1.5ex;
+        line-height: normal;
+        font-family: 'ncicons';
+    }
+
+    input[type="checkbox"] + label:before { content: '\ea53'; }
+
+    input[type="checkbox"]:checked + label:before { content: '\ea52'; }
+
+    input[type="radio"] + label:before { content: '\ea56'; }
+
+    input[type="radio"]:checked + label:before { content:'\ea55'; }
+
+}
   
   /* For Gravity Forms */
   
