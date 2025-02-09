@@ -15,34 +15,21 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
     margin-top:0;
 }
 
+h1 { font-size: var(--txt-xxlarge);}
+h2 { font-size: var(--txt-xlarge); }
+h3 { font-size: var(--txt-large);  }
+h4 { font-size: var(--txt-medium); }
+h5 { font-size: var(--txt-base);   }
+h6 { font-size: var(--txt-small);  }
+
 .ncontain {
     max-width: var(--width-max);
     margin-inline: auto;
     width: var(--width-limit);
 }
 
-/* Main column width */
-.wp-block {
-    max-width: var(--width-standard);
-    margin-inline: auto;
-}
-
-/* Width of "wide" blocks */
-.wp-block[data-align="wide"] {
-    max-width: var(--width-wide);
-}
-
-/* Width of "full-wide" blocks */
-.wp-block[data-align="full"] {
-    max-width: none;
-}
-
-/* Width of "max (class)" blocks */
-.wp-block.alignmax {
-    max-width: var(--width-max);
-}
-
 .editor-post-title {
-    font-size:var(--txt-xxlarge);
+    font-size:var(--txt-large);
     font-family: var(--sans);
+    font-weight: bold;
 }

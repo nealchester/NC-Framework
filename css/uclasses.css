@@ -532,6 +532,6 @@ Must be applied to UL and OL elements */
 
 /* Headline Control */
 
-.line-balance { 
-  text-wrap: balance; 
+.no-balance { 
+  text-wrap: auto; 
 }

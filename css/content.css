@@ -20,11 +20,11 @@ body, input, select, textarea, button {
   font-family: var(--sans);
   font-size: var(--txt-base);
   line-height: 1.5;
-  font-weight: 320;
+  font-weight: 350;
 }
 
 b,strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h1,h2,h3,h4,h5,h6 { 

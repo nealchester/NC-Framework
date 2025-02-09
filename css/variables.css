@@ -47,32 +47,33 @@
 --txt-xxlarge: var(--wp--preset--font-size--xx-large);
 --txt-xxxlarge: var(--wp--preset--font-size--huge);
 
-/* Form fields */
-
---field-radius: 3px;
---field-padding: 0 0.75em !important;
---field-border: solid 1px #aaa;
---field-bgcolor: var(--gray);
-
---field-border-focus: solid 1px #000;
---field-bgcolor-focus: #fff;
---field-shadow-focus: 0 3px 0.3em rgba(0,0,0,0.3);
-
-/* Placeholders */
-
---placeholder-color: inherit;
---placeholder-font-style: normal;
---placeholder-opacity: 0.5;
-
-/* Form inputs and button height */
-
---input-height: 2.5em;
 
 /* Border and shadows */
 
 --radius: 5px;
---border: solid 1px #ddd;
---shadows: var(--field-shadow-focus);
+--border: solid 1px #aaa;
+--shadows: 0 3px 0.3em rgba(0,0,0,0.3);
+
+/* Form fields */
+
+--field-radius: var(--radius);
+--field-padding: 0 0.75em !important;
+--field-border: var(--border);
+--field-bgcolor: #fff;
+
+--field-border-focus: solid 1px #000;
+--field-bgcolor-focus: #fff;
+--field-shadow-focus: var(--shadows);
+
+/* Field placeholders */
+
+--placeholder-color: inherit;
+--placeholder-font-style: normal;
+--placeholder-opacity: 0.7;
+
+/* Form inputs and button height */
+
+--input-height: 2.5em;
 
 
 

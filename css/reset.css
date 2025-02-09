@@ -89,7 +89,7 @@ del, strike {
     text-decoration: line-through;
 }
 
-p {
+p, li, dd {
     text-wrap: pretty;
 }
 
@@ -100,25 +100,24 @@ p, table, ol, ul, pre code, blockquote, pre, dl, h1, h2, h3, h4, h5, h6 {
 
 table {
     border-collapse: collapse;
-    width: 100%
-}
+    width: 100%;
 
-table td, table th {
-    border: var(--border);
-    padding: 0.75em;
-}
-
-table th {
-    text-align: left;
-    font-weight: bold;
-    vertical-align: top;
+    td, th {
+        border: var(--border) !important;
+        padding: 0.6em !important;
+    }
+    
+    th {
+        text-align: left;
+        font-weight: bold;
+        vertical-align: top;
+    }
 }
 
 /* Abbreviation */
 
 
-abbr, 
-.nctooltip {
+abbr {
     --bgcolor: #000;
     --textcolor: #fff;
     --width: 150px;
@@ -131,8 +130,7 @@ abbr,
   }
   
     
-  abbr:before, 
-  .nctooltip:before {
+  abbr:before {
     --width: 150px;
     border-radius:5px;
     content: attr(title);
@@ -151,8 +149,7 @@ abbr,
     box-sizing: border-box;
   }
   
-  abbr:after,
-  .nctooltip:after {
+  abbr:after {
     content: '';
     width: 0;
     height: 0;
@@ -166,9 +163,7 @@ abbr,
   }
   
   abbr:before,
-  abbr:after,
-  .nctooltip:before,
-  .nctooltip:after {
+  abbr:after {
     opacity:0;
     visibility:hidden;
     transition: var(--trans);
@@ -176,9 +171,7 @@ abbr,
   }
   
   abbr:hover:before, 
-  abbr:hover:after,
-  .nctooltip:hover:before,
-  .nctooltip:hover:after {
+  abbr:hover:after {
     opacity:1;
     visibility:visible;
     transform: translate(0, 0);
@@ -198,6 +191,7 @@ h1, h2, h3, h4, h5, h6, p, li {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: normal;
+    text-wrap: balance;
 }
 
 h1 { font-size: var(--txt-xxlarge);}
