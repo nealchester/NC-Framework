@@ -44,8 +44,8 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	//ACF Block
 	
 
-	$cgap = get_field('column_gap') ?: '3rem';
-	$rgap = get_field('row_gap') ?: '1.5rem';
+	$cgap = get_field('column_gap') ?: '3';
+	$rgap = get_field('row_gap') ?: '2.5';
 
 	$mcolwidth = get_field('min_col_width') ?: '250';
 
@@ -56,6 +56,17 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 
 	$breakscroll = get_field('breakpoint_scroll');
 	$breakpoint = get_field('breakpoint');
+
+
+	if( get_field('max_contain_width') ) {
+		$contain_width = get_field('max_contain_width').'px';     
+	}
+	elseif( get_field('max_contain_width_set') ) {
+		$contain_width = get_field('max_contain_width_set');
+	}
+	else {
+		$contain_width = 'auto';
+	}
 
 ?>
 	
@@ -73,8 +84,8 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 <?php nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> .wp-block-columns {
-	--column-gap: <?php echo $cgap; ?>;
-	--row-gap: <?php echo $rgap; ?>;
+	--column-gap: <?php echo $cgap.'rem'; ?>;
+	--row-gap: <?php echo $rgap.'rem'; ?>;
 	--column-border-color: <?php echo $cbcolor; ?>;
 	--min-col-width: <?php echo $mcolwidth.'px'; ?>;
 	column-gap: var(--column-gap);
@@ -90,13 +101,12 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 <?php echo '#'.$id; ?> .wp-block-column:not(:last-child):after {
   display:block;
   content:'';
-  width:1px;
+  width: 0.008em;
   height:100%;
   background:var(--column-border-color, currentColor);
   position:absolute;
   right:calc( -1 * var(--column-gap) / 2 );
   top:0;
-  opacity:0.5;
 }
 
 <?php endif; ?>

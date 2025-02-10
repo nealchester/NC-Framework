@@ -160,10 +160,6 @@ text-align:right;
   text-align:center;
   }
   
-  p + .ncrule,
-  ul + .ncrule,
-  ol + .ncrule { margin-top:calc(2 * var(--gap)); }
-  
   .ncrule:before,
   .ncrule:after {
   content:'';
@@ -512,4 +508,30 @@ Must be applied to UL and OL elements */
   counter-increment: section;
   content: counter(section, decimal) ". ";
   color: var(--blue);
+}
+
+/* Hyphenation Control */
+
+.hypens-off {
+  hyphens: none; 
+}
+
+.hypens-on {
+  hyphens: auto;
+}
+
+/* Truncate */
+
+.truncate-lines-3{
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+
+/* Headline Control */
+
+.no-balance { 
+  text-wrap: auto; 
 }

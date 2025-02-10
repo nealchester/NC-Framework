@@ -15,6 +15,8 @@ elseif(is_category()) { single_cat_title('<span class="maintitle_pretext">'.__('
 
 elseif(is_tag()) { single_tag_title('<span class="maintitle_pretext">'.__('Post Tagged','nc-framework').'<span class="maintitle_colon">: </span></span>'); }
 
+elseif(is_tax()) { single_tag_title('<span class="maintitle_pretext">'.__('Post Taxonomy','nc-framework').'<span class="maintitle_colon">: </span></span>'); }
+
 elseif(is_day()) { echo '<span class="maintitle_pretext">'.__('Archive for','nc-framework').'<span class="maintitle_colon">: </span></span>'.the_time('jS F Y'); }
 
 elseif(is_month()) { echo '<span class="maintitle_pretext">'.__('Archive for','nc-framework').'<span class="maintitle_colon">: </span></span>'.the_time('F Y'); }

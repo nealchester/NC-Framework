@@ -10,7 +10,7 @@
         </div>
       <?php else:?>
         <div class="lcard_imgcon">
-          <img class="lcard_img" src="<?php nc_fallbackimage(); ?>" alt="default image" />
+          <img class="lcard_img" src="<?php echo nc_fallbackimage(); ?>" alt="default image" />
         </div>	
       <?php endif; ?>	
       </div>

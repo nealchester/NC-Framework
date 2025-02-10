@@ -6,8 +6,12 @@ get_template_part('customizer/_controls');
 // Load Gutenberg (Folder)
 get_template_part('blocks/block-setup');
 
+// Plugins (Folder)
+get_template_part('plugins/list');
+
 
 // ----------------------------------------------------------- //
+
 
 // ACF JSON Link
 get_template_part('functions/acf-json');

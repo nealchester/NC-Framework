@@ -37,5 +37,8 @@
 
 	</header>
 
+	<?php // Banner 
+	// if( !is_page_template('templates/blank.php')) { get_template_part('parts/banner'); } ?>
+
 	<div id="body" class="ncontent"> 
 	<main class="ncontent_main">

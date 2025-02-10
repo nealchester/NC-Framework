@@ -6,6 +6,7 @@
             "key": "field_5f14d80b1b306",
             "label": "Main",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -20,9 +21,31 @@
             "endpoint": 0
         },
         {
+            "key": "field_67a9d4edc8f37",
+            "label": "Close other accordions",
+            "name": "collapse",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "Leave open",
+            "ui": 1
+        },
+        {
             "key": "field_6053a7ed3c9ed",
             "label": "Choose",
             "name": "choose",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -48,6 +71,7 @@
             "key": "field_5f14d80b1b710",
             "label": "Select posts",
             "name": "select_links",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -75,12 +99,14 @@
             "elements": "",
             "min": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "bidirectional_target": []
         },
         {
             "key": "field_6053ae103c9ee",
             "label": "Custom content",
             "name": "custom_content",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -98,35 +124,63 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_6053ae3b3c9ef",
+            "layout": "block",
+            "pagination": 1,
+            "rows_per_page": 10,
             "min": 1,
             "max": 0,
-            "layout": "block",
-            "button_label": "",
+            "collapsed": "field_6053ae3b3c9ef",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_6053ae3b3c9ef",
                     "label": "",
                     "name": "heading",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "88",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "Heading",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "parent_repeater": "field_6053ae103c9ee"
+                },
+                {
+                    "key": "field_679ccf5df4655",
+                    "label": "",
+                    "name": "open",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "12",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Open",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_6053ae103c9ee"
                 },
                 {
                     "key": "field_6053ae493c9f0",
                     "label": "",
                     "name": "content",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -137,10 +191,12 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "visual",
+                    "allow_in_bindings": 1,
+                    "tabs": "all",
                     "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 0
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_6053ae103c9ee"
                 }
             ]
         },
@@ -148,6 +204,7 @@
             "key": "field_5f14d80b1baf4",
             "label": "Display full answer",
             "name": "display_content",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -181,6 +238,7 @@
             "key": "field_5f14d80b1bedc",
             "label": "Truncate character limit",
             "name": "tuncate_char_limit",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -215,6 +273,7 @@
             "key": "field_5f14dce338a44",
             "label": "Box Settings",
             "name": "box_settings",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -236,6 +295,7 @@
             "key": "field_5f14d80b1de94",
             "label": "Custom Code",
             "name": "custom_code",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -272,5 +332,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650149160
+    "modified": 1739186545
 }

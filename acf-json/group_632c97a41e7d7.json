@@ -3,9 +3,10 @@
     "title": "Block: NC Canvas",
     "fields": [
         {
-            "key": "field_632c97a430cc4",
-            "label": "Column Options",
+            "key": "field_67a88d469ec1b",
+            "label": "Column Block Control",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -20,10 +21,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_632c97a446be1",
-            "label": "Column Gap Space",
+            "key": "field_67a89169f2b39",
+            "label": "Column Gap Spacing",
             "name": "column_gap",
-            "type": "text",
+            "aria-label": "",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,17 +34,21 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "1.5rem",
-            "maxlength": "",
-            "placeholder": "1.5rem",
+            "default_value": 3,
+            "min": "",
+            "max": 9,
+            "allow_in_bindings": 1,
+            "placeholder": 3,
+            "step": "0.5",
             "prepend": "",
-            "append": ""
+            "append": "rem"
         },
         {
-            "key": "field_632c97a44a6cb",
-            "label": "Row Gap Space",
+            "key": "field_67a899699afae",
+            "label": "Row Gap Spacing",
             "name": "row_gap",
-            "type": "text",
+            "aria-label": "",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -51,16 +57,20 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "1.5rem",
-            "maxlength": "",
-            "placeholder": "1.5rem",
+            "default_value": "1.5",
+            "min": "",
+            "max": 9,
+            "allow_in_bindings": 1,
+            "placeholder": "1.5",
+            "step": "0.5",
             "prepend": "",
-            "append": ""
+            "append": "rem"
         },
         {
             "key": "field_632ce6cf753a3",
             "label": "Minimum Column Width",
             "name": "min_col_width",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -80,8 +90,9 @@
         },
         {
             "key": "field_632c97a43bc0d",
-            "label": "Add column borders",
+            "label": "Add Column Dividers",
             "name": "column_borders",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -93,14 +104,16 @@
             },
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "Yes",
             "ui_off_text": "",
             "ui": 1
         },
         {
             "key": "field_632cdf4b60214",
-            "label": "Column Border Color",
+            "label": "Column Divider Color",
             "name": "column_border_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -119,13 +132,15 @@
                 "id": ""
             },
             "default_value": "currentColor",
-            "enable_opacity": 0,
-            "return_format": "string"
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_632c97a451e28",
             "label": "Break Point",
             "name": "breakpoint",
+            "aria-label": "",
             "type": "number",
             "instructions": "Leave empty if you will write your on responsive code.",
             "required": 0,
@@ -145,10 +160,11 @@
         },
         {
             "key": "field_632c97a44e10c",
-            "label": "Scroll on break point",
+            "label": "Scroll at Break Point",
             "name": "breakpoint_scroll",
+            "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "If you enable this, your columns will scroll at the above breakpoint. If not, they will simply stack.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -158,14 +174,16 @@
             },
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "Yes",
-            "ui_off_text": "",
+            "ui_off_text": "No",
             "ui": 1
         },
         {
             "key": "field_632c97a4595a7",
             "label": "Box Settings",
             "name": "box_settings",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -187,6 +205,7 @@
             "key": "field_632c97a45d0b7",
             "label": "Bottom Padding",
             "name": "bottom_padding",
+            "aria-label": "",
             "type": "text",
             "instructions": "Must match the bottom padding of box.",
             "required": 0,
@@ -214,6 +233,7 @@
             "key": "field_632c97a460b4c",
             "label": "Custom code",
             "name": "custom_code",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -250,5 +270,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663894086
+    "modified": 1739102818
 }

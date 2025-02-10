@@ -40,18 +40,32 @@ If your concept requires more customization, you will need to copy and edit temp
 
 ## 10+ Custom Gutenberg blocks
 
-  * hero
-  * split hero
   * accordion
-  * columns
-  * gallery w/ lightbox pop-up
-  * image slider w/ lightbox pop-up
-  * text slider
-  * media + content
-  * list posts
-  * one page navigation
-  * rich text content
-  * dividers
+  * image gallery (w/ lightbox)
+  * text + media (various types)
+  * hero
+  * animated
+  * dynamic spacer
+  * search box
+  * sliders (text and images)
+  * dynamic link
+  * navigation
+  * modal
+  * posts
+
+## Customizer Options
+
+  * Set blog home title
+  * Preload up to 3 images on the home page
+  * Set a default/fallback image for thumbnails and banner headers
+  * Set a color for the chrome/address bar on mobile devices
+  * Load and use WP Dashicons on frontend
+  * Use enhanced and style-able radio and check inputs
+  * Disable default full screen editor on start
+  * Disable comments
+  * Disable image generation and scaling
+  * Disable image compression
+  * Disable Emoji support 
 
 
 ## Folder Structure
@@ -62,8 +76,8 @@ This section explains the general content within the folders and main files.
 Refer to the `readme.md` file within each folder for more information.
 
 
-* **`_functions`** - this folder stores extra WP functions. If not used should be deleted.
-* **`_parts`** - this folder stores extra WP features. If not used should be deleted.
+* **`_functions`** - this folder stores extra WP functions. If not used, should be deleted.
+* **`_parts`** - this folder stores extra WP features. If not used, should be deleted.
 * **`acf-json`** - stores custom fields data (don't delete)
 * **`blocks`** - stores all custom Gutenberg blocks and supported assets
 * **`customizer`** - stores all the new Customizer features function files
@@ -73,6 +87,7 @@ Refer to the `readme.md` file within each folder for more information.
 * **`img`** - stores all raster and vector images.
 * **`js`** - stores all JavaScript files
 * **`parts`** - stores all reusable template parts
+* **`plugins`** - stores functions that enhance certain plugins
 * **`templates`** - stores custom templates
 
 ### Template files

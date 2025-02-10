@@ -30,7 +30,7 @@ add_theme_support('custom-logo', array(
 /*
 add_theme_support('custom-header', array(
     'default-image' => '',
-    'random-default' => true,
+    'random-default' => false,
     'width' => '1900px',
     'height' => '',
     'flex-height' => true,

@@ -16,7 +16,7 @@ This contains all NC Framework and WordPress blocks.
   --count:3; 
   --min-col-width: 250px;
   --column-gap: 3rem;
-  --row-gap:1.5rem; 
+  --row-gap:2.5rem; 
   --bottom-box-padding:3em; /* Bottom padding of the box */
   --column-border-color: currentColor;
 }
@@ -104,13 +104,12 @@ This contains all NC Framework and WordPress blocks.
 .ncolumns-borders > *:not(:last-child):after {
   display:block;
   content:'';
-  width:1px;
+  width: 0.08em;
   height:100%;
   background:var(--column-border-color);
   position:absolute;
   right:calc( -1 * var(--column-gap) / 2 );
   top:0;
-  opacity:0.5;
 }
 
 

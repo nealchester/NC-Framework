@@ -9,7 +9,6 @@ The following files are **only** used in the block editor:
 The following files are **only** used on the front-end:
 
 * **`reset.css`** resets and normalizes styles across browsers
-* **`menus.css`** styles the complex drop-menus throughout the theme
 * **`theme.css`** styles everything that doesn't display in the block editor (header, footer, etc.)
 
 The following files are **only** used on the front-end and **only** loaded if the template is displayed:
@@ -21,7 +20,7 @@ The following files are **only** used on the front-end and **only** loaded if th
 The following files are used on **both** the front-end and in the block editor:
 
 * **`uclasses.css`** universal utility classes
-* **`blocks.css`** re-styles some WordPress blocks
+* **`wpblocks.css`** re-styles some WordPress blocks
 * **`variables.css`** sets the global custom properties for all CSS
 * **`content.css`** styles any content that will display in the block editor and the front-end
 

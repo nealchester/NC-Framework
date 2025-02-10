@@ -1,6 +1,6 @@
 <?php if ( function_exists('yoast_breadcrumb') && is_singular() && !is_attachment() ):?>
   
-<nav class="yoast-breadcrumbs"><?php yoast_breadcrumb();?></nav>
+<?php yoast_breadcrumb('<nav id="breadcrumbs" class="yoast-breadcrumbs">','</nav>');?>
 
 <style>
 
@@ -12,22 +12,27 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-}
 
-.yoast-breadcrumbs a {
-    color: inherit;
-    font-weight: inherit;
-}
+    a {
+        color: inherit;
+        font-weight: inherit;
+    }
 
-.yoast-breadcrumbs .breadcrumb_last { 
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+    .seper {
+        font-size: 1.5ex;
+        margin-inline: 0.5em;
+    }
+
+    .breadcrumb_last { 
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        border: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
 }
 
 </style>

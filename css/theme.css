@@ -39,6 +39,169 @@ body {
 }
 
 
+/* NC Navmenu */
+
+.header_menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em
+  }
+  
+  .header_menu a {
+    font-weight: 400;
+    transition: 0.5s;
+  }
+  
+  
+  .header_menu > li {
+    display: flex;
+    position:relative;
+  }
+  
+  .header_menu > li > a {
+    padding:1em;
+    color: currentColor;
+  }
+  
+  .header_menu > li > a.navmenu-current {
+    color:#444 !important;
+  }
+  
+  /* Submenu */
+  
+  .header_menu .sub-menu {
+      position: absolute;
+      margin:0;
+      top:100%;
+      width: 250px;
+      left: 50%;
+      margin-left: calc(-1 * 250px / 2);
+      line-height: normal;
+      z-index: 200;
+      list-style-type:none;
+      padding-left:0;
+      background: #222;
+      transition: 0.5s;
+      color: #fff;
+      border-radius: 5px;
+      transform:scale(1,0);
+      transform-origin:center top;
+      filter:drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+  }
+  
+  
+  .header_menu li.menu-item-has-children:hover .sub-menu {
+    z-index:210;
+  }
+  
+  .header_menu .sub-menu > li:first-child a {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .header_menu .sub-menu > li:last-child a {
+    border-radius: 0 0 5px 5px;
+  }
+  
+  
+  /* Centered Drop menu for horizontal only */
+  
+  
+  .header_menu .sub-menu:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: transparent;
+      border-bottom-color: #222;
+      border-width: 10px;
+      margin-left: -10px;
+  }
+  
+  
+  .header_menu li:hover > .sub-menu,
+  .header_menu li > .sub-menu.focused { 
+      transform:scale(1,1); 
+  }
+  
+  .header_menu .sub-menu .sub-menu:before {
+    content:none;
+  }
+  
+  .header_menu .sub-menu .sub-menu { 
+    left:100%; top:0;
+  }
+  
+  .header_menu .sub-menu li { 
+    display:block; 
+    position:relative;
+  }
+  
+  .header_menu .sub-menu li a { 
+    padding:1em; 
+    display:block;
+  }
+  
+  .header_menu .sub-menu li:hover > a {
+    background:#000;
+  }
+  
+  .header_menu .sub-menu li:not(:last-child) a { 
+    border-bottom: solid 1px #666; 
+  }
+  
+      /* Submenu indicator */
+  
+      .header_menu .menu-item-has-children > a:after { 
+        content: '\e902';
+        font-family: 'ncicons'; 
+        margin-left:0.5em;
+        transition:0.5s;
+        display:inline-block;
+        transform:rotate(90deg);
+        color: currentColor;
+        font-size: 0.7em;
+      }
+  
+      .header_menu .menu-item-has-children:hover > a:after {
+          transform: rotate(270deg)
+      }
+  
+  
+  
+  /* Nav Menu Item Description */
+  
+  .header_menu .menu-item-description {
+    display:block;
+    font-size:0.6em;
+    opacity:0.5;
+    width:100%;
+    line-height: 1.5
+  }
+  
+  /* Animated underline hover */
+  
+  .header_menu > li:not(.menu-item-has-children) > a:after {
+    content:''; 
+    height:1px; 
+    background:#000; 
+    width:0;
+    transition: 0.7s; 
+    display:block; 
+    position:absolute;
+    bottom: 0.8em;
+  }
+  
+  .header_menu > li:not(.menu-item-has-children):hover > a:after {
+    width:calc(100% - 2em); /* minus the padding on both sides of links */
+  }
+
 /* Logo 
 
 <div class="nclogo">
@@ -270,13 +433,47 @@ body.home .nclogo a {
     }
 
 
-/* WP Header Image */
+/* Banner Image */
 
-.wp-bannerimage {
+.banner {
+   position: relative; 
+   background: #000;
+   --banner-opacity: 0.6;
+}
+
+.banner_content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    min-height: 350px;
+    padding-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner_content > :last-child {
+    margin-bottom: 0;
+}
+
+.banner_image {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center top;
-    height: 200px;
+    position:absolute;
+    z-index:1;
+    left:0; right:0; top:0; bottom:0;
+    opacity: var(--banner-opacity);
+
+    /* Animated Fade In*/
+    animation: BannerImagefadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes BannerImagefadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: var(--banner-opacity);}
 }
 
 
@@ -288,6 +485,7 @@ body.home .nclogo a {
     background-color: var(--dark);
     color: var(--txt-light);
     font-size:var(--txt-small);
+    clear:both;
 }
 
 #footer a {
@@ -409,35 +607,21 @@ body:not(.page-template-blank) .ncontent {
 
 /* Link colors */
 
-.ncontent_main p a:not([class]),
-.ncontent_main li a:not([class]) { 
-    text-decoration:none; 
-    transition:0.3s; 
-    position:relative; 
+.ncontent_main :is(p, li) a { 
+    text-decoration: underline solid 0.08em currentColor;
+    text-underline-offset: 0.16em;
     font-weight: 500;
-}
+    position:relative;
+    top: 0px;
 
-.ncontent_main p a:not([class]):after,
-.ncontent_main li a:not([class]):after { 
-    content:''; 
-    height:1px; 
-    background: currentColor; 
-    width:100%;
-    transition:0.5s; 
-    display:block; 
-    position:absolute;
-    bottom:0;
-    left:0;
-}
-
-.ncontent_main p a:not([class]):hover:after,
-.ncontent_main li a:not([class]):hover:after { 
-    width:0;
-}
-
-.ncontent_main p a:not([class]):hover,
-.ncontent_main li a:not([class]):hover {
-    color:currentColor
+    &[target="_blank"]:after {
+        content: ' \ea7e';
+        font-family: 'ncicons';
+        font-size: 1.5ex;
+    }
+    &:active {
+        top: 2px;
+    }
 }
 
 
@@ -452,24 +636,6 @@ body:not(.page-template-blank) .ncontent {
 .featuredimage  {
     margin-bottom:1.5em;
 }
-
-
-/* Scroll Bar Styles */
-
-body::-webkit-scrollbar { width: 16px; }
-/* Track & scroll thickness */
-
-body::-webkit-scrollbar-thumb { background-color: #333;}
-/* Scroll color */
-
-body::-webkit-scrollbar-thumb:hover { background-color: #000 }
-/* Scroll hover color */
-
-body::-webkit-scrollbar-thumb:active { background-color: #000 }
-/* Scroll click & drag color */
-
-body::-webkit-scrollbar-track { background-color:#ddd; }
-/* Track color */
 
 
 /* Card Listings */

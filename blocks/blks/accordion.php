@@ -48,6 +48,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	$hd = get_field('heading') ?: 'h3';
 	$mobile = get_field('mobile') ?: '600';
 	$choose = get_field('choose') /* write or post */;
+	$collapse = get_field('collapse');
 
 ?>
 
@@ -106,8 +107,9 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 				<?php while( have_rows('custom_content') ): the_row(); 
 					$acc_heading = get_sub_field('heading');
 					$acc_content = get_sub_field('content');
+					$acc_open = get_sub_field('open');
 				?>
-					<details class="nccordion_details">
+					<details class="nccordion_details"<?php if ($acc_open){ echo' open'; };?>>
 						<summary class="nccordion_header"><?php echo $acc_heading; ?></summary>  
 						<div class="nccordion_content">
 							<?php echo $acc_content; ?>
@@ -122,6 +124,28 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			<?php nc_after_content(); ?>
 		</div>
 	</div>
+
+	<?php if( $collapse ):?>
+
+		<script id="<?php echo 'collapse-'.$id; ?>">
+			
+			// Credit to: https://lebcit.github.io/posts/automatically-close-other-details/
+
+			const allDetails = document.querySelectorAll("<?php echo '#'.$id; ?> details")
+			allDetails.forEach((details) => {
+			details.addEventListener("toggle", (e) => {
+			if (details.open) {
+			allDetails.forEach((details) => {
+			if (details != e.target && details.open) {
+				details.open = false
+			}
+			})
+			}
+			})
+			})
+		</script>
+
+	<?php endif;?>
 
 <style id="<?php echo $id; ?>-block-css">
 

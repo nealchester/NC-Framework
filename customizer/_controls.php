@@ -8,17 +8,22 @@ get_template_part('customizer/_layout-panel');
 // Sanitize Customizer
 get_template_part('customizer/_sanitize');
 
-// Comments
+// ---------------------------------------------------- //
+
+// Social Icons
+get_template_part('customizer/social-icons');
+
+// Disable Comments
 get_template_part('customizer/comments');
 
-// Remove some of WordPress Customizer controls
+// Preload
+get_template_part('customizer/preload');
+
+// Remove some Customizer controls
 get_template_part('customizer/colors');
 
-//  Default Image
+//  Default Images
 get_template_part('customizer/default-image');
-
-//  Footer section    
-get_template_part('customizer/copyright');
 
 // Custom title for front page blog listing
 get_template_part('customizer/blog-home-title');
