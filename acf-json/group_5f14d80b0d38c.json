@@ -21,6 +21,27 @@
             "endpoint": 0
         },
         {
+            "key": "field_67a9d4edc8f37",
+            "label": "Close other accordions",
+            "name": "collapse",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Close others",
+            "ui_off_text": "Leave open",
+            "ui": 1
+        },
+        {
             "key": "field_6053a7ed3c9ed",
             "label": "Choose",
             "name": "choose",
@@ -311,5 +332,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738331406
+    "modified": 1739183596
 }
