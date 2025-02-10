@@ -112,7 +112,7 @@ font-size: var(--txt-large);
 
 
 a.comment-reply-link {
-    font-size: 0.5em;
+    font-size: 0.6em;
     text-transform: uppercase;
     display: inline-flex;
     line-height:normal;
@@ -125,12 +125,14 @@ a.comment-reply-link {
 }
 
 a.comment-reply-link:after {
-    content: '\e96a';
+    content: '\e905';
     font-family: 'ncicons';
-    padding-left: 0.25em;
+    padding-right: 0.3em;
+    font-weight:normal;
     line-height: 0;
     position: relative;
-    font-size: 1.5em;
+    font-size: 1.3em;
+    transform:scale(-1);
 }
 
 .comment-list .comment {
@@ -199,6 +201,7 @@ a.comment-reply-link:after {
 #cancel-comment-reply-link {
     color: currentColor;
     letter-spacing: 0;
+    text-decoration: none;
 }
 
 #cancel-comment-reply-link:after {

@@ -13,6 +13,7 @@ if(function_exists('get_field')){
 
     // ACF Blocks
     get_template_part('blocks/blks/accordion');
+    get_template_part('blocks/blks/animate');
     get_template_part('blocks/blks/blank');
     get_template_part('blocks/blks/columns');
     get_template_part('blocks/blks/canvas');

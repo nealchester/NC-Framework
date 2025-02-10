@@ -67,15 +67,14 @@
 	'comment_field' => '<label for="commentarea" class="hidetext">'.__('Comment', 'nc-framework').'<br></label>
 	<textarea id="commentarea" name="comment" aria-required="true" 
 	placeholder="'.__('Write your comment here. Be clear, be kind, stay on-topic, and respect everyone.','nc-framework').'"></textarea><br>',
-	'cancel_reply_link' => '<span class="ncicon nc-close"></span> <span class="hidetext cancel-comment-reply-label">'.__('Cancel','nc-framework').'</span>',
+	'cancel_reply_link' => '<span class="ncicon nc-close"></span>
+	<span class="hidetext cancel-comment-reply-label">'.__('Cancel','nc-framework').'</span>',
 	'label_submit'      => __('Post Comment','nc-framework'),
 	'comment_notes_before' => '',
 	'comment_notes_after' => '',
 	'id_submit'         => 'wpsubmit',
   'class_submit'      => 'btn',
 	'logged_in_as' => '<p class="txt-small logged-in-as">' .
-
-
     sprintf( __( 'Logged in as', 'nc-framework').' <a href="%1$s">%2$s</a>. <a href="%3$s" title="'.__('Log out of this account','nc-framework').'">'.__('Log out?','nc-framework').'</a>',
       admin_url( 'profile.php' ),
       $user_identity,

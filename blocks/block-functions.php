@@ -134,7 +134,7 @@ function nc_box_styles( $block_id =''){
 
 }
 
-// For NC Block Image Focus
+// For NC Block Image Fo
 function nc_block_image_focus($image) {
 
     if( function_exists('get_field') && get_field("horizontal", $image) && get_field("vertical", $image) ){ 
@@ -147,7 +147,8 @@ function nc_block_image_focus($image) {
       return 'object-position:50% 50%; transform-origin:50% 50%;';	
     }
   
-  }
+}
+
 
 // Block Posts Meta
 function nc_block_posts_meta(){
@@ -193,6 +194,21 @@ function nc_inner_blocks(int $hlevel = 1) {
         )),
         array( 'core/paragraph', array(
                 'content' => 'Insert some text here... Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+        ))
+    );
+    
+    return'<InnerBlocks template="'.esc_attr( wp_json_encode( $template ) ).'" />';
+}
+
+// Inner Content Animate Block
+function nc_inner_animated_blocks(int $hlevel = 2) {
+    $template = array(
+        array('core/heading', array(
+            'level' => $hlevel,
+            'content' => 'Add more blocks',
+        )),
+        array( 'core/paragraph', array(
+                'content' => 'Whatever blocks you add here will be animated',
         ))
     );
     
