@@ -37,7 +37,7 @@
             "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
-            "ui_on_text": "Close others",
+            "ui_on_text": "Yes",
             "ui_off_text": "Leave open",
             "ui": 1
         },
@@ -332,5 +332,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739183596
+    "modified": 1739186545
 }
