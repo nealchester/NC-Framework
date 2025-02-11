@@ -1,0 +1,88 @@
+{
+    "key": "group_67ab23b4d983e",
+    "title": "Block: Search Box",
+    "fields": [
+        {
+            "key": "field_67ab30927eb31",
+            "label": "Placeholder text",
+            "name": "placeholder",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Search",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Search",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67ab2d10dbbf3",
+            "label": "Alternative address",
+            "name": "alt_address",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "https:\/\/another-domain.com\/"
+        },
+        {
+            "key": "field_67ab33097eb32",
+            "label": "css",
+            "name": "css",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5e231aa6b0c51",
+                "field_5e231ccaf3baf",
+                "field_5e231ac0b0c52"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nc-search"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1739274819
+}

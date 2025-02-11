@@ -32,6 +32,7 @@ function nc_blocks_register_assets(){
   wp_register_style('nc-blocks-posts', get_theme_file_uri('/blocks/css/posts.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-rich-text', get_theme_file_uri('/blocks/css/rich-text.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-slider', get_theme_file_uri('/blocks/js/slider/splide.css'));
+  wp_register_style('nc-blocks-search-box', get_theme_file_uri('/blocks/css/search.css'), array('nc-uclasses'));
 
   /* Register each block's Javascript */
   wp_register_script('nc-blocks-accordion', get_theme_file_uri('/blocks/js/accordion/accordion.js'));
@@ -74,6 +75,7 @@ function nc_load_blocks_css_for_editor(){
       '/blocks/css/media.css',
       '/blocks/css/posts.css',
       '/blocks/css/rich-text.css',
+      '/blocks/css/search.css',
     )
   );
 }
