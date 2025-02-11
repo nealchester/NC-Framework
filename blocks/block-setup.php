@@ -31,5 +31,6 @@ if(function_exists('get_field')){
     get_template_part('blocks/blks/rich-text');
     get_template_part('blocks/blks/slider-image');
     get_template_part('blocks/blks/slider');
+    get_template_part('blocks/blks/spacer');
 
 }

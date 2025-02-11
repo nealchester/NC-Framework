@@ -67,28 +67,6 @@
             "append": "rem"
         },
         {
-            "key": "field_632ce6cf753a3",
-            "label": "Minimum Column Width",
-            "name": "min_col_width",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 250,
-            "min": "",
-            "max": "",
-            "placeholder": 250,
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
             "key": "field_632c97a43bc0d",
             "label": "Add Column Dividers",
             "name": "column_borders",
@@ -137,12 +115,30 @@
             "allow_in_bindings": 1
         },
         {
+            "key": "field_67aaec8f9279d",
+            "label": "Break Point",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_632c97a451e28",
             "label": "Break Point",
             "name": "breakpoint",
             "aria-label": "",
             "type": "number",
-            "instructions": "Leave empty if you will write your on responsive code.",
+            "instructions": "Clear this field if you will write your on responsive code or you have enabled WP's native break point (\"Stack on mobile\") feature.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -151,12 +147,13 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": 768,
-            "prepend": "",
-            "append": "px",
             "min": "",
             "max": "",
-            "step": ""
+            "allow_in_bindings": 1,
+            "placeholder": 768,
+            "step": "",
+            "prepend": "",
+            "append": "px"
         },
         {
             "key": "field_632c97a44e10c",
@@ -164,7 +161,7 @@
             "name": "breakpoint_scroll",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "If you enable this, your columns will scroll at the above breakpoint. If not, they will simply stack.",
+            "instructions": "If you enable this, your columns will scroll at the above break point. <b>Note:<\/b> It's important to add some spacing to the bottom of at least one column and remove any spacing you may have added to the bottom of this block. This is only if you enable this feature.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -178,6 +175,37 @@
             "ui_on_text": "Yes",
             "ui_off_text": "No",
             "ui": 1
+        },
+        {
+            "key": "field_632ce6cf753a3",
+            "label": "Minimum Column Width",
+            "name": "min_col_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "This keeps the columns at a specific width when you chose select \"Scroll at Break Point.\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_632c97a44e10c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 250,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": 250,
+            "step": "",
+            "prepend": "",
+            "append": "px"
         },
         {
             "key": "field_632c97a4595a7",
@@ -194,57 +222,15 @@
                 "id": ""
             },
             "clone": [
-                "group_5f0a295e1071c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_632c97a45d0b7",
-            "label": "Bottom Padding",
-            "name": "bottom_padding",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Must match the bottom padding of box.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5c9905513ccfc",
-                        "operator": "==",
-                        "value": "ncolumns-scroll"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "3rem",
-            "placeholder": "3rem",
-            "prepend": "padding-bottom:",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_632c97a460b4c",
-            "label": "Custom code",
-            "name": "custom_code",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5e221e7d71f1d"
+                "field_5f0a2a14959cf",
+                "field_5f0a2a62959d0",
+                "field_5f0a2aab959d1",
+                "field_61cdfecdfb29c",
+                "field_5f0a2bc7959d4",
+                "field_5f0a2b73959d3",
+                "field_5e231aa6b0c51",
+                "field_5e231ccaf3baf",
+                "field_5e231ac0b0c52"
             ],
             "display": "seamless",
             "layout": "block",
@@ -270,5 +256,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739102818
+    "modified": 1739256611
 }
