@@ -186,7 +186,7 @@ function nc_block_posts_meta(){
 }
 
 // Inner Content Block
-function nc_inner_blocks(int $hlevel = 1) {
+function nc_inner_blocks(int $hlevel = 2) {
     $template = array(
         array('core/heading', array(
             'level' => $hlevel,
