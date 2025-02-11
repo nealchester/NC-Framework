@@ -6,6 +6,7 @@
             "key": "field_5ca3950a52fd3",
             "label": "Options",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -15,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -23,6 +24,7 @@
             "key": "field_5f2d922d470c1",
             "label": "Divider Style",
             "name": "divider_style",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -41,21 +43,51 @@
                 "curve asem invert": "curve asem invert",
                 "triangle": "triangle",
                 "triangle invert": "triangle invert",
-                "pyramids": "pyramids",
-                "pyramids invert": "pyramids invert"
+                "custom": "custom"
             },
             "default_value": "tilt",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5ca3950a5301a",
+            "label": "SVG code",
+            "name": "custom_svg",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "<b>Note: <\/b>SVG images are best used for scaling and color change with CSS. Paste the entire SVG code above. This block settings can be used style the graphic's color, position and orientation, but correct display isn't guaranteed. You may have to alter your code to make the graphic display correctly. <em>Best results are found with a united shape.<\/em>",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f2d922d470c1",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": "",
+            "placeholder": "<svg>...<\/svg>",
+            "new_lines": ""
         },
         {
             "key": "field_5ca3950a5315c",
             "label": "Position",
             "name": "position",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -82,6 +114,7 @@
             "key": "field_5ca395b76045c",
             "label": "Rotate",
             "name": "rotate",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -109,6 +142,7 @@
             "key": "field_5ca3950a5313c",
             "label": "Divider Color",
             "name": "divider_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -118,12 +152,15 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#ccc"
+            "default_value": "#ccc",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5ca396076045d",
             "label": "Background Color",
             "name": "bgcolor",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -133,12 +170,15 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
-            "key": "field_5ca4cbc171867",
-            "label": "Custom SVG",
+            "key": "field_67aa9be7afdf0",
+            "label": "Custom CSS",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -153,11 +193,12 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ca3950a5301a",
-            "label": "SVG code",
-            "name": "custom_svg",
-            "type": "textarea",
-            "instructions": "SVG images are best used for easy scaling and color change with CSS. Paste the entire SVG code here. This block will attempt to style the graphic's color, but correct display isn't guaranteed. You may have to alter your code to make the graphic display correctly. Best results are found with a united shape.",
+            "key": "field_67aa9fdbb55d6",
+            "label": "Set ID",
+            "name": "set_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Style your block using a unique ID.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -166,9 +207,31 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "<svg>...<\/svg> or <img src=\"image.png\" width=\"100%\" alt=\"divider\" \/>",
             "maxlength": "",
-            "rows": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "#",
+            "append": ""
+        },
+        {
+            "key": "field_67aa9fe7b55d7",
+            "label": "",
+            "name": "custom_styles",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 12,
+            "placeholder": "",
             "new_lines": ""
         }
     ],
@@ -189,5 +252,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622410410
+    "show_in_rest": 0,
+    "modified": 1739236388
 }

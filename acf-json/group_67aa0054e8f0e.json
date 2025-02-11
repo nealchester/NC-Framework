@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "select",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -45,13 +45,13 @@
                 "zoom-out-left": "zoom-out-left",
                 "zoom-out-right": "zoom-out-right"
             },
-            "default_value": false,
+            "default_value": "fade-up",
             "return_format": "value",
             "multiple": 0,
-            "allow_null": 1,
+            "allow_null": 0,
             "allow_in_bindings": 1,
-            "ui": 1,
-            "ajax": 1,
+            "ui": 0,
+            "ajax": 0,
             "placeholder": ""
         },
         {
@@ -101,66 +101,6 @@
             "append": "milliseconds"
         },
         {
-            "key": "field_67aa017b93bb9",
-            "label": "Custom CSS",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_67aa017f93bba",
-            "label": "Set ID",
-            "name": "set_id",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Style your block using a unique ID.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "prepend": "#",
-            "append": ""
-        },
-        {
-            "key": "field_67aa018593bbb",
-            "label": "",
-            "name": "custom_styles",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": 12,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
             "key": "field_67aa019093bbc",
             "label": "HTML Attributes",
             "name": "",
@@ -184,7 +124,7 @@
             "name": "add_to_block",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "You can add every type of attribute and its value accept classes and IDs. To add classes, find the \"Advanced\" section below. To add an ID, find the \"Custom CSS\" section.",
+            "instructions": "You can add every type of attribute and its value accept classes. To add classes, find the \"Advanced\" section below.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -218,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1739195607
+    "modified": 1739234446
 }

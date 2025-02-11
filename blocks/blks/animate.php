@@ -17,7 +17,7 @@ function nc_animate_block() {
 						'post_types'        => array('post', 'page'),
 						'align'             => 'full',
 						'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
+									'align' => array( 'full' ), 
 									'mode' => true,
 									'multiple' => true,
 									'jsx' => true,
@@ -47,13 +47,9 @@ function nc_animate_block_markup( $block, $content = '', $is_preview = false ) {
 ?>
 	
 
-	<div id="<?php echo $id; ?>" class="ncanimate<?php echo esc_attr($className);?>" <?php echo nc_animate().nc_block_attr();?>>			
-			<?php echo nc_inner_animated_blocks(); ?>
+	<div class="ncanimate<?php echo esc_attr($className);?>" <?php echo nc_animate().nc_block_attr();?>>			
+		<?php echo nc_inner_animated_blocks(); ?>
 	</div>
-
-	<style id="<?php echo $id; ?>-block-css">
-		<?php nc_block_custom_css(); ?>
-	</style>
 
 
 <?php } ?>

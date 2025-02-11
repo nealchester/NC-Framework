@@ -201,14 +201,10 @@ function nc_inner_blocks(int $hlevel = 1) {
 }
 
 // Inner Content Animate Block
-function nc_inner_animated_blocks(int $hlevel = 2) {
+function nc_inner_animated_blocks() {
     $template = array(
-        array('core/heading', array(
-            'level' => $hlevel,
-            'content' => 'Add more blocks',
-        )),
         array( 'core/paragraph', array(
-                'content' => 'Whatever blocks you add here will be animated',
+                'content' => 'Whatever blocks you add here will can be animated...',
         ))
     );
     

@@ -2,9 +2,6 @@
 
 if(function_exists('get_field')){ 
 
-    // ACF Fields
-    // get_template_part('blocks/block-fields');
-
     // Helper Functions
     get_template_part('blocks/block-functions');
 
