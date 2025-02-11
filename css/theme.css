@@ -607,12 +607,13 @@ body:not(.page-template-blank) .ncontent {
 
 /* Link colors */
 
-.ncontent_main :is(p, li) a { 
-    text-decoration: underline solid 0.08em currentColor;
-    text-underline-offset: 0.16em;
-    font-weight: 500;
-    position:relative;
-    top: 0px;
+.ncontent_main p a:not([class]), 
+.ncontent_main li a:not([class]) {
+  text-decoration: underline solid 0.08em currentColor;
+  text-underline-offset: 0.12em;
+  font-weight: 500;
+  position: relative;
+  top: 0px;
 
     &[target="_blank"]:after {
         content: ' \ea7e';

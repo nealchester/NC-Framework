@@ -52,11 +52,10 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	$cborders = get_field('column_borders');
 	$cbcolor = get_field('column_border_color') ?: 'currentColor';
 
-	$bpadding = get_field('bottom_padding') ?: '3rem';
-
 	$breakscroll = get_field('breakpoint_scroll');
 	$breakpoint = get_field('breakpoint');
 
+	$bpadding = get_field('bottom_padding') ?: 'clamp(2rem, 10vmin, 3.5rem)';
 
 	if( get_field('max_contain_width') ) {
 		$contain_width = get_field('max_contain_width').'px';     
@@ -83,6 +82,10 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 
 <?php nc_box_styles($id); ?>
 
+<?php echo '#'.$id; ?> {
+	padding-block: initial;
+}
+
 <?php echo '#'.$id; ?> .wp-block-columns {
 	--column-gap: <?php echo $cgap.'rem'; ?>;
 	--row-gap: <?php echo $rgap.'rem'; ?>;
@@ -94,20 +97,20 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 
 <?php if( $cborders ):?>
 
-<?php echo '#'.$id; ?> .wp-block-column:not(:last-child) { 
-	position:relative; 
-}
+	<?php echo '#'.$id; ?> .wp-block-column:not(:last-child) { 
+		position:relative; 
+	}
 
-<?php echo '#'.$id; ?> .wp-block-column:not(:last-child):after {
-  display:block;
-  content:'';
-  width: 0.008em;
-  height:100%;
-  background:var(--column-border-color, currentColor);
-  position:absolute;
-  right:calc( -1 * var(--column-gap) / 2 );
-  top:0;
-}
+	<?php echo '#'.$id; ?> .wp-block-column:not(:last-child):after {
+		display:block;
+		content:'';
+		width: 0.008em;
+		height:100%;
+		background:var(--column-border-color, currentColor);
+		position:absolute;
+		right:calc( -1 * var(--column-gap) / 2 );
+		top:0;
+	}
 
 <?php endif; ?>
 
@@ -127,12 +130,7 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 		overflow-y:hidden;
 		padding-inline:var(--gap);
 		margin-inline: calc(-1 * var(--gap));
-		margin-bottom: calc(-1 * <?php echo $bpadding; ?>);
-	}
-
-	<?php echo '#'.$id; ?> .wp-block-columns.is-not-stacked-on-mobile ~ * {
-		display:none;
-
+		/* margin-bottom: <?php echo $bpadding; ?>; */
 	}
 
 	<?php echo '#'.$id; ?> .wp-block-column:after {
@@ -141,7 +139,7 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php echo '#'.$id; ?> .wp-block-column { 
 		min-width:var(--min-col-width);
-		margin-bottom: <?php echo $bpadding; ?>;
+		/* padding-bottom: <?php echo $bpadding; ?>; */
 		scroll-snap-align: start;
 	}
 }
@@ -151,15 +149,12 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	<?php echo '#'.$id; ?> .wp-block-columns.is-not-stacked-on-mobile {
 		flex-direction: column;
 	}
-	
-	<?php echo '#'.$id; ?> .wp-block-columns.is-not-stacked-on-mobile ~ * {
-		display:none;
 
-	}
-
+	<?php if( $cborders ):?>
 	<?php echo '#'.$id; ?> .wp-block-column:after {
 		display: none !important;
 	}
+	<?php endif;?>
 
 }
 <?php endif; ?>

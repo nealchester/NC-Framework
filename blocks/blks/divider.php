@@ -29,7 +29,7 @@ function nc_divider_block() {
 function nc_divider_block_markup( $block, $content = '', $is_preview = false ) {
 
 	// ID Setup
-	if (get_field('set_id')) { $id = get_field('set_id'); } else { $id = uniqid("block_"); };
+	if (get_field('set_id')) { $id = get_field('set_id'); } else { $id = uniqid("divider_"); };
 
     // Create class attribute allowing for custom "className" and "align" values.
     $className = '';
@@ -54,20 +54,19 @@ function nc_divider_block_markup( $block, $content = '', $is_preview = false ) {
 	wp_enqueue_style('nc-blocks-divider'); 
 	?>
 
-    <div id="<?php echo $id; ?>" class="ncdivider <?php echo ' '.$rotate.' '.$position; echo esc_attr($className);?>" <?php if($bgcolor):?>style="background:<?php echo $bgcolor; ?>"<?php endif?> <?php echo nc_animate().nc_block_attr();?>>
+    <div id="<?php echo $id; ?>" class="ncdivider <?php echo ' '.$rotate.' '.$position; echo esc_attr($className);?>"<?php if($bgcolor){ echo ' style="background:'.$bgcolor.'"'; }?>>
 		<div class="ncdivider_container">
             <?php 
             if($customsvg) { echo $customsvg; }
-            elseif( $divstyle == 'curve' ) { get_template_part('blocks/dividers/curve.svg'); } 
-            elseif( $divstyle == 'curve invert' ) { get_template_part('blocks/dividers/curve-invert.svg'); } 
+            elseif( $divstyle == 'curve' ) { get_template_part('blocks/blks/dividers/curve.svg'); } 
+            elseif( $divstyle == 'curve invert' ) { get_template_part('blocks/blks/dividers/curve-invert.svg'); } 
             elseif( $divstyle == 'curve asem' ) { get_template_part('blocks/dividers/curve-asem.svg'); } 
-            elseif( $divstyle == 'curve asem invert' ) { get_template_part('blocks/dividers/curve-asem-invert.svg'); } 
-            elseif( $divstyle == 'pyramids' ) { get_template_part('blocks/dividers/pyramids.svg'); } 
-            elseif( $divstyle == 'pyramids invert' ) { get_template_part('blocks/dividers/pyramids-invert.svg'); } 
-            elseif( $divstyle == 'sand hill' ) { get_template_part('blocks/dividers/sand-hill.svg'); } 
-            elseif( $divstyle == 'triangle' ) { get_template_part('blocks/dividers/triangle.svg'); } 
-            elseif( $divstyle == 'triangle invert' ) { get_template_part('blocks/dividers/triangle-invert.svg'); } 
-            elseif( $divstyle == 'tilt' ) { get_template_part('blocks/dividers/tilt.svg'); } 
+            elseif( $divstyle == 'curve asem invert' ) { get_template_part('blocks/blks/dividers/curve-asem-invert.svg'); } 
+            elseif( $divstyle == 'sand hill' ) { get_template_part('blocks/blks/dividers/sand-hill.svg'); } 
+            elseif( $divstyle == 'triangle' ) { get_template_part('blocks/blks/dividers/triangle.svg'); } 
+            elseif( $divstyle == 'triangle invert' ) { get_template_part('blocks/blks/dividers/triangle-invert.svg'); } 
+            elseif( $divstyle == 'tilt' ) { get_template_part('blocks/blks/dividers/tilt.svg'); } 
+            else { get_template_part('blocks/blks/dividers/tilt.svg'); } 
             ?>
 		</div>
 	</div>

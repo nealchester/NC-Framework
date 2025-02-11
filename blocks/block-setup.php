@@ -2,9 +2,6 @@
 
 if(function_exists('get_field')){ 
 
-    // ACF Fields
-    // get_template_part('blocks/block-fields');
-
     // Helper Functions
     get_template_part('blocks/block-functions');
 
@@ -13,6 +10,7 @@ if(function_exists('get_field')){
 
     // ACF Blocks
     get_template_part('blocks/blks/accordion');
+    get_template_part('blocks/blks/animate');
     get_template_part('blocks/blks/blank');
     get_template_part('blocks/blks/columns');
     get_template_part('blocks/blks/canvas');
@@ -33,5 +31,6 @@ if(function_exists('get_field')){
     get_template_part('blocks/blks/rich-text');
     get_template_part('blocks/blks/slider-image');
     get_template_part('blocks/blks/slider');
+    get_template_part('blocks/blks/spacer');
 
 }
