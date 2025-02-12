@@ -227,7 +227,7 @@
         },
         {
             "key": "field_5e231ac0b0c52",
-            "label": "",
+            "label": "Custom Styles",
             "name": "custom_styles",
             "aria-label": "",
             "type": "textarea",
@@ -240,9 +240,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "rows": 12,
+            "placeholder": "Add CSS here...",
             "new_lines": ""
         },
         {
@@ -360,5 +361,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739235350
+    "modified": 1739377591
 }

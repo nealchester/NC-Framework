@@ -25,7 +25,7 @@ function nc_span_cat_count($links)
 }
 
 // Next Page icon <!--Next Page-->
-
+/*
 add_filter('mce_buttons', 'nc_wysiwyg_editor');
 function nc_wysiwyg_editor($mce_buttons)
 {
@@ -37,3 +37,4 @@ function nc_wysiwyg_editor($mce_buttons)
     }
     return $mce_buttons;
 }
+*/
