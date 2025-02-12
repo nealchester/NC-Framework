@@ -22,6 +22,7 @@ if(function_exists('get_field')){
     get_template_part('blocks/blks/hero-split');
     get_template_part('blocks/blks/hero');
     get_template_part('blocks/blks/link');
+    get_template_part('blocks/blks/lightbox');
     get_template_part('blocks/blks/list');
     get_template_part('blocks/blks/media');
     get_template_part('blocks/blks/nav');

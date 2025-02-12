@@ -114,7 +114,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
       <div class="splide__content">
         <div class="ncontain">
           <div class="splide__container<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
-            <?php echo nc_inner_blocks(1); ?>
+            <?php echo nc_inner_blocks(); ?>
           </div>
         </div>
       </div>

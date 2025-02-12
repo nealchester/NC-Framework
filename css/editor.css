@@ -32,6 +32,33 @@ h1,h2,h3,h4,h5,h6 {
     width: var(--width-limit);
 }
 
+img.alignleft,
+img.alignright  {
+    max-width: calc(50% - var(--gap));
+}
+
+img.alignleft {
+    float: left;
+    margin-right: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+img.alignright {
+    float: right;
+    margin-left: var(--gap);
+    margin-bottom:var(--gap);
+}
+
+@media(max-width:640px){
+    img.alignleft,
+    img.alignright {
+        max-width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        float:none;
+    }
+}
+
 #tinymce {
     font-size:14px;
 }

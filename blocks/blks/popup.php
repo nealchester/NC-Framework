@@ -60,7 +60,7 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
     <div class="ncpopup_container">
       <div class="ncpopup_content">
         <?php // echo $content; ?>
-        <?php echo nc_inner_blocks(2); ?>
+        <?php echo nc_inner_blocks(); ?>
       </div>
     </div>
     <button class="ncpopup_close">

@@ -26,6 +26,7 @@ function nc_blocks_register_assets(){
   wp_register_style('nc-blocks-hero-split', get_theme_file_uri('/blocks/css/hero-split.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-hero', get_theme_file_uri('/blocks/css/hero.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-list', get_theme_file_uri('/blocks/css/list.css'), array('nc-uclasses'));
+  wp_register_style('nc-blocks-lightbox', get_theme_file_uri('/blocks/css/lightbox.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-magnify', get_theme_file_uri('/blocks/js/popup/magnific.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-media', get_theme_file_uri('/blocks/css/media.css'), array('nc-uclasses'));
   wp_register_style('nc-blocks-parallax', get_theme_file_uri('/blocks/js/parallax/jarallax.css'), array('nc-uclasses'));
@@ -76,6 +77,7 @@ function nc_load_blocks_css_for_editor(){
       '/blocks/css/posts.css',
       '/blocks/css/rich-text.css',
       '/blocks/css/search.css',
+      '/blocks/css/lightbox.css',
     )
   );
 }
