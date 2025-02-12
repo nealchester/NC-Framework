@@ -114,19 +114,23 @@
 .wp-block-image.alignleft img,
 .wp-block-image.alignright img,
 .wp-block-video.alignleft video,
-.wp-block-video.alignright video {
+.wp-block-video.alignright video,
+img.alignleft,
+img.alignright  {
     max-width: calc(50% - var(--gap));
 }
 
 .wp-block-image.alignleft img,
-.wp-block-video.alignleft video {
+.wp-block-video.alignleft video,
+img.alignleft {
     float: left;
     margin-right: var(--gap);
     margin-bottom: var(--gap);
 }
 
 .wp-block-image.alignright img,
-.wp-block-video.alignright video {
+.wp-block-video.alignright video,
+img.alignright {
     float: right;
     margin-left: var(--gap);
     margin-bottom:var(--gap);
@@ -136,7 +140,9 @@
     .wp-block-image.alignleft img,
     .wp-block-image.alignright img,
     .wp-block-video.alignleft video,
-    .wp-block-video.alignright video {
+    .wp-block-video.alignright video,
+    img.alignleft,
+    img.alignright {
         max-width: 100%;
         margin-left:auto;
         margin-right:auto;

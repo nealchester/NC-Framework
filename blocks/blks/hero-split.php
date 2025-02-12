@@ -88,7 +88,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		</figure>
 		<div class="ncsplit_content">
 			<div class="ncsplit_contentcontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate();?>>
-				<?php echo nc_inner_blocks(2); ?>
+				<?php echo nc_inner_blocks(); ?>
 			</div>
 		</div>
 	</section>

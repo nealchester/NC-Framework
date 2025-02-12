@@ -1,0 +1,185 @@
+{
+    "key": "group_67ac92cb353b1",
+    "title": "Block: Lightbox",
+    "fields": [
+        {
+            "key": "field_67ac9f15f5b7f",
+            "label": "Lightbox Content",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67ac92ce5a5cd",
+            "label": "",
+            "name": "lb_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 1
+        },
+        {
+            "key": "field_67ac93155a5ce",
+            "label": "Styling Options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67ac95995a5d2",
+            "label": "Maximum Width",
+            "name": "max_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 700,
+            "min": 400,
+            "max": 1000,
+            "allow_in_bindings": 0,
+            "step": 50,
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_67ac95295a5d1",
+            "label": "Background Color",
+            "name": "bg_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67ac938b5a5cf",
+            "label": "Overlay Color",
+            "name": "overlay_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgba(0,0,0,0.5)",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67ac94fc5a5d0",
+            "label": "Text Color",
+            "name": "text_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "currentColor",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67acc026213ca",
+            "label": "css",
+            "name": "css",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5e231aa6b0c51",
+                "field_5e231ccaf3baf",
+                "field_5e231ac0b0c52"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nc-lightbox"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1739374712
+}

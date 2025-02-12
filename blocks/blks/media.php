@@ -99,7 +99,7 @@ function nc_media_block_markup( $block, $content = '', $is_preview = false ) {
 			</div>
 
 			<div class="ncmedia_text">
-				<?php echo nc_inner_blocks(3); ?>
+				<?php echo nc_inner_blocks(); ?>
 				<?php // if($content) { echo $content; } else { echo'<h2>Heading</h2><p>A paragraph...</p>'; } ?>
 			</div>
 			

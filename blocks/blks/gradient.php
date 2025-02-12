@@ -54,7 +54,7 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
 	<div class="ncgradimg_image" data-aos="fade" data-aos-duration="1000" data-aos-delay="500"></div>
 	<div class="ncontain ncgradimg_contain<?php echo nc_contain_classes(); ?>">
 		<div class="ncgradimg_content" <?php echo nc_animate().nc_contain_attr();?>>
-			<?php echo nc_inner_blocks(2); ?>
+			<?php echo nc_inner_blocks(); ?>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,114 @@
+.lbox {
+  position: relative;
+}
+
+/* This will create a click area 
+for anything in the container. This only shows on 
+the front-end and not the editor. */
+
+#wrapper .lbox_trigger {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+/* For Editor only, I will show a button */
+
+.editor-styles-wrapper .lbox_trigger {
+  padding:0.5em 1em;
+  text-align: center;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  line-height: var(--input-height);
+  font-size: var(--txt-xsmall);
+}
+
+.editor-styles-wrapper .lbox_trigger:before {
+  content:'View Lightbox';
+}
+
+.lbox_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: var(--ovcolor, rgba(0,0,0,0.5));
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lbox_check:checked + .lbox_overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lbox_content {
+  padding: var(--bpadding, 3.5rem clamp(1rem, 6vw, 2rem) 2rem );
+  background: var(--bgcolor, #fff);
+  color: var(--txcolor, currentColor);
+  max-height: 80%;
+  overflow: auto;
+  box-shadow: var(--shadows);
+  position: relative;
+  max-width: var(--mwidth, 700px);
+  width:100%;
+  visibility: hidden;
+  transition: 0.3s;
+  transition-delay: 0.2s;
+  opacity: 0;
+  transform:translateY(75px);
+}
+
+.lbox_check:checked + .lbox_overlay > .lbox_content {
+  opacity:1;
+  visibility: visible;
+  transform:translateY(0px);
+}
+/* ------- experimental */
+
+.lbox_check:not(:checked) + .lbox_overlay > .lbox_content {
+  opacity:0;
+  visibility: hidden;
+  transform:translateY(75px);
+}
+
+.lbox_check:not(:checked) + .lbox_overlay {
+  opacity:0;
+  visibility: hidden;
+  transition-delay: 0.5s;
+  transition-duration: 0.2s
+}
+
+/* -------- end experimental */
+
+.lbox_close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.3em;
+  text-align: center;
+  width: auto;
+  padding: 1em 1.3em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  max-width: 50px;
+}
+
+.lbox_close:active,
+.lbox_close:hover {
+  outline:solid 0.08em;
+}
