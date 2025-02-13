@@ -15,7 +15,7 @@ function nc_gallery_block() {
             'mode'              => 'edit',
             'keywords'          => array('gallery', 'images' ),
 						'post_types'        => array('post', 'page'),
-						'align'             => 'full',
+						'align'             => 'wide',
 						'supports'          => array( 
 												'align' => array( 'wide', 'full' ), 
 												'mode' => true,
@@ -55,7 +55,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	$thumb_width = get_field('thumb_min_width') ?: "250";
 	$thumb_size = get_field('thumb_image_size') ?: 'medium';
 
-	$bpadding = get_field('bottom_padding') ?: '3rem';
+	$bpadding = get_field('bottom_padding') ?: 'clamp(2rem, 5vw, 3rem)';
 
 	$breaklayout = get_field('breakpoint_layout');
 
@@ -68,10 +68,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	wp_enqueue_style('nc-blocks-columns'); 
 	?>
 
-	<div id="<?php echo $id; ?>" class="ncgallery_box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
-		
-		  <?php nc_before_content(); ?>
+	<div id="<?php echo $id; ?>" class="ncgallery_container<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 
 			<?php if($gallery):?>
 
@@ -109,25 +106,26 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<?php endif;?>
 
-			<?php nc_after_content(); ?>
-		</div>
 	</div>
 
 <style id="<?php echo $id; ?>-block-css">
 
-<?php nc_box_styles($id); ?>
-
 <?php echo '#'.$id; ?> .ncolumns {
 	--count: <?php if($columns) { echo $columns;} else { echo '3'; } ?>;
-    --column-gap: <?php if($cgap){ echo $cgap; } else { echo'1.5rem'; } ?>;
-    --row-gap: <?php if($rgap){ echo $rgap; } else { echo'1.5rem'; } ?>;
+    --column-gap: <?php if($cgap){ echo $cgap; } else { echo'1rem'; } ?>;
+    --row-gap: <?php if($rgap){ echo $rgap; } else { echo'1rem'; } ?>;
 	--bottom-box-padding:<?php echo $bpadding; ?>; /* Bottom padding of the box */
 	--img-height:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
 	--min-col-width: <?php echo $thumb_width.'px'; ?>;
 }
 
-<?php echo '#wpbody #'.$id; ?> .ncgallery_image {
-		height:100%;
+
+.editor-styles-wrapper .ncgallery_size {
+    height: auto;
+}
+
+<?php echo '#'.$id; ?> {
+		padding-bottom: <?php echo $bpadding; ?>
 	}
 
 /* Responsive */
@@ -136,7 +134,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php echo '#'.$id; ?> .ncolumns-scroll {
 		display:grid;
-		--column-gap:var(--gap);
+		--column-gap: 0.75rem;
     grid-template-columns: auto;
     grid-auto-flow: column;
 		overscroll-behavior-inline: contain;
@@ -202,22 +200,22 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	?>
 
 	<script id="<?php echo 'gallery_'.$id.'_script'; ?>">
-	jQuery(document).ready(function() {
-		jQuery('<?php echo'.ncgimg_'.$id; ?>').magnificPopup({
-			type:'image',
-			image: { titleSrc: 'data-title' },
-			gallery:{ enabled:true },
-			mainClass:'mfp-with-zoom',
-			zoom: {
-				enabled: true,
-				duration: 300,
-				easing: 'ease-in-out',
-				opener: function(openerElement) {
-					return openerElement.is('img') ? openerElement : openerElement.find('img');
-				}
-				},
+		jQuery(document).ready(function() {
+			jQuery('<?php echo'.ncgimg_'.$id; ?>').magnificPopup({
+				type:'image',
+				image: { titleSrc: 'data-title' },
+				gallery:{ enabled:true },
+				mainClass:'mfp-with-zoom',
+				zoom: {
+					enabled: true,
+					duration: 300,
+					easing: 'ease-in-out',
+					opener: function(openerElement) {
+						return openerElement.is('img') ? openerElement : openerElement.find('img');
+					}
+					},
+			});
 		});
-	});
 	</script>
 
 <?php endif;?>

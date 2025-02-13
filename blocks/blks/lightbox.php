@@ -55,7 +55,8 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     $bgcolor = get_field('bg_color') ?: '#fff';
     $txcolor = get_field('text_color') ?: 'currentColor';
     $mwidth = get_field('max_width').'px' ?: '700';
-    $ovcolor = get_field('overlay_color') ?: 'rgba(0,0,0,0.5)';
+    $ovcolor = get_field('overlay_color') ?: 'rgba(2,0,30,0.8)';
+    $bsize = get_field('button_size') .'rem' ?: '1.3';
 
 ?>
 
@@ -90,6 +91,7 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     --bgcolor: <?php echo $bgcolor; ?>;
     --txcolor: <?php echo $txcolor; ?>;
     --mwidth: <?php echo $mwidth; ?>;
+    --bsize: <?php echo $bsize; ?>;
     }
 
     .stop-scrolling { overflow:hidden; }

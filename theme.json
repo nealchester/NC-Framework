@@ -2,16 +2,13 @@
 	"$schema": "https://schemas.wp.org/wp/6.5/theme.json",
 	"version": 2,
 	"settings": {
-
 		"appearanceTools": true,
-
 		"border": {
 			"color": true,
 			"radius": true,
 			"style": true,
 			"width": true
 		},
-
 		"color": {
 			"defaultPalette": false,
 			"defaultGradients": false,
@@ -40,12 +37,10 @@
 				}
 			]
 		},
-
 		"layout": {
 			"contentSize": "var(--width-standard)",
 			"wideSize": "var(--width-wide)"
 		},
-
 		"blocks": {
 			"core/image": {
 				"lightbox": {
@@ -54,11 +49,9 @@
 				}
 			}
 		},
-
 		"position": {
 			"sticky": true
 		},
-
 		"shadow": {
 			"defaultPresets": true,
 			"presets": [
@@ -69,7 +62,6 @@
 				}
 			]
 		},
-
 		"spacing": {
 			"blockGap": true,
 			"customSpacingSize": true,
@@ -83,9 +75,17 @@
 				"unit": "rem"
 			},
 			"spacingSizes": [],
-			"units": ["px", "em", "rem", "vh", "vw", "vmin", "vmax", "%"]
+			"units": [
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw",
+				"vmin",
+				"vmax",
+				"%"
+			]
 		},
-
 		"typography": {
 			"customFontSize": true,
 			"dropCap": true,
@@ -102,73 +102,73 @@
 					"slug": "tiny",
 					"size": "0.75rem",
 					"name": "Tiny",
-						"fluid": {
-							"min": "0.625rem",
-							"max": "0.75rem"
-						}
+					"fluid": {
+						"min": "0.625rem",
+						"max": "0.75rem"
+					}
 				},
 				{
 					"slug": "small",
 					"size": "0.875rem",
 					"name": "Small / h6",
-						"fluid": {
-							"min": "0.75rem",
-							"max": "0.875rem"
-						}
+					"fluid": {
+						"min": "0.75rem",
+						"max": "0.875rem"
+					}
 				},
 				{
 					"slug": "normal",
 					"size": "1.125rem",
 					"name": "Normal / h5",
-						"fluid": {
-							"min": "1rem",
-							"max": "1.125rem"
-						}
+					"fluid": {
+						"min": "1rem",
+						"max": "1.125rem"
+					}
 				},
 				{
 					"slug": "medium",
 					"size": "1.5rem",
 					"name": "Medium / h4",
-						"fluid": {
-							"min": "1.125rem",
-							"max": "1.5rem"
-						}
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.5rem"
+					}
 				},
 				{
 					"slug": "large",
 					"size": "1.875rem",
 					"name": "Large / h3",
-						"fluid": {
-							"min": "1.5rem",
-							"max": "1.875rem"
-						}
+					"fluid": {
+						"min": "1.5rem",
+						"max": "1.875rem"
+					}
 				},
 				{
 					"slug": "x-large",
 					"size": "2.5rem",
 					"name": "X-Large / h2",
-						"fluid": {
-							"min": "1.875rem",
-							"max": "2.5rem"
-						}
+					"fluid": {
+						"min": "1.875rem",
+						"max": "2.5rem"
+					}
 				},
 				{
 					"slug": "xx-large",
 					"size": "3rem",
 					"name": "XX-Large / h1",
-						"fluid": {
-							"min": "2.5rem",
-							"max": "3rem"
-						}
+					"fluid": {
+						"min": "2.5rem",
+						"max": "3rem"
+					}
 				},
 				{
 					"slug": "huge",
 					"size": "3.75rem",
 					"name": "Huge",
-						"fluid": {
-							"min": "3rem",
-							"max": "3.75rem"
-						}
+					"fluid": {
+						"min": "3rem",
+						"max": "3.75rem"
+					}
 				}
 			],
 			"fontFamilies": [
@@ -189,9 +189,7 @@
 				}
 			]
 		}
-
 	},
-
 	"styles": {
 		"typography": {
 			"fontSize": "var(--txt-base)",

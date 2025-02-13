@@ -35,44 +35,46 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* Buttons */
-
   .btn,
-  .wp-block-button__link {
-    background: #222;
+  .wp-block-button__link,
+  .is-style-outline .wp-block-button__link {
+    background: var(--link-color);
     color:#fff;
-    border:solid 0.08em #222;
+    border:solid 0.08em var(--link-color);
     padding:0 2em;
     border-radius:100px;
     min-width:150px;
     transition: 0.5s;
     min-height:var(--input-height);
+    line-height: var(--input-height);
     text-align:center;
     white-space:nowrap;
     overflow:hidden;
     text-overflow: ellipsis;
     text-decoration:none;
-    display:inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
+    display:inline-block;
+    font-weight: 500;
   }
   
   .btn:hover,
   .btn:focus,
   .wp-block-button__link:hover,
   .wp-block-button__link:focus {
-    background: var(--link-color);
-    color:#fff;
+    background: #222;
+    border-color: currentColor
   }
   
-  .btn-outline {
+  .btn-outline,
+  .is-style-outline .wp-block-button__link {
     background:none;
-    border:solid 0.08em;
+    border:solid 0.08em currentColor;
     color:#000;
   }
 
   .btn-outline:hover,
-  .btn-outline:focus {
+  .btn-outline:focus,
+  .is-style-outline .wp-block-button__link:hover,
+  .is-style-outline .wp-block-button__link:focus {
     background:none !important;
     color:#000;
   }
@@ -94,7 +96,6 @@ h1,h2,h3,h4,h5,h6 {
     .btn { width:100%; }
     .btn + .btn { margin-left:0; margin-top:0.75em; }
   }
-
 
  /* Social Icons and Contact */
  

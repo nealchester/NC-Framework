@@ -115,6 +115,27 @@
             "allow_in_bindings": 1
         },
         {
+            "key": "field_67adf140738fa",
+            "label": "Bottom Padding",
+            "name": "bpadding",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This setting acts as a bottom spacer and supports the horizontal scrolling feature for mobile.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "clamp(2rem, 10dvmin, 4rem)",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "clamp(2rem, 5vw, 3rem)",
+            "prepend": "padding-bottom:",
+            "append": ""
+        },
+        {
             "key": "field_67aaec8f9279d",
             "label": "Break Point",
             "name": "",
@@ -150,7 +171,7 @@
             "min": "",
             "max": "",
             "allow_in_bindings": 1,
-            "placeholder": 768,
+            "placeholder": "",
             "step": "",
             "prepend": "",
             "append": "px"
@@ -209,7 +230,7 @@
         },
         {
             "key": "field_632c97a4595a7",
-            "label": "Box Settings",
+            "label": "box and css",
             "name": "box_settings",
             "aria-label": "",
             "type": "clone",
@@ -222,15 +243,9 @@
                 "id": ""
             },
             "clone": [
-                "field_5f0a2a14959cf",
-                "field_5f0a2a62959d0",
-                "field_5f0a2aab959d1",
-                "field_61cdfecdfb29c",
-                "field_5f0a2bc7959d4",
-                "field_5f0a2b73959d3",
-                "field_5e231aa6b0c51",
-                "field_5e231ccaf3baf",
-                "field_5e231ac0b0c52"
+                "group_67ad4b9f88c22",
+                "group_67ad4b91436c6",
+                "group_67ad4e78a08c8"
             ],
             "display": "seamless",
             "layout": "block",
@@ -256,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739256611
+    "modified": 1739455148
 }

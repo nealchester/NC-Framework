@@ -4,25 +4,25 @@
 add_action('acf/init', 'nc_canvas_block');
 function nc_canvas_block() {
 
-        // register a items block
-        acf_register_block_type(array(
-            'name'              => 'nc_canvas',
-            'title'             => __('NC Canvas', 'nc-framework'),
-            'description'       => __('Enter anything you want with added support for native columns', 'nc-framework'),
-            'render_callback'   => 'nc_canvas_block_markup',
-            'category'          => 'layout',
-            //'icon'              => 'format-image',
-            'mode'              => 'preview',
-            'keywords'          => array('columns', 'column' ),
+	// register a items block
+	acf_register_block_type(array(
+			'name'              => 'nc_canvas',
+			'title'             => __('NC Canvas', 'nc-framework'),
+			'description'       => __('Enter anything you want with added support for native columns', 'nc-framework'),
+			'render_callback'   => 'nc_canvas_block_markup',
+			'category'          => 'layout',
+			//'icon'              => 'format-image',
+			'mode'              => 'preview',
+			'keywords'          => array('columns', 'column' ),
 			'post_types'        => array('post', 'page'),
 			'align'             => 'full',
 			'supports'          => array( 
-									'align' => array( 'wide', 'full' ), 
-									'mode' => true,
-									'multiple' => true,
-									'jsx' => true,
-									),
-        ));
+				'align' => array( 'wide', 'full' ), 
+				'mode' => true,
+				'multiple' => true,
+				'jsx' => true,
+				),
+	));
 }
 
 /* This displays the block */
@@ -55,26 +55,14 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	$breakscroll = get_field('breakpoint_scroll');
 	$breakpoint = get_field('breakpoint');
 
-	$bpadding = get_field('bottom_padding') ?: 'clamp(2rem, 10vmin, 3.5rem)';
-
-	if( get_field('max_contain_width') ) {
-		$contain_width = get_field('max_contain_width').'px';     
-	}
-	elseif( get_field('max_contain_width_set') ) {
-		$contain_width = get_field('max_contain_width_set');
-	}
-	else {
-		$contain_width = 'auto';
-	}
+	$bpadding = get_field('bpadding') ?: 'clamp(2rem, 10dvmin, 4rem)';
 
 ?>
 	
 
-	<div id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
-			
+	<div id="<?php echo $id; ?>" class="ncanvas<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
+		<div class="ncontain">
 			<?php echo nc_inner_col_blocks(); ?>
-
 		</div>
 	</div>
 
@@ -82,18 +70,19 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 
 <?php nc_box_styles($id); ?>
 
-<?php echo '#'.$id; ?> {
-	padding-block: initial;
-}
-
 <?php echo '#'.$id; ?> .wp-block-columns {
 	--column-gap: <?php echo $cgap.'rem'; ?>;
 	--row-gap: <?php echo $rgap.'rem'; ?>;
 	--column-border-color: <?php echo $cbcolor; ?>;
 	--min-col-width: <?php echo $mcolwidth.'px'; ?>;
+	--box-padding: <?php echo $bpadding; ?>;
 	column-gap: var(--column-gap);
 	row-gap: var(--row-gap);
 }
+
+<?php echo '#'.$id; ?> {
+		padding-bottom: <?php echo $bpadding; ?>;
+	}
 
 <?php if( $cborders ):?>
 
@@ -118,8 +107,8 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 <?php if($breakpoint && $breakscroll):?>
 @media(max-width:<?php echo $breakpoint; ?>px){
 
-	<?php echo '#'.$id; ?> .wp-block-columns.is-not-stacked-on-mobile {
-		display:grid;
+	<?php echo '#'.$id; ?> .wp-block-columns {
+		display:grid !important;
 		--column-gap:var(--gap);
     grid-template-columns: auto;
     grid-auto-flow: column;
@@ -130,19 +119,21 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 		overflow-y:hidden;
 		padding-inline:var(--gap);
 		margin-inline: calc(-1 * var(--gap));
-		/* margin-bottom: <?php echo $bpadding; ?>; */
-	}
+		margin-bottom: calc(-1 * var(--box-padding) );
 
-	<?php echo '#'.$id; ?> .wp-block-column:after {
+	.wp-block-column:after {
 		display: none !important;
 	}
 
-	<?php echo '#'.$id; ?> .wp-block-column { 
+	.wp-block-column { 
 		min-width:var(--min-col-width);
-		/* padding-bottom: <?php echo $bpadding; ?>; */
 		scroll-snap-align: start;
+		margin-bottom: var(--box-padding);
 	}
+
+
 }
+
 <?php elseif($breakpoint && !$breakscroll):?>
 @media(max-width:<?php echo $breakpoint; ?>px){
 
@@ -162,6 +153,5 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 <?php nc_block_custom_css(); ?>
 
 </style>
-    <?php
-}
-?>
+
+<?php } ?>

@@ -16,30 +16,9 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
-        },
-        {
-            "key": "field_67a9d4edc8f37",
-            "label": "Close other accordions",
-            "name": "collapse",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "Yes",
-            "ui_off_text": "Leave open",
-            "ui": 1
         },
         {
             "key": "field_6053a7ed3c9ed",
@@ -270,11 +249,11 @@
             "step": 50
         },
         {
-            "key": "field_5f14dce338a44",
-            "label": "Box Settings",
-            "name": "box_settings",
+            "key": "field_67a9d4edc8f37",
+            "label": "Close other accordions",
+            "name": "collapse",
             "aria-label": "",
-            "type": "clone",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -283,17 +262,16 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_5f0a295e1071c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "Leave open",
+            "ui": 1
         },
         {
             "key": "field_5f14d80b1de94",
-            "label": "Custom Code",
+            "label": "css",
             "name": "custom_code",
             "aria-label": "",
             "type": "clone",
@@ -306,7 +284,7 @@
                 "id": ""
             },
             "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -332,5 +310,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739186545
+    "modified": 1739430326
 }

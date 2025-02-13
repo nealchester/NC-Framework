@@ -161,11 +161,12 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "1.5rem",
+            "default_value": "1rem",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "1.5rem",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5c97974b9dec9",
@@ -181,11 +182,12 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "1.5rem",
+            "default_value": "1rem",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "1.5rem",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5c980c5f94211",
@@ -443,34 +445,12 @@
             "append": ""
         },
         {
-            "key": "field_5c97974b9df15",
-            "label": "Box Settings",
-            "name": "box_settings",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5f0a295e1071c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
             "key": "field_5c97974b9e093",
             "label": "Bottom Padding",
             "name": "bottom_padding",
             "aria-label": "",
             "type": "text",
-            "instructions": "If you want the gallery to scroll, the bottom padding must match the bottom padding set above.",
+            "instructions": "This setting acts as a bottom spacer and supports the horizontal scrolling feature for mobile.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -478,16 +458,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "3rem",
-            "placeholder": "3rem",
+            "default_value": "clamp(2rem, 5vw, 3rem)",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "clamp(2rem, 5vw, 3rem)",
             "prepend": "padding-bottom:",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
-            "key": "field_5e233096a8200",
-            "label": "Custom Code",
-            "name": "custom_code",
+            "key": "field_67add365fa9db",
+            "label": "css att",
+            "name": "css_att",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -499,7 +480,8 @@
                 "id": ""
             },
             "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b91436c6",
+                "group_67ad4e78a08c8"
             ],
             "display": "seamless",
             "layout": "block",
@@ -525,5 +507,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738553690
+    "modified": 1739452904
 }

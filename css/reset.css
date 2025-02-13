@@ -47,7 +47,7 @@ article, aside, details, figcaption, figure, footer, header, nav, main {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: currentColor
 }
 
 img {

@@ -607,22 +607,31 @@ body:not(.page-template-blank) .ncontent {
 
 /* Link colors */
 
-.ncontent_main p a:not([class]), 
-.ncontent_main li a:not([class]) {
+.ncontent_main :is(p, li) a:not([class]) {
   text-decoration: underline solid 0.08em currentColor;
   text-underline-offset: 0.12em;
   font-weight: 500;
   position: relative;
   top: 0px;
 
-    &[target="_blank"]:after {
-        content: ' \ea7e';
-        font-family: 'ncicons';
-        font-size: 1.5ex;
-    }
     &:active {
         top: 2px;
     }
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+.ncontent_main > :is(p, ul li) a:not([class]) {
+  color: var(--link-color);
+}
+
+/* Link and Button Indicator for new window */
+.ncontent_main :is(p, li) a:not([class]):after,
+.wp-block-button__link[target="_blank"]:after {
+  content: '\00A0\ea7e'; /* non breaking space and upward right arrow */
+  font-family: 'ncicons';
+  font-size: 1.5ex;
 }
 
 
