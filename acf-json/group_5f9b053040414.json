@@ -4,8 +4,9 @@
     "fields": [
         {
             "key": "field_5f9b06717680f",
-            "label": "",
+            "label": "Custom CSS",
             "name": "custom_css_box",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -16,9 +17,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "Enter your CSS here",
             "maxlength": "",
+            "allow_in_bindings": 0,
             "rows": 16,
+            "placeholder": "Enter your CSS here...",
             "new_lines": ""
         }
     ],
@@ -39,5 +41,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622425566
+    "show_in_rest": 0,
+    "modified": 1739441306
 }

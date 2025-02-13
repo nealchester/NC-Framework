@@ -1,7 +1,25 @@
 {
     "key": "group_679df5c56d075",
-    "title": "Image Area Focus",
+    "title": "Part: Image Focal Point",
     "fields": [
+        {
+            "key": "field_67ad4febcacba",
+            "label": "Image Focal Point",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
         {
             "key": "field_679e2de582b60",
             "label": "Horizontal (x)",
@@ -50,7 +68,7 @@
         },
         {
             "key": "field_679ef87d66933",
-            "label": "View instructions",
+            "label": "Show instructions",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -80,7 +98,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "By default the area focuses on the center of the image. To adjust this, change the values below.\r\n\r\n<b>How to use<\/b>\r\n\r\n<i>Horizontal focus (left to right)<\/i>. Example: entering 50% would place the focus in the center of the image.\r\n\r\n<i>Vertical focus (top to bottom)<\/i>. Example: entering 100% would place the focus at the bottom edge of the image.",
+            "message": "By default the area focuses on the center of the image. To adjust this, change the values above.\r\n\r\n<i>Horizontal focus (left to right)<\/i>. Example: entering 50% would place the focus in the center of the image.\r\n\r\n<i>Vertical focus (top to bottom)<\/i>. Example: entering 100% would place the focus at the bottom edge of the image.",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -88,23 +106,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "attachment",
-                "operator": "==",
-                "value": "image"
+                "value": "all"
             }
         ]
     ],
@@ -114,8 +118,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1738473255
+    "modified": 1739416602
 }

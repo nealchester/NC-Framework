@@ -7,7 +7,7 @@ function nc_cssbox_block() {
     // register a items block
     acf_register_block_type(array(
         'name'              => 'nc_cssbox',
-        'title'             => __('NC CSS Box', 'nc-framework'),
+        'title'             => __('NC Custom CSS', 'nc-framework'),
         'description'       => __('A box to write custom CSS for the page', 'nc-framework'),
         'render_callback'   => 'nc_cssbox_block_markup',
         'category'          => 'layout',
@@ -19,51 +19,41 @@ function nc_cssbox_block() {
         'supports'          => array( 
                                 'align' => array( 'full' ), 
                                 'mode' => true,
-                                'multiple' => true,
+                                'multiple' => false,
                                 ),
     ));
 }
 
 /* This displays the block */
 
-function nc_cssbox_block_markup( $block, $content = '', $is_preview = false ) {
+function nc_cssbox_block_markup( $block, $content = '', $is_preview = false ) {?>
 
-	// ID Setup
-	$id = uniqid();
-
-?>
-
+    
     <div class="nc-cssbox"></div>
+   
+    <style id="ncustom-css">
 
-    <?php if( get_field('custom_css_box') ): ?>
-    <style id="<?php echo 'custom-cssbox-'.$id; ?>">
-    <?php the_field('custom_css_box'); ?>
-    
-    /* ------ for internal use ------- */
+    <?php echo get_field('custom_css_box'); ?>
 
-    div.nc-cssbox {
-        display:none;
-    }
-
-    #wpwrap div.nc-cssbox {
-        margin:0 auto;
-        width:100%;
-        height:100px;
-        text-align:center;
-        background: #eee;
-        color:#000;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        border:dashed 3px #ccc;
-    }
-
-    #wpwrap div.nc-cssbox:before {
-        content:"<?php _e('NC CSS Block','nc-framework');?>";
-    }
+        /* The below CSS is for internal use */
+        #wrapper .nc-cssbox{
+            display:none;
+        }
+        .editor-styles-wrapper div.nc-cssbox {
+            margin-inline:auto;
+            width:98%;
+            height:50px;
+            text-align:center;
+            background: #eee;
+            color:#000;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border:dashed 3px #ccc;
+        }
+        .editor-styles-wrapper div.nc-cssbox:before {
+            content:"<?php _e('Active Custom CSS Block','nc-framework');?>";
+        }
     </style>
-    <?php endif;?>
     
-<?php
-}
-?>
+<?php } ?>

@@ -35,11 +35,11 @@
                 "id": ""
             },
             "default_value": "",
-            "allow_in_bindings": 0,
+            "allow_in_bindings": 1,
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_67ac93155a5ce",
@@ -79,7 +79,29 @@
             "allow_in_bindings": 0,
             "step": 50,
             "prepend": "",
-            "append": "px"
+            "append": ""
+        },
+        {
+            "key": "field_67ad67c7f22d8",
+            "label": "Close Button Size",
+            "name": "button_size",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1.3",
+            "min": "1.3",
+            "max": 5,
+            "allow_in_bindings": 0,
+            "step": "0.3",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67ac95295a5d1",
@@ -114,7 +136,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "rgba(0,0,0,0.5)",
+            "default_value": "rgba(2,0,30,0.8)",
             "enable_opacity": 1,
             "return_format": "string",
             "allow_in_bindings": 0
@@ -153,9 +175,7 @@
                 "id": ""
             },
             "clone": [
-                "field_5e231aa6b0c51",
-                "field_5e231ccaf3baf",
-                "field_5e231ac0b0c52"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -181,5 +201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739374712
+    "modified": 1739418372
 }

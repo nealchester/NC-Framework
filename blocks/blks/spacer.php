@@ -33,7 +33,7 @@ function nc_spacer_block_markup( $block, $content = '', $is_preview = false ) {
     }
 	
     //ACF Block
-	$large = get_field('large').'rem' ?: '3';
+	$large = get_field('large').'rem' ?: '4';
     $small = get_field('small').'rem' ?: '2';
     $rate =  get_field('rate') ?: '10dvmin';
     $style = ' style="height: clamp('.$small.', '.$rate.', '.$large.')"';

@@ -10,8 +10,8 @@
 /* Block content widths */
 
 --width-standard:800px;
---width-wide:1000px;
---width-max:1400px;
+--width-wide:1200px;
+--width-max:1600px;
 
 --width-limit: calc(100% - 3rem);
 
@@ -20,9 +20,9 @@
 --gray: #fbfbfb; 
 --dark: #222;
 
---link-color: #0093ff;
+--link-color: #3858e9;
 
---selection-bgcolor: #0093ff;
+--selection-bgcolor: var(--link-color);
 --selection-textcolor: #fff;
 
 --txt-dark:rgba(0,0,0,0.6);

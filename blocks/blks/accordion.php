@@ -15,9 +15,9 @@ function nc_accordion_block() {
             'mode'              => 'edit',
             'keywords'          => array('accordion', 'faqs', 'frequently asked questions', 'answers', 'questions' ),
             'post_types'        => array('post', 'page'),
-            'align'             => 'full',
+            'align'             => 'none',
             'supports'          => array( 
-                  'align' => array( 'full' ), 
+                  'align' => array( 'full','wide'), 
                   'mode' => true,
                   'multiple' => true,
 									),			
@@ -57,11 +57,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	wp_enqueue_script('nc-blocks-accordion'); 
 	?>
 	
-	<div id="<?php echo $id; ?>" class="nccordion_box<?php echo esc_attr($className); ?>">
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
-		
-		<?php nc_before_content(); ?>
-			
+	<div id="<?php echo $id; ?>" class="nccordion_container<?php echo esc_attr($className); ?>">
+	
 			<?php if( $choose == 'post' ):?>
 
 			<?php $args = array(
@@ -77,8 +74,9 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			<?php $queryfaqs = new WP_Query($args); 
 			if ( $queryfaqs->have_posts() && $select_links ) : ?>
 
-			<div class="nccordion nc_content_block_main">
+			<div class="nccordion">
       <?php while ( $queryfaqs->have_posts() ) : $queryfaqs->the_post(); ?>
+
 			<details class="nccordion_details">
 				<summary class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?></summary>  
 				<div class="nccordion_content">
@@ -96,14 +94,13 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			 <?php wp_reset_postdata();?>
 			 <?php else : ?>
 				<div class="nccordion">
-					<div class="nccordion_header"><?php _e('No posts have been selected yet.','nc-framework');?></div>
-					<div class="nccordion_content"><?php _e('Select some posts to add here or write your own content.','nc-framework');?></div>
+					<p><?php _e('No posts have been selected yet. Select some posts to add here or write your own content.','nc-framework');?></p>
 			 </div>
 			<?php endif; // end loop ?>
 
 			<?php elseif( $choose == 'write' && have_rows('custom_content') ):?>
 
-				<div class="nccordion nc_content_block_main">
+				<div class="nccordion">
 				<?php while( have_rows('custom_content') ): the_row(); 
 					$acc_heading = get_sub_field('heading');
 					$acc_content = get_sub_field('content');
@@ -120,10 +117,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			</div>
 
 			<?php endif;?>
-
-			<?php nc_after_content(); ?>
 		</div>
-	</div>
 
 	<?php if( $collapse ):?>
 
@@ -148,8 +142,6 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	<?php endif;?>
 
 <style id="<?php echo $id; ?>-block-css">
-
-<?php nc_box_styles($id); ?>
 
 <?php nc_block_custom_css(); ?>
 

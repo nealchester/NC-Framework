@@ -2,11 +2,10 @@
 
 // Custom Block Styles
 function nc_block_custom_css(){
-    if(get_field('custom_styles')){
+    if( get_field('custom_styles') ){
         echo "/* Custom CSS */ \r\n \r\n".get_field('custom_styles');
     }
 }
-
 
 // Scroll Animation Function
 function nc_animate(){
@@ -64,7 +63,7 @@ function nc_after_content(){
     }
 }
 
-// Box Settings
+// Box Styles
 function nc_box_styles( $block_id =''){
     $padding = get_field('padding') ?: '3rem 0';
 
@@ -99,7 +98,7 @@ function nc_box_styles( $block_id =''){
     echo "#".$block_id." {";
     echo $bg_color;
     echo $bg_img;
-    echo "padding: ".$padding.";";
+    // echo "padding: ".$padding.";";
     echo $text_color;
     echo "}";
 
@@ -134,7 +133,7 @@ function nc_box_styles( $block_id =''){
 
 }
 
-// For NC Block Image Fo
+// For NC Block Image For Gallery Images
 function nc_block_image_focus($image) {
 
     if( function_exists('get_field') && get_field("horizontal", $image) && get_field("vertical", $image) ){ 
@@ -148,7 +147,6 @@ function nc_block_image_focus($image) {
     }
   
 }
-
 
 // Block Posts Meta
 function nc_block_posts_meta(){
@@ -200,7 +198,7 @@ function nc_inner_blocks() {
 function nc_inner_animated_blocks() {
     $template = array(
         array( 'core/paragraph', array(
-                'content' => 'Whatever blocks you add here will can be animated...',
+            'placeholder' => 'Whatever blocks you add here will can get a scroll animation...'
         ))
     );
     

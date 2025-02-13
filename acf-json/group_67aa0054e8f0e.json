@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "select",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -101,11 +101,11 @@
             "append": "milliseconds"
         },
         {
-            "key": "field_67aa019093bbc",
-            "label": "HTML Attributes",
-            "name": "",
+            "key": "field_67ad9f29a8ac3",
+            "label": "att",
+            "name": "att",
             "aria-label": "",
-            "type": "accordion",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -114,30 +114,14 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_67aa019793bbd",
-            "label": "",
-            "name": "add_to_block",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "You can add every type of attribute and its value accept classes. To add classes, find the \"Advanced\" section below.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": "",
-            "placeholder": "data-color=\"red\"",
-            "new_lines": ""
+            "clone": [
+                "field_67ad4e78c4cd6",
+                "field_67ad4e78c6c2b"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -158,5 +142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1739234446
+    "modified": 1739432112
 }
