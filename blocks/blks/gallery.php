@@ -15,9 +15,9 @@ function nc_gallery_block() {
             'mode'              => 'edit',
             'keywords'          => array('gallery', 'images' ),
 						'post_types'        => array('post', 'page'),
-						'align'             => 'wide',
+						'align'             => 'full',
 						'supports'          => array( 
-												'align' => array( 'wide', 'full' ), 
+												'align' => array( 'wide', 'full', 'none' ), 
 												'mode' => true,
 												'multiple' => true,
 												),
@@ -55,8 +55,6 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	$thumb_width = get_field('thumb_min_width') ?: "250";
 	$thumb_size = get_field('thumb_image_size') ?: 'medium';
 
-	$bpadding = get_field('bottom_padding') ?: 'clamp(2rem, 5vw, 3rem)';
-
 	$breaklayout = get_field('breakpoint_layout');
 
 	if (get_field('breakpoint')) { $breakpoint = get_field('breakpoint'); } else { $breakpoint = '640'; }
@@ -69,7 +67,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	?>
 
 	<div id="<?php echo $id; ?>" class="ncgallery_container<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-
+			<div class="ncontain">
 			<?php if($gallery):?>
 
 			<div class="ncgallery ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>">
@@ -105,16 +103,18 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 			</div>
 
 			<?php endif;?>
-
+			</div>
 	</div>
 
 <style id="<?php echo $id; ?>-block-css">
+
+<?php nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> .ncolumns {
 	--count: <?php if($columns) { echo $columns;} else { echo '3'; } ?>;
     --column-gap: <?php if($cgap){ echo $cgap; } else { echo'1rem'; } ?>;
     --row-gap: <?php if($rgap){ echo $rgap; } else { echo'1rem'; } ?>;
-	--bottom-box-padding:<?php echo $bpadding; ?>; /* Bottom padding of the box */
+	--bottom-box-padding: var(--u-padding); /* Bottom padding of the box */
 	--img-height:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
 	--min-col-width: <?php echo $thumb_width.'px'; ?>;
 }
@@ -123,10 +123,6 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 .editor-styles-wrapper .ncgallery_size {
     height: auto;
 }
-
-<?php echo '#'.$id; ?> {
-		padding-bottom: <?php echo $bpadding; ?>
-	}
 
 /* Responsive */
 <?php if($breakpoint && $breaklayout == 'ncolumns-scroll'):?>
@@ -144,12 +140,12 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 		overflow-y:hidden;
 		padding-inline:var(--gap);
 		margin-inline: calc(-1 * var(--gap));
-		margin-bottom: calc(-1 * <?php echo $bpadding; ?>);
+		margin-bottom: calc(-1 * var(--u-padding));
 	}
 
 	<?php echo '#'.$id; ?> .ncolumns-scroll > .ncgallery_item { 
 		min-width:var(--min-col-width);
-		margin-bottom:<?php echo $bpadding; ?>;
+		margin-bottom:var(--u-padding);
 		scroll-snap-align: start;
 	}
 

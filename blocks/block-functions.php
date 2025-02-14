@@ -65,71 +65,79 @@ function nc_after_content(){
 
 // Box Styles
 function nc_box_styles( $block_id =''){
-    $padding = get_field('padding') ?: '3rem 0';
 
-    if( get_field('bg_color') ) { $bg_color = 'background-color:'.get_field('bg_color').';'; } else { $bg_color = null; }
-    if( get_field('bg_image') ) { $bg_img = 'background-image:url('.get_field('bg_image').'); background-repeat: no-repeat; background-size: cover;'; } else { $bg_img = null; }
-    if( get_field('text_color') ) { $text_color = 'color:'.get_field('text_color').';'; } else { $text_color = 'color: inherit;'; }
+    $pbvar = "padding-block: var(--u-padding); \n";
+    $show_margins = get_field('padding_lr'); 
 
+    if ( !$show_margins ) {
+        $s_margins = "--width-limit: 100%; \n";  
+    } 
+    else { 
+        $s_margins = null; 
+    }
+
+    $lpad = get_field('padding_block')."rem" ?: "4";
+    $pclamp = "--u-padding: clamp( calc(".$lpad." / 2.3), 8vw, ".$lpad." );\n";
+
+    if( get_field('bg_color') ) { 
+        $bg_color = "background-color:".get_field('bg_color').";\n"; } 
+    else { $bg_color = null; }
+
+    if( get_field('bg_image') ) { 
+        $bg_img = "background-image:url(".get_field('bg_image').");\n";  
+    } 
+    else { $bg_img = null; }
+
+    if( get_field('text_color') ) { 
+        $text_color = "color:".get_field('text_color').";\n"; } 
+    else { $text_color = null; }
+
+    // Max Width on Container 
     if( get_field('max_contain_width') ) {
-        $c_width = get_field('max_contain_width').'px';     
+        $c_width = get_field('max_contain_width')."px";     
     }
     elseif( get_field('max_contain_width_set') ) {
         $c_width = get_field('max_contain_width_set');
     }
     else {
-        $c_width = 'var(--width-wide)';
+        $c_width = "var(--width-wide)";
     }
 
-    $m_width = get_field('main_content_width') ?: '600px';
-
-    if( get_field('box_direction') == 'column' ) {
-        $direction = "display: flex; \r\n
-        flex-direction:row; \r\n
-        align-items:flex-start; \r\n
-        gap: 2em;"; 
-    }
-
-    $order = get_field('main_content_order') ?: '2';
-
-    $breakpoint = get_field('minimum_width') ?: '960';
-
-    // box
-    echo "#".$block_id." {";
+    // The CSS output
+    echo "#".$block_id." {\n";
+    echo $pbvar;
+    echo $pclamp;
+    echo $s_margins;
     echo $bg_color;
-    echo $bg_img;
-    // echo "padding: ".$padding.";";
+    // echo $bg_img;
     echo $text_color;
-    echo "}";
 
-    echo "#".$block_id." .ncontain {";
-    echo "max-width: ".$c_width.";";
-    echo "}";
+    if( get_field('bg_image') ) { 
+    echo "position: relative; \n";  
+    } 
 
-    if ( get_field('box_direction') == 'column' ) {
+    echo "}\n\n";
 
-    echo "
-    @media (min-width:".$breakpoint."px) {
-
-        #".$block_id." .ncontain {
-        ".$direction.   
-        "}
-
-        #".$block_id." .ncontain > .nc_content_block_main {
-        order: ".$order.";
-        width: ".$m_width.";
-        max-width: ".$m_width.";
-        min-width: ".$m_width.";
-        }
-
-        #".$block_id." .nc_content_block_before,
-        #".$block_id." .nc_content_block_after {
-        flex-grow:1;
-        }    
-
-    }";
-
+    if( get_field('bg_image') ) { 
+    echo "#".$block_id.":after {\n";
+    echo "content:''; \n";
+    echo $bg_img;
+    echo "display:block; \n";
+    echo "position:absolute; \n";
+    echo "inset:0; left:0; \n";
+    echo "z-index: 1; \n";
+    echo "}\n\n";
     }
+
+    echo "#".$block_id." .ncontain {\n";
+    echo "max-width: ".$c_width."; \n";
+    
+    if( get_field('bg_image') ) { 
+    echo "z-index: 3; \n";
+    echo "position: relative; \n";  
+    } 
+
+    echo "}";
 
 }
 

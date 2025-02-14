@@ -115,27 +115,6 @@
             "allow_in_bindings": 1
         },
         {
-            "key": "field_67adf140738fa",
-            "label": "Bottom Padding",
-            "name": "bpadding",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "This setting acts as a bottom spacer and supports the horizontal scrolling feature for mobile.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "clamp(2rem, 10dvmin, 4rem)",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "clamp(2rem, 5vw, 3rem)",
-            "prepend": "padding-bottom:",
-            "append": ""
-        },
-        {
             "key": "field_67aaec8f9279d",
             "label": "Break Point",
             "name": "",
@@ -271,5 +250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739455148
+    "modified": 1739523852
 }

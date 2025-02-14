@@ -21,6 +21,7 @@ function nc_canvas_block() {
 				'mode' => true,
 				'multiple' => true,
 				'jsx' => true,
+				'color'=> true
 				),
 	));
 }
@@ -47,15 +48,13 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	$cgap = get_field('column_gap') ?: '3';
 	$rgap = get_field('row_gap') ?: '2.5';
 
-	$mcolwidth = get_field('min_col_width') ?: '250';
+	$mcolwidth = get_field('min_col_width').'px' ?: '250';
 
 	$cborders = get_field('column_borders');
 	$cbcolor = get_field('column_border_color') ?: 'currentColor';
 
 	$breakscroll = get_field('breakpoint_scroll');
 	$breakpoint = get_field('breakpoint');
-
-	$bpadding = get_field('bpadding') ?: 'clamp(2rem, 10dvmin, 4rem)';
 
 ?>
 	
@@ -67,22 +66,17 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	</div>
 
 <style id="<?php echo $id; ?>-block-css">
-
+	
 <?php nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> .wp-block-columns {
 	--column-gap: <?php echo $cgap.'rem'; ?>;
 	--row-gap: <?php echo $rgap.'rem'; ?>;
 	--column-border-color: <?php echo $cbcolor; ?>;
-	--min-col-width: <?php echo $mcolwidth.'px'; ?>;
-	--box-padding: <?php echo $bpadding; ?>;
+	--min-col-width: <?php echo $mcolwidth; ?>;
 	column-gap: var(--column-gap);
 	row-gap: var(--row-gap);
 }
-
-<?php echo '#'.$id; ?> {
-		padding-bottom: <?php echo $bpadding; ?>;
-	}
 
 <?php if( $cborders ):?>
 
@@ -119,18 +113,18 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 		overflow-y:hidden;
 		padding-inline:var(--gap);
 		margin-inline: calc(-1 * var(--gap));
-		margin-bottom: calc(-1 * var(--box-padding) );
+		margin-bottom: calc(-1 * var(--u-padding) );
+	}
 
-	.wp-block-column:after {
+	<?php echo '#'.$id; ?> .wp-block-column:after {
 		display: none !important;
 	}
 
-	.wp-block-column { 
+	<?php echo '#'.$id; ?> .wp-block-column { 
 		min-width:var(--min-col-width);
 		scroll-snap-align: start;
-		margin-bottom: var(--box-padding);
+		margin-bottom: var(--u-padding);
 	}
-
 
 }
 

@@ -622,12 +622,12 @@ body:not(.page-template-blank) .ncontent {
     }
 }
 
-.ncontent_main > :is(p, ul li) a:not([class]) {
+.ncontent_main > :is(p, ul li) a {
   color: var(--link-color);
 }
 
 /* Link and Button Indicator for new window */
-.ncontent_main :is(p, li) a:not([class]):after,
+.ncontent_main :is(p, li) a[target="_blank"]:after,
 .wp-block-button__link[target="_blank"]:after {
   content: '\00A0\ea7e'; /* non breaking space and upward right arrow */
   font-family: 'ncicons';

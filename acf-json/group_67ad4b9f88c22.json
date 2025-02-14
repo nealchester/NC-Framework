@@ -21,6 +21,24 @@
             "endpoint": 0
         },
         {
+            "key": "field_67ae837c04130",
+            "label": "Width",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_67ad4b9fa3f55",
             "label": "Container Width",
             "name": "max_contain_width_set",
@@ -79,11 +97,11 @@
             "step": 100
         },
         {
-            "key": "field_67ad4b9f9dec3",
-            "label": "Background Color",
-            "name": "bg_color",
+            "key": "field_67ae820d3208a",
+            "label": "Padding",
+            "name": "",
             "aria-label": "",
-            "type": "color_picker",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -92,16 +110,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "enable_opacity": 0,
-            "return_format": "string"
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
-            "key": "field_67ad4b9fa1f7e",
-            "label": "Background Image",
-            "name": "bg_image",
+            "key": "field_67ae80e532087",
+            "label": "Top \/ Bottom Padding",
+            "name": "padding_block",
             "aria-label": "",
-            "type": "image",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -110,16 +128,53 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": 4,
+            "min": 0,
+            "max": 8,
+            "allow_in_bindings": 0,
+            "placeholder": 4,
+            "step": "",
+            "prepend": "",
+            "append": "rem"
+        },
+        {
+            "key": "field_67ae816d32089",
+            "label": "Remove Left \/ Right Padding",
+            "name": "padding_lr",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Keep It",
+            "ui_off_text": "Remove It",
+            "ui": 1
+        },
+        {
+            "key": "field_67ae824e3208b",
+            "label": "Colors",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_67ad4b9fa00f8",
@@ -136,8 +191,54 @@
                 "id": ""
             },
             "default_value": "",
-            "enable_opacity": false,
-            "return_format": "string"
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_67ad4b9f9dec3",
+            "label": "Background",
+            "name": "bg_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_67ad4b9fa1f7e",
+            "label": "Background Image",
+            "name": "bg_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -158,5 +259,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739440800
+    "modified": 1739541368
 }

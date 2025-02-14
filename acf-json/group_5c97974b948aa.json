@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -445,27 +445,6 @@
             "append": ""
         },
         {
-            "key": "field_5c97974b9e093",
-            "label": "Bottom Padding",
-            "name": "bottom_padding",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "This setting acts as a bottom spacer and supports the horizontal scrolling feature for mobile.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "clamp(2rem, 5vw, 3rem)",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "clamp(2rem, 5vw, 3rem)",
-            "prepend": "padding-bottom:",
-            "append": ""
-        },
-        {
             "key": "field_67add365fa9db",
             "label": "css att",
             "name": "css_att",
@@ -480,6 +459,7 @@
                 "id": ""
             },
             "clone": [
+                "group_67ad4b9f88c22",
                 "group_67ad4b91436c6",
                 "group_67ad4e78a08c8"
             ],
@@ -507,5 +487,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739452904
+    "modified": 1739535660
 }

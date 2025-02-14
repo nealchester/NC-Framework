@@ -38,15 +38,10 @@
   }
   
   .ncgallery_box {
-  --box-padding: 3rem 0;
-  --text-color: #ccc;
-  --bg-color: #222;
   --contain-max-width:1400px;
   }
   
   .ncgallery_box {  
-  background:var(--bg-color);
-  color:var(--text-color);
   padding: var(--box-padding);
   }
   

@@ -15,9 +15,9 @@ function nc_accordion_block() {
             'mode'              => 'edit',
             'keywords'          => array('accordion', 'faqs', 'frequently asked questions', 'answers', 'questions' ),
             'post_types'        => array('post', 'page'),
-            'align'             => 'none',
+            'align'             => 'full',
             'supports'          => array( 
-                  'align' => array( 'full','wide'), 
+                  'align' => array( 'none','full','wide'), 
                   'mode' => true,
                   'multiple' => true,
 									),			
@@ -57,8 +57,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	wp_enqueue_script('nc-blocks-accordion'); 
 	?>
 	
-	<div id="<?php echo $id; ?>" class="nccordion_container<?php echo esc_attr($className); ?>">
-	
+	<div id="<?php echo $id; ?>" class="nccordion_container ncblock<?php echo esc_attr($className); ?>">
+		<div class="ncontain">
 			<?php if( $choose == 'post' ):?>
 
 			<?php $args = array(
@@ -102,8 +102,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 
 				<div class="nccordion">
 				<?php while( have_rows('custom_content') ): the_row(); 
-					$acc_heading = get_sub_field('heading');
-					$acc_content = get_sub_field('content');
+					$acc_heading = get_sub_field('heading') ?:'Heading';
+					$acc_content = get_sub_field('content') ?: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.';
 					$acc_open = get_sub_field('open');
 				?>
 					<details class="nccordion_details"<?php if ($acc_open){ echo' open'; };?>>
@@ -116,6 +116,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			<?php endwhile; ?>
 			</div>
 
+				</div>
 			<?php endif;?>
 		</div>
 
@@ -142,6 +143,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	<?php endif;?>
 
 <style id="<?php echo $id; ?>-block-css">
+
+<?php nc_box_styles($id); ?>
 
 <?php nc_block_custom_css(); ?>
 

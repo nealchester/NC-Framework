@@ -25,6 +25,15 @@ function my_acf_admin_head() { ?>
       .acf-field.acf-field-textarea[data-name="add_to_block"] .acf-label {
         margin-bottom:0;
       }
+
+      /* Remove the scroll bar from Tabs sections */
+      .acf-tab-wrap {
+        overflow: visible; /* I used to be "auto" */
+      }
+
+      .acf-block-panel .acf-block-fields .acf-tab-wrap {
+        background: #f9f9f9;
+      }
       
 
       /* Editor Sidebar */
