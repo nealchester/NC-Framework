@@ -12,7 +12,7 @@ function nc_gallery_block() {
             'render_callback'   => 'nc_gallery_block_markup',
             'category'          => 'layout',
             //'icon'              => 'format-image',
-            'mode'              => 'edit',
+            'mode'              => 'preview',
             'keywords'          => array('gallery', 'images' ),
 						'post_types'        => array('post', 'page'),
 						'align'             => 'full',
@@ -20,6 +20,7 @@ function nc_gallery_block() {
 												'align' => array( 'wide', 'full', 'none' ), 
 												'mode' => true,
 												'multiple' => true,
+												'jsx' => true,
 												),
         ));
 }
@@ -68,6 +69,8 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<div id="<?php echo $id; ?>" class="ncgallery_container<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 			<div class="ncontain">
+				<?php nc_before_content(); ?>
+
 			<?php if($gallery):?>
 
 			<div class="ncgallery ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>">
@@ -100,9 +103,11 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<?php endforeach; ?>
 
-			</div>
-
+			</div> 
+			<?php else:?>
+				<p class="ncgallery-noimages">Add some images to get started. Use the sidebar settings to begin.</p>
 			<?php endif;?>
+
 			</div>
 	</div>
 
@@ -119,6 +124,22 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	--min-col-width: <?php echo $thumb_width.'px'; ?>;
 }
 
+<?php if(!$gallery):?>
+	<?php echo '#'.$id; ?> .ncgallery-noimages {
+	max-width: 500px; 
+	font-size: var(--txt-medium);
+	margin-inline: auto;
+	cursor: default;
+}
+<?php echo '#'.$id; ?>{
+	background-color: #eee;
+
+	.nc_content_block_before {
+		max-width:500px;
+		margin-inline: auto;
+	}
+}
+<?php endif;?>
 
 .editor-styles-wrapper .ncgallery_size {
     height: auto;
@@ -126,6 +147,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 /* Responsive */
 <?php if($breakpoint && $breaklayout == 'ncolumns-scroll'):?>
+
 @media(max-width:<?php echo $breakpoint; ?>px){
 
 	<?php echo '#'.$id; ?> .ncolumns-scroll {
@@ -164,7 +186,6 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	}
 
 }
-
 
 <?php elseif($breakpoint && $breaklayout == 'ncolumns-stack'):?>
 @media(max-width:<?php echo $breakpoint; ?>px){
@@ -216,6 +237,4 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 <?php endif;?>
 
-<?php
-}
-?>
+<?php } ?>

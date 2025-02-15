@@ -12,14 +12,15 @@ function nc_slider_block() {
             'render_callback'   => 'nc_slider_block_markup',
             'category'          => 'layout',
             //'icon'              => 'format-image',
-            'mode'              => 'edit',
+            'mode'              => 'preview',
             'keywords'          => array('slider', 'sliders', 'slide' ),
 						'post_types'        => array('post', 'page'),
 						'align'             => 'full',
 						'supports'          => array( 
-								'align' => array( 'wide', 'full' ), 
+								'align' => array( 'wide', 'full', 'none' ), 
 								'mode' => true,
 								'multiple' => true,
+								'jsx' => true,
 						),
         ));
 }
@@ -48,7 +49,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 ?>
 
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
+		<div class="ncontain">
 			<?php nc_before_content(); ?>
 
 			<?php if( have_rows('slides') ): // start slides ?>
@@ -76,7 +77,6 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 			</div>
 			<?php endif; // end slides ?>
 
-			<?php nc_after_content(); ?>
 		</div>
 	</div>
 
@@ -95,8 +95,8 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		justify-content:var(--slide-justify-content);
 	}
 
-body.wp-admin <?php echo '#'.$id; ?> .splide__img,
-body.wp-admin <?php echo '#'.$id; ?> .splide__padding  {
+.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__img,
+.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__padding  {
 	display:none
 }
 
@@ -120,12 +120,12 @@ body.wp-admin <?php echo '#'.$id; ?> .splide__padding  {
 		position:relative;
   }
 	
-	body.wp-admin <?php echo '#'.$id; ?> .splide__slide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
 		outline:solid 1px #eee;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__slide > :last-child {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide > :last-child {
 		margin-bottom:0;
 	}
 

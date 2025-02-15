@@ -4,7 +4,7 @@
 
 .splide{
   --page-color:currentColor;
-  --page-color-current:blue;
+  --page-color-current:var(--link-color, #006eae);
   --page-align:center;
 
   --slide-padding: 0;
@@ -39,7 +39,8 @@
     padding:0.1em;
     top:0;
     position:absolute;
-    height: calc(100% - 2.75em);
+    height: calc(100% - calc(30px + 0.75rem) );
+    /* .splide__pagination button (height) + .splide__pagination (margin-height) minus 100%  */
     color:var(--arrow-color);
     z-index:10;
     opacity:0;
@@ -85,7 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: var(--page-align);
-    margin-top:0.75em;
+    margin-top:0.75rem;
     font-family: 'Arial', sans-serif;
   }
   
@@ -94,8 +95,8 @@
   }
   
   .splide__pagination button {
-    width:2.3em;
-    height:2.3em;
+    width: 40px;
+    height: 30px;
     padding:0;
     border:none;
     background:transparent;
@@ -113,7 +114,7 @@
   
   .splide__pagination__page:after {
     content:'';
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 0;
     display:block;
     width:50px; height: 5px;

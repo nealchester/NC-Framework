@@ -12,14 +12,15 @@ function nc_imgslider_block() {
 		'render_callback'   => 'nc_imgslider_block_markup',
 		'category'          => 'layout',
 		//'icon'            => 'format-image',
-		'mode'              => 'edit',
+		'mode'              => 'preview',
 		'keywords'          => array('slider', 'images', 'gallery', 'sliders', 'slide' ),
 		'post_types'        => array('post', 'page'),
 		'align'             => 'full',
 		'supports'          => array( 
-				'align' => array( 'wide', 'full' ), 
+				'align' => array( 'wide', 'full', 'none' ), 
 				'mode' => true,
 				'multiple' => true,
+				'jsx' => true,
 		),
 	));
 }
@@ -52,8 +53,9 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 
 	<?php wp_enqueue_style('nc-blocks-gallery');?>
 
-	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
+	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>">
+		<div class="ncontain">
+
 			<?php nc_before_content(); ?>
 
 			<?php if( $slides ): ?>
@@ -97,13 +99,32 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 					</div>
 				</div>
 			</div>
+			<?php else: ?>
+				<p class="imgslider_noimages">Add some images to get started. Use the sidebar settings to begin.</p>
 			<?php endif; // end slides ?>
 
-			<?php nc_after_content(); ?>
+			<?php // nc_after_content(); ?>
 		</div>
 	</div>
 
 <style id="<?php echo $id; ?>-block-css">
+
+<?php if(!$slides):?>
+	<?php echo '#'.$id; ?> .imgslider_noimages {
+	max-width: 500px; 
+	font-size: var(--txt-medium);
+	margin-inline: auto;
+	cursor: default;
+}
+<?php echo '#'.$id; ?>{
+	background-color: #eee;
+
+	.nc_content_block_before {
+		max-width:500px;
+		margin-inline: auto;
+	}
+}
+<?php endif;?>
 
 <?php echo '#'.$id; ?> .splide__slide {
     background:var(--slide-bg-color);
@@ -152,11 +173,11 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		z-index:15 !important;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__img  {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__img  {
 		height: 100% !important
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__slide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
 		outline:solid 1px #eee;
 		position: relative;
@@ -164,36 +185,36 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		max-width:600px;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
 		position: relative;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide:before {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide:before {
 		content: 'Here\'s an example of how each slide will look. For an actual visual, Preview this page.';
 		display: block;
 		text-align: center;
 		padding: 0.5em;
 		font-size: var(--txt-xsmall);
-		color: #000;
+		color: currentColor;
 		position: absolute;
 		z-index: 100;
 		top: 100%;
 		width: 100%;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__slide ~ .splide__slide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide ~ .splide__slide {
 		display:none;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
 		visibility: visible !important;	
 	}	
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__slide > :last-child {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide > :last-child {
 		margin-bottom:0;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__plink {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__plink {
 		pointer-events: none;
 		pointer: default;
 	}
@@ -256,18 +277,18 @@ if( in_the_loop() ):?>
 <script>
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide( '<?php echo '#'.$slider_id; ?>', {
-		type   : '<?php the_field('type') ?: 'loop'; ?>',
-		perPage: <?php the_field('per_page') ?: '2'; ?>,
-		perMove: <?php the_field('per_move') ?: '1'; ?>,
-		gap: '<?php the_field('gap_space') ?: '1.5rem'; ?>',
+		type   : '<?php echo get_field('type') ?: 'loop'; ?>',
+		perPage: <?php echo get_field('per_page') ?: '2'; ?>,
+		perMove: <?php echo get_field('per_move') ?: '1'; ?>,
+		gap: '<?php echo get_field('gap_space') ?: '1.5rem'; ?>',
 		focus  : <?php if(get_field('center_slide')) { echo "'center'"; } else { echo '1';}; ?>,
 		trimSpace: false,
 		clones: 1,
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
 
-		speed: <?php the_field('speed') ?: 400; ?>,
-		interval: <?php the_field('pause') ?: 3000; ?>,
+		speed: <?php echo get_field('speed') ?: 400; ?>,
+		interval: <?php echo get_field('pause') ?: 3000; ?>,
 
 		direction: '<?php if( get_field('direction') ) { echo get_field('direction'); } else { echo 'ltr'; } ?>',
 
@@ -275,11 +296,11 @@ if( in_the_loop() ):?>
 		arrows: <?php if ( get_field('arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
 
 		breakpoints: {
-			<?php the_field('break_width') ?: 0; ?>: {
+			<?php echo get_field('break_width') ?: 0; ?>: {
 				pagination: <?php if( get_field('show_pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
 				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
-				perPage: <?php the_field('per_page_mobile') ?: '2'; ?>,
-				perMove: <?php the_field('per_move_mobile') ?: '1'; ?>,
+				perPage: <?php echo get_field('per_page_mobile') ?: '2'; ?>,
+				perMove: <?php echo get_field('per_move_mobile') ?: '1'; ?>,
 				focus: <?php if(get_field('center_slide_mobile')) { echo "'center'"; } else { echo '1';}; ?>,
 			}
 		},
@@ -290,6 +311,5 @@ if( in_the_loop() ):?>
 
 
 <?php endif; ?>
-<?php
-}
-?>
+
+<?php } ?>

@@ -311,14 +311,14 @@
             },
             "choices": {
                 "ncgallery-capslide": "Reveal captions on hover",
-                "ncgallery-capbelow": "Always show captions below",
                 "ncgallery-capoverlay": "Overlay captions"
             },
+            "default_value": "ncgallery-capslide",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "ncgallery-capslide",
+            "allow_in_bindings": 1,
             "layout": "vertical",
-            "return_format": "value",
             "save_other_choice": 0
         },
         {
@@ -446,8 +446,8 @@
         },
         {
             "key": "field_67add365fa9db",
-            "label": "css att",
-            "name": "css_att",
+            "label": "Additional Settings",
+            "name": "additional_stuff",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -460,6 +460,7 @@
             },
             "clone": [
                 "group_67ad4b9f88c22",
+                "group_67b0488eb5a0c",
                 "group_67ad4b91436c6",
                 "group_67ad4e78a08c8"
             ],
@@ -487,5 +488,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739535660
+    "modified": 1739606882
 }

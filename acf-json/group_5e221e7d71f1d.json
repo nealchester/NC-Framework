@@ -1,6 +1,6 @@
 {
     "key": "group_5e221e7d71f1d",
-    "title": "Block Part: Custom Code",
+    "title": "xBlock Part: Custom Code",
     "fields": [
         {
             "key": "field_5ee815484a3cd",
@@ -361,5 +361,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739377591
+    "modified": 1739605157
 }

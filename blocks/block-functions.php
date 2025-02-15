@@ -51,9 +51,10 @@ function nc_contain_classes(){
 
 // Before Content
 function nc_before_content(){
-    if(get_field('content_before')) {
+    echo '<div class="nc_content_block_before">'.nc_inner_blocks().'</div>';
+    /* if(get_field('content_before')) {
         echo '<div class="nc_content_block_before">'.get_field('content_before').'</div>';
-    }
+    }*/
 }
 
 // After Content
@@ -138,6 +139,42 @@ function nc_box_styles( $block_id =''){
     } 
 
     echo "}";
+
+    $m_width = get_field('main_content_width') ?: '60%';
+    $order = get_field('main_content_order') ?: '3';
+    $breakpoint = get_field('minimum_width') ?: '960';
+
+    if( get_field('box_direction') == 'column' ) {
+        $direction = "display: flex; \r\n
+        flex-direction:row; \r\n
+        align-items:flex-start; \r\n
+        gap: 2.3rem clamp(2rem, 8vw, 3rem);"; 
+    }
+
+    if ( get_field('box_direction') == 'column' ) {
+
+        echo "
+        @media (min-width:".$breakpoint."px) {\r\n\r\n
+    
+            #".$block_id." .ncontain {\r\n
+            ".$direction.   
+            "}
+    
+            #".$block_id." .ncontain > .nc_content_block_main {
+            order: ".$order.";
+            width: ".$m_width.";
+            max-width: ".$m_width.";
+            min-width: ".$m_width.";
+            }
+    
+            #".$block_id." .nc_content_block_before,
+            #".$block_id." .nc_content_block_after {
+            flex-grow:1;
+            }    
+    
+        }";
+    
+        }
 
 }
 

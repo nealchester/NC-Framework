@@ -1,6 +1,6 @@
 {
     "key": "group_679df5c56d075",
-    "title": "Part: Image Focal Point",
+    "title": "Part: Focal Point",
     "fields": [
         {
             "key": "field_67ad4febcacba",
@@ -121,5 +121,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1739416602
+    "modified": 1739606988
 }

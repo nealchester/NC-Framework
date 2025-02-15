@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_67ad4b9f9a0ef",
-            "label": "Box Settings",
+            "label": "Box Setting",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -21,7 +21,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_67ae837c04130",
+            "key": "field_67b0524690594",
             "label": "Width",
             "name": "",
             "aria-label": "",
@@ -97,7 +97,7 @@
             "step": 100
         },
         {
-            "key": "field_67ae820d3208a",
+            "key": "field_67b0525390595",
             "label": "Padding",
             "name": "",
             "aria-label": "",
@@ -159,7 +159,7 @@
             "ui": 1
         },
         {
-            "key": "field_67ae824e3208b",
+            "key": "field_67b0525990596",
             "label": "Colors",
             "name": "",
             "aria-label": "",
@@ -259,5 +259,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739541368
+    "modified": 1739608700
 }

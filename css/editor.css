@@ -72,6 +72,8 @@ img.alignright {
     font-size:var(--txt-medium);
     font-family: var(--sans);
     font-weight: bold;
+    text-align: center;
+    padding-inline: var(--gap);
 }
 
 .editor-styles-wrapper a {

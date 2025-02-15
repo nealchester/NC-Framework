@@ -94,8 +94,11 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     --bsize: <?php echo $bsize; ?>;
     }
 
-    @media(min-width:1000px){
-    .stop-scrolling { overflow:hidden; padding-right: 17px; }
+    @media(min-width:1024px){
+        .stop-scrolling { 
+            overflow:hidden; 
+            padding-right: 17px; 
+        }
     }
 
 <?php nc_block_custom_css(); ?>

@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -614,9 +614,9 @@
             "step": 25
         },
         {
-            "key": "field_5f0b42f0e7baa",
-            "label": "Box Settings",
-            "name": "box_settings",
+            "key": "field_67b07f817b3d6",
+            "label": "Add more",
+            "name": "more_stuff_imgslider",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -628,29 +628,9 @@
                 "id": ""
             },
             "clone": [
-                "group_5f0a295e1071c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_5f0b42f0ebec2",
-            "label": "Custom code",
-            "name": "custom_code",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b9f88c22",
+                "group_67b0488eb5a0c",
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -676,5 +656,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1702083939
+    "modified": 1739620879
 }

@@ -17,7 +17,7 @@ function nc_heroslider_block() {
 		'post_types'        => array('post', 'page'),
 		'align'             => 'full',
 		'supports'          => array( 
-				'align' => array( 'wide', 'full' ), 
+				'align' => array( 'wide', 'full', 'none' ), 
 				'mode' => true,
 				'multiple' => true,
         'jsx' => true,
@@ -72,7 +72,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 
 						<div class="splide__padding"></div>
 
-						<?php echo wp_get_attachment_image( $image['ID'], 'large', '', 
+						<?php echo wp_get_attachment_image( $image['ID'], 'full', '', 
 						array('class' => 'splide__img', 'style' => nc_block_image_focus($image['ID'])
 						)); ?>
 
@@ -113,7 +113,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 
       <div class="splide__content">
         <div class="ncontain">
-          <div class="splide__container<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
+          <div class="splide__container">
             <?php echo nc_inner_blocks(); ?>
           </div>
         </div>
@@ -175,7 +175,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
   display:flex;
 }
 
-	body.wp-admin <?php echo '#'.$id; ?> .block-editor-inner-blocks {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .block-editor-inner-blocks {
 		position: relative;
 		z-index: 100;
 	}
@@ -211,7 +211,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 
   <?php echo '#'.$id; ?> .ncgallery_caption {
     background: transparent;
-    text-align:right;
+    text-align:left;
     padding-inline: var(--gap);
   }
 
@@ -270,21 +270,21 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 		z-index:15 !important;
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__img  {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__img  {
 		height: 100% !important
 	}
 
-	body.wp-admin <?php echo '#'.$id; ?> .splide__slide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide {
 		outline:solid 1px #eee;
 		position: relative;
     margin-bottom:0;
 	}
 
-  body.wp-admin <?php echo '#'.$id; ?> .splide__slide ~ * {
+  .editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide ~ * {
     display:none;
   }
 
-	body.wp-admin .splide {
+	.editor-styles-wrapper .splide {
 		visibility: visible !important;	
 	}	
 

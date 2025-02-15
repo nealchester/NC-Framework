@@ -20,8 +20,7 @@ function nc_canvas_block() {
 				'align' => array( 'wide', 'full' ), 
 				'mode' => true,
 				'multiple' => true,
-				'jsx' => true,
-				'color'=> true
+				'jsx' => true
 				),
 	));
 }

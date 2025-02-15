@@ -1,0 +1,140 @@
+{
+    "key": "group_67b0488eb5a0c",
+    "title": "Part: Layout",
+    "fields": [
+        {
+            "key": "field_67b04af3b7081",
+            "label": "Content Layout",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67b038369ff1f",
+            "label": "Row or Column",
+            "name": "box_direction",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Display the main content next to or below other content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "row": "Row",
+                "column": "Column"
+            },
+            "default_value": "row",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67b0383d9ff20",
+            "label": "Main Content Position",
+            "name": "main_content_order",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "-3": "Left",
+                "3": "Right"
+            },
+            "default_value": 3,
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_67b038429ff21",
+            "label": "Main Content Width",
+            "name": "main_content_width",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "60%",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "600px",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67b038479ff22",
+            "label": "Minimum Width",
+            "name": "minimum_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "The minimum width the box will be a column before returning to a row.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 960,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": 960,
+            "step": 100,
+            "prepend": "",
+            "append": "px"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1739608132
+}

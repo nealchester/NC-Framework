@@ -145,7 +145,7 @@
         },
         {
             "key": "field_6334aedfe79ab",
-            "label": "Gradient Color",
+            "label": "Color",
             "name": "color",
             "aria-label": "",
             "type": "color_picker",
@@ -159,7 +159,8 @@
             },
             "default_value": "#222222",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_6334b5cc8211a",
@@ -345,7 +346,7 @@
                 "id": ""
             },
             "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -371,5 +372,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738433282
+    "modified": 1739612413
 }
