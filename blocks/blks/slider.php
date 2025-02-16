@@ -161,10 +161,10 @@ if( in_the_loop() ):?>
 		speed: <?php the_field('speed') ?: 400; ?>,
 		interval: <?php the_field('pause') ?: 3000; ?>,
 
-		gap: <?php if( get_field('gap') ) { echo "'".get_field('gap')."'"; } else { echo "'1em'"; } ?>,
+		gap: <?php if( get_field('gap') ) { echo "'".get_field('gap')."'"; } else { echo "'1rem'"; } ?>,
 
 		fixedWidth: <?php if( get_field('slide_width') ) { echo "'".get_field('slide_width')."'"; } else { echo '0'; } ?>,
-		fixedHeight: <?php if( get_field('slide_height') ) { echo "'".get_field('slide_height')."'"; } else { echo '0'; } ?>,
+		heightRatio: <?php if( get_field('slide_height') ) { echo "'".get_field('slide_height')."'"; } else { echo '0'; } ?>,
 
 		direction: <?php if( get_field('direction') ) { echo "'".get_field('direction')."'"; } else { echo "'ltr'"; } ?>,
 

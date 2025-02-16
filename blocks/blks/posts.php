@@ -20,6 +20,7 @@ function nc_posts_block() {
 				'align' => array( 'full' ), 
 				'mode' => true,
 				'multiple' => true,
+				'jsx' => true,
 				),
 			));
 }
@@ -80,7 +81,7 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 	?>
 
 	<div id="<?php echo $id; ?>" class="ncard_box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
+		<div class="ncontain" <?php echo nc_animate();?>>
 		
 		<?php nc_before_content(); ?>
 			
@@ -147,7 +148,7 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 			</div>
 			<?php endif; // end loop ?>
 
-			<?php nc_after_content(); ?>
+			<?php // nc_after_content(); ?>
 		</div>
 	</div>
 

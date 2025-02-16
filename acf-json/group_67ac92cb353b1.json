@@ -1,6 +1,6 @@
 {
     "key": "group_67ac92cb353b1",
-    "title": "Block: Lightbox",
+    "title": "Block: NC Lightbox",
     "fields": [
         {
             "key": "field_67ac9f15f5b7f",
@@ -201,5 +201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739418372
+    "modified": 1739710513
 }
