@@ -1,11 +1,12 @@
 {
     "key": "group_5c781e54036fb",
-    "title": "Block: NC Text",
+    "title": "Block: NC Rich Text",
     "fields": [
         {
             "key": "field_5c781e540bd5d",
             "label": "Content",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -15,50 +16,15 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
         {
-            "key": "field_5c781f42495df",
-            "label": "Display Dropcap",
-            "name": "dropcap",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Yes",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5c7abd5a92937",
-            "label": "Dropcap Color",
-            "name": "cap_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "enable_opacity": false,
-            "return_format": "string"
-        },
-        {
             "key": "field_5c781e540be0b",
-            "label": "Content",
+            "label": "",
             "name": "text_content",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -69,15 +35,57 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 1,
             "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
+            "toolbar": "basic",
+            "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_5c7abd5a92937",
+            "label": "Dropcap Color",
+            "name": "cap_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_5c781f42495df",
+            "label": "Display Dropcap",
+            "name": "dropcap",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5c7abd7f92938",
             "label": "Columns",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -95,6 +103,7 @@
             "key": "field_5c782af59097b",
             "label": "Column Count",
             "name": "pcolumn_count",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -120,6 +129,7 @@
             "key": "field_5c7aba0a2e515",
             "label": "Column Gap",
             "name": "column_gap",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -139,6 +149,7 @@
             "key": "field_5c7aba3b2e516",
             "label": "Column Rule",
             "name": "column_rule",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -158,6 +169,7 @@
             "key": "field_5c7ab5079a010",
             "label": "Text align",
             "name": "text_align",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -182,9 +194,28 @@
             "placeholder": ""
         },
         {
-            "key": "field_5c7ab4c9fbaf8",
-            "label": "Box Settings",
-            "name": "box_settings",
+            "key": "field_67b1d6cbbf2cd",
+            "label": "Scroll Animation",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67b1d6efbf2ce",
+            "label": "Animate",
+            "name": "animate",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -195,7 +226,31 @@
                 "id": ""
             },
             "clone": [
-                "group_5f0a295e1071c"
+                "field_67aa0107ad741",
+                "field_67aa010cad742",
+                "field_67aa011dad743"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5c7ab4c9fbaf8",
+            "label": "Box Settings",
+            "name": "box_settings",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_67ad4b9f88c22"
             ],
             "display": "seamless",
             "layout": "block",
@@ -206,6 +261,7 @@
             "key": "field_5e2340cd1b5f1",
             "label": "Custom Code",
             "name": "custom_code",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -216,7 +272,7 @@
                 "id": ""
             },
             "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -241,5 +297,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636491273
+    "show_in_rest": 0,
+    "modified": 1739710291
 }

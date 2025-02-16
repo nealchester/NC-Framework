@@ -59,23 +59,18 @@ h1,h2,h3,h4,h5,h6 {
   .btn:hover,
   .btn:focus,
   .wp-block-button__link:hover,
-  .wp-block-button__link:focus {
-    background: #222;
-    border-color: currentColor
+  .wp-block-button__link:focus,
+  .btn-outline:hover,
+  .btn-outline:focus,
+  .is-style-outline .wp-block-button__link:hover,
+  .is-style-outline .wp-block-button__link:focus {
+    opacity: 0.65;
   }
   
   .btn-outline,
   .is-style-outline .wp-block-button__link {
     background:none;
     border:solid 0.08em currentColor;
-    color:#000;
-  }
-
-  .btn-outline:hover,
-  .btn-outline:focus,
-  .is-style-outline .wp-block-button__link:hover,
-  .is-style-outline .wp-block-button__link:focus {
-    background:none !important;
     color:#000;
   }
   

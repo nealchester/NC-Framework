@@ -3,46 +3,6 @@
     "title": "Block: NC Split",
     "fields": [
         {
-            "key": "field_5c7709c5ef4dc",
-            "label": "Content",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_5c7ac45b08ee0",
-            "label": "Content Max Width",
-            "name": "content_width",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 600,
-            "placeholder": 600,
-            "prepend": "",
-            "append": "px",
-            "min": "",
-            "max": "",
-            "step": ""
-        },
-        {
             "key": "field_5f2446a482ea4",
             "label": "Image Options",
             "name": "",
@@ -56,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -127,31 +87,10 @@
             "default_value": 50,
             "min": 20,
             "max": 80,
-            "step": 10,
+            "allow_in_bindings": 1,
+            "step": 5,
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_5ce2b6b263a41",
-            "label": "Text Max Width",
-            "name": "width",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 500,
-            "placeholder": 500,
-            "prepend": "",
-            "append": "px",
-            "min": "",
-            "max": "",
-            "step": ""
         },
         {
             "key": "field_5c7ac3dc08edf",
@@ -252,6 +191,46 @@
             "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_5c7709c5ef4dc",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ce2b6b263a41",
+            "label": "Text Max Width",
+            "name": "width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 500,
+            "placeholder": 500,
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_6175ce03ccacd",
@@ -391,9 +370,10 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "enable_opacity": false,
-            "return_format": "string"
+            "default_value": "#fff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_5c7ac34108edd",
@@ -450,7 +430,7 @@
                 "id": ""
             },
             "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -476,5 +456,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738432154
+    "modified": 1739701427
 }

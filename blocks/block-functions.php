@@ -59,9 +59,10 @@ function nc_before_content(){
 
 // After Content
 function nc_after_content(){
+    /*
     if(get_field('content_after')) {
         echo '<div class="nc_content_block_after">'.get_field('content_after').'</div>';
-    }
+    }*/
 }
 
 // Box Styles
@@ -232,10 +233,9 @@ function nc_block_posts_meta(){
 function nc_inner_blocks() {
     $template = array(
         array( 'core/paragraph', array(
-                'content' => 'Insert some text or a block here to get started...',
+                'placeholder' => 'Insert some text or a block here to get started...',
         ))
     );
-    
     return'<InnerBlocks template="'.esc_attr( wp_json_encode( $template ) ).'" />';
 }
 
