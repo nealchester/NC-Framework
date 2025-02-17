@@ -73,7 +73,7 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 			<?php if($gallery):?>
 
-			<div class="ncgallery ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>">
+			<div class="ncgallery ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' '.$mposition;?>" <?php echo nc_animate();?>>
 			
 			<?php $i = 1; foreach( $gallery as $image ):?>
 			

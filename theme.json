@@ -92,10 +92,10 @@
 			"fontStyle": true,
 			"fontWeight": true,
 			"letterSpacing": true,
-			"lineHeight": false,
 			"textColumns": true,
-			"textDecoration": false,
 			"textTransform": true,
+			"lineHeight": false,
+			"textDecoration": false,
 			"writingMode": false,
 			"fontSizes": [
 				{

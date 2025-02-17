@@ -236,7 +236,7 @@
         },
         {
             "key": "field_5c9a369486ae7",
-            "label": "Layout",
+            "label": "Card Layout",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -369,19 +369,20 @@
             "name": "column_gap",
             "aria-label": "",
             "type": "text",
-            "instructions": "Column gap spacing",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "1.5rem",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "1.5rem",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5cfbf148d1f76",
@@ -389,45 +390,20 @@
             "name": "row_gap",
             "aria-label": "",
             "type": "text",
-            "instructions": "Row gap spacing",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "1.5rem",
-            "placeholder": "1.5rem",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5c9a369486a52",
-            "label": "Thumb Position",
-            "name": "position",
-            "aria-label": "",
-            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "row": "Left",
-                "row-reverse": "Right",
-                "column": "Above"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "row",
-            "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
+            "default_value": "1.5rem",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "1.5rem",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5cfbf14bd1f77",
@@ -458,11 +434,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cfbfc958acf6",
-            "label": "Thumb Width",
-            "name": "thumb_width",
+            "key": "field_5c9a369486a52",
+            "label": "Thumb Position",
+            "name": "position",
             "aria-label": "",
-            "type": "range",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -471,9 +447,44 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "row": "Left",
+                "row-reverse": "Right",
+                "column": "Above"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "row",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cfbfc958acf6",
+            "label": "Thumb Width",
+            "name": "thumb_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c9a369486a52",
+                        "operator": "!=",
+                        "value": "column"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": 25,
             "min": 10,
             "max": 100,
+            "allow_in_bindings": 1,
             "step": 5,
             "prepend": "",
             "append": "%"
@@ -633,32 +644,6 @@
             "step": ""
         },
         {
-            "key": "field_5cfd5d06adc67",
-            "label": "Break Point Thumb Position",
-            "name": "position_break",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "row": "Left",
-                "row-reverse": "Right",
-                "column": "Above"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "row",
-            "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_5cfd5d0aadc68",
             "label": "Break Point Thumb Shape",
             "name": "thumb_shape_break",
@@ -687,11 +672,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cfd5d14adc69",
-            "label": "Break Point Thumb Width",
-            "name": "thumb_width_break",
+            "key": "field_5cfd5d06adc67",
+            "label": "Break Point Thumb Position",
+            "name": "position_break",
             "aria-label": "",
-            "type": "range",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -700,9 +685,44 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "row": "Left",
+                "row-reverse": "Right",
+                "column": "Above"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "row",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cfd5d14adc69",
+            "label": "Break Point Thumb Width",
+            "name": "thumb_width_break",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cfd5d06adc67",
+                        "operator": "!=",
+                        "value": "column"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": 30,
             "min": 10,
             "max": 100,
+            "allow_in_bindings": 1,
             "step": 5,
             "prepend": "",
             "append": "%"
@@ -750,5 +770,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739713941
+    "modified": 1739793725
 }

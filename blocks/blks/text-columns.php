@@ -7,14 +7,14 @@ function nc_text_block() {
 	// register a items block
 	acf_register_block_type(array(
 		'name'              => 'nc_text',
-		'title'             => __('NC Text Box', 'nc-framework'),
+		'title'             => __('NC Text Columns', 'nc-framework'),
 		'description'       => __('A text box', 'nc-framework'),
 		'render_callback'   => 'nc_text_block_markup',
 		'category'          => 'layout',
 		//'icon'              => 'format-image',
 		'mode'              => 'preview',
-		'keywords'          => array('text', 'paragraphs', 'text box' ),
-		'post_types'        => array('post', 'page', 'books'),
+		'keywords'          => array('text', 'columns', 'text columns' ),
+		'post_types'        => array('post', 'page'),
 		'align'             => 'full',
 		'supports'          => array( 
 			'align' => array( 'wide', 'full', 'none' ), 
@@ -48,7 +48,7 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 	$cc = get_field('pcolumn_count');
 
 	$gap = get_field('column_gap') ?: 'clamp(1.5rem, 8vw, 3rem)';
-	$rule = get_field('column_rule');
+	$rule = get_field('column_rule') ?: 'solid 1px';
 
 	$text_align = get_field('text_align') ?: 'left';
 	$cap_color = get_field('cap_color') ?: '#000';
@@ -59,7 +59,7 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 	wp_enqueue_style('nc-blocks-rich-text');
 	?>
 
-	<section id="<?php echo $id; ?>" class="nctext<?php if($dropcap) { echo ' nctext-dropcap'; }; if($cc == '2' || $cc == '3') { echo' nctext-cols'; }; echo esc_attr($className); ?>">
+	<section id="<?php echo $id; ?>" class="nctext<?php if($dropcap) { echo ' nctext-dropcap'; }; if($cc == '2' || $cc == '3' || $cc == '4') { echo' nctext-cols'; }; echo esc_attr($className); ?>">
 		<div class="ncontain" <?php echo nc_animate(); ?>>
 
 		<?php nc_before_content(); ?>
@@ -82,7 +82,7 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php echo'#'.$id; ?>.nctext {
 		--column-gap: <?php echo $gap; ?>;
-		--column-count: <?php if($cc) { echo $cc; } else { echo 'auto'; }; ?>;
+		--column-count: <?php if($cc) { echo $cc; } else { echo '2'; }; ?>;
 		--column-rule:<?php echo $rule; ?>;
 
 		--text-align: <?php echo $text_align; ?>;

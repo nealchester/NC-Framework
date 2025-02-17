@@ -51,9 +51,11 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
 <?php wp_enqueue_style('nc-blocks-gradient');?>
 
 <div id="<?php echo $id; ?>" class="ncgradimg<?php echo ' '.$position.' '.esc_attr($className);?>" <?php echo nc_block_attr();?>>
-	<div class="ncgradimg_image" data-aos="fade" data-aos-duration="1000" data-aos-delay="500"></div>
-	<div class="ncontain ncgradimg_contain<?php echo nc_contain_classes(); ?>">
-		<div class="ncgradimg_content" <?php echo nc_animate().nc_contain_attr();?>>
+	<div class="ncgradimg_image" <?php echo nc_animate();?>>
+    <div class="ncgradimg_img"></div>
+  </div>
+	<div class="ncontain ncgradimg_contain">
+		<div class="ncgradimg_content">
 			<?php echo nc_inner_blocks(); ?>
 		</div>
 	</div>
@@ -71,11 +73,11 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
   --bgcolor: <?php echo hex2RGB( get_field('color'),true ); ?>;
   --textcolor: #fff;
   --blend-mode: <?php echo get_field('image_blend_mode') ?: 'normal'; ?>;
-  --grad-width: <?php echo get_field('grad_width') ?: '50'; ?>%;
-  --image-width: <?php echo get_field('image_width') ?: '60'; ?>%;
+  --grad-width: <?php echo get_field('grad_width').'%' ?: '50'; ?>;
+  --image-width: <?php echo get_field('image_width').'%' ?: '60'; ?>;
 }
 
-<?php echo '#'.$id; ?> .ncgradimg_image {
+<?php echo '#'.$id; ?> .ncgradimg_img {
 	background-image:url('<?php echo get_field('image') ?: nc_block_fallback_image(); ?>');
 } 
 
@@ -128,6 +130,5 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
 <?php endif;?>
 
 </style>
-    <?php
-}
-?>
+
+<?php } ?>

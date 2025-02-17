@@ -39,16 +39,24 @@
 }
 
 .ncgradimg_image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: var(--bgposition);
   position: absolute;
   height: 100%;
   width: var(--image-width);
   right: 0;
   top: 0;
+  overflow: hidden;
+}
+
+.ncgradimg_img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: var(--bgposition);
   background-color: rgba(var(--bgcolor), 1);
   background-blend-mode: var(--blend-mode);
+  position: absolute;
+  left:0;
+  inset: 0;
+  z-index: 3;
 }
 
 .ncgradimg_image:before {
@@ -59,6 +67,7 @@
   left: 0;
   top: 0;
   background-image: linear-gradient(to right, var(--gradient-smooth) );
+  z-index: 5;
 }
 
 .ncgradimg_content {

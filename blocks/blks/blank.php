@@ -44,16 +44,12 @@ function nc_blank_block_markup( $block, $content = '', $is_preview = false ) {
 	$tcontent = get_field('text_content');
 
 ?>
-	<section id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-        <div class="ncontain<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
+	<section id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className); ?>">
+        <div class="ncontain" <?php echo nc_animate();?>>
        
-        <?php nc_before_content(); ?>
-
         <?php if($tcontent):?><?php echo '<div class="nc_content_block_main">'.$tcontent.'</div>';?><?php else:?> 
         <div class="nc_content_block_main"><p><?php _e('Add some content...','nc-framework');?></p></div>
         <?php endif; ?>
-
-        <?php nc_after_content(); ?>
 
 		</div>
 	</section>

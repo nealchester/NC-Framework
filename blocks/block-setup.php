@@ -29,7 +29,7 @@ if(function_exists('get_field')){
     get_template_part('blocks/blks/pointer');
     get_template_part('blocks/blks/popup');
     get_template_part('blocks/blks/posts');
-    get_template_part('blocks/blks/rich-text');
+    get_template_part('blocks/blks/text-columns');
     get_template_part('blocks/blks/search');
     get_template_part('blocks/blks/slider-image');
     get_template_part('blocks/blks/slider');

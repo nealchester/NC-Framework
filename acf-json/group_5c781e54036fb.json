@@ -1,6 +1,6 @@
 {
     "key": "group_5c781e54036fb",
-    "title": "Block: NC Rich Text",
+    "title": "Block: NC Text Columns",
     "fields": [
         {
             "key": "field_5c781e540bd5d",
@@ -114,15 +114,16 @@
                 "id": ""
             },
             "choices": {
-                "auto": "0",
                 "2": "2",
-                "3": "3"
+                "3": "3",
+                "4": "4"
             },
+            "default_value": 2,
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "auto",
+            "allow_in_bindings": 1,
             "layout": "horizontal",
-            "return_format": "value",
             "save_other_choice": 0
         },
         {
@@ -298,5 +299,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739710291
+    "modified": 1739794518
 }

@@ -64,7 +64,7 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 	$column_min_width = get_field('col_min_width');
 	$column_min_width_break = get_field('col_min_width_break');
 	$thumb_width = get_field('thumb_width');
-	$bpadding = get_field('bottom_padding') ?: '3rem';
+	$bpadding = 'var(--u-padding)';
 	$position = get_field('position');
 
 	$position_break = get_field('position_break');

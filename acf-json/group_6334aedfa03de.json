@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -65,7 +65,7 @@
         },
         {
             "key": "field_6334aedfeefa4",
-            "label": "Padding (top & bottom)",
+            "label": "Padding (Top \/ Bottom)",
             "name": "padding",
             "aria-label": "",
             "type": "text",
@@ -77,8 +77,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "3rem",
+            "default_value": "clamp(2.3, 8vw, 3rem)",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "3rem",
             "prepend": "",
             "append": ""
@@ -273,6 +274,27 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_67b33448eb967",
+            "label": "Parallax Image",
+            "name": "parallax",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Parallax",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6334b5227088f",
             "label": "Image Blend Mode",
             "name": "image_blend_mode",
@@ -332,6 +354,46 @@
             "append": ""
         },
         {
+            "key": "field_67b32f64bd7a4",
+            "label": "Scroll Animation",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67b32f8f85365",
+            "label": "animated",
+            "name": "animated",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_67aa0054e8f0e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_6334aee009c7e",
             "label": "Custom Code",
             "name": "custom_code",
@@ -372,5 +434,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739612413
+    "modified": 1739799042
 }

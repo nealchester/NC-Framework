@@ -60,9 +60,16 @@
             "name": "sal_duration",
             "aria-label": "",
             "type": "number",
-            "instructions": "",
+            "instructions": "1000 = 1 second",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67aa0107ad741",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -72,10 +79,10 @@
             "min": 50,
             "max": 3000,
             "allow_in_bindings": 1,
-            "placeholder": "1000 = 1 second",
+            "placeholder": 1000,
             "step": 50,
             "prepend": "",
-            "append": "milliseconds"
+            "append": "ms"
         },
         {
             "key": "field_67aa011dad743",
@@ -83,22 +90,29 @@
             "name": "sal_delay",
             "aria-label": "",
             "type": "number",
-            "instructions": "",
+            "instructions": "1000 = 1 second",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67aa010cad742",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "min": 50,
-            "max": 3000,
+            "min": 250,
+            "max": "",
             "allow_in_bindings": 1,
-            "placeholder": "1000 = 1 second",
+            "placeholder": 500,
             "step": 50,
             "prepend": "",
-            "append": "milliseconds"
+            "append": "ms"
         },
         {
             "key": "field_67ad9f29a8ac3",
@@ -142,5 +156,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1739708715
+    "modified": 1739794909
 }

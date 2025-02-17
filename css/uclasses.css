@@ -535,3 +535,31 @@ Must be applied to UL and OL elements */
 .no-balance { 
   text-wrap: auto; 
 }
+
+/* Overlay
+
+Add overlay and opacity to background images with no puesdo 
+element or additional elements. Credit to: Kevin Powell on 
+https://www.youtube.com/watch?v=NwnZU6mWJkk
+
+.hero {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(...);
+
+  aspect: 16/9;
+  width: 100%; 
+  display:flex;
+  alig-items:
+}
+*/
+
+.overlay {
+  border-images:
+    linear-gradient(
+      rgba(0,0,0,0.5), 
+      rgba(0,0,0,0.5)
+    )
+    fill 1;
+}
