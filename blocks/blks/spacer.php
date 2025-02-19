@@ -33,12 +33,13 @@ function nc_spacer_block_markup( $block, $content = '', $is_preview = false ) {
     }
 	
     //ACF Block
+    $spacer_id = ' ncspacer-'.rand(100, 200); 
 	$large = get_field('large').'rem' ?: '4';
-    $small = get_field('small').'rem' ?: '2';
-    $rate =  get_field('rate') ?: '10dvmin';
+    $small = get_field('small').'rem' ?: '2.3';
+    $rate =  get_field('rate') ?: '8vw';
     $style = ' style="height: clamp('.$small.', '.$rate.', '.$large.')"';
 
 ?>
-	<div class="ncspacer<?php echo esc_attr($className)?>"<?php echo $style;?>></div>
+	<div class="ncspacer<?php echo esc_attr($className)?>"<?php echo $style.$spacer_id;?>></div>
 
 <?php } ?>

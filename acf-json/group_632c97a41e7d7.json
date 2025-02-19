@@ -210,7 +210,7 @@
         {
             "key": "field_632c97a4595a7",
             "label": "box and css",
-            "name": "box_settings",
+            "name": "extras",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -223,8 +223,7 @@
             },
             "clone": [
                 "group_67ad4b9f88c22",
-                "group_67ad4b91436c6",
-                "group_67ad4e78a08c8"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -250,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739523852
+    "modified": 1739864729
 }

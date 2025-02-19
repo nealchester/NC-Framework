@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 3,
+            "default_value": 4,
             "min": 1,
             "max": 10,
             "allow_in_bindings": 0,
@@ -38,7 +38,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 2,
+            "default_value": "3.3",
             "min": 1,
             "max": 10,
             "allow_in_bindings": 0,
@@ -60,7 +60,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "10dvmin",
+            "default_value": "8vw",
             "maxlength": 7,
             "allow_in_bindings": 1,
             "placeholder": "10dvmin",
@@ -86,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739455063
+    "modified": 1739865326
 }

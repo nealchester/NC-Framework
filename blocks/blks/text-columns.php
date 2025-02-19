@@ -44,14 +44,20 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 	//ACF Block
 	$dropcap = get_field('dropcap');
 	$tcontent = get_field('text_content');
-	$width = get_field('width') ?: '1000';
-	$cc = get_field('pcolumn_count');
+	$width = get_field('width').'px' ?: '220';
+	$cc = get_field('pcolumn_count') ?: '3';
 
 	$gap = get_field('column_gap') ?: 'clamp(1.5rem, 8vw, 3rem)';
 	$rule = get_field('column_rule') ?: 'solid 1px';
-
-	$text_align = get_field('text_align') ?: 'left';
 	$cap_color = get_field('cap_color') ?: '#000';
+	$justify = get_field('justify_text');
+
+	if( $justify ) {
+		$justify_text = '--text-align: justify;';
+	}
+	else {
+		$justify_text = null;
+	}
 
 ?>
 
@@ -62,13 +68,9 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 	<section id="<?php echo $id; ?>" class="nctext<?php if($dropcap) { echo ' nctext-dropcap'; }; if($cc == '2' || $cc == '3' || $cc == '4') { echo' nctext-cols'; }; echo esc_attr($className); ?>">
 		<div class="ncontain" <?php echo nc_animate(); ?>>
 
-		<?php nc_before_content(); ?>
-
 			<div class="nctext_paragraphs nc_content_block_main">
 			<?php if($tcontent):?><?php echo $tcontent;?><?php else:?> 
-			<p>This is filler sample text. Add a block of text. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and 
-			supplies it with the necessary regelialia. It is a paradisematic country, in which 
-			roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control 
+			<p><b>This is filler sample text</b>. Start writing your own in the sidebar box. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control 
 			about the blind texts it is an almost unorthographic life One day however a small.</p>
 			<?php endif; ?>
 			</div>
@@ -82,11 +84,11 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php echo'#'.$id; ?>.nctext {
 		--column-gap: <?php echo $gap; ?>;
-		--column-count: <?php if($cc) { echo $cc; } else { echo '2'; }; ?>;
+		--column-count: <?php echo $cc; ?>;
 		--column-rule:<?php echo $rule; ?>;
-
-		--text-align: <?php echo $text_align; ?>;
-		--text-width: <?php echo $width.'px'; ?>;
+		--column-width: <?php echo $width; ?>;
+		--text-align: <?php echo $justify; ?>;
+		<?php echo $justify_text; ?>
 	}
 
 	<?php echo'#'.$id; ?>.nctext-dropcap .nctext_paragraphs > p:first-of-type:not(:focus)::first-letter {

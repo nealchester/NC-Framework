@@ -99,7 +99,7 @@
   transition:0.6s;
   }
   
-  .ncgallery_item:hover .ncgallery_image { transform: scale(1.2); }
+  .ncgallery_item:hover .ncgallery_image { transform: scale(1.1); }
   
   .ncolumns-mason .ncgallery_size {
   padding-top:0;

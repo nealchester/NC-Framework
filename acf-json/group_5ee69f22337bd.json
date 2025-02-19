@@ -22,7 +22,7 @@
         },
         {
             "key": "field_5ee69f226c6b5",
-            "label": "Text Slides",
+            "label": "Slides",
             "name": "slides",
             "aria-label": "",
             "type": "repeater",
@@ -42,13 +42,48 @@
                 "id": ""
             },
             "layout": "block",
-            "pagination": 0,
+            "pagination": 1,
+            "rows_per_page": 10,
             "min": 2,
             "max": 0,
             "collapsed": "",
             "button_label": "Add slide",
-            "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_67b52dbc80531",
+                    "label": "Background Image",
+                    "name": "bg_img",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67b5233d0829b",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_5ee69f226c6b5"
+                },
                 {
                     "key": "field_5ee69f228d4c1",
                     "label": "",
@@ -59,7 +94,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "90",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -72,6 +107,174 @@
                     "parent_repeater": "field_5ee69f226c6b5"
                 }
             ]
+        },
+        {
+            "key": "field_67b53907f8979",
+            "label": "Image Slider",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67b5233d0829b",
+            "label": "Enable Image Slider",
+            "name": "image_slider",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "This setting will enable you to add an image background and a text overlay to each slide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67b5370335634",
+            "label": "Image Size",
+            "name": "image_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b5233d0829b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "medium": "Medium",
+                "large": "Large",
+                "full": "Full"
+            },
+            "default_value": "large",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67b57a6a0aadd",
+            "label": "Slide Ratio",
+            "name": "slide_ratio",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b5233d0829b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "auto": "Auto",
+                "16\/7": "Panorama",
+                "16\/9": "Widescreen",
+                "4\/3": "Standard",
+                "2\/2": "Square",
+                "3\/4": "Tall"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67b53954f897a",
+            "label": "Overlay Color",
+            "name": "img_overlay_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b5233d0829b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgba(0,0,0, 0.5)",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67b539e3f897b",
+            "label": "Text Overlay Color",
+            "name": "slide_text_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b5233d0829b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_5ee6a64deb843",
@@ -106,21 +309,21 @@
                 "id": ""
             },
             "choices": {
-                "slide": "Slide",
                 "loop": "Loop",
                 "fade": "Fade"
             },
             "default_value": "loop",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
             "key": "field_5f0757cbef78c",
-            "label": "<b>Note<\/b>",
+            "label": "",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -140,7 +343,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "If you choose \"Fade,\" <i>Slides Per Page<\/i> must be set to 1 and <i>Gap Size<\/i> must be 0.",
+            "message": "Since you chose \"Fade,\" <b>Slides Per Page<\/b> must be set to <b>1<\/b> and <b>Gap Size<\/b> must be <b>0<\/b> to work properly.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -154,17 +357,18 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": 3,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": 1,
             "max": "",
-            "step": ""
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ee7bf42f933c",
@@ -176,17 +380,62 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": 1,
             "max": "",
-            "step": ""
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67b57edb00f67",
+            "label": "Center Slide",
+            "name": "center_slide",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ee7c4876e642",
+            "label": "Gap Size",
+            "name": "gap",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": 1,
+            "step": "",
+            "prepend": "",
+            "append": "rem"
         },
         {
             "key": "field_5ee7c8996dca2",
@@ -242,8 +491,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "yes",
+            "message": "",
             "default_value": 1,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -262,8 +512,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "yes",
+            "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -315,29 +566,8 @@
             "append": "ms"
         },
         {
-            "key": "field_5ee7c4876e642",
-            "label": "Gap Size",
-            "name": "gap",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "1rem",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "1.5em",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_5ee7c6df6e645",
-            "label": "Direction",
+            "label": "Sliding Direction",
             "name": "direction",
             "aria-label": "",
             "type": "select",
@@ -364,12 +594,38 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ee7c6c86e644",
-            "label": "Slide Height Ratio",
-            "name": "slide_height",
+            "key": "field_67b59ef14c38c",
+            "label": "Top to Bottom",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ee7c6df6e645",
+                        "operator": "==",
+                        "value": "ttb"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "You selected \"Top to Bottom.\" You must set a <b>height<\/b> to make this setting work.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_67b59cf549733",
+            "label": "Slider's Fixed Height",
+            "name": "slider_fixed_height",
             "aria-label": "",
             "type": "number",
-            "instructions": "",
+            "instructions": "This sets a fixed height for the entire slider NOT the individual slides.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -377,14 +633,14 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "0.3",
-            "min": 0,
-            "max": 2,
+            "default_value": "",
+            "min": "",
+            "max": "",
             "allow_in_bindings": 1,
-            "placeholder": "0.3",
-            "step": "0.1",
+            "placeholder": "",
+            "step": "0.5",
             "prepend": "",
-            "append": ""
+            "append": "rem"
         },
         {
             "key": "field_5ee7d6728b9e2",
@@ -403,24 +659,6 @@
             "open": 0,
             "multi_expand": 0,
             "endpoint": 0
-        },
-        {
-            "key": "field_5ee7d6938b9e3",
-            "label": "",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "At some point, your slider's content gets too narrow to display 3 or more slides at a time. You can set a width at which to want to show less slides at a time. You can also choose to hide the pagination and arrows.",
-            "new_lines": "wpautop",
-            "esc_html": 0
         },
         {
             "key": "field_5ee7c86a6dca1",
@@ -443,6 +681,37 @@
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_67b5888fbf83f",
+            "label": "Slide Ratio (mobile)",
+            "name": "slide_ratio_mobile",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "auto": "Auto",
+                "16\/7": "Panorama",
+                "16\/9": "Widescreen",
+                "4\/3": "Standard",
+                "2\/2": "Square",
+                "3\/4": "Tall"
+            },
+            "default_value": "4\/3",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5ee7c9646dca4",
@@ -521,8 +790,6 @@
                 "id": ""
             },
             "clone": [
-                "group_67ad4b9f88c22",
-                "group_67b0488eb5a0c",
                 "group_67ad4b91436c6"
             ],
             "display": "seamless",
@@ -549,5 +816,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739713649
+    "modified": 1739972531
 }

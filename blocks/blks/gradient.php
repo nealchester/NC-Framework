@@ -45,20 +45,26 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
 	
 	$position = get_field('image_position') ?: 'ncgradimg-left';
 	$breakpoint = get_field('break_point') ?: '1000';
+  $image = get_field('image');
+  
+  if($image){ $img = $image; }
+  else { $img = nc_fallbackimage(); };
 
 ?>
 
-<?php wp_enqueue_style('nc-blocks-gradient');?>
+<?php 
+wp_enqueue_style('nc-blocks-gradient'); ?>
 
 <div id="<?php echo $id; ?>" class="ncgradimg<?php echo ' '.$position.' '.esc_attr($className);?>" <?php echo nc_block_attr();?>>
-	<div class="ncgradimg_image" <?php echo nc_animate();?>>
-    <div class="ncgradimg_img"></div>
-  </div>
+
+  <div class="ncgradimg_image" <?php echo nc_animate().nc_contain_attr();?>></div>
+
 	<div class="ncontain ncgradimg_contain">
 		<div class="ncgradimg_content">
 			<?php echo nc_inner_blocks(); ?>
 		</div>
 	</div>
+
 </div>
 
 <style id="<?php echo $id; ?>-block-css">
@@ -70,16 +76,13 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
   --content-align: left;
   --content-padding: <?php echo get_field('padding') ?: '3rem'; ?>;
   --bgposition: <?php echo get_field('image_focus') ?: 'center center'; ?>;
-  --bgcolor: <?php echo hex2RGB( get_field('color'),true ); ?>;
+  --bgcolor: <?php echo hex2RGB( get_field('color'), true ); ?>;
   --textcolor: #fff;
   --blend-mode: <?php echo get_field('image_blend_mode') ?: 'normal'; ?>;
   --grad-width: <?php echo get_field('grad_width').'%' ?: '50'; ?>;
   --image-width: <?php echo get_field('image_width').'%' ?: '60'; ?>;
+  --bgimage: <?php echo 'url('.$img.')';?>;
 }
-
-<?php echo '#'.$id; ?> .ncgradimg_img {
-	background-image:url('<?php echo get_field('image') ?: nc_block_fallback_image(); ?>');
-} 
 
 @media(max-width:<?php if ($breakpoint) { echo $breakpoint.'px'; }; ?>){
 
@@ -88,7 +91,7 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
   }
   <?php echo '#'.$id; ?> .ncgradimg_content {
     max-width: 100%;
-    padding-top: 1rem;
+    padding-block: 1.5rem;
     min-height: 0;
   }
 
@@ -114,7 +117,7 @@ function nc_grad_block_markup( $block, $content = '', $is_preview = false ) {
     width: 100%;
     left: 0;
     top: auto;
-    bottom: 0;
+    bottom: -1px;
     background-image: 
       linear-gradient(
         to top, 

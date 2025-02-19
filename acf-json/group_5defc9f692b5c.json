@@ -3,9 +3,10 @@
     "title": "Block: NC Blank",
     "fields": [
         {
-            "key": "field_5defc9f69eff7",
-            "label": "Main",
+            "key": "field_67b43a5938830",
+            "label": "Content",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -21,8 +22,9 @@
         },
         {
             "key": "field_5defc9f69f04e",
-            "label": "Content",
+            "label": "",
             "name": "text_content",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -33,15 +35,17 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 0,
             "tabs": "all",
-            "toolbar": "full",
+            "toolbar": "basic",
             "media_upload": 1,
             "delay": 0
         },
         {
             "key": "field_5f0a5b6943c9b",
-            "label": "Box Settings",
-            "name": "box_settings",
+            "label": "extras",
+            "name": "extras",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -52,28 +56,8 @@
                 "id": ""
             },
             "clone": [
-                "group_5f0a295e1071c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_5e22239a5d281",
-            "label": "Custom Code",
-            "name": "custom_code",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b9f88c22",
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -98,5 +82,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636491299
+    "show_in_rest": 0,
+    "modified": 1739864697
 }

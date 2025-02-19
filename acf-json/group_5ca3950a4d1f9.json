@@ -175,50 +175,11 @@
             "return_format": "string"
         },
         {
-            "key": "field_67aa9be7afdf0",
-            "label": "Custom CSS",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_67aa9fdbb55d6",
-            "label": "Set ID",
-            "name": "set_id",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Style your block using a unique ID.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "prepend": "#",
-            "append": ""
-        },
-        {
             "key": "field_67aa9fe7b55d7",
-            "label": "",
-            "name": "custom_styles",
+            "label": "extras",
+            "name": "extras",
             "aria-label": "",
-            "type": "textarea",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -227,12 +188,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": 12,
-            "placeholder": "",
-            "new_lines": ""
+            "clone": [
+                "group_67ad4b91436c6"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -253,5 +215,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739236388
+    "modified": 1739864835
 }

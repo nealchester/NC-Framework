@@ -235,24 +235,17 @@ text-align:right;
 
 .txt-xxxlarge { font-size:var(--txt-xxxlarge) }
 
-.txt-xxlarge,
-.has-huge-font-size { font-size:var(--txt-xxlarge) }
+.txt-xxlarge { font-size:var(--txt-xxlarge) }
 
-.txt-xlarge,
-.has-larger-font-size { font-size:var(--txt-xlarge) }
+.txt-xlarge{ font-size:var(--txt-xlarge) }
 
-.txt-large,
-.has-large-font-size { font-size:var(--txt-large) }
+.txt-large { font-size:var(--txt-large) }
 
-.txt-medium,
-.has-medium-font-size { font-size:var(--txt-medium) }
+.txt-medium { font-size:var(--txt-medium) }
 
-.txt-base,
-.has-normal-font-size,
-.has-regular-font-size { font-size:var(--txt-base) }
+.txt-base { font-size:var(--txt-base) }
 
-.txt-small,
-.has-small-font-size { font-size: var(--txt-small) }
+.txt-small { font-size: var(--txt-small) }
 
 .txt-xsmall { font-size:var(--txt-xsmall) }
 
@@ -534,32 +527,4 @@ Must be applied to UL and OL elements */
 
 .no-balance { 
   text-wrap: auto; 
-}
-
-/* Overlay
-
-Add overlay and opacity to background images with no puesdo 
-element or additional elements. Credit to: Kevin Powell on 
-https://www.youtube.com/watch?v=NwnZU6mWJkk
-
-.hero {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-image: url(...);
-
-  aspect: 16/9;
-  width: 100%; 
-  display:flex;
-  alig-items:
-}
-*/
-
-.overlay {
-  border-images:
-    linear-gradient(
-      rgba(0,0,0,0.5), 
-      rgba(0,0,0,0.5)
-    )
-    fill 1;
 }

@@ -44,13 +44,15 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 	//ACF Block
 
 	$slider_id = uniqid("nc_splide_");
+	$img_size = get_field('image_size') ?: 'large';
+	$slide_aspect_ratio = get_field('slide_ratio') ?: '0';
+	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: '0';
 
 
 ?>
 
 	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain">
-			<?php nc_before_content(); ?>
+			<?php //nc_before_content(); ?>
 
 			<?php if( have_rows('slides') ): // start slides ?>
 			<div class="splide__wrap nc_content_block_main">
@@ -64,9 +66,13 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 							<?php 
 							$image = get_sub_field('bg_img');
 							if($image) { 
-									echo wp_get_attachment_image( $image, 'medium', '', array('class' => 'splide__img') ).'<div class="splide__padding"></div>'; 
-							} 
-							echo get_sub_field('slide');
+								echo wp_get_attachment_image($image, $img_size, '');
+								$img_class = ' splide__bgimg';
+							}
+							else {
+								$img_class = '';
+							}
+							echo '<div class="splide__content'.$img_class.'">'.get_sub_field('slide').'</div>';
 							?>
 						</div>
 
@@ -77,7 +83,6 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 			</div>
 			<?php endif; // end slides ?>
 
-		</div>
 	</div>
 
 <style id="<?php echo $id; ?>-block-css">
@@ -95,15 +100,10 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		justify-content:var(--slide-justify-content);
 	}
 
-.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__img,
-.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__padding  {
-	display:none
-}
-
-<?php echo '#'.$id; ?> .splide__padding {
-	width:100%;
-	padding-top:var(--slide-height);
-} 
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide > img {
+		object-fit: cover;
+		height:100%;
+	}
 
 <?php echo '#'.$id; ?> .splide__img {
 		position:absolute;
@@ -120,19 +120,90 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		position:relative;
   }
 	
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__img  {
+		height: 100% !important
+	}
+  
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
-		outline:solid 1px #eee;
+		position: relative;
+		margin-inline:auto;
+		max-width:600px;
 	}
+
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
+		position: relative;
+	}	
 
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide > :last-child {
 		margin-bottom:0;
 	}
 
-<?php nc_box_styles($id); ?>
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__plink {
+		pointer-events: none;
+		pointer: default;
+	}
+
+<?php // nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> {
 	overflow-x:hidden;
+
+	.splide__slide {
+		width: 100%;
+		aspect-ratio: <?php echo $slide_aspect_ratio;?>
+	}
+}
+
+	<?php echo '#'.$id; ?> .splide__content.splide__bgimg {
+		position:absolute;
+		inset:0;
+		display: flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content: center;
+		padding-inline:var(--gap);
+		text-align: center;
+		color: <?php echo get_field('slide_text_color') ?: '#ffffff';?>;;
+		z-index: 5;
+
+		& > * {
+			z-index: 6;
+			position: relative;
+			filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.5));
+		}
+
+		& > :last-child {
+			margin-bottom:0;
+		}
+	}
+
+	<?php if( get_field('type') == 'fade' && in_the_loop() ):?>
+	<?php echo '#'.$id; ?> .splide__slide .splide__content.splide__bgimg > * {
+		opacity:0;
+		transform:translateY(50px);
+		transition:1s;
+		transition-delay: 0.5s
+	}
+
+	<?php echo '#'.$id; ?> .splide__slide.is-active .splide__content.splide__bgimg > * {
+		transform:translateY(0);
+		opacity:1;
+	}
+	<?php endif;?>
+
+	<?php echo '#'.$id; ?> .splide__content.splide__bgimg:before {
+		content:'';
+		z-index: 2;
+		position:absolute;
+		inset:0;
+		background-color: <?php echo get_field('img_overlay_color') ?: 'rbga(0,0,0,0.3)';?>;
+	}
+
+@media(max-width:<?php echo get_field('break_width').'px' ?:'0'; ?>){
+<?php echo '#'.$id; ?> .splide__slide {
+		aspect-ratio: <?php echo $slide_aspect_ratio_mobile;?>
+	}
 }
 
 <?php nc_block_custom_css(); ?>
@@ -142,7 +213,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 <?php 
 
 // If in the loop load styles and javascript
-if( in_the_loop() ):?>
+if( in_the_loop() ): ?>
 
 <?php
 	wp_enqueue_style('nc-blocks-slider');
@@ -157,14 +228,16 @@ if( in_the_loop() ):?>
 		perMove: <?php the_field('per_move') ?: 3; ?>,
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
+		focus  : <?php if(get_field('center_slide')) { echo "'center'"; } else { echo '1';}; ?>,
 
-		speed: <?php the_field('speed') ?: 400; ?>,
-		interval: <?php the_field('pause') ?: 3000; ?>,
+		speed: <?php echo get_field('speed') ?: 400; ?>,
+		interval: <?php echo get_field('pause') ?: 3000; ?>,
 
-		gap: <?php if( get_field('gap') ) { echo "'".get_field('gap')."'"; } else { echo "'1rem'"; } ?>,
+		gap: '<?php echo get_field('gap').'rem' ?: '1' ?>',
+		
+		height: '<?php echo get_field('slider_fixed_height').'rem'; ?>',
 
-		fixedWidth: <?php if( get_field('slide_width') ) { echo "'".get_field('slide_width')."'"; } else { echo '0'; } ?>,
-		heightRatio: <?php if( get_field('slide_height') ) { echo "'".get_field('slide_height')."'"; } else { echo '0'; } ?>,
+		cover: <?php if ( get_field('image_slider') ) { echo 'true'; } else { echo 'false'; };?>,
 
 		direction: <?php if( get_field('direction') ) { echo "'".get_field('direction')."'"; } else { echo "'ltr'"; } ?>,
 
@@ -172,10 +245,10 @@ if( in_the_loop() ):?>
 		arrows: <?php if ( get_field('arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
 
 		breakpoints: {
-			<?php the_field('break_width') ?: 0; ?>: {
+			<?php echo get_field('break_width') ?: 0; ?>: {
 				perPage: <?php the_field('break_per_page') ?: 1; ?>,
 				pagination: <?php if( get_field('show_pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
-				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>
+				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
 			}
 		},
 
@@ -184,6 +257,5 @@ if( in_the_loop() ):?>
 </script>
 
 <?php endif; ?>
-<?php
-}
-?>
+
+<?php } ?>

@@ -45,18 +45,12 @@
   right: 0;
   top: 0;
   overflow: hidden;
-}
-
-.ncgradimg_img {
+  background-color: rgba(var(--bgcolor), 1);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: var(--bgposition);
-  background-color: rgba(var(--bgcolor), 1);
   background-blend-mode: var(--blend-mode);
-  position: absolute;
-  left:0;
-  inset: 0;
-  z-index: 3;
+  background-image: var(--bgimage);
 }
 
 .ncgradimg_image:before {

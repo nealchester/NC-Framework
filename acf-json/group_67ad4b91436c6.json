@@ -1,10 +1,10 @@
 {
     "key": "group_67ad4b91436c6",
-    "title": "Part: Custom",
+    "title": "Part: Custom Code",
     "fields": [
         {
             "key": "field_67ad4b91663fa",
-            "label": "Custom ID and CSS",
+            "label": "Custom Code",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -19,6 +19,24 @@
             "open": 0,
             "multi_expand": 0,
             "endpoint": 0
+        },
+        {
+            "key": "field_67b3eac166939",
+            "label": "Block ID",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_67ad4b9168368",
@@ -42,6 +60,24 @@
             "append": ""
         },
         {
+            "key": "field_67b3eae06693a",
+            "label": "CSS",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_67ad4b916a478",
             "label": "Custom CSS",
             "name": "custom_styles",
@@ -60,6 +96,45 @@
             "allow_in_bindings": 0,
             "rows": 12,
             "placeholder": "Add CSS here...",
+            "new_lines": ""
+        },
+        {
+            "key": "field_67b3eb1d6693b",
+            "label": "Attributes",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_67ad4e78c6c2b",
+            "label": "Add HTML attributes",
+            "name": "add_to_block",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 12,
+            "placeholder": "Enter HTML attributes here...",
             "new_lines": ""
         }
     ],
@@ -81,5 +156,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739441509
+    "modified": 1739866822
 }

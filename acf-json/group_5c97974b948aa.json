@@ -486,8 +486,8 @@
         },
         {
             "key": "field_67add365fa9db",
-            "label": "Additional Settings",
-            "name": "additional_stuff",
+            "label": "extras",
+            "name": "extras",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -501,8 +501,7 @@
             "clone": [
                 "group_67ad4b9f88c22",
                 "group_67b0488eb5a0c",
-                "group_67ad4b91436c6",
-                "group_67ad4e78a08c8"
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -528,5 +527,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739796351
+    "modified": 1739864889
 }

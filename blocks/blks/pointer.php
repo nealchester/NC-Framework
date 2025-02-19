@@ -37,9 +37,10 @@ function nc_pointer_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
-    <div id="<?php echo $id; ?>"></div>
+    <div class="ncpointer" id="<?php echo $id; ?>"></div>
 
     <style id="<?php echo $id; ?>-block-css">
+
     <?php echo '#'.$id; ?> { width:100%; position:relative; }
     <?php echo '#'.$id.':after'; ?> {
     --size: <?php echo $size.'px'; ?>; 
@@ -58,6 +59,4 @@ function nc_pointer_block_markup( $block, $content = '', $is_preview = false ) {
     }
     </style>
     
-    <?php
-}
-?>
+<?php } ?>

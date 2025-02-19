@@ -2,9 +2,9 @@
 
 /* Splide JS BLock */
 
-.splide{
-  --page-color:currentColor;
-  --page-color-current:var(--link-color, #006eae);
+.splide {
+  --page-color:var(--link-color, blue);
+  --page-color-current: #000;
   --page-align:center;
 
   --slide-padding: 0;
@@ -21,15 +21,13 @@
   }
 
   .splide__arrows{
-    position: absolute;
-    height: 100%;
+    position: static;
     width: 100%;
-
   }
   
   .splide__arrow {
     padding:0;
-    background: rgba(0,0,0,0.3);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3), transparent);
     border:none;
     cursor:pointer;
     display:flex;
@@ -39,7 +37,8 @@
     padding:0.1em;
     top:0;
     position:absolute;
-    height: calc(100% - calc(30px + 0.75rem) );
+    height: 100%;
+    /* height: calc(100% - calc(30px + 0.75rem) ); */
     /* .splide__pagination button (height) + .splide__pagination (margin-height) minus 100%  */
     color:var(--arrow-color);
     z-index:10;
@@ -72,8 +71,11 @@
   }
   
   .splide__arrow--prev {
-    transform:scale(-1);
     left:0;
+
+    svg {
+      transform:scale(-1);
+    }
   }
   
   .splide__arrow--next {
@@ -81,23 +83,32 @@
   }
   
   .splide__pagination{
-    padding-left:0;
-    width:100%;
+    width: 100%;
     display: flex;
     align-items: center;
+    gap: 0.7rem;
     justify-content: var(--page-align);
-    margin-top:0.75rem;
-    font-family: 'Arial', sans-serif;
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 0;
+    z-index: 12;
   }
   
   .splide__pagination li {
     margin-bottom: 0 !important;
   }
+
+  .splide__wrap:has(.splide__pagination) {
+    --pagin-button-height: 50px;
+    padding-bottom: var(--pagin-button-height);
+  }
   
   .splide__pagination button {
     width: 40px;
-    height: 30px;
-    padding:0;
+    height: var(--pagin-button-height);
+    padding-bottom: 0.5em;
     border:none;
     background:transparent;
     position: relative;
@@ -108,22 +119,22 @@
     cursor: pointer;
     font-family: sans-serif;
     color:currentColor;
-
-    padding-inline: 0.3em
   }
+
+
   
   .splide__pagination__page:after {
     content:'';
     font-size: 1rem;
     line-height: 0;
     display:block;
-    width:50px; height: 5px;
+    width:100%; height: 5px;
     background: var(--page-color);
     transition: 0.3s;
   }
   
   .splide__pagination__page.is-active:after {
-    color:var(--page-color-current);
+    background-color:var(--page-color-current);
     height: 7px;
   }
   

@@ -16,14 +16,11 @@ function my_acf_admin_head() { ?>
         font-family: 'Courier New', Courier, monospace;
         line-height: 1.2;
       }
-      .acf-field.acf-field-textarea[data-name="add_to_block"] textarea {
+      .acf-field.acf-field-textarea[data-name="add_to_block"] textarea,
+      .acf-field.acf-field-text[data-name="set_id"] input {
         background: #eee;
         font-family: 'Courier New', Courier, monospace;
         line-height: 1.2;
-      }
-      /* Remove the empty label and it's spacing */
-      .acf-field.acf-field-textarea[data-name="add_to_block"] .acf-label {
-        margin-bottom:0;
       }
 
       /* Remove the scroll bar from Tabs sections */

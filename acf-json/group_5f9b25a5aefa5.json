@@ -6,6 +6,7 @@
             "key": "field_5f9b25b025ca7",
             "label": "Size",
             "name": "size",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -27,6 +28,7 @@
             "key": "field_5f9b25bc25ca8",
             "label": "Color",
             "name": "color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -36,26 +38,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
-        },
-        {
-            "key": "field_5f9b397a8070e",
-            "label": "CSS ID",
-            "name": "set_id",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "#",
-            "append": "",
-            "maxlength": ""
+            "enable_opacity": false,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -75,5 +60,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426825
+    "show_in_rest": 0,
+    "modified": 1739866898
 }

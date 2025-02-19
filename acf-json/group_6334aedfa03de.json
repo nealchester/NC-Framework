@@ -37,9 +37,10 @@
             "default_value": 50,
             "min": 0,
             "max": 100,
+            "allow_in_bindings": 1,
             "step": "",
             "prepend": "",
-            "append": ""
+            "append": "%"
         },
         {
             "key": "field_6334b6a48211c",
@@ -180,9 +181,10 @@
             "default_value": 50,
             "min": 0,
             "max": 100,
-            "step": 10,
+            "allow_in_bindings": 1,
+            "step": 5,
             "prepend": "",
-            "append": ""
+            "append": "%"
         },
         {
             "key": "field_6334aedfb3ce4",
@@ -201,6 +203,28 @@
             "open": 0,
             "multi_expand": 0,
             "endpoint": 0
+        },
+        {
+            "key": "field_6334aedfbee0e",
+            "label": "Image Width",
+            "name": "image_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 60,
+            "min": 0,
+            "max": 100,
+            "allow_in_bindings": 1,
+            "step": 10,
+            "prepend": "",
+            "append": "%"
         },
         {
             "key": "field_6334aedfb766c",
@@ -274,27 +298,6 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_67b33448eb967",
-            "label": "Parallax Image",
-            "name": "parallax",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Parallax",
-            "default_value": 0,
-            "allow_in_bindings": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_6334b5227088f",
             "label": "Image Blend Mode",
             "name": "image_blend_mode",
@@ -331,27 +334,6 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
-        },
-        {
-            "key": "field_6334aedfbee0e",
-            "label": "Image Width",
-            "name": "image_width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 60,
-            "min": 0,
-            "max": 100,
-            "step": 10,
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_67b32f64bd7a4",
@@ -395,8 +377,8 @@
         },
         {
             "key": "field_6334aee009c7e",
-            "label": "Custom Code",
-            "name": "custom_code",
+            "label": "extras",
+            "name": "extras",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -434,5 +416,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739799042
+    "modified": 1739870356
 }
