@@ -24,17 +24,12 @@ body.attachment {
 }
 
 .attachment_back .btn {
-  background-color:#444;
-  padding:0.5em 0;
   width:100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .attachment_back .btn:before {
   content:'\e901';
-  font-family: 'ncicon';
+  font-family: 'ncicons';
   padding-right:0.5em;
   font-weight: normal;
   font-size:0.9em;
@@ -46,7 +41,6 @@ body.attachment {
 
 .attachment_link {
   font-size: var(--txt-small);
-  margin-top: -1.5em;
 }
 
 .attachment_link a {

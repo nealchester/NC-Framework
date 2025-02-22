@@ -194,6 +194,20 @@ function nc_block_image_focus($image) {
   
 }
 
+function nc_block_slider_image_focus($image) {
+
+    if( function_exists('get_field') && get_field("horizontal", $image) && get_field("vertical", $image) ){ 
+      
+      $img_focus = get_field("horizontal", $image).'% '.get_field("vertical", $image).'%';
+  
+      return $img_focus; 
+    }
+    else {
+      return '50% 50%';	
+    }
+  
+}
+
 // Block Posts Meta
 function nc_block_posts_meta(){
 

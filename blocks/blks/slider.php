@@ -4,25 +4,24 @@
 add_action('acf/init', 'nc_slider_block');
 function nc_slider_block() {
 
-        // register a items block
-        acf_register_block_type(array(
-            'name'              => 'nc_slider',
-            'title'             => __('NC Slider', 'nc-framework'),
-            'description'       => __('Slider', 'nc-framework'),
-            'render_callback'   => 'nc_slider_block_markup',
-            'category'          => 'layout',
-            //'icon'              => 'format-image',
-            'mode'              => 'preview',
-            'keywords'          => array('slider', 'sliders', 'slide' ),
-						'post_types'        => array('post', 'page'),
-						'align'             => 'full',
-						'supports'          => array( 
-								'align' => array( 'wide', 'full', 'none' ), 
-								'mode' => true,
-								'multiple' => true,
-								'jsx' => true,
-						),
-        ));
+	// register a items block
+	acf_register_block_type(array(
+		'name'              => 'nc_slider',
+		'title'             => __('NC Slider', 'nc-framework'),
+		'description'       => __('Slider', 'nc-framework'),
+		'render_callback'   => 'nc_slider_block_markup',
+		'category'          => 'layout',
+		//'icon'              => 'format-image',
+		'mode'              => 'preview',
+		'keywords'          => array('slider', 'sliders', 'slide' ),
+		'post_types'        => array('post', 'page'),
+		'align'             => 'full',
+		'supports'          => array( 
+				'align' => array( 'wide', 'full', 'none' ), 
+				'mode' => true,
+				'multiple' => true,
+		),
+	));
 }
 
 /* This displays the block */
@@ -43,11 +42,10 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		
 	//ACF Block
 
-	$slider_id = uniqid("nc_splide_");
-	$img_size = get_field('image_size') ?: 'large';
-	$slide_aspect_ratio = get_field('slide_ratio') ?: '0';
-	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: '0';
-
+	$slider_id = uniqid('nc_splide_');
+	$img_slider = get_field('image_slider');
+	$slide_aspect_ratio = get_field('slide_ratio') ?: '16/9';
+	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: '16/9';
 
 ?>
 
@@ -62,18 +60,42 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 						<div class="splide__list">
 						<?php $i = 1; while( have_rows('slides') ): the_row();?>
 
-						<div class="splide__slide <?php echo 'splide__'.$i; ?>">
-							<?php 
+						<?php 
+							$link2img = get_field('link_to_image'); 
+							$img_size = get_field('image_size') ?: 'large';
 							$image = get_sub_field('bg_img');
-							if($image) { 
-								echo wp_get_attachment_image($image, $img_size, '');
-								$img_class = ' splide__bgimg';
+							$slide = get_sub_field('slide');
+							$focal = ' background-position:'.nc_block_slider_image_focus($image).';';
+
+							if($img_slider && $image && $slide) {
+								$img_url = ' style="background-image:url('.wp_get_attachment_image_url($image, $img_size, '').');'.$focal.'"';
+								$img_bg = '<div class="splide__bg"'.$img_url.'></div>';
+								$img_content = '<div class="splide__content splide--has-image splide--has-text">'.$slide.'</div>';
 							}
-							else {
-								$img_class = '';
+							elseif($img_slider && $image) { 
+								$img_url = ' style="background-image:url('.wp_get_attachment_image_url($image, $img_size, '').');'.$focal.'"';
+								$img_bg = '<div class="splide__bg"'.$img_url.'></div>';
+								$img_content = '<div class="splide__content splide--has-image">'.$slide.'</div>';
 							}
-							echo '<div class="splide__content'.$img_class.'">'.get_sub_field('slide').'</div>';
-							?>
+							else { 
+								$img_url = null;
+								$img_bg = null;
+								$img_content = '<div class="splide__content">'.$slide.'</div>';
+							 }
+						?>
+
+						<div class="splide__slide <?php echo 'splide__'.$i; ?>">
+
+							<?php if($image && $link2img == 'image_page'):?><a class="splide__plink" aria-label="View larger" href="<?php echo get_attachment_link($image); ?>" target="_blank">
+
+							<?php else:?><?php endif;?>
+
+							<?php echo $img_bg;?>	
+							<?php echo $img_content;?>
+
+							<?php if($image && $link2img == 'image_page'):?></a>
+							<?php else:?><?php endif;?>
+
 						</div>
 
 						<?php $i++; endwhile; ?>
@@ -81,7 +103,11 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 					</div>
 				</div>
 			</div>
+			<?php else:?>
+
+				<p style="margin-inline:auto; max-width:600px; padding:3rem 1.5rem; background: #eee">There is no slide content, add some content using the sidebar panel.<p>
 			<?php endif; // end slides ?>
+
 
 	</div>
 
@@ -129,6 +155,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		position: relative;
 		margin-inline:auto;
 		max-width:600px;
+		background: #f2f2f2;
 	}
 
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
@@ -154,17 +181,27 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		aspect-ratio: <?php echo $slide_aspect_ratio;?>
 	}
 }
+<?php echo '#'.$id; ?> .splide__bg {
+		background-size: cover;
+		background-position: center;
+		background-repeat:no-repeat;
+		position:absolute;
+		inset:0;
+	}
 
-	<?php echo '#'.$id; ?> .splide__content.splide__bgimg {
+	<?php echo '#'.$id; ?> .splide__content {
+		padding-inline:var(--gap);
+	}
+
+	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text {
 		position:absolute;
 		inset:0;
 		display: flex;
 		flex-direction:column;
 		align-items:center;
 		justify-content: center;
-		padding-inline:var(--gap);
 		text-align: center;
-		color: <?php echo get_field('slide_text_color') ?: '#ffffff';?>;;
+		color: <?php echo get_field('slide_text_color') ?: '#ffffff';?>;
 		z-index: 5;
 
 		& > * {
@@ -179,20 +216,20 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 	}
 
 	<?php if( get_field('type') == 'fade' && in_the_loop() ):?>
-	<?php echo '#'.$id; ?> .splide__slide .splide__content.splide__bgimg > * {
+	<?php echo '#'.$id; ?> .splide__slide .splide__content.splide--has-image.splide--has-text > * {
 		opacity:0;
 		transform:translateY(50px);
 		transition:1s;
 		transition-delay: 0.5s
 	}
 
-	<?php echo '#'.$id; ?> .splide__slide.is-active .splide__content.splide__bgimg > * {
+	<?php echo '#'.$id; ?> .splide__slide.is-active .splide__content.splide--has-image.splide--has-text > * {
 		transform:translateY(0);
 		opacity:1;
 	}
 	<?php endif;?>
 
-	<?php echo '#'.$id; ?> .splide__content.splide__bgimg:before {
+	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text:before {
 		content:'';
 		z-index: 2;
 		position:absolute;
@@ -211,7 +248,6 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 </style>	
 
 <?php 
-
 // If in the loop load styles and javascript
 if( in_the_loop() ): ?>
 
@@ -229,15 +265,15 @@ if( in_the_loop() ): ?>
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
 		focus  : <?php if(get_field('center_slide')) { echo "'center'"; } else { echo '1';}; ?>,
+		trimSpace: false,
+		clones: 2,
 
 		speed: <?php echo get_field('speed') ?: 400; ?>,
 		interval: <?php echo get_field('pause') ?: 3000; ?>,
 
-		gap: '<?php echo get_field('gap').'rem' ?: '1' ?>',
+		gap: '<?php echo get_field('gap').'rem' ?: '1'; ?>',
 		
-		height: '<?php echo get_field('slider_fixed_height').'rem'; ?>',
-
-		cover: <?php if ( get_field('image_slider') ) { echo 'true'; } else { echo 'false'; };?>,
+		height: '<?php echo get_field('slider_fixed_height').'rem' ?: '0'; ?>',
 
 		direction: <?php if( get_field('direction') ) { echo "'".get_field('direction')."'"; } else { echo "'ltr'"; } ?>,
 
@@ -245,7 +281,7 @@ if( in_the_loop() ): ?>
 		arrows: <?php if ( get_field('arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
 
 		breakpoints: {
-			<?php echo get_field('break_width') ?: 0; ?>: {
+			<?php echo get_field('break_width') ?: '0'; ?>: {
 				perPage: <?php the_field('break_per_page') ?: 1; ?>,
 				pagination: <?php if( get_field('show_pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
 				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>,

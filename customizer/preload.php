@@ -49,7 +49,6 @@ $wp_customize->add_control(
       'label' => __('Select preload image 3','nc-framework'),
       'section' => 'preload_section',
       'settings' => 'preload_image3',
-      'multiple'   => true, 
     )
   ));
 
@@ -62,19 +61,21 @@ $preload_image1 = get_theme_mod( 'preload_image1' );
 $preload_image2 = get_theme_mod( 'preload_image2' );
 $preload_image3 = get_theme_mod( 'preload_image3' );
 
-if ( ! empty( $preload_image1 && is_front_page() ) ) {
+if ( $preload_image1 && is_front_page()) {
 echo '
 <link rel="preload" href="' . esc_url( $preload_image1 ) . '" as="image" />'; 
-}
-if ( ! empty( $preload_image2 && is_front_page() ) ) {
+} else { echo null; }
+
+if ( $preload_image2 && is_front_page()) {
 echo '
 <link rel="preload" href="' . esc_url( $preload_image2 ) . '" as="image" />'; 
-}
-if ( ! empty( $preload_image3 && is_front_page() ) ) {
+} else { echo null; }
+
+if ( $preload_image3 && is_front_page()) {
 echo '
 <link rel="preload" href="' . esc_url( $preload_image3 ) . '" as="image" />
 '; 
-}
+} else { echo null; }
 echo '
 
 ';

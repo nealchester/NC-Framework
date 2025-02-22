@@ -22,20 +22,13 @@
         },
         {
             "key": "field_5ee69f226c6b5",
-            "label": "Slides",
+            "label": "Slides and Images",
             "name": "slides",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ee69f228d4c1",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -148,42 +141,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_67b5370335634",
-            "label": "Image Size",
-            "name": "image_size",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_67b5233d0829b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "medium": "Medium",
-                "large": "Large",
-                "full": "Full"
-            },
-            "default_value": "large",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_67b57a6a0aadd",
             "label": "Slide Ratio",
             "name": "slide_ratio",
@@ -206,14 +163,13 @@
                 "id": ""
             },
             "choices": {
-                "auto": "Auto",
-                "16\/7": "Panorama",
+                "5\/2": "Panorama",
                 "16\/9": "Widescreen",
                 "4\/3": "Standard",
                 "2\/2": "Square",
                 "3\/4": "Tall"
             },
-            "default_value": false,
+            "default_value": "16\/9",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -275,6 +231,103 @@
             "enable_opacity": 0,
             "return_format": "string",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67b5370335634",
+            "label": "Image Size",
+            "name": "image_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "This setting allows you to load different sized images. Increase the size if the images seem blurry.  Usually you will not have to change this setting.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b5233d0829b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "medium": "Medium",
+                "large": "Large",
+                "full": "Full"
+            },
+            "default_value": "large",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67b9b16d896fb",
+            "label": "When you click an image...",
+            "name": "link_to_image",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b5233d0829b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image_page": "Show image on a new page",
+                "image_nothing": "Do nothing"
+            },
+            "default_value": "image_nothing",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67b9e641b9fbc",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b9b16d896fb",
+                        "operator": "==",
+                        "value": "image_page"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This option links images to their own pages. If you use the Yoast SEO plugin, there's an option to redirect these pages to the image address and not the page. It's usually on by default. You can toggle those options by going to: Yoast SEO > Search Appearance > Media",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_5ee6a64deb843",
@@ -692,13 +745,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "auto": "Auto",
-                "16\/7": "Panorama",
+                "5\/2": "Panorama",
                 "16\/9": "Widescreen",
                 "4\/3": "Standard",
                 "2\/2": "Square",
@@ -715,7 +767,7 @@
         },
         {
             "key": "field_5ee7c9646dca4",
-            "label": "Slides Per Page",
+            "label": "Slides Per Page (mobile)",
             "name": "break_per_page",
             "aria-label": "",
             "type": "number",
@@ -723,17 +775,18 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": "",
             "max": "",
-            "step": ""
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ee7cab66dca5",
@@ -745,12 +798,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -765,12 +819,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "message": "",
-            "default_value": 0,
+            "default_value": 1,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -816,5 +871,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739972531
+    "modified": 1740237303
 }

@@ -528,3 +528,20 @@ Must be applied to UL and OL elements */
 .no-balance { 
   text-wrap: auto; 
 }
+
+/* Auto Grid Columns */
+
+.grid-auto-columns {
+  /* 
+  --width-columns: 250px;
+  --gap: 1rem; 
+  */
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 
+    repeat( auto-fit, 
+      minmax( 
+        min( var(--width-columns, 250px), 100%), 1fr
+      )
+    );
+}

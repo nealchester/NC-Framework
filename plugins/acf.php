@@ -31,6 +31,36 @@ function my_acf_admin_head() { ?>
       .acf-block-panel .acf-block-fields .acf-tab-wrap {
         background: #f9f9f9;
       }
+
+
+
+      .acf-input-wrap :is(input, textarea)::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: var(--placeholder-color, inherit);
+      font-style: var(--placeholder-font-style, normal);
+      opacity: var(--placeholder-opacity, 0.5);
+      }
+
+      .acf-input-wrap :is(input, textarea)::-moz-placeholder {
+      /* Firefox 19+ */
+      color: var(--placeholder-color, inherit);
+      font-style: var(--placeholder-font-style, normal);
+      opacity: var(--placeholder-opacity, 0.5);
+      }
+
+      .acf-input-wrap :is(input, textarea):-ms-input-placeholder {
+      /* IE 10+ */
+      color: var(--placeholder-color, inherit);
+      font-style: var(--placeholder-font-style, normal);
+      opacity: var(--placeholder-opacity, 0.5);
+      }
+
+      .acf-input-wrap :is(input, textarea):-moz-placeholder {
+      /* Firefox 18- */
+      color: var(--placeholder-color, inherit);
+      font-style: var(--placeholder-font-style, normal);
+      opacity: var(--placeholder-opacity, 0.5);
+      }
       
 
       /* Editor Sidebar */
