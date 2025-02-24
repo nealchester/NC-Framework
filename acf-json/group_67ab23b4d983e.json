@@ -1,6 +1,6 @@
 {
     "key": "group_67ab23b4d983e",
-    "title": "Block: Search Box",
+    "title": "Block: NC Search Box",
     "fields": [
         {
             "key": "field_67ab30927eb31",
@@ -82,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739866427
+    "modified": 1740399859
 }

@@ -48,7 +48,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 	$image_mobile = get_field('image_mobile');
 	$media_query = get_field('media_query');
 	$parallax = get_field('parallax');
-	$focus = get_field('image_focus') ?: '50% 50%';
+	$focus = nc_block_focal();
 	$focus_mobile = get_field('image_focus_mobile') ?: '50% 50%';
 	$o_opacity = get_field('overlay_opacity') ?: '0.5';
 	$o_color = get_field('overlay_color') ?: '#000';
@@ -85,7 +85,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php endif;?>
 
 		<div class="ncontain">
-			<div class="nchero_content<?php echo nc_contain_classes(); ?>" <?php echo nc_animate().nc_contain_attr();?>>
+			<div class="nchero_content">
 				<?php echo nc_inner_blocks(); ?>
 			</div>
 		</div>

@@ -60,10 +60,9 @@
   }
   
   .splide__arrow:disabled {
-    opacity: 0.3;
+    opacity: 0 !important;
     pointer-events: none;
     cursor: default;
-  
   }
   
   .splide__arrow svg path {

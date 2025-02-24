@@ -101,7 +101,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 
 	</div>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php echo '#'.$id; ?> .splide__slide {
     padding:var(--slide-padding);
@@ -246,17 +246,18 @@ if( in_the_loop() ): ?>
 	wp_enqueue_script('nc-blocks-slider');
 ?>
 
-<script>
+<script id="<?php echo $id; ?>-js">
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide( '<?php echo '#'.$slider_id; ?>', {
-		type   : '<?php echo get_field('type') ?: slide; ?>',
+		type   : '<?php echo get_field('type') ?: loop; ?>',
 		perPage: <?php the_field('per_page') ?: 3; ?>,
 		perMove: <?php the_field('per_move') ?: 3; ?>,
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
 		focus  : <?php if(get_field('center_slide')) { echo "'center'"; } else { echo '1';}; ?>,
 		trimSpace: false,
-		clones: 2,
+		clones: 4,
+		cloneStatus: true,
 
 		speed: <?php echo get_field('speed') ?: 400; ?>,
 		interval: <?php echo get_field('pause') ?: 3000; ?>,
@@ -267,6 +268,9 @@ if( in_the_loop() ): ?>
 
 		direction: <?php if( get_field('direction') ) { echo "'".get_field('direction')."'"; } else { echo "'ltr'"; } ?>,
 
+		<?php $fixw = get_field('fixed_slide_width');
+		if($fixw) { echo "fixedWidth: '".$fixw."',"; } else { echo null; } ?>
+
 		pagination: <?php if( get_field('pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
 		arrows: <?php if ( get_field('arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
 
@@ -275,6 +279,10 @@ if( in_the_loop() ): ?>
 				perPage: <?php the_field('break_per_page') ?: 1; ?>,
 				pagination: <?php if( get_field('show_pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
 				arrows: <?php if( get_field('show_arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
+				focus: <?php if(get_field('center_slide_mobile')) { echo "'center'"; } else { echo '1';}; ?>,
+				
+				<?php $fixwm = get_field('fixed_slide_width_mobile');
+				if($fixwm) { echo "fixedWidth: '".$fixwm."',"; } else { echo null; } ?>
 			}
 		},
 

@@ -208,6 +208,20 @@ function nc_block_slider_image_focus($image) {
   
 }
 
+function nc_block_focal() {
+
+    if( function_exists('get_field') && get_field("horizontal") && get_field("vertical") ){ 
+      
+      $img_focus = get_field("horizontal").'% '.get_field("vertical").'%';
+  
+      return $img_focus; 
+    }
+    else {
+      return '50% 50%';	
+    }
+  
+}
+
 // Block Posts Meta
 function nc_block_posts_meta(){
 

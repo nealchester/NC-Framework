@@ -45,7 +45,6 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
   $select_links = get_field('select_links', false, false);
   $truncate = get_field('tuncate_char_limit') ?: '100';
 	$content = get_field('display_content');
-	$hd = get_field('heading') ?: 'h3';
 	$mobile = get_field('mobile') ?: '600';
 	$choose = get_field('choose') /* write or post */;
 	$collapse = get_field('collapse');

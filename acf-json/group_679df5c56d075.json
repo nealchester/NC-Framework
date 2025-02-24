@@ -65,42 +65,6 @@
             "step": 5,
             "prepend": "",
             "append": "%"
-        },
-        {
-            "key": "field_679ef87d66933",
-            "label": "Show instructions",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_679e2d1382b5f",
-            "label": "",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "By default the area focuses on the center of the image. To adjust this, change the values above.\r\n\r\n<i>Horizontal focus (left to right)<\/i>. Example: entering 50% would place the focus in the center of the image.\r\n\r\n<i>Vertical focus (top to bottom)<\/i>. Example: entering 100% would place the focus at the bottom edge of the image.",
-            "new_lines": "wpautop",
-            "esc_html": 0
         }
     ],
     "location": [
@@ -121,5 +85,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1739606988
+    "modified": 1740399508
 }

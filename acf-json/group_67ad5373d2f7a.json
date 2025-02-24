@@ -1,6 +1,6 @@
 {
     "key": "group_67ad5373d2f7a",
-    "title": "Featured Image Focus",
+    "title": "Image Focal Point",
     "fields": [
         {
             "key": "field_67ad53c8fed64",
@@ -18,8 +18,7 @@
             },
             "clone": [
                 "field_679e2de582b60",
-                "field_679e2e8882b61",
-                "field_679e2d1382b5f"
+                "field_679e2e8882b61"
             ],
             "display": "seamless",
             "layout": "block",
@@ -59,5 +58,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1739416654
+    "modified": 1740400340
 }

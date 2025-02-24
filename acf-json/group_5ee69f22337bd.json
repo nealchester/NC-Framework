@@ -302,7 +302,8 @@
             },
             "choices": {
                 "loop": "Loop",
-                "fade": "Fade"
+                "fade": "Fade",
+                "slide": "Slide"
             },
             "default_value": "loop",
             "return_format": "value",
@@ -386,11 +387,11 @@
             "append": ""
         },
         {
-            "key": "field_67b57edb00f67",
-            "label": "Center Slide",
-            "name": "center_slide",
+            "key": "field_5ee7c2f713f51",
+            "label": "Transition Speed",
+            "name": "speed",
             "aria-label": "",
-            "type": "true_false",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -399,12 +400,58 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Yes",
-            "default_value": 0,
+            "default_value": 400,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": 100,
+            "prepend": "",
+            "append": "ms"
+        },
+        {
+            "key": "field_5ee7c37513f52",
+            "label": "Interval (pause)",
+            "name": "pause",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3000,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": 100,
+            "prepend": "",
+            "append": "ms"
+        },
+        {
+            "key": "field_67bc721678b4a",
+            "label": "Slide Width",
+            "name": "fixed_slide_width",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ee7c4876e642",
@@ -512,50 +559,25 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ee7c2f713f51",
-            "label": "Transition Speed",
-            "name": "speed",
+            "key": "field_67b57edb00f67",
+            "label": "Center Slide",
+            "name": "center_slide",
             "aria-label": "",
-            "type": "number",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": 400,
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "step": 100,
-            "prepend": "",
-            "append": "ms"
-        },
-        {
-            "key": "field_5ee7c37513f52",
-            "label": "Interval",
-            "name": "pause",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 3000,
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "step": 100,
-            "prepend": "",
-            "append": "ms"
+            "message": "Yes",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5ee7c6df6e645",
@@ -619,7 +641,15 @@
             "type": "number",
             "instructions": "This sets a fixed height for the entire slider NOT the individual slides.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ee7c6df6e645",
+                        "operator": "==",
+                        "value": "ttb"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -710,7 +740,7 @@
             "name": "break_per_page",
             "aria-label": "",
             "type": "number",
-            "instructions": "On break point",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -724,6 +754,48 @@
             "allow_in_bindings": 1,
             "placeholder": "",
             "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67bc6e6478b49",
+            "label": "Center Slide (mobile)",
+            "name": "center_slide_mobile",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67bc725678b4b",
+            "label": "Slide Width (mobile)",
+            "name": "fixed_slide_width_mobile",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "250px",
             "prepend": "",
             "append": ""
         },
@@ -810,5 +882,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740386576
+    "modified": 1740405037
 }

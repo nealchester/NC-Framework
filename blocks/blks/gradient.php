@@ -75,7 +75,7 @@ wp_enqueue_style('nc-blocks-gradient'); ?>
   --content-width: <?php echo get_field('content_width') ?: '50'; ?>%;
   --content-align: left;
   --content-padding: <?php echo get_field('padding') ?: '3rem'; ?>;
-  --bgposition: <?php echo get_field('image_focus') ?: 'center center'; ?>;
+  --bgposition: <?php echo nc_block_focal();?>;
   --bgcolor: <?php echo hex2RGB( get_field('color'), true ); ?>;
   --textcolor: #fff;
   --blend-mode: <?php echo get_field('image_blend_mode') ?: 'normal'; ?>;

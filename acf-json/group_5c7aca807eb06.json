@@ -50,7 +50,7 @@
             "label": "Image Focus",
             "name": "image_focus",
             "aria-label": "",
-            "type": "text",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -59,12 +59,14 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "50% 50%",
-            "maxlength": 9,
-            "allow_in_bindings": 1,
-            "placeholder": "50% 50%",
-            "prepend": "",
-            "append": ""
+            "clone": [
+                "field_679e2de582b60",
+                "field_679e2e8882b61"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_5e0ce73a21bca",
@@ -531,5 +533,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739612689
+    "modified": 1740398614
 }
