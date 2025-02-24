@@ -21,6 +21,10 @@ get_template_part('functions/acf-json');
 get_template_part('functions/add-theme-support');
 
 
+// Add theme support for various things
+get_template_part('functions/image-meta');
+
+
 // Image Focus Function
 get_template_part('functions/image-focus');
 

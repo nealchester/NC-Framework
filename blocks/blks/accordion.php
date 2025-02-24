@@ -144,6 +144,13 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 
 <style id="<?php echo $id; ?>-block-css">
 
+<?php echo '#'.$id; ?> .nccordion {
+  --acc-border-color: <?php echo get_field('acc_border_color') ?: '#aaa';?>;
+  --acc-bg-color: <?php echo get_field('acc_bg_color') ?: '#fff';?>;
+  --acc-border-radius: <?php echo get_field('acc_border_radius').'px' ?: '0';?>;
+  --acc-text-color: <?php echo get_field('acc_text_color') ?: 'currentColor';?>;
+}
+
 <?php nc_box_styles($id); ?>
 
 <?php nc_block_custom_css(); ?>

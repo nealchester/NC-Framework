@@ -32,23 +32,35 @@
   --box-bg-color:none;
   --box-text-color:inherit;
   --box-padding: 3em 0;
+
   background-color:var(--box-bg-color);
   color:var(--box-text-color);
   padding:var(--box-padding);
 }
 
+
+.nccordion {
+  --acc-border-color: #aaa;
+  --acc-bg-color: #fff;
+  --acc-border-radius: 0px;
+  --acc-text-color: currentColor;
+}
+
 .nccordion_details {
-  border:solid 1px #ddd;
-  background-color: #fff;
+  border: solid 1px var(--acc-border-color, #aaa);
+  background-color: var(--acc-bg-color, #fff);
+  border-radius: var(--acc-border-radius, 0px);
+  color: var(--acc-text-color, currentColor);
+  overflow:hidden;
 }
 
 .nccordion_details:not(:last-child) {
   margin-bottom: calc( var(--gap) / 2);
 }
 
-.nccordion_header { 
-  cursor:pointer; 
-  padding:0.75em 2em;
+.nccordion_header {
+  cursor:pointer;
+  padding: 0.75em 2em 0.75em 1.5em;
   margin-bottom:0;
   position:relative;
   display: flex;
@@ -61,30 +73,27 @@
 }
 
 .nccordion_header:before {
-    content: '\e902';
+    content: '\e903';
     font-family: 'ncicons';
-    transform:rotate(0deg);
-    transition:0.3s;
+    transform: rotate(45deg);
+    transition:0.1s;
     line-height: normal;
-    margin:0.5em;
+    padding:0.5rem;
     position: absolute;
-    left:0.75rem;
-    font-size:0.7em;
+    right: 1rem;
+    top:1em;
+    font-size:0.6em;
 }
 
 .nccordion_details[open] .nccordion_header:before {
-  transform: rotate(90deg)
+  transform: rotate(0deg);
 }
 
 .nccordion_content {
-  padding: 0 2em var(--gap);
+  padding: 0 1.5rem var(--gap);
+  background-color: var(--acc-bg-color, #fff);
 }
 
 .nccordion_content :last-child {
   margin-bottom: 0;
-}
-
-.nccordion_rmore {
-  border-bottom:solid 1px #ccc;
-  font-weight: 500;
 }
