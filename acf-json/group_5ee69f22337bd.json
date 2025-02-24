@@ -269,67 +269,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_67b9b16d896fb",
-            "label": "When you click an image...",
-            "name": "link_to_image",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_67b5233d0829b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "image_page": "Show image on a new page",
-                "image_nothing": "Do nothing"
-            },
-            "default_value": "image_nothing",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_67b9e641b9fbc",
-            "label": "",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_67b9b16d896fb",
-                        "operator": "==",
-                        "value": "image_page"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "This option links images to their own pages. If you use the Yoast SEO plugin, there's an option to redirect these pages to the image address and not the page. It's usually on by default. You can toggle those options by going to: Yoast SEO > Search Appearance > Media",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
             "key": "field_5ee6a64deb843",
             "label": "Options",
             "name": "",
@@ -871,5 +810,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740237303
+    "modified": 1740386576
 }

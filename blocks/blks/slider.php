@@ -61,7 +61,6 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 						<?php $i = 1; while( have_rows('slides') ): the_row();?>
 
 						<?php 
-							$link2img = get_field('link_to_image'); 
 							$img_size = get_field('image_size') ?: 'large';
 							$image = get_sub_field('bg_img');
 							$slide = get_sub_field('slide');
@@ -85,17 +84,8 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 						?>
 
 						<div class="splide__slide <?php echo 'splide__'.$i; ?>">
-
-							<?php if($image && $link2img == 'image_page'):?><a class="splide__plink" aria-label="View larger" href="<?php echo get_attachment_link($image); ?>" target="_blank">
-
-							<?php else:?><?php endif;?>
-
 							<?php echo $img_bg;?>	
 							<?php echo $img_content;?>
-
-							<?php if($image && $link2img == 'image_page'):?></a>
-							<?php else:?><?php endif;?>
-
 						</div>
 
 						<?php $i++; endwhile; ?>
