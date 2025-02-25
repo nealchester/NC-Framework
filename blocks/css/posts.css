@@ -1,127 +1,120 @@
 /* NC Card 
 
 <div class="ncard">
-<a class="ncard_link" href="#">
-  <div class="ncard_container">
-    <div class="ncard_image">
-      <div class="ncard_imgcon">
-        <img class="ncard_img" src="" alt="" />
-      </div>
+    <div class="ncard_imgcon">
+      <img class="ncard_img" src="" alt="" />
     </div>
+
     <div class="ncard_text">
-      <!-- Everything in here is up to the creator -->
       <b class="ncard_pretext">Read Next &rarr;</b>
       <div class="ncard_title">Is God mad at you for not going to church?</div>
-      <!-- end creative HTML -->
     </div>
-  </div>
-</a>
+
+    <a class="ncard_link" href="#"></a>
+
 </div>
 
 
 */
 
+
 .ncard {
-  --card-padding:0;
-  --card-margin-bottom: 0;
-  --card-bg-color:#fff;
-  --card-bg-color-hover:#fff;
-  --card-flex-direction:row;
-  --card-border: solid 1px #ddd;
-  --card-border-hover: solid 1px #aaa;
-  --card-bshadow: none;
+  --card-radius: var(--radius);
+  --card-padding: 1em;
+  --card-bcolor: #aaa;
+  --card-bgcolor: #fff;
+  --card-txtcolor: #000;
+  --card-direction: column;
+  --card-img-ratio: 16/9;
+  --card-img-width: 100%;
+  --card-transition: 1s;
   
-  --image-width:30%;
-  --image-height:70%;
-  --text-padding:1em;
-  
-  --border-radius: 5px;
-  --pretext-color:currentColor;
-  
-  --text-size:1em;
-  --text-color: #000;
-  --text-color-hover: #000;
-  
-  --trans-speed:0.3s ease-in-out;
-  
+  --card-bgcolor-hover: var(--card-bgcolor);
+  --card-txtcolor-hover: var(--card-txtcolor);
+  --card-bcolor-hover: #000;
   }
   
   .ncard { 
-    width:100%; 
-    max-width:100%; 
-    position:relative; 
-    margin-bottom:var(--card-margin-bottom);
-   }
+    display:flex;
+    flex-direction: var(--card-direction);
+    position:relative;
+    border:solid 1px var(--card-bcolor);
+    border-radius: var(--card-radius);
+    background-color: var(--card-bgcolor);
+    color: var(--card-txtcolor);
+    transition: var(--card-transition);
+    transition-property: background-color, color;
+    overflow:hidden;
+  }
   
   .ncard_link {
-  text-decoration:none;
-  color:inherit;
-  display:block;
-  }
-  
-  .ncard_container {
-  display:flex;
-  position:relative;
-  background:var(--card-bg-color);
-  padding:var(--card-padding);
-  flex-direction:var(--card-flex-direction);
-  border:var(--card-border);
-  box-shadow:var(--card-bshadow);
-  transition:var(--trans-speed);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  }
-  
-  .ncard:hover .ncard_container {
-  background:var(--card-bg-color-hover);
-  border:var(--card-border-hover);
-  }
-  
-  .ncard_image {
-  flex-basis:var(--image-width);
-  min-width:var(--image-width);
-  overflow:hidden;
-  background-color: #eee;
+    position:absolute;
+    inset:0;
+    display:block;
   }
   
   .ncard_imgcon {
-    padding-top:var(--image-height);
-    width:100%;
-    height:var(--image-height);
-    min-height:100%;
-    display:block;
+    aspect-ratio: var(--card-img-ratio);
+    max-width: var(--card-img-width);
+    min-width: var(--card-img-width);
+    width: 100%;
+    overflow: hidden;
     position:relative;
   }
   
   .ncard_img {
     position:absolute;
     object-fit:cover;
-    top:0; left:0;
+    inset:0;
+    width: 100%;
+    height: 100%;
     display:block;
-    width:100%;
-    height:100%;
     transform:scale(1);
-    transition:var(--trans-speed);
-  }
-  
-  .ncard:hover .ncard_img {
-    transform:scale(1.2);
+    transition:var(--card-transition);
   }
   
   .ncard_text {
-  display:flex;
-  flex-grow:1;
-  flex-direction:column;
-  justify-content:center;
-  font-size:var(--text-size);
-  color:var(--text-color);
-  padding:var(--text-padding);
-  transition:var(--trans-speed);
-  min-width: 0; /* This is needed if you use truncated content within a flexbox */
+    display:flex;
+    gap: 0.5rem;
+    flex-grow:1;
+    flex-direction:column;
+    padding: var(--card-padding);
+    min-width: 0; /* This is needed if you use truncated content within a flexbox */
+
+    > :not(.ncard_title) {
+      font-size: var(--txt-small)
+    }
+  }
+
+  .ncard_title { 
+    font-weight:bold; 
+    line-height: normal;
+  }
+
+  .ncard_readmore { 
+    text-decoration: underline;
   }
   
-  .ncard:hover .ncard_text {
-  color:var(--text-color-hover);
+  .ncard:hover {
+    background-color: var(--card-bgcolor-hover);
+    color: var(--card-txtcolor-hover);
+    border-color: var(--card-bcolor-hover);
+  
+      .ncard_img {
+        transform:scale(1.1);
+      }
+  
+  }
+  
+  .ncard:has( :is(.ncard_link:active, .ncard_link:focus) ) {
+    border-color: var(--card-bcolor-hover);
+    box-shadow: var(--shadows)
+  }
+  
+  .ncard:has( :is(.ncard_link:active, .ncard_link:focus) ) {
+    .ncard_img {
+      transform:scale(1.1);
+    }
   }
   
   /* NC Card box */
@@ -149,20 +142,22 @@
   
   /* ----------------- Single Link --------------- */
   
-  
-  .ncard-singlelink { 
-    margin-bottom:var(--gap); 
-    max-width: var(--width-standard);
-    width: calc(100% - 2 * var(--gap));
+  .ncard-singlelink .ncard_title { 
+    white-space: normal; 
+    line-height: normal; 
   }
-  
-  .ncard-singlelink .ncard_posttext { margin-top: 0.5rem; }
-  
-  .ncard-singlelink .ncard_title { white-space: normal; line-height: 1.3; }
-  .ncard-singlelink .ncard_title strong { font-weight:600; color:var(--pretext-color); }
-  .ncard-singlelink .ncard_url { 
-    font-size: 0.5em; display:block; overflow:hidden; white-space: nowrap;  text-overflow: ellipsis; 
-    margin-bottom: 0.5rem;
+
+  .ncard-singlelink .ncard_title strong {
+    font-weight: bold; color:var(--pretext-color);
+  }
+
+  .ncard-singlelink .ncard_url {
+    font-size: var(--txt-xsmall);
+    display:block;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
     text-transform: uppercase;
     opacity: 0.8;
     letter-spacing: 1px;
@@ -170,37 +165,3 @@
     min-width: 0;
     width: 100%
   }
-  
-  .ncard-singlelink .ncard_url svg {
-    height: 1em;
-    display: inline-block;
-    margin-right: 0.3em;
-  }
-  
-  .ncard-singlelink .ncard_url svg path{
-    fill: currentColor
-  }
-  
-  .ncard-singlelink .ncard-noimage {
-    background-color: #eee;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23fff" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg>');
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size: 30% auto;
-  }
-  
-  /* ------- Responsive ------- 
-  
-  @media(max-width:430px){
-  
-  .ncard {
-    --card-flex-direction:column;
-    --image-width:30%;
-    --image-height:40%;
-    --text-size:0.8em;
-    --text-padding:1em;
-  }
-  
-  }
-  
-  */

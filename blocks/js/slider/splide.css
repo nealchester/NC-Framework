@@ -134,7 +134,7 @@
   
   .splide__pagination__page.is-active:after {
     background-color:var(--page-color-current);
-    height: 7px;
+    height: 10px;
   }
   
   .splide__slide > :last-child {

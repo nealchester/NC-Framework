@@ -7,14 +7,6 @@
 --gap: 1.5rem; 
 --gapn: -1.5rem; 
 
-/* Univeral dynamic block padding */
-
---max-spacing: 4rem;
---min-spacing: calc( var(--max-spacing) / 2.3 );
---idea-spacing: 8vw;
-
-/* padding-block: clamp( var(--min-spacing), var(--idea-spacing), var(--max-spacing) ); */
-
 /* Block content widths */
 
 --width-standard:800px;

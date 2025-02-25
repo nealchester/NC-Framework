@@ -86,80 +86,82 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php nc_before_content(); ?>
 			
 			<?php if ($link_type =='selected') { 
-				$args = array(
-				'post_type' => 'any',
-				'posts_per_page' => -1,
-				'post__in' => $select_links,
-				'post_status' => 'publish',
-				'orderby' => 'post__in',
-				'ignore_sticky_posts' => true
-				);
-			}
+					$args = array(
+					'post_type' => 'any',
+					'posts_per_page' => -1,
+					'post__in' => $select_links,
+					'post_status' => 'publish',
+					'orderby' => 'post__in',
+					'ignore_sticky_posts' => true
+					);
+				}
 
-			else {
-				$args = array(
-				'post_type' => $ptype,
-				'post_status' => 'publish',
-				'posts_per_page' => $amount,
-				'offset' => $offset,
-				'ignore_sticky_posts' => true
-				);
-			}
+				else {
+					$args = array(
+					'post_type' => $ptype,
+					'post_status' => 'publish',
+					'posts_per_page' => $amount,
+					'offset' => $offset,
+					'ignore_sticky_posts' => true
+					);
+				}
 			?>
 
 			<?php $querylatest = new WP_Query($args); if ( $querylatest->have_posts() ) : ?>
 
 			<?php $total_items = $querylatest->found_posts; 
-			$size = get_field('image_size');
-			$i = 1;
+				$size = get_field('image_size');
+				$i = 1;
 			?>
 
 			<div class="ncolumns nc_content_block_main<?php echo ' '.$cstyle.' '.$clayout.' '.$breaklayout.' ncolumns_total-'.$total_items;?>">
 			<?php while ( $querylatest->have_posts() ) : $querylatest->the_post();?>
+
 				<div <?php post_class('ncard ncard-'.$i++); ?>>
-					<a class="ncard_link" href="<?php echo get_permalink(); ?>">
-						<div class="ncard_container">
-							<?php if($showthumb):?>
-							<div class="ncard_image">
-								<?php if(get_the_post_thumbnail(get_the_ID())):?>
-								<div class="ncard_imgcon">
-								<?php echo get_the_post_thumbnail( get_the_ID(), $size, array( "class" => "ncard_img", "style" => nc_block_image_focus(get_the_ID()) ) ); ?>
-								</div>
-								<?php else:?>
-								<div class="ncard_imgcon">
-								<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
-								</div>	
-								<?php endif; ?>
-							</div>
-							<?php endif;?>
-							<div class="ncard_text">
-								<?php 
-								do_action('nc_extend_posts_block_meta_before');
-								nc_block_posts_meta(); 
-								do_action('nc_extend_posts_block_meta_after');
-								?>
-							</div>
+			
+					<?php if( $showthumb && get_the_post_thumbnail(get_the_ID()) ):?>
+
+						<div class="ncard_imgcon">
+							<?php echo get_the_post_thumbnail( get_the_ID(), $size, array( "class" => "ncard_img", "style" => nc_block_image_focus(get_the_ID()) ) ); ?>
 						</div>
-					</a>
-				</div>
+
+						<?php else:?>
+
+						<div class="ncard_imgcon">
+							<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
+						</div>
+
+					<?php endif;?>
+
+					<div class="ncard_text">
+						<?php 
+						do_action('nc_extend_posts_block_meta_before');
+						nc_block_posts_meta(); 
+						do_action('nc_extend_posts_block_meta_after');
+						?>
+					</div>
+
+					<a class="ncard_link" href="<?php echo get_permalink(); ?>"></a>
+				</div><!-- / ncard -->
 
 			<?php endwhile; ?>
 		 	<?php wp_reset_postdata();?>
-			</div>
+
+			</div><!-- / ncolumns -->
 			<?php endif; // end loop ?>
 
-			<?php // nc_after_content(); ?>
-		</div>
-	</div>
+				
+		</div><!-- / ncontain -->
+	</div><!-- / ncard_box -->
 
 <style id="<?php echo $id; ?>-block-css">
 
 <?php nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> .ncard {
-	--card-flex-direction:<?php if($position){ echo $position; } else { echo'row'; } ?>;
-	--image-height:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
-	--image-width: <?php if($thumb_width){ echo $thumb_width.'%'; } else { echo'30%'; } ?>;
+	--card-direction:<?php if($position){ echo $position; } else { echo'row'; } ?>;
+	--card-img-ratio:<?php if($ratio){ echo $ratio; } else { echo'16/9'; } ?>;
+	--card-img-width: <?php if($thumb_width){ echo $thumb_width.'%'; } else { echo'30%'; } ?>;
 }
 
 <?php echo '#'.$id; ?> .ncolumns {
@@ -204,14 +206,9 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 		height: auto;
 	}
 
-	/* If mason was selected */
-	<?php echo '#'.$id; ?> .ncolumns-scroll.ncolumns-mason .ncard_imgcon {
-	padding-top:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
-	}
-
 	<?php echo '#'.$id; ?> .ncard {
 	--card-flex-direction:<?php if($position_break){ echo $position_break; } else { echo'row'; } ?>;
-	--image-height:<?php if($ratio_break){ echo $ratio_break; } else { echo'70%'; } ?>;
+	--image-height:<?php if($ratio_break){ echo $ratio_break; } else { echo'16/9'; } ?>;
 	--image-width: <?php if($thumb_width_break){ echo $thumb_width_break.'%'; } else { echo'30%'; } ?>;
 	}
 

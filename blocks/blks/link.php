@@ -56,114 +56,156 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 <?php 
 	wp_enqueue_style('nc-blocks-posts');
 	?>
+	<div id="<?php echo $id; ?>" class="ncard_outerbox">
+		<div class="ncard_container">
 
-	<div id="<?php echo $id; ?>" class="ncard ncard-singlelink<?php echo esc_attr($className); ?>" <?php echo nc_animate().nc_block_attr();?>>
+	<div class="ncard ncard-singlelink<?php echo esc_attr($className); ?>" <?php echo nc_animate().nc_block_attr();?>>
+		
 
-	<?php if($type == 'internal' && $inlink ):?>
+		<?php if($type == 'internal' && $inlink ):?>
 
-		<?php setup_postdata( $inlink );?>
+			<?php setup_postdata( $inlink );?>
 
-		<a class="ncard_link" href="<?php echo get_permalink($inlink->ID); ?>">
-			<div class="ncard_container">
-				<div class="ncard_image">
-					<?php if(!empty($image_url)):?>
-					<div class="ncard_imgcon">
-						<?php echo wp_get_attachment_image( $image_url, 'medium', null, array( "class" => "ncard_img") ); ?>
-					</div>
-					<?php elseif(get_the_post_thumbnail_url($inlink->ID)):?>
-					<div class="ncard_imgcon">
-						<?php echo get_the_post_thumbnail( $inlink->ID, 'medium', array( "class" => "ncard_img", "style" => nc_block_image_focus($inlink->ID) )); ?>
-					</div>
-					<?php else:?>
-					<div class="ncard_imgcon ncard-noimage">
-						<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
-					</div>
-					<?php endif; ?>
+				<?php if(!empty($image_url)):?>
+				<div class="ncard_imgcon">
+					<?php echo wp_get_attachment_image( $image_url, 'medium', null, array( "class" => "ncard_img") ); ?>
 				</div>
+				<?php elseif(get_the_post_thumbnail_url($inlink->ID)):?>
+				<div class="ncard_imgcon">
+					<?php echo get_the_post_thumbnail( $inlink->ID, 'medium', array( "class" => "ncard_img", "style" => nc_block_image_focus($inlink->ID) )); ?>
+				</div>
+				<?php else:?>
+				<div class="ncard_imgcon ncard-noimage">
+					<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
+				</div>
+				<?php endif; ?>
+
 				<div class="ncard_text">
-					<div class="ncard_url"><?php get_template_part('img/icon-link.svg');?> <?php echo get_bloginfo('name') ?></div>
-					<div class="ncard_title"><?php echo $before_text.get_the_title($inlink->ID); ?></div>
+					<div class="ncard_url">
+						<span class="ncicon nc-link"></span> <?php echo get_bloginfo('name') ?>
+					</div>
+					<div class="ncard_title">
+						<?php echo $before_text.get_the_title($inlink->ID); ?>
+					</div>
 					<?php if($after_text){ echo'<div class="ncard_posttext">'.$after_text.'</div>'; } else { /* echo '<div class="ncard_posttext">'.get_the_excerpt($inlink->ID).'</div>';*/ } ?>
 				</div>
-			</div>
-		</a>
+
+			<a class="ncard_link" href="<?php echo get_permalink($inlink->ID); ?>"></a>
 
 		<?php wp_reset_postdata();?>
 
 	<?php elseif($type == 'external'):?>
 	
-		<a class="ncard_link" href="<?php echo $exlink['url']; ?>"<?php if($exlink['target']) { echo ' target="'.$exlink['target'].'"'; } ?>>
-			<div class="ncard_container">
-				<div class="ncard_image">
-					<?php if(!empty($image_url)):?>
-					<div class="ncard_imgcon">
-						<?php echo wp_get_attachment_image( $image_url, 'medium', null, array( "class" => "ncard_img") ); ?>
-					</div>
-					<?php else:?>
-					<div class="ncard_imgcon ncard-noimage">
-						<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
-					</div>
-					<?php endif; ?>
-				</div>
-				<div class="ncard_text">
-				<div class="ncard_url"><?php get_template_part('img/icon-link.svg');?> <?php $exurl = $exlink['url']; echo parse_url($exurl, PHP_URL_HOST); ?></div>
-					<div class="ncard_title"><?php echo $before_text.$exlink['title']; ?></div>
-					<?php if($after_text){ echo'<div class="ncard_posttext">'.$after_text.'</div>'; } ?>
-				</div>
-			</div>
-		</a>
+		<?php if(!empty($image_url)):?>
+		<div class="ncard_imgcon">
+			<?php echo wp_get_attachment_image( $image_url, 'medium', null, array( "class" => "ncard_img") ); ?>
+		</div>
 
-	<?php else:?>
+		<?php else:?>
+		<div class="ncard_imgcon ncard-noimage">
+			<img class="ncard_img" src="<?php nc_block_fallback_image(); ?>" alt="default image" />
+		</div>
 
-		<a class="ncard_link" href="#">
-			<div class="ncard_container">
-				<div class="ncard_image">
-					<div class="ncard_imgcon ncard-noimage"></div>
-				</div>
+	<?php endif; ?>
+					
+		<div class="ncard_text">
+			<div class="ncard_url"><span class="ncicon nc-link"></span> <?php $exurl = $exlink['url']; echo parse_url($exurl, PHP_URL_HOST); ?></div>
+			<div class="ncard_title"><?php echo $before_text.$exlink['title']; ?></div>
+			<?php if($after_text){ echo'<div class="ncard_posttext">'.$after_text.'</div>'; } ?>
+		</div>
+		
+		<a class="ncard_link" href="<?php echo $exlink['url']; ?>"<?php if($exlink['target']) { echo ' target="'.$exlink['target'].'"'; } ?>></a>
+
+			<?php else:?>
+
+				<div class="ncard_imgcon ncard-noimage"></div>
+				
 				<div class="ncard_text">
-					<div class="ncard_url"><?php get_template_part('img/icon-link.svg');?> <?php echo esc_url( get_home_url() ); ?></div>
-					<div class="ncard_title"><?php _e('A Sample Link that Goes Nowhere','nc-framework');?></div>
+
+					<div class="ncard_url">
+						<span class="ncicon nc-link"></span> <?php echo esc_url( get_home_url() ); ?>
+					</div>
+
+					<div class="ncard_title">
+						<?php _e('A Sample Link that Goes Nowhere','nc-framework');?>
+					</div>
+
 				</div>
-			</div>
-		</a>
+			
+			<a class="ncard_link" href="#"></a>
 
 	<?php endif;?>
 
+			</div>
+		</div>
 	</div>
 
 
 
-	<style id="<?php echo $id; ?>-block-css">
+	<style id="<?php echo $id; ?>-css">
+
+		<?php if($position == 'float-none' && $style == 'row'):?>
+		<?php echo '#'.$id; ?> .ncard_container {
+			width:600px;
+			max-width: 100%;
+			margin-bottom: 1em;
+			float:none !important
+		}
+		<?php endif;?>
+		
+		<?php if($position == 'float-none' && $style == 'column'):?>
+		<?php echo '#'.$id; ?> .ncard_container {
+			width:350px;
+			max-width: 100%;
+			margin-bottom: 1em;
+			float:none !important
+		}
+		<?php endif;?>
 
 		<?php if($position == 'float-left' || $position == 'float-right'):?>
-		<?php echo '#'.$id; ?> .ncard_link {
-			width: calc( 50% - var(--gap) );
-			max-width:350px;
+		<?php echo '#'.$id; ?> .ncard_container {
+			width: min(50%, 350px);
+			margin-bottom: 1em;
 		}
 		<?php endif;?>
 
 		<?php if($position == 'float-left'):?>	
-		<?php echo '#'.$id; ?> .ncard_link {
+		<?php echo '#'.$id; ?> .ncard_container {
 			float:left;
 			margin-right:var(--gap);
 		}
 		<?php endif;?>
 
 		<?php if($position == 'float-right'):?>	
-		<?php echo '#'.$id; ?> .ncard_link {
+		<?php echo '#'.$id; ?> .ncard_container {
 			float:right;
 			margin-left: var(--gap);
 		}
 		<?php endif;?>
 
-		<?php echo '#'.$id; ?>.ncard-singlelink {
-			--card-flex-direction: <?php echo $style; ?>;
+		<?php if($style == 'row'):?>
+
+		<?php echo '#'.$id; ?> .ncard-singlelink {
+			--card-direction: row;
+			--card-img-width: 35%;
 		}
 
+		<?php elseif($style == 'column'):?>
+
+		<?php echo '#'.$id; ?> .ncard-singlelink {
+			--card-direction: column;
+			--card-img-width: 100%;
+		}
+
+		<?php endif;?>
+
+		.editor-styles-wrapper <?php echo '#'.$id; ?> .ncard_img {
+			height:100% !important;
+		}
 
 		<?php if($position == 'float-left' || $position == 'float-right'):?>
 		@media(max-width:480px){
-			<?php echo '#'.$id; ?> .ncard_link {
+			<?php echo '#'.$id; ?> .ncard_container {
 				float:none;	
 				width: 100%;
 				margin-left:0;
@@ -174,9 +216,23 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 
 		<?php if( !empty($breakpoint)):?>
 		@media(max-width:<?php echo $breakpoint.'px'; ?>){
-			<?php echo '#'.$id; ?>.ncard-singlelink {
-			--card-flex-direction: <?php echo $style_mobile; ?>;
-			}
+
+				<?php if($style_mobile == 'row'):?>
+
+				<?php echo '#'.$id; ?> .ncard-singlelink {
+				--card-direction: row;
+				--card-img-width: 35%;
+				}
+
+				<?php elseif($style_mobile == 'column'):?>
+
+				<?php echo '#'.$id; ?> .ncard-singlelink {
+				--card-direction: column;
+				--card-img-width: 100%;
+				}
+
+				<?php endif;?>
+
 		}
 		<?php endif;?>
 
@@ -185,6 +241,4 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 	</style>
 
 
-    <?php
-}
-?>
+<?php } ?>

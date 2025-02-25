@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6 {
   .wp-block-button__link,
   .is-style-outline .wp-block-button__link {
     background: var(--link-color);
-    color:#fff;
+    color:#fff !important;
     border:solid 0.08em var(--link-color);
     padding:0 2em;
     border-radius:100px;

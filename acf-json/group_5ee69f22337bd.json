@@ -163,13 +163,14 @@
                 "id": ""
             },
             "choices": {
+                "auto": "Auto",
                 "5\/2": "Panorama",
                 "16\/9": "Widescreen",
                 "4\/3": "Standard",
                 "2\/2": "Square",
                 "3\/4": "Tall"
             },
-            "default_value": "16\/9",
+            "default_value": "auto",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -719,13 +720,14 @@
                 "id": ""
             },
             "choices": {
+                "auto": "Auto",
                 "5\/2": "Panorama",
                 "16\/9": "Widescreen",
                 "4\/3": "Standard",
                 "2\/2": "Square",
                 "3\/4": "Tall"
             },
-            "default_value": "4\/3",
+            "default_value": "auto",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -882,5 +884,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740405037
+    "modified": 1740466648
 }

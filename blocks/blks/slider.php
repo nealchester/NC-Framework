@@ -44,8 +44,8 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 
 	$slider_id = uniqid('nc_splide_');
 	$img_slider = get_field('image_slider');
-	$slide_aspect_ratio = get_field('slide_ratio') ?: '16/9';
-	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: '16/9';
+	$slide_aspect_ratio = get_field('slide_ratio') ?: 'auto';
+	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: 'auto';
 
 ?>
 
@@ -180,7 +180,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 	}
 
 	<?php echo '#'.$id; ?> .splide__content {
-		padding-inline:var(--gap);
+		padding:1em;
 	}
 
 	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text {

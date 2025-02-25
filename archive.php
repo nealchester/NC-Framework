@@ -4,7 +4,7 @@
 
 <?php if (have_posts()) : ?>
 
-<div class="lcard_box">
+<div class="ncard_box grid-auto-columns">
 	<?php while (have_posts()) : the_post(); ?>
 
 		<?php // The card 

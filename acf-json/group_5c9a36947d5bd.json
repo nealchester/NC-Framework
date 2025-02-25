@@ -271,10 +271,11 @@
                 "ncolumns-mason": "Mason (experimental)"
             },
             "default_value": "ncolumns-standard",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -420,16 +421,18 @@
                 "id": ""
             },
             "choices": {
-                "70%": "Standard",
-                "50%": "Wide",
-                "100%": "Square",
-                "150%": "Tall"
+                "5\/2": "Panorama",
+                "4\/3": "Standard",
+                "16\/9": "Wide",
+                "2\/2": "Square",
+                "3\/2": "Tall"
             },
-            "default_value": "70%",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
+            "default_value": "16\/9",
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -467,21 +470,13 @@
             "type": "range",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5c9a369486a52",
-                        "operator": "!=",
-                        "value": "column"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": 25,
+            "default_value": 30,
             "min": 10,
             "max": 100,
             "allow_in_bindings": 1,
@@ -658,16 +653,18 @@
                 "id": ""
             },
             "choices": {
-                "70%": "Standard",
-                "50%": "Wide",
-                "100%": "Square",
-                "150%": "Tall"
+                "5\/2": "Panorama",
+                "4\/3": "Standard",
+                "16\/9": "Wide",
+                "2\/2": "Square",
+                "3\/2": "Tall"
             },
-            "default_value": "70%",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
+            "default_value": "4\/3",
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -705,15 +702,7 @@
             "type": "range",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5cfd5d06adc67",
-                        "operator": "!=",
-                        "value": "column"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -770,5 +759,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739865268
+    "modified": 1740470224
 }

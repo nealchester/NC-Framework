@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'ncicons';
   src:
-    url('fonts/ncicons.ttf?e50jgu') format('truetype'),
-    url('fonts/ncicons.woff?e50jgu') format('woff'),
-    url('fonts/ncicons.svg?e50jgu#ncicons') format('svg');
+    url('fonts/ncicons.ttf?ba7ji3') format('truetype'),
+    url('fonts/ncicons.woff?ba7ji3') format('woff'),
+    url('fonts/ncicons.svg?ba7ji3#ncicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -48,19 +48,10 @@
 .nc-envelope:before {
   content: "\e906";
 }
-.nc-mail:before {
-  content: "\e906";
-}
-.nc-email:before {
-  content: "\e906";
-}
-.nc-contact:before {
-  content: "\e906";
-}
 .nc-user:before {
   content: "\e908";
 }
-.nc-clock:before {
+.nc-date:before {
   content: "\e94e";
 }
 .nc-link:before {
@@ -84,26 +75,20 @@
 .nc-download:before {
   content: "\e708";
 }
-.nc-chat:before {
-  content: "\e90b";
-}
-.nc-bubble:before {
-  content: "\e90b";
-}
 .nc-comment:before {
   content: "\e90b";
-}
-.nc-talk:before {
-  content: "\e90b";
-}
-.nc-reply:before {
-  content: "\e96a";
 }
 .nc-arrow-back:before {
   content: "\e901";
 }
 .nc-arrow-forward:before {
   content: "\e902";
+}
+.nc-arrow2-right:before {
+  content: "\e905";
+}
+.nc-new-tab:before {
+  content: "\ea7e";
 }
 .nc-checkbox-checked:before {
   content: "\ea52";
@@ -152,10 +137,4 @@
 }
 .nc-secured-lock:before {
   content: "\e925";
-}
-.nc-arrow2-right:before {
-  content: "\e905";
-}
-.nc-new-tab:before {
-  content: "\ea7e";
 }
