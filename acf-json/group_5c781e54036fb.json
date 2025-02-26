@@ -42,6 +42,51 @@
             "delay": 0
         },
         {
+            "key": "field_67b4461efe0c3",
+            "label": "Justify Text",
+            "name": "justify_text",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "auto",
+                "justify": "Justify"
+            },
+            "default_value": "auto",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67bef590b715f",
+            "label": "Drop Cap",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5c781f42495df",
             "label": "Add Dropcap",
             "name": "dropcap",
@@ -63,11 +108,11 @@
             "ui": 1
         },
         {
-            "key": "field_67b4461efe0c3",
-            "label": "Justify Text",
-            "name": "justify_text",
+            "key": "field_67bef5adb7160",
+            "label": "Dropcap Lines",
+            "name": "cap_lines",
             "aria-label": "",
-            "type": "true_false",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -76,12 +121,14 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "allow_in_bindings": 1,
-            "ui_on_text": "Yes",
-            "ui_off_text": "No",
-            "ui": 1
+            "default_value": "",
+            "min": 2,
+            "max": 6,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5c7abd5a92937",
@@ -91,15 +138,7 @@
             "type": "color_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5c781f42495df",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -300,5 +339,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739868115
+    "modified": 1740568805
 }

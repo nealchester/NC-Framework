@@ -25,19 +25,15 @@
   --box-padding: 3em 0;
   --box-text-color:inherit;
   --box-bg-color:#fff;
+  --text-width: 1000px;
   
   --column-gap: 3rem;
   --column-width: 220px;
   --column-count: auto;
   --column-rule:1px solid;
   
-  --text-align: left;
+  --text-align: inherit;
   --text-indent: var(--gap, 1.5rem);
-  --text-width: 1000px;
-  
-  --cap-size:5em;
-  --cap-color:inherit;
-  --cap-font: var(--serif, 'Domine');
   }
   
   
@@ -81,23 +77,5 @@
     .nctext-cols .nctext_paragraphs > p:not(:first-of-type) {
       text-indent:var(--text-indent);
     }
-  }
-  /* Modifier: Adds a dropcap to the first paragraph */
-  
-  .nctext-dropcap .nctext_paragraphs > p:first-of-type:not(:focus)::first-letter,
-  p.has-drop-cap:not(:focus)::first-letter,
-  .dropcap {
-      float: left;
-      position: relative;
-      top: 0;
-      margin: 0 !important;
-      font-size: var(--capsize, 5em);
-      line-height: var(--cap-l-height, 0.9);
-      padding-right: var(--cap-padding, 1.5rem);
-      font-family: var(--cap-font, var(--serif));
-      font-weight: var(--cap-weight, normal);
-      height: var(--cap-height, 1em);
-      font-family: var(--cap-font);
-      color: var(--cap-color);
   }
   

@@ -34,6 +34,33 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 2rem;
 }
 
+/* Drop Caps */
+
+.has-drop-cap:not(:focus):first-letter,
+.nctext-dropcap .nctext_paragraphs > p:first-of-type::first-letter {
+  --cap-size: 5.4em;
+  --cap-color: currentColor;
+  --cap-font: inherit;
+  --cap-weight: 500;
+  --cap-lines: 3;
+}
+
+/* this class is used for native WP blocks */
+.has-drop-cap:not(:focus):first-letter,
+/* this class is used for Text Columns block */
+.nctext-dropcap .nctext_paragraphs > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--cap-font);
+  font-size: var(--cap-size);
+  font-weight: var(--cap-weight);
+  line-height: .68;
+  margin: .05em .1em 0 0;
+  text-transform: uppercase;
+  color: var(--cap-color);
+  initial-letter: var(--cap-lines);
+  margin-inline-end: 0.2em;
+}
+
 /* Buttons */
   .btn,
   .wp-block-button__link,

@@ -42,30 +42,27 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
     }
 
 	//ACF Block
+	$cap_color = get_field('cap_color') ?: '#000';
+	$cap_lines = get_field('cap_lines') ?: '3';
+	
 	$dropcap = get_field('dropcap');
-	$tcontent = get_field('text_content');
-	$width = get_field('width').'px' ?: '220';
 	$cc = get_field('pcolumn_count') ?: '3';
 
+	if($dropcap) { $dp = ' nctext-dropcap'; } else { $dp = null; }; 
+	if($cc == '2' || $cc == '3' || $cc == '4') { $colcount =' nctext-cols'; } else { $colcount = null; };
+
+	$tcontent = get_field('text_content');
+	$width = get_field('width').'px' ?: '220';
 	$gap = get_field('column_gap') ?: 'clamp(1.5rem, 8vw, 3rem)';
 	$rule = get_field('column_rule') ?: 'solid 1px';
-	$cap_color = get_field('cap_color') ?: '#000';
-	$justify = get_field('justify_text');
 
-	if( $justify ) {
-		$justify_text = '--text-align: justify;';
-	}
-	else {
-		$justify_text = null;
-	}
+	$justify = get_field('justify_text');
 
 ?>
 
-<?php 
-	wp_enqueue_style('nc-blocks-rich-text');
-	?>
+	<?php wp_enqueue_style('nc-blocks-rich-text'); ?>
 
-	<section id="<?php echo $id; ?>" class="nctext<?php if($dropcap) { echo ' nctext-dropcap'; }; if($cc == '2' || $cc == '3' || $cc == '4') { echo' nctext-cols'; }; echo esc_attr($className); ?>">
+	<section id="<?php echo $id; ?>" class="nctext<?php echo $dp. $colcount. esc_attr($className); ?>">
 		<div class="ncontain" <?php echo nc_animate(); ?>>
 
 			<div class="nctext_paragraphs nc_content_block_main">
@@ -83,16 +80,16 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 <?php nc_box_styles($id); ?>
 
 	<?php echo'#'.$id; ?>.nctext {
-		--column-gap: <?php echo $gap; ?>;
-		--column-count: <?php echo $cc; ?>;
-		--column-rule:<?php echo $rule; ?>;
-		--column-width: <?php echo $width; ?>;
-		--text-align: <?php echo $justify; ?>;
-		<?php echo $justify_text; ?>
+	--column-gap: <?php echo $gap; ?>;
+	--column-count: <?php echo $cc; ?>;
+	--column-rule:<?php echo $rule; ?>;
+	--column-width: <?php echo $width; ?>;
+	--text-align: <?php echo $justify; ?>;
 	}
 
-	<?php echo'#'.$id; ?>.nctext-dropcap .nctext_paragraphs > p:first-of-type:not(:focus)::first-letter {
-		color:<?php echo $cap_color; ?>
+	<?php echo'#'.$id; ?>.nctext-dropcap .nctext_paragraphs > p:first-of-type::first-letter {
+	--cap-color: <?php echo $cap_color;?>;
+	--cap-lines: <?php echo $cap_lines;?>;
 	}
 
 <?php nc_block_custom_css(); ?>
