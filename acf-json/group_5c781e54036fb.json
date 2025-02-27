@@ -123,10 +123,10 @@
             },
             "default_value": "",
             "min": 2,
-            "max": 6,
+            "max": 9,
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
+            "step": 1,
             "prepend": "",
             "append": ""
         },
@@ -339,5 +339,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740568805
+    "modified": 1740659045
 }

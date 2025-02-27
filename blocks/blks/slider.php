@@ -42,7 +42,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		
 	//ACF Block
 
-	$slider_id = uniqid('nc_splide_');
+	$slider_id = 'splide-'.rand(10, 99);
 	$img_slider = get_field('image_slider');
 	$slide_aspect_ratio = get_field('slide_ratio') ?: 'auto';
 	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: 'auto';
@@ -58,7 +58,7 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 				<div class="splide" <?php echo 'id="'.$slider_id.'"'; ?>>
 					<div class="splide__track">
 						<div class="splide__list">
-						<?php $i = 1; while( have_rows('slides') ): the_row();?>
+						<?php while( have_rows('slides') ): the_row();?>
 
 						<?php 
 							$img_size = get_field('image_size') ?: 'large';
@@ -83,12 +83,12 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 							 }
 						?>
 
-						<div class="splide__slide <?php echo 'splide__'.$i; ?>">
+						<div class="splide__slide">
 							<?php echo $img_bg;?>	
 							<?php echo $img_content;?>
 						</div>
 
-						<?php $i++; endwhile; ?>
+						<?php endwhile; ?>
 						</div>
 					</div>
 				</div>
