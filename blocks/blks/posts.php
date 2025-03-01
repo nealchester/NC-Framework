@@ -11,10 +11,10 @@ function nc_posts_block() {
             'description'       => __('Display the latest posts or select your own to feature.', 'nc-framework'),
             'render_callback'   => 'nc_posts_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'edit',
             'keywords'          => array('posts', 'latest', 'recent', 'featured' ),
-			'post_types'        => get_post_types() /*array('post', 'page')*/,
+			'post_types'        => get_post_types(),
 			'align'             => 'full',
 			'supports'          => array( 
 				'align' => array( 'full' ), 
@@ -148,6 +148,12 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 		 	<?php wp_reset_postdata();?>
 
 			</div><!-- / ncolumns -->
+
+			<?php else:?>
+
+				<div class="nocontent">
+						<p><?php _e('Chose which posts to display. Use the sidebar settings to begin.','nc-framework');?></p>
+					</div>
 			<?php endif; // end loop ?>
 
 				

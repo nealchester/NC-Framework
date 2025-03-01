@@ -10,11 +10,11 @@ function nc_gallery_block() {
             'title'             => __('NC Gallery', 'nc-framework'),
             'description'       => __('A gallery of images', 'nc-framework'),
             'render_callback'   => 'nc_gallery_block_markup',
-            'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'category'          => 'common',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('gallery', 'images' ),
-						'post_types'        => array('post', 'page'),
+						'post_types'        => get_post_types(),
 						'align'             => 'full',
 						'supports'          => array( 
 												'align' => array( 'wide', 'full', 'none' ), 
@@ -105,7 +105,11 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 
 			</div> 
 			<?php else:?>
-				<p class="ncgallery-noimages">Add some images to get started. Use the sidebar settings to begin.</p>
+				
+				<div class="nocontent">
+					<p><?php _e('Add some images to start. Use the sidebar settings to begin.','nc-framework');?></p>
+				</div>
+				
 			<?php endif;?>
 
 			</div>
@@ -123,23 +127,6 @@ function nc_gallery_block_markup( $block, $content = '', $is_preview = false ) {
 	--img-height:<?php if($ratio){ echo $ratio; } else { echo'70%'; } ?>;
 	--min-col-width: <?php echo $thumb_width.'px'; ?>;
 }
-
-<?php if(!$gallery):?>
-	<?php echo '#'.$id; ?> .ncgallery-noimages {
-	max-width: 500px; 
-	font-size: var(--txt-medium);
-	margin-inline: auto;
-	cursor: default;
-}
-<?php echo '#'.$id; ?>{
-	background-color: #eee;
-
-	.nc_content_block_before {
-		max-width:500px;
-		margin-inline: auto;
-	}
-}
-<?php endif;?>
 
 .editor-styles-wrapper .ncgallery_size {
     height: auto;

@@ -493,6 +493,24 @@
             "step": 200
         },
         {
+            "key": "field_67c2f7ece70fa",
+            "label": "Scroll Animation",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5e2326a89f4bf",
             "label": "Custom Code",
             "name": "custom_code",
@@ -507,6 +525,7 @@
                 "id": ""
             },
             "clone": [
+                "group_67aa0054e8f0e",
                 "group_67ad4b91436c6"
             ],
             "display": "seamless",
@@ -533,5 +552,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740398614
+    "modified": 1740830725
 }

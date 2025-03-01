@@ -1,20 +1,20 @@
 <?php
 
 // New Block
-add_action('acf/init', 'nc_slider_block');
-function nc_slider_block() {
+add_action('acf/init', 'nc_sliders_block');
+function nc_sliders_block() {
 
 	// register a items block
 	acf_register_block_type(array(
-		'name'              => 'nc_slider',
-		'title'             => __('NC Slider', 'nc-framework'),
+		'name'              => 'nc_sliders',
+		'title'             => __('NC Sliders', 'nc-framework'),
 		'description'       => __('Slider', 'nc-framework'),
-		'render_callback'   => 'nc_slider_block_markup',
+		'render_callback'   => 'nc_sliders_block_markup',
 		'category'          => 'layout',
-		//'icon'              => 'format-image',
+		'icon'              => get_nc_icon('nc-block'),
 		'mode'              => 'preview',
-		'keywords'          => array('slider', 'sliders', 'slide' ),
-		'post_types'        => array('post', 'page'),
+		'keywords'          => array('slider', 'sliders', 'slide', 'carousel'),
+		'post_types'        => get_post_types(),
 		'align'             => 'full',
 		'supports'          => array( 
 				'align' => array( 'wide', 'full', 'none' ), 
@@ -26,7 +26,7 @@ function nc_slider_block() {
 
 /* This displays the block */
 
-function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
+function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 
 	// ID Setup
 	if (get_field('set_id')) { $id = get_field('set_id'); } else { $id = uniqid("block_"); };
@@ -45,7 +45,15 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 	$slider_id = 'splide-'.rand(10, 99);
 	$img_slider = get_field('image_slider');
 	$slide_aspect_ratio = get_field('slide_ratio') ?: 'auto';
-	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: 'auto';
+	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: $slide_aspect_ratio;
+	$tposition = get_field('slide_text_position') ?: 'middle';
+	$overlay = get_field('img_overlay_color') ?: 'rbga(0,0,0,0.3)';
+	$text_max_width = get_field('slide_text_width') ?: '1000';
+
+	$center = get_field('slide_text_align');
+	
+	if($center) { $center_text = 'text-align: center;';	}
+	else { $center_text = null;}
 
 ?>
 
@@ -95,7 +103,10 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 			</div>
 			<?php else:?>
 
-				<p style="margin-inline:auto; max-width:600px; padding:3rem 1.5rem; background: #eee">There is no slide content, add some content using the sidebar panel.<p>
+				<div class="nocontent">
+					<p><?php _e('Add some slides to start. Use the sidebar settings to begin.','nc-framework');?></p>
+				</div>
+
 			<?php endif; // end slides ?>
 
 
@@ -180,29 +191,41 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 	}
 
 	<?php echo '#'.$id; ?> .splide__content {
-		padding:1em;
+		padding:1em 2rem;
 	}
 
 	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text {
 		position:absolute;
-		inset:0;
 		display: flex;
 		flex-direction:column;
-		align-items:center;
-		justify-content: center;
-		text-align: center;
 		color: <?php echo get_field('slide_text_color') ?: '#ffffff';?>;
+		align-items: start;
 		z-index: 5;
+		<?php echo $center_text; ?>
+		
+		<?php if($tposition == 'middle'):?>
+		inset:0;
+		justify-content: center;
+		
+		<?php elseif($tposition == 'bottom'): ?>
+		inset: auto 0 0;
+		justify-content: end;
+		padding-top: 4rem;
+
+		<?php endif;?>
 
 		& > * {
 			z-index: 6;
 			position: relative;
+			align-self: stretch;
+			max-width: <?php echo $text_max_width.'px'; ?>;
 			filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.5));
+
+			<?php if($center): ?>
+			margin-inline: auto;
+			<?php endif;?>
 		}
 
-		& > :last-child {
-			margin-bottom:0;
-		}
 	}
 
 	<?php if( get_field('type') == 'fade' && in_the_loop() ):?>
@@ -224,7 +247,14 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		z-index: 2;
 		position:absolute;
 		inset:0;
-		background-color: <?php echo get_field('img_overlay_color') ?: 'rbga(0,0,0,0.3)';?>;
+
+		<?php if($tposition == 'bottom'): ?>
+		background: linear-gradient(to top, <?php echo $overlay; ?>, transparent);
+
+		<?php else: ?>
+		background: <?php echo $overlay; ?>;
+		<?php endif;?>
+		
 	}
 
 @media(max-width:<?php echo get_field('break_width').'px' ?:'0'; ?>){
@@ -232,6 +262,8 @@ function nc_slider_block_markup( $block, $content = '', $is_preview = false ) {
 		aspect-ratio: <?php echo $slide_aspect_ratio_mobile;?>
 	}
 }
+
+<?php nc_box_styles($id); ?>
 
 <?php nc_block_custom_css(); ?>
 
@@ -254,7 +286,7 @@ if( in_the_loop() ): ?>
 		perMove: <?php the_field('per_move') ?: 3; ?>,
 		autoplay: <?php if ( get_field('auto_play') ) { echo 'true'; } else { echo 'false'; } ?>,
 		rewind: <?php if ( get_field('rewind') ) { echo 'true'; } else { echo 'false'; } ?>,
-		focus  : <?php if(get_field('center_slide')) { echo "'center'"; } else { echo '1';}; ?>,
+		<?php if(get_field('center_slide')) { echo "focus : 'center',"; } else { echo null;}; ?>
 		trimSpace: false,
 		clones: 4,
 		cloneStatus: true,

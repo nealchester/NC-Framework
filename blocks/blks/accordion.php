@@ -10,12 +10,12 @@ function nc_accordion_block() {
             'title'             => __('NC Accordion', 'nc-framework'),
             'description'       => __('Title, content and links.', 'nc-framework'),
             'render_callback'   => 'nc_accordion_block_markup',
-						'category'          => 'layout',
-            //'icon'              => 'format-image',
-            'mode'              => 'edit',
-            'keywords'          => array('accordion', 'faqs', 'frequently asked questions', 'answers', 'questions' ),
-            'post_types'        => array('post', 'page'),
-            'align'             => 'full',
+						'category'          => 'common',
+            'icon'              => get_nc_icon('nc-block'),
+            'mode'              => 'preview',
+            'keywords'          => array('accordion', 'details', 'summary', 'faqs', 'answers', 'questions' ),
+            'post_types'        => get_post_types(),
+            'align'             => 'none',
             'supports'          => array( 
                   'align' => array( 'none','full','wide'), 
                   'mode' => true,
@@ -116,6 +116,11 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			</div>
 
 				</div>
+
+				<?php else : ?>
+					<div class="nocontent">
+						<p><?php _e('Chose to display posts or write your own content. Use the sidebar settings to begin.','nc-framework');?></p>
+					</div>
 			<?php endif;?>
 		</div>
 

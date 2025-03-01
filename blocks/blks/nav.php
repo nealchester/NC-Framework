@@ -11,10 +11,10 @@ function nc_nav_block() {
             'description'       => __('A navigation menu bar.', 'nc-framework'),
             'render_callback'   => 'nc_nav_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('nav', 'menu', 'navigation'),
-			'post_types'        => array('post', 'page'),
+			'post_types'        => get_post_types(),
 			'align'             => 'full',
 			'supports'          => array( 
 									'align' => array( 'wide', 'full' ), 
@@ -45,18 +45,17 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 	$position = get_field('menu_position') ?: 'center';
 	$highlight = get_field('current_item');
 	$sticky = get_field('sticky_menu');
-	$styling = get_field('styling');
+	// $styling = get_field('styling');
 	$breakpoint = get_field('breakpoint');
 	$scrollpoint = get_field('scrollpoint');
 
 	$height = get_field('menu_height') ?: '65';
-	$max_width = get_field('max_width') ?: '1000';
 
 ?>
 
 	<nav id="<?php echo $id; ?>" class="ncmenu_nav alignfull <?php if($sticky){ echo'ncmenu-sticky'; } echo nc_block_attr(); ?>" aria-label="On page navigation">
 		<div class="ncontain">
-			<?php nc_before_content();?>
+			<?php // nc_before_content();?>
 		<ul class="ncmenu">
 		<?php if( have_rows('menu') ): ?>
 
@@ -80,7 +79,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 		<?php endif; ?>
 		</ul>
-		<?php nc_after_content();?>
+		<?php // nc_after_content();?>
 		</div>
 	</nav>
 
@@ -97,6 +96,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 			display:flex;
 			list-style-type: none;
 			padding-left:0;
+			gap: 1em;
 			margin:0;
 			<?php echo 'justify-content: '.$position.';'; ?>
 			flex-wrap:nowrap;
@@ -111,16 +111,13 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 			z-index: 200;
 		}
 
-		<?php echo '#'.$id; ?> .ncontain {
-			max-width: <?php echo $max_width.'px'; ?>
-		}
-
 		<?php echo '#'.$id; ?> .ncmenu_link {
 			height:<?php echo $height.'px'; ?>;
 			text-decoration:none;
-			white-space: nowrap; padding: 1em; 
+			white-space: nowrap; 
 			display: flex;
 			align-items: center;
+			color: currentColor;
 		}
 
 		<?php if($sticky && $breakpoint):?>
@@ -136,7 +133,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 			}
 			<?php echo '#'.$id; ?> .ncmenu > li:first-child .ncmenu_link { padding-left:var(--gap); }
 			<?php echo '#'.$id; ?> .ncmenu > li:last-child .ncmenu_link { padding-right:var(--gap); }
-			<?php echo '#'.$id; ?> .ncontain { width:100%; max-width:100%; }
+			<?php echo '#'.$id; ?> .ncontain { width:100%; max-width:100% !important; }
 		}
 		<?php else:?>
 		@media(max-width:768px) {
@@ -147,6 +144,8 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 			<?php echo '#'.$id; ?> .ncmenu > li:last-child .ncmenu_link { padding-right:var(--gap); }
 		}
 		<?php endif; ?>
+
+		<?php nc_box_styles($id); ?>
 
 		<?php if(get_field('custom_styles')):?> 
 		/* Custom CSS */

@@ -8,13 +8,13 @@ function nc_hero_block() {
         acf_register_block_type(array(
             'name'              => 'nc_hero',
             'title'             => __('NC Hero', 'nc-framework'),
-            'description'       => __('A hero block with different layouts.', 'nc-framework'),
+            'description'       => __('A hero block with animation, parallax, and content positioning options.', 'nc-framework'),
             'render_callback'   => 'nc_hero_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('hero', 'splash' ),
-						'post_types'        => array('post', 'page'),
+						'post_types'        => get_post_types(),
 						'align'             => 'full',
 						'supports'          => array( 
 							'align' => array( 'wide', 'full' ), 
@@ -85,7 +85,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		<?php endif;?>
 
 		<div class="ncontain">
-			<div class="nchero_content">
+			<div class="nchero_content"<?php echo ' '.nc_animate();?>>
 				<?php echo nc_inner_blocks(); ?>
 			</div>
 		</div>

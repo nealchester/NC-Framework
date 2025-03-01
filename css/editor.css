@@ -93,3 +93,17 @@ img.alignright {
     background-color: currentColor;
     opacity: 0.1;
 }
+
+
+/* Blocks Default No Content Selected */
+
+.editor-styles-wrapper .nocontent {
+    padding: 3rem 1.5rem; 
+    background: #f2f2f2;
+}
+
+.editor-styles-wrapper .nocontent p {
+    margin-inline: auto; 
+    text-align: center; 
+    max-width: 450px; 
+}

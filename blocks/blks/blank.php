@@ -11,10 +11,10 @@ function nc_blank_block() {
             'description'       => __('A blank box to write text or HTML into.', 'nc-framework'),
             'render_callback'   => 'nc_blank_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('blank', 'section' ),
-			'post_types'        => array('post', 'page'),
+			'post_types'        => get_post_types(),
 			'align'             => 'full',
 			'supports'          => array( 
 									'align' => array( 'wide', 'full' ), 
@@ -47,8 +47,13 @@ function nc_blank_block_markup( $block, $content = '', $is_preview = false ) {
 	<section id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className); ?>">
         <div class="ncontain" <?php echo nc_animate();?>>
        
-        <?php if($tcontent):?><?php echo '<div class="nc_content_block_main">'.$tcontent.'</div>';?><?php else:?> 
-        <div class="nc_content_block_main"><p><?php _e('Add some content...','nc-framework');?></p></div>
+        <?php if($tcontent):?><?php echo '<div class="nc_content_block_main">'.$tcontent.'</div>';?>
+            <?php else:?> 
+                
+        <div class="nocontent">
+        <p><?php _e('Add some content to start. Use the sidebar settings to begin.','nc-framework');?></p>
+        </div>
+
         <?php endif; ?>
 
 		</div>

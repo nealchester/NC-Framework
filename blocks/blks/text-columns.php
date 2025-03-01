@@ -11,10 +11,10 @@ function nc_text_block() {
 		'description'       => __('A text box', 'nc-framework'),
 		'render_callback'   => 'nc_text_block_markup',
 		'category'          => 'layout',
-		//'icon'              => 'format-image',
+		'icon'              => get_nc_icon('nc-block'),
 		'mode'              => 'preview',
 		'keywords'          => array('text', 'columns', 'text columns' ),
-		'post_types'        => array('post', 'page'),
+		'post_types'        => get_post_types(),
 		'align'             => 'full',
 		'supports'          => array( 
 			'align' => array( 'wide', 'full', 'none' ), 

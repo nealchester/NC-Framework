@@ -1,5 +1,9 @@
 <?php
 
+function get_nc_icon($name) {
+    return file_get_contents( STYLESHEETPATH .'/blocks/'.$name.'.svg');
+}
+
 // Custom Block Styles
 function nc_block_custom_css(){
     if( get_field('custom_styles') ){

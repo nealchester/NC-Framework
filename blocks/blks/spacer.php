@@ -11,10 +11,10 @@ function nc_spacer_block() {
         'description'       => __('A dynamic spacer that resizes according to the viewport.', 'nc-framework'),
         'render_callback'   => 'nc_spacer_block_markup',
         'category'          => 'layout',
-        //'icon'              => 'format-image',
+        'icon'              => get_nc_icon('nc-block'),
         'mode'              => 'preview',
         'keywords'          => array('spacer', 'space', 'gap', 'padding' ),
-        'post_types'        => array('post', 'page'),
+        'post_types'        => get_post_types(),
         'supports'          => array( 
                                 'mode' => true,
                                 'multiple' => true,

@@ -14,7 +14,7 @@ function nc_imgslider_block() {
 		//'icon'            => 'format-image',
 		'mode'              => 'preview',
 		'keywords'          => array('slider', 'images', 'gallery', 'sliders', 'slide' ),
-		'post_types'        => array('post', 'page'),
+		'post_types'        => get_post_types(),
 		'align'             => 'full',
 		'supports'          => array( 
 				'align' => array( 'wide', 'full', 'none' ), 

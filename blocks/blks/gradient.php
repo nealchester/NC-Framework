@@ -11,10 +11,10 @@ function nc_grad_block() {
             'description'       => __('A content box with an image and gradient overlay', 'nc-framework'),
             'render_callback'   => 'nc_grad_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('gradient', 'content' ),
-						'post_types'        => array('post', 'page'),
+						'post_types'        => get_post_types(),
 						'align'             => 'full',
 						'supports'          => array( 
 							'align' => array( 'wide', 'full' ), 

@@ -11,10 +11,10 @@ function nc_singlelink_block() {
             'description'       => __('A related or important link to showcase', 'nc-framework'),
             'render_callback'   => 'nc_singlelink_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('link', 'inline link' ),
-						'post_types'        => array('post', 'page'),
+						'post_types'        => get_post_types(),
 						'align'             => '',
 						'supports'          => array( 
 							'align' => array( 'wide', 'full' ), 

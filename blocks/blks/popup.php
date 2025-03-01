@@ -11,10 +11,10 @@ function nc_popup_block() {
             'description'       => __('Create a popup box that will appear once per session. To see the popup close the page and open it again.', 'nc-framework'),
             'render_callback'   => 'nc_popup_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
             'keywords'          => array('modal', 'popup box', 'popup' ),
-            'post_types'        => array('post', 'page'),
+            'post_types'        => get_post_types(),
             'align'             => 'full',
             'supports'          => array( 
               'align' => array( 'wide', 'full' ), 

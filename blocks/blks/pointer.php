@@ -11,10 +11,10 @@ function nc_pointer_block() {
         'description'       => __('A pointer to direct you to the next block', 'nc-framework'),
         'render_callback'   => 'nc_pointer_block_markup',
         'category'          => 'layout',
-        //'icon'            => 'format-image',
+        'icon'              => get_nc_icon('nc-block'),
         'mode'              => 'preview',
         'keywords'          => array('pointer', 'arrow', 'spacer', 'separater' ),
-        'post_types'        => array('post', 'page'),
+        'post_types'        => get_post_types(),
         'align'             => 'full',
         'supports'          => array( 
                                 'align' => array( 'full' ), 

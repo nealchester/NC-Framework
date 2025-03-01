@@ -11,10 +11,10 @@ function nc_lightbox_block() {
             'description'       => __('A light box containing more information upon click.', 'nc-framework'),
             'render_callback'   => 'nc_lightbox_block_markup',
             'category'          => 'layout',
-            //'icon'              => 'format-image',
+            'icon'              => get_nc_icon('nc-block'),
             'mode'              => 'preview',
-            'keywords'          => array('lightbox', 'light box', 'pop-up box', 'pop up' ),
-			'post_types'        => array('post', 'page'),
+            'keywords'          => array('lightbox', 'light box' ),
+			'post_types'        => get_post_types(),
 			'supports'          => array( 
 									'mode' => true,
 									'multiple' => true,

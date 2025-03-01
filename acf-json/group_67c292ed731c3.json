@@ -1,9 +1,9 @@
 {
-    "key": "group_5ee69f22337bd",
-    "title": "Block: NC Slider",
+    "key": "group_67c292ed731c3",
+    "title": "Block: NC Sliders",
     "fields": [
         {
-            "key": "field_5ee69f226c2a1",
+            "key": "field_67c292ed84d13",
             "label": "Slides",
             "name": "",
             "aria-label": "",
@@ -21,7 +21,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ee69f226c6b5",
+            "key": "field_67c292ed8895a",
             "label": "Slides and Images",
             "name": "slides",
             "aria-label": "",
@@ -43,7 +43,7 @@
             "button_label": "Add slide",
             "sub_fields": [
                 {
-                    "key": "field_67b52dbc80531",
+                    "key": "field_67c292ee06b72",
                     "label": "Background Image",
                     "name": "bg_img",
                     "aria-label": "",
@@ -53,7 +53,7 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_67b5233d0829b",
+                                "field": "field_67c292ed8ca91",
                                 "operator": "==",
                                 "value": "1"
                             }
@@ -75,10 +75,10 @@
                     "mime_types": "",
                     "allow_in_bindings": 0,
                     "preview_size": "medium",
-                    "parent_repeater": "field_5ee69f226c6b5"
+                    "parent_repeater": "field_67c292ed8895a"
                 },
                 {
-                    "key": "field_5ee69f228d4c1",
+                    "key": "field_67c292ee0a737",
                     "label": "",
                     "name": "slide",
                     "aria-label": "",
@@ -97,12 +97,12 @@
                     "toolbar": "basic",
                     "media_upload": 1,
                     "delay": 0,
-                    "parent_repeater": "field_5ee69f226c6b5"
+                    "parent_repeater": "field_67c292ed8895a"
                 }
             ]
         },
         {
-            "key": "field_67b53907f8979",
+            "key": "field_67c292ed88eea",
             "label": "Image Slider",
             "name": "",
             "aria-label": "",
@@ -120,7 +120,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_67b5233d0829b",
+            "key": "field_67c292ed8ca91",
             "label": "Enable Image Slider",
             "name": "image_slider",
             "aria-label": "",
@@ -141,7 +141,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_67b57a6a0aadd",
+            "key": "field_67c292ed9047d",
             "label": "Slide Ratio",
             "name": "slide_ratio",
             "aria-label": "",
@@ -151,7 +151,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_67b5233d0829b",
+                        "field": "field_67c292ed8ca91",
                         "operator": "==",
                         "value": "1"
                     }
@@ -170,17 +170,17 @@
                 "2\/2": "Square",
                 "3\/4": "Tall"
             },
-            "default_value": "auto",
+            "default_value": false,
             "return_format": "value",
             "multiple": 0,
-            "allow_null": 0,
+            "allow_null": 1,
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
-            "key": "field_67b53954f897a",
+            "key": "field_67c292ed90b18",
             "label": "Overlay Color",
             "name": "img_overlay_color",
             "aria-label": "",
@@ -190,7 +190,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_67b5233d0829b",
+                        "field": "field_67c292ed8ca91",
                         "operator": "==",
                         "value": "1"
                     }
@@ -201,13 +201,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "rgba(0,0,0, 0.5)",
+            "default_value": "rgba(0,0,0, 0.3)",
             "enable_opacity": 1,
             "return_format": "string",
             "allow_in_bindings": 0
         },
         {
-            "key": "field_67b539e3f897b",
+            "key": "field_67c292ed90fb4",
             "label": "Text Overlay Color",
             "name": "slide_text_color",
             "aria-label": "",
@@ -217,7 +217,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_67b5233d0829b",
+                        "field": "field_67c292ed8ca91",
                         "operator": "==",
                         "value": "1"
                     }
@@ -234,7 +234,102 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_67b5370335634",
+            "key": "field_67c2d527929ac",
+            "label": "Text Overlay Position",
+            "name": "slide_text_position",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67c292ed8ca91",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "middle": "Middle",
+                "bottom": "Bottom"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67c2e22a33bb2",
+            "label": "Text Overlay Alignment",
+            "name": "slide_text_align",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67c292ed8ca91",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Center text",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67c2e8c30cf2e",
+            "label": "Text Overlay Max Width",
+            "name": "slide_text_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67c292ed8ca91",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1000,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": 600,
+            "step": "",
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_67c292ed94c76",
             "label": "Image Size",
             "name": "image_size",
             "aria-label": "",
@@ -244,7 +339,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_67b5233d0829b",
+                        "field": "field_67c292ed8ca91",
                         "operator": "==",
                         "value": "1"
                     }
@@ -270,7 +365,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ee6a64deb843",
+            "key": "field_67c292ed98763",
             "label": "Options",
             "name": "",
             "aria-label": "",
@@ -288,7 +383,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ee7be70f933a",
+            "key": "field_67c292ed98f3e",
             "label": "Slider Type",
             "name": "type",
             "aria-label": "",
@@ -316,7 +411,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5f0757cbef78c",
+            "key": "field_67c292ed9c98c",
             "label": "",
             "name": "",
             "aria-label": "",
@@ -326,7 +421,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5ee7be70f933a",
+                        "field": "field_67c292ed98f3e",
                         "operator": "==",
                         "value": "fade"
                     }
@@ -342,7 +437,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_5ee7bec5f933b",
+            "key": "field_67c292ed9ce96",
             "label": "Slides Per Page",
             "name": "per_page",
             "aria-label": "",
@@ -365,7 +460,7 @@
             "append": ""
         },
         {
-            "key": "field_5ee7bf42f933c",
+            "key": "field_67c292eda0ff0",
             "label": "Slides Per Move",
             "name": "per_move",
             "aria-label": "",
@@ -388,7 +483,7 @@
             "append": ""
         },
         {
-            "key": "field_5ee7c2f713f51",
+            "key": "field_67c292eda4ded",
             "label": "Transition Speed",
             "name": "speed",
             "aria-label": "",
@@ -411,7 +506,7 @@
             "append": "ms"
         },
         {
-            "key": "field_5ee7c37513f52",
+            "key": "field_67c292eda898c",
             "label": "Interval (pause)",
             "name": "pause",
             "aria-label": "",
@@ -434,7 +529,7 @@
             "append": "ms"
         },
         {
-            "key": "field_67bc721678b4a",
+            "key": "field_67c292eda9428",
             "label": "Slide Width",
             "name": "fixed_slide_width",
             "aria-label": "",
@@ -455,7 +550,7 @@
             "append": ""
         },
         {
-            "key": "field_5ee7c4876e642",
+            "key": "field_67c292edad123",
             "label": "Gap Size",
             "name": "gap",
             "aria-label": "",
@@ -478,7 +573,7 @@
             "append": "rem"
         },
         {
-            "key": "field_5ee7c8996dca2",
+            "key": "field_67c292edb0ec8",
             "label": "Show Pagination",
             "name": "pagination",
             "aria-label": "",
@@ -498,7 +593,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ee7c8ab6dca3",
+            "key": "field_67c292edb1a58",
             "label": "Show Arrows",
             "name": "arrows",
             "aria-label": "",
@@ -518,7 +613,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ee7bfaff933d",
+            "key": "field_67c292edb54fb",
             "label": "Auto Play",
             "name": "auto_play",
             "aria-label": "",
@@ -539,7 +634,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ee7bfe4f933e",
+            "key": "field_67c292edb8f8c",
             "label": "Rewind",
             "name": "rewind",
             "aria-label": "",
@@ -560,7 +655,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_67b57edb00f67",
+            "key": "field_67c292edbc909",
             "label": "Center Slide",
             "name": "center_slide",
             "aria-label": "",
@@ -581,7 +676,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ee7c6df6e645",
+            "key": "field_67c292edc160d",
             "label": "Sliding Direction",
             "name": "direction",
             "aria-label": "",
@@ -609,7 +704,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_67b59ef14c38c",
+            "key": "field_67c292edc23cd",
             "label": "Top to Bottom",
             "name": "",
             "aria-label": "",
@@ -619,7 +714,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5ee7c6df6e645",
+                        "field": "field_67c292edc160d",
                         "operator": "==",
                         "value": "ttb"
                     }
@@ -635,7 +730,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_67b59cf549733",
+            "key": "field_67c292edc5f72",
             "label": "Slider's Fixed Height",
             "name": "slider_fixed_height",
             "aria-label": "",
@@ -645,7 +740,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5ee7c6df6e645",
+                        "field": "field_67c292edc160d",
                         "operator": "==",
                         "value": "ttb"
                     }
@@ -666,7 +761,7 @@
             "append": "rem"
         },
         {
-            "key": "field_5ee7d6728b9e2",
+            "key": "field_67c292edc9a56",
             "label": "Break Point",
             "name": "",
             "aria-label": "",
@@ -684,7 +779,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ee7c86a6dca1",
+            "key": "field_67c292edcd550",
             "label": "Break Point Width",
             "name": "break_width",
             "aria-label": "",
@@ -706,7 +801,7 @@
             "step": ""
         },
         {
-            "key": "field_67b5888fbf83f",
+            "key": "field_67c292edcddac",
             "label": "Slide Ratio (mobile)",
             "name": "slide_ratio_mobile",
             "aria-label": "",
@@ -727,17 +822,17 @@
                 "2\/2": "Square",
                 "3\/4": "Tall"
             },
-            "default_value": "auto",
+            "default_value": false,
             "return_format": "value",
             "multiple": 0,
-            "allow_null": 0,
+            "allow_null": 1,
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
-            "key": "field_5ee7c9646dca4",
+            "key": "field_67c292edd1b24",
             "label": "Slides Per Page (mobile)",
             "name": "break_per_page",
             "aria-label": "",
@@ -760,7 +855,7 @@
             "append": ""
         },
         {
-            "key": "field_67bc6e6478b49",
+            "key": "field_67c292edd2c80",
             "label": "Center Slide (mobile)",
             "name": "center_slide_mobile",
             "aria-label": "",
@@ -781,7 +876,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_67bc725678b4b",
+            "key": "field_67c292edd6968",
             "label": "Slide Width (mobile)",
             "name": "fixed_slide_width_mobile",
             "aria-label": "",
@@ -802,7 +897,7 @@
             "append": ""
         },
         {
-            "key": "field_5ee7cab66dca5",
+            "key": "field_67c292edda40f",
             "label": "Show Pagination",
             "name": "show_pagination",
             "aria-label": "",
@@ -823,7 +918,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ee7caf16dca6",
+            "key": "field_67c292edde0fb",
             "label": "Show Arrows",
             "name": "show_arrows",
             "aria-label": "",
@@ -844,7 +939,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_67b06e5594b5e",
+            "key": "field_67c292ede2048",
             "label": "Additional Stuff",
             "name": "additional_stuff",
             "aria-label": "",
@@ -858,6 +953,7 @@
                 "id": ""
             },
             "clone": [
+                "group_67ad4b9f88c22",
                 "group_67ad4b91436c6"
             ],
             "display": "seamless",
@@ -871,7 +967,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/nc-slider"
+                "value": "acf\/nc-sliders"
             }
         ]
     ],
@@ -883,6 +979,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1740466648
+    "show_in_rest": 1,
+    "modified": 1740827711
 }

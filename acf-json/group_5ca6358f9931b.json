@@ -6,6 +6,7 @@
             "key": "field_5ca64d6eb2677",
             "label": "The Menu",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -23,6 +24,7 @@
             "key": "field_5ca6364d0583e",
             "label": "",
             "name": "menu",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -42,6 +44,7 @@
                     "key": "field_5ca636550583f",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -51,14 +54,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "return_format": "array",
+                    "parent_repeater": "field_5ca6364d0583e"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_5ca64d86b2678",
             "label": "Options",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -73,26 +79,12 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ee8484b4a892",
-            "label": "Nav Bar Color",
-            "name": "nav_bar_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#fff"
-        },
-        {
             "key": "field_5ca637068bd88",
             "label": "Make Sticky",
             "name": "sticky_menu",
+            "aria-label": "",
             "type": "true_false",
-            "instructions": "Make the menu sticky?",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -102,6 +94,7 @@
             },
             "message": "Yes",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -110,6 +103,7 @@
             "key": "field_5ca635bf0583c",
             "label": "Menu Position",
             "name": "menu_position",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -135,6 +129,7 @@
             "key": "field_5ee83b0a056c2",
             "label": "Menu Height",
             "name": "menu_height",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -153,30 +148,10 @@
             "step": ""
         },
         {
-            "key": "field_5ee844951fa06",
-            "label": "Max Container Width",
-            "name": "max_width",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 1000,
-            "placeholder": "",
-            "prepend": "",
-            "append": "px",
-            "min": "",
-            "max": "",
-            "step": ""
-        },
-        {
             "key": "field_5ca782bd55456",
             "label": "Scroll Point",
             "name": "scrollpoint",
+            "aria-label": "",
             "type": "number",
             "instructions": "If you set the menu to align to center or right, the menu must align to left when it starts scrolling horizontally",
             "required": 0,
@@ -198,6 +173,7 @@
             "key": "field_5ca63eb1b033b",
             "label": "Break Point",
             "name": "breakpoint",
+            "aria-label": "",
             "type": "number",
             "instructions": "At what view port height do you want the menu to stop sticking?",
             "required": 0,
@@ -225,8 +201,9 @@
         },
         {
             "key": "field_5e2339291aa34",
-            "label": "Custom Code",
+            "label": "additional",
             "name": "custom_code",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -237,7 +214,8 @@
                 "id": ""
             },
             "clone": [
-                "group_5e221e7d71f1d"
+                "group_67ad4b9f88c22",
+                "group_67ad4b91436c6"
             ],
             "display": "seamless",
             "layout": "block",
@@ -262,5 +240,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622426822
+    "show_in_rest": 0,
+    "modified": 1740814472
 }
