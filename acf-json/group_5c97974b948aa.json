@@ -76,7 +76,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -85,16 +85,17 @@
                 "ncolumns-mason": "Mason (experimental)"
             },
             "default_value": "ncolumns-standard",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
             "key": "field_5c97974b9dde5",
-            "label": "Fixed or Auto Grid",
+            "label": "Fixed or Auto",
             "name": "column_layout",
             "aria-label": "",
             "type": "select",
@@ -102,7 +103,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -111,10 +112,11 @@
                 "ncolumns-auto": "Auto"
             },
             "default_value": "ncolumns-fixed",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -153,11 +155,11 @@
             "name": "column_gap",
             "aria-label": "",
             "type": "text",
-            "instructions": "Column gap spacing",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -174,11 +176,11 @@
             "name": "row_gap",
             "aria-label": "",
             "type": "text",
-            "instructions": "Row gap spacing",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -199,7 +201,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -210,24 +212,25 @@
                 "150%": "Tall"
             },
             "default_value": "70%",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
             "key": "field_5f6a0d9999b09",
-            "label": "Thumb Image Size",
+            "label": "Image Size",
             "name": "thumb_image_size",
             "aria-label": "",
             "type": "select",
-            "instructions": "thumbnail, medium, large, full, custom",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -267,61 +270,6 @@
             "step": ""
         },
         {
-            "key": "field_5c97a9db7ed73",
-            "label": "Meta Display",
-            "name": "meta_display",
-            "aria-label": "",
-            "type": "checkbox",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "titles": "Titles",
-                "captions": "Captions"
-            },
-            "allow_custom": 0,
-            "default_value": [
-                "titles",
-                "captions"
-            ],
-            "layout": "horizontal",
-            "toggle": 0,
-            "return_format": "value",
-            "save_custom": 0,
-            "custom_choice_button_text": "Add new choice"
-        },
-        {
-            "key": "field_5c979cd6b2116",
-            "label": "Meta Position",
-            "name": "meta_position",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "ncgallery-capslide": "Reveal captions on hover",
-                "ncgallery-capoverlay": "Overlay captions"
-            },
-            "default_value": "ncgallery-capslide",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "allow_in_bindings": 1,
-            "layout": "vertical",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_5c97a0927cdde",
             "label": "When you click an image...",
             "name": "link_to_image",
@@ -345,6 +293,82 @@
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67c410b621d16",
+            "label": "Titles \/ Captions",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c97a9db7ed73",
+            "label": "Choose what to display",
+            "name": "meta_display",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "titles": "Titles",
+                "captions": "Captions"
+            },
+            "default_value": [
+                "titles",
+                "captions"
+            ],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_5c979cd6b2116",
+            "label": "Where will it display",
+            "name": "meta_position",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncgallery-capslide": "Overlay on hover",
+                "ncgallery-capoverlay": "Overlay",
+                "ncgallery-capbelow": "Show below"
+            },
+            "default_value": "ncgallery-capoverlay",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -527,5 +551,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739864889
+    "modified": 1740903204
 }

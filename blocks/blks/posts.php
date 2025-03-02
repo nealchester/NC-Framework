@@ -160,7 +160,7 @@ function nc_posts_block_markup( $block, $content = '', $is_preview = false ) {
 		</div><!-- / ncontain -->
 	</div><!-- / ncard_box -->
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php nc_box_styles($id); ?>
 

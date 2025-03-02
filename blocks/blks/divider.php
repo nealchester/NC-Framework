@@ -54,7 +54,7 @@ function nc_divider_block_markup( $block, $content = '', $is_preview = false ) {
 	wp_enqueue_style('nc-blocks-divider'); 
 	?>
 
-    <div id="<?php echo $id; ?>" class="ncdivider <?php echo ' '.$rotate.' '.$position; echo esc_attr($className);?>"<?php if($bgcolor){ echo ' style="background:'.$bgcolor.'"'; }?>>
+    <div id="<?php echo $id; ?>" class="ncdivider <?php echo $rotate.' '.$position; echo esc_attr($className);?>"<?php if($bgcolor){ echo ' style="background:'.$bgcolor.'"'; }?> <?php echo nc_block_attr();?>>
 		<div class="ncdivider_container">
             <?php 
             if($customsvg) { echo $customsvg; }
@@ -71,20 +71,18 @@ function nc_divider_block_markup( $block, $content = '', $is_preview = false ) {
 		</div>
 	</div>
 
-    <style id="<?php echo $id; ?>-block-css">
+    <style id="<?php echo $id; ?>-css">
+
         <?php echo '#'.$id; ?> svg { width:100%; height:auto; display:block; transform-origin: center; }
         <?php echo '#'.$id; ?> svg path { fill:<?php echo $divcolor; ?>; }
         <?php echo '#'.$id; ?>.ncdivider-topleft svg { transform:scale(1, 1); }
         <?php echo '#'.$id; ?>.ncdivider-topright svg { transform:scale(-1, 1); }
         <?php echo '#'.$id; ?>.ncdivider-bottomright svg { transform:rotate(180deg); }
         <?php echo '#'.$id; ?>.ncdivider-bottomleft svg { transform:rotate(180deg)scale(-1, 1); }
+        .editor-styles-wrapper <?php echo '#'.$id; ?> { z-index: 30; } 
 
-        <?php if(get_field('custom_styles')):?> 
-        /* Custom CSS */
-        <?php the_field('custom_styles');?>
-        <?php endif;?>
+        <?php nc_block_custom_css();?>
+
     </style>
     
-    <?php
-}
-?>
+<?php } ?>

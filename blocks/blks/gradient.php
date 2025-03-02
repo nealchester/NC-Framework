@@ -67,7 +67,7 @@ wp_enqueue_style('nc-blocks-gradient'); ?>
 
 </div>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php echo '#'.$id; ?>.ncgradimg {
   --height: <?php echo get_field('height') ?: '600px'; ?>;
@@ -127,10 +127,7 @@ wp_enqueue_style('nc-blocks-gradient'); ?>
 
 }
 
-<?php if(get_field('custom_styles')):?> 
-/* Custom CSS */
-<?php the_field('custom_styles');?>
-<?php endif;?>
+<?php nc_block_custom_css();?>
 
 </style>
 

@@ -22,7 +22,7 @@
         },
         {
             "key": "field_67a89169f2b39",
-            "label": "Column Gap Spacing",
+            "label": "Column Spacing",
             "name": "column_gap",
             "aria-label": "",
             "type": "number",
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -45,7 +45,7 @@
         },
         {
             "key": "field_67a899699afae",
-            "label": "Row Gap Spacing",
+            "label": "Row Spacing",
             "name": "row_gap",
             "aria-label": "",
             "type": "number",
@@ -53,7 +53,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -249,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739864729
+    "modified": 1740910780
 }

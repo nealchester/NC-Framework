@@ -121,11 +121,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": 3,
             "min": 2,
             "max": 9,
             "allow_in_bindings": 0,
-            "placeholder": "",
+            "placeholder": 3,
             "step": 1,
             "prepend": "",
             "append": ""
@@ -339,5 +339,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740659045
+    "modified": 1740910337
 }

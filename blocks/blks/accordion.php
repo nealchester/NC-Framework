@@ -56,7 +56,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	wp_enqueue_script('nc-blocks-accordion'); 
 	?>
 	
-	<div id="<?php echo $id; ?>" class="nccordion_container ncblock<?php echo esc_attr($className); ?>">
+	<div id="<?php echo $id; ?>" class="nccordion_container ncblock<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 		<div class="ncontain">
 			<?php if( $choose == 'post' ):?>
 
@@ -146,7 +146,7 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 
 	<?php endif;?>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php echo '#'.$id; ?> .nccordion {
   --acc-border-color: <?php echo get_field('acc_border_color') ?: '#aaa';?>;
@@ -162,6 +162,4 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 </style>
 
 
-<?php
-}
-?>
+<?php } ?>

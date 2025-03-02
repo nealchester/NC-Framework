@@ -56,7 +56,6 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     $txcolor = get_field('text_color') ?: 'currentColor';
     $mwidth = get_field('max_width').'px' ?: '700';
     $ovcolor = get_field('overlay_color') ?: 'rgba(2,0,30,0.8)';
-    $bsize = get_field('button_size') .'rem' ?: '1.3';
 
 ?>
 
@@ -75,7 +74,7 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     <input id="<?php echo $lb_id;?>" type="checkbox" class="hide lbox_check" name="popup" value="popup" aria-hidden>
 
     <div class="lbox_overlay" hidden>
-        <div class="lbox_content">
+        <div class="lbox_content" <?php echo nc_block_attr();?>>
             <label class="lbox_close" for="<?php echo $lb_id;?>"><div class="ncicon nc-close"></div></label>
             <?php echo $lb_content; ?>
         </div>
@@ -84,14 +83,13 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
 </div>
   
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
     <?php echo '#'.$id; ?>.lbox {
     --ovcolor: <?php echo $ovcolor; ?>;
     --bgcolor: <?php echo $bgcolor; ?>;
     --txcolor: <?php echo $txcolor; ?>;
     --mwidth: <?php echo $mwidth; ?>;
-    --bsize: <?php echo $bsize; ?>;
     }
 
     @media(min-width:1024px){

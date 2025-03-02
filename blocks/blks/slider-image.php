@@ -107,7 +107,7 @@ function nc_imgslider_block_markup( $block, $content = '', $is_preview = false )
 		</div>
 	</div>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php if(!$slides):?>
 	<?php echo '#'.$id; ?> .imgslider_noimages {

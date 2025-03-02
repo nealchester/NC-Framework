@@ -95,6 +95,7 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 		</section>
 
 <style id="<?php echo $id; ?>-block-css">
+
 	<?php echo '#'.$id; ?>.nchero {
 		--overlay-opacity: <?php echo $o_opacity.";\n"; ?>
 		--overlay-color: <?php echo $o_color.";\n"; ?>
@@ -116,46 +117,46 @@ function nc_hero_block_markup( $block, $content = '', $is_preview = false ) {
 
 		--box-min-height: <?php echo $min_height.";\n"; ?>
 		--box-bgcolor: <?php echo $bgcolor.";\n"; ?>
+		}
 
+		.editor-styles-wrapper <?php echo '#'.$id; ?> .nchero_image { height:100%; }
+		
 		/* Main Image */
 
-		.nchero_image {
-			background-image: url('<?php echo wp_get_attachment_image_url( $image, 'full'); ?>');
+		<?php echo '#'.$id; ?> .nchero_image {
+			background-image: url('<?php echo wp_get_attachment_image_url( $image, 'full'); ?>');	
 		}
 
 		<?php if($image_mobile && $media_query):?>
+
 		@media(max-width:<?php echo $media_query.'px';?>) {	
-			.nchero_image {
+
+			<?php echo '#'.$id; ?> .nchero_image {
 				background-image:url(<?php echo wp_get_attachment_image_url( $image_mobile, 'full'); ?>);
 			}
-			--image-focus: <?php echo $focus_mobile;?>;
+			<?php echo '#'.$id; ?> {
+				--image-focus: <?php echo $focus_mobile;?>;
+			}
+
 		}
 		<?php endif;?>
 
-	}
+	<?php if($parallax == 'js' && $image):?>
 
-	<?php echo '#wpbody #'.$id; ?> .nchero_image {
-		height:100%;
-	}
-
-	<?php if($parallax == 'js'):?>
 		<?php 
 			wp_enqueue_script('nc-blocks-parallax');
 			wp_enqueue_style('nc-blocks-parallax');
 		?>
-	<?php endif;?>
 
-	<?php if($parallax == 'css' && $image ):?>
-		<?php echo '#'.$id; ?>.nchero .nchero_image {
+	<?php elseif($parallax == 'css' && $image ):?>
+
+		<?php echo '#'.$id; ?> .nchero_image {
 			background-attachment: fixed;
 		}
-	<?php endif;?>	
 
-
-	<?php if(get_field('custom_styles')):?> 
-	/* Custom CSS */
-	<?php the_field('custom_styles');?>
 	<?php endif;?>
+
+	<?php nc_block_custom_css(); ?>
 
 </style>
 

@@ -121,7 +121,7 @@ function nc_heroslider_block_markup( $block, $content = '', $is_preview = false 
 
 	</div><?php // slider box end  ?>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php
 /* vars for content position */

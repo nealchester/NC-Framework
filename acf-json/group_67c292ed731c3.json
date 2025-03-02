@@ -22,7 +22,7 @@
         },
         {
             "key": "field_67c292ed8895a",
-            "label": "Slides and Images",
+            "label": "Slides",
             "name": "slides",
             "aria-label": "",
             "type": "repeater",
@@ -39,9 +39,31 @@
             "rows_per_page": 10,
             "min": 2,
             "max": 0,
-            "collapsed": "",
+            "collapsed": "field_67c456e324298",
             "button_label": "Add slide",
             "sub_fields": [
+                {
+                    "key": "field_67c456e324298",
+                    "label": "Slide Name",
+                    "name": "slide_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 7,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67c292ed8895a"
+                },
                 {
                     "key": "field_67c292ee06b72",
                     "label": "Background Image",
@@ -980,5 +1002,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1740827711
+    "modified": 1740920906
 }

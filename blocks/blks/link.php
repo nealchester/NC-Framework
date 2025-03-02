@@ -53,9 +53,10 @@ function nc_singlelink_block_markup( $block, $content = '', $is_preview = false 
 	if(get_field("before_title")) {	$before_text = '<strong>'.get_field("before_title").'</strong> '; }
 ?>
 
-<?php 
+	<?php 
 	wp_enqueue_style('nc-blocks-posts');
 	?>
+	
 	<div id="<?php echo $id; ?>" class="ncard_outerbox">
 		<div class="ncard_container">
 

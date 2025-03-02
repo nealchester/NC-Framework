@@ -112,8 +112,8 @@
   
   .ncgallery_caption {
   position:absolute;
-  width:102%;
-  left:-1%;
+  width:100%;
+  left:0;
   bottom:0;
   padding:3rem 0.75rem 0.75rem;
   color:#fff;
@@ -151,6 +151,15 @@
     width:100%;
     padding:0.5rem;
     background:none;
+    box-sizing: border-box;
+  }
+
+  .ncgallery-capbelow .ncgallery_item {
+    overflow: auto;
+  }
+
+  .ncgallery-capbelow .ncgallery_link {
+    height: auto;
   }
   
   .ncgallery-capbelow .ncgallery_size {

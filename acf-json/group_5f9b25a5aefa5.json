@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_5f9b25b025ca7",
-            "label": "Size",
+            "label": "Pointer Size",
             "name": "size",
             "aria-label": "",
-            "type": "number",
+            "type": "range",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,16 +17,16 @@
                 "id": ""
             },
             "default_value": 20,
-            "placeholder": 20,
-            "prepend": "",
-            "append": "px",
-            "min": 10,
+            "min": "",
             "max": "",
-            "step": 5
+            "allow_in_bindings": 1,
+            "step": "",
+            "prepend": "",
+            "append": "px"
         },
         {
             "key": "field_5f9b25bc25ca8",
-            "label": "Color",
+            "label": "Pointer Color",
             "name": "color",
             "aria-label": "",
             "type": "color_picker",
@@ -39,8 +39,9 @@
                 "id": ""
             },
             "default_value": "",
-            "enable_opacity": false,
-            "return_format": "string"
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
         }
     ],
     "location": [
@@ -61,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739866898
+    "modified": 1740909655
 }

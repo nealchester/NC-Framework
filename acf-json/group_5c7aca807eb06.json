@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -83,15 +83,16 @@
                 "id": ""
             },
             "choices": {
-                "js": "Use Javascript",
-                "css": "Use CSS (fixed background)",
+                "js": "Motion Background",
+                "css": "Fixed Background",
                 "none": "No parallax"
             },
             "default_value": "none",
-            "allow_null": 1,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -552,5 +553,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740830725
+    "modified": 1740912405
 }

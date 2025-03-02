@@ -99,7 +99,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 		</div>
 	</section>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php echo '#'.$id; ?>.ncsplit {
     --image-position: <?php echo $focus; ?>;
@@ -182,11 +182,7 @@ function nc_split_block_markup( $block, $content = '', $is_preview = false ) {
 
 		}
 
-<?php if(get_field('custom_styles')):?> 
-/* Custom CSS */
-<?php the_field('custom_styles');?>
-
-<?php endif;?>
+		<?php nc_block_custom_css();?>
 
 </style>
 

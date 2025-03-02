@@ -42,6 +42,24 @@
             "delay": 0
         },
         {
+            "key": "field_67c443bf8daff",
+            "label": "Scroll Animation",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_5f0a5b6943c9b",
             "label": "extras",
             "name": "extras",
@@ -56,6 +74,7 @@
                 "id": ""
             },
             "clone": [
+                "group_67aa0054e8f0e",
                 "group_67ad4b9f88c22",
                 "group_67ad4b91436c6"
             ],
@@ -83,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739864697
+    "modified": 1740915666
 }

@@ -3,6 +3,216 @@
     "title": "Block: NC Gradient",
     "fields": [
         {
+            "key": "field_6334aedfb3ce4",
+            "label": "Image Options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6334aedfb766c",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6334aedfbee0e",
+            "label": "Image Width",
+            "name": "image_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 60,
+            "min": 0,
+            "max": 100,
+            "allow_in_bindings": 1,
+            "step": 10,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_6334aedfc62af",
+            "label": "Image Focus",
+            "name": "image_focus",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_679e2de582b60",
+                "field_679e2e8882b61"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_6334aedfbb137",
+            "label": "Image Position",
+            "name": "image_position",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ncgradimg-left": "Right",
+                "ncgradimg-right": "Left"
+            },
+            "default_value": "ncgradimg-left",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6334b5227088f",
+            "label": "Image Blend Mode",
+            "name": "image_blend_mode",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "normal": "normal",
+                "multiply": "multiply",
+                "screen": "screen",
+                "overlay": "overlay",
+                "darken": "darken",
+                "lighten": "lighten",
+                "color": "color",
+                "color-dodge": "color-dodge",
+                "color-burn": "color-burn",
+                "difference": "difference",
+                "exclusion": "exclusion",
+                "hue": "hue",
+                "saturation": "saturation",
+                "luminosity": "luminosity"
+            },
+            "default_value": "normal",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6334b6498211b",
+            "label": "Gradient Options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6334aedfe79ab",
+            "label": "Color",
+            "name": "color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#222222",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_6334b5cc8211a",
+            "label": "Gradient Width",
+            "name": "grad_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "allow_in_bindings": 1,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        },
+        {
             "key": "field_6334aedfe3e0f",
             "label": "Block Options",
             "name": "",
@@ -16,7 +226,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 1,
+            "open": 0,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -128,218 +338,8 @@
             "append": "px"
         },
         {
-            "key": "field_6334b6498211b",
-            "label": "Gradient Options",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_6334aedfe79ab",
-            "label": "Color",
-            "name": "color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#222222",
-            "enable_opacity": 0,
-            "return_format": "string",
-            "allow_in_bindings": 1
-        },
-        {
-            "key": "field_6334b5cc8211a",
-            "label": "Gradient Width",
-            "name": "grad_width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 50,
-            "min": 0,
-            "max": 100,
-            "allow_in_bindings": 1,
-            "step": 5,
-            "prepend": "",
-            "append": "%"
-        },
-        {
-            "key": "field_6334aedfb3ce4",
-            "label": "Image Options",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_6334aedfbee0e",
-            "label": "Image Width",
-            "name": "image_width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 60,
-            "min": 0,
-            "max": 100,
-            "allow_in_bindings": 1,
-            "step": 10,
-            "prepend": "",
-            "append": "%"
-        },
-        {
-            "key": "field_6334aedfb766c",
-            "label": "Image",
-            "name": "image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_6334aedfc62af",
-            "label": "Image Focus",
-            "name": "image_focus",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "field_679e2de582b60",
-                "field_679e2e8882b61"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_6334aedfbb137",
-            "label": "Image Position",
-            "name": "image_position",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "ncgradimg-left": "Right",
-                "ncgradimg-right": "Left"
-            },
-            "default_value": "ncgradimg-left",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_6334b5227088f",
-            "label": "Image Blend Mode",
-            "name": "image_blend_mode",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "normal": "normal",
-                "multiply": "multiply",
-                "screen": "screen",
-                "overlay": "overlay",
-                "darken": "darken",
-                "lighten": "lighten",
-                "color": "color",
-                "color-dodge": "color-dodge",
-                "color-burn": "color-burn",
-                "difference": "difference",
-                "exclusion": "exclusion",
-                "hue": "hue",
-                "saturation": "saturation",
-                "luminosity": "luminosity"
-            },
-            "default_value": "normal",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_67b32f64bd7a4",
-            "label": "Scroll Animation",
+            "label": "Image Scroll Animation",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -418,5 +418,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740394176
+    "modified": 1740904395
 }

@@ -53,7 +53,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
-	<nav id="<?php echo $id; ?>" class="ncmenu_nav alignfull <?php if($sticky){ echo'ncmenu-sticky'; } echo nc_block_attr(); ?>" aria-label="On page navigation">
+	<nav id="<?php echo $id; ?>" class="ncmenu_nav alignfull <?php if($sticky){ echo'ncmenu-sticky'; };?>" <?php echo nc_block_attr(); ?> aria-label="On page navigation">
 		<div class="ncontain">
 			<?php // nc_before_content();?>
 		<ul class="ncmenu">
@@ -83,7 +83,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 		</div>
 	</nav>
 
-	<style id="<?php echo $id; ?>-block-css">
+	<style id="<?php echo $id; ?>-css">
 
 		.alignfull { scroll-margin-top: <?php echo $height.'px'; ?> }
 
@@ -147,10 +147,7 @@ function nc_nav_block_markup( $block, $content = '', $is_preview = false ) {
 
 		<?php nc_box_styles($id); ?>
 
-		<?php if(get_field('custom_styles')):?> 
-		/* Custom CSS */
-		<?php the_field('custom_styles');?>
-		<?php endif;?>
+		<?php nc_block_custom_css();?>
 
 	</style>
 

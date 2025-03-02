@@ -62,7 +62,7 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php wp_enqueue_style('nc-blocks-rich-text'); ?>
 
-	<section id="<?php echo $id; ?>" class="nctext<?php echo $dp. $colcount. esc_attr($className); ?>">
+	<section id="<?php echo $id; ?>" class="nctext<?php echo $dp. $colcount. esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 		<div class="ncontain" <?php echo nc_animate(); ?>>
 
 			<div class="nctext_paragraphs nc_content_block_main">
@@ -75,7 +75,7 @@ function nc_text_block_markup( $block, $content = '', $is_preview = false ) {
 		</div>
 	</section>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php nc_box_styles($id); ?>
 

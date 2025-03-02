@@ -44,7 +44,7 @@ function nc_blank_block_markup( $block, $content = '', $is_preview = false ) {
 	$tcontent = get_field('text_content');
 
 ?>
-	<section id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className); ?>">
+	<section id="<?php echo $id; ?>" class="ncblank<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
         <div class="ncontain" <?php echo nc_animate();?>>
        
         <?php if($tcontent):?><?php echo '<div class="nc_content_block_main">'.$tcontent.'</div>';?>
@@ -59,7 +59,7 @@ function nc_blank_block_markup( $block, $content = '', $is_preview = false ) {
 		</div>
 	</section>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 <?php nc_box_styles($id); ?>
 

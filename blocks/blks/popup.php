@@ -55,7 +55,7 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
 ?>
 	<?php wp_enqueue_script('nc-blocks-popup');	?>
   
-<div id="<?php echo $id; ?>" class="ncpopup_overlay<?php echo esc_attr($className); ?>">
+<div id="<?php echo $id; ?>" class="ncpopup_overlay<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
   <div class="ncpopup">
     <div class="ncpopup_container">
       <div class="ncpopup_content">
@@ -69,7 +69,7 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
   </div>
 </div>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
 /* Popup */
 
@@ -149,11 +149,8 @@ function nc_popup_block_markup( $block, $content = '', $is_preview = false ) {
   top:0;
 }
 
-<?php get_field('custom_css'); ?>
+<?php nc_block_custom_css(); ?>
 
 </style>
 
-<?php
-}
-
-?>
+<?php } ?>

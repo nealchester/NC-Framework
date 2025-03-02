@@ -45,7 +45,7 @@ function nc_search_block_markup( $block, $content = '', $is_preview = false ) {
     wp_enqueue_style('nc-blocks-search-box');
     ?>
 
-    <form class="ncsearchform" role="search" method="get" action="<?php echo $address; ?>" id="<?php echo $id; ?>">
+    <form class="ncsearchform" role="search" method="get" action="<?php echo $address; ?>" id="<?php echo $id; ?>" <?php echo nc_block_attr();?>>
         <div class="ncsearchform_contain">
             <label for="wp-searchbox" class="hidetext"><?php _e('Search','nc-framework');?></label>
             <input class="ncsearchform_input" type="search" id="wp-searchbox" name="s" <?php if(is_search()){ echo 'placeholder="'.__('Search again','nc-framework').'"'; } else { echo 'placeholder="'.__($placeholder,'nc-framework').'"'; } ?>>
@@ -55,7 +55,7 @@ function nc_search_block_markup( $block, $content = '', $is_preview = false ) {
         </div>  
     </form>
 
-<style id="<?php echo $id; ?>-block-css">
+<style id="<?php echo $id; ?>-css">
 
     <?php nc_block_custom_css(); ?>
 

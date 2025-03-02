@@ -97,7 +97,7 @@ the front-end and not the editor. */
   position: absolute;
   right: 0;
   top: 0;
-  font-size: var(--bsize, 1.3rem);
+  font-size: 1.3rem;
   text-align: center;
   width: auto;
   padding: 1em 1.3em;

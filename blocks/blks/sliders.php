@@ -30,6 +30,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 
 	// ID Setup
 	if (get_field('set_id')) { $id = get_field('set_id'); } else { $id = uniqid("block_"); };
+	
 
     // Create class attribute allowing for custom "className" and "align" values.
     $className = '';
@@ -42,7 +43,13 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 		
 	//ACF Block
 
-	$slider_id = 'splide-'.rand(10, 99);
+	// $slider_id = 'splide-'$id; // 'splide-'.rand(10, 99);
+
+	if (get_field('set_id')) { 
+		$slider_id = get_field('set_id').'-slider'; } 
+	else { 
+		$slider_id = uniqid().'-slider'; };
+
 	$img_slider = get_field('image_slider');
 	$slide_aspect_ratio = get_field('slide_ratio') ?: 'auto';
 	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: $slide_aspect_ratio;
@@ -69,7 +76,9 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 						<?php while( have_rows('slides') ): the_row();?>
 
 						<?php 
+						
 							$img_size = get_field('image_size') ?: 'large';
+							$sname = get_sub_field('slide_name') ?: 'noname';
 							$image = get_sub_field('bg_img');
 							$slide = get_sub_field('slide');
 							$focal = ' background-position:'.nc_block_slider_image_focus($image).';';
@@ -91,7 +100,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 							 }
 						?>
 
-						<div class="splide__slide">
+						<div class="splide__slide <?php echo 'slide-'.$sname; ?>">
 							<?php echo $img_bg;?>	
 							<?php echo $img_content;?>
 						</div>
@@ -113,86 +122,58 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	</div>
 
 <style id="<?php echo $id; ?>-css">
-
-<?php echo '#'.$id; ?> .splide__slide {
-    padding:var(--slide-padding);
-    background:var(--slide-bg-color);
-    border-radius:var(--slide-border-radius);
-		text-align: var(--slide-text-align);
-		color:var(--slide-tx-color);
-		border:var(--slide-border);
-		overflow:hidden;
-		display:flex;
-		flex-direction:column;
-		justify-content:var(--slide-justify-content);
-	}
-
-	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide > img {
-		object-fit: cover;
-		height:100%;
-	}
-
-<?php echo '#'.$id; ?> .splide__img {
-		position:absolute;
-		z-index: 5;
-		left:0; top:0; bottom:0; right:0;
-		width:100%; height:100%;
-		object-fit:cover;
-		opacity: var(--image-opacity);
-    mix-blend-mode: var(--image-blend-mode);
-	}	
-
-	<?php echo '#'.$id; ?> .splide__slide > .splide__img ~ * {
-		z-index:10;
-		position:relative;
-  }
-	
-	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__img  {
-		height: 100% !important
-	}
   
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
 		position: relative;
 		margin-inline:auto;
 		max-width:600px;
-		background: #f2f2f2;
+		background-color: #f2f2f2;
+	}
+
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__bg {
+    mix-blend-mode: var(--image-blend-mode);
+    opacity: var(--image-opacity);
+    background-size: cover;
+		background-position: center;
+		background-repeat:no-repeat;
+		position:absolute;
+		inset:0;
+  }
+
+  .editor-styles-wrapper <?php echo '#'.$id; ?> .splide__content {
+		padding:1em 2rem;
+	}
+
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide ~ .splide__slide {
+		display:none;
+	}
+
+	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide:before {
+		content: 'Here\'s an example of how each slide will look. For an actual visual, please preview this page.';
+		display: block;
+		text-align: center;
+		padding: 0.5em;
+		font-size: var(--txt-small);
+		color: currentColor;
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+		width: 100%;
 	}
 
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
 		position: relative;
 	}	
 
-	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide > :last-child {
-		margin-bottom:0;
-	}
-
-	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__plink {
-		pointer-events: none;
-		pointer: default;
-	}
-
-<?php // nc_box_styles($id); ?>
 
 <?php echo '#'.$id; ?> {
 	overflow-x:hidden;
 
 	.splide__slide {
-		width: 100%;
 		aspect-ratio: <?php echo $slide_aspect_ratio;?>
 	}
 }
-<?php echo '#'.$id; ?> .splide__bg {
-		background-size: cover;
-		background-position: center;
-		background-repeat:no-repeat;
-		position:absolute;
-		inset:0;
-	}
-
-	<?php echo '#'.$id; ?> .splide__content {
-		padding:1em 2rem;
-	}
 
 	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text {
 		position:absolute;

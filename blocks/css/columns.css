@@ -84,7 +84,16 @@ This contains all NC Framework and WordPress blocks.
 /* Modifiers Column Count Style */
 
 .ncolumns-fixed { grid-template-columns: repeat(var(--count), 1fr) }
-.ncolumns-auto  { grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 1fr)) }
+
+.ncolumns-auto  { 
+  grid-template-columns: 
+  repeat(auto-fit, 
+  minmax( 
+    min( var(--min-col-width), 100% ), 1fr
+    )
+  ); 
+}
+
 .ncolumns-flow  { grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), auto)) }
 
 .ncolumns-1 { --count:1; }
