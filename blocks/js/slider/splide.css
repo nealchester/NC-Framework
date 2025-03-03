@@ -179,7 +179,7 @@
   --arrow-icon-bg: #fff;
   --arrow-icon-color-hover: #fff;
   --arrow-icon-bg-hover: #000;
-  --arrow-icon-box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  --arrow-icon-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 
   .splide__arrow--prev {
 	  transform:translateX( calc( -1 * var(--arrow-width) / 2) );
