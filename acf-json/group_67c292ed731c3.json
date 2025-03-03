@@ -16,13 +16,13 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
         {
             "key": "field_67c292ed8895a",
-            "label": "Slides",
+            "label": "",
             "name": "slides",
             "aria-label": "",
             "type": "repeater",
@@ -595,46 +595,6 @@
             "append": "rem"
         },
         {
-            "key": "field_67c292edb0ec8",
-            "label": "Show Pagination",
-            "name": "pagination",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_67c292edb1a58",
-            "label": "Show Arrows",
-            "name": "arrows",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_67c292edb54fb",
             "label": "Auto Play",
             "name": "auto_play",
@@ -677,9 +637,91 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_67c292edb0ec8",
+            "label": "Show Pagination",
+            "name": "pagination",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67c292edb1a58",
+            "label": "Show Arrows",
+            "name": "arrows",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_67c292edbc909",
             "label": "Center Slide",
             "name": "center_slide",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67c526d1ffc53",
+            "label": "Arrow Style",
+            "name": "arrow_style",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Circles",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67c53b46adab7",
+            "label": "Only show arrows on hover",
+            "name": "show_on_hover",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -1002,5 +1044,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1740920906
+    "modified": 1740979092
 }

@@ -15,7 +15,7 @@ function nc_sliders_block() {
 		'mode'              => 'preview',
 		'keywords'          => array('slider', 'sliders', 'slide', 'carousel'),
 		'post_types'        => get_post_types(),
-		'align'             => 'full',
+		'align'             => 'wide',
 		'supports'          => array( 
 				'align' => array( 'wide', 'full', 'none' ), 
 				'mode' => true,
@@ -48,7 +48,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	if (get_field('set_id')) { 
 		$slider_id = get_field('set_id').'-slider'; } 
 	else { 
-		$slider_id = uniqid().'-slider'; };
+		$slider_id = 'slider-'.uniqid(); };
 
 	$img_slider = get_field('image_slider');
 	$slide_aspect_ratio = get_field('slide_ratio') ?: 'auto';
@@ -56,6 +56,9 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	$tposition = get_field('slide_text_position') ?: 'middle';
 	$overlay = get_field('img_overlay_color') ?: 'rbga(0,0,0,0.3)';
 	$text_max_width = get_field('slide_text_width') ?: '1000';
+
+	$arr_style = get_field('arrow_style') ?: true;
+	if( $arr_style ) { $astyle = ' splide--arrows-outside'; } else { $astyle = null; }
 
 	$center = get_field('slide_text_align');
 	
@@ -70,7 +73,17 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 			<?php if( have_rows('slides') ): // start slides ?>
 			<div class="splide__wrap nc_content_block_main">
 				<noscript>Your browser does not support JavaScript!</noscript>
-				<div class="splide" <?php echo 'id="'.$slider_id.'"'; ?>>
+				<div class="splide<?php echo $astyle; ?>" <?php echo 'id="'.$slider_id.'"'; ?>>
+
+					<div class="splide__arrows">
+						<button class="splide__arrow splide__arrow--prev">
+							<span class="nc-arrow-back ncicon"></span>
+						</button>
+						<button class="splide__arrow splide__arrow--next">
+							<span class="nc-arrow-forward ncicon"></span>
+						</button>
+					</div>
+
 					<div class="splide__track">
 						<div class="splide__list">
 						<?php while( have_rows('slides') ): the_row();?>
@@ -110,6 +123,12 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 					</div>
 				</div>
 			</div>
+
+			<?php if( !in_the_loop() ):?>
+			<p class="splide__message">Here's an example of how each slide may look. 
+				For an actual visual, please preview this page.</p>
+			<?php endif;?>
+
 			<?php else:?>
 
 				<div class="nocontent">
@@ -122,6 +141,20 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	</div>
 
 <style id="<?php echo $id; ?>-css">
+
+	.editor-styles-wrapper <?php echo '#'.$id; ?> {
+		overflow-x:hidden;
+	}
+
+	.editor-styles-wrapper .splide__message {
+		display: block;
+		text-align: center;
+		padding: 0.5em;
+		font-size: var(--txt-small);
+		max-width: 400px;
+		margin-inline: auto;
+		margin-bottom:0;
+	}
   
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__slide {
 		margin-bottom:1em;
@@ -129,6 +162,10 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 		margin-inline:auto;
 		max-width:600px;
 		background-color: #f2f2f2;
+	}
+
+	.editor-styles-wrapper .splide__arrows {
+		display:none;
 	}
 
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide__bg {
@@ -149,31 +186,20 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 		display:none;
 	}
 
-	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide:before {
-		content: 'Here\'s an example of how each slide will look. For an actual visual, please preview this page.';
-		display: block;
-		text-align: center;
-		padding: 0.5em;
-		font-size: var(--txt-small);
-		color: currentColor;
-		position: absolute;
-		z-index: 100;
-		top: 100%;
-		width: 100%;
-	}
-
 	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
 		position: relative;
 	}	
 
 
-<?php echo '#'.$id; ?> {
-	overflow-x:hidden;
-
-	.splide__slide {
+	<?php echo '#'.$id; ?> .splide__slide {
 		aspect-ratio: <?php echo $slide_aspect_ratio;?>
 	}
-}
+
+	<?php if( get_field('show_on_hover') ):?>
+	<?php echo '#'.$id; ?> .splide__arrow { opacity:0; }
+	<?php echo '#'.$id; ?> .splide:hover .splide__arrow {	opacity:1; }
+	<?php endif;?>
+
 
 	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text {
 		position:absolute;

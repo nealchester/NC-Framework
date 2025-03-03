@@ -14,6 +14,20 @@
 
   --image-blend-mode: normal;
   --image-opacity: 1;
+
+  --arrow-width:40px;
+
+  --arrow-bg: linear-gradient(transparent, rgba(0, 0, 0, 0.3), transparent);
+  --arrow-icon-color: #fff;
+  --arrow-icon-size: calc( var(--arrow-width) / 2 );
+  --arrow-icon-bg: transparent;
+  --arrow-icon-bg-hover: transparent;
+  --arrow-icon-color-hover: var(--arrow-icon-color);
+  --arrow-icon-box-shadow: none;
+  }
+
+  .splide__track {
+    border-radius: var(--slide-border-radius);
   }
 
   .splide__slide {
@@ -46,36 +60,39 @@
   
   .splide__arrow {
     padding:0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3), transparent);
+    background: var(--arrow-bg);
     border:none;
     cursor:pointer;
     display:flex;
     align-items: center;
     justify-content:center;
-    width:2.5rem;
-    padding:0.1em;
+    width: var(--arrow-width);
     top:0;
     position:absolute;
     height: 100%;
-    /* height: calc(100% - calc(30px + 0.75rem) ); */
-    /* .splide__pagination button (height) + .splide__pagination (margin-height) minus 100%  */
-    color:var(--arrow-color);
     z-index:10;
-    opacity:0;
-    transition:0.5s
-  }
-  
-  .splide:hover .splide__arrow {
-    opacity:1;
-  }
-  
-  
-  .splide__arrow svg {
-    display:block;
-    width: 60%;
-    height:auto;
-    border:none;
-    filter:drop-shadow(1px 1px 5px rgba(0,0,0,1))
+    transition:0.5s;
+
+    .ncicon {
+      font-size: var(--arrow-icon-size);
+      color: var(--arrow-icon-color);
+      border-radius: 100%;
+      background: var(--arrow-icon-bg);
+	    box-shadow: var(--arrow-icon-box-shadow);
+      transition: 0.3s;
+      display: flex;
+      width: var(--arrow-width);
+      aspect-ratio: 1;
+      align-items: center;
+      justify-content: center;
+      line-height: normal;
+    }
+
+    &:hover .ncicon {
+      color: var(--arrow-icon-color-hover);
+      background: var(--arrow-icon-bg-hover);
+    }
+
   }
   
   .splide__arrow:disabled {
@@ -84,16 +101,8 @@
     cursor: default;
   }
   
-  .splide__arrow svg path {
-    fill:#fff;
-  }
-  
   .splide__arrow--prev {
     left:0;
-
-    svg {
-      transform:scale(-1);
-    }
   }
   
   .splide__arrow--next {
@@ -119,13 +128,13 @@
   }
 
   .splide__wrap:has(.splide__pagination) {
-    --pagin-button-height: 50px;
-    padding-bottom: var(--pagin-button-height);
+    --pgn-button-height: 50px;
+    padding-bottom: var(--pgn-button-height);
   }
   
   .splide__pagination button {
     width: 40px;
-    height: var(--pagin-button-height);
+    height: var(--pgn-button-height);
     padding-bottom: 0.5em;
     border:none;
     background:transparent;
@@ -138,15 +147,14 @@
     font-family: sans-serif;
     color:currentColor;
   }
-
-
   
   .splide__pagination__page:after {
     content:'';
     font-size: 1rem;
     line-height: 0;
     display:block;
-    width:100%; height: 5px;
+    width:100%; 
+    height: 5px;
     background: var(--pgn-color);
     transition: 0.3s;
   }
@@ -164,3 +172,21 @@
     text-align: right;
   }
 
+.splide.splide--arrows-outside {
+
+  --arrow-bg: transparent;
+  --arrow-icon-color: #000;
+  --arrow-icon-bg: #fff;
+  --arrow-icon-color-hover: #fff;
+  --arrow-icon-bg-hover: #000;
+  --arrow-icon-box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+
+  .splide__arrow--prev {
+	  transform:translateX( calc( -1 * var(--arrow-width) / 2) );
+  }
+  
+  .splide__arrow--next {
+	  transform:translateX( calc( var(--arrow-width) / 2) );  
+  }
+
+}
