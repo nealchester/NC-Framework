@@ -1,5 +1,7 @@
 <?php 
 
+/* Fix UI styling in the block editor */
+
 function my_acf_admin_head() { ?>
     <style type="text/css">
 
@@ -72,7 +74,15 @@ function my_acf_admin_head() { ?>
       line-height: 1.4;
       }
 
-      acf-label
+      .mce-container-body.mce-stack-layout {
+        max-width: 768px;
+        margin-inline: auto;
+      }
+
+      div.mce-fullscreen {
+        background: rgba(0, 0, 0, 0.7);
+        padding-block: 1em;
+      }
 
     </style>
     

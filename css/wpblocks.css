@@ -370,6 +370,10 @@ cite:before { content:'\2014'; padding-right:0.3em }
     overflow-x:auto;
 }
 
+.wp-block-code code {
+    white-space: pre;
+}
+
 /* Widget Styles */
 
 .widget_rss ul li, 

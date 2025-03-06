@@ -29,7 +29,11 @@ function nc_sliders_block() {
 function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 
 	// ID Setup
-	if (get_field('set_id')) { $id = get_field('set_id'); } else { $id = uniqid("block_"); };
+	if (get_field('set_id')) { 
+		$id = get_field('set_id'); } else { $id = uniqid("slider_"); };
+
+	if (get_field('set_id')) { 
+		$id_box = get_field('set_id').'-box'; } else { $id_box = uniqid("slider_").'-box'; };
 	
 
     // Create class attribute allowing for custom "className" and "align" values.
@@ -43,13 +47,6 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 		
 	//ACF Block
 
-	// $slider_id = 'splide-'$id; // 'splide-'.rand(10, 99);
-
-	if (get_field('set_id')) { 
-		$slider_id = get_field('set_id').'-slider'; } 
-	else { 
-		$slider_id = 'slider-'.uniqid(); };
-
 	$img_slider = get_field('image_slider');
 	$slide_aspect_ratio = get_field('slide_ratio') ?: 'auto';
 	$slide_aspect_ratio_mobile = get_field('slide_ratio_mobile') ?: $slide_aspect_ratio;
@@ -57,8 +54,10 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	$overlay = get_field('img_overlay_color') ?: 'rbga(0,0,0,0.3)';
 	$text_max_width = get_field('slide_text_width') ?: '1000';
 
-	$arr_style = get_field('arrow_style') ?: true;
-	if( $arr_style ) { $astyle = ' splide--arrows-outside'; } else { $astyle = null; }
+	$arr_style = get_field('arrow_style');
+	if( $arr_style == 1 ) { $astyle = ' splide--arrows-outside'; } 
+	elseif( $arr_style == 0 ) { $astyle = null; }
+	else {  $astyle = ' splide--arrows-outside'; }
 
 	$center = get_field('slide_text_align');
 	
@@ -67,13 +66,12 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 
 ?>
 
-	<div id="<?php echo $id; ?>" class="splide__box<?php echo esc_attr($className);?>" <?php echo nc_block_attr();?>>
-			<?php //nc_before_content(); ?>
+				<?php if( have_rows('slides') ): // start slides ?>
 
-			<?php if( have_rows('slides') ): // start slides ?>
-			<div class="splide__wrap nc_content_block_main">
-				<noscript>Your browser does not support JavaScript!</noscript>
-				<div class="splide<?php echo $astyle; ?>" <?php echo 'id="'.$slider_id.'"'; ?>>
+				<div id="<?php echo $id_box; ?>" class="splide__box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
+
+					<noscript>Your browser does not support JavaScript!</noscript>
+					<div id="<?php echo $id; ?>" class="splide<?php echo $astyle;?>">
 
 					<div class="splide__arrows">
 						<button class="splide__arrow splide__arrow--prev">
@@ -110,7 +108,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 								$img_url = null;
 								$img_bg = null;
 								$img_content = '<div class="splide__content">'.$slide.'</div>';
-							 }
+								}
 						?>
 
 						<div class="splide__slide <?php echo 'slide-'.$sname; ?>">
@@ -121,27 +119,30 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 						<?php endwhile; ?>
 						</div>
 					</div>
-				</div>
+
+					</div>
+
+				<?php if( !in_the_loop() ):?>
+					<p class="splide__message">Here's an example of how each slide may look. 
+					For an actual visual, please preview this page.</p>
+				<?php endif;?>
+			
 			</div>
-
-			<?php if( !in_the_loop() ):?>
-			<p class="splide__message">Here's an example of how each slide may look. 
-				For an actual visual, please preview this page.</p>
-			<?php endif;?>
-
 			<?php else:?>
 
 				<div class="nocontent">
 					<p><?php _e('Add some slides to start. Use the sidebar settings to begin.','nc-framework');?></p>
 				</div>
 
+	
 			<?php endif; // end slides ?>
 
-
-	</div>
+			
 
 <style id="<?php echo $id; ?>-css">
 
+	<?php if( !in_the_loop() ):?>
+			
 	.editor-styles-wrapper <?php echo '#'.$id; ?> {
 		overflow-x:hidden;
 	}
@@ -149,7 +150,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	.editor-styles-wrapper .splide__message {
 		display: block;
 		text-align: center;
-		padding: 0.5em;
+		padding-top: calc( -1 * var(--u-padding) );
 		font-size: var(--txt-small);
 		max-width: 400px;
 		margin-inline: auto;
@@ -186,10 +187,11 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 		display:none;
 	}
 
-	.editor-styles-wrapper <?php echo '#'.$id; ?> .splide {
+	.editor-styles-wrapper <?php echo '#'.$id; ?>.splide {
 		position: relative;
 	}	
-
+	
+	<?php endif;?>
 
 	<?php echo '#'.$id; ?> .splide__slide {
 		aspect-ratio: <?php echo $slide_aspect_ratio;?>
@@ -197,7 +199,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 
 	<?php if( get_field('show_on_hover') ):?>
 	<?php echo '#'.$id; ?> .splide__arrow { opacity:0; }
-	<?php echo '#'.$id; ?> .splide:hover .splide__arrow {	opacity:1; }
+	.splide__box:hover <?php echo '#'.$id; ?> .splide__arrow {	opacity:1; }
 	<?php endif;?>
 
 
@@ -270,7 +272,11 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	}
 }
 
-<?php nc_box_styles($id); ?>
+@media(max-width:<?php echo get_field('break_width').'px' ?:'1024'; ?>){
+	<?php echo '#'.$id; ?>{	--arrow-width: 30px; }
+}
+
+<?php nc_box_styles($id_box); ?>
 
 <?php nc_block_custom_css(); ?>
 
@@ -287,7 +293,7 @@ if( in_the_loop() ): ?>
 
 <script id="<?php echo $id; ?>-js">
 	document.addEventListener( 'DOMContentLoaded', function () {
-		new Splide( '<?php echo '#'.$slider_id; ?>', {
+		new Splide( '<?php echo '#'.$id; ?>', {
 		type   : '<?php echo get_field('type') ?: loop; ?>',
 		perPage: <?php the_field('per_page') ?: 3; ?>,
 		perMove: <?php the_field('per_move') ?: 3; ?>,

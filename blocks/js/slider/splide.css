@@ -2,10 +2,16 @@
 
 /* Splide JS BLock */
 
+.splide__box:has(.splide__pagination) {
+  --pgn-button-height: 50px;
+  padding-bottom: calc( var(--pgn-button-height) + var(--u-padding) ) !important;
+}
+
 .splide {
   --pgn-color:#aaa;
   --pgn-color-current: #000;
   --pgn-align:center;
+  --pgn-button-width: 40px;
 
 	--slide-border-radius: 0;
 	--slide-bg-color: #f2f2f2;
@@ -126,14 +132,9 @@
   .splide__pagination li {
     margin-bottom: 0 !important;
   }
-
-  .splide__wrap:has(.splide__pagination) {
-    --pgn-button-height: 50px;
-    padding-bottom: var(--pgn-button-height);
-  }
   
   .splide__pagination button {
-    width: 40px;
+    width: var(--pgn-button-width);
     height: var(--pgn-button-height);
     padding-bottom: 0.5em;
     border:none;
