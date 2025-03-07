@@ -608,7 +608,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Yes",
             "default_value": 1,
             "allow_in_bindings": 1,
             "ui": 0,
@@ -629,49 +629,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Yes",
             "default_value": 0,
             "allow_in_bindings": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_67c292edb0ec8",
-            "label": "Show Pagination",
-            "name": "pagination",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_67c292edb1a58",
-            "label": "Show Arrows",
-            "name": "arrows",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -680,48 +640,6 @@
             "key": "field_67c292edbc909",
             "label": "Center Slide",
             "name": "center_slide",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "Yes",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_67c526d1ffc53",
-            "label": "Arrow Style",
-            "name": "arrow_style",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "Circles",
-            "default_value": 1,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_67c53b46adab7",
-            "label": "Only show arrows on hover",
-            "name": "show_on_hover",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -823,6 +741,144 @@
             "step": "0.5",
             "prepend": "",
             "append": "rem"
+        },
+        {
+            "key": "field_67cad2739d5db",
+            "label": "Controls",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67c292edb1a58",
+            "label": "Show Arrows",
+            "name": "arrows",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 1,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67c526d1ffc53",
+            "label": "Arrow Style",
+            "name": "arrow_style",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "outside": "Circles outside",
+                "inside": "Circles inside",
+                "default": "Hero inside"
+            },
+            "default_value": "outside",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67c53b46adab7",
+            "label": "Only show arrows on hover",
+            "name": "show_on_hover",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67c292edb0ec8",
+            "label": "Show Pagination",
+            "name": "pagination",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 1,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67cad4769d5dc",
+            "label": "Pagination Style",
+            "name": "pgn_style",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "o-bullets": "Overlayed bullets",
+                "o-bars": "Overlayed bars",
+                "bullets": "Bullets",
+                "bars": "Bars"
+            },
+            "default_value": "bars",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_67c292edc9a56",
@@ -974,7 +1030,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Yes",
             "default_value": 0,
             "allow_in_bindings": 1,
             "ui": 0,
@@ -995,7 +1051,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Yes",
             "default_value": 1,
             "allow_in_bindings": 1,
             "ui": 0,
@@ -1044,5 +1100,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1740979092
+    "modified": 1741348902
 }

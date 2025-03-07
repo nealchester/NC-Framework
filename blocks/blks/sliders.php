@@ -55,12 +55,19 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 	$text_max_width = get_field('slide_text_width') ?: '1000';
 
 	$arr_style = get_field('arrow_style');
-	if( $arr_style == 1 ) { $astyle = ' splide--arrows-outside'; } 
-	elseif( $arr_style == 0 ) { $astyle = null; }
-	else {  $astyle = ' splide--arrows-outside'; }
+	if( $arr_style == 'outside' ) { $astyle = ' splide--arrows-outside'; } 
+	elseif( $arr_style == 'inside' ) { $astyle = ' splide--arrows-inside'; } 
+	elseif( $arr_style == 'default' ) { $astyle = null; }
+	else { $astyle = ' splide--arrows-outside'; }
+
+	$pgn_style = get_field('pgn_style');
+	if( $pgn_style == 'o-bullets' ) { $pgn = ' splide--pgn-bullets-over '; } 
+	elseif( $pgn_style == 'o-bars' ) { $pgn = ' splide--pgn-bars-over '; }
+	elseif( $pgn_style == 'bullets' ) { $pgn = ' splide--pgn-bullets '; }
+	elseif( $pgn_style == 'bars' ) { $pgn = ' splide--pgn-bars '; }
+	else { $pgn = ' splide--pgn-bars '; }
 
 	$center = get_field('slide_text_align');
-	
 	if($center) { $center_text = 'text-align: center;';	}
 	else { $center_text = null;}
 
@@ -71,16 +78,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 				<div id="<?php echo $id_box; ?>" class="splide__box<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
 
 					<noscript>Your browser does not support JavaScript!</noscript>
-					<div id="<?php echo $id; ?>" class="splide<?php echo $astyle;?>">
-
-					<div class="splide__arrows">
-						<button class="splide__arrow splide__arrow--prev">
-							<span class="nc-arrow-back ncicon"></span>
-						</button>
-						<button class="splide__arrow splide__arrow--next">
-							<span class="nc-arrow-forward ncicon"></span>
-						</button>
-					</div>
+					<div id="<?php echo $id; ?>" class="splide<?php echo $astyle.$pgn;?>">
 
 					<div class="splide__track">
 						<div class="splide__list">
@@ -197,10 +195,15 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 		aspect-ratio: <?php echo $slide_aspect_ratio;?>
 	}
 
+
+	/* Arrow Display */
+
 	<?php if( get_field('show_on_hover') ):?>
 	<?php echo '#'.$id; ?> .splide__arrow { opacity:0; }
 	.splide__box:hover <?php echo '#'.$id; ?> .splide__arrow {	opacity:1; }
 	<?php endif;?>
+
+	/* /End Arrow Display */
 
 
 	<?php echo '#'.$id; ?> .splide__content.splide--has-image.splide--has-text {
@@ -317,7 +320,7 @@ if( in_the_loop() ): ?>
 		if($fixw) { echo "fixedWidth: '".$fixw."',"; } else { echo null; } ?>
 
 		pagination: <?php if( get_field('pagination') ) { echo 'true'; } else { echo 'false'; } ?>,
-		arrows: <?php if ( get_field('arrows') ) { echo 'true'; } else { echo 'false'; } ?>,
+		arrows: <?php if ( get_field('arrows') == 1 ) { echo 'true'; } else { echo 'false'; } ?>,
 
 		breakpoints: {
 			<?php echo get_field('break_width') ?: '0'; ?>: {
