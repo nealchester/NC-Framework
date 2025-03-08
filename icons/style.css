@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'ncicons';
   src:
-    url('fonts/ncicons.ttf?ba7ji3') format('truetype'),
-    url('fonts/ncicons.woff?ba7ji3') format('woff'),
-    url('fonts/ncicons.svg?ba7ji3#ncicons') format('svg');
+    url('fonts/ncicons.ttf?2qrz6k') format('truetype'),
+    url('fonts/ncicons.woff?2qrz6k') format('woff'),
+    url('fonts/ncicons.svg?2qrz6k#ncicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -77,6 +77,9 @@
 }
 .nc-comment:before {
   content: "\e90b";
+}
+.nc-checkmark:before {
+  content: "\e900";
 }
 .nc-arrow-back:before {
   content: "\e901";

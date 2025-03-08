@@ -8,6 +8,7 @@
 <missing-glyph horiz-adv-x="1024" />
 <glyph unicode="&#x20;" horiz-adv-x="512" d="" />
 <glyph unicode="&#xe708;" glyph-name="download" horiz-adv-x="843" d="M843.288 598.577h-240.819v361.423h-361.651v-361.423h-240.819l421.66-421.628zM0 56.474v-120.409h843.288v120.409z" />
+<glyph unicode="&#xe900;" glyph-name="checkmark" d="M0 396.8l102.4 102.4 256-256 563.2 563.2 102.4-102.4-665.6-665.6z" />
 <glyph unicode="&#xe901;" glyph-name="arrow-back" horiz-adv-x="593" d="M511.999 960l80.836-81.92-430.080-430.080 430.080-430.080-80.836-81.92-512 512z" />
 <glyph unicode="&#xe902;" glyph-name="arrow-forward" horiz-adv-x="593" d="M80.835-64l-80.835 81.92 430.080 430.080-430.080 430.080 80.835 81.92 512-512z" />
 <glyph unicode="&#xe903;" glyph-name="close" d="M99.2 959.999l924.794-924.794-99.185-99.185-924.794 924.794 99.185 99.185zM924.821 959.999l99.191-99.191-924.783-924.783-99.191 99.191 924.783 924.783z" />
