@@ -1,4 +1,5 @@
 <?php 
+// Variables and Conditions
 
 if ( function_exists('get_field') && has_post_thumbnail() && is_home() ) {
   $thumbnail = get_option( 'page_for_posts' );

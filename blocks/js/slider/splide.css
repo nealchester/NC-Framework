@@ -16,7 +16,7 @@
   --image-blend-mode: normal;
   --image-opacity: 1;
 
-  --arrow-width:40px;
+  --arrow-width:35px;
 
   --arrow-bg: linear-gradient(transparent, rgba(0, 0, 0, 0.3), transparent);
   --arrow-icon-color: #fff;
@@ -99,10 +99,12 @@
       color: var(--arrow-icon-color-hover);
       background: var(--arrow-icon-bg-hover);
     }
-
+    
+    /*
     &:active::after {
       outline: solid 10px rgba(0, 0, 0, 0.3);
     }
+    */
 
   }
 

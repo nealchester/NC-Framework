@@ -74,16 +74,21 @@
 }
 
 .nccordion_header:before {
-    content: '\e903';
-    font-family: 'ncicons';
-    transform: rotate(45deg);
-    transition:0.1s;
-    line-height: normal;
-    padding:0.5rem;
-    position: absolute;
-    right: 0.5rem;
-    top:1em;
-    font-size:0.6em;
+  content: '\e903';
+  font-family: 'ncicons';
+  transform: rotate(45deg);
+  transition:0.1s;
+  line-height: normal;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size:0.6em;
+  aspect-ratio:1;
+  width:30px;
+  border-radius:100%;
+  background: var(--acc-icon-bg-color, transparent);
 }
 
 .nccordion_details[open] .nccordion_header:before {

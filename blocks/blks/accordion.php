@@ -155,6 +155,21 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
   --acc-text-color: <?php echo get_field('acc_text_color') ?: 'currentColor';?>;
 }
 
+<?php if( get_field('acc_icon_style') == 'arrow' ):?>
+<?php echo '#'.$id; ?> .nccordion {
+
+	.nccordion_header:before {
+    content: '\e901';
+		transform: rotate(-90deg);
+		font-size: 0.7em;
+	}
+
+	.nccordion_details[open] .nccordion_header:before {
+  	transform: rotate(90deg);
+	}
+}
+<?php endif;?>
+
 <?php nc_box_styles($id); ?>
 
 <?php nc_block_custom_css(); ?>

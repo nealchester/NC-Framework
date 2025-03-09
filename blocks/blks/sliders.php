@@ -276,7 +276,7 @@ function nc_sliders_block_markup( $block, $content = '', $is_preview = false ) {
 }
 
 @media(max-width:<?php echo get_field('break_width').'px' ?:'1024'; ?>){
-	<?php echo '#'.$id; ?>{	--arrow-width: 30px; }
+	<?php echo '#'.$id; ?>{	--arrow-width: 25px; }
 }
 
 <?php nc_box_styles($id_box); ?>

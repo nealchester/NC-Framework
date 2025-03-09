@@ -271,7 +271,7 @@
         },
         {
             "key": "field_67bc5315bfedc",
-            "label": "Accordion Colors",
+            "label": "Accordion Style",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -354,7 +354,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -366,6 +366,33 @@
             "step": "",
             "prepend": "",
             "append": "px"
+        },
+        {
+            "key": "field_67cd7088a8391",
+            "label": "Icon Style",
+            "name": "acc_icon_style",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "arrow": "Arrow",
+                "plus": "Plus"
+            },
+            "default_value": "plus",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_67af2db3a9b86",
@@ -409,5 +436,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740397029
+    "modified": 1741517310
 }

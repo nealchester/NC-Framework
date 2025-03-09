@@ -84,6 +84,10 @@ function my_acf_admin_head() { ?>
         padding-block: 1em;
       }
 
+      .wp-picker-holder {
+        margin-left: -12px;
+      }
+
     </style>
     
 <?php }
