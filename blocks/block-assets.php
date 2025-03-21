@@ -36,7 +36,7 @@ function nc_blocks_register_assets(){
   wp_register_style('nc-blocks-search-box', get_theme_file_uri('/blocks/css/search.css'), array('nc-uclasses'));
 
   /* Register each block's Javascript */
-  wp_register_script('nc-blocks-accordion', get_theme_file_uri('/blocks/js/accordion/accordion.js'));
+  wp_register_script('nc-blocks-accordion', get_theme_file_uri('/blocks/js/accordion/accordion.js'), '', '', true);
   wp_register_script('nc-blocks-parallax', get_theme_file_uri('/blocks/js/parallax/jarallax.js'), array('jquery'));
   wp_register_script('nc-blocks-magnify', get_theme_file_uri('/blocks/js/popup/magnific.js'), array('jquery'));
   wp_register_script('nc-blocks-popup', get_theme_file_uri('/blocks/js/popup/popup-once.js'), array('jquery'));

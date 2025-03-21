@@ -7,8 +7,8 @@ function nc_spacer_block() {
     // register a items block
     acf_register_block_type(array(
         'name'              => 'nc_spacer',
-        'title'             => __('NC Spacer', 'nc-framework'),
-        'description'       => __('A dynamic spacer that resizes according to the viewport.', 'nc-framework'),
+        'title'             => __('NC Spacer', 'nc-block-theme'),
+        'description'       => __('A dynamic spacer that resizes according to the viewport.', 'nc-block-theme'),
         'render_callback'   => 'nc_spacer_block_markup',
         'category'          => 'layout',
         'icon'              => get_nc_icon('nc-block'),
@@ -40,6 +40,6 @@ function nc_spacer_block_markup( $block, $content = '', $is_preview = false ) {
     $style = ' style="height: clamp('.$small.', '.$rate.', '.$large.')"';
 
 ?>
-	<div class="ncspacer<?php echo esc_attr($className)?>"<?php echo $style.$spacer_id;?>></div>
+	<div class="ncspacer<?php echo esc_attr($spacer_id.$className);?>"<?php echo $style;?>></div>
 
 <?php } ?>
