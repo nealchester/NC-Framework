@@ -1,3 +1,17 @@
+/* Stop scrolling when the lightbox is enabled */
+
+body:has(.lbox_check:checked) { 
+  overflow:hidden; 
+}
+
+@media(min-width:1024px){
+  html:has(.lbox_check:checked) { 
+    scrollbar-gutter: stable;
+  }
+}
+
+/* --------------------- */
+
 .lbox {
   position: relative;
 }
@@ -6,7 +20,7 @@
 for anything in the container. This only shows on 
 the front-end and not the editor. */
 
-#wrapper .lbox_trigger {
+.wp-site-blocks .lbox_trigger {
   position: absolute;
   inset: 0;
   cursor: pointer;
@@ -46,6 +60,7 @@ the front-end and not the editor. */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .lbox_check:checked + .lbox_overlay {
@@ -54,10 +69,10 @@ the front-end and not the editor. */
 }
 
 .lbox_content {
-  padding: var(--bpadding, 3.5rem clamp(1rem, 6vw, 2rem) 2rem );
+  padding: var(--bpadding, 2rem clamp(1rem, 6vw, 2rem) );
   background: var(--bgcolor, #fff);
   color: var(--txcolor, currentColor);
-  max-height: 80%;
+  max-height: 75%;
   overflow: auto;
   box-shadow: var(--shadows);
   position: relative;
@@ -70,7 +85,16 @@ the front-end and not the editor. */
   transform:translateY(75px);
 }
 
-.lbox_check:checked + .lbox_overlay > .lbox_content {
+.lbox_close {
+  visibility: hidden;
+  transition: 0.3s;
+  transition-delay: 0.2s;
+  opacity: 0;
+  transform:translateY(75px);
+}
+
+.lbox_check:checked + .lbox_overlay > .lbox_content,
+.lbox_check:checked + .lbox_overlay > .lbox_close {
   opacity:1;
   visibility: visible;
   transform:translateY(0px);
@@ -94,22 +118,17 @@ the front-end and not the editor. */
 /* -------- end experimental */
 
 .lbox_close {
-  position: absolute;
-  right: 0;
-  top: 0;
   font-size: 1.3rem;
   text-align: center;
-  width: auto;
-  padding: 1em 1.3em;
+  padding-block: 1em;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  max-width: 50px;
+  display: block;
+  text-align: right;
+  max-width: var(--mwidth, 700px);
+  width: 100%;
+  color: var(--xcolor, --bgcolor);
 }
 
-.lbox_close:active,
-.lbox_close:hover {
+.lbox_close:active {
   outline:solid 0.08em;
 }

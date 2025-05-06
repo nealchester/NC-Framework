@@ -19,7 +19,7 @@ body, input, select, textarea, button {
   font-family: var(--sans);
   font-size: var(--txt-base);
   line-height: 1.5;
-  font-weight: 350;
+  font-weight: 400;
 }
 
 b,strong {
@@ -60,64 +60,6 @@ h1,h2,h3,h4,h5,h6 {
   initial-letter: var(--cap-lines);
   margin-inline-end: 0.2em;
 }
-
-/* Buttons */
-  .btn,
-  .wp-block-button__link,
-  .is-style-outline .wp-block-button__link {
-    background: var(--link-color);
-    color:#fff !important;
-    border:solid 0.08em var(--link-color);
-    padding:0 2em;
-    border-radius:100px;
-    min-width:150px;
-    transition: 0.5s;
-    min-height:var(--input-height);
-    line-height: var(--input-height);
-    text-align:center;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    text-decoration:none;
-    display:inline-block;
-    font-weight: 500;
-  }
-  
-  .btn:hover,
-  .btn:focus,
-  .wp-block-button__link:hover,
-  .wp-block-button__link:focus,
-  .btn-outline:hover,
-  .btn-outline:focus,
-  .is-style-outline .wp-block-button__link:hover,
-  .is-style-outline .wp-block-button__link:focus {
-    opacity: 0.65;
-  }
-  
-  .btn-outline,
-  .is-style-outline .wp-block-button__link {
-    background:none;
-    border:solid 0.08em currentColor;
-    color:#000;
-  }
-  
-  .btn:active,
-  .wp-block-button__link:active {
-    position:relative;
-    top:2px;
-  }
-
-  .btn-disabled {
-    opacity:0.5;
-    pointer-events:none;
-  }
-  
-  .btn + .btn { margin-left:0.75em; }
-
-  @media(max-width:640px){
-    .btn { width:100%; }
-    .btn + .btn { margin-left:0; margin-top:0.75em; }
-  }
 
 
  /* Social Icons and Contact */
@@ -197,3 +139,55 @@ h1,h2,h3,h4,h5,h6 {
 
 .brand-email,
 .brand-link { background-color: #aaa; }
+
+/* Content block spacing */
+
+.wp-block-post-content {
+
+  & > * {
+  width: var(--width-limit);
+  max-width:var(--width-standard);
+  margin-inline:auto;
+  }
+
+  & > .alignwide {
+    max-width:var(--width-wide);
+  }
+
+  & > .alignfull {
+    max-width:100%;
+    width:100%;
+  }
+}
+
+
+/* Links in Content */
+
+.wp-block-post-content,
+.wp-block-comment-content {
+
+  :is(p, li) a:not([class]) {
+    text-decoration: underline solid 0.08em currentColor;
+    text-underline-offset: 0.12em;
+    position: relative;
+    top: 0px;
+  }
+
+  :is(p, li) a:not([class]):active,
+  :is(p, li) a:not([class]):focus {
+    top: 2px;
+  }
+
+  :is(p, li) a:not([class]):hover {
+    text-decoration: none;
+  }
+  
+  /* Link and Button Indicator for new window */
+  :is(p, li) a[target="_blank"]:not(.wp-block-social-link-anchor):after,
+  .wp-block-button__link[target="_blank"]:after {
+    content: '\00A0\ea7e'; /* non breaking space and upward right arrow */
+    font-family: 'ncicons';
+    font-size: 1.5ex;
+  }
+
+}

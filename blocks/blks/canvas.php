@@ -7,8 +7,8 @@ function nc_canvas_block() {
 	// register a items block
 	acf_register_block_type(array(
 			'name'              => 'nc_canvas',
-			'title'             => __('NC Canvas', 'nc-framework'),
-			'description'       => __('Enter anything you want with added support for native columns', 'nc-framework'),
+			'title'             => __('NC Canvas', 'nc-block-theme'),
+			'description'       => __('Enter anything you want with added support for native columns', 'nc-block-theme'),
 			'render_callback'   => 'nc_canvas_block_markup',
 			'category'          => 'common',
 			'icon'              => get_nc_icon('nc-block'),
@@ -86,7 +86,7 @@ function nc_canvas_block_markup( $block, $content = '', $is_preview = false ) {
 	<?php echo '#'.$id; ?> .wp-block-column:not(:last-child):after {
 		display:block;
 		content:'';
-		width: 0.008em;
+		width: 1px;
 		height:100%;
 		background:var(--column-border-color, currentColor);
 		position:absolute;

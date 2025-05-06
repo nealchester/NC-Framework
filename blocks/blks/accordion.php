@@ -7,8 +7,8 @@ function nc_accordion_block() {
         // register a items block
         acf_register_block_type(array(
             'name'              => 'nc_accordion',
-            'title'             => __('NC Accordion', 'nc-framework'),
-            'description'       => __('Title, content and links.', 'nc-framework'),
+            'title'             => __('NC Accordion', 'nc-block-theme'),
+            'description'       => __('Title, content and links.', 'nc-block-theme'),
             'render_callback'   => 'nc_accordion_block_markup',
 						'category'          => 'common',
             'icon'              => get_nc_icon('nc-block'),
@@ -56,8 +56,8 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	wp_enqueue_script('nc-blocks-accordion'); 
 	?>
 	
-	<div id="<?php echo $id; ?>" class="nccordion_container ncblock<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
-		<div class="ncontain">
+	<div id="<?php echo $id; ?>" class="nccordion ncblock<?php echo esc_attr($className); ?>" <?php echo nc_block_attr();?>>
+		
 			<?php if( $choose == 'post' ):?>
 
 			<?php $args = array(
@@ -73,14 +73,13 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			<?php $queryfaqs = new WP_Query($args); 
 			if ( $queryfaqs->have_posts() && $select_links ) : ?>
 
-			<div class="nccordion">
       <?php while ( $queryfaqs->have_posts() ) : $queryfaqs->the_post(); ?>
 
 			<details class="nccordion_details">
 				<summary class="nccordion_header" id="faq-<?php the_ID(); ?>" title="<?php echo get_the_title( get_the_ID() );?>"><?php echo get_the_title( get_the_ID() );?></summary>  
 				<div class="nccordion_content">
 					<?php if($content == 'truncate') :?>
-					<?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore"><?php _e('Read more','nc-framework');?></a>
+					<?php echo substr( get_the_excerpt( get_the_ID() ), 0, $truncate );?><span class="nccordion_ell">&hellip;</span> <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" class="nccordion_rmore"><?php _e('Read more','nc-block-theme');?></a>
 					<?php else :?>
 					<?php the_content(get_the_ID());?>  
 					<?php endif;?>
@@ -93,19 +92,18 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 			 <?php wp_reset_postdata();?>
 			 <?php else : ?>
 				<div class="nccordion">
-					<p><?php _e('No posts have been selected yet. Select some posts to add here or write your own content.','nc-framework');?></p>
+					<p><?php _e('No posts have been selected yet. Select some posts to add here or write your own content.','nc-block-theme');?></p>
 			 </div>
 			<?php endif; // end loop ?>
 
 			<?php elseif( $choose == 'write' && have_rows('custom_content') ):?>
 
-				<div class="nccordion">
 				<?php while( have_rows('custom_content') ): the_row(); 
 					$acc_heading = get_sub_field('heading') ?:'Heading';
 					$acc_content = get_sub_field('content') ?: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.';
 					$acc_open = get_sub_field('open');
 				?>
-					<details class="nccordion_details"<?php if ($acc_open){ echo' open'; };?>>
+					<details class="nccordion_details <?php echo 'nccordion-'.get_row_index(); ?>"<?php if ($acc_open){ echo' open'; };?>>
 						<summary class="nccordion_header"><?php echo $acc_heading; ?></summary>  
 						<div class="nccordion_content">
 							<?php echo $acc_content; ?>
@@ -113,13 +111,12 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 					</details>
 
 			<?php endwhile; ?>
-			</div>
 
-				</div>
+			<!-- end container -->
 
 				<?php else : ?>
 					<div class="nocontent">
-						<p><?php _e('Chose to display posts or write your own content. Use the sidebar settings to begin.','nc-framework');?></p>
+						<p><?php _e('Chose to display posts or write your own content. Use the sidebar settings to begin.','nc-block-theme');?></p>
 					</div>
 			<?php endif;?>
 		</div>
@@ -148,15 +145,15 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 
 <style id="<?php echo $id; ?>-css">
 
-<?php echo '#'.$id; ?> .nccordion {
+<?php echo '#'.$id; ?>.nccordion {
   --acc-border-color: <?php echo get_field('acc_border_color') ?: '#aaa';?>;
   --acc-bg-color: <?php echo get_field('acc_bg_color') ?: '#fff';?>;
-  --acc-border-radius: <?php echo get_field('acc_border_radius').'px' ?: '0';?>;
+  --acc-border-radius: <?php echo get_field('acc_border_radius').'px';?>;
   --acc-text-color: <?php echo get_field('acc_text_color') ?: 'currentColor';?>;
 }
 
 <?php if( get_field('acc_icon_style') == 'arrow' ):?>
-<?php echo '#'.$id; ?> .nccordion {
+<?php echo '#'.$id; ?>.nccordion {
 
 	.nccordion_header:before {
     content: '\e901';
@@ -169,8 +166,6 @@ function nc_accordion_block_markup( $block, $content = '', $is_preview = false )
 	}
 }
 <?php endif;?>
-
-<?php nc_box_styles($id); ?>
 
 <?php nc_block_custom_css(); ?>
 

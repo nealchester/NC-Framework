@@ -116,7 +116,7 @@
                     "label": "",
                     "name": "heading",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -128,9 +128,9 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 1,
-                    "placeholder": "Heading",
-                    "prepend": "",
-                    "append": "",
+                    "rows": 1,
+                    "placeholder": "",
+                    "new_lines": "",
                     "parent_repeater": "field_6053ae103c9ee"
                 },
                 {
@@ -409,7 +409,6 @@
                 "id": ""
             },
             "clone": [
-                "group_67ad4b9f88c22",
                 "group_67ad4b91436c6"
             ],
             "display": "seamless",
@@ -436,5 +435,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741517310
+    "modified": 1746524025
 }

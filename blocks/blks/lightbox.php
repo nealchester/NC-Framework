@@ -7,8 +7,8 @@ function nc_lightbox_block() {
         // register a items block
         acf_register_block_type(array(
             'name'              => 'nc_lightbox',
-            'title'             => __('NC Light box', 'nc-framework'),
-            'description'       => __('A light box containing more information upon click.', 'nc-framework'),
+            'title'             => __('NC Light box', 'nc-block-theme'),
+            'description'       => __('A light box containing more information upon click.', 'nc-block-theme'),
             'render_callback'   => 'nc_lightbox_block_markup',
             'category'          => 'layout',
             'icon'              => get_nc_icon('nc-block'),
@@ -54,6 +54,7 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
 
     $bgcolor = get_field('bg_color') ?: '#fff';
     $txcolor = get_field('text_color') ?: 'currentColor';
+    $xcolor = get_field('x_color') ?: '#ffffff';
     $mwidth = get_field('max_width').'px' ?: '700';
     $ovcolor = get_field('overlay_color') ?: 'rgba(2,0,30,0.8)';
 
@@ -74,8 +75,10 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     <input id="<?php echo $lb_id;?>" type="checkbox" class="hide lbox_check" name="popup" value="popup" aria-hidden>
 
     <div class="lbox_overlay" hidden>
+        <label class="lbox_close" for="<?php echo $lb_id;?>">
+            <div class="ncicon nc-close"></div>
+        </label>
         <div class="lbox_content" <?php echo nc_block_attr();?>>
-            <label class="lbox_close" for="<?php echo $lb_id;?>"><div class="ncicon nc-close"></div></label>
             <?php echo $lb_content; ?>
         </div>
     </div>
@@ -89,44 +92,12 @@ function nc_lightbox_block_markup( $block, $content = '', $is_preview = false ) 
     --ovcolor: <?php echo $ovcolor; ?>;
     --bgcolor: <?php echo $bgcolor; ?>;
     --txcolor: <?php echo $txcolor; ?>;
+    --xcolor: <?php echo $xcolor; ?>;
     --mwidth: <?php echo $mwidth; ?>;
-    }
-
-    @media(min-width:1024px){
-        .stop-scrolling { 
-            overflow:hidden; 
-            padding-right: 17px; 
-        }
     }
 
 <?php nc_block_custom_css(); ?>
 
 </style>
-
-<script>
-    jQuery(document).ready(function() {
-        // Select the input element.  Replace '#myCheckbox' with the actual ID or selector
-        // of your checkbox input.
-        const $checkbox = jQuery('<?php echo '#'.$lb_id;?>'); 
-        const bodyClass = 'stop-scrolling'; // The class you want to add/remove
-
-        // Function to update the body class based on checkbox state
-        function updateBodyClass() {
-            if ($checkbox.is(':checked')) {
-                jQuery('body').addClass(bodyClass);
-            } else {
-                jQuery('body').removeClass(bodyClass);
-            }
-        }
-
-        // Initial check when the page loads
-        updateBodyClass();
-
-        // Check whenever the checkbox is changed (clicked)
-        $checkbox.change(updateBodyClass); 
-    });
-</script>
-
-
 
 <?php } ?>

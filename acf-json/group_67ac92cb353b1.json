@@ -101,6 +101,25 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_68185f83db970",
+            "label": "Close Button Color",
+            "name": "x_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_67ac938b5a5cf",
             "label": "Overlay Color",
             "name": "overlay_color",
@@ -179,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740908606
+    "modified": 1746427847
 }
